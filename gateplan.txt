@@ -1,0 +1,1717 @@
+📚 SUBJECT → TOPIC BREAKDOWN (GO CLASSES STYLE)
+🧮 MATHEMATICS
+🔵 Linear Algebra (Start here)
+
+Systems of Linear Equations
+
+Matrices basics
+
+Rank
+
+Inverse
+
+Eigenvalues & Eigenvectors
+
+Cayley-Hamilton
+
+Vector spaces
+
+🔵 Calculus (Next)
+
+Limits
+
+Continuity & Differentiability
+
+Partial Derivatives
+
+Maxima/Minima
+
+Multiple Integrals
+
+🔵 Probability
+
+Basic probability
+
+Conditional probability
+
+Bayes theorem
+
+Random variables
+
+Expectation & variance
+
+🟡 Discrete Maths (SIDE)
+
+Propositional Logic
+
+Predicates
+
+Sets
+
+Relations
+
+Functions
+
+Combinatorics (later)
+
+💻 DBMS
+
+ER Model
+
+Relational Model
+
+SQL
+
+Functional Dependencies
+
+Normalization
+
+Transactions
+
+💻 COA
+
+Number Systems
+
+Boolean Algebra
+
+Combinational Circuits
+
+Sequential Circuits
+
+Memory
+
+Pipelining
+
+Cache
+
+📅 NOW — YOUR DAILY PLAN (WITH TOPICS)
+📅 Mar 19
+
+Maths → Systems of Linear Equations (start)
+
+Q → same topic PYQs
+
+DBMS → ER Model
+
+Discrete → Propositional Logic
+
+📅 Mar 20
+
+Maths → Systems + Matrices basics
+
+Q → row operations, rank basics
+
+COA → Number System
+
+Discrete → Propositions continue
+
+📅 Mar 21
+
+Maths → Rank + Inverse
+
+Q → matrix problems
+
+DBMS → Relational Model
+
+❌ Skip Discrete
+
+📅 Mar 22
+
+Maths → Eigenvalues intro
+
+Q → eigen basics
+
+COA → Boolean Algebra
+
+Discrete → Predicates
+
+📅 Mar 23
+
+Maths → Eigenvalues continue
+
+Q → PYQs eigen
+
+DBMS → SQL
+
+Discrete → Sets
+
+📅 Mar 24 (REVISION DAY)
+
+Maths → PYQs (all LA till now)
+
+DBMS → ER + Relational PYQs
+
+Discrete → revision
+
+📅 Mar 25
+
+Maths → Eigenvectors + diagonalization
+
+Q → practice
+
+COA → Combinational Circuits
+
+📅 Mar 26
+
+Maths → Cayley-Hamilton
+
+Q → PYQs
+
+DBMS → Functional Dependencies
+
+Discrete → Relations
+
+📅 Mar 27
+
+Maths → Vector Spaces start
+
+Q → problems
+
+COA → Sequential Circuits
+
+📅 Mar 28
+
+Maths → Vector Spaces continue
+
+Q → PYQs
+
+DBMS → Normalization
+
+Discrete → Functions
+
+📅 Mar 29
+
+Maths → LA mixed problems
+
+Q → strong practice
+
+COA → Memory
+
+📅 Mar 30
+
+Maths → FULL LA PYQs
+
+DBMS/COA → PYQs
+
+Discrete → light
+
+📅 Mar 31
+
+Maths → Weak topics revision
+
+PYQs → mixed
+
+Light day
+
+🎯 DAILY HOUR SPLIT (REMINDER)
+
+Maths lecture → 2.5–3 hrs
+
+Maths questions → 2 hrs
+
+DBMS/COA → 1 hr
+
+Discrete → 0.5–1 hr
+
+⚠️ HOW TO EXECUTE THIS (IMPORTANT)
+When topic feels known:
+
+2x speed
+
+jump to questions
+
+When topic feels hard:
+
+slow down
+
+spend more question time
+
+🧠 WHAT YOU’LL FEEL
+
+First 3 days → resistance
+
+Day 4–5 → flow starts
+
+After 1 week → confidence boost
+
+🔥 FINAL TRUTH
+
+This is the phase where:
+
+most people quit or loop
+
+YOU either:
+
+build momentum
+
+or restart again next month
+
+If you want next level:
+👉 I can make:
+
+topic-wise tracker (tick each topic)
+
+hour tracker + completion % dashboard
+
+Just say: “advanced tracker bana de” and I’ll design it.
+
+plan april
+
+Perfect — April is your make-or-break month.
+
+If March = momentum
+👉 April = real syllabus coverage + confidence build
+
+Now I’ll give you a clean, GO-Classes-aligned April plan with:
+
+week-wise targets
+
+topics
+
+hour targets
+
+rotation (so you don’t get bored)
+
+🎯 APRIL MASTER GOAL
+
+👉 Target: 180–200 hours total
+
+By April end:
+
+✅ Linear Algebra DONE
+
+✅ Calculus DONE (major portion)
+
+✅ DBMS DONE
+
+✅ COA 70–80% DONE
+
+🟡 Discrete → continued lightly
+
+📊 WEEKLY STRUCTURE (FIXED)
+
+Every week:
+
+🎥 20–25 lecture hours
+
+🧠 20–25 practice hours
+
+👉 Total = ~45–50 hrs/week
+
+📅 APRIL — WEEK BY WEEK PLAN
+🗓️ WEEK 1 (Apr 1–7)
+🎯 Focus:
+
+Finish Linear Algebra
+
+Start Calculus (Limits)
+
+📚 Topics:
+🧮 Maths
+
+Vector Spaces (finish)
+
+Linear Transformations
+
+Full LA revision + PYQs
+
+Limits
+
+💻 DBMS
+
+SQL (advanced)
+
+Functional Dependencies
+
+Normalization
+
+💻 COA
+
+Memory hierarchy
+
+Cache
+
+🎯 Hour Target:
+
+Maths → 20 hrs
+
+DBMS → 10 hrs
+
+COA → 8 hrs
+
+Discrete → 3 hrs
+
+🗓️ WEEK 2 (Apr 8–14)
+🎯 Focus:
+
+Calculus core begins
+
+📚 Topics:
+🧮 Maths
+
+Continuity
+
+Differentiability
+
+Partial Derivatives
+
+💻 DBMS
+
+Transactions
+
+Concurrency Control
+
+👉 DBMS almost DONE here
+
+💻 COA
+
+Pipelining
+
+🎯 Hour Target:
+
+Maths → 22 hrs
+
+DBMS → 8 hrs
+
+COA → 10 hrs
+
+Discrete → 3 hrs
+
+🗓️ WEEK 3 (Apr 15–21)
+🎯 Focus:
+
+Finish Calculus core
+
+📚 Topics:
+🧮 Maths
+
+Maxima/Minima
+
+Multiple variables
+
+Practice heavy
+
+💻 COA
+
+Instruction set
+
+CPU organization
+
+🔁 Start DBMS Revision + PYQs
+🎯 Hour Target:
+
+Maths → 25 hrs
+
+COA → 12 hrs
+
+DBMS PYQs → 8 hrs
+
+Discrete → 3 hrs
+
+🗓️ WEEK 4 (Apr 22–30)
+🎯 Focus:
+
+Strengthen + Revision
+
+📚 Topics:
+🧮 Maths
+
+Full Calculus PYQs
+
+Weak areas
+
+💻 COA
+
+Finish remaining
+
+PYQs
+
+🔁 DBMS
+
+Full PYQ revision
+
+day wise 
+
+Perfect — now we go full execution mode for April (DAY-WISE + TOPICS + HOURS).
+
+This is built for:
+
+GO Classes pace
+
+your 6–7 hr/day capacity
+
+boredom control (rotation)
+
+⚙️ DAILY FIXED TIMETABLE (same whole April)
+
+10:00–12:30 → Maths (lecture)
+
+1:30–3:30 → Maths (questions)
+
+3:45–4:45 → DBMS / COA
+
+8:30–9:30 → Discrete / PYQs
+
+📅 APRIL — DAY-WISE PLAN
+🗓️ WEEK 1 (Apr 1–7)
+📅 Apr 1
+
+Maths → Vector Spaces (finish)
+
+Q → LA problems
+
+DBMS → SQL advanced
+
+Discrete → Sets
+
+📅 Apr 2
+
+Maths → Linear Transformations
+
+Q → PYQs
+
+COA → Cache basics
+
+Discrete → Relations
+
+📅 Apr 3
+
+Maths → LA revision
+
+Q → full LA PYQs
+
+DBMS → Functional Dependencies
+
+📅 Apr 4
+
+Maths → Limits (start)
+
+Q → basic problems
+
+COA → Cache numericals
+
+Discrete → Functions
+
+📅 Apr 5
+
+Maths → Limits continue
+
+Q → PYQs
+
+DBMS → Normalization
+
+📅 Apr 6
+
+Maths → Limits advanced
+
+Q → practice
+
+COA → Memory hierarchy
+
+❌ Skip Discrete
+
+📅 Apr 7 (Light + Revision)
+
+Maths → LA + Limits revision
+
+DBMS → SQL + FD PYQs
+
+Light Discrete
+
+🗓️ WEEK 2 (Apr 8–14)
+📅 Apr 8
+
+Maths → Continuity
+
+Q → problems
+
+DBMS → Transactions
+
+📅 Apr 9
+
+Maths → Continuity advanced
+
+Q → PYQs
+
+COA → Pipelining
+
+📅 Apr 10
+
+Maths → Differentiability
+
+Q → problems
+
+DBMS → Concurrency
+
+📅 Apr 11
+
+Maths → Differentiability PYQs
+
+COA → Pipeline hazards
+
+📅 Apr 12
+
+Maths → Partial Derivatives
+
+Q → practice
+
+DBMS → Recovery
+
+📅 Apr 13
+
+Maths → Partial derivatives PYQs
+
+COA → Practice
+
+📅 Apr 14 (Revision)
+
+Maths → full revision (Limits + continuity)
+
+DBMS → Transactions PYQs
+
+🗓️ WEEK 3 (Apr 15–21)
+📅 Apr 15
+
+Maths → Maxima/Minima
+
+Q → problems
+
+COA → Instruction set
+
+📅 Apr 16
+
+Maths → Maxima PYQs
+
+DBMS → Full revision
+
+📅 Apr 17
+
+Maths → Multivariable
+
+Q → practice
+
+COA → CPU
+
+📅 Apr 18
+
+Maths → Multivariable PYQs
+
+DBMS → PYQs
+
+📅 Apr 19
+
+Maths → Mixed Calculus
+
+Q → strong practice
+
+COA → Practice
+
+📅 Apr 20
+
+Maths → Weak areas
+
+DBMS → PYQs
+
+📅 Apr 21 (Light)
+
+Maths → revision
+
+COA → revision
+
+🗓️ WEEK 4 (Apr 22–30)
+📅 Apr 22
+
+Maths → Full Calculus PYQs
+
+COA → Memory
+
+📅 Apr 23
+
+Maths → Weak topics
+
+DBMS → PYQs
+
+📅 Apr 24
+
+Maths → Mixed problems
+
+COA → Practice
+
+📅 Apr 25
+
+Maths → Revision
+
+DBMS → Revision
+
+📅 Apr 26
+
+Maths → PYQs
+
+COA → PYQs
+
+📅 Apr 27
+
+Maths → Weak areas fix
+
+DBMS → Final revision
+
+📅 Apr 28
+
+Maths → Full revision
+
+COA → Revision
+
+📅 Apr 29
+
+Maths → PYQs
+
+Mixed subjects
+
+📅 Apr 30 (Closure Day)
+
+Maths → Final revision
+
+DBMS + COA → Quick sweep
+
+🎯 DAILY TARGET (REMINDER)
+
+Maths lecture → 2.5–3 hrs
+
+Maths Q → 2 hrs
+
+DBMS/COA → 1 hr
+
+Discrete → 0.5–1 hr
+
+⚠️ HOW TO USE THIS PLAN
+
+Don’t chase perfection → chase daily completion
+
+If one day slips → continue next (no backlog stress)
+
+If bored → switch to DBMS/COA (NOT phone)
+
+🧠 EXPECTED RESULT AFTER APRIL
+
+Maths → very strong (big confidence jump)
+
+DBMS → almost done
+
+COA → clear understanding
+
+Discrete → no longer scary
+
+If you want next level:
+👉 I can design:
+
+May plan (OS + CN + transition to heavy subjects)
+
+OR
+
+mock strategy + PYQ mastery system (rank booster)
+
+plan may
+
+Perfect — May is where your prep levels up from comfort → real GATE mode.
+
+April gave you:
+
+Maths base ✅
+
+DBMS almost done ✅
+
+COA decent ✅
+
+👉 Now May = OS + CN (high-weight + conceptual + scoring)
+
+🎯 MAY MASTER GOAL
+
+👉 Target: 180–200 hours
+
+By May end:
+
+✅ Operating Systems DONE
+
+✅ Computer Networks DONE (major portion)
+
+🟡 Maths → Probability started
+
+🔁 DBMS/COA → PYQs + revision running
+
+⚙️ DAILY TIMETABLE (same)
+
+10:00–12:30 → Main Subject (OS/CN)
+
+1:30–3:30 → Questions (same subject)
+
+3:45–4:45 → Secondary (Maths / DBMS / COA)
+
+8:30–9:30 → Light (Discrete / PYQs)
+
+🔁 SUBJECT ROTATION (IMPORTANT)
+Main Subject:
+
+First 15 days → OS
+
+Next 15 days → CN
+
+Secondary Slot:
+
+Maths (Probability intro)
+
+DBMS/COA (revision + PYQs)
+
+📅 MAY — DAY-WISE PLAN
+🗓️ WEEK 1 (May 1–7) → OS START
+📅 May 1
+
+OS → Process basics
+
+Q → process problems
+
+Maths → Probability intro
+
+📅 May 2
+
+OS → Process states
+
+Q → PYQs
+
+DBMS → SQL PYQs
+
+📅 May 3
+
+OS → Scheduling (FCFS, SJF)
+
+Q → numericals
+
+COA → Cache PYQs
+
+📅 May 4
+
+OS → Scheduling advanced
+
+Q → PYQs
+
+Maths → Probability basics
+
+📅 May 5
+
+OS → Threads
+
+Q → problems
+
+DBMS → Normalization PYQs
+
+📅 May 6
+
+OS → Process sync intro
+
+Q → problems
+
+COA → Memory PYQs
+
+📅 May 7 (Revision)
+
+OS → scheduling + process revision
+
+PYQs
+
+🗓️ WEEK 2 (May 8–14)
+📅 May 8
+
+OS → Semaphores
+
+Q → problems
+
+Maths → conditional probability
+
+📅 May 9
+
+OS → Deadlocks
+
+Q → problems
+
+DBMS → Transactions PYQs
+
+📅 May 10
+
+OS → Deadlock prevention
+
+Q → PYQs
+
+COA → Pipelining PYQs
+
+📅 May 11
+
+OS → Memory management
+
+Q → numericals
+
+Maths → Bayes
+
+📅 May 12
+
+OS → Paging
+
+Q → PYQs
+
+DBMS → revision
+
+📅 May 13
+
+OS → Virtual memory
+
+Q → problems
+
+COA → revision
+
+📅 May 14 (Revision)
+
+OS → full revision
+
+PYQs
+
+🗓️ WEEK 3 (May 15–21) → CN START
+📅 May 15
+
+CN → OSI model
+
+Q → basics
+
+Maths → random variables
+
+📅 May 16
+
+CN → Physical layer
+
+Q → problems
+
+DBMS → PYQs
+
+📅 May 17
+
+CN → Data link layer
+
+Q → PYQs
+
+COA → revision
+
+📅 May 18
+
+CN → Error detection
+
+Q → numericals
+
+Maths → expectation
+
+📅 May 19
+
+CN → MAC protocols
+
+Q → problems
+
+DBMS → revision
+
+📅 May 20
+
+CN → Network layer
+
+Q → problems
+
+COA → PYQs
+
+📅 May 21 (Revision)
+
+CN → revise till now
+
+PYQs
+
+🗓️ WEEK 4 (May 22–31)
+📅 May 22
+
+CN → Routing algorithms
+
+Q → numericals
+
+Maths → variance
+
+📅 May 23
+
+CN → Congestion control
+
+Q → PYQs
+
+DBMS → PYQs
+
+📅 May 24
+
+CN → Transport layer
+
+Q → problems
+
+COA → revision
+
+📅 May 25
+
+CN → TCP/UDP
+
+Q → PYQs
+
+Maths → revision
+
+📅 May 26
+
+CN → Application layer
+
+Q → problems
+
+DBMS → revision
+
+📅 May 27
+
+CN → Full revision
+
+PYQs
+
+📅 May 28
+
+Mixed → OS + CN PYQs
+
+📅 May 29
+
+Weak topics fix
+
+📅 May 30
+
+Full subject PYQs
+
+📅 May 31 (Closure)
+
+OS + CN revision
+
+Light day
+
+🎯 DAILY TARGET
+
+OS/CN lecture → 2.5–3 hrs
+
+Questions → 2 hrs
+
+Secondary → 1 hr
+
+Light → 0.5–1 hr
+
+⚠️ KEY MAY RULES
+
+OS/CN = concept + numericals → no skipping questions
+
+Probability = side subject only
+
+Revision every 7th day compulsory
+
+🧠 WHAT YOU’LL ACHIEVE
+
+By June start:
+
+OS → strong
+
+CN → strong
+
+Maths → almost complete
+
+Confidence → 🔥
+
+🔥 REAL TALK
+
+May is where:
+
+average students slow down
+
+serious ones separate
+
+If you follow this → you’re officially in topper trajectory
+
+If you want next:
+👉 I’ll plan June (DSA + Digital — hardest phase)
+👉 OR give PYQ solving framework (how toppers solve)
+
+june day wise
+
+Perfect — June is your hardest + most important month.
+
+This is where:
+
+❌ most people lose consistency (DSA heavy)
+
+✅ toppers build rank (problem-solving mastery)
+
+We’ll do this smartly — not burnout mode.
+
+🎯 JUNE MASTER GOAL
+
+👉 Target: 170–190 hours
+
+By June end:
+
+✅ DSA DONE (core + PYQs)
+
+✅ Digital Logic DONE
+
+🔁 OS + CN → revision running
+
+🟡 Maths → light revision
+
+⚙️ DAILY TIMETABLE (same)
+
+10:00–12:30 → DSA (main)
+
+1:30–3:30 → DSA Questions
+
+3:45–4:45 → Digital / OS / CN
+
+8:30–9:30 → PYQs / Revision
+
+🔥 STRATEGY (IMPORTANT)
+
+👉 DSA will feel:
+
+slow
+
+frustrating
+
+heavy
+
+So:
+
+DO NOT rush
+
+DO questions DAILY
+
+accept low output initially
+
+📅 JUNE — DAY-WISE PLAN
+🗓️ WEEK 1 (June 1–7)
+🎯 DSA Basics + Recursion
+📅 June 1
+
+DSA → Intro + Time Complexity
+
+Q → basic problems
+
+Digital → Number system
+
+📅 June 2
+
+DSA → Recursion basics
+
+Q → problems
+
+OS → scheduling PYQs
+
+📅 June 3
+
+DSA → Recursion advanced
+
+Q → PYQs
+
+Digital → Boolean algebra
+
+📅 June 4
+
+DSA → Arrays
+
+Q → problems
+
+CN → routing PYQs
+
+📅 June 5
+
+DSA → Arrays advanced
+
+Q → PYQs
+
+Digital → K-maps
+
+📅 June 6
+
+DSA → Searching
+
+Q → problems
+
+OS → memory PYQs
+
+📅 June 7 (Revision)
+
+DSA → revise basics
+
+Digital → revise
+
+🗓️ WEEK 2 (June 8–14)
+🎯 Sorting + Linked List
+📅 June 8
+
+DSA → Sorting intro
+
+Q → problems
+
+Digital → combinational circuits
+
+📅 June 9
+
+DSA → Quick sort / merge
+
+Q → PYQs
+
+CN → transport PYQs
+
+📅 June 10
+
+DSA → Sorting analysis
+
+Q → problems
+
+Digital → adders
+
+📅 June 11
+
+DSA → Linked List
+
+Q → problems
+
+OS → deadlock PYQs
+
+📅 June 12
+
+DSA → LL advanced
+
+Q → PYQs
+
+Digital → sequential circuits
+
+📅 June 13
+
+DSA → Stack
+
+Q → problems
+
+CN → congestion PYQs
+
+📅 June 14 (Revision)
+
+DSA → revise sorting + LL
+
+Digital → revision
+
+🗓️ WEEK 3 (June 15–21)
+🎯 Trees + Heaps
+📅 June 15
+
+DSA → Trees intro
+
+Q → problems
+
+Digital → memory
+
+📅 June 16
+
+DSA → Binary Trees
+
+Q → PYQs
+
+OS → paging PYQs
+
+📅 June 17
+
+DSA → BST
+
+Q → problems
+
+CN → network layer PYQs
+
+📅 June 18
+
+DSA → Heaps
+
+Q → problems
+
+Digital → revision
+
+📅 June 19
+
+DSA → Heap applications
+
+Q → PYQs
+
+OS → revision
+
+📅 June 20
+
+DSA → Tree problems
+
+Q → practice
+
+CN → revision
+
+📅 June 21 (Revision)
+
+DSA → trees revision
+
+Digital → revision
+
+🗓️ WEEK 4 (June 22–30)
+🎯 Graphs + Final Revision
+📅 June 22
+
+DSA → Graphs intro
+
+Q → problems
+
+Digital → PYQs
+
+📅 June 23
+
+DSA → BFS/DFS
+
+Q → problems
+
+OS → PYQs
+
+📅 June 24
+
+DSA → Shortest path
+
+Q → problems
+
+CN → PYQs
+
+📅 June 25
+
+DSA → MST
+
+Q → problems
+
+Digital → revision
+
+📅 June 26
+
+DSA → Graph PYQs
+
+Q → heavy
+
+OS → revision
+
+📅 June 27
+
+DSA → Mixed problems
+
+CN → revision
+
+📅 June 28
+
+Full DSA revision
+
+PYQs
+
+📅 June 29
+
+Weak areas fix
+
+📅 June 30 (Closure)
+
+DSA → final revision
+
+Light day
+
+🎯 DAILY TARGET
+
+DSA lecture → 2.5–3 hrs
+
+DSA Q → 2 hrs
+
+Secondary → 1 hr
+
+Light → 0.5–1 hr
+
+⚠️ JUNE SURVIVAL RULES
+1. DSA will feel slow → NORMAL
+2. Don’t compare days
+3. Questions > lectures
+4. Keep OS/CN alive (don’t forget them)
+🧠 EXPECTED RESULT AFTER JUNE
+
+DSA → strong (huge confidence jump)
+
+Digital → done
+
+OS/CN → retained
+
+You → serious GATE contender now
+
+🔥 REAL TALK
+
+If you survive June properly:
+
+👉 You’re ahead of 90% aspirants
+
+If you want next:
+👉 I’ll plan July (TOC + Compiler + full revision phase)
+👉 OR give mock test strategy (when + how to start for max score)
+
+DO  JULY AND AUGUST NOW 
+
+Perfect — now we complete your full roadmap till August (endgame phase).
+
+This is where:
+
+❌ most people feel “syllabus done but not confident”
+
+✅ toppers convert prep → rank
+
+🎯 JULY + AUGUST STRATEGY (BIG PICTURE)
+🔵 JULY = Completion + First Full Revision
+
+TOC + Compiler
+
+Full syllabus touched once
+
+Start serious PYQs
+
+🔴 AUGUST = Consolidation + Test Mode
+
+Full revision cycles
+
+Mixed practice
+
+Start mocks (light → moderate)
+
+📅 JULY — DAY-WISE PLAN
+🎯 JULY MASTER GOAL
+
+✅ TOC DONE
+
+✅ Compiler DONE
+
+✅ Full syllabus = 1st revision done
+
+🔁 PYQs strong start
+
+⚙️ DAILY TIMETABLE (same)
+
+10:00–12:30 → TOC / Compiler
+
+1:30–3:30 → Questions
+
+3:45–4:45 → Revision (old subjects)
+
+8:30–9:30 → PYQs
+
+🗓️ WEEK 1 (July 1–7) → TOC START
+📅 July 1
+
+TOC → DFA basics
+
+Q → problems
+
+Revision → DBMS
+
+📅 July 2
+
+TOC → DFA/NFA
+
+Q → PYQs
+
+Revision → OS
+
+📅 July 3
+
+TOC → NFA to DFA
+
+Q → problems
+
+Revision → CN
+
+📅 July 4
+
+TOC → Regular Expressions
+
+Q → problems
+
+Revision → COA
+
+📅 July 5
+
+TOC → RE → FA
+
+Q → PYQs
+
+Revision → Maths
+
+📅 July 6
+
+TOC → Minimization
+
+Q → problems
+
+Revision → DSA
+
+📅 July 7 (Revision)
+
+TOC → revise
+
+PYQs
+
+🗓️ WEEK 2 (July 8–14)
+📅 July 8
+
+TOC → CFG basics
+
+Q → problems
+
+Revision → DBMS
+
+📅 July 9
+
+TOC → CFG derivations
+
+Q → PYQs
+
+Revision → OS
+
+📅 July 10
+
+TOC → CNF/GNF
+
+Q → problems
+
+Revision → CN
+
+📅 July 11
+
+TOC → PDA
+
+Q → problems
+
+Revision → COA
+
+📅 July 12
+
+TOC → PDA PYQs
+
+Revision → Maths
+
+📅 July 13
+
+TOC → Turing Machine
+
+Q → problems
+
+Revision → DSA
+
+📅 July 14 (Revision)
+
+TOC full revision
+
+PYQs
+
+🗓️ WEEK 3 (July 15–21) → COMPILER START
+📅 July 15
+
+Compiler → Intro + Phases
+
+Q → basics
+
+Revision → DBMS
+
+📅 July 16
+
+Compiler → Lexical Analysis
+
+Q → problems
+
+Revision → OS
+
+📅 July 17
+
+Compiler → Parsing basics
+
+Q → problems
+
+Revision → CN
+
+📅 July 18
+
+Compiler → LL/LR parsing
+
+Q → PYQs
+
+Revision → COA
+
+📅 July 19
+
+Compiler → Syntax Directed Translation
+
+Q → problems
+
+Revision → Maths
+
+📅 July 20
+
+Compiler → Code generation
+
+Q → problems
+
+Revision → DSA
+
+📅 July 21 (Revision)
+
+Compiler → revise
+
+PYQs
+
+🗓️ WEEK 4 (July 22–31) → FULL REVISION START
+📅 July 22
+
+DBMS → full revision
+
+PYQs
+
+📅 July 23
+
+OS → full revision
+
+PYQs
+
+📅 July 24
+
+CN → full revision
+
+PYQs
+
+📅 July 25
+
+COA → full revision
+
+PYQs
+
+📅 July 26
+
+Maths → full revision
+
+PYQs
+
+📅 July 27
+
+DSA → revision
+
+PYQs
+
+📅 July 28
+
+TOC → revision
+
+📅 July 29
+
+Compiler → revision
+
+📅 July 30
+
+Mixed PYQs (all subjects)
+
+📅 July 31 (Light)
+
+Weak areas fix
+
+📅 AUGUST — DAY-WISE PLAN
+🎯 AUGUST MASTER GOAL
+
+🔁 2nd + 3rd revision
+
+🧠 PYQ mastery
+
+🎯 Start mock tests
+
+⚙️ DAILY STRUCTURE (slightly changed)
+
+10:00–12:30 → Revision (1 subject)
+
+1:30–3:30 → PYQs
+
+3:45–4:45 → Weak areas
+
+8:30–9:30 → Light revision
+
+🗓️ WEEK 1 (Aug 1–7)
+📅 Aug 1 → DBMS
+📅 Aug 2 → OS
+📅 Aug 3 → CN
+📅 Aug 4 → COA
+📅 Aug 5 → Maths
+📅 Aug 6 → DSA
+📅 Aug 7 → TOC
+🗓️ WEEK 2 (Aug 8–14)
+📅 Aug 8 → Compiler
+📅 Aug 9 → DBMS
+📅 Aug 10 → OS
+📅 Aug 11 → CN
+📅 Aug 12 → COA
+📅 Aug 13 → Maths
+📅 Aug 14 → DSA
+🗓️ WEEK 3 (Aug 15–21)
+
+👉 Start Mock Tests (1–2 per week)
+
+📅 Aug 15 → Mock + Analysis
+📅 Aug 16 → Weak areas
+📅 Aug 17 → Revision
+📅 Aug 18 → PYQs
+📅 Aug 19 → Mock
+📅 Aug 20 → Analysis
+📅 Aug 21 → Light revision
+🗓️ WEEK 4 (Aug 22–31)
+📅 Aug 22 → Full revision cycle
+📅 Aug 23 → PYQs
+📅 Aug 24 → Mock
+📅 Aug 25 → Analysis
+📅 Aug 26 → Weak areas
+📅 Aug 27 → Revision
+📅 Aug 28 → PYQs
+📅 Aug 29 → Mock
+📅 Aug 30 → Analysis
+📅 Aug 31 → Light day
+🎯 FINAL RULES (ENDGAME)
+✅ PYQs = priority
+✅ Revision > new learning
+✅ Mock analysis > mock marks
+🧠 FINAL TRANSFORMATION
+
+If you follow full plan:
+
+March → momentum
+
+April → base
+
+May → core
+
+June → problem strength
+
+July → completion
+
+August → rank mode
+
+🔥 REAL TALK
+
+You already scored 475 in 1 month
+
+If you execute THIS properly:
+
+👉 650–700+ is absolutely realistic
+
+If you want the final edge:
+👉 I can give you:
+
+Exact mock strategy (which tests + when + how to analyse)
+
+OR
+
+Rank booster PYQ strategy (how toppers extract patterns)
