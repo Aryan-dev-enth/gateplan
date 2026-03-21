@@ -3,10 +3,10 @@ import React, { useState } from 'react';
 import useStore from '@/store/useStore';
 import { SUBJECTS } from '@/data/subjects';
 import { format } from 'date-fns';
-import { Target, TrendingDown } from 'lucide-react';
+import { Target, TrendingDown, Trash2 } from 'lucide-react';
 
 export default function QuestionTracker() {
-  const { topicStats, practiceLog, addPracticeEntry } = useStore();
+  const { topicStats, practiceLog, addPracticeEntry, deletePracticeEntry } = useStore();
   const [form, setForm] = useState({ subjectId: '', topicId: '', type: 'pyq', solved: '', correct: '', note: '' });
 
   const handleAdd = () => {
@@ -31,7 +31,6 @@ export default function QuestionTracker() {
   // Today's log
   const todayStr = format(new Date(), 'yyyy-MM-dd');
   const todayEntries = practiceLog[todayStr] || [];
-
   // All-time totals
   const allEntries = Object.values(practiceLog).flat();
   const totalPYQ = allEntries.filter(e => e.type === 'pyq').reduce((s, e) => s + e.solved, 0);
@@ -96,9 +95,17 @@ export default function QuestionTracker() {
                 const topic = SUBJECTS.flatMap(s => s.topics).find(t => t.id === e.topicId);
                 const acc = e.solved > 0 ? Math.round((e.correct / e.solved) * 100) : 0;
                 return (
-                  <div key={e.id} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--border)', fontSize: 13 }}>
+                  <div key={e.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '6px 0', borderBottom: '1px solid var(--border)', fontSize: 13 }}>
                     <span>{topic?.name || e.topicId}</span>
-                    <span style={{ color: 'var(--muted)' }}>{e.type.toUpperCase()} · {e.solved} Q · <span style={{ color: acc >= 70 ? 'var(--green)' : 'var(--yellow)' }}>{acc}%</span></span>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                      <span style={{ color: 'var(--muted)' }}>{e.type.toUpperCase()} · {e.solved} Q · <span style={{ color: acc >= 70 ? 'var(--green)' : 'var(--yellow)' }}>{acc}%</span></span>
+                      <button
+                        className="btn btn-ghost btn-sm"
+                        style={{ color: 'var(--red)', padding: '2px 6px' }}
+                        onClick={() => deletePracticeEntry(todayStr, e.id)}
+                        title="Delete entry"
+                      ><Trash2 size={11} /></button>
+                    </div>
                   </div>
                 );
               })}

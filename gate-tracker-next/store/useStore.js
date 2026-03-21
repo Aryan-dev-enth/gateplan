@@ -20,6 +20,15 @@ const initSubjectStats = () => {
   return stats;
 };
 
+// ── UNDO STACK (in-memory only) ───────────────────────────────────────────
+// Stores snapshots of the fields that were changed so we can revert
+let undoStack = []; // [{snapshot, label, ts}]
+const MAX_UNDO = 20;
+
+function pushUndo(label, snapshot) {
+  undoStack = [{ label, snapshot, ts: Date.now() }, ...undoStack].slice(0, MAX_UNDO);
+}
+
 // ── DB SYNC ─────────────────────────────────────────────────────────────────
 // Debounced — batches rapid changes into one write
 let saveTimer = null;
@@ -181,7 +190,6 @@ const useStore = create((set, get) => ({
   // ── UI ────────────────────────────────────────────────────────────────────
   activeTab: 'dashboard',
   setActiveTab: (tab) => set({ activeTab: tab }),
-
   // ── STUDY DATA ────────────────────────────────────────────────────────────
   topicStats: initTopicStats(),
   subjectStats: initSubjectStats(),
@@ -419,6 +427,149 @@ const useStore = create((set, get) => ({
 
   markTodayStudied: () => get().checkAndUpdateStreak(todayStr()),
   setWeeklyTarget: (h) => { set({ weeklyTarget: h }); scheduleSave(get); },
+
+  // ── UNDO ──────────────────────────────────────────────────────────────────
+  // toast: { message, id } shown by AppShell
+  undoToast: null,
+  clearUndoToast: () => set({ undoToast: null }),
+
+  undo: () => {
+    if (!undoStack.length) return;
+    const { snapshot } = undoStack.shift();
+    set(snapshot);
+    scheduleSave(get);
+    set({ undoToast: null });
+  },
+
+  // ── DELETE SLOT LOG ───────────────────────────────────────────────────────
+  // Reverses hours/questions that were accumulated when this slot was saved
+  deleteSlotLog: (date, slotId) => {
+    const s = get();
+    const log = s.dailyLogs[date]?.[slotId];
+    if (!log) return;
+
+    // Save snapshot for undo
+    pushUndo(`Slot log deleted`, {
+      dailyLogs: s.dailyLogs,
+      dailyHours: s.dailyHours,
+      topicStats: s.topicStats,
+      subjectStats: s.subjectStats,
+    });
+
+    const hoursToRemove = log.hoursStudied || 0;
+    const topicId = log.topic;
+
+    // Remove from dailyLogs
+    const newDayLogs = { ...s.dailyLogs[date] };
+    delete newDayLogs[slotId];
+    const newDailyLogs = { ...s.dailyLogs, [date]: newDayLogs };
+
+    // Subtract from dailyHours
+    const newDailyHours = {
+      ...s.dailyHours,
+      [date]: Math.max(0, (s.dailyHours[date] || 0) - hoursToRemove),
+    };
+
+    // Subtract from topicStats / subjectStats
+    let newTopicStats = { ...s.topicStats };
+    let newSubjectStats = { ...s.subjectStats };
+    if (topicId && hoursToRemove > 0) {
+      const subj = SUBJECTS.find(sub => sub.topics.find(t => t.id === topicId));
+      if (subj) {
+        newTopicStats = {
+          ...newTopicStats,
+          [topicId]: { ...newTopicStats[topicId], hoursSpent: Math.max(0, (newTopicStats[topicId]?.hoursSpent || 0) - hoursToRemove) },
+        };
+        newSubjectStats = {
+          ...newSubjectStats,
+          [subj.id]: { hoursSpent: Math.max(0, (newSubjectStats[subj.id]?.hoursSpent || 0) - hoursToRemove) },
+        };
+      }
+    }
+
+    set({ dailyLogs: newDailyLogs, dailyHours: newDailyHours, topicStats: newTopicStats, subjectStats: newSubjectStats,
+      undoToast: { message: 'Slot log deleted', id: Date.now() } });
+    scheduleSave(get);
+  },
+
+  // ── DELETE PRACTICE ENTRY ─────────────────────────────────────────────────
+  deletePracticeEntry: (date, entryId) => {
+    const s = get();
+    const entries = s.practiceLog[date] || [];
+    const entry = entries.find(e => e.id === entryId);
+    if (!entry) return;
+
+    pushUndo('Practice entry deleted', {
+      practiceLog: s.practiceLog,
+      topicStats: s.topicStats,
+    });
+
+    // Remove entry
+    const newEntries = entries.filter(e => e.id !== entryId);
+    const newPracticeLog = { ...s.practiceLog, [date]: newEntries };
+
+    // Reverse topicStats accumulation
+    const sk = entry.type === 'pyq' ? 'pyqSolved' : 'practiceSolved';
+    const ck = entry.type === 'pyq' ? 'pyqCorrect' : 'practiceCorrect';
+    const prev = s.topicStats[entry.topicId] || {};
+    const newTopicStats = {
+      ...s.topicStats,
+      [entry.topicId]: {
+        ...prev,
+        [sk]: Math.max(0, (prev[sk] || 0) - entry.solved),
+        [ck]: Math.max(0, (prev[ck] || 0) - entry.correct),
+      },
+    };
+
+    set({ practiceLog: newPracticeLog, topicStats: newTopicStats,
+      undoToast: { message: 'Practice entry deleted', id: Date.now() } });
+    scheduleSave(get);
+  },
+
+  // ── DELETE QUESTION LOG (from SubjectTracker inline log) ──────────────────
+  deleteQuestions: (topicId, type, solved, correct) => {
+    const s = get();
+    pushUndo('Question log deleted', { topicStats: s.topicStats });
+
+    const sk = type === 'pyq' ? 'pyqSolved' : 'practiceSolved';
+    const ck = type === 'pyq' ? 'pyqCorrect' : 'practiceCorrect';
+    const prev = s.topicStats[topicId] || {};
+    set({
+      topicStats: {
+        ...s.topicStats,
+        [topicId]: {
+          ...prev,
+          [sk]: Math.max(0, (prev[sk] || 0) - solved),
+          [ck]: Math.max(0, (prev[ck] || 0) - correct),
+        },
+      },
+      undoToast: { message: 'Question log deleted', id: Date.now() },
+    });
+    scheduleSave(get);
+  },
+
+  // ── DELETE MOCK TEST ──────────────────────────────────────────────────────
+  deleteMockTest: (id) => {
+    const s = get();
+    pushUndo('Mock test deleted', { mockTests: s.mockTests });
+    set({ mockTests: s.mockTests.filter(t => t.id !== id),
+      undoToast: { message: 'Mock test deleted', id: Date.now() } });
+    scheduleSave(get);
+  },
+
+  // ── UNMARK SLOT COMPLETE ──────────────────────────────────────────────────
+  unmarkSlotComplete: (date, slotId) => {
+    const s = get();
+    pushUndo('Completion undone', { dailyLogs: s.dailyLogs, streak: s.streak });
+    set(st => ({
+      dailyLogs: {
+        ...st.dailyLogs,
+        [date]: { ...st.dailyLogs[date], [slotId]: { ...st.dailyLogs[date]?.[slotId], completed: false } },
+      },
+      undoToast: { message: 'Marked incomplete', id: Date.now() },
+    }));
+    scheduleSave(get);
+  },
 }));
 
 export default useStore;

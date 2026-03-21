@@ -2,11 +2,11 @@
 import React, { useState } from 'react';
 import useStore from '@/store/useStore';
 import { SUBJECTS } from '@/data/subjects';
-import { FlaskConical, TrendingUp, Plus } from 'lucide-react';
+import { FlaskConical, TrendingUp, Plus, Trash2 } from 'lucide-react';
 import { format } from 'date-fns';
 
 export default function MockTests() {
-  const { mockTests, addMockTest } = useStore();
+  const { mockTests, addMockTest, deleteMockTest } = useStore();
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ date: format(new Date(), 'yyyy-MM-dd'), score: '', total: 100, duration: 180, weakSubjects: [], notes: '' });
 
@@ -114,20 +114,20 @@ export default function MockTests() {
                   <div>
                     <div style={{ fontWeight: 600, fontSize: 15 }}>
                       {test.score}/{test.total}
-                      <span style={{
-                        marginLeft: 10, fontSize: 18, fontWeight: 700,
-                        color: pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)',
-                      }}>{pct}%</span>
+                      <span style={{ marginLeft: 10, fontSize: 18, fontWeight: 700, color: pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)' }}>{pct}%</span>
                     </div>
-                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>
-                      {test.date} · {test.duration} min
-                    </div>
+                    <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{test.date} · {test.duration} min</div>
                   </div>
-                  <div className="progress-bar" style={{ width: 120, marginTop: 6 }}>
-                    <div className="progress-fill" style={{
-                      width: `${pct}%`,
-                      background: pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)',
-                    }} />
+                  <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+                    <div className="progress-bar" style={{ width: 100, marginTop: 6 }}>
+                      <div className="progress-fill" style={{ width: `${pct}%`, background: pct >= 70 ? 'var(--green)' : pct >= 50 ? 'var(--yellow)' : 'var(--red)' }} />
+                    </div>
+                    <button
+                      className="btn btn-ghost btn-sm"
+                      style={{ color: 'var(--red)' }}
+                      onClick={() => deleteMockTest(test.id)}
+                      title="Delete test"
+                    ><Trash2 size={13} /></button>
                   </div>
                 </div>
                 {test.weakSubjects?.length > 0 && (

@@ -1,5 +1,5 @@
 ﻿'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import useStore from '@/store/useStore';
 import Dashboard from './Dashboard';
 import DailyPlanner from './DailyPlanner';
@@ -23,15 +23,24 @@ const TABS = [
 ];
 
 export default function AppShell() {
-  const { activeTab, setActiveTab, username, logout } = useStore();
+  const { activeTab, setActiveTab, username, logout, undoToast, clearUndoToast, undo } = useStore();
   const [theme, setTheme] = useState('dark');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const toastTimer = useRef(null);
 
   useEffect(() => {
     const saved = localStorage.getItem('gate_theme') || 'dark';
     setTheme(saved);
     document.documentElement.setAttribute('data-theme', saved);
   }, []);
+
+  // Auto-dismiss undo toast after 5s
+  useEffect(() => {
+    if (!undoToast) return;
+    clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => clearUndoToast(), 5000);
+    return () => clearTimeout(toastTimer.current);
+  }, [undoToast]);
 
   const toggleTheme = () => {
     const next = theme === 'dark' ? 'light' : 'dark';
@@ -159,6 +168,32 @@ export default function AppShell() {
 
         {renderTab()}
       </main>
+
+      {/* Undo toast */}
+      {undoToast && (
+        <div style={{
+          position: 'fixed', bottom: 24, left: '50%', transform: 'translateX(-50%)',
+          background: 'var(--surface)', border: '1.5px solid var(--border)',
+          borderRadius: 12, padding: '12px 20px',
+          display: 'flex', alignItems: 'center', gap: 14,
+          boxShadow: 'var(--shadow-lg)', zIndex: 9999,
+          fontSize: 13, fontWeight: 500, color: 'var(--text)',
+          animation: 'slideUp 0.2s ease',
+          whiteSpace: 'nowrap',
+        }}>
+          <span>🗑 {undoToast.message}</span>
+          <button
+            className="btn btn-primary btn-sm"
+            onClick={() => { undo(); clearUndoToast(); }}
+          >
+            Undo
+          </button>
+          <button
+            onClick={clearUndoToast}
+            style={{ color: 'var(--muted)', padding: '2px 4px' }}
+          >✕</button>
+        </div>
+      )}
     </div>
   );
 }

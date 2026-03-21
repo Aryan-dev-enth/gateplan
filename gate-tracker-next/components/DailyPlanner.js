@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import useStore from '@/store/useStore';
 import { SUBJECTS, SLOTS } from '@/data/subjects';
 import { format, addDays, subDays } from 'date-fns';
-import { ChevronLeft, ChevronRight, Play, Square, RotateCcw, CheckCircle, Clock } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Square, RotateCcw, CheckCircle, Clock, Trash2 } from 'lucide-react';
 
 const fmt = (ms) => {
   const s = Math.floor(ms / 1000);
@@ -43,7 +43,7 @@ function TimerDisplay({ slotId }) {
 }
 
 function SlotCard({ slot, date }) {
-  const { dailyLogs, logSlot, markSlotComplete, assignSlot, getElapsed } = useStore();
+  const { dailyLogs, logSlot, markSlotComplete, unmarkSlotComplete, assignSlot, getElapsed, deleteSlotLog } = useStore();
   const log = dailyLogs[date]?.[slot.id] || {};
   const [editing, setEditing] = useState(false);
   const [form, setForm] = useState({ topic: log.topic || '', questions: log.questions || 0, notes: log.notes || '' });
@@ -77,6 +77,11 @@ function SlotCard({ slot, date }) {
         </div>
         <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
           {done && <span className="badge badge-done">✓ Done</span>}
+          {done && (
+            <button className="btn btn-ghost btn-sm" style={{ fontSize: 11 }} onClick={() => unmarkSlotComplete(date, slot.id)}>
+              Undo
+            </button>
+          )}
           {!done && (
             <button className="btn btn-ghost btn-sm" onClick={() => markSlotComplete(date, slot.id)}>
               <CheckCircle size={12} /> Mark Done
@@ -139,6 +144,16 @@ function SlotCard({ slot, date }) {
           {log.hoursStudied > 0 && <span className="tag" style={{ color: 'var(--green)' }}>{log.hoursStudied.toFixed(1)}h</span>}
           {log.questions > 0 && <span className="tag">{log.questions} Q</span>}
           {log.notes && <span className="tag">📝</span>}
+          {(log.topic || log.hoursStudied > 0 || log.questions > 0) && (
+            <button
+              className="btn btn-ghost btn-sm"
+              style={{ color: 'var(--red)', marginLeft: 'auto' }}
+              onClick={() => deleteSlotLog(date, slot.id)}
+              title="Delete this log entry"
+            >
+              <Trash2 size={12} /> Delete Log
+            </button>
+          )}
         </div>
       )}
     </div>
