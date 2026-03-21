@@ -9,7 +9,8 @@ import QuestionTracker from './QuestionTracker';
 import Analytics from './Analytics';
 import MockTests from './MockTests';
 import FocusTimer from './FocusTimer';
-import { LayoutDashboard, CalendarDays, BookOpen, AlertCircle, Target, BarChart2, FlaskConical, Timer, LogOut, Sun, Moon, Menu, X } from 'lucide-react';
+import Logs from './Logs';
+import { LayoutDashboard, CalendarDays, BookOpen, AlertCircle, Target, BarChart2, FlaskConical, Timer, ScrollText, LogOut, Sun, Moon, Menu, X } from 'lucide-react';
 
 const TABS = [
   { id: 'dashboard',  label: 'Dashboard',    icon: LayoutDashboard },
@@ -20,6 +21,7 @@ const TABS = [
   { id: 'backlog',    label: 'Backlog',       icon: AlertCircle },
   { id: 'analytics',  label: 'Analytics',     icon: BarChart2 },
   { id: 'mocks',      label: 'Mock Tests',    icon: FlaskConical },
+  { id: 'logs',       label: 'Logs',          icon: ScrollText },
 ];
 
 export default function AppShell() {
@@ -64,6 +66,7 @@ export default function AppShell() {
       case 'backlog':    return <Backlog />;
       case 'analytics':  return <Analytics />;
       case 'mocks':      return <MockTests />;
+      case 'logs':       return <Logs />;
       default:           return <Dashboard />;
     }
   };
