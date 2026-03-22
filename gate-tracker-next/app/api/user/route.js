@@ -14,6 +14,22 @@ export async function GET(request) {
   return NextResponse.json(user);
 }
 
+// DELETE /api/user — reset all study data (keeps account)
+export async function DELETE(request) {
+  const auth = await getAuthUser(request);
+  if (!auth) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+
+  await connectDB();
+  const reset = {
+    topicStats: {}, subjectStats: {}, dailyLogs: {}, dailyHours: {},
+    customSlotAssignments: {}, practiceLog: {}, backlog: [], mockTests: [],
+    streak: { current: 0, longest: 0, lastStudyDate: null, studiedDates: [] },
+    weeklyTarget: 45,
+  };
+  await User.findByIdAndUpdate(auth.userId, { $set: reset });
+  return NextResponse.json({ ok: true });
+}
+
 // PATCH /api/user — partial update any top-level field
 export async function PATCH(request) {
   const auth = await getAuthUser(request);

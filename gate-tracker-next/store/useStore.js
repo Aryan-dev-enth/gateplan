@@ -286,11 +286,25 @@ const useStore = create((set, get) => ({
   },
 
   markSlotComplete: (date, slotId) => {
-    set(s => ({
+    const s = get();
+    const log = s.dailyLogs[date]?.[slotId];
+    const topicId = log?.topic;
+
+    // Auto-mark the logged topic as done in SubjectTracker
+    let newTopicStats = s.topicStats;
+    if (topicId && !s.topicStats[topicId]?.done) {
+      newTopicStats = {
+        ...s.topicStats,
+        [topicId]: { ...s.topicStats[topicId], done: true },
+      };
+    }
+
+    set(st => ({
       dailyLogs: {
-        ...s.dailyLogs,
-        [date]: { ...s.dailyLogs[date], [slotId]: { ...s.dailyLogs[date]?.[slotId], completed: true } },
+        ...st.dailyLogs,
+        [date]: { ...st.dailyLogs[date], [slotId]: { ...st.dailyLogs[date]?.[slotId], completed: true } },
       },
+      topicStats: newTopicStats,
     }));
     get().checkAndUpdateStreak(date);
     scheduleSave(get);
@@ -328,48 +342,52 @@ const useStore = create((set, get) => ({
 
   // ── MISSED DAY SMART RESCHEDULE ───────────────────────────────────────────
   // Called on login/load. Detects missed days and adds them to backlog
-  // with intelligent rescheduling spread across next few days.
+  // preserving the original sequential order of the plan (topic 1 before topic 2).
+  // Does NOT auto-assign rescheduledTo — user picks fit-in or add-day.
   runMissedDayDetection: () => {
     const s = get();
     const today = todayStr();
-    const studiedDates = new Set(s.streak.studiedDates || []);
     const existingBacklogIds = new Set(s.backlog.map(b => b.id));
     const newBacklogItems = [];
 
-    // Look at all planned dates in the past
-    for (const date of Object.keys(DAILY_PLAN).sort()) {
+    // Walk plan dates in strict chronological order — preserves topic sequence
+    const planDates = Object.keys(DAILY_PLAN).sort();
+    let orderIdx = s.backlog.length; // continue numbering after existing items
+
+    for (const date of planDates) {
       if (date >= today) break;
       const slots = SLOTS.map(sl => ({
         ...sl,
         planned: s.customSlotAssignments[date]?.[sl.id] ?? DAILY_PLAN[date]?.[sl.id] ?? '',
       }));
       const logs = s.dailyLogs[date] || {};
-      const dayHasAnyCompletion = slots.some(sl => logs[sl.id]?.completed);
 
-      slots.forEach(sl => {
-        if (!sl.planned) return;
-        if (logs[sl.id]?.completed) return;
+      // Walk slots in their fixed order (slot1→slot4) — preserves intra-day sequence
+      for (const sl of slots) {
+        if (!sl.planned) continue;
+        if (logs[sl.id]?.completed) continue;
         const id = `${date}-${sl.id}`;
-        if (existingBacklogIds.has(id)) return;
+        if (existingBacklogIds.has(id)) continue;
 
-        // Smart priority: more recent missed = higher priority
-        const daysAgo = differenceInCalendarDays(new Date(today + 'T12:00:00'), new Date(date + 'T12:00:00'));
+        const daysAgo = differenceInCalendarDays(
+          new Date(today + 'T12:00:00'),
+          new Date(date + 'T12:00:00')
+        );
         const priority = daysAgo <= 2 ? 'High' : daysAgo <= 5 ? 'Medium' : 'Low';
-
-        // Smart reschedule: spread across next 1-3 days
-        const rescheduleOffset = Math.min(3, Math.ceil(newBacklogItems.length / 2) + 1);
-        const rescheduledTo = format(addDays(new Date(today + 'T12:00:00'), rescheduleOffset), 'yyyy-MM-dd');
 
         newBacklogItems.push({
           id, date, slotId: sl.id, task: sl.planned,
-          priority, rescheduledTo, addedAt: Date.now(),
-          autoRescheduled: true,
+          priority,
+          rescheduledTo: null,   // user must explicitly reschedule
+          addedAt: Date.now(),
+          autoRescheduled: false,
+          order: orderIdx++,     // sequential — topic 1 < topic 2
         });
-      });
+      }
     }
 
     if (newBacklogItems.length > 0) {
-      set(s => ({ backlog: [...s.backlog, ...newBacklogItems] }));
+      set(st => ({ backlog: [...st.backlog, ...newBacklogItems] }));
       scheduleSave(get);
     }
   },
@@ -383,6 +401,37 @@ const useStore = create((set, get) => ({
   rescheduleBacklog: (id, newDate) => {
     set(s => ({ backlog: s.backlog.map(b => b.id === id ? { ...b, rescheduledTo: newDate, autoRescheduled: false } : b) }));
     scheduleSave(get);
+  },
+
+  // Smart reschedule: 'fit' = squeeze into existing upcoming days (up to 2 extra/day)
+  // 'extend' = push to the day after the last planned date in DAILY_PLAN
+  rescheduleBacklogSmart: (id, mode) => {
+    const s = get();
+    const today = todayStr();
+    let targetDate;
+
+    if (mode === 'fit') {
+      // Find the nearest upcoming day that has < 2 backlog items already rescheduled to it
+      const rescheduledCounts = {};
+      s.backlog.forEach(b => {
+        if (b.rescheduledTo) rescheduledCounts[b.rescheduledTo] = (rescheduledCounts[b.rescheduledTo] || 0) + 1;
+      });
+      let offset = 1;
+      while (offset <= 14) {
+        const d = format(addDays(new Date(today + 'T12:00:00'), offset), 'yyyy-MM-dd');
+        if ((rescheduledCounts[d] || 0) < 2) { targetDate = d; break; }
+        offset++;
+      }
+      if (!targetDate) targetDate = format(addDays(new Date(today + 'T12:00:00'), 1), 'yyyy-MM-dd');
+    } else {
+      // 'extend' — day after the last date in DAILY_PLAN
+      const lastPlanDate = Object.keys(DAILY_PLAN).sort().pop();
+      targetDate = format(addDays(new Date(lastPlanDate + 'T12:00:00'), 1), 'yyyy-MM-dd');
+    }
+
+    set(st => ({ backlog: st.backlog.map(b => b.id === id ? { ...b, rescheduledTo: targetDate, autoRescheduled: false } : b) }));
+    scheduleSave(get);
+    return targetDate;
   },
 
   resolveBacklog: (id) => {
@@ -555,6 +604,17 @@ const useStore = create((set, get) => ({
     set({ mockTests: s.mockTests.filter(t => t.id !== id),
       undoToast: { message: 'Mock test deleted', id: Date.now() } });
     scheduleSave(get);
+  },
+
+  // ── DELETE ALL DATA ───────────────────────────────────────────────────────
+  deleteAllData: async () => {
+    const { token } = get();
+    if (!token) return;
+    await fetch('/api/user', {
+      method: 'DELETE',
+      headers: { Authorization: `Bearer ${token}` },
+    });
+    set({ ...get()._defaultData() });
   },
 
   // ── UNMARK SLOT COMPLETE ──────────────────────────────────────────────────

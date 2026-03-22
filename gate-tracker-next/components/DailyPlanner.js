@@ -42,6 +42,22 @@ function TimerDisplay({ slotId }) {
   );
 }
 
+// Try to match the planned text to a topic id by scanning all subject topics
+function inferTopicFromPlanned(planned) {
+  if (!planned) return '';
+  const lower = planned.toLowerCase();
+  let best = { id: '', score: 0 };
+  for (const s of SUBJECTS) {
+    for (const t of s.topics) {
+      // Score = number of words from topic name found in planned text
+      const words = t.name.toLowerCase().split(/\W+/).filter(w => w.length > 2);
+      const score = words.filter(w => lower.includes(w)).length;
+      if (score > best.score) best = { id: t.id, score };
+    }
+  }
+  return best.score > 0 ? best.id : '';
+}
+
 function SlotCard({ slot, date }) {
   const { dailyLogs, logSlot, markSlotComplete, unmarkSlotComplete, assignSlot, getElapsed, deleteSlotLog } = useStore();
   const log = dailyLogs[date]?.[slot.id] || {};
@@ -52,6 +68,14 @@ function SlotCard({ slot, date }) {
   useEffect(() => {
     setForm({ topic: log.topic || '', questions: log.questions || 0, notes: log.notes || '' });
   }, [log.topic, log.questions, log.notes]);
+
+  // When planned text changes and no topic is logged yet, update the inferred topic
+  useEffect(() => {
+    if (!log.topic) {
+      const inferred = inferTopicFromPlanned(slot.planned);
+      setForm(f => ({ ...f, topic: inferred }));
+    }
+  }, [slot.planned]);
 
   const handleSave = () => {
     const elapsed = getElapsed(slot.id);
@@ -139,7 +163,14 @@ function SlotCard({ slot, date }) {
         </div>
       ) : (
         <div style={{ marginTop: 10, display: 'flex', gap: 8, alignItems: 'center', flexWrap: 'wrap' }}>
-          <button className="btn btn-ghost btn-sm" onClick={() => setEditing(true)}>+ Log Progress</button>
+          <button className="btn btn-ghost btn-sm" onClick={() => {
+            // Pre-fill topic from planned text if not already logged
+            if (!log.topic) {
+              const inferred = inferTopicFromPlanned(slot.planned);
+              if (inferred) setForm(f => ({ ...f, topic: inferred }));
+            }
+            setEditing(true);
+          }}>+ Log Progress</button>
           {log.topic && <span className="tag">{SUBJECTS.flatMap(s => s.topics).find(t => t.id === log.topic)?.name}</span>}
           {log.hoursStudied > 0 && <span className="tag" style={{ color: 'var(--green)' }}>{log.hoursStudied.toFixed(1)}h</span>}
           {log.questions > 0 && <span className="tag">{log.questions} Q</span>}

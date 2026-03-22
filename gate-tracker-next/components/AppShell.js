@@ -10,11 +10,13 @@ import Analytics from './Analytics';
 import MockTests from './MockTests';
 import FocusTimer from './FocusTimer';
 import Logs from './Logs';
-import { LayoutDashboard, CalendarDays, BookOpen, AlertCircle, Target, BarChart2, FlaskConical, Timer, ScrollText, LogOut, Sun, Moon, Menu, X } from 'lucide-react';
+import Roadmap from './Roadmap';
+import { LayoutDashboard, CalendarDays, BookOpen, AlertCircle, Target, BarChart2, FlaskConical, Timer, ScrollText, LogOut, Sun, Moon, Menu, X, Trash2, Map } from 'lucide-react';
 
 const TABS = [
   { id: 'dashboard',  label: 'Dashboard',    icon: LayoutDashboard },
   { id: 'planner',    label: 'Daily Planner', icon: CalendarDays },
+  { id: 'roadmap',    label: 'Roadmap',       icon: Map },
   { id: 'focus',      label: 'Focus Timer',   icon: Timer },
   { id: 'subjects',   label: 'Subjects',      icon: BookOpen },
   { id: 'questions',  label: 'Questions',     icon: Target },
@@ -25,9 +27,10 @@ const TABS = [
 ];
 
 export default function AppShell() {
-  const { activeTab, setActiveTab, username, logout, undoToast, clearUndoToast, undo } = useStore();
+  const { activeTab, setActiveTab, username, logout, undoToast, clearUndoToast, undo, deleteAllData } = useStore();
   const [theme, setTheme] = useState('dark');
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const toastTimer = useRef(null);
 
   useEffect(() => {
@@ -60,6 +63,7 @@ export default function AppShell() {
     switch (activeTab) {
       case 'dashboard':  return <Dashboard />;
       case 'planner':    return <DailyPlanner />;
+      case 'roadmap':    return <Roadmap />;
       case 'focus':      return <FocusTimer />;
       case 'subjects':   return <SubjectTracker />;
       case 'questions':  return <QuestionTracker />;
@@ -145,6 +149,13 @@ export default function AppShell() {
           >
             <LogOut size={12} /> Logout
           </button>
+          <button
+            className="btn btn-sm"
+            style={{ width: '100%', justifyContent: 'center', background: 'transparent', color: 'var(--danger, #ef4444)', border: '1.5px solid var(--danger, #ef4444)', borderRadius: 8, fontSize: 12, fontWeight: 600, padding: '6px 10px', display: 'flex', alignItems: 'center', gap: 6, cursor: 'pointer' }}
+            onClick={() => setConfirmDelete(true)}
+          >
+            <Trash2 size={12} /> Delete All Data
+          </button>
           <div style={{ fontSize: 10, color: 'var(--muted)', textAlign: 'center' }}>Synced to MongoDB</div>
         </div>
       </aside>
@@ -195,6 +206,38 @@ export default function AppShell() {
             onClick={clearUndoToast}
             style={{ color: 'var(--muted)', padding: '2px 4px' }}
           >✕</button>
+        </div>
+      )}
+      {/* Confirm delete all data modal */}
+      {confirmDelete && (
+        <div style={{
+          position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 10000,
+        }}>
+          <div style={{
+            background: 'var(--surface)', border: '1.5px solid var(--border)',
+            borderRadius: 16, padding: '28px 28px 24px', maxWidth: 360, width: '90%',
+            boxShadow: 'var(--shadow-lg)',
+          }}>
+            <div style={{ fontSize: 18, fontWeight: 700, color: 'var(--text)', marginBottom: 8 }}>Delete all data?</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24, lineHeight: 1.6 }}>
+              This will permanently erase all your study logs, topic progress, streaks, mock tests, and backlog. Your account stays — only the data is wiped.
+            </div>
+            <div style={{ display: 'flex', gap: 10 }}>
+              <button
+                style={{ flex: 1, padding: '10px', borderRadius: 10, background: 'var(--danger, #ef4444)', color: '#fff', fontWeight: 700, fontSize: 13, cursor: 'pointer', border: 'none' }}
+                onClick={async () => { await deleteAllData(); setConfirmDelete(false); }}
+              >
+                Yes, delete everything
+              </button>
+              <button
+                style={{ flex: 1, padding: '10px', borderRadius: 10, background: 'var(--surface2)', color: 'var(--text)', fontWeight: 600, fontSize: 13, cursor: 'pointer', border: '1.5px solid var(--border)' }}
+                onClick={() => setConfirmDelete(false)}
+              >
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>
