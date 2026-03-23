@@ -121,21 +121,24 @@ export default function ModuleClient({
             return (
               <div
                 key={lecture.id}
-                className="glass flex items-center gap-4 px-4 py-3.5 transition-all duration-200 hover:scale-[1.005] fade-in cursor-pointer"
+                className="glass flex items-center gap-4 px-4 py-3.5 transition-all duration-200 fade-in"
                 style={{
                   animationDelay: `${i * 0.03}s`,
                   borderColor: isDone ? "rgba(34,211,165,0.2)" : undefined,
                   background: isDone ? "rgba(34,211,165,0.04)" : undefined,
+                  cursor: lecture.isLecture ? "pointer" : "default",
+                  opacity: lecture.isLecture ? 1 : 0.65,
                 }}
-                onClick={() => handleToggle(lecture.id)}
+                onClick={() => lecture.isLecture && handleToggle(lecture.id)}
               >
                 <div className="flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center transition-all duration-200"
                   style={{
                     background: isDone ? "var(--green)" : "transparent",
-                    border: `2px solid ${isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
+                    border: `2px solid ${!lecture.isLecture ? "transparent" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
                     boxShadow: isDone ? "0 0 10px rgba(34,211,165,0.4)" : "none",
+                    visibility: lecture.isLecture ? "visible" : "hidden",
                   }}>
-                  {isDone && (
+                  {isDone && lecture.isLecture && (
                     <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none">
                       <path d="M2 6l3 3 5-5" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>

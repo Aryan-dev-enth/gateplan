@@ -203,20 +203,23 @@ export default function SubjectClient({
 
                           {/* Lecture row */}
                           <div
-                            className="flex-1 flex items-center gap-3 pr-4 py-2 cursor-pointer rounded-xl mr-2 transition-all hover:opacity-90"
+                            className="flex-1 flex items-center gap-3 pr-4 py-2 rounded-xl mr-2 transition-all"
                             style={{
                               background: isDone ? "rgba(34,211,165,0.04)" : "transparent",
+                              cursor: lecture.isLecture ? "pointer" : "default",
+                              opacity: lecture.isLecture ? 1 : 0.6,
                             }}
-                            onClick={() => handleToggle(lecture.id)}
+                            onClick={() => lecture.isLecture && handleToggle(lecture.id)}
                           >
-                            {/* Checkbox */}
+                            {/* Checkbox — only for lectures */}
                             <div className="flex-shrink-0 w-4 h-4 rounded flex items-center justify-center transition-all duration-200"
                               style={{
                                 background: isDone ? "var(--green)" : "transparent",
-                                border: `1.5px solid ${isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
+                                border: `1.5px solid ${!lecture.isLecture ? "transparent" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
                                 boxShadow: isDone ? "0 0 8px rgba(34,211,165,0.4)" : "none",
+                                visibility: lecture.isLecture ? "visible" : "hidden",
                               }}>
-                              {isDone && (
+                              {isDone && lecture.isLecture && (
                                 <svg className="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none">
                                   <path d="M2 6l3 3 5-5" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
