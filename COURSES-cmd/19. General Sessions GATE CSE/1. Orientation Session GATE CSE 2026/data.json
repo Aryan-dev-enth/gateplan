@@ -1,0 +1,13 @@
+[
+  {
+    "type": "liveclass",
+    "id": "67b20376315e43367db8cdce",
+    "course": "General Sessions GATE CSE",
+    "module": "Orientation Session GATE CSE 2026",
+    "title": "1. Orientation Session - GATE CSE 2026",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67b237813a6a8d0f70d0af3b/u/6451e539e4b0e02eaea3faf1/t/def38293e200b7f0b2cd558f5d52519a/p/assets/videos/60e975430cf20278db21ff30/2025/02/16/67b237813a6a8d0f70d0af3b/index.m3u8",
+    "key": "579ec2e412281213acdc3b0d5bb0fcaf",
+    "duration": 8077,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67b237813a6a8d0f70d0af3b/u/6451e539e4b0e02eaea3faf1/t/def38293e200b7f0b2cd558f5d52519a/p/assets/videos/60e975430cf20278db21ff30/2025/02/16/67b237813a6a8d0f70d0af3b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Orientation Session - GATE CSE 2026' --save-dir './COURSES/19. General Sessions GATE CSE/1. Orientation Session GATE CSE 2026' --custom-hls-key '579ec2e412281213acdc3b0d5bb0fcaf'"
+  }
+]

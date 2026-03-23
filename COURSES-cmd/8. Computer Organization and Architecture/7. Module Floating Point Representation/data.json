@@ -1,0 +1,68 @@
+[
+  {
+    "type": "liveclass",
+    "id": "659ec0e7e4b0e8047a7bab98",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "1. Lecture 1: Introduction to Fixed Point Representation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/659ee680e4b0e8047a7bbdef/u/6451e539e4b0e02eaea3faf1/t/1dc16f18cb032971e484b2d98dd814dc/p/assets/videos/60e975430cf20278db21ff30/2024/01/10/659ee680e4b0e8047a7bbdef/index.m3u8",
+    "key": "43c85e21d7043f033b9a3cbfb7fc512f",
+    "duration": 5777,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/659ee680e4b0e8047a7bbdef/u/6451e539e4b0e02eaea3faf1/t/1dc16f18cb032971e484b2d98dd814dc/p/assets/videos/60e975430cf20278db21ff30/2024/01/10/659ee680e4b0e8047a7bbdef/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1: Introduction to Fixed Point Representation' --save-dir './COURSES/8. Computer Organization and Architecture/7. Module Floating Point Representation' --custom-hls-key '43c85e21d7043f033b9a3cbfb7fc512f'"
+  },
+  {
+    "type": "pdf",
+    "id": "659fc0abe4b07e3d97e760e7",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "2. Annotated Notes -Fixed Point Representation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/659fc0abe4b07e3d97e760e7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/11/659fc0abe4b07e3d97e760e7/659fc0abe4b07e3d97e760e7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65b279a4e4b0155c468c6455",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "3. Lecture 2: Introduction to Floating Point Representation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65b297a6e4b0e82006f84e18/u/6451e539e4b0e02eaea3faf1/t/718d6c9a68f348d0056dbbc9316aaf4e/p/assets/videos/60e975430cf20278db21ff30/2024/01/25/65b297a6e4b0e82006f84e18/index.m3u8",
+    "key": "91c0f46250b82ee0bbcb6680c84f5bfc",
+    "duration": 3904,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65b297a6e4b0e82006f84e18/u/6451e539e4b0e02eaea3faf1/t/718d6c9a68f348d0056dbbc9316aaf4e/p/assets/videos/60e975430cf20278db21ff30/2024/01/25/65b297a6e4b0e82006f84e18/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2: Introduction to Floating Point Representation' --save-dir './COURSES/8. Computer Organization and Architecture/7. Module Floating Point Representation' --custom-hls-key '91c0f46250b82ee0bbcb6680c84f5bfc'"
+  },
+  {
+    "type": "pdf",
+    "id": "65b293c7e4b003237353c833",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "4. Annotated Notes -Floating Point Representation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65b293c7e4b003237353c833/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/25/65b293c7e4b003237353c833/65b293c7e4b003237353c833_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65b4b96fe4b0fff3fd9d55d4",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "5. Lecture 3: Floating Point Representation GATE PYQs and Special Forms (Denorms, Nans, Infinity)",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65b4dd83e4b0b7356317a612/u/6451e539e4b0e02eaea3faf1/t/b5c7bb9279521af42f03b611895bc3e5/p/assets/videos/60e975430cf20278db21ff30/2024/01/27/65b4dd83e4b0b7356317a612/index.m3u8",
+    "key": "1bcc965706a20e3374889c242e7c29d2",
+    "duration": 5972,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65b4dd83e4b0b7356317a612/u/6451e539e4b0e02eaea3faf1/t/b5c7bb9279521af42f03b611895bc3e5/p/assets/videos/60e975430cf20278db21ff30/2024/01/27/65b4dd83e4b0b7356317a612/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3: Floating Point Representation GATE PYQs and Special Forms (Denorms, Nans, Infinity)' --save-dir './COURSES/8. Computer Organization and Architecture/7. Module Floating Point Representation' --custom-hls-key '1bcc965706a20e3374889c242e7c29d2'"
+  },
+  {
+    "type": "pdf",
+    "id": "65b501d0e4b092e5fd644db9",
+    "course": "Computer Organization and Architecture",
+    "module": "Module: Floating Point Representation",
+    "title": "6. Annotated Notes -Denorm Floats",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65b501d0e4b092e5fd644db9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/27/65b501d0e4b092e5fd644db9/65b501d0e4b092e5fd644db9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

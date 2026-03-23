@@ -1,0 +1,134 @@
+[
+  {
+    "type": "video",
+    "id": "66f3523cd2400b71a9b547da",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "1. Lecture 1 - I/O Interface, Memory Mapped I/O, Isolated I/O",
+    "url": "https://youtu.be/VMIFc5y3peE",
+    "key": "this-is-yt-video",
+    "duration": 8785,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66f35806cbdaef67205e971d",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "2. Annotated Notes - Lecture 1 - I/O Interface, Memory Mapped I/O, Isolated I/O",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66f35806cbdaef67205e971d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/25/66f35806cbdaef67205e971d/66f35806cbdaef67205e971d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66f5396429e66b10019ca29d",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "3. Lecture 2 - Programmed I/O & Interrupt Driven I/O",
+    "url": "https://youtu.be/Tb7KEdrRIPg",
+    "key": "this-is-yt-video",
+    "duration": 11277,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66f53901d230ce2a2a2d44fb",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "4. Annotated Notes - Lecture 2 - Programmed I/O & Interrupt Driven I/O",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66f53901d230ce2a2a2d44fb/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/26/66f53901d230ce2a2a2d44fb/66f53901d230ce2a2a2d44fb_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66fb181e6a53d33cd24918ba",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "5. Lecture 3A - Interrupts & Interrupt Processing",
+    "url": "https://youtu.be/0HJYI3-JQeU",
+    "key": "this-is-yt-video",
+    "duration": 8153,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66fb1e4b48159f0bc3dc4655",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "6. Annotated Notes - Lecture 3A - Interrupts & Interrupt Processing",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66fb1e4b48159f0bc3dc4655/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/30/66fb1e4b48159f0bc3dc4655/66fb1e4b48159f0bc3dc4655_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66fd477f47b2277ec58a18fd",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "7. Lecture 3B - Handling Multiple Interrupts & GATE PYQs",
+    "url": "https://youtu.be/RsoHm9cSM8E",
+    "key": "this-is-yt-video",
+    "duration": 8848,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66fda76dfda32a49c581e0ee",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "8. Annotated Notes - Lecture 3B - Handling Multiple Interrupts & GATE PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66fda76dfda32a49c581e0ee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/10/02/66fda76dfda32a49c581e0ee/66fda76dfda32a49c581e0ee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6722125cd54e7348167b6eaa",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "9. Lecture 4 - DMA - Direct Memory Access",
+    "url": "https://youtu.be/cuSGYsffiv4?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 7677,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "672210c9cf0a1b6a3ab3efa3",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "10. Annotated Notes - Lecture 4 - DMA - Direct Memory Access",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/672210c9cf0a1b6a3ab3efa3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/10/30/672210c9cf0a1b6a3ab3efa3/672210c9cf0a1b6a3ab3efa3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "672563b59402601559e54261",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "11. Lecture 5 - DMA ALL GATE PYQs & Practice",
+    "url": "https://youtu.be/v3qnkhEu72s",
+    "key": "this-is-yt-video",
+    "duration": 12115,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6725795985ad566a07ac546c",
+    "course": "Computer Organization and Architecture",
+    "module": "Module - I/O Interfacing, Interrupts & DMA",
+    "title": "12. Annotated Notes - Lecture 5 - DMA ALL GATE PYQs & Practice",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6725795985ad566a07ac546c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/02/6725795985ad566a07ac546c/6725795985ad566a07ac546c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

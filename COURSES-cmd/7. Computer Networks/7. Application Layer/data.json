@@ -1,0 +1,57 @@
+[
+  {
+    "type": "video",
+    "id": "67496e95b879df0d7ef9f296",
+    "course": "Computer Networks",
+    "module": "Application Layer",
+    "title": "1. HTTP",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95b879df0d7ef9f296/u/6451e539e4b0e02eaea3faf1/t/23f08f486f8fe4b29ea61cbf3812724e/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95b879df0d7ef9f296/index.m3u8",
+    "key": "f7a29a2989c8b3cb764723f27d6197d9",
+    "duration": 433,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95b879df0d7ef9f296/u/6451e539e4b0e02eaea3faf1/t/23f08f486f8fe4b29ea61cbf3812724e/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95b879df0d7ef9f296/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. HTTP' --save-dir './COURSES/7. Computer Networks/7. Application Layer' --custom-hls-key 'f7a29a2989c8b3cb764723f27d6197d9'"
+  },
+  {
+    "type": "video",
+    "id": "67496e9519a971624a5c5d6d",
+    "course": "Computer Networks",
+    "module": "Application Layer",
+    "title": "2. DNS",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e9519a971624a5c5d6d/u/6451e539e4b0e02eaea3faf1/t/fe300627169b7d0369caf0d357c6e092/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e9519a971624a5c5d6d/index.m3u8",
+    "key": "fbfef9ac66d605e6f374e313b120d4f8",
+    "duration": 1343,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e9519a971624a5c5d6d/u/6451e539e4b0e02eaea3faf1/t/fe300627169b7d0369caf0d357c6e092/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e9519a971624a5c5d6d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. DNS' --save-dir './COURSES/7. Computer Networks/7. Application Layer' --custom-hls-key 'fbfef9ac66d605e6f374e313b120d4f8'"
+  },
+  {
+    "type": "video",
+    "id": "67496e95789e960e05b3e3ab",
+    "course": "Computer Networks",
+    "module": "Application Layer",
+    "title": "3. SMTP & POP3",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95789e960e05b3e3ab/u/6451e539e4b0e02eaea3faf1/t/6025f2fba377cc145adb4fce4589792a/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95789e960e05b3e3ab/index.m3u8",
+    "key": "dfdffe41bfd11fc9acd4f44327bc1d14",
+    "duration": 1247,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95789e960e05b3e3ab/u/6451e539e4b0e02eaea3faf1/t/6025f2fba377cc145adb4fce4589792a/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95789e960e05b3e3ab/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. SMTP & POP3' --save-dir './COURSES/7. Computer Networks/7. Application Layer' --custom-hls-key 'dfdffe41bfd11fc9acd4f44327bc1d14'"
+  },
+  {
+    "type": "video",
+    "id": "67496e95b7688f32a3940bdb",
+    "course": "Computer Networks",
+    "module": "Application Layer",
+    "title": "4. FTP",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95b7688f32a3940bdb/u/6451e539e4b0e02eaea3faf1/t/55d87b33d8790186e11c960063d7a1ee/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95b7688f32a3940bdb/index.m3u8",
+    "key": "649eb91d2f3537180cdca29b58eac93c",
+    "duration": 361,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67496e95b7688f32a3940bdb/u/6451e539e4b0e02eaea3faf1/t/55d87b33d8790186e11c960063d7a1ee/p/assets/videos/60e975430cf20278db21ff30/2024/11/29/67496e95b7688f32a3940bdb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. FTP' --save-dir './COURSES/7. Computer Networks/7. Application Layer' --custom-hls-key '649eb91d2f3537180cdca29b58eac93c'"
+  },
+  {
+    "type": "pdf",
+    "id": "655f4cf9e4b0f3265cc97d45",
+    "course": "Computer Networks",
+    "module": "Application Layer",
+    "title": "5. Annotated Notes Application layer",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655f4cf9e4b0f3265cc97d45/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/23/655f4cf9e4b0f3265cc97d45/655f4cf9e4b0f3265cc97d45_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

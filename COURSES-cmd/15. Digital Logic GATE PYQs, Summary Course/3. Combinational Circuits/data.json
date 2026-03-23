@@ -1,0 +1,134 @@
+[
+  {
+    "type": "video",
+    "id": "689de99d43487814708c3d31",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "1. Lecture 1 - Multiplexer, Demux",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/689de99d43487814708c3d31/u/6451e539e4b0e02eaea3faf1/t/046900383e8a198315fafd31ef849a68/p/assets/videos/60e975430cf20278db21ff30/2025/08/14/689de99d43487814708c3d31/index.m3u8",
+    "key": "3f04a8ba652b2115b3a4c6fc77f20d66",
+    "duration": 6633,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/689de99d43487814708c3d31/u/6451e539e4b0e02eaea3faf1/t/046900383e8a198315fafd31ef849a68/p/assets/videos/60e975430cf20278db21ff30/2025/08/14/689de99d43487814708c3d31/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Multiplexer, Demux' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/3. Combinational Circuits' --custom-hls-key '3f04a8ba652b2115b3a4c6fc77f20d66'"
+  },
+  {
+    "type": "article",
+    "id": "68c892044ad2947718c92008",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "2. Demux Question - NIELIT Exam",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/68c892044ad2947718c92008/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "68c891bd73c0b61de5e893d7",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "3. Annotated Notes - Lecture 1 - Multiplexer, Demux",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68c891bd73c0b61de5e893d7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/09/15/68c891bd73c0b61de5e893d7/68c891bd73c0b61de5e893d7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "689a0a535e354c3ad22eded2",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "4. Multiplexer - ALL GATE CS PYQs",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/689a0a535e354c3ad22eded2/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "689a0aecdcd43d0a211fe620",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "5. Multiplexer - ALL GATE EC,EE,IN PYQs",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/689a0aecdcd43d0a211fe620/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6664c34c476a4740f51abd7f",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "6. GATE 2006 Question & Detailed Video Solution",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/6664c34c476a4740f51abd7f/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6692c894b264cc2bba1efdcd",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "7. Lecture 2 - Functional Completeness",
+    "url": "https://youtu.be/HpYSRiC-NTg?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 7385,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "666cd45d121b0a438e03abb3",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "8. Annotated Notes - Functional Completeness - Complete Summary",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/666cd45d121b0a438e03abb3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/06/14/666cd45d121b0a438e03abb3/666cd45d121b0a438e03abb3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "689a130cd378445c12a5cf01",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "9. Functional Completeness - ALL GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/689a130cd378445c12a5cf01/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "689cafc054996823509d758b",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "10. Lecture 3 - Decoder, Encoder, Priority Encoder",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/689cfeb1824a8458d34c6f86/u/6451e539e4b0e02eaea3faf1/t/a935fdf72e4fd5a00598f29734e551d8/p/assets/videos/60e975430cf20278db21ff30/2025/08/13/689cfeb1824a8458d34c6f86/index.m3u8",
+    "key": "d7484ad070c8a4c6b3f5655700032b29",
+    "duration": 10998,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/689cfeb1824a8458d34c6f86/u/6451e539e4b0e02eaea3faf1/t/a935fdf72e4fd5a00598f29734e551d8/p/assets/videos/60e975430cf20278db21ff30/2025/08/13/689cfeb1824a8458d34c6f86/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 3 - Decoder, Encoder, Priority Encoder' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/3. Combinational Circuits' --custom-hls-key 'd7484ad070c8a4c6b3f5655700032b29'"
+  },
+  {
+    "type": "pdf",
+    "id": "68c86794db78813420a52a43",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "11. Annotated Notes - Lecture 3 - Decoder, Encoder, Priority Encoder",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68c86794db78813420a52a43/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/09/15/68c86794db78813420a52a43/68c86794db78813420a52a43_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "666348a560d4935a48da263e",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Combinational Circuits",
+    "title": "12. Combinational Circuits GATE PYQs Playlist",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/666348a560d4935a48da263e/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

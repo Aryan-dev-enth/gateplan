@@ -1,0 +1,90 @@
+[
+  {
+    "type": "liveclass",
+    "id": "692d7b1d62c6a82db9c08d78",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "1. Lecture 1 - FIRST, FOLLOW, Left Factoring, Left Recursion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/692e1a8196e9103ea3e1e300/u/6451e539e4b0e02eaea3faf1/t/250f38cae802acea352204ea77f154c2/p/assets/videos/60e975430cf20278db21ff30/2025/12/01/692e1a8196e9103ea3e1e300/index.m3u8",
+    "key": "cb789c1543561fde307e784bbf9394ba",
+    "duration": 14073,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/692e1a8196e9103ea3e1e300/u/6451e539e4b0e02eaea3faf1/t/250f38cae802acea352204ea77f154c2/p/assets/videos/60e975430cf20278db21ff30/2025/12/01/692e1a8196e9103ea3e1e300/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - FIRST, FOLLOW, Left Factoring, Left Recursion' --save-dir './COURSES/9. Compiler Design/2. Module 2 - Syntax Analysis, Top Down Parsing' --custom-hls-key 'cb789c1543561fde307e784bbf9394ba'"
+  },
+  {
+    "type": "pdf",
+    "id": "692e196b96e9103ea3e1e2a0",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "2. Annotated Notes - Lecture 1 - FIRST, FOLLOW, Left Factoring, Left Recursion",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/692e196b96e9103ea3e1e2a0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/01/692e196b96e9103ea3e1e2a0/692e196b96e9103ea3e1e2a0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "69304e63d70d8d4323b4f0b2",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "3. Lecture 2 - Ambiguity Elimination, Precedence & Associativity",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6930b8254433c022b6a022ff/u/6451e539e4b0e02eaea3faf1/t/8816427eb073a0d70cc5f2ae439d428f/p/assets/videos/60e975430cf20278db21ff30/2025/12/03/6930b8254433c022b6a022ff/index.m3u8",
+    "key": "5fb2002e6a53bc074130741f8ff670f7",
+    "duration": 12677,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6930b8254433c022b6a022ff/u/6451e539e4b0e02eaea3faf1/t/8816427eb073a0d70cc5f2ae439d428f/p/assets/videos/60e975430cf20278db21ff30/2025/12/03/6930b8254433c022b6a022ff/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 - Ambiguity Elimination, Precedence & Associativity' --save-dir './COURSES/9. Compiler Design/2. Module 2 - Syntax Analysis, Top Down Parsing' --custom-hls-key '5fb2002e6a53bc074130741f8ff670f7'"
+  },
+  {
+    "type": "pdf",
+    "id": "6931671fb003a76adf05de61",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "4. Annotated Notes - Lecture 2 - Ambiguity Elimination, Precedence & Associativity",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6931671fb003a76adf05de61/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/04/6931671fb003a76adf05de61/6931671fb003a76adf05de61_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6933b261ad86b5483c52c1f1",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "5. Lecture 3 - LL1 Parser",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6934196f21046b040bb7f920/u/6451e539e4b0e02eaea3faf1/t/cb3ea63f3842f8773d2968890d430b66/p/assets/videos/60e975430cf20278db21ff30/2025/12/06/6934196f21046b040bb7f920/index.m3u8",
+    "key": "590b2be665403526410c43ca57ec6de9",
+    "duration": 15149,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6934196f21046b040bb7f920/u/6451e539e4b0e02eaea3faf1/t/cb3ea63f3842f8773d2968890d430b66/p/assets/videos/60e975430cf20278db21ff30/2025/12/06/6934196f21046b040bb7f920/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3 - LL1 Parser' --save-dir './COURSES/9. Compiler Design/2. Module 2 - Syntax Analysis, Top Down Parsing' --custom-hls-key '590b2be665403526410c43ca57ec6de9'"
+  },
+  {
+    "type": "pdf",
+    "id": "6934782dd0bfce52dbf7ed1d",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "6. Annotated Notes - Lecture 3 - LL1 Parser",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6934782dd0bfce52dbf7ed1d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/06/6934782dd0bfce52dbf7ed1d/6934782dd0bfce52dbf7ed1d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6936e9f72a1ce00b1cdc0587",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "7. Lecture 4 - Recursive Descent Parser",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69372d8ba08e192574daeb39/u/6451e539e4b0e02eaea3faf1/t/85970cf760237c771db953cab9e25dea/p/assets/videos/60e975430cf20278db21ff30/2025/12/08/69372d8ba08e192574daeb39/index.m3u8",
+    "key": "6890e3093f11de21e9a24550fd40b709",
+    "duration": 9649,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69372d8ba08e192574daeb39/u/6451e539e4b0e02eaea3faf1/t/85970cf760237c771db953cab9e25dea/p/assets/videos/60e975430cf20278db21ff30/2025/12/08/69372d8ba08e192574daeb39/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 4 - Recursive Descent Parser' --save-dir './COURSES/9. Compiler Design/2. Module 2 - Syntax Analysis, Top Down Parsing' --custom-hls-key '6890e3093f11de21e9a24550fd40b709'"
+  },
+  {
+    "type": "pdf",
+    "id": "6937578bd95ea2167f277786",
+    "course": "Compiler Design",
+    "module": "Module 2 - Syntax Analysis, Top Down Parsing",
+    "title": "8. Annotated Notes - Lecture 4 - Recursive Descent Parser",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6937578bd95ea2167f277786/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/08/6937578bd95ea2167f277786/6937578bd95ea2167f277786_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

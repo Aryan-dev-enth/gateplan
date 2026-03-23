@@ -1,0 +1,178 @@
+[
+  {
+    "type": "video",
+    "id": "653398eae4b00cd977798a70",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "1. Lecture 20:: Media Access Control Protocols - Aloha",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653398eae4b00cd977798a70/u/6451e539e4b0e02eaea3faf1/t/d7bcb98479778ca693a5ab1dad6997bc/p/assets/videos/60e975430cf20278db21ff30/2023/10/21/653398eae4b00cd977798a70/index.m3u8",
+    "key": "5365f6999a7d38cd4962492359f45220",
+    "duration": 9254,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653398eae4b00cd977798a70/u/6451e539e4b0e02eaea3faf1/t/d7bcb98479778ca693a5ab1dad6997bc/p/assets/videos/60e975430cf20278db21ff30/2023/10/21/653398eae4b00cd977798a70/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 20:: Media Access Control Protocols - Aloha' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key '5365f6999a7d38cd4962492359f45220'"
+  },
+  {
+    "type": "pdf",
+    "id": "6533b5dae4b096588bac8bb3",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "2. Annotated Notes Lecture 20 Aloha",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6533b5dae4b096588bac8bb3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/21/6533b5dae4b096588bac8bb3/6533b5dae4b096588bac8bb3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "65344816e4b056625fec3c4e",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "3. Lecture 21 Efficiency and Throughput of Aloha",
+    "url": "https://www.goclasses.in/s/courses/62e770ae0cf29f3db8f01636/articles/65344816e4b056625fec3c4e/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6536c6dce4b0987722582b49",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "4. Annotated Notes Lecture 21 Efficiency and Throughput of Aloha",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6536c6dce4b0987722582b49/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/23/6536c6dce4b0987722582b49/6536c6dce4b0987722582b49_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65363657e4b09e499f88b051",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "5. Lecture 22 CSMA CD and Backoff Algorithm",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65365ed8e4b0388425c41b1c/u/6451e539e4b0e02eaea3faf1/t/a08b1935d47d77537b36553c97765461/p/assets/videos/60e975430cf20278db21ff30/2023/10/23/65365ed8e4b0388425c41b1c/index.m3u8",
+    "key": "fdd212990444cbdd20bcd8e4069bb7c4",
+    "duration": 5819,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65365ed8e4b0388425c41b1c/u/6451e539e4b0e02eaea3faf1/t/a08b1935d47d77537b36553c97765461/p/assets/videos/60e975430cf20278db21ff30/2023/10/23/65365ed8e4b0388425c41b1c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 22 CSMA CD and Backoff Algorithm' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key 'fdd212990444cbdd20bcd8e4069bb7c4'"
+  },
+  {
+    "type": "pdf",
+    "id": "65366414e4b0d7a007421569",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "6. Annotated Notes Lecture 22 CSMA CD",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65366414e4b0d7a007421569/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/23/65366414e4b0d7a007421569/65366414e4b0d7a007421569_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65382360e4b01c0e1ca13f37",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "7. Lecture 23 Backoff Algorithm for Random Access Protocols",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65382360e4b01c0e1ca13f37/u/6451e539e4b0e02eaea3faf1/t/f37ecba0b0dfba687884cb3eb5a147cd/p/assets/videos/60e975430cf20278db21ff30/2023/10/24/65382360e4b01c0e1ca13f37/index.m3u8",
+    "key": "273f0aa1bb2ea313c46e08b8d7090f5c",
+    "duration": 5719,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65382360e4b01c0e1ca13f37/u/6451e539e4b0e02eaea3faf1/t/f37ecba0b0dfba687884cb3eb5a147cd/p/assets/videos/60e975430cf20278db21ff30/2023/10/24/65382360e4b01c0e1ca13f37/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 23 Backoff Algorithm for Random Access Protocols' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key '273f0aa1bb2ea313c46e08b8d7090f5c'"
+  },
+  {
+    "type": "pdf",
+    "id": "6538117be4b0df48624921d2",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "8. Annotated Notes Lecture 23 Exponential Bakoff Algorithm",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6538117be4b0df48624921d2/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/24/6538117be4b0df48624921d2/6538117be4b0df48624921d2_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "653b6ae3e4b0b932f1b91067",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "9. Lecture 24 Address Resolution Protocol(ARP)",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653b6ae3e4b0b932f1b91067/u/6451e539e4b0e02eaea3faf1/t/181f93b90700af32d1b2aa905152f052/p/assets/videos/60e975430cf20278db21ff30/2023/10/27/653b6ae3e4b0b932f1b91067/index.m3u8",
+    "key": "83c1ab69a956114f7e4295efdbd45288",
+    "duration": 6811,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653b6ae3e4b0b932f1b91067/u/6451e539e4b0e02eaea3faf1/t/181f93b90700af32d1b2aa905152f052/p/assets/videos/60e975430cf20278db21ff30/2023/10/27/653b6ae3e4b0b932f1b91067/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 24 Address Resolution Protocol(ARP)' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key '83c1ab69a956114f7e4295efdbd45288'"
+  },
+  {
+    "type": "pdf",
+    "id": "653a61c0e4b0ca18d6159c9b",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "10. Annotated Notes Lecture 24 ARP",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653a61c0e4b0ca18d6159c9b/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/26/653a61c0e4b0ca18d6159c9b/653a61c0e4b0ca18d6159c9b_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "653b3d2ce4b0216a7d09cc5d",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "11. Lecture 25 Dynamic Host Configuration Protocol (DHCP)",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653b5a1de4b0f264d2ae2109/u/6451e539e4b0e02eaea3faf1/t/bc0c17111f3cd4255443ef268c874e43/p/assets/videos/60e975430cf20278db21ff30/2023/10/27/653b5a1de4b0f264d2ae2109/index.m3u8",
+    "key": "3e34013da58b48a5346179457e07e433",
+    "duration": 4415,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653b5a1de4b0f264d2ae2109/u/6451e539e4b0e02eaea3faf1/t/bc0c17111f3cd4255443ef268c874e43/p/assets/videos/60e975430cf20278db21ff30/2023/10/27/653b5a1de4b0f264d2ae2109/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 25 Dynamic Host Configuration Protocol (DHCP)' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key '3e34013da58b48a5346179457e07e433'"
+  },
+  {
+    "type": "pdf",
+    "id": "653b6bace4b062c1155a8357",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "12. Annotated Notes Lecture 25 RARP BOOTP DHCP",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653b6bace4b062c1155a8357/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/27/653b6bace4b062c1155a8357/653b6bace4b062c1155a8357_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6560298ce4b017e454c4054f",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "13. Spanning Tree Protocol",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6560298ce4b017e454c4054f/u/6451e539e4b0e02eaea3faf1/t/6ba52ac4017cbbf6c11dcbc086af8c97/p/assets/videos/60e975430cf20278db21ff30/2023/11/24/6560298ce4b017e454c4054f/index.m3u8",
+    "key": "e204e65cdfb8d2bc8f42a09c884852a5",
+    "duration": 2615,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6560298ce4b017e454c4054f/u/6451e539e4b0e02eaea3faf1/t/6ba52ac4017cbbf6c11dcbc086af8c97/p/assets/videos/60e975430cf20278db21ff30/2023/11/24/6560298ce4b017e454c4054f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Spanning Tree Protocol' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key 'e204e65cdfb8d2bc8f42a09c884852a5'"
+  },
+  {
+    "type": "video",
+    "id": "6560298ce4b017e454c40550",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "14. Networking Devices",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6560298ce4b017e454c40550/u/6451e539e4b0e02eaea3faf1/t/954e1aded5c073f30eedddb1f2beafd9/p/assets/videos/60e975430cf20278db21ff30/2023/11/24/6560298ce4b017e454c40550/index.m3u8",
+    "key": "14514152d6cb87f43127a868049b0b26",
+    "duration": 3690,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6560298ce4b017e454c40550/u/6451e539e4b0e02eaea3faf1/t/954e1aded5c073f30eedddb1f2beafd9/p/assets/videos/60e975430cf20278db21ff30/2023/11/24/6560298ce4b017e454c40550/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. Networking Devices' --save-dir './COURSES/7. Computer Networks/4. Module 3 Data Link Layer (Part-2)' --custom-hls-key '14514152d6cb87f43127a868049b0b26'"
+  },
+  {
+    "type": "pdf",
+    "id": "67d944abcc128b7baa6aa7d8",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "15. Annotated Notes Networking Devices",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/67d944abcc128b7baa6aa7d8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/03/18/67d944abcc128b7baa6aa7d8/67d944abcc128b7baa6aa7d8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "67d944b4e47bf57dc5be782f",
+    "course": "Computer Networks",
+    "module": "Module 3: Data Link Layer (Part-2)",
+    "title": "16. Annotated Notes Spanning Tree Protocol",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/67d944b4e47bf57dc5be782f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/03/18/67d944b4e47bf57dc5be782f/67d944b4e47bf57dc5be782f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

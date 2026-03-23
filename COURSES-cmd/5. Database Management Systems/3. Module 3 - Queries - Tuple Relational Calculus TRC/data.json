@@ -1,0 +1,123 @@
+[
+  {
+    "type": "video",
+    "id": "63538635e4b00cb86b3467e2",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "1. Lecture 1 - Tuple Relational Calculus TRC",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63538635e4b00cb86b3467e2/u/6451e539e4b0e02eaea3faf1/t/99bcf3ecdfe991fa271d161d91fb6b3e/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/63538635e4b00cb86b3467e2/index.m3u8",
+    "key": "2e20054c409728a654a4f679c0671c61",
+    "duration": 3908,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63538635e4b00cb86b3467e2/u/6451e539e4b0e02eaea3faf1/t/99bcf3ecdfe991fa271d161d91fb6b3e/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/63538635e4b00cb86b3467e2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Tuple Relational Calculus TRC' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '2e20054c409728a654a4f679c0671c61'"
+  },
+  {
+    "type": "video",
+    "id": "6353a4b7e4b019dd6e12835b",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "2. Lecture 2 - Tuple Relational Calculus TRC",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6353a4b7e4b019dd6e12835b/u/6451e539e4b0e02eaea3faf1/t/c46f618d33baf0cbda4c73d57e83bc60/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/6353a4b7e4b019dd6e12835b/index.m3u8",
+    "key": "50586916ee6b2a5c7db75ecab595f505",
+    "duration": 5697,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6353a4b7e4b019dd6e12835b/u/6451e539e4b0e02eaea3faf1/t/c46f618d33baf0cbda4c73d57e83bc60/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/6353a4b7e4b019dd6e12835b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 2 - Tuple Relational Calculus TRC' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '50586916ee6b2a5c7db75ecab595f505'"
+  },
+  {
+    "type": "video",
+    "id": "6353bf21e4b043d2bff80515",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "3. Lecture 3 - Tuple Relational Calculus TRC",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6353bf21e4b043d2bff80515/u/6451e539e4b0e02eaea3faf1/t/103b5ea1dc2cd27ccce006c54dc863f6/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/6353bf21e4b043d2bff80515/index.m3u8",
+    "key": "affad6f6ec8379b0bda72359b19e4e28",
+    "duration": 5557,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6353bf21e4b043d2bff80515/u/6451e539e4b0e02eaea3faf1/t/103b5ea1dc2cd27ccce006c54dc863f6/p/assets/videos/60e975430cf20278db21ff30/2022/10/22/6353bf21e4b043d2bff80515/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 3 - Tuple Relational Calculus TRC' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key 'affad6f6ec8379b0bda72359b19e4e28'"
+  },
+  {
+    "type": "pdf",
+    "id": "6353caf8e4b0157bd82640f7",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "4. Annotated Notes - Lecture 1-3 - Tuple Relational Calculus TRC",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6353caf8e4b0157bd82640f7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/22/6353caf8e4b0157bd82640f7/6353caf8e4b0157bd82640f7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "63579851e4b019dd6e158315",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "5. Lecture 4 - TRC Practice Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63579851e4b019dd6e158315/u/6451e539e4b0e02eaea3faf1/t/934ae4913fa0bfd9c38c3567ff7cd430/p/assets/videos/60e975430cf20278db21ff30/2022/10/25/63579851e4b019dd6e158315/index.m3u8",
+    "key": "e25af5e2a89dfcf9fe1713ee4078ba22",
+    "duration": 8763,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63579851e4b019dd6e158315/u/6451e539e4b0e02eaea3faf1/t/934ae4913fa0bfd9c38c3567ff7cd430/p/assets/videos/60e975430cf20278db21ff30/2022/10/25/63579851e4b019dd6e158315/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 4 - TRC Practice Questions' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key 'e25af5e2a89dfcf9fe1713ee4078ba22'"
+  },
+  {
+    "type": "pdf",
+    "id": "6357e88ee4b0d453ee4f2c54",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "6. Annotated Notes - Lecture 4 - TRC Practice Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6357e88ee4b0d453ee4f2c54/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/25/6357e88ee4b0d453ee4f2c54/6357e88ee4b0d453ee4f2c54_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "655289ebe4b04b8f6085e43d",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "7. GATE CSE 1999 - Tuple Relational Expression Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655289ebe4b04b8f6085e43d/u/6451e539e4b0e02eaea3faf1/t/41a8012f6eb87ef40ad8061b1bd2ce7a/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/655289ebe4b04b8f6085e43d/index.m3u8",
+    "key": "4d073d57e010ee19fbe7f1f7efb7c4f4",
+    "duration": 1616,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655289ebe4b04b8f6085e43d/u/6451e539e4b0e02eaea3faf1/t/41a8012f6eb87ef40ad8061b1bd2ce7a/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/655289ebe4b04b8f6085e43d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. GATE CSE 1999 - Tuple Relational Expression Question' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '4d073d57e010ee19fbe7f1f7efb7c4f4'"
+  },
+  {
+    "type": "video",
+    "id": "6552ae1ce4b027f0c0d205c4",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "8. GATE CSE 2002 - Tuple Relational Calculus Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552ae1ce4b027f0c0d205c4/u/6451e539e4b0e02eaea3faf1/t/c7c20a8ac634de14fa21843c72a52d78/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552ae1ce4b027f0c0d205c4/index.m3u8",
+    "key": "79b8fb66e9b82b885410872b22911421",
+    "duration": 204,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552ae1ce4b027f0c0d205c4/u/6451e539e4b0e02eaea3faf1/t/c7c20a8ac634de14fa21843c72a52d78/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552ae1ce4b027f0c0d205c4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. GATE CSE 2002 - Tuple Relational Calculus Question' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '79b8fb66e9b82b885410872b22911421'"
+  },
+  {
+    "type": "video",
+    "id": "6552afd6e4b0ad722d1286a7",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "9. GATE CSE 2007 - Tuple Relational Calculus Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552afd6e4b0ad722d1286a7/u/6451e539e4b0e02eaea3faf1/t/4bc0c3aa835dfa4039c7f85c9375e12c/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552afd6e4b0ad722d1286a7/index.m3u8",
+    "key": "29eb73b527ac3fc7d23d05053210f219",
+    "duration": 660,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552afd6e4b0ad722d1286a7/u/6451e539e4b0e02eaea3faf1/t/4bc0c3aa835dfa4039c7f85c9375e12c/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552afd6e4b0ad722d1286a7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. GATE CSE 2007 - Tuple Relational Calculus Question' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '29eb73b527ac3fc7d23d05053210f219'"
+  },
+  {
+    "type": "video",
+    "id": "6552b5b4e4b0ad722d129797",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "10. GATE CSE 2008 - Tuple Relational Calculus Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552b5b4e4b0ad722d129797/u/6451e539e4b0e02eaea3faf1/t/98c1684246456c569b3d0829d47db9d7/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552b5b4e4b0ad722d129797/index.m3u8",
+    "key": "8c28b6dd1fbefd43f7e6df5316637a0a",
+    "duration": 282,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6552b5b4e4b0ad722d129797/u/6451e539e4b0e02eaea3faf1/t/98c1684246456c569b3d0829d47db9d7/p/assets/videos/60e975430cf20278db21ff30/2023/11/13/6552b5b4e4b0ad722d129797/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. GATE CSE 2008 - Tuple Relational Calculus Question' --save-dir './COURSES/5. Database Management Systems/3. Module 3 - Queries - Tuple Relational Calculus TRC' --custom-hls-key '8c28b6dd1fbefd43f7e6df5316637a0a'"
+  },
+  {
+    "type": "article",
+    "id": "6552b5d8e4b074e18e0b4735",
+    "course": "Database Management Systems",
+    "module": "Module 3 - Queries - Tuple Relational Calculus TRC",
+    "title": "11. GATE IT 2006 - TRC Question",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/6552b5d8e4b074e18e0b4735/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

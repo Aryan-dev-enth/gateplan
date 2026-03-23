@@ -1,0 +1,46 @@
+[
+  {
+    "type": "video",
+    "id": "629c8b780cf22b90c5a0f536",
+    "course": "Data Structures",
+    "module": "Row major and Column major in Arrays",
+    "title": "1. 24a. Row major and Column major 2D Arrays",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629c8b780cf22b90c5a0f536/u/6451e539e4b0e02eaea3faf1/t/72610ba15e815db631f2d28ff45e00ff/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629c8b780cf22b90c5a0f536/index.m3u8",
+    "key": "db25a18b25665e7a1d06e76ab97b303b",
+    "duration": 649,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629c8b780cf22b90c5a0f536/u/6451e539e4b0e02eaea3faf1/t/72610ba15e815db631f2d28ff45e00ff/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629c8b780cf22b90c5a0f536/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 24a. Row major and Column major 2D Arrays' --save-dir './COURSES/11. Data Structures/9. Row major and Column major in Arrays' --custom-hls-key 'db25a18b25665e7a1d06e76ab97b303b'"
+  },
+  {
+    "type": "video",
+    "id": "629c8bc50cf22ca257edc90b",
+    "course": "Data Structures",
+    "module": "Row major and Column major in Arrays",
+    "title": "2. 24b. ND Arrays",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629c8bc50cf22ca257edc90b/u/6451e539e4b0e02eaea3faf1/t/a31dca97fbcd19d7d9655f77e8c1cb44/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629c8bc50cf22ca257edc90b/index.m3u8",
+    "key": "80ff3297e23529287f808567662a31e4",
+    "duration": 1363,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629c8bc50cf22ca257edc90b/u/6451e539e4b0e02eaea3faf1/t/a31dca97fbcd19d7d9655f77e8c1cb44/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629c8bc50cf22ca257edc90b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 24b. ND Arrays' --save-dir './COURSES/11. Data Structures/9. Row major and Column major in Arrays' --custom-hls-key '80ff3297e23529287f808567662a31e4'"
+  },
+  {
+    "type": "video",
+    "id": "629cbbc40cf287c1398207a4",
+    "course": "Data Structures",
+    "module": "Row major and Column major in Arrays",
+    "title": "3. 24c. Examples and GATE PYQs 1998, 94",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629cbbc40cf287c1398207a4/u/6451e539e4b0e02eaea3faf1/t/a0a2116c1fa9f41b8bed7ae517169748/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629cbbc40cf287c1398207a4/index.m3u8",
+    "key": "5ac418fad85b4c262fcbb260f4584746",
+    "duration": 724,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629cbbc40cf287c1398207a4/u/6451e539e4b0e02eaea3faf1/t/a0a2116c1fa9f41b8bed7ae517169748/p/assets/videos/60e975430cf20278db21ff30/2022/06/05/629cbbc40cf287c1398207a4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 24c. Examples and GATE PYQs 1998, 94' --save-dir './COURSES/11. Data Structures/9. Row major and Column major in Arrays' --custom-hls-key '5ac418fad85b4c262fcbb260f4584746'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ad2a09e4b01400613e44c0",
+    "course": "Data Structures",
+    "module": "Row major and Column major in Arrays",
+    "title": "4. Row and Column Major Array Anottated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ad2a09e4b01400613e44c0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/11/64ad2a09e4b01400613e44c0/64ad2a09e4b01400613e44c0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

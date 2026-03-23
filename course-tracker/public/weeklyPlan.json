@@ -1,0 +1,298 @@
+[
+  {
+    "weekId": "week-1",
+    "label": "23 Feb – 1 Mar 2026",
+    "days": [
+      {
+        "date": "2026-02-23",
+        "label": "23 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1A", "1B"], "hours": 1, "lectureIds": ["640c251ee4b04eb4af8fe5ec", "640c3221e4b0d5f1fef8390b"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 1"], "hours": 1.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-02-24",
+        "label": "24 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1C"], "hours": 1.15, "lectureIds": ["640cb553e4b0ff5627b9a0d9"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 2"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-02-25",
+        "label": "25 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2A", "2B", "2C"], "hours": 1.5, "lectureIds": ["640e19e5e4b01e271e54013a", "640e2b07e4b0a15939dc9ae5", "640e3782e4b0408a376d2a43"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 3"], "hours": 1.75, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-02-26",
+        "label": "26 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2D", "3A"], "hours": 1.5, "lectureIds": ["640e36a0e4b0408a376d2a3a", "640f2501e4b05f1197a0dc42"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 4A"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-02-27",
+        "label": "27 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["3B", "3C", "3D"], "hours": 1.5, "lectureIds": ["64102b37e4b0080be017dbfe", "641087bde4b039348f05e3ba", "64115bc7e4b09e3b08def19d"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 4B"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-02-28",
+        "label": "28 Feb",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4A", "4B", "4C"], "hours": 1.15, "lectureIds": ["6412b60be4b0cbc552f29f83", "6412b9a5e4b0cbc552f2a17d", "64140d24e4b00bc0c7b18727"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 5A", "5B"], "hours": 1.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-01",
+        "label": "1 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4D", "4E", "4F"], "hours": 1, "lectureIds": ["641428f4e4b0742435c1dc31", "64143e10e4b0742435c1e255", "6414497de4b0d4cd076e6037"] },
+          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 5C", "6"], "hours": 3, "lectureIds": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-2",
+    "label": "2 Mar – 8 Mar 2026",
+    "days": [
+      {
+        "date": "2026-03-02",
+        "label": "2 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1A"], "hours": 2.15, "lectureIds": ["6401f631e4b0e03cb833b7b1"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["5A", "5B", "5C"], "hours": 1, "lectureIds": ["6416e76de4b0e283c785d2cf", "6416f42ae4b019b3d913711b", "64190b1ae4b090d8eb1089a4"] }
+        ]
+      },
+      {
+        "date": "2026-03-03",
+        "label": "3 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1B"], "hours": 2.15, "lectureIds": ["64031ed9e4b0ff68dc27cfe0"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["5D", "5E"], "hours": 1, "lectureIds": ["64192d25e4b019b3d913e5dc", "64196794e4b0ea09ca2b39d8"] }
+        ]
+      },
+      {
+        "date": "2026-03-04",
+        "label": "4 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1C", "HW 1"], "hours": 1.5, "lectureIds": ["64048d0ce4b07c4989de69ca", "64022a46e4b06b49e4830743"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["6A", "6B", "6C", "6D"], "hours": 1.5, "lectureIds": ["641afc4ce4b0386805572f50", "641c40bbe4b06c8a8e5bfff9", "641ddb99e4b0105fc4be8afc", "641c7effe4b0608e1b4b6692"] }
+        ]
+      },
+      {
+        "date": "2026-03-05",
+        "label": "5 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["HW 2", "Lecture 2"], "hours": 2, "lectureIds": ["6403a13ce4b075696a347b2d", "65e7224d19061936481f4032"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["6E", "7A"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-06",
+        "label": "6 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 2 - Introduction to Discrete Mathematics", "lectureRefs": ["Lecture 1", "Summary Lecture 1"], "hours": 1, "lectureIds": ["64064ac5e4b052050cf714d7", "64064c7ae4b0a846297f9149"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["7B"], "hours": 1.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-07",
+        "label": "7 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 1", "Summary Lecture 1"], "hours": 1, "lectureIds": ["64071d8be4b018f97347c22c", "6408ea8de4b04cdf84e566b0"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["7C", "8A"], "hours": 1, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-08",
+        "label": "8 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 2", "Summary Lecture 2"], "hours": 1, "lectureIds": ["6408cc90e4b0142a8d905511", "6408eb45e4b052de72767cef"] },
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["8B", "8C", "9A"], "hours": 1, "lectureIds": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-3",
+    "label": "9 Mar – 15 Mar 2026",
+    "days": [
+      {
+        "date": "2026-03-09",
+        "label": "9 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["9B", "9C", "9D", "10A", "10B", "10C", "10D"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-10",
+        "label": "10 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["10E", "10F", "More PYQs"], "hours": 3, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-11",
+        "label": "11 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["11A", "11B"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-12",
+        "label": "12 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Live Practice - Linear Dependent Vectors", "Live Practice - Solutions of Ax=b"], "hours": 2.15, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-13",
+        "label": "13 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Weekly Quiz 1", "Weekly Quiz 2"], "hours": 2.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-14",
+        "label": "14 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Weekly Quiz 3", "Weekly Quiz 4"], "hours": 2.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-15",
+        "label": "15 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Weekly Quiz 5"], "hours": 1.5, "lectureIds": [] }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-4",
+    "label": "16 Mar – 22 Mar 2026",
+    "days": [
+      {
+        "date": "2026-03-16",
+        "label": "16 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["24", "25", "26"], "hours": 1.5, "lectureIds": ["640db5cfe4b05f1197a08a4d", "640f88eae4b0099a86eddae5", "640f9148e4b03ad31f03fae7"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["1A", "1B", "2A"], "hours": 2, "lectureIds": ["642bfe7de4b02de41d08449f", "642c0f96e4b03dd18ff2a244", "642e7fe7e4b0348ba14856b9"] }
+        ]
+      },
+      {
+        "date": "2026-03-17",
+        "label": "17 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["27", "28", "29"], "hours": 1.15, "lectureIds": ["640f8d6de4b0022d3f9e57e7", "640f921be4b0080be017bf8c", "640f93bbe4b040a090fd673f"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["2B", "2C", "3A", "3B"], "hours": 2, "lectureIds": ["642ea675e4b0c82b898614ac", "642fff90e4b0544a2d7c30f5", "643165cde4b0376423a77e6e", "6433c0a4e4b02a4c1a772ba9"] }
+        ]
+      },
+      {
+        "date": "2026-03-18",
+        "label": "18 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["30", "31", "32", "33"], "hours": 2, "lectureIds": ["640f89d9e4b0099a86eddaf4", "640f93bbe4b040a090fd673f", "641041bae4b04eb4af90cf90", "65ea588d2f5ec73d150a3142"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["3C", "3D"], "hours": 3, "lectureIds": ["64316c3be4b065e6d436228c", "6434101ce4b0987fa0cd0ae8"] }
+        ]
+      },
+      {
+        "date": "2026-03-19",
+        "label": "19 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["34", "35"], "hours": 1.5, "lectureIds": ["65fb1a88c4b72611a94b9d3f", "6416ec7de4b020c10807abc6"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["4A", "4B", "4C"], "hours": 1.5, "lectureIds": ["6434feabe4b0f3b6c2776bca", "6435571ae4b00d71a5b10af6", "6437ecede4b0e475abe9806e"] }
+        ]
+      },
+      {
+        "date": "2026-03-20",
+        "label": "20 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["36", "37"], "hours": 1, "lectureIds": ["6416fd6ee4b0c93499f627b9", "641836f0e4b05509391e1e40"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["4D", "5A", "5B"], "hours": 3.5, "lectureIds": ["64380653e4b078b700031c6b", "643955c6e4b09a11b170d2c7", "643975bae4b0d9836e8bc8d9"] }
+        ]
+      },
+      {
+        "date": "2026-03-21",
+        "label": "21 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Complete Summary Part 1"], "hours": 2.5, "lectureIds": [] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Weekly Quiz 8 - Conditional Probability with Soln"], "hours": 1.5, "lectureIds": ["643cc75fe4b0a10978382187", "643bfbd2e4b014997e847c07"] }
+        ]
+      },
+      {
+        "date": "2026-03-22",
+        "label": "22 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Complete Summary Part 2"], "hours": 3, "lectureIds": [] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["6A", "6B", "6C", "7A", "7B"], "hours": 2, "lectureIds": ["643d0dd4e4b0a373b9ccca3e", "643cfbdee4b0ac60591f52de", "643d1718e4b0226e866cd232", "643eae2de4b0f2ed13b9f946", "643f8a3ee4b0171aefb1351e"] }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-5",
+    "label": "23 Mar – 29 Mar 2026",
+    "days": [
+      {
+        "date": "2026-03-23",
+        "label": "23 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["10B", "10C", "Homework (10F)"], "hours": 2, "lectureIds": ["64253775e4b0cb0af5dfac42", "64253775e4b0cb0af5dfac43", "64258eade4b0d386b13fdb9c"] }
+        ]
+      },
+      {
+        "date": "2026-03-24",
+        "label": "24 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["11A", "11B"], "hours": 2, "lectureIds": ["6426661ee4b0d386b1400fcf", "64267bd8e4b035cadffd93ca"] }
+        ]
+      },
+      {
+        "date": "2026-03-25",
+        "label": "25 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["11C", "12"], "hours": 2.5, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-26",
+        "label": "26 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["13"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-27",
+        "label": "27 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["14A", "14B"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-28",
+        "label": "28 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["15"], "hours": 2, "lectureIds": [] }
+        ]
+      },
+      {
+        "date": "2026-03-29",
+        "label": "29 Mar",
+        "tasks": [
+          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["16", "17"], "hours": 2.15, "lectureIds": [] }
+        ]
+      }
+    ]
+  }
+]

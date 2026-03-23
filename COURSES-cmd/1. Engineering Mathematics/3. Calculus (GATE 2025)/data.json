@@ -1,0 +1,134 @@
+[
+  {
+    "type": "video",
+    "id": "6658280dd902587179c4fa0c",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "1. Lecture 1: Finding Limit of a function",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6658280dd902587179c4fa0c/u/6451e539e4b0e02eaea3faf1/t/c67aeacef792c58479472dac1e941c4f/p/assets/videos/60e975430cf20278db21ff30/2024/05/30/6658280dd902587179c4fa0c/index.m3u8",
+    "key": "5f5f96bde315a1205d59975558a49409",
+    "duration": 7000,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6658280dd902587179c4fa0c/u/6451e539e4b0e02eaea3faf1/t/c67aeacef792c58479472dac1e941c4f/p/assets/videos/60e975430cf20278db21ff30/2024/05/30/6658280dd902587179c4fa0c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1: Finding Limit of a function' --save-dir './COURSES/1. Engineering Mathematics/3. Calculus (GATE 2025)' --custom-hls-key '5f5f96bde315a1205d59975558a49409'"
+  },
+  {
+    "type": "pdf",
+    "id": "66582e4bb1e6a7391d6a459d",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "2. Annotated Notes Lecture 1 Limits and Indeterminant Form",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66582e4bb1e6a7391d6a459d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/30/66582e4bb1e6a7391d6a459d/66582e4bb1e6a7391d6a459d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6659d28640a3e0537cec353d",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "3. Lecture 2: Methods to Evaluate the Limit of a function",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6659fc193e43e41fdc9c0638/u/6451e539e4b0e02eaea3faf1/t/9cd4d054c3da01a5c67e22c21e8fc06d/p/assets/videos/60e975430cf20278db21ff30/2024/05/31/6659fc193e43e41fdc9c0638/index.m3u8",
+    "key": "4507c88aebf13d50869d800360ed8142",
+    "duration": 6651,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6659fc193e43e41fdc9c0638/u/6451e539e4b0e02eaea3faf1/t/9cd4d054c3da01a5c67e22c21e8fc06d/p/assets/videos/60e975430cf20278db21ff30/2024/05/31/6659fc193e43e41fdc9c0638/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2: Methods to Evaluate the Limit of a function' --save-dir './COURSES/1. Engineering Mathematics/3. Calculus (GATE 2025)' --custom-hls-key '4507c88aebf13d50869d800360ed8142'"
+  },
+  {
+    "type": "pdf",
+    "id": "6659f82b606fcf13dac78dd7",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "4. Annotated Notes Lecture 2 Evaluating Limits",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6659f82b606fcf13dac78dd7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/31/6659f82b606fcf13dac78dd7/6659f82b606fcf13dac78dd7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "665a9cc3e55a7f34dc20a5ec",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "5. Lecture 3: Limits L'H\u00f4pital's rule and Other Indeterminate forms of powers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/665abd11b31b884fc125383f/u/6451e539e4b0e02eaea3faf1/t/9783416c2d7b34f1333ced50ff57517e/p/assets/videos/60e975430cf20278db21ff30/2024/06/01/665abd11b31b884fc125383f/index.m3u8",
+    "key": "9a9639f30f3d79c52be40c48e9923ac0",
+    "duration": 4447,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/665abd11b31b884fc125383f/u/6451e539e4b0e02eaea3faf1/t/9783416c2d7b34f1333ced50ff57517e/p/assets/videos/60e975430cf20278db21ff30/2024/06/01/665abd11b31b884fc125383f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3: Limits L'H\u00f4pital's rule and Other Indeterminate forms of powers' --save-dir './COURSES/1. Engineering Mathematics/3. Calculus (GATE 2025)' --custom-hls-key '9a9639f30f3d79c52be40c48e9923ac0'"
+  },
+  {
+    "type": "pdf",
+    "id": "665c7b2b03d0bc21f1af574d",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "6. Annotated Notes Lecture 3 L hopital rule and Evaluating Power forms in Indeterminate form",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/665c7b2b03d0bc21f1af574d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/06/02/665c7b2b03d0bc21f1af574d/665c7b2b03d0bc21f1af574d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "665ace33d7d5e25022616fe1",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "7. Homework Limit Calculus GATE CSE PYQs",
+    "url": "https://www.goclasses.in/s/courses/60fdd8530cf2c7989e1f109d/articles/665ace33d7d5e25022616fe1/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "665de57a1695162ae84d1cef",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "8. Lecture 4: Continuity and Introduction to Differentiability",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/665de57a1695162ae84d1cef/u/6451e539e4b0e02eaea3faf1/t/233b1c0b4089af303350fa341adfe148/p/assets/videos/60e975430cf20278db21ff30/2024/06/03/665de57a1695162ae84d1cef/index.m3u8",
+    "key": "18a231ae3cd2df39fcefb3e17c261f10",
+    "duration": 5487,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/665de57a1695162ae84d1cef/u/6451e539e4b0e02eaea3faf1/t/233b1c0b4089af303350fa341adfe148/p/assets/videos/60e975430cf20278db21ff30/2024/06/03/665de57a1695162ae84d1cef/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 4: Continuity and Introduction to Differentiability' --save-dir './COURSES/1. Engineering Mathematics/3. Calculus (GATE 2025)' --custom-hls-key '18a231ae3cd2df39fcefb3e17c261f10'"
+  },
+  {
+    "type": "pdf",
+    "id": "665df102cba4756a202cb9f1",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "9. Annotated Notes Lecture 4 Continuity and Differentiability",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/665df102cba4756a202cb9f1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/06/03/665df102cba4756a202cb9f1/665df102cba4756a202cb9f1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "665f3b177d90b1269313f5b8",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "10. Lecture 5: Maxima and Minima",
+    "url": "https://www.goclasses.in/s/courses/60fdd8530cf2c7989e1f109d/articles/665f3b177d90b1269313f5b8/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "666160a94d931e02edcbeebf",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "11. Lecture 6: Integration",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/666160a94d931e02edcbeebf/u/6451e539e4b0e02eaea3faf1/t/6ac7836721831f5c6b62ed8eef3098f4/p/assets/videos/60e975430cf20278db21ff30/2024/06/06/666160a94d931e02edcbeebf/index.m3u8",
+    "key": "2102eed6bcd888d14a8dad59964b0415",
+    "duration": 6466,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/666160a94d931e02edcbeebf/u/6451e539e4b0e02eaea3faf1/t/6ac7836721831f5c6b62ed8eef3098f4/p/assets/videos/60e975430cf20278db21ff30/2024/06/06/666160a94d931e02edcbeebf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 6: Integration' --save-dir './COURSES/1. Engineering Mathematics/3. Calculus (GATE 2025)' --custom-hls-key '2102eed6bcd888d14a8dad59964b0415'"
+  },
+  {
+    "type": "pdf",
+    "id": "6661755ca6412949b6f8f7de",
+    "course": "Engineering Mathematics",
+    "module": "Calculus (GATE 2025)",
+    "title": "12. Annotated Notes Lecture 6 Integration",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6661755ca6412949b6f8f7de/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/06/06/6661755ca6412949b6f8f7de/6661755ca6412949b6f8f7de_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

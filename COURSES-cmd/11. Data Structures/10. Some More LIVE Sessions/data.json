@@ -1,0 +1,57 @@
+[
+  {
+    "type": "liveclass",
+    "id": "64c3cabde4b0c26ec431a2ef",
+    "course": "Data Structures",
+    "module": "Some More LIVE Sessions",
+    "title": "1. Stack and Queue PYQs Part 1",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c3eccfe4b0f2b9c70000c5/u/6451e539e4b0e02eaea3faf1/t/085af933616863e7cd4de29f2fb736a7/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c3eccfe4b0f2b9c70000c5/index.m3u8",
+    "key": "cd078333558aed195a27b393ef965ddc",
+    "duration": 6121,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c3eccfe4b0f2b9c70000c5/u/6451e539e4b0e02eaea3faf1/t/085af933616863e7cd4de29f2fb736a7/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c3eccfe4b0f2b9c70000c5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Stack and Queue PYQs Part 1' --save-dir './COURSES/11. Data Structures/10. Some More LIVE Sessions' --custom-hls-key 'cd078333558aed195a27b393ef965ddc'"
+  },
+  {
+    "type": "liveclass",
+    "id": "64c67ce4e4b0537c2222f047",
+    "course": "Data Structures",
+    "module": "Some More LIVE Sessions",
+    "title": "2. Stack and Queue PYQs Part 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c6970ae4b09f6a9c8576e4/u/6451e539e4b0e02eaea3faf1/t/17d27d5fc048973173e74726833545d2/p/assets/videos/60e975430cf20278db21ff30/2023/07/30/64c6970ae4b09f6a9c8576e4/index.m3u8",
+    "key": "4ad57c9dad624b024e744bc8bba7181a",
+    "duration": 4444,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c6970ae4b09f6a9c8576e4/u/6451e539e4b0e02eaea3faf1/t/17d27d5fc048973173e74726833545d2/p/assets/videos/60e975430cf20278db21ff30/2023/07/30/64c6970ae4b09f6a9c8576e4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Stack and Queue PYQs Part 2' --save-dir './COURSES/11. Data Structures/10. Some More LIVE Sessions' --custom-hls-key '4ad57c9dad624b024e744bc8bba7181a'"
+  },
+  {
+    "type": "pdf",
+    "id": "64c6922be4b0782ef5202c78",
+    "course": "Data Structures",
+    "module": "Some More LIVE Sessions",
+    "title": "3. Annotated Notes Stack Queue PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64c6922be4b0782ef5202c78/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/30/64c6922be4b0782ef5202c78/64c6922be4b0782ef5202c78_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64c7ccebe4b0e5951ccbf3a5",
+    "course": "Data Structures",
+    "module": "Some More LIVE Sessions",
+    "title": "4. DS Test Series Test 4 Discussion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c7eb3de4b05517c963b017/u/6451e539e4b0e02eaea3faf1/t/f1006bb03a7749a4c43324bad4fba54c/p/assets/videos/60e975430cf20278db21ff30/2023/07/31/64c7eb3de4b05517c963b017/index.m3u8",
+    "key": "4d7234931423df449d7f645f22dc61f0",
+    "duration": 5369,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c7eb3de4b05517c963b017/u/6451e539e4b0e02eaea3faf1/t/f1006bb03a7749a4c43324bad4fba54c/p/assets/videos/60e975430cf20278db21ff30/2023/07/31/64c7eb3de4b05517c963b017/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. DS Test Series Test 4 Discussion' --save-dir './COURSES/11. Data Structures/10. Some More LIVE Sessions' --custom-hls-key '4d7234931423df449d7f645f22dc61f0'"
+  },
+  {
+    "type": "liveclass",
+    "id": "64c90affe4b03a0e18d42a92",
+    "course": "Data Structures",
+    "module": "Some More LIVE Sessions",
+    "title": "5. DS Test Series Test 1 Discussion Linked List",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c92a7ce4b0f068bd81cc2f/u/6451e539e4b0e02eaea3faf1/t/4eef5c5dc26c2db9798f20a420ced6b0/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c92a7ce4b0f068bd81cc2f/index.m3u8",
+    "key": "47cc5de021292282777d35027f072ca3",
+    "duration": 6197,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c92a7ce4b0f068bd81cc2f/u/6451e539e4b0e02eaea3faf1/t/4eef5c5dc26c2db9798f20a420ced6b0/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c92a7ce4b0f068bd81cc2f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. DS Test Series Test 1 Discussion Linked List' --save-dir './COURSES/11. Data Structures/10. Some More LIVE Sessions' --custom-hls-key '47cc5de021292282777d35027f072ca3'"
+  }
+]

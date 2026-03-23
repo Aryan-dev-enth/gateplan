@@ -1,0 +1,79 @@
+[
+  {
+    "type": "video",
+    "id": "66d0f1dbe81fa62eef0b8ad0",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "1. Propositional Logic - Complete Summary Part 1",
+    "url": "https://youtu.be/JnsT3ezRzuo?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 9316,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66d0f0da6b140d5966b588dc",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "2. Annotated Notes - Propositional Logic - Complete Summary Part 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66d0f0da6b140d5966b588dc/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/29/66d0f0da6b140d5966b588dc/66d0f0da6b140d5966b588dc_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66d24c9dbedac62e60022ea2",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "3. Propositional Logic - Complete Summary Part 2",
+    "url": "https://youtu.be/SRiIR-taO5k",
+    "key": "this-is-yt-video",
+    "duration": 10950,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66d3132e380b506485c30a48",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "4. Annotated Notes - Propositional Logic - Complete Summary Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66d3132e380b506485c30a48/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/31/66d3132e380b506485c30a48/66d3132e380b506485c30a48_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66d3b74828d82a73e6a87c3c",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "5. Propositional Logic - Complete Summary Part 3",
+    "url": "https://youtu.be/e6Od8P9rmMw",
+    "key": "this-is-yt-video",
+    "duration": 6565,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66d3b63b163559589649b27d",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "6. Annotated Notes - Propositional Logic - Complete Summary Part 3",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66d3b63b163559589649b27d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/01/66d3b63b163559589649b27d/66d3b63b163559589649b27d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66d659a206e9ef1244667426",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Propositional Logic",
+    "title": "7. ALL GATE PYQs & Practice Questions - Propositional Logic",
+    "url": "https://www.goclasses.in/s/courses/625613d10cf2ad8d82475130/articles/66d659a206e9ef1244667426/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

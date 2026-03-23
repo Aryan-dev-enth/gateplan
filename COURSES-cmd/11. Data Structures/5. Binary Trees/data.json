@@ -1,0 +1,211 @@
+[
+  {
+    "type": "video",
+    "id": "627a6aed0cf249812907daf4",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "1. 11a. Introduction to Binary trees",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6aed0cf249812907daf4/u/6451e539e4b0e02eaea3faf1/t/861c40c4aa7ed49a550eb466fd97a95a/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6aed0cf249812907daf4/index.m3u8",
+    "key": "080b0a14154c7de3028e9a97c6d5d857",
+    "duration": 2032,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6aed0cf249812907daf4/u/6451e539e4b0e02eaea3faf1/t/861c40c4aa7ed49a550eb466fd97a95a/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6aed0cf249812907daf4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 11a. Introduction to Binary trees' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '080b0a14154c7de3028e9a97c6d5d857'"
+  },
+  {
+    "type": "video",
+    "id": "627a6b3e0cf2cf6d6b6e2ac4",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "2. 11b. Some questions and representation of tree",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6b3e0cf2cf6d6b6e2ac4/u/6451e539e4b0e02eaea3faf1/t/a11cd977f0d99cfdb5a6f2a5bd182826/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6b3e0cf2cf6d6b6e2ac4/index.m3u8",
+    "key": "55ca1d56aa573d83027b3e719a3e51e8",
+    "duration": 1798,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6b3e0cf2cf6d6b6e2ac4/u/6451e539e4b0e02eaea3faf1/t/a11cd977f0d99cfdb5a6f2a5bd182826/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6b3e0cf2cf6d6b6e2ac4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 11b. Some questions and representation of tree' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '55ca1d56aa573d83027b3e719a3e51e8'"
+  },
+  {
+    "type": "video",
+    "id": "627a6b760cf2cf6d6b6e2ad2",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "3. 11c. Questions on Binary trees",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6b760cf2cf6d6b6e2ad2/u/6451e539e4b0e02eaea3faf1/t/d86ea784ed862f7526467ebd66c8d889/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6b760cf2cf6d6b6e2ad2/index.m3u8",
+    "key": "6bfc42d59785a6e1882a868bd3ccd8b4",
+    "duration": 2077,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/627a6b760cf2cf6d6b6e2ad2/u/6451e539e4b0e02eaea3faf1/t/d86ea784ed862f7526467ebd66c8d889/p/assets/videos/60e975430cf20278db21ff30/2022/05/10/627a6b760cf2cf6d6b6e2ad2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 11c. Questions on Binary trees' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '6bfc42d59785a6e1882a868bd3ccd8b4'"
+  },
+  {
+    "type": "video",
+    "id": "628117270cf204695a74a973",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "4. 11d. Questions on Binary trees 2",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628117270cf204695a74a973/u/6451e539e4b0e02eaea3faf1/t/21d74cc6113ba93b92db1f1cfbfb677a/p/assets/videos/60e975430cf20278db21ff30/2022/05/15/628117270cf204695a74a973/index.m3u8",
+    "key": "bf9c5f3ccc5c763db973bb198906a9fb",
+    "duration": 1454,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628117270cf204695a74a973/u/6451e539e4b0e02eaea3faf1/t/21d74cc6113ba93b92db1f1cfbfb677a/p/assets/videos/60e975430cf20278db21ff30/2022/05/15/628117270cf204695a74a973/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 11d. Questions on Binary trees 2' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key 'bf9c5f3ccc5c763db973bb198906a9fb'"
+  },
+  {
+    "type": "video",
+    "id": "6281173b0cf204695a74a976",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "5. 12a. Binary Tree Traversals",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6281173b0cf204695a74a976/u/6451e539e4b0e02eaea3faf1/t/f7c62829a2819faf515ca88e079d61b8/p/assets/videos/60e975430cf20278db21ff30/2022/05/15/6281173b0cf204695a74a976/index.m3u8",
+    "key": "0bef9fb11825f8f4da4b5f06d5a5b31e",
+    "duration": 1233,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6281173b0cf204695a74a976/u/6451e539e4b0e02eaea3faf1/t/f7c62829a2819faf515ca88e079d61b8/p/assets/videos/60e975430cf20278db21ff30/2022/05/15/6281173b0cf204695a74a976/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 12a. Binary Tree Traversals' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '0bef9fb11825f8f4da4b5f06d5a5b31e'"
+  },
+  {
+    "type": "video",
+    "id": "62832c120cf25c82982b90fe",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "6. 12b. Binary tree construction using preorder postorder and inorder",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62832c120cf25c82982b90fe/u/6451e539e4b0e02eaea3faf1/t/84865fb161685a051508744b1cac4bcb/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/62832c120cf25c82982b90fe/index.m3u8",
+    "key": "aaa00c4a3a219f5b179824d48c8ef2ff",
+    "duration": 1627,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62832c120cf25c82982b90fe/u/6451e539e4b0e02eaea3faf1/t/84865fb161685a051508744b1cac4bcb/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/62832c120cf25c82982b90fe/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 12b. Binary tree construction using preorder postorder and inorder' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key 'aaa00c4a3a219f5b179824d48c8ef2ff'"
+  },
+  {
+    "type": "video",
+    "id": "6283fc160cf2f73fd7f5d4fe",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "7. 12c. Binary tree construction using preorder postorder and inorder 2",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6283fc160cf2f73fd7f5d4fe/u/6451e539e4b0e02eaea3faf1/t/c0c3fdc017376af1b050b3d244a1ea1d/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/6283fc160cf2f73fd7f5d4fe/index.m3u8",
+    "key": "2b4557be75200eeeb869d16368f20391",
+    "duration": 1319,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6283fc160cf2f73fd7f5d4fe/u/6451e539e4b0e02eaea3faf1/t/c0c3fdc017376af1b050b3d244a1ea1d/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/6283fc160cf2f73fd7f5d4fe/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 12c. Binary tree construction using preorder postorder and inorder 2' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '2b4557be75200eeeb869d16368f20391'"
+  },
+  {
+    "type": "video",
+    "id": "628286810cf2f49db66aa3d1",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "8. 13a. Introduction to Binary Search Tree",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628286810cf2f49db66aa3d1/u/6451e539e4b0e02eaea3faf1/t/e421c30d1608979d0760ff15cbb3a6e3/p/assets/videos/60e975430cf20278db21ff30/2022/05/16/628286810cf2f49db66aa3d1/index.m3u8",
+    "key": "97123b1d3107dc5b46a0c33a3b7d6873",
+    "duration": 1118,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628286810cf2f49db66aa3d1/u/6451e539e4b0e02eaea3faf1/t/e421c30d1608979d0760ff15cbb3a6e3/p/assets/videos/60e975430cf20278db21ff30/2022/05/16/628286810cf2f49db66aa3d1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 13a. Introduction to Binary Search Tree' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '97123b1d3107dc5b46a0c33a3b7d6873'"
+  },
+  {
+    "type": "video",
+    "id": "6284066d0cf22e7d4ffcc947",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "9. 13b. Range Search in Binary Search Tree | GATE 2014 | GATE 2020",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6284066d0cf22e7d4ffcc947/u/6451e539e4b0e02eaea3faf1/t/23745be1cd089f50b1af2a575feec77c/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/6284066d0cf22e7d4ffcc947/index.m3u8",
+    "key": "248f01da48364a1202313b9cf1445725",
+    "duration": 1940,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6284066d0cf22e7d4ffcc947/u/6451e539e4b0e02eaea3faf1/t/23745be1cd089f50b1af2a575feec77c/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/6284066d0cf22e7d4ffcc947/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 13b. Range Search in Binary Search Tree | GATE 2014 | GATE 2020' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '248f01da48364a1202313b9cf1445725'"
+  },
+  {
+    "type": "pdf",
+    "id": "64a19138e4b06e4c5385bb91",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "10. PDF: Range Search Binary Search Tree Animations (Stanford Slides)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64a19138e4b06e4c5385bb91/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/02/64a19138e4b06e4c5385bb91/64a19138e4b06e4c5385bb91_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "628406f60cf2594c99a8e7d6",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "11. 13c. BST Deletion",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628406f60cf2594c99a8e7d6/u/6451e539e4b0e02eaea3faf1/t/dbffee54d15c6b2475fd9bedd6d5b093/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/628406f60cf2594c99a8e7d6/index.m3u8",
+    "key": "e37698f7582801e84d66cfe89fe85939",
+    "duration": 1262,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/628406f60cf2594c99a8e7d6/u/6451e539e4b0e02eaea3faf1/t/dbffee54d15c6b2475fd9bedd6d5b093/p/assets/videos/60e975430cf20278db21ff30/2022/05/17/628406f60cf2594c99a8e7d6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 13c. BST Deletion' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key 'e37698f7582801e84d66cfe89fe85939'"
+  },
+  {
+    "type": "video",
+    "id": "6287c4ad0cf2639677988816",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "12. 14a. GATE 1996 Possible probe sequences",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c4ad0cf2639677988816/u/6451e539e4b0e02eaea3faf1/t/abeba6b532ecc6b99129807f7320cff0/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c4ad0cf2639677988816/index.m3u8",
+    "key": "a64aee3c427a40710c6426747c7ec833",
+    "duration": 1208,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c4ad0cf2639677988816/u/6451e539e4b0e02eaea3faf1/t/abeba6b532ecc6b99129807f7320cff0/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c4ad0cf2639677988816/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. 14a. GATE 1996 Possible probe sequences' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key 'a64aee3c427a40710c6426747c7ec833'"
+  },
+  {
+    "type": "video",
+    "id": "6287c5910cf263967798888c",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "13. 14b. BST PYQs 1997, 2001, 06, 07, 16",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c5910cf263967798888c/u/6451e539e4b0e02eaea3faf1/t/698aab9d6ad88520c8b4c75a0e0767b3/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c5910cf263967798888c/index.m3u8",
+    "key": "812266a43537ebd8c9f60c6b4a265e7d",
+    "duration": 1181,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c5910cf263967798888c/u/6451e539e4b0e02eaea3faf1/t/698aab9d6ad88520c8b4c75a0e0767b3/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c5910cf263967798888c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. 14b. BST PYQs 1997, 2001, 06, 07, 16' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '812266a43537ebd8c9f60c6b4a265e7d'"
+  },
+  {
+    "type": "video",
+    "id": "6287c5fb0cf2f9e707c21a9a",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "14. 14c. BST Time Complexities",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c5fb0cf2f9e707c21a9a/u/6451e539e4b0e02eaea3faf1/t/bc5fbfbb92cb6375088b2259823766f8/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c5fb0cf2f9e707c21a9a/index.m3u8",
+    "key": "22bf6951214fb876c8b42d184665f555",
+    "duration": 1121,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6287c5fb0cf2f9e707c21a9a/u/6451e539e4b0e02eaea3faf1/t/bc5fbfbb92cb6375088b2259823766f8/p/assets/videos/60e975430cf20278db21ff30/2022/05/20/6287c5fb0cf2f9e707c21a9a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. 14c. BST Time Complexities' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '22bf6951214fb876c8b42d184665f555'"
+  },
+  {
+    "type": "pdf",
+    "id": "64a19423e4b01abfe5f86aee",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "15. Annotated Notes Binary Tree and BST",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64a19423e4b01abfe5f86aee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/02/64a19423e4b01abfe5f86aee/64a19423e4b01abfe5f86aee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64a4043de4b02b0bcfc59853",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "16. Practice Set Binary Trees and Binary Search Tree",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64a4043de4b02b0bcfc59853/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/04/64a4043de4b02b0bcfc59853/64a4043de4b02b0bcfc59853_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64aac4fae4b0986c451f5e8d",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "17. LIVE Binary Tree and Binary Search Tree Practice Set Discussion - 1",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64aadb02e4b08bdad939211b/u/6451e539e4b0e02eaea3faf1/t/d03008a34ba64bbd0588692e5ff05ef0/p/assets/videos/60e975430cf20278db21ff30/2023/07/09/64aadb02e4b08bdad939211b/index.m3u8",
+    "key": "d98a6face42b4c1656ce06f646a64a1f",
+    "duration": 4817,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64aadb02e4b08bdad939211b/u/6451e539e4b0e02eaea3faf1/t/d03008a34ba64bbd0588692e5ff05ef0/p/assets/videos/60e975430cf20278db21ff30/2023/07/09/64aadb02e4b08bdad939211b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '17. LIVE Binary Tree and Binary Search Tree Practice Set Discussion - 1' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key 'd98a6face42b4c1656ce06f646a64a1f'"
+  },
+  {
+    "type": "liveclass",
+    "id": "64ac16aee4b058d162d9205f",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "18. LIVE Binary Tree and Binary Search Tree Practice Set Discussion - 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ac2c2de4b01c2dd996604e/u/6451e539e4b0e02eaea3faf1/t/c473fd8776ec9a10dea820ec5763b696/p/assets/videos/60e975430cf20278db21ff30/2023/07/10/64ac2c2de4b01c2dd996604e/index.m3u8",
+    "key": "628d6df95220d6f3ad7241693b7121cb",
+    "duration": 3972,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ac2c2de4b01c2dd996604e/u/6451e539e4b0e02eaea3faf1/t/c473fd8776ec9a10dea820ec5763b696/p/assets/videos/60e975430cf20278db21ff30/2023/07/10/64ac2c2de4b01c2dd996604e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '18. LIVE Binary Tree and Binary Search Tree Practice Set Discussion - 2' --save-dir './COURSES/11. Data Structures/5. Binary Trees' --custom-hls-key '628d6df95220d6f3ad7241693b7121cb'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ad2cade4b02b470cd6ef4b",
+    "course": "Data Structures",
+    "module": "Binary Trees",
+    "title": "19. LIVE Session Binary Tree and Binary Search Tree Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ad2cade4b02b470cd6ef4b/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/11/64ad2cade4b02b470cd6ef4b/64ad2cade4b02b470cd6ef4b_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

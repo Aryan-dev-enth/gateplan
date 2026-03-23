@@ -1,0 +1,145 @@
+[
+  {
+    "type": "video",
+    "id": "62dffdb20cf23b7c0d971fcd",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "1. 26a. Introduction to Greedy Algorithms | Introduction and Intuitive proof of Dijkstra",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dffdb20cf23b7c0d971fcd/u/6451e539e4b0e02eaea3faf1/t/ad9b452db96f7eff0bf1486a58221bd9/p/assets/videos/60e975430cf20278db21ff30/2022/07/26/62dffdb20cf23b7c0d971fcd/index.m3u8",
+    "key": "ce795dcb454d8c36afe5bdb388c3aeae",
+    "duration": 3388,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dffdb20cf23b7c0d971fcd/u/6451e539e4b0e02eaea3faf1/t/ad9b452db96f7eff0bf1486a58221bd9/p/assets/videos/60e975430cf20278db21ff30/2022/07/26/62dffdb20cf23b7c0d971fcd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 26a. Introduction to Greedy Algorithms | Introduction and Intuitive proof of Dijkstra' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'ce795dcb454d8c36afe5bdb388c3aeae'"
+  },
+  {
+    "type": "video",
+    "id": "62e10bce0cf205f259a03c75",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "2. 26b. Dijkstra code and Working Example 1",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e10bce0cf205f259a03c75/u/6451e539e4b0e02eaea3faf1/t/cf2b08e389e5ea55420c97fc00a59650/p/assets/videos/60e975430cf20278db21ff30/2022/07/27/62e10bce0cf205f259a03c75/index.m3u8",
+    "key": "a2d913317c95145d1d13806009e641ad",
+    "duration": 1035,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e10bce0cf205f259a03c75/u/6451e539e4b0e02eaea3faf1/t/cf2b08e389e5ea55420c97fc00a59650/p/assets/videos/60e975430cf20278db21ff30/2022/07/27/62e10bce0cf205f259a03c75/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 26b. Dijkstra code and Working Example 1' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'a2d913317c95145d1d13806009e641ad'"
+  },
+  {
+    "type": "video",
+    "id": "62e2645f0cf2c6900c0cf3f4",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "3. 26c. Dijkstra Working Example 2",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e2645f0cf2c6900c0cf3f4/u/6451e539e4b0e02eaea3faf1/t/5ab0214597507a195f39c6d7f1811a81/p/assets/videos/60e975430cf20278db21ff30/2022/07/28/62e2645f0cf2c6900c0cf3f4/index.m3u8",
+    "key": "2ba3e071545b7185c0cd434ca3e048f3",
+    "duration": 921,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e2645f0cf2c6900c0cf3f4/u/6451e539e4b0e02eaea3faf1/t/5ab0214597507a195f39c6d7f1811a81/p/assets/videos/60e975430cf20278db21ff30/2022/07/28/62e2645f0cf2c6900c0cf3f4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 26c. Dijkstra Working Example 2' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key '2ba3e071545b7185c0cd434ca3e048f3'"
+  },
+  {
+    "type": "video",
+    "id": "62e265720cf226beee5806e7",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "4. 26d. Dijkstra Working Example 3",
+    "url": "https://youtu.be/MiN5p_Z0-rA",
+    "key": "this-is-yt-video",
+    "duration": 571,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "62e45b940cf2528e1613aba7",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "5. 27a. Dijkstra on negative weights",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e45b940cf2528e1613aba7/u/6451e539e4b0e02eaea3faf1/t/04925c6f3b41001a4395bf60897d9ffd/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e45b940cf2528e1613aba7/index.m3u8",
+    "key": "e7f45d1d7bf512c035c650248a630b00",
+    "duration": 2680,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e45b940cf2528e1613aba7/u/6451e539e4b0e02eaea3faf1/t/04925c6f3b41001a4395bf60897d9ffd/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e45b940cf2528e1613aba7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 27a. Dijkstra on negative weights' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'e7f45d1d7bf512c035c650248a630b00'"
+  },
+  {
+    "type": "video",
+    "id": "6294c76f0cf2be0066ee8ed5",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "6. 27b. Video From DS Course: Priority Queues",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6294c76f0cf2be0066ee8ed5/u/6451e539e4b0e02eaea3faf1/t/bd34d7876ea7042702810ba6155aedb7/p/assets/videos/60e975430cf20278db21ff30/2022/05/30/6294c76f0cf2be0066ee8ed5/index.m3u8",
+    "key": "0b336a7fa3fceefcedbf62344011bf3f",
+    "duration": 1050,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6294c76f0cf2be0066ee8ed5/u/6451e539e4b0e02eaea3faf1/t/bd34d7876ea7042702810ba6155aedb7/p/assets/videos/60e975430cf20278db21ff30/2022/05/30/6294c76f0cf2be0066ee8ed5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 27b. Video From DS Course: Priority Queues' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key '0b336a7fa3fceefcedbf62344011bf3f'"
+  },
+  {
+    "type": "video",
+    "id": "62e4e34f0cf25b4393958c2f",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "7. 27c. Dijkstra Time Complexity",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e4e34f0cf25b4393958c2f/u/6451e539e4b0e02eaea3faf1/t/20568777811eb9cc6f948e162351d072/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e4e34f0cf25b4393958c2f/index.m3u8",
+    "key": "d5be0121c45f700c78069f999aa0f9d6",
+    "duration": 2024,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e4e34f0cf25b4393958c2f/u/6451e539e4b0e02eaea3faf1/t/20568777811eb9cc6f948e162351d072/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e4e34f0cf25b4393958c2f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 27c. Dijkstra Time Complexity' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'd5be0121c45f700c78069f999aa0f9d6'"
+  },
+  {
+    "type": "video",
+    "id": "62e81b230cf26c0aa68a4df8",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "8. 27d. Dijkstra Time Complexity on more variant data structures | Dijkstra Demo",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e81b230cf26c0aa68a4df8/u/6451e539e4b0e02eaea3faf1/t/06262e62b707f620ebf559789ba1371e/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e81b230cf26c0aa68a4df8/index.m3u8",
+    "key": "98a4c3011c68297ffe16c30ab18c1667",
+    "duration": 618,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e81b230cf26c0aa68a4df8/u/6451e539e4b0e02eaea3faf1/t/06262e62b707f620ebf559789ba1371e/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e81b230cf26c0aa68a4df8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 27d. Dijkstra Time Complexity on more variant data structures | Dijkstra Demo' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key '98a4c3011c68297ffe16c30ab18c1667'"
+  },
+  {
+    "type": "video",
+    "id": "62e538760cf2de444bc5b11c",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "9. 28a. DAG Shortest Path | Shortest Path in Directed Acyclic Graph",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e538760cf2de444bc5b11c/u/6451e539e4b0e02eaea3faf1/t/407aeae23eb2804d2bf5bc1eb9ade264/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e538760cf2de444bc5b11c/index.m3u8",
+    "key": "ceb5ac5e92feb0dca94cff42a1557fc5",
+    "duration": 1072,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e538760cf2de444bc5b11c/u/6451e539e4b0e02eaea3faf1/t/407aeae23eb2804d2bf5bc1eb9ade264/p/assets/videos/60e975430cf20278db21ff30/2022/07/30/62e538760cf2de444bc5b11c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 28a. DAG Shortest Path | Shortest Path in Directed Acyclic Graph' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'ceb5ac5e92feb0dca94cff42a1557fc5'"
+  },
+  {
+    "type": "video",
+    "id": "62e8081d0cf21eff566be8ce",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "10. 28b. Intuition Behind Bellman Ford Algorithm",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e8081d0cf21eff566be8ce/u/6451e539e4b0e02eaea3faf1/t/569aaedcccf633ac55df5ad26016cbe1/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e8081d0cf21eff566be8ce/index.m3u8",
+    "key": "a2fcd05059bce3fcd7178739350f16c8",
+    "duration": 1706,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e8081d0cf21eff566be8ce/u/6451e539e4b0e02eaea3faf1/t/569aaedcccf633ac55df5ad26016cbe1/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e8081d0cf21eff566be8ce/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 28b. Intuition Behind Bellman Ford Algorithm' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key 'a2fcd05059bce3fcd7178739350f16c8'"
+  },
+  {
+    "type": "video",
+    "id": "62e80df90cf27e5eb82b960c",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "11. 28c. Examples of Bellman Ford | Time complexity",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e80df90cf27e5eb82b960c/u/6451e539e4b0e02eaea3faf1/t/6f78b4b602eba6d1210d319c68f21a84/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e80df90cf27e5eb82b960c/index.m3u8",
+    "key": "1d8579c57ad73babf11b1785774b7c6e",
+    "duration": 2181,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e80df90cf27e5eb82b960c/u/6451e539e4b0e02eaea3faf1/t/6f78b4b602eba6d1210d319c68f21a84/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e80df90cf27e5eb82b960c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 28c. Examples of Bellman Ford | Time complexity' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key '1d8579c57ad73babf11b1785774b7c6e'"
+  },
+  {
+    "type": "video",
+    "id": "62e811340cf27e5eb82b96d2",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "12. 28d. Bellman ford proof and Early termination",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e811340cf27e5eb82b96d2/u/6451e539e4b0e02eaea3faf1/t/56ce16cd860e16e6be337fb20964a4b8/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e811340cf27e5eb82b96d2/index.m3u8",
+    "key": "143067c1b8ece50828a2dd330a7b2405",
+    "duration": 1415,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e811340cf27e5eb82b96d2/u/6451e539e4b0e02eaea3faf1/t/56ce16cd860e16e6be337fb20964a4b8/p/assets/videos/60e975430cf20278db21ff30/2022/08/01/62e811340cf27e5eb82b96d2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. 28d. Bellman ford proof and Early termination' --save-dir './COURSES/12. Algorithms/9. Shortest Paths Algorithms (Greedy Algorithms)' --custom-hls-key '143067c1b8ece50828a2dd330a7b2405'"
+  },
+  {
+    "type": "pdf",
+    "id": "64c96c37e4b07de734e35076",
+    "course": "Algorithms",
+    "module": "Shortest Paths Algorithms (Greedy Algorithms)",
+    "title": "13. Annotated Notes Dijkstra, DAG Shortest Path Algo, and Bellman Ford",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64c96c37e4b07de734e35076/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/08/01/64c96c37e4b07de734e35076/64c96c37e4b07de734e35076_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

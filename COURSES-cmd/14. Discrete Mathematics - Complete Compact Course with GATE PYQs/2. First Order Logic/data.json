@@ -1,0 +1,68 @@
+[
+  {
+    "type": "video",
+    "id": "674d0783d125573abb22e6bc",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "1. First order Logic - Complete Summary Part 1",
+    "url": "https://www.youtube.com/live/Fp3hl9AprLU?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 8972,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674d07abe0fca32c2edf8987",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "2. Annotated Notes - First Order Logic - Complete Summary Part 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674d07abe0fca32c2edf8987/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/02/674d07abe0fca32c2edf8987/674d07abe0fca32c2edf8987_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6764c102c2d2236f261338cc",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "3. Practice Questions - First Order Logic",
+    "url": "https://www.goclasses.in/s/courses/625613d10cf2ad8d82475130/articles/6764c102c2d2236f261338cc/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6754c337950e0003834aba0c",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "4. First order Logic - Complete Summary Part 2",
+    "url": "https://youtu.be/puvQs-gBxO4",
+    "key": "this-is-yt-video",
+    "duration": 12752,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "67564331ac122c5260c3197a",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "5. Annotated Notes - First order Logic - Complete Summary Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/67564331ac122c5260c3197a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/09/67564331ac122c5260c3197a/67564331ac122c5260c3197a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6755021b4cc92610afa12446",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "First Order Logic",
+    "title": "6. ALL GATE PYQs & Practice Questions - First Order Logic",
+    "url": "https://www.goclasses.in/s/courses/625613d10cf2ad8d82475130/articles/6755021b4cc92610afa12446/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

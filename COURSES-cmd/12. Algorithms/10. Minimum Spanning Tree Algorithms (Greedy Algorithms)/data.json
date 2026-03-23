@@ -1,0 +1,145 @@
+[
+  {
+    "type": "video",
+    "id": "62f644bfe4b0023a62ff48c8",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "1. 29a. Why Minimum Spanning Trees",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62f644bfe4b0023a62ff48c8/u/6451e539e4b0e02eaea3faf1/t/30d940a2e613624eb75f3152de0e2fce/p/assets/videos/60e975430cf20278db21ff30/2022/08/12/62f644bfe4b0023a62ff48c8/index.m3u8",
+    "key": "be6b7d482bef024374440f984b5f2c50",
+    "duration": 1355,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62f644bfe4b0023a62ff48c8/u/6451e539e4b0e02eaea3faf1/t/30d940a2e613624eb75f3152de0e2fce/p/assets/videos/60e975430cf20278db21ff30/2022/08/12/62f644bfe4b0023a62ff48c8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 29a. Why Minimum Spanning Trees' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key 'be6b7d482bef024374440f984b5f2c50'"
+  },
+  {
+    "type": "video",
+    "id": "62f644c9e4b0023a62ff48e5",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "2. 29b. Cut and Cycle properties of MST",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62f644c9e4b0023a62ff48e5/u/6451e539e4b0e02eaea3faf1/t/d6f81226d9b6ad317d8c1896426582c5/p/assets/videos/60e975430cf20278db21ff30/2022/08/12/62f644c9e4b0023a62ff48e5/index.m3u8",
+    "key": "1390e2fdcf33aa636706dfae03744ed4",
+    "duration": 1370,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62f644c9e4b0023a62ff48e5/u/6451e539e4b0e02eaea3faf1/t/d6f81226d9b6ad317d8c1896426582c5/p/assets/videos/60e975430cf20278db21ff30/2022/08/12/62f644c9e4b0023a62ff48e5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 29b. Cut and Cycle properties of MST' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '1390e2fdcf33aa636706dfae03744ed4'"
+  },
+  {
+    "type": "video",
+    "id": "62fa1af6e4b00f402e4d0fe1",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "3. 29c. Kruskal Algorithm",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62fa1af6e4b00f402e4d0fe1/u/6451e539e4b0e02eaea3faf1/t/2417bbb230a8beed206d3be3ee156394/p/assets/videos/60e975430cf20278db21ff30/2022/08/15/62fa1af6e4b00f402e4d0fe1/index.m3u8",
+    "key": "e3ef661e6ded1817e9caf97330240b0b",
+    "duration": 1451,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62fa1af6e4b00f402e4d0fe1/u/6451e539e4b0e02eaea3faf1/t/2417bbb230a8beed206d3be3ee156394/p/assets/videos/60e975430cf20278db21ff30/2022/08/15/62fa1af6e4b00f402e4d0fe1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 29c. Kruskal Algorithm' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key 'e3ef661e6ded1817e9caf97330240b0b'"
+  },
+  {
+    "type": "video",
+    "id": "62fa2b24e4b00f402e4d2e11",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "4. 30a. Questions on MSTs",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62fa2b24e4b00f402e4d2e11/u/6451e539e4b0e02eaea3faf1/t/f4b4ef57c1e989f5e99dfc985310316f/p/assets/videos/60e975430cf20278db21ff30/2022/08/15/62fa2b24e4b00f402e4d2e11/index.m3u8",
+    "key": "d8208bf3d1838a4f89e52b6781e227ac",
+    "duration": 1397,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62fa2b24e4b00f402e4d2e11/u/6451e539e4b0e02eaea3faf1/t/f4b4ef57c1e989f5e99dfc985310316f/p/assets/videos/60e975430cf20278db21ff30/2022/08/15/62fa2b24e4b00f402e4d2e11/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 30a. Questions on MSTs' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key 'd8208bf3d1838a4f89e52b6781e227ac'"
+  },
+  {
+    "type": "video",
+    "id": "64c42576e4b0292998303abb",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "5. 30b. Prims Algorithm",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abb/u/6451e539e4b0e02eaea3faf1/t/376363de5a51eb96a9e4038c3365ccac/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abb/index.m3u8",
+    "key": "87ebc8410577c7875419ffcf00673c17",
+    "duration": 1648,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abb/u/6451e539e4b0e02eaea3faf1/t/376363de5a51eb96a9e4038c3365ccac/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 30b. Prims Algorithm' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '87ebc8410577c7875419ffcf00673c17'"
+  },
+  {
+    "type": "video",
+    "id": "64c42576e4b0292998303abf",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "6. 30c. Prims and Dijkstra Similarity",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abf/u/6451e539e4b0e02eaea3faf1/t/2d5ed7e2d1d5ecb34baca2dee45ff9f5/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abf/index.m3u8",
+    "key": "995115e1f49983debc9cfee9dfb62ce5",
+    "duration": 2381,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abf/u/6451e539e4b0e02eaea3faf1/t/2d5ed7e2d1d5ecb34baca2dee45ff9f5/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 30c. Prims and Dijkstra Similarity' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '995115e1f49983debc9cfee9dfb62ce5'"
+  },
+  {
+    "type": "video",
+    "id": "64c42576e4b0292998303abd",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "7. 30d. Single Example for Prims and Dijkstra both | MST vs Shortest path on Same Graph",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abd/u/6451e539e4b0e02eaea3faf1/t/79c648cb510c4c97bf7c94930a9687e3/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abd/index.m3u8",
+    "key": "2da5b679809764d839efec530ae50051",
+    "duration": 501,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abd/u/6451e539e4b0e02eaea3faf1/t/79c648cb510c4c97bf7c94930a9687e3/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 30d. Single Example for Prims and Dijkstra both | MST vs Shortest path on Same Graph' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '2da5b679809764d839efec530ae50051'"
+  },
+  {
+    "type": "video",
+    "id": "64c42576e4b0292998303abe",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "8. 31a.Interesting Questions on MSTs | GATE 2000 | MIT Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abe/u/6451e539e4b0e02eaea3faf1/t/7236f50624db62b99943808d3326534d/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abe/index.m3u8",
+    "key": "71b0aedcf2e8bb5f96251500be0c9b54",
+    "duration": 1882,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abe/u/6451e539e4b0e02eaea3faf1/t/7236f50624db62b99943808d3326534d/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abe/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 31a.Interesting Questions on MSTs | GATE 2000 | MIT Questions' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '71b0aedcf2e8bb5f96251500be0c9b54'"
+  },
+  {
+    "type": "video",
+    "id": "64c42576e4b0292998303abc",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "9. 31b. Two Most Popular Template Questions in MSTs | TIFR 2014",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abc/u/6451e539e4b0e02eaea3faf1/t/4cc71ec559a590b60445bbcac66e6551/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abc/index.m3u8",
+    "key": "d558908927b7d6b9392833d936876a7e",
+    "duration": 2306,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42576e4b0292998303abc/u/6451e539e4b0e02eaea3faf1/t/4cc71ec559a590b60445bbcac66e6551/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42576e4b0292998303abc/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 31b. Two Most Popular Template Questions in MSTs | TIFR 2014' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key 'd558908927b7d6b9392833d936876a7e'"
+  },
+  {
+    "type": "video",
+    "id": "64c42609e4b0292998303acc",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "10. 31c. Four Cases in MSTs | GATE 2020",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42609e4b0292998303acc/u/6451e539e4b0e02eaea3faf1/t/5786381114faab0fd2fa621ebc5e4289/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42609e4b0292998303acc/index.m3u8",
+    "key": "8bfa3e63744acc2d3b49736c7e411c1a",
+    "duration": 3499,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c42609e4b0292998303acc/u/6451e539e4b0e02eaea3faf1/t/5786381114faab0fd2fa621ebc5e4289/p/assets/videos/60e975430cf20278db21ff30/2023/07/28/64c42609e4b0292998303acc/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 31c. Four Cases in MSTs | GATE 2020' --save-dir './COURSES/12. Algorithms/10. Minimum Spanning Tree Algorithms (Greedy Algorithms)' --custom-hls-key '8bfa3e63744acc2d3b49736c7e411c1a'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ca400ce4b0b94ad7f15b1e",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "11. (In Complete) Annotated Notes Spanning Trees",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ca400ce4b0b94ad7f15b1e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/08/02/64ca400ce4b0b94ad7f15b1e/64ca400ce4b0b94ad7f15b1e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64f312d9e4b039bbd3fe9752",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "12. Annotated Notes Spanning Tree",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64f312d9e4b039bbd3fe9752/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/02/64f312d9e4b039bbd3fe9752/64f312d9e4b039bbd3fe9752_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6538216de4b0464a1c7dc770",
+    "course": "Algorithms",
+    "module": "Minimum Spanning Tree Algorithms (Greedy Algorithms)",
+    "title": "13. Please Rate us on course page",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/6538216de4b0464a1c7dc770/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

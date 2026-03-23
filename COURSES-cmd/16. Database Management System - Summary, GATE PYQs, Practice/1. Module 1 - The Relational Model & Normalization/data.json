@@ -1,0 +1,123 @@
+[
+  {
+    "type": "video",
+    "id": "66e5d40dc137c03d85465b41",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "1. The Relational Model - Complete Summary & GATE PYQs",
+    "url": "https://youtu.be/u9AbgVyV0fI",
+    "key": "this-is-yt-video",
+    "duration": 14336,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66e5d447d8fd9b6ee9c68499",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "2. Annotated Notes - Relational Model Complete Summary",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66e5d447d8fd9b6ee9c68499/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/14/66e5d447d8fd9b6ee9c68499/66e5d447d8fd9b6ee9c68499_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66ec63490d4a0c44df074ff7",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "3. Functional Dependency - Complete Summary & GATE PYQs",
+    "url": "https://youtu.be/DzcHWJP2vEw?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 16579,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66ec62e7d68e63462e4da698",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "4. Annotated Notes - Functional Dependency - Complete Summary & GATE PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66ec62e7d68e63462e4da698/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/09/19/66ec62e7d68e63462e4da698/66ec62e7d68e63462e4da698_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6785bef3693bc806cdd4f0a2",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "5. Functional Dependencies - ALL GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/63b1e110e4b09e5b50fc3164/articles/6785bef3693bc806cdd4f0a2/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "67780592b36ddb7d46f89579",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "6. Normal Forms - Complete Summary & GATE PYQs",
+    "url": "https://youtu.be/HdaHz0iY2ws",
+    "key": "this-is-yt-video",
+    "duration": 12963,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "678267e9c5ff941561d648d3",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "7. Annotated Notes - Normal Forms - Complete Summary & GATE PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/678267e9c5ff941561d648d3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/01/11/678267e9c5ff941561d648d3/678267e9c5ff941561d648d3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6785c3fe96e18e6e10573d85",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "8. Normal Forms - GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/63b1e110e4b09e5b50fc3164/articles/6785c3fe96e18e6e10573d85/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6785bcaf77ae0c5398a775a7",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "9. Decomposition of a relation - Complete Summary & GATE PYQs",
+    "url": "https://www.youtube.com/live/iktJq5AdirA?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 13383,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6785bce3693bc806cdd4f027",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "10. Annotated Notes - Decomposition of a relation - Complete Summary",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6785bce3693bc806cdd4f027/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/01/14/6785bce3693bc806cdd4f027/6785bce3693bc806cdd4f027_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6785c317693bc806cdd4f1b8",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 1 - The Relational Model & Normalization",
+    "title": "11. Decomposition - GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/63b1e110e4b09e5b50fc3164/articles/6785c317693bc806cdd4f1b8/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

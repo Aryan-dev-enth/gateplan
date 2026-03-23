@@ -1,0 +1,112 @@
+[
+  {
+    "type": "video",
+    "id": "696087837329203cbf6e53d2",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "1. Lecture 1A - Semantic Analysis, Syntax Directed Translation Scheme SDT",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/696087837329203cbf6e53d2/u/6451e539e4b0e02eaea3faf1/t/36d163eb4ff4c054ca807ba2ded574bf/p/assets/videos/60e975430cf20278db21ff30/2026/01/09/696087837329203cbf6e53d2/index.m3u8",
+    "key": "18af6ea10d210974cda84819d6042c60",
+    "duration": 15080,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/696087837329203cbf6e53d2/u/6451e539e4b0e02eaea3faf1/t/36d163eb4ff4c054ca807ba2ded574bf/p/assets/videos/60e975430cf20278db21ff30/2026/01/09/696087837329203cbf6e53d2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1A - Semantic Analysis, Syntax Directed Translation Scheme SDT' --save-dir './COURSES/9. Compiler Design/4. Module 4 Syntax Directed Translation & SDD' --custom-hls-key '18af6ea10d210974cda84819d6042c60'"
+  },
+  {
+    "type": "pdf",
+    "id": "69608cdf4bcaa50d335a6c17",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "2. Annotated Notes - Lecture 1 - Syntax Directed Translation Scheme SDT",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69608cdf4bcaa50d335a6c17/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/01/09/69608cdf4bcaa50d335a6c17/69608cdf4bcaa50d335a6c17_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "696a57ba43e775747cca2c5e",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "3. Lecture 1B - SDT - GATE PYQs",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/696aa3d5a908091e47f0e6a4/u/6451e539e4b0e02eaea3faf1/t/48b612043c42d22c207d2c5197ac8e33/p/assets/videos/60e975430cf20278db21ff30/2026/01/16/696aa3d5a908091e47f0e6a4/index.m3u8",
+    "key": "ea695967ebf4b72253535b323840302c",
+    "duration": 10213,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/696aa3d5a908091e47f0e6a4/u/6451e539e4b0e02eaea3faf1/t/48b612043c42d22c207d2c5197ac8e33/p/assets/videos/60e975430cf20278db21ff30/2026/01/16/696aa3d5a908091e47f0e6a4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 1B - SDT - GATE PYQs' --save-dir './COURSES/9. Compiler Design/4. Module 4 Syntax Directed Translation & SDD' --custom-hls-key 'ea695967ebf4b72253535b323840302c'"
+  },
+  {
+    "type": "pdf",
+    "id": "696abe27eabce943f2d06e0a",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "4. Annotated Notes - Lecture 1B - SDT - GATE PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/696abe27eabce943f2d06e0a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/01/16/696abe27eabce943f2d06e0a/696abe27eabce943f2d06e0a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6974f365c8d8074d8e216f74",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "5. Lecture 2A - SDD - Syntax Directed Definitions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69752947b1f9115bb122385c/u/6451e539e4b0e02eaea3faf1/t/1bbcb39b3d0f1fa0696d7dc8f3758ecf/p/assets/videos/60e975430cf20278db21ff30/2026/01/24/69752947b1f9115bb122385c/index.m3u8",
+    "key": "0875c0719b3497c7701699e8e5cdc369",
+    "duration": 8105,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69752947b1f9115bb122385c/u/6451e539e4b0e02eaea3faf1/t/1bbcb39b3d0f1fa0696d7dc8f3758ecf/p/assets/videos/60e975430cf20278db21ff30/2026/01/24/69752947b1f9115bb122385c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 2A - SDD - Syntax Directed Definitions' --save-dir './COURSES/9. Compiler Design/4. Module 4 Syntax Directed Translation & SDD' --custom-hls-key '0875c0719b3497c7701699e8e5cdc369'"
+  },
+  {
+    "type": "pdf",
+    "id": "6975d9095477d760cda62cb7",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "6. Annotated Notes - Lecture 2A - SDD - Syntax Directed Definitions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6975d9095477d760cda62cb7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/01/25/6975d9095477d760cda62cb7/6975d9095477d760cda62cb7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "69763d626fd326201806c952",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "7. Lecture 2B - SDD - Syntax Directed Definitions - Part 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/697694a179d0aa25e4c6bac3/u/6451e539e4b0e02eaea3faf1/t/7533ea5844701999e8219d8d37d50bc4/p/assets/videos/60e975430cf20278db21ff30/2026/01/25/697694a179d0aa25e4c6bac3/index.m3u8",
+    "key": "2a55d416e9eff491c93c638a17fbc2a7",
+    "duration": 14300,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/697694a179d0aa25e4c6bac3/u/6451e539e4b0e02eaea3faf1/t/7533ea5844701999e8219d8d37d50bc4/p/assets/videos/60e975430cf20278db21ff30/2026/01/25/697694a179d0aa25e4c6bac3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 2B - SDD - Syntax Directed Definitions - Part 2' --save-dir './COURSES/9. Compiler Design/4. Module 4 Syntax Directed Translation & SDD' --custom-hls-key '2a55d416e9eff491c93c638a17fbc2a7'"
+  },
+  {
+    "type": "pdf",
+    "id": "6976a08257d34f35bebbac34",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "8. Annotated Notes - Lecture 2B - SDD - Syntax Directed Definitions - Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6976a08257d34f35bebbac34/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/01/25/6976a08257d34f35bebbac34/6976a08257d34f35bebbac34_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "697b45696712850046ce6459",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "9. Lecture 2C - SDD - Syntax Directed Definitions - Part 3",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/697bae3b8530ac40c06d9b2a/u/6451e539e4b0e02eaea3faf1/t/9c91e2bfb7cca0d0bc8fb8dd33f219bb/p/assets/videos/60e975430cf20278db21ff30/2026/01/29/697bae3b8530ac40c06d9b2a/index.m3u8",
+    "key": "7836ffe4de4ebc13a6d3fbe7baca06c2",
+    "duration": 16094,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/697bae3b8530ac40c06d9b2a/u/6451e539e4b0e02eaea3faf1/t/9c91e2bfb7cca0d0bc8fb8dd33f219bb/p/assets/videos/60e975430cf20278db21ff30/2026/01/29/697bae3b8530ac40c06d9b2a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 2C - SDD - Syntax Directed Definitions - Part 3' --save-dir './COURSES/9. Compiler Design/4. Module 4 Syntax Directed Translation & SDD' --custom-hls-key '7836ffe4de4ebc13a6d3fbe7baca06c2'"
+  },
+  {
+    "type": "pdf",
+    "id": "697c67249ca60f254a33fc49",
+    "course": "Compiler Design",
+    "module": "Module 4: Syntax Directed Translation & SDD",
+    "title": "10. Annotated Notes - Lecture 2C - SDD - Syntax Directed Definitions - Part 3",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/697c67249ca60f254a33fc49/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/01/30/697c67249ca60f254a33fc49/697c67249ca60f254a33fc49_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,46 @@
+[
+  {
+    "type": "video",
+    "id": "6404a326e4b0e03cb834520b",
+    "course": "Data Structures",
+    "module": "Optional: Logarithmic Basics",
+    "title": "1. Fundamental Section Lecture: Logarithms Definition and All Properties",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6404a326e4b0e03cb834520b/u/6451e539e4b0e02eaea3faf1/t/acda0d8d9332c99391e1ac22aad7ee6e/p/assets/videos/60e975430cf20278db21ff30/2023/03/05/6404a326e4b0e03cb834520b/index.m3u8",
+    "key": "9b8b36b58c2a3d39f5ea4d6b9ef193e6",
+    "duration": 3712,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6404a326e4b0e03cb834520b/u/6451e539e4b0e02eaea3faf1/t/acda0d8d9332c99391e1ac22aad7ee6e/p/assets/videos/60e975430cf20278db21ff30/2023/03/05/6404a326e4b0e03cb834520b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Fundamental Section Lecture: Logarithms Definition and All Properties' --save-dir './COURSES/11. Data Structures/2. Optional Logarithmic Basics' --custom-hls-key '9b8b36b58c2a3d39f5ea4d6b9ef193e6'"
+  },
+  {
+    "type": "video",
+    "id": "640ac57ee4b06ec49a69e6d7",
+    "course": "Data Structures",
+    "module": "Optional: Logarithmic Basics",
+    "title": "2. Fundamental Section Lecture: Logarithm Exercise Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/640ac57ee4b06ec49a69e6d7/u/6451e539e4b0e02eaea3faf1/t/05a43924a78ebc59a54f8ee224c69c65/p/assets/videos/60e975430cf20278db21ff30/2023/03/10/640ac57ee4b06ec49a69e6d7/index.m3u8",
+    "key": "17febe90ea64051907cc156c789b5ddd",
+    "duration": 1568,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/640ac57ee4b06ec49a69e6d7/u/6451e539e4b0e02eaea3faf1/t/05a43924a78ebc59a54f8ee224c69c65/p/assets/videos/60e975430cf20278db21ff30/2023/03/10/640ac57ee4b06ec49a69e6d7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Fundamental Section Lecture: Logarithm Exercise Questions' --save-dir './COURSES/11. Data Structures/2. Optional Logarithmic Basics' --custom-hls-key '17febe90ea64051907cc156c789b5ddd'"
+  },
+  {
+    "type": "video",
+    "id": "640b609be4b05f1197a00568",
+    "course": "Data Structures",
+    "module": "Optional: Logarithmic Basics",
+    "title": "3. Fundamental Section Lecture: Logarithm Questions, Graph, and Log in Computer science",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/640b609be4b05f1197a00568/u/6451e539e4b0e02eaea3faf1/t/ee930baac4304aff32b289fd0692be2a/p/assets/videos/60e975430cf20278db21ff30/2023/03/10/640b609be4b05f1197a00568/index.m3u8",
+    "key": "392d91d517e09633faa5d239ee340a0b",
+    "duration": 2564,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/640b609be4b05f1197a00568/u/6451e539e4b0e02eaea3faf1/t/ee930baac4304aff32b289fd0692be2a/p/assets/videos/60e975430cf20278db21ff30/2023/03/10/640b609be4b05f1197a00568/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Fundamental Section Lecture: Logarithm Questions, Graph, and Log in Computer science' --save-dir './COURSES/11. Data Structures/2. Optional Logarithmic Basics' --custom-hls-key '392d91d517e09633faa5d239ee340a0b'"
+  },
+  {
+    "type": "pdf",
+    "id": "640b61bee4b017ea2f7f5156",
+    "course": "Data Structures",
+    "module": "Optional: Logarithmic Basics",
+    "title": "4. Annotated Notes Lograrithms",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/640b61bee4b017ea2f7f5156/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/10/640b61bee4b017ea2f7f5156/640b61bee4b017ea2f7f5156_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "type": "article",
+    "id": "66334aadbfab3d2eab1840c1",
+    "course": "Operating Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024) - Operating System",
+    "url": "https://www.goclasses.in/s/courses/60fdd1ac0cf2ab85f9c65136/articles/66334aadbfab3d2eab1840c1/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663ca22fb8647a64817f5021",
+    "course": "Operating Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Operating Systems Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca22fb8647a64817f5021/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca22fb8647a64817f5021/663ca22fb8647a64817f5021_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693ff427c026fe4dee392d5e",
+    "course": "Operating Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "3. Intro to OS",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693ff427c026fe4dee392d5e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693ff427c026fe4dee392d5e/693ff427c026fe4dee392d5e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693ff4b85423bb0f5c7b31de",
+    "course": "Operating Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "4. File system",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693ff4b85423bb0f5c7b31de/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693ff4b85423bb0f5c7b31de/693ff4b85423bb0f5c7b31de_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882ae7c77a8a0d7cd4c037",
+    "course": "Operating Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "5. Operating Systems(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882ae7c77a8a0d7cd4c037/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882ae7c77a8a0d7cd4c037/69882ae7c77a8a0d7cd4c037_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

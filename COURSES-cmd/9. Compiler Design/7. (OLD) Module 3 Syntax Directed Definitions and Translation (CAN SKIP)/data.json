@@ -1,0 +1,46 @@
+[
+  {
+    "type": "video",
+    "id": "63727bcae4b026625dabc626",
+    "course": "Compiler Design",
+    "module": "(OLD) Module 3: Syntax Directed Definitions and Translation (CAN SKIP)",
+    "title": "1. Lecture 15: Syntax Directed Definition and Translation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bcae4b026625dabc626/u/6451e539e4b0e02eaea3faf1/t/79a070ca0c176299eb9828cb8594256e/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bcae4b026625dabc626/index.m3u8",
+    "key": "a95aa9221f05de67c806152d0afa76f4",
+    "duration": 3139,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bcae4b026625dabc626/u/6451e539e4b0e02eaea3faf1/t/79a070ca0c176299eb9828cb8594256e/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bcae4b026625dabc626/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 15: Syntax Directed Definition and Translation' --save-dir './COURSES/9. Compiler Design/7. (OLD) Module 3 Syntax Directed Definitions and Translation (CAN SKIP)' --custom-hls-key 'a95aa9221f05de67c806152d0afa76f4'"
+  },
+  {
+    "type": "video",
+    "id": "63727bd4e4b0410372939e01",
+    "course": "Compiler Design",
+    "module": "(OLD) Module 3: Syntax Directed Definitions and Translation (CAN SKIP)",
+    "title": "2. Lecture 16 PYQs on Syntax Directed Definition and Translation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bd4e4b0410372939e01/u/6451e539e4b0e02eaea3faf1/t/21bf9a88551fd1d2f603dfffdd0308a6/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bd4e4b0410372939e01/index.m3u8",
+    "key": "05b5293bfa62ba5e41ee5c6ad80f2b0a",
+    "duration": 3541,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bd4e4b0410372939e01/u/6451e539e4b0e02eaea3faf1/t/21bf9a88551fd1d2f603dfffdd0308a6/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bd4e4b0410372939e01/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 16 PYQs on Syntax Directed Definition and Translation' --save-dir './COURSES/9. Compiler Design/7. (OLD) Module 3 Syntax Directed Definitions and Translation (CAN SKIP)' --custom-hls-key '05b5293bfa62ba5e41ee5c6ad80f2b0a'"
+  },
+  {
+    "type": "video",
+    "id": "63727bdce4b0ec2b647397cd",
+    "course": "Compiler Design",
+    "module": "(OLD) Module 3: Syntax Directed Definitions and Translation (CAN SKIP)",
+    "title": "3. Lecture 17 Inherited and Synthesize attributes with Top down and Bottom-up parsers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bdce4b0ec2b647397cd/u/6451e539e4b0e02eaea3faf1/t/add0b8c0e20a57044194fc1e2e04825e/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bdce4b0ec2b647397cd/index.m3u8",
+    "key": "4be2a31bb24d39b8e37f618f15c3d6e3",
+    "duration": 1762,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63727bdce4b0ec2b647397cd/u/6451e539e4b0e02eaea3faf1/t/add0b8c0e20a57044194fc1e2e04825e/p/assets/videos/60e975430cf20278db21ff30/2022/11/14/63727bdce4b0ec2b647397cd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 17 Inherited and Synthesize attributes with Top down and Bottom-up parsers' --save-dir './COURSES/9. Compiler Design/7. (OLD) Module 3 Syntax Directed Definitions and Translation (CAN SKIP)' --custom-hls-key '4be2a31bb24d39b8e37f618f15c3d6e3'"
+  },
+  {
+    "type": "pdf",
+    "id": "61e3051c0cf2a944bc6ca319",
+    "course": "Compiler Design",
+    "module": "(OLD) Module 3: Syntax Directed Definitions and Translation (CAN SKIP)",
+    "title": "4. SDT Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/61e3051c0cf2a944bc6ca319/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/01/15/61e3051c0cf2a944bc6ca319/61e3051c0cf2a944bc6ca319_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

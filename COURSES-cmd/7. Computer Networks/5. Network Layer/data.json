@@ -1,0 +1,178 @@
+[
+  {
+    "type": "liveclass",
+    "id": "653c9ce9e4b0ac63ee1a1992",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "1. Lecture: IP Header and Fragmentation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653ce26ae4b0ac63ee1a441e/u/6451e539e4b0e02eaea3faf1/t/76ade9ee193a55eeae8bc9a6c0808187/p/assets/videos/60e975430cf20278db21ff30/2023/10/28/653ce26ae4b0ac63ee1a441e/index.m3u8",
+    "key": "6410d736446fd88e794972db0a253f8b",
+    "duration": 9959,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653ce26ae4b0ac63ee1a441e/u/6451e539e4b0e02eaea3faf1/t/76ade9ee193a55eeae8bc9a6c0808187/p/assets/videos/60e975430cf20278db21ff30/2023/10/28/653ce26ae4b0ac63ee1a441e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture: IP Header and Fragmentation' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key '6410d736446fd88e794972db0a253f8b'"
+  },
+  {
+    "type": "pdf",
+    "id": "653ce509e4b0d73a259a8de8",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "2. Annotated Notes Lecture IP Header and Fragmentation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653ce509e4b0d73a259a8de8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/28/653ce509e4b0d73a259a8de8/653ce509e4b0d73a259a8de8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "653deba2e4b010d48255acb4",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "3. Lecture: More Fragmentation Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653e0d52e4b078c1afab0ee3/u/6451e539e4b0e02eaea3faf1/t/e1be4986476d0450c943b0465e52fcc1/p/assets/videos/60e975430cf20278db21ff30/2023/10/29/653e0d52e4b078c1afab0ee3/index.m3u8",
+    "key": "cae4088b1af71cf904404484a3486626",
+    "duration": 5027,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/653e0d52e4b078c1afab0ee3/u/6451e539e4b0e02eaea3faf1/t/e1be4986476d0450c943b0465e52fcc1/p/assets/videos/60e975430cf20278db21ff30/2023/10/29/653e0d52e4b078c1afab0ee3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture: More Fragmentation Questions' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key 'cae4088b1af71cf904404484a3486626'"
+  },
+  {
+    "type": "pdf",
+    "id": "653e0725e4b03a66c2152227",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "4. Annotated Notes Lecture More Fragmentation Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653e0725e4b03a66c2152227/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/29/653e0725e4b03a66c2152227/653e0725e4b03a66c2152227_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "653ce38fe4b081261e88aa0d",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "5. PYQs on Fragmentation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653ce38fe4b081261e88aa0d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/28/653ce38fe4b081261e88aa0d/653ce38fe4b081261e88aa0d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6541ef99e4b0ec34ea1f10e4",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "6. Lecture 30. ALL GATE PYQs and Some More Questions on IP Fragmentation | Stanford, CMU Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6541ef99e4b0ec34ea1f10e4/u/6451e539e4b0e02eaea3faf1/t/6e4d0b0de2660a6e6a17db5cd5226323/p/assets/videos/60e975430cf20278db21ff30/2023/11/01/6541ef99e4b0ec34ea1f10e4/index.m3u8",
+    "key": "734ca8b7d14712b342f97c401bfb9753",
+    "duration": 5997,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6541ef99e4b0ec34ea1f10e4/u/6451e539e4b0e02eaea3faf1/t/6e4d0b0de2660a6e6a17db5cd5226323/p/assets/videos/60e975430cf20278db21ff30/2023/11/01/6541ef99e4b0ec34ea1f10e4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 30. ALL GATE PYQs and Some More Questions on IP Fragmentation | Stanford, CMU Questions' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key '734ca8b7d14712b342f97c401bfb9753'"
+  },
+  {
+    "type": "pdf",
+    "id": "6540caf1e4b0f6e42d10b3ff",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "7. Annotated Notes Lecture ALL GATE PYQs and Even More questions on Fragmentation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6540caf1e4b0f6e42d10b3ff/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/31/6540caf1e4b0f6e42d10b3ff/6540caf1e4b0f6e42d10b3ff_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "654276afe4b0b4f38d04f3eb",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "8. Lecture 31 a. Internet Control Message Protocol (ICMP)",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65429ea8e4b0f278496534d5/u/6451e539e4b0e02eaea3faf1/t/c0d53e430f452916946ea93b561f176d/p/assets/videos/60e975430cf20278db21ff30/2023/11/01/65429ea8e4b0f278496534d5/index.m3u8",
+    "key": "b9dca1302aaf75c6a964fb1b547ee34b",
+    "duration": 7029,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65429ea8e4b0f278496534d5/u/6451e539e4b0e02eaea3faf1/t/c0d53e430f452916946ea93b561f176d/p/assets/videos/60e975430cf20278db21ff30/2023/11/01/65429ea8e4b0f278496534d5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 31 a. Internet Control Message Protocol (ICMP)' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key 'b9dca1302aaf75c6a964fb1b547ee34b'"
+  },
+  {
+    "type": "video",
+    "id": "6543a276e4b0d844d3236558",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "9. Lecture 31 b Network Address Translation NAT",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6543a276e4b0d844d3236558/u/6451e539e4b0e02eaea3faf1/t/f6af4006ed5597be61a07d8ed5cba831/p/assets/videos/60e975430cf20278db21ff30/2023/11/02/6543a276e4b0d844d3236558/index.m3u8",
+    "key": "a51cf70cd94025cfb5b2a29837eb4f91",
+    "duration": 3770,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6543a276e4b0d844d3236558/u/6451e539e4b0e02eaea3faf1/t/f6af4006ed5597be61a07d8ed5cba831/p/assets/videos/60e975430cf20278db21ff30/2023/11/02/6543a276e4b0d844d3236558/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 31 b Network Address Translation NAT' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key 'a51cf70cd94025cfb5b2a29837eb4f91'"
+  },
+  {
+    "type": "pdf",
+    "id": "6543a3c3e4b02baa05da1a00",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "10. Annotated Notes Lecture 31 ICMP and NAT",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6543a3c3e4b02baa05da1a00/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/02/6543a3c3e4b02baa05da1a00/6543a3c3e4b02baa05da1a00_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6546320ae4b0f8a1a0ae6b4f",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "11. Lecture 32 Distance Vector Routing Protocol",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65465b9ae4b0062e5569f695/u/6451e539e4b0e02eaea3faf1/t/ebbb82015cdacbcfa0abd05d382933ad/p/assets/videos/60e975430cf20278db21ff30/2023/11/04/65465b9ae4b0062e5569f695/index.m3u8",
+    "key": "c2ed552d24d256ada8b2a739b51fc06f",
+    "duration": 6538,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65465b9ae4b0062e5569f695/u/6451e539e4b0e02eaea3faf1/t/ebbb82015cdacbcfa0abd05d382933ad/p/assets/videos/60e975430cf20278db21ff30/2023/11/04/65465b9ae4b0062e5569f695/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 32 Distance Vector Routing Protocol' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key 'c2ed552d24d256ada8b2a739b51fc06f'"
+  },
+  {
+    "type": "pdf",
+    "id": "654650dde4b042ebe879ee57",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "12. Annotated Notes Lecture 32 Distance Vector Routing",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/654650dde4b042ebe879ee57/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/04/654650dde4b042ebe879ee57/654650dde4b042ebe879ee57_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65472e5ee4b05ffe8e96466e",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "13. Lecture 32 b PYQs on Distance Vector Routing Protocol and Count to Infinity",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65475451e4b0be0d6c4dd08b/u/6451e539e4b0e02eaea3faf1/t/7db7968f2ed6065cec819f0e91a47b3a/p/assets/videos/60e975430cf20278db21ff30/2023/11/05/65475451e4b0be0d6c4dd08b/index.m3u8",
+    "key": "5f3064838ac24793405922129c28365b",
+    "duration": 5670,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65475451e4b0be0d6c4dd08b/u/6451e539e4b0e02eaea3faf1/t/7db7968f2ed6065cec819f0e91a47b3a/p/assets/videos/60e975430cf20278db21ff30/2023/11/05/65475451e4b0be0d6c4dd08b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Lecture 32 b PYQs on Distance Vector Routing Protocol and Count to Infinity' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key '5f3064838ac24793405922129c28365b'"
+  },
+  {
+    "type": "pdf",
+    "id": "65475a74e4b06233052e8fbd",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "14. Annotated Notes Lecture 32 b. DVR PYQs and Count to Infinity",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65475a74e4b06233052e8fbd/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/05/65475a74e4b06233052e8fbd/65475a74e4b06233052e8fbd_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "654914a2e4b013bc5fececf0",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "15. Link State Routing Protocol",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/654914a2e4b013bc5fececf0/u/6451e539e4b0e02eaea3faf1/t/bb766ed411d3c4ac919903d2ca0349fe/p/assets/videos/60e975430cf20278db21ff30/2023/11/06/654914a2e4b013bc5fececf0/index.m3u8",
+    "key": "8dee4e1ca756db00b562a7a09a717824",
+    "duration": 1295,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/654914a2e4b013bc5fececf0/u/6451e539e4b0e02eaea3faf1/t/bb766ed411d3c4ac919903d2ca0349fe/p/assets/videos/60e975430cf20278db21ff30/2023/11/06/654914a2e4b013bc5fececf0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. Link State Routing Protocol' --save-dir './COURSES/7. Computer Networks/5. Network Layer' --custom-hls-key '8dee4e1ca756db00b562a7a09a717824'"
+  },
+  {
+    "type": "pdf",
+    "id": "654b28bee4b0fe4d547f6c45",
+    "course": "Computer Networks",
+    "module": "Network Layer",
+    "title": "16. Annotated Notes Link State Routing Protocol",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/654b28bee4b0fe4d547f6c45/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/08/654b28bee4b0fe4d547f6c45/654b28bee4b0fe4d547f6c45_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

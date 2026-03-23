@@ -1,0 +1,79 @@
+[
+  {
+    "type": "article",
+    "id": "64a45561e4b04783547913d1",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "1. 15. ALL IN ONE AVL TREE",
+    "url": "https://www.goclasses.in/s/courses/62655aaa0cf21b4eea415dbb/articles/64a45561e4b04783547913d1/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "64a66a02e4b05b69c2784016",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "2. Practice Set AVL Trees",
+    "url": "https://www.goclasses.in/s/courses/62655aaa0cf21b4eea415dbb/articles/64a66a02e4b05b69c2784016/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "628ccf000cf2358118cbc5c0",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "3. AVL Tree Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/628ccf000cf2358118cbc5c0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/05/24/628ccf000cf2358118cbc5c0/628ccf000cf2358118cbc5c0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64a66916e4b0bfabeea26c0f",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "4. Practice Set AVL Trees",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64a66916e4b0bfabeea26c0f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/06/64a66916e4b0bfabeea26c0f/64a66916e4b0bfabeea26c0f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64b004b2e4b0bb6b5ed4ce3a",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "5. LIVE AVL tree Practice Set Discussion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64b0226ee4b0bf4de15ada54/u/6451e539e4b0e02eaea3faf1/t/afedb488603290ce3ea8d966ba13d0d2/p/assets/videos/60e975430cf20278db21ff30/2023/07/13/64b0226ee4b0bf4de15ada54/index.m3u8",
+    "key": "75706a851f344065c84279a3835a4c67",
+    "duration": 5778,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64b0226ee4b0bf4de15ada54/u/6451e539e4b0e02eaea3faf1/t/afedb488603290ce3ea8d966ba13d0d2/p/assets/videos/60e975430cf20278db21ff30/2023/07/13/64b0226ee4b0bf4de15ada54/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. LIVE AVL tree Practice Set Discussion' --save-dir './COURSES/11. Data Structures/6. AVL Tree' --custom-hls-key '75706a851f344065c84279a3835a4c67'"
+  },
+  {
+    "type": "pdf",
+    "id": "64b0d5b9e4b093133cfbb4c8",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "6. Annotated Notes LIVE Session AVL Tree",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64b0d5b9e4b093133cfbb4c8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/14/64b0d5b9e4b093133cfbb4c8/64b0d5b9e4b093133cfbb4c8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "653b5fafe4b0be3f4a4ae975",
+    "course": "Data Structures",
+    "module": "AVL Tree",
+    "title": "7. Please Rate us on Course Page",
+    "url": "https://www.goclasses.in/s/courses/62655aaa0cf21b4eea415dbb/articles/653b5fafe4b0be3f4a4ae975/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

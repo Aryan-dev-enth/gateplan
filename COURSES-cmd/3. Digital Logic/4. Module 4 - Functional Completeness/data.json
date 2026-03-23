@@ -1,0 +1,35 @@
+[
+  {
+    "type": "article",
+    "id": "65302e35e4b02be26e250a6a",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "1. Functional Completeness - Complete Playlist",
+    "url": "https://www.goclasses.in/s/courses/62aa64860cf2d98f15f6229b/articles/65302e35e4b02be26e250a6a/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "653031dde4b06608aa82b6b9",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "2. Annotated Notes - Functional Completeness",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/653031dde4b06608aa82b6b9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/18/653031dde4b06608aa82b6b9/653031dde4b06608aa82b6b9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "65302e97e4b0723b99fc1d79",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "3. Annotated Notes - Post's Functional Completeness Theorem",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65302e97e4b0723b99fc1d79/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/18/65302e97e4b0723b99fc1d79/65302e97e4b0723b99fc1d79_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

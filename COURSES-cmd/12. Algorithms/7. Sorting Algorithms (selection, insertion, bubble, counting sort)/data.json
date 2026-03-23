@@ -1,0 +1,79 @@
+[
+  {
+    "type": "video",
+    "id": "64ba1b78e4b083fb784c6a06",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "1. 20a .Bubble Sort",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a06/u/6451e539e4b0e02eaea3faf1/t/806e6aa3ffefefd40b3b286317c68263/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a06/index.m3u8",
+    "key": "28869ab4b16897a300b344e9c85f7afd",
+    "duration": 1643,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a06/u/6451e539e4b0e02eaea3faf1/t/806e6aa3ffefefd40b3b286317c68263/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a06/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 20a .Bubble Sort' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key '28869ab4b16897a300b344e9c85f7afd'"
+  },
+  {
+    "type": "video",
+    "id": "64ba1b78e4b083fb784c6a05",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "2. 20b .Insertion Sort",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a05/u/6451e539e4b0e02eaea3faf1/t/fbff3e2f176a223653b28078fe38f770/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a05/index.m3u8",
+    "key": "b5205e5d6ccce9d90d58e7d55a98b55c",
+    "duration": 1497,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a05/u/6451e539e4b0e02eaea3faf1/t/fbff3e2f176a223653b28078fe38f770/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a05/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 20b .Insertion Sort' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key 'b5205e5d6ccce9d90d58e7d55a98b55c'"
+  },
+  {
+    "type": "video",
+    "id": "64ba1b78e4b083fb784c6a04",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "3. 20c .Bubble Sort and Insertion Sort",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a04/u/6451e539e4b0e02eaea3faf1/t/8fb15c1e388425978bdff3ae5f88da17/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a04/index.m3u8",
+    "key": "3d2479f5d952613896fefd004ede47e5",
+    "duration": 2089,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1b78e4b083fb784c6a04/u/6451e539e4b0e02eaea3faf1/t/8fb15c1e388425978bdff3ae5f88da17/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1b78e4b083fb784c6a04/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 20c .Bubble Sort and Insertion Sort' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key '3d2479f5d952613896fefd004ede47e5'"
+  },
+  {
+    "type": "video",
+    "id": "64ba1e97e4b083fb784c6ac8",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "4. 20d. Selection Sort and Heap Sort",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6ac8/u/6451e539e4b0e02eaea3faf1/t/31edc9fd531c97b034468f5c35a8f336/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6ac8/index.m3u8",
+    "key": "c9f4142170067a22243d0c6bf0ec3e87",
+    "duration": 2272,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6ac8/u/6451e539e4b0e02eaea3faf1/t/31edc9fd531c97b034468f5c35a8f336/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6ac8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 20d. Selection Sort and Heap Sort' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key 'c9f4142170067a22243d0c6bf0ec3e87'"
+  },
+  {
+    "type": "video",
+    "id": "64ba1e97e4b083fb784c6ac9",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "5. 20e. Decision Tree",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6ac9/u/6451e539e4b0e02eaea3faf1/t/61e5d1db53bd185a05b794fc4cf3e545/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6ac9/index.m3u8",
+    "key": "6c64397b8b59b1720e7da97bbc995fce",
+    "duration": 3166,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6ac9/u/6451e539e4b0e02eaea3faf1/t/61e5d1db53bd185a05b794fc4cf3e545/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6ac9/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 20e. Decision Tree' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key '6c64397b8b59b1720e7da97bbc995fce'"
+  },
+  {
+    "type": "video",
+    "id": "64ba1e97e4b083fb784c6aca",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "6. 20f. [Optional] Counting Sort and Radix Sort",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6aca/u/6451e539e4b0e02eaea3faf1/t/b0215582348290a1ace47c92ac1c1a7e/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6aca/index.m3u8",
+    "key": "5ae88b06e4ff21b96b89d9063a2cd4bf",
+    "duration": 2056,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64ba1e97e4b083fb784c6aca/u/6451e539e4b0e02eaea3faf1/t/b0215582348290a1ace47c92ac1c1a7e/p/assets/videos/60e975430cf20278db21ff30/2023/07/21/64ba1e97e4b083fb784c6aca/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 20f. [Optional] Counting Sort and Radix Sort' --save-dir './COURSES/12. Algorithms/7. Sorting Algorithms (selection, insertion, bubble, counting sort)' --custom-hls-key '5ae88b06e4ff21b96b89d9063a2cd4bf'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ca56afe4b05d1207231da5",
+    "course": "Algorithms",
+    "module": "Sorting Algorithms (selection, insertion, bubble, counting sort)",
+    "title": "7. Annotated Notes Sorting Algorithms",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ca56afe4b05d1207231da5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/08/02/64ca56afe4b05d1207231da5/64ca56afe4b05d1207231da5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

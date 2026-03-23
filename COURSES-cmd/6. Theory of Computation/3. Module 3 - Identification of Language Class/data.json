@@ -1,0 +1,90 @@
+[
+  {
+    "type": "video",
+    "id": "64f1adebe4b0517788ca1a4a",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "1. Lecture 1A - Identification of Regular Languages",
+    "url": "https://youtu.be/mZ8S3qE89fM",
+    "key": "this-is-yt-video",
+    "duration": 4480,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64f2dd64e4b0f079354b5e1e",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "2. Lecture 1B - Practice - Identification of Regular Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f2dd64e4b0f079354b5e1e/u/6451e539e4b0e02eaea3faf1/t/7a51b9f802114bbdf4d038a2cb9fd3e2/p/assets/videos/60e975430cf20278db21ff30/2023/09/02/64f2dd64e4b0f079354b5e1e/index.m3u8",
+    "key": "a9df94319a61db0a2a06efeb4ad4caf0",
+    "duration": 1684,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f2dd64e4b0f079354b5e1e/u/6451e539e4b0e02eaea3faf1/t/7a51b9f802114bbdf4d038a2cb9fd3e2/p/assets/videos/60e975430cf20278db21ff30/2023/09/02/64f2dd64e4b0f079354b5e1e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 1B - Practice - Identification of Regular Languages' --save-dir './COURSES/6. Theory of Computation/3. Module 3 - Identification of Language Class' --custom-hls-key 'a9df94319a61db0a2a06efeb4ad4caf0'"
+  },
+  {
+    "type": "video",
+    "id": "64f4ae39e4b0a26a9a474f85",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "3. Lecture 1C - GATE CSE 2014 - Identification of Regular Languages",
+    "url": "https://youtu.be/W3LKQ91Kyw0",
+    "key": "this-is-yt-video",
+    "duration": 2720,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64f4de7ae4b01a677034644f",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "4. Annotated Notes - Lecture 1A-1C - Identification of Regular Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64f4de7ae4b01a677034644f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/03/64f4de7ae4b01a677034644f/64f4de7ae4b01a677034644f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64f4d2cae4b0550d077acefc",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "5. Lecture 2A - Identification of CFL, DCFL Languages",
+    "url": "https://youtu.be/zDYKTmaCGFk",
+    "key": "this-is-yt-video",
+    "duration": 4026,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "631b825de4b07856ad2b0cff",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "6. Lecture 2B - Identification of CFL, DCFL Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/631b825de4b07856ad2b0cff/u/6451e539e4b0e02eaea3faf1/t/adad0c61d3885b59d4ecfc0e8b03439f/p/assets/videos/60e975430cf20278db21ff30/2022/09/09/631b825de4b07856ad2b0cff/index.m3u8",
+    "key": "e34c4fadb2a767653c714a43124bdc45",
+    "duration": 6555,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/631b825de4b07856ad2b0cff/u/6451e539e4b0e02eaea3faf1/t/adad0c61d3885b59d4ecfc0e8b03439f/p/assets/videos/60e975430cf20278db21ff30/2022/09/09/631b825de4b07856ad2b0cff/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 2B - Identification of CFL, DCFL Languages' --save-dir './COURSES/6. Theory of Computation/3. Module 3 - Identification of Language Class' --custom-hls-key 'e34c4fadb2a767653c714a43124bdc45'"
+  },
+  {
+    "type": "pdf",
+    "id": "64f4e0c6e4b0550d077ad372",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "7. Annotated Notes - Lecture 2A-2B - Identification of CFL, DCFL Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64f4e0c6e4b0550d077ad372/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/03/64f4e0c6e4b0550d077ad372/64f4e0c6e4b0550d077ad372_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6505c946e4b0a9440b03514d",
+    "course": "Theory of Computation",
+    "module": "Module 3 - Identification of Language Class",
+    "title": "8. Feedback & Review",
+    "url": "https://www.goclasses.in/s/courses/60fdd9810cf2279d7d966677/articles/6505c946e4b0a9440b03514d/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

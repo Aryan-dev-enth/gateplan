@@ -1,0 +1,156 @@
+[
+  {
+    "type": "video",
+    "id": "646262f8e4b0504171c16acf",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "1. Lecture 1 - Function Definition & Terminology",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646262f8e4b0504171c16acf/u/6451e539e4b0e02eaea3faf1/t/7657b484b4f6504ca6748892aebd50cc/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/646262f8e4b0504171c16acf/index.m3u8",
+    "key": "5a372a5279d0603cfa2dac6579938b32",
+    "duration": 2102,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646262f8e4b0504171c16acf/u/6451e539e4b0e02eaea3faf1/t/7657b484b4f6504ca6748892aebd50cc/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/646262f8e4b0504171c16acf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Function Definition & Terminology' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '5a372a5279d0603cfa2dac6579938b32'"
+  },
+  {
+    "type": "video",
+    "id": "64626c77e4b09c516334bcb8",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "2. Lecture 2 - Number of Functions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64626c77e4b09c516334bcb8/u/6451e539e4b0e02eaea3faf1/t/b31460bb02c21e6ca7271bc4014079d9/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/64626c77e4b09c516334bcb8/index.m3u8",
+    "key": "2686709fde81e2d5cdade6c0299549ed",
+    "duration": 994,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64626c77e4b09c516334bcb8/u/6451e539e4b0e02eaea3faf1/t/b31460bb02c21e6ca7271bc4014079d9/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/64626c77e4b09c516334bcb8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 2 - Number of Functions' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '2686709fde81e2d5cdade6c0299549ed'"
+  },
+  {
+    "type": "video",
+    "id": "64627fbae4b0230da7138351",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "3. Lecture 3 - Representations of Function, Image of a Subset of Domain",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64627fbae4b0230da7138351/u/6451e539e4b0e02eaea3faf1/t/c965d1fef433440b98a28b9337b1170e/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/64627fbae4b0230da7138351/index.m3u8",
+    "key": "b8a1f6d82d59481c1bb80d40836d189e",
+    "duration": 1320,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64627fbae4b0230da7138351/u/6451e539e4b0e02eaea3faf1/t/c965d1fef433440b98a28b9337b1170e/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/64627fbae4b0230da7138351/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 3 - Representations of Function, Image of a Subset of Domain' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key 'b8a1f6d82d59481c1bb80d40836d189e'"
+  },
+  {
+    "type": "video",
+    "id": "6462aa63e4b0230da7138ad6",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "4. Lecture 4 - Types of Functions - Injective, Surjective, Bijective",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6462aa63e4b0230da7138ad6/u/6451e539e4b0e02eaea3faf1/t/6dce3d660fe663cc1a330a9be4c24aa5/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/6462aa63e4b0230da7138ad6/index.m3u8",
+    "key": "1c597123cd779184112211e5ea7a648c",
+    "duration": 2197,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6462aa63e4b0230da7138ad6/u/6451e539e4b0e02eaea3faf1/t/6dce3d660fe663cc1a330a9be4c24aa5/p/assets/videos/60e975430cf20278db21ff30/2023/05/15/6462aa63e4b0230da7138ad6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 4 - Types of Functions - Injective, Surjective, Bijective' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '1c597123cd779184112211e5ea7a648c'"
+  },
+  {
+    "type": "pdf",
+    "id": "64643713e4b0baf32fb5ae12",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "5. Annotated Notes - Lecture 1-4 - Functions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64643713e4b0baf32fb5ae12/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/17/64643713e4b0baf32fb5ae12/64643713e4b0baf32fb5ae12_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6463fe56e4b0df7c65de0602",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "6. Lecture 5 - Practice Questions on Types of Functions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6463fe56e4b0df7c65de0602/u/6451e539e4b0e02eaea3faf1/t/e67b9468d2f06db934acd3ed4eb92bc2/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/6463fe56e4b0df7c65de0602/index.m3u8",
+    "key": "e8b269cd92e192cf5611d8686238bd06",
+    "duration": 2085,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6463fe56e4b0df7c65de0602/u/6451e539e4b0e02eaea3faf1/t/e67b9468d2f06db934acd3ed4eb92bc2/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/6463fe56e4b0df7c65de0602/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 5 - Practice Questions on Types of Functions' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key 'e8b269cd92e192cf5611d8686238bd06'"
+  },
+  {
+    "type": "video",
+    "id": "64640415e4b0df7c65de0647",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "7. Lecture 6 - Set Operations on Relations",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64640415e4b0df7c65de0647/u/6451e539e4b0e02eaea3faf1/t/09757f9c6f68db3a8ba4841fa54a4f5c/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/64640415e4b0df7c65de0647/index.m3u8",
+    "key": "6341db695b5fac8fbd3aff993ddfae85",
+    "duration": 829,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64640415e4b0df7c65de0647/u/6451e539e4b0e02eaea3faf1/t/09757f9c6f68db3a8ba4841fa54a4f5c/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/64640415e4b0df7c65de0647/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 6 - Set Operations on Relations' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '6341db695b5fac8fbd3aff993ddfae85'"
+  },
+  {
+    "type": "video",
+    "id": "64643505e4b048274279ea3c",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "8. Lecture 7 - Composition Operation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64643505e4b048274279ea3c/u/6451e539e4b0e02eaea3faf1/t/f6a046366ce65a395cddab2774cbf88f/p/assets/videos/60e975430cf20278db21ff30/2023/05/17/64643505e4b048274279ea3c/index.m3u8",
+    "key": "67ec10674095a233848c637c80ff3c28",
+    "duration": 3151,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64643505e4b048274279ea3c/u/6451e539e4b0e02eaea3faf1/t/f6a046366ce65a395cddab2774cbf88f/p/assets/videos/60e975430cf20278db21ff30/2023/05/17/64643505e4b048274279ea3c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 7 - Composition Operation' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '67ec10674095a233848c637c80ff3c28'"
+  },
+  {
+    "type": "pdf",
+    "id": "64643836e4b0df7c65de0ace",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "9. Annotated Notes - Lecture 5-7 - Operations on Functions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64643836e4b0df7c65de0ace/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/17/64643836e4b0df7c65de0ace/64643836e4b0df7c65de0ace_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "662124a16274c1746bfc377d",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "10. Lecture 8 - Inverse of a Function",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/662159e56e16775fbdea9867/u/6451e539e4b0e02eaea3faf1/t/d76d5c25eb49dd4f3301438f411ff8e4/p/assets/videos/60e975430cf20278db21ff30/2024/04/18/662159e56e16775fbdea9867/index.m3u8",
+    "key": "2707dfaf5c9d266fbee748b27469ae70",
+    "duration": 7749,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/662159e56e16775fbdea9867/u/6451e539e4b0e02eaea3faf1/t/d76d5c25eb49dd4f3301438f411ff8e4/p/assets/videos/60e975430cf20278db21ff30/2024/04/18/662159e56e16775fbdea9867/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 8 - Inverse of a Function' --save-dir './COURSES/2. Discrete Mathematics/6. Module 6 - Function' --custom-hls-key '2707dfaf5c9d266fbee748b27469ae70'"
+  },
+  {
+    "type": "pdf",
+    "id": "662187e621fc1d59212416ee",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "11. Annotated Notes - Lecture 8 - Inverse of a Function",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/662187e621fc1d59212416ee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/04/18/662187e621fc1d59212416ee/662187e621fc1d59212416ee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "662a1acfb7713d175e23e3b9",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "12. Weekly Quiz 1 - Functions",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/662a1acfb7713d175e23e3b9/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "662786b3c68e5b70ba5904dc",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "13. Functions - Summary, Practice & GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/662786b3c68e5b70ba5904dc/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "667b680834d3d23add551532",
+    "course": "Discrete Mathematics",
+    "module": "Module 6 - Function",
+    "title": "14. Rate & Review",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/667b680834d3d23add551532/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

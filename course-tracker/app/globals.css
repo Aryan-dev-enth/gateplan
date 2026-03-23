@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #080b14;
+  --surface: #0e1420;
+  --surface2: #141b2d;
+  --border: rgba(99, 120, 255, 0.12);
+  --border-hover: rgba(99, 120, 255, 0.35);
+  --accent: #6378ff;
+  --accent2: #a78bfa;
+  --green: #22d3a5;
+  --text: #e8eaf6;
+  --muted: #5a6380;
+  --glass-bg: rgba(14, 20, 32, 0.7);
+  --tint-accent: rgba(99, 120, 255, 0.08);
+  --tint-accent-hover: rgba(99, 120, 255, 0.15);
+  --tint-green: rgba(34, 211, 165, 0.08);
+  --tint-green-border: rgba(34, 211, 165, 0.25);
+  --card-bg: rgba(99, 120, 255, 0.04);
+  --day-tasks-bg: rgba(14, 20, 32, 0.3);
+  --today-header-bg: linear-gradient(135deg, rgba(99,120,255,0.15), rgba(167,139,250,0.1));
+}
+
+/* Light mode overrides */
+.light {
+  --bg: #f0f2ff;
+  --surface: #ffffff;
+  --surface2: #eef0fb;
+  --border: rgba(99, 120, 255, 0.18);
+  --border-hover: rgba(99, 120, 255, 0.45);
+  --accent: #4f63e8;
+  --accent2: #7c5ce8;
+  --green: #0fa87a;
+  --text: #1a1d2e;
+  --muted: #7880a0;
+  --glass-bg: rgba(255, 255, 255, 0.8);
+  --tint-accent: rgba(99, 120, 255, 0.07);
+  --tint-accent-hover: rgba(99, 120, 255, 0.14);
+  --tint-green: rgba(15, 168, 122, 0.07);
+  --tint-green-border: rgba(15, 168, 122, 0.25);
+  --card-bg: rgba(99, 120, 255, 0.04);
+  --day-tasks-bg: rgba(240, 242, 255, 0.6);
+  --today-header-bg: linear-gradient(135deg, rgba(99,120,255,0.1), rgba(124,92,232,0.08));
+}
+
+.light .glow-orb {
+  opacity: 0.4;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(99,120,255,0.3); border-radius: 99px; }
+
+
+
+/* Glow orbs */
+.glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Glass card */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.glass:hover {
+  border-color: var(--border-hover);
+}
+
+/* Gradient text */
+.grad-text {
+  background: linear-gradient(135deg, #6378ff 0%, #a78bfa 50%, #22d3a5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent 0%, rgba(99,120,255,0.15) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Progress bar glow */
+.progress-glow {
+  box-shadow: 0 0 12px rgba(99, 120, 255, 0.6), 0 0 24px rgba(99, 120, 255, 0.2);
+}
+
+/* Pulse dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+.pulse-dot { animation: pulse-dot 2s ease-in-out infinite; }
+
+/* Fade in up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.fade-in { animation: fadeInUp 0.4s ease forwards; }
+.fade-in-1 { animation: fadeInUp 0.4s 0.05s ease both; }
+.fade-in-2 { animation: fadeInUp 0.4s 0.1s ease both; }
+.fade-in-3 { animation: fadeInUp 0.4s 0.15s ease both; }
+.fade-in-4 { animation: fadeInUp 0.4s 0.2s ease both; }
+
+/* Input focus glow */
+.input-glow:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99,120,255,0.15), 0 0 20px rgba(99,120,255,0.1);
+}
+
+/* Button gradient */
+.btn-primary {
+  background: linear-gradient(135deg, #6378ff, #8b5cf6);
+  border: none;
+  color: white;
+  font-weight: 600;
+  transition: all 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 8px 25px rgba(99,120,255,0.4); }
+.btn-primary:active { transform: translateY(0); }
+.btn-primary:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }

@@ -1,0 +1,178 @@
+[
+  {
+    "type": "liveclass",
+    "id": "68839f9f2d7f0031ffc7dc06",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "1. Lecture 1 - Number Systems",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6883cc8f187b1e6931a86622/u/6451e539e4b0e02eaea3faf1/t/fe8412223d021dba7e5d27604b0f1b9c/p/assets/videos/60e975430cf20278db21ff30/2025/07/25/6883cc8f187b1e6931a86622/index.m3u8",
+    "key": "38182a6b1e7a7df6534b1c3f662c5630",
+    "duration": 8118,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6883cc8f187b1e6931a86622/u/6451e539e4b0e02eaea3faf1/t/fe8412223d021dba7e5d27604b0f1b9c/p/assets/videos/60e975430cf20278db21ff30/2025/07/25/6883cc8f187b1e6931a86622/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Number Systems' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/2. Number Systems' --custom-hls-key '38182a6b1e7a7df6534b1c3f662c5630'"
+  },
+  {
+    "type": "pdf",
+    "id": "68875e770c5c7545d4a710ba",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "2. Annotated Notes - Lecture 1 - Number Systems",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68875e770c5c7545d4a710ba/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/28/68875e770c5c7545d4a710ba/68875e770c5c7545d4a710ba_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "68859f44956288569299f6e8",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "3. Lecture 2 - Complements of Numbers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6885dc92a271b343a67024d1/u/6451e539e4b0e02eaea3faf1/t/23f462bae9068f9a51199beb09042232/p/assets/videos/60e975430cf20278db21ff30/2025/07/27/6885dc92a271b343a67024d1/index.m3u8",
+    "key": "a2ba5b1de999d64b8696876bfe5e5ac3",
+    "duration": 7220,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6885dc92a271b343a67024d1/u/6451e539e4b0e02eaea3faf1/t/23f462bae9068f9a51199beb09042232/p/assets/videos/60e975430cf20278db21ff30/2025/07/27/6885dc92a271b343a67024d1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 - Complements of Numbers' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/2. Number Systems' --custom-hls-key 'a2ba5b1de999d64b8696876bfe5e5ac3'"
+  },
+  {
+    "type": "pdf",
+    "id": "6887629b67e27069bb6a8b7a",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "4. Annotated Notes - Lecture 2 - Complements of Numbers",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6887629b67e27069bb6a8b7a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/28/6887629b67e27069bb6a8b7a/6887629b67e27069bb6a8b7a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "689377f17b8dde4cf1195081",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "5. Practice Questions - Morris Mano Exercises",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/689377f17b8dde4cf1195081/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "68864565f1757960a1b2d406",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "6. Lecture 3 - Representations of Signed Binary Numbers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68867a58aad6486a484fc0ee/u/6451e539e4b0e02eaea3faf1/t/6e7abb880ed194350c55930986fa38f7/p/assets/videos/60e975430cf20278db21ff30/2025/07/27/68867a58aad6486a484fc0ee/index.m3u8",
+    "key": "a36a092692e54da61fa93ff9836ad40a",
+    "duration": 8375,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68867a58aad6486a484fc0ee/u/6451e539e4b0e02eaea3faf1/t/6e7abb880ed194350c55930986fa38f7/p/assets/videos/60e975430cf20278db21ff30/2025/07/27/68867a58aad6486a484fc0ee/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 3 - Representations of Signed Binary Numbers' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/2. Number Systems' --custom-hls-key 'a36a092692e54da61fa93ff9836ad40a'"
+  },
+  {
+    "type": "pdf",
+    "id": "688765a6bc8a3c41a2e75b90",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "7. Annotated Notes - Lecture 3 - Representations of Signed Binary Numbers",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/688765a6bc8a3c41a2e75b90/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/28/688765a6bc8a3c41a2e75b90/688765a6bc8a3c41a2e75b90_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6887e098e6f8b117c368692d",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "8. Lecture 3B - Range of Signed Binary Numbers in Various Representations",
+    "url": "https://youtu.be/JxK_KfSa4GY",
+    "key": "this-is-yt-video",
+    "duration": 1832,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6887e18a800d713743dbc8d1",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "9. Annotated Notes - Lecture 3B - Range of Signed Binary Numbers in Various Representations",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6887e18a800d713743dbc8d1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/28/6887e18a800d713743dbc8d1/6887e18a800d713743dbc8d1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6887f4edd9c9f710872971c0",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "10. 5 GATE Questions Based on Lecture 3B",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/6887f4edd9c9f710872971c0/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6887f640800d713743dbcc9e",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "11. Lecture 3C - Sign Extension",
+    "url": "https://youtu.be/dkoaDtyiz9k?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 1721,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6888016baef4556dd44afc87",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "12. 2 GATE Questions Based on Lecture 3C",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/6888016baef4556dd44afc87/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "688f3e1bf09b0b5a1a5c15ad",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "13. Lecture 4 - Arithmetic Overflow",
+    "url": "https://youtu.be/UO8TTFJC9OE",
+    "key": "this-is-yt-video",
+    "duration": 8577,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "688b5e3c8beef368ea22a3a1",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "14. Annotated Notes - Lecture 4 - Overflow",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/688b5e3c8beef368ea22a3a1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/31/688b5e3c8beef368ea22a3a1/688b5e3c8beef368ea22a3a1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "688b50b692d01150028baade",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "15. Overflow - ALL GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/688b50b692d01150028baade/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "688f81cbf0bd5f322bdeafd3",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Number Systems",
+    "title": "16. Lecture 5 - Binary Codes, Gray Code",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/688fb72c21300c61b012a1ae/u/6451e539e4b0e02eaea3faf1/t/1318bc807f1112bf09a76c4c0ed29423/p/assets/videos/60e975430cf20278db21ff30/2025/08/03/688fb72c21300c61b012a1ae/index.m3u8",
+    "key": "b33125500c26f8a013988c1975018ce1",
+    "duration": 7751,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/688fb72c21300c61b012a1ae/u/6451e539e4b0e02eaea3faf1/t/1318bc807f1112bf09a76c4c0ed29423/p/assets/videos/60e975430cf20278db21ff30/2025/08/03/688fb72c21300c61b012a1ae/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. Lecture 5 - Binary Codes, Gray Code' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/2. Number Systems' --custom-hls-key 'b33125500c26f8a013988c1975018ce1'"
+  }
+]

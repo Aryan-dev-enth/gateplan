@@ -1,0 +1,123 @@
+[
+  {
+    "type": "video",
+    "id": "62c3099b0cf25d97f28f75ad",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "1. 12a. Maximum and Second Max of an array",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c3099b0cf25d97f28f75ad/u/6451e539e4b0e02eaea3faf1/t/ab78330dbdc41e91666218d127d1fa1a/p/assets/videos/60e975430cf20278db21ff30/2022/07/04/62c3099b0cf25d97f28f75ad/index.m3u8",
+    "key": "a00b821f54fbf3bdaf4cdeda05c77342",
+    "duration": 1173,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c3099b0cf25d97f28f75ad/u/6451e539e4b0e02eaea3faf1/t/ab78330dbdc41e91666218d127d1fa1a/p/assets/videos/60e975430cf20278db21ff30/2022/07/04/62c3099b0cf25d97f28f75ad/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 12a. Maximum and Second Max of an array' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key 'a00b821f54fbf3bdaf4cdeda05c77342'"
+  },
+  {
+    "type": "video",
+    "id": "62c32a610cf25d97f28f7d14",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "2. 12b. Second maximum using Tournament Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c32a610cf25d97f28f7d14/u/6451e539e4b0e02eaea3faf1/t/4a62f2880b9e05be36b46442a62fb7d6/p/assets/videos/60e975430cf20278db21ff30/2022/07/04/62c32a610cf25d97f28f7d14/index.m3u8",
+    "key": "94bff7393965e4bddfa8373c4eb6476a",
+    "duration": 1880,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c32a610cf25d97f28f7d14/u/6451e539e4b0e02eaea3faf1/t/4a62f2880b9e05be36b46442a62fb7d6/p/assets/videos/60e975430cf20278db21ff30/2022/07/04/62c32a610cf25d97f28f7d14/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 12b. Second maximum using Tournament Method' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key '94bff7393965e4bddfa8373c4eb6476a'"
+  },
+  {
+    "type": "video",
+    "id": "62c3e19f0cf23f9c37ad93ba",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "3. 12c. [Optional] How to keep track for candidates of Second maximum",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c3e19f0cf23f9c37ad93ba/u/6451e539e4b0e02eaea3faf1/t/20ef11e1b73a329a51150324c267252f/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c3e19f0cf23f9c37ad93ba/index.m3u8",
+    "key": "d89c175caef2d5c26ad0fa3a268d0519",
+    "duration": 620,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c3e19f0cf23f9c37ad93ba/u/6451e539e4b0e02eaea3faf1/t/20ef11e1b73a329a51150324c267252f/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c3e19f0cf23f9c37ad93ba/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 12c. [Optional] How to keep track for candidates of Second maximum' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key 'd89c175caef2d5c26ad0fa3a268d0519'"
+  },
+  {
+    "type": "video",
+    "id": "62c449300cf2797af436df8c",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "4. 12d. Maximum and Minimum of an array",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c449300cf2797af436df8c/u/6451e539e4b0e02eaea3faf1/t/79de285695ebd9721a788dd603fe4643/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c449300cf2797af436df8c/index.m3u8",
+    "key": "7e8641ce6a23dc0efc3fcd257d922479",
+    "duration": 2121,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c449300cf2797af436df8c/u/6451e539e4b0e02eaea3faf1/t/79de285695ebd9721a788dd603fe4643/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c449300cf2797af436df8c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 12d. Maximum and Minimum of an array' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key '7e8641ce6a23dc0efc3fcd257d922479'"
+  },
+  {
+    "type": "video",
+    "id": "62c46ffa0cf2d3022e87b419",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "5. 13a. Tournament Method and D&C for Max Min in an array",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c46ffa0cf2d3022e87b419/u/6451e539e4b0e02eaea3faf1/t/f1058b8b8e6ea373f36c4086c36b8560/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c46ffa0cf2d3022e87b419/index.m3u8",
+    "key": "d652ff3f2c7b6b1c4f86bc8c5c81cfa4",
+    "duration": 1502,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c46ffa0cf2d3022e87b419/u/6451e539e4b0e02eaea3faf1/t/f1058b8b8e6ea373f36c4086c36b8560/p/assets/videos/60e975430cf20278db21ff30/2022/07/05/62c46ffa0cf2d3022e87b419/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 13a. Tournament Method and D&C for Max Min in an array' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key 'd652ff3f2c7b6b1c4f86bc8c5c81cfa4'"
+  },
+  {
+    "type": "video",
+    "id": "62c6b9450cf27ee6cdd40dcf",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "6. 13b. Cormen questions",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6b9450cf27ee6cdd40dcf/u/6451e539e4b0e02eaea3faf1/t/bdcd18fe49f7b3533822b58b4ed1717a/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6b9450cf27ee6cdd40dcf/index.m3u8",
+    "key": "dc2cf2209f479fd307546ca65786683e",
+    "duration": 464,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6b9450cf27ee6cdd40dcf/u/6451e539e4b0e02eaea3faf1/t/bdcd18fe49f7b3533822b58b4ed1717a/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6b9450cf27ee6cdd40dcf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 13b. Cormen questions' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key 'dc2cf2209f479fd307546ca65786683e'"
+  },
+  {
+    "type": "video",
+    "id": "62c6f6820cf2734882208cf8",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "7. 13c. GATE 2007, 2014, 2021 Questions",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6f6820cf2734882208cf8/u/6451e539e4b0e02eaea3faf1/t/213dca46d2e8f948f5251d35836d10d8/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6f6820cf2734882208cf8/index.m3u8",
+    "key": "039e0ccb792565c0c3b160409f4441e7",
+    "duration": 690,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6f6820cf2734882208cf8/u/6451e539e4b0e02eaea3faf1/t/213dca46d2e8f948f5251d35836d10d8/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6f6820cf2734882208cf8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 13c. GATE 2007, 2014, 2021 Questions' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key '039e0ccb792565c0c3b160409f4441e7'"
+  },
+  {
+    "type": "article",
+    "id": "658dc6a3e4b06d2e3bbee4ee",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "8. TIFR Question",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/658dc6a3e4b06d2e3bbee4ee/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "62c6f72a0cf2d2ce4b6bc430",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "9. 14a. Algorithm Analysis",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6f72a0cf2d2ce4b6bc430/u/6451e539e4b0e02eaea3faf1/t/4a71537d14d28893a204fec7f7539e7c/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6f72a0cf2d2ce4b6bc430/index.m3u8",
+    "key": "2446d61229454c94e951587a7f2cd69a",
+    "duration": 1873,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c6f72a0cf2d2ce4b6bc430/u/6451e539e4b0e02eaea3faf1/t/4a71537d14d28893a204fec7f7539e7c/p/assets/videos/60e975430cf20278db21ff30/2022/07/07/62c6f72a0cf2d2ce4b6bc430/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 14a. Algorithm Analysis' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key '2446d61229454c94e951587a7f2cd69a'"
+  },
+  {
+    "type": "video",
+    "id": "64b91208e4b0602995ba5eff",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "10. 14b. Questions on Algorithmic notations",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64b91208e4b0602995ba5eff/u/6451e539e4b0e02eaea3faf1/t/68b51678843556626bc2332227614277/p/assets/videos/60e975430cf20278db21ff30/2023/07/20/64b91208e4b0602995ba5eff/index.m3u8",
+    "key": "7f9273c9dc824ced7f3a20cbff259a01",
+    "duration": 302,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64b91208e4b0602995ba5eff/u/6451e539e4b0e02eaea3faf1/t/68b51678843556626bc2332227614277/p/assets/videos/60e975430cf20278db21ff30/2023/07/20/64b91208e4b0602995ba5eff/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 14b. Questions on Algorithmic notations' --save-dir './COURSES/12. Algorithms/5. Maximum and Minimum Of Numbers' --custom-hls-key '7f9273c9dc824ced7f3a20cbff259a01'"
+  },
+  {
+    "type": "pdf",
+    "id": "64b91712e4b05d05b575381d",
+    "course": "Algorithms",
+    "module": "Maximum and Minimum Of Numbers",
+    "title": "11. Annotated Notes Maximum & Minimum and Algorithm Analysis",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64b91712e4b05d05b575381d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/20/64b91712e4b05d05b575381d/64b91712e4b05d05b575381d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

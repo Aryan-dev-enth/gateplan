@@ -1,0 +1,57 @@
+[
+  {
+    "type": "video",
+    "id": "61929c080cf24f3b536f9c7c",
+    "course": "Database Management Systems",
+    "module": "Module 8 - ER Model",
+    "title": "1. Lecture 1 - ER Model",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/61929c080cf24f3b536f9c7c/u/6451e539e4b0e02eaea3faf1/t/66dde0c90b5065fbfcc5120797e4d1cc/p/assets/videos/60e975430cf20278db21ff30/2021/11/15/61929c080cf24f3b536f9c7c/index.m3u8",
+    "key": "e2968d8b6a6dedeb2cd61caa9f3ebee8",
+    "duration": 10955,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/61929c080cf24f3b536f9c7c/u/6451e539e4b0e02eaea3faf1/t/66dde0c90b5065fbfcc5120797e4d1cc/p/assets/videos/60e975430cf20278db21ff30/2021/11/15/61929c080cf24f3b536f9c7c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - ER Model' --save-dir './COURSES/5. Database Management Systems/8. Module 8 - ER Model' --custom-hls-key 'e2968d8b6a6dedeb2cd61caa9f3ebee8'"
+  },
+  {
+    "type": "video",
+    "id": "6192ad4f0cf24692921ce9f7",
+    "course": "Database Management Systems",
+    "module": "Module 8 - ER Model",
+    "title": "2. Lecture 2 - Weak Entity Set in ER Model",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6192ad4f0cf24692921ce9f7/u/6451e539e4b0e02eaea3faf1/t/5fb7c720aef04e58726b5764265361d3/p/assets/videos/60e975430cf20278db21ff30/2021/11/15/6192ad4f0cf24692921ce9f7/index.m3u8",
+    "key": "8b5ce69636f1ae9c130ac58b3ec6d41b",
+    "duration": 6198,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6192ad4f0cf24692921ce9f7/u/6451e539e4b0e02eaea3faf1/t/5fb7c720aef04e58726b5764265361d3/p/assets/videos/60e975430cf20278db21ff30/2021/11/15/6192ad4f0cf24692921ce9f7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 2 - Weak Entity Set in ER Model' --save-dir './COURSES/5. Database Management Systems/8. Module 8 - ER Model' --custom-hls-key '8b5ce69636f1ae9c130ac58b3ec6d41b'"
+  },
+  {
+    "type": "pdf",
+    "id": "6193d2b20cf2b79da5604b6d",
+    "course": "Database Management Systems",
+    "module": "Module 8 - ER Model",
+    "title": "3. Annotated Notes - Lecture 1,2 - ER Model",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6193d2b20cf2b79da5604b6d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/11/16/6193d2b20cf2b79da5604b6d/6193d2b20cf2b79da5604b6d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "657d4105e4b08b270567b174",
+    "course": "Database Management Systems",
+    "module": "Module 8 - ER Model",
+    "title": "4. Lecture 3 - ER Model to Relational Model Conversion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/657d4105e4b08b270567b174/u/6451e539e4b0e02eaea3faf1/t/1115385876d0dc91ab1fa5ee0555874d/p/assets/videos/60e975430cf20278db21ff30/2023/12/16/657d4105e4b08b270567b174/index.m3u8",
+    "key": "de526f4da1b749e9d486c644e3889f4f",
+    "duration": 15511,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/657d4105e4b08b270567b174/u/6451e539e4b0e02eaea3faf1/t/1115385876d0dc91ab1fa5ee0555874d/p/assets/videos/60e975430cf20278db21ff30/2023/12/16/657d4105e4b08b270567b174/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 3 - ER Model to Relational Model Conversion' --save-dir './COURSES/5. Database Management Systems/8. Module 8 - ER Model' --custom-hls-key 'de526f4da1b749e9d486c644e3889f4f'"
+  },
+  {
+    "type": "pdf",
+    "id": "619591760cf2306dff685cef",
+    "course": "Database Management Systems",
+    "module": "Module 8 - ER Model",
+    "title": "5. Annotated Notes - Lecture 3 - ER Model",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/619591760cf2306dff685cef/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/11/17/619591760cf2306dff685cef/619591760cf2306dff685cef_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

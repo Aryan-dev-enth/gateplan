@@ -1,0 +1,68 @@
+[
+  {
+    "type": "video",
+    "id": "64c8c829e4b0bceaa054a154",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "1. 42a. Subset Sum Problem",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a154/u/6451e539e4b0e02eaea3faf1/t/5166c18c38d728125368866348c40685/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a154/index.m3u8",
+    "key": "20043a0293cb0d377731b800fa2da93b",
+    "duration": 1756,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a154/u/6451e539e4b0e02eaea3faf1/t/5166c18c38d728125368866348c40685/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a154/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 42a. Subset Sum Problem' --save-dir './COURSES/12. Algorithms/13. More Dynamic Programming Algorithms' --custom-hls-key '20043a0293cb0d377731b800fa2da93b'"
+  },
+  {
+    "type": "video",
+    "id": "64c8c829e4b0bceaa054a155",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "2. 42b. Coin Change Problem",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a155/u/6451e539e4b0e02eaea3faf1/t/38eaf9f5cdf567e03c2658d476e63421/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a155/index.m3u8",
+    "key": "fa810a4f956f151af9ac3c04021f471c",
+    "duration": 835,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a155/u/6451e539e4b0e02eaea3faf1/t/38eaf9f5cdf567e03c2658d476e63421/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a155/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 42b. Coin Change Problem' --save-dir './COURSES/12. Algorithms/13. More Dynamic Programming Algorithms' --custom-hls-key 'fa810a4f956f151af9ac3c04021f471c'"
+  },
+  {
+    "type": "video",
+    "id": "64c8c829e4b0bceaa054a156",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "3. 42c. DP Vs Greedy vs Divide and Conquer",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a156/u/6451e539e4b0e02eaea3faf1/t/eba856f54691b9bfcbbe604ac8558a6b/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a156/index.m3u8",
+    "key": "73e45754f14846f0f1019075d1ea21ac",
+    "duration": 1403,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a156/u/6451e539e4b0e02eaea3faf1/t/eba856f54691b9bfcbbe604ac8558a6b/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a156/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 42c. DP Vs Greedy vs Divide and Conquer' --save-dir './COURSES/12. Algorithms/13. More Dynamic Programming Algorithms' --custom-hls-key '73e45754f14846f0f1019075d1ea21ac'"
+  },
+  {
+    "type": "video",
+    "id": "64c8c829e4b0bceaa054a152",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "4. 42d. Floyd Warshall Algorithm",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a152/u/6451e539e4b0e02eaea3faf1/t/74da7bcb183ff82785f41f575c3c2197/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a152/index.m3u8",
+    "key": "e4c84fe0fe357cceb047280460d19654",
+    "duration": 950,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a152/u/6451e539e4b0e02eaea3faf1/t/74da7bcb183ff82785f41f575c3c2197/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a152/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 42d. Floyd Warshall Algorithm' --save-dir './COURSES/12. Algorithms/13. More Dynamic Programming Algorithms' --custom-hls-key 'e4c84fe0fe357cceb047280460d19654'"
+  },
+  {
+    "type": "video",
+    "id": "64c8c829e4b0bceaa054a153",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "5. 42e. Travelling Salesman",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a153/u/6451e539e4b0e02eaea3faf1/t/182c852a3866edabaaf7d3a6d17ff0a7/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a153/index.m3u8",
+    "key": "177d170647d36cf0b1f725ffe791d939",
+    "duration": 395,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64c8c829e4b0bceaa054a153/u/6451e539e4b0e02eaea3faf1/t/182c852a3866edabaaf7d3a6d17ff0a7/p/assets/videos/60e975430cf20278db21ff30/2023/08/01/64c8c829e4b0bceaa054a153/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 42e. Travelling Salesman' --save-dir './COURSES/12. Algorithms/13. More Dynamic Programming Algorithms' --custom-hls-key '177d170647d36cf0b1f725ffe791d939'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ca53c5e4b0cb92915458dd",
+    "course": "Algorithms",
+    "module": "More Dynamic Programming Algorithms",
+    "title": "6. Annotated Notes More Dynamic Programming Algorithms",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ca53c5e4b0cb92915458dd/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/08/02/64ca53c5e4b0cb92915458dd/64ca53c5e4b0cb92915458dd_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

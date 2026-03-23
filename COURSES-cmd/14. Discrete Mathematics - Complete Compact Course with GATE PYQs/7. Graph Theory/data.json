@@ -1,0 +1,101 @@
+[
+  {
+    "type": "video",
+    "id": "67571769de912765505abbf5",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "1. Lecture 1 - Graph Theory Summary & GATE PYQs Part 1",
+    "url": "https://www.youtube.com/live/3uvp4MEouLk?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 5285,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6757ab43b8f54365924461b9",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "2. Lecture 2 - Graph Theory Revision & GATE PYQs Part 2",
+    "url": "https://www.youtube.com/live/gTz15iPSXus?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 2200,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "676c06404a16f066d45482d1",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "3. Lecture 3 - Graph Theory Summary & GATE PYQs - Part 3",
+    "url": "https://youtu.be/pSJGEvvqsiE",
+    "key": "this-is-yt-video",
+    "duration": 10347,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "676c0be1400811001ae62d47",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "4. Annotated Notes - Lecture 3 - Graph Theory Summary & GATE PYQs - Part 3",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/676c0be1400811001ae62d47/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/25/676c0be1400811001ae62d47/676c0be1400811001ae62d47_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6757abcaf494011192ba816e",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "5. GATE CS 2006 - One Question for 6 Marks",
+    "url": "https://www.goclasses.in/s/courses/625613d10cf2ad8d82475130/articles/6757abcaf494011192ba816e/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "677268d88064686b5a7fd614",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "6. Lecture 4 - Graph Theory Summary & GATE PYQs - Part 4",
+    "url": "https://youtu.be/I0pVsAdzK0s?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 14126,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "67726873eb56d201120277fe",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "7. Annotated Notes - Lecture 4 - Graph Theory Summary & GATE PYQs - Part 4",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/67726873eb56d201120277fe/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/30/67726873eb56d201120277fe/67726873eb56d201120277fe_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6773d7c7c7a6333357bdf86f",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "8. Lecture 5 - Graph Theory Summary & GATE PYQs - Part 5",
+    "url": "https://youtu.be/fPpRg44z-yA",
+    "key": "this-is-yt-video",
+    "duration": 14562,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "67759a3684cd562b1c7657b0",
+    "course": "Discrete Mathematics - Complete Compact Course with GATE PYQs",
+    "module": "Graph Theory",
+    "title": "9. Annotated Notes - Lecture 5 - Graph Theory Summary & GATE PYQs - Part 5",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/67759a3684cd562b1c7657b0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/01/01/67759a3684cd562b1c7657b0/67759a3684cd562b1c7657b0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

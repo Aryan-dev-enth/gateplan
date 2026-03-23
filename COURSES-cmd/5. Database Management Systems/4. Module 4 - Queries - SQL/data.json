@@ -1,0 +1,211 @@
+[
+  {
+    "type": "article",
+    "id": "66b84f11610edb48d0247761",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "1. SQL - Complete Summary & GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66b84f11610edb48d0247761/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "63595eb5e4b0fd8e6e760524",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "2. Lecture 1 - SQL Basics",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63595eb5e4b0fd8e6e760524/u/6451e539e4b0e02eaea3faf1/t/e0bceb6488d1494103d3f5009169bbff/p/assets/videos/60e975430cf20278db21ff30/2022/10/26/63595eb5e4b0fd8e6e760524/index.m3u8",
+    "key": "ee6b6141d41a39609b65d6935d1f9759",
+    "duration": 7173,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63595eb5e4b0fd8e6e760524/u/6451e539e4b0e02eaea3faf1/t/e0bceb6488d1494103d3f5009169bbff/p/assets/videos/60e975430cf20278db21ff30/2022/10/26/63595eb5e4b0fd8e6e760524/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 1 - SQL Basics' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key 'ee6b6141d41a39609b65d6935d1f9759'"
+  },
+  {
+    "type": "video",
+    "id": "63597cdfe4b0b9fa4dff4bc9",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "3. Lecture 2 - Writing SQL Queries, Union, Except",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63597cdfe4b0b9fa4dff4bc9/u/6451e539e4b0e02eaea3faf1/t/0b5ed9e28ea8ac1938f1d6244d56ac17/p/assets/videos/60e975430cf20278db21ff30/2022/10/26/63597cdfe4b0b9fa4dff4bc9/index.m3u8",
+    "key": "c8bbb0664c117baf259916f5fa1471b0",
+    "duration": 5253,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63597cdfe4b0b9fa4dff4bc9/u/6451e539e4b0e02eaea3faf1/t/0b5ed9e28ea8ac1938f1d6244d56ac17/p/assets/videos/60e975430cf20278db21ff30/2022/10/26/63597cdfe4b0b9fa4dff4bc9/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 - Writing SQL Queries, Union, Except' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key 'c8bbb0664c117baf259916f5fa1471b0'"
+  },
+  {
+    "type": "pdf",
+    "id": "635a54d3e4b0facdb6c75247",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "4. Annotated Notes - Lecture 1-2 - SQL Basics",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/635a54d3e4b0facdb6c75247/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/27/635a54d3e4b0facdb6c75247/635a54d3e4b0facdb6c75247_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "635ab877e4b0ebe7d9d40570",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "5. Lecture 3 - SQL Queries using Union, Except, Intersect",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635ab877e4b0ebe7d9d40570/u/6451e539e4b0e02eaea3faf1/t/8eb2d2b83c5e62eddd7e266f5af2389b/p/assets/videos/60e975430cf20278db21ff30/2022/10/27/635ab877e4b0ebe7d9d40570/index.m3u8",
+    "key": "810a00b1ca5caacf7598a317d219f7b9",
+    "duration": 7041,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635ab877e4b0ebe7d9d40570/u/6451e539e4b0e02eaea3faf1/t/8eb2d2b83c5e62eddd7e266f5af2389b/p/assets/videos/60e975430cf20278db21ff30/2022/10/27/635ab877e4b0ebe7d9d40570/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3 - SQL Queries using Union, Except, Intersect' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key '810a00b1ca5caacf7598a317d219f7b9'"
+  },
+  {
+    "type": "pdf",
+    "id": "635b9653e4b014d09668028f",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "6. Annotated Notes - Lecture 3 - SQL Queries using Union, Except, Intersect",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/635b9653e4b014d09668028f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/28/635b9653e4b014d09668028f/635b9653e4b014d09668028f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "635c932ce4b0c60ea4aa7fb6",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "7. Lecture 4 - Some Notes on Select, Where Clause",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635c932ce4b0c60ea4aa7fb6/u/6451e539e4b0e02eaea3faf1/t/e424476d8fcc1cf3dd01cd193fd18464/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635c932ce4b0c60ea4aa7fb6/index.m3u8",
+    "key": "5d00e4c05a3a027210db44ab19a0727d",
+    "duration": 4603,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635c932ce4b0c60ea4aa7fb6/u/6451e539e4b0e02eaea3faf1/t/e424476d8fcc1cf3dd01cd193fd18464/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635c932ce4b0c60ea4aa7fb6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 4 - Some Notes on Select, Where Clause' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key '5d00e4c05a3a027210db44ab19a0727d'"
+  },
+  {
+    "type": "article",
+    "id": "66a2b17ce7b65919ea8952a4",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "8. Weekly Quiz 1 - SQL Basics",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66a2b17ce7b65919ea8952a4/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "635ca061e4b0a71bda3ef6ff",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "9. Lecture 5 - Aggregate Operators",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635ca061e4b0a71bda3ef6ff/u/6451e539e4b0e02eaea3faf1/t/9c0a3821bf985c0022105735f14bdfe8/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635ca061e4b0a71bda3ef6ff/index.m3u8",
+    "key": "dda078f5be4b9c0d0c2ca224ab216555",
+    "duration": 3406,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635ca061e4b0a71bda3ef6ff/u/6451e539e4b0e02eaea3faf1/t/9c0a3821bf985c0022105735f14bdfe8/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635ca061e4b0a71bda3ef6ff/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 5 - Aggregate Operators' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key 'dda078f5be4b9c0d0c2ca224ab216555'"
+  },
+  {
+    "type": "video",
+    "id": "635cc441e4b0c60ea4aac1af",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "10. Lecture 6 - Null Values in SQL",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635cc441e4b0c60ea4aac1af/u/6451e539e4b0e02eaea3faf1/t/e6283a253088bc456bb2308ea0b01067/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635cc441e4b0c60ea4aac1af/index.m3u8",
+    "key": "2396a2709c38272b4c457051cd96a6e3",
+    "duration": 6816,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/635cc441e4b0c60ea4aac1af/u/6451e539e4b0e02eaea3faf1/t/e6283a253088bc456bb2308ea0b01067/p/assets/videos/60e975430cf20278db21ff30/2022/10/29/635cc441e4b0c60ea4aac1af/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 6 - Null Values in SQL' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key '2396a2709c38272b4c457051cd96a6e3'"
+  },
+  {
+    "type": "pdf",
+    "id": "635d2265e4b01e0769f25f2e",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "11. Annotated Notes - Lecture 4-6 - Aggregate Operators",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/635d2265e4b01e0769f25f2e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/29/635d2265e4b01e0769f25f2e/635d2265e4b01e0769f25f2e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6360e256e4b0122d34b015b1",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "12. Lecture 7 - Group By, Having, Order By Clauses",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6360e256e4b0122d34b015b1/u/6451e539e4b0e02eaea3faf1/t/84cbab7883cdb6dd47d66ec4f29cd484/p/assets/videos/60e975430cf20278db21ff30/2022/11/01/6360e256e4b0122d34b015b1/index.m3u8",
+    "key": "05e4f9ac8f8025f464a303cffd4e6788",
+    "duration": 12640,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6360e256e4b0122d34b015b1/u/6451e539e4b0e02eaea3faf1/t/84cbab7883cdb6dd47d66ec4f29cd484/p/assets/videos/60e975430cf20278db21ff30/2022/11/01/6360e256e4b0122d34b015b1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. Lecture 7 - Group By, Having, Order By Clauses' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key '05e4f9ac8f8025f464a303cffd4e6788'"
+  },
+  {
+    "type": "pdf",
+    "id": "63615e9be4b06e44af2cb213",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "13. Annotated Notes - Lecture 7 - Group By, Having, Order By Clauses",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/63615e9be4b06e44af2cb213/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/11/01/63615e9be4b06e44af2cb213/63615e9be4b06e44af2cb213_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "63625f12e4b0c1c0bb44635d",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "14. Lecture 8 - Nested Queries",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63625f12e4b0c1c0bb44635d/u/6451e539e4b0e02eaea3faf1/t/156e0e8a7297b1aa9de4ed550ebcd87d/p/assets/videos/60e975430cf20278db21ff30/2022/11/02/63625f12e4b0c1c0bb44635d/index.m3u8",
+    "key": "42fc9d52fcf7d6029d6e59159e58690d",
+    "duration": 6473,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63625f12e4b0c1c0bb44635d/u/6451e539e4b0e02eaea3faf1/t/156e0e8a7297b1aa9de4ed550ebcd87d/p/assets/videos/60e975430cf20278db21ff30/2022/11/02/63625f12e4b0c1c0bb44635d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. Lecture 8 - Nested Queries' --save-dir './COURSES/5. Database Management Systems/4. Module 4 - Queries - SQL' --custom-hls-key '42fc9d52fcf7d6029d6e59159e58690d'"
+  },
+  {
+    "type": "video",
+    "id": "6565bb4be4b061a37d712cae",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "15. Lecture 9 - Correlated Nested Queries in SQL",
+    "url": "https://youtu.be/JbFyb2X7OCY",
+    "key": "this-is-yt-video",
+    "duration": 6146,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "63635684e4b000bbe57ff384",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "16. Annotated Notes - Lecture 8-9 - Nested Queries",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/63635684e4b000bbe57ff384/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/11/03/63635684e4b000bbe57ff384/63635684e4b000bbe57ff384_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66a0177a4115da0f2fd09d9c",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "17. SQL - Summary & GATE PYQs - Complete Analysis",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66a0177a4115da0f2fd09d9c/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66b84c47408891145bd95916",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "18. Weekly Quiz 2 - SQL",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66b84c47408891145bd95916/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66b84c9952d4d376332d019d",
+    "course": "Database Management Systems",
+    "module": "Module 4 - Queries - SQL",
+    "title": "19. Weekly Quiz 3 - SQL",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66b84c9952d4d376332d019d/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

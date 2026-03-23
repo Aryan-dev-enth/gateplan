@@ -1,0 +1,189 @@
+[
+  {
+    "type": "video",
+    "id": "62d51a8a0cf2a792a5f588b3",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "1. 21a. Introduction to Graphs | Adjacency List and Matrix",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d51a8a0cf2a792a5f588b3/u/6451e539e4b0e02eaea3faf1/t/d4979a5a6b9d7b54304ef26d4b0b5cd2/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d51a8a0cf2a792a5f588b3/index.m3u8",
+    "key": "16ad62dbb8611dc15bd3a21f21e6e3c9",
+    "duration": 1168,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d51a8a0cf2a792a5f588b3/u/6451e539e4b0e02eaea3faf1/t/d4979a5a6b9d7b54304ef26d4b0b5cd2/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d51a8a0cf2a792a5f588b3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 21a. Introduction to Graphs | Adjacency List and Matrix' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key '16ad62dbb8611dc15bd3a21f21e6e3c9'"
+  },
+  {
+    "type": "video",
+    "id": "62d54de70cf2bdbcb6328f73",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "2. 21b. intuition for graph search methods",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d54de70cf2bdbcb6328f73/u/6451e539e4b0e02eaea3faf1/t/28c22c08fa3653fc189344bcedd812a0/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d54de70cf2bdbcb6328f73/index.m3u8",
+    "key": "e8561e9958f0495ba3b63fd88cf059d5",
+    "duration": 1455,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d54de70cf2bdbcb6328f73/u/6451e539e4b0e02eaea3faf1/t/28c22c08fa3653fc189344bcedd812a0/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d54de70cf2bdbcb6328f73/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 21b. intuition for graph search methods' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'e8561e9958f0495ba3b63fd88cf059d5'"
+  },
+  {
+    "type": "video",
+    "id": "62d565fb0cf2bdbcb6329825",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "3. 21c. Introduction to DFS",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d565fb0cf2bdbcb6329825/u/6451e539e4b0e02eaea3faf1/t/d425643362091a41d60721869ae7658b/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d565fb0cf2bdbcb6329825/index.m3u8",
+    "key": "b28f4e1fc846ba03acb23fcab4e57c39",
+    "duration": 1401,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d565fb0cf2bdbcb6329825/u/6451e539e4b0e02eaea3faf1/t/d425643362091a41d60721869ae7658b/p/assets/videos/60e975430cf20278db21ff30/2022/07/18/62d565fb0cf2bdbcb6329825/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 21c. Introduction to DFS' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'b28f4e1fc846ba03acb23fcab4e57c39'"
+  },
+  {
+    "type": "video",
+    "id": "62d67c57e4b0a5889b7eb190",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "4. 21d. DFS Implementation (Recursive and explicit stack) and Time complexity",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d67c57e4b0a5889b7eb190/u/6451e539e4b0e02eaea3faf1/t/9e10f3475c2e0e4337d6039a1c1fd8d5/p/assets/videos/60e975430cf20278db21ff30/2022/07/19/62d67c57e4b0a5889b7eb190/index.m3u8",
+    "key": "a09112207a1029def609249cfca0b55c",
+    "duration": 2438,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d67c57e4b0a5889b7eb190/u/6451e539e4b0e02eaea3faf1/t/9e10f3475c2e0e4337d6039a1c1fd8d5/p/assets/videos/60e975430cf20278db21ff30/2022/07/19/62d67c57e4b0a5889b7eb190/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 21d. DFS Implementation (Recursive and explicit stack) and Time complexity' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'a09112207a1029def609249cfca0b55c'"
+  },
+  {
+    "type": "video",
+    "id": "62d6e5200cf251dfdd8e08bc",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "5. 22a. DFS Parentheses Theorem | GATE 2006",
+    "url": "https://youtu.be/Dwkb__gXyAs",
+    "key": "this-is-yt-video",
+    "duration": 1682,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "62d7ff83e4b05be6cd3936a0",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "6. 22b. DFS Edge Classifications",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d7ff83e4b05be6cd3936a0/u/6451e539e4b0e02eaea3faf1/t/3539809dd334e8d5073134e0de72efdf/p/assets/videos/60e975430cf20278db21ff30/2022/07/20/62d7ff83e4b05be6cd3936a0/index.m3u8",
+    "key": "13ea8214bc94bc3fe4e0e0a7563209ae",
+    "duration": 1652,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d7ff83e4b05be6cd3936a0/u/6451e539e4b0e02eaea3faf1/t/3539809dd334e8d5073134e0de72efdf/p/assets/videos/60e975430cf20278db21ff30/2022/07/20/62d7ff83e4b05be6cd3936a0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 22b. DFS Edge Classifications' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key '13ea8214bc94bc3fe4e0e0a7563209ae'"
+  },
+  {
+    "type": "video",
+    "id": "62d8004be4b05be6cd393826",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "7. 22c. Questions on DFS Edge Classification",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d8004be4b05be6cd393826/u/6451e539e4b0e02eaea3faf1/t/dcc3b8885dbc5fe7b9104e3d19f786a3/p/assets/videos/60e975430cf20278db21ff30/2022/07/20/62d8004be4b05be6cd393826/index.m3u8",
+    "key": "746df29a95490c3642875b7ef666c38f",
+    "duration": 1815,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d8004be4b05be6cd393826/u/6451e539e4b0e02eaea3faf1/t/dcc3b8885dbc5fe7b9104e3d19f786a3/p/assets/videos/60e975430cf20278db21ff30/2022/07/20/62d8004be4b05be6cd393826/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 22c. Questions on DFS Edge Classification' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key '746df29a95490c3642875b7ef666c38f'"
+  },
+  {
+    "type": "video",
+    "id": "62d90604e4b04b6c80eaacd4",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "8. 22d. [Optional] Back-edge and cycle question",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d90604e4b04b6c80eaacd4/u/6451e539e4b0e02eaea3faf1/t/ff48882f713c95148244d600f48f0bb5/p/assets/videos/60e975430cf20278db21ff30/2022/07/21/62d90604e4b04b6c80eaacd4/index.m3u8",
+    "key": "d78a06e9139e0af34b6f8a370257ac14",
+    "duration": 1103,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d90604e4b04b6c80eaacd4/u/6451e539e4b0e02eaea3faf1/t/ff48882f713c95148244d600f48f0bb5/p/assets/videos/60e975430cf20278db21ff30/2022/07/21/62d90604e4b04b6c80eaacd4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 22d. [Optional] Back-edge and cycle question' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'd78a06e9139e0af34b6f8a370257ac14'"
+  },
+  {
+    "type": "video",
+    "id": "62d92ebfe4b0ffd8f72cd64c",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "9. 23a. DFS Application 1- Cycles in graph",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d92ebfe4b0ffd8f72cd64c/u/6451e539e4b0e02eaea3faf1/t/7adda603f8a41b4e34f111fe60dd92c0/p/assets/videos/60e975430cf20278db21ff30/2022/07/21/62d92ebfe4b0ffd8f72cd64c/index.m3u8",
+    "key": "feb1072d9ce7379ae3cd61d38062e889",
+    "duration": 1920,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d92ebfe4b0ffd8f72cd64c/u/6451e539e4b0e02eaea3faf1/t/7adda603f8a41b4e34f111fe60dd92c0/p/assets/videos/60e975430cf20278db21ff30/2022/07/21/62d92ebfe4b0ffd8f72cd64c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 23a. DFS Application 1- Cycles in graph' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'feb1072d9ce7379ae3cd61d38062e889'"
+  },
+  {
+    "type": "video",
+    "id": "62da81c20cf202e3bf513dc7",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "10. 23b. GATE 2007 question on DAG finish time",
+    "url": "https://youtu.be/rpI-7pWguKo",
+    "key": "this-is-yt-video",
+    "duration": 1277,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "62da9b790cf2868de5ab45e3",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "11. 23c. DFS Application 2 Topological sort | GATE 2014",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62da9b790cf2868de5ab45e3/u/6451e539e4b0e02eaea3faf1/t/b59ea15362ebbfaf525253d0d5e04eec/p/assets/videos/60e975430cf20278db21ff30/2022/07/22/62da9b790cf2868de5ab45e3/index.m3u8",
+    "key": "f0189620bbca7578bb9619cd1da53ca3",
+    "duration": 1140,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62da9b790cf2868de5ab45e3/u/6451e539e4b0e02eaea3faf1/t/b59ea15362ebbfaf525253d0d5e04eec/p/assets/videos/60e975430cf20278db21ff30/2022/07/22/62da9b790cf2868de5ab45e3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 23c. DFS Application 2 Topological sort | GATE 2014' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'f0189620bbca7578bb9619cd1da53ca3'"
+  },
+  {
+    "type": "video",
+    "id": "62dbeb2b0cf24f4e1a625daa",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "12. 23d. DFS Application 3 Articulation Point | GATE 2021",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dbeb2b0cf24f4e1a625daa/u/6451e539e4b0e02eaea3faf1/t/a91f6d7cbdc428f8d51153a38b634886/p/assets/videos/60e975430cf20278db21ff30/2022/07/23/62dbeb2b0cf24f4e1a625daa/index.m3u8",
+    "key": "0bc94bd2c0b385a3b9dba64d780d657b",
+    "duration": 2782,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dbeb2b0cf24f4e1a625daa/u/6451e539e4b0e02eaea3faf1/t/a91f6d7cbdc428f8d51153a38b634886/p/assets/videos/60e975430cf20278db21ff30/2022/07/23/62dbeb2b0cf24f4e1a625daa/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. 23d. DFS Application 3 Articulation Point | GATE 2021' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key '0bc94bd2c0b385a3b9dba64d780d657b'"
+  },
+  {
+    "type": "article",
+    "id": "653821d7e4b05d3830a04882",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "13. Please Rate us on course page",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/653821d7e4b05d3830a04882/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "62dd47c60cf2b7be7546dc9b",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "14. 24a. Introduction to BFS",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dd47c60cf2b7be7546dc9b/u/6451e539e4b0e02eaea3faf1/t/b92f1f8332db8d1da136778a5b6347cf/p/assets/videos/60e975430cf20278db21ff30/2022/07/24/62dd47c60cf2b7be7546dc9b/index.m3u8",
+    "key": "7b1aa034e0e7066f090facb44899ff88",
+    "duration": 1709,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dd47c60cf2b7be7546dc9b/u/6451e539e4b0e02eaea3faf1/t/b92f1f8332db8d1da136778a5b6347cf/p/assets/videos/60e975430cf20278db21ff30/2022/07/24/62dd47c60cf2b7be7546dc9b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. 24a. Introduction to BFS' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key '7b1aa034e0e7066f090facb44899ff88'"
+  },
+  {
+    "type": "video",
+    "id": "62dd4bcd0cf2a9029990a92e",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "15. 24b. BFS few Observations(Properties) and BFS Edge Classification",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dd4bcd0cf2a9029990a92e/u/6451e539e4b0e02eaea3faf1/t/ebe3dba569746c32b38dd10a15c96ca9/p/assets/videos/60e975430cf20278db21ff30/2022/07/24/62dd4bcd0cf2a9029990a92e/index.m3u8",
+    "key": "de23ccbecb9e6c82f4c59eecb9629717",
+    "duration": 2265,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62dd4bcd0cf2a9029990a92e/u/6451e539e4b0e02eaea3faf1/t/ebe3dba569746c32b38dd10a15c96ca9/p/assets/videos/60e975430cf20278db21ff30/2022/07/24/62dd4bcd0cf2a9029990a92e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. 24b. BFS few Observations(Properties) and BFS Edge Classification' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'de23ccbecb9e6c82f4c59eecb9629717'"
+  },
+  {
+    "type": "video",
+    "id": "62e0f88d0cf26d88476f7d5f",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "16. 25. BFS Applications",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e0f88d0cf26d88476f7d5f/u/6451e539e4b0e02eaea3faf1/t/050abf9cd3dd80432f6b34a6b450545b/p/assets/videos/60e975430cf20278db21ff30/2022/07/27/62e0f88d0cf26d88476f7d5f/index.m3u8",
+    "key": "bcb5d5db0ee390dcd9dc457944a9bd68",
+    "duration": 1792,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62e0f88d0cf26d88476f7d5f/u/6451e539e4b0e02eaea3faf1/t/050abf9cd3dd80432f6b34a6b450545b/p/assets/videos/60e975430cf20278db21ff30/2022/07/27/62e0f88d0cf26d88476f7d5f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. 25. BFS Applications' --save-dir './COURSES/12. Algorithms/8. Breadth First and Depth First search (BFS and DFS)' --custom-hls-key 'bcb5d5db0ee390dcd9dc457944a9bd68'"
+  },
+  {
+    "type": "pdf",
+    "id": "62e55b7b0cf2940411a4203d",
+    "course": "Algorithms",
+    "module": "Breadth First and Depth First search (BFS and DFS)",
+    "title": "17. Annotated Notes DFS BFS",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/62e55b7b0cf2940411a4203d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/07/30/62e55b7b0cf2940411a4203d/62e55b7b0cf2940411a4203d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

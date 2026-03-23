@@ -1,0 +1,189 @@
+[
+  {
+    "type": "liveclass",
+    "id": "6506f86be4b078074fbb1419",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "1. Lecture 1 - Functions Revision, Cardinality & Understanding Infinity",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6507344ce4b071a05575035a/u/6451e539e4b0e02eaea3faf1/t/ef49f455fe6acad533c8bc01220de462/p/assets/videos/60e975430cf20278db21ff30/2023/09/17/6507344ce4b071a05575035a/index.m3u8",
+    "key": "fb4ecdd193ced344963877573d9b7bd4",
+    "duration": 9584,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6507344ce4b071a05575035a/u/6451e539e4b0e02eaea3faf1/t/ef49f455fe6acad533c8bc01220de462/p/assets/videos/60e975430cf20278db21ff30/2023/09/17/6507344ce4b071a05575035a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Functions Revision, Cardinality & Understanding Infinity' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key 'fb4ecdd193ced344963877573d9b7bd4'"
+  },
+  {
+    "type": "pdf",
+    "id": "65074c29e4b003f5d67b24c3",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "2. Annotated Notes - Lecture 1 - Functions Revision, Cardinality",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65074c29e4b003f5d67b24c3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/17/65074c29e4b003f5d67b24c3/65074c29e4b003f5d67b24c3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6507d967e4b04d580f0c1a9d",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "3. Lecture 2 - Countable Sets",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6507f9e4e4b08880a0c120ad/u/6451e539e4b0e02eaea3faf1/t/ac0360cf87e00059c9d95dc1e1b2a346/p/assets/videos/60e975430cf20278db21ff30/2023/09/18/6507f9e4e4b08880a0c120ad/index.m3u8",
+    "key": "20ab8a5d9eff00c282785aae04f52eb7",
+    "duration": 5665,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6507f9e4e4b08880a0c120ad/u/6451e539e4b0e02eaea3faf1/t/ac0360cf87e00059c9d95dc1e1b2a346/p/assets/videos/60e975430cf20278db21ff30/2023/09/18/6507f9e4e4b08880a0c120ad/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 - Countable Sets' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key '20ab8a5d9eff00c282785aae04f52eb7'"
+  },
+  {
+    "type": "liveclass",
+    "id": "6507f7a8e4b02d8c1efd0ab6",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "4. Lecture 3 - Uncountable Sets & Cantor's Diagonalization Proof",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6508218fe4b0a5f43d59b3f1/u/6451e539e4b0e02eaea3faf1/t/951c34bfddf0c7ef51b16d7584490998/p/assets/videos/60e975430cf20278db21ff30/2023/09/18/6508218fe4b0a5f43d59b3f1/index.m3u8",
+    "key": "3c9100170920a01aeb93a70431d86207",
+    "duration": 6865,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6508218fe4b0a5f43d59b3f1/u/6451e539e4b0e02eaea3faf1/t/951c34bfddf0c7ef51b16d7584490998/p/assets/videos/60e975430cf20278db21ff30/2023/09/18/6508218fe4b0a5f43d59b3f1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 3 - Uncountable Sets & Cantor's Diagonalization Proof' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key '3c9100170920a01aeb93a70431d86207'"
+  },
+  {
+    "type": "pdf",
+    "id": "65084c85e4b0b6f82d0ee294",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "5. Annotated Notes - Lecture 2,3 - Countable Sets, Uncountable Sets & Cantor's Diagonalization Proof",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65084c85e4b0b6f82d0ee294/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/18/65084c85e4b0b6f82d0ee294/65084c85e4b0b6f82d0ee294_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "650a304fe4b04661d5c9dc99",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "6. Lecture 4 - Three Definitions of Countable Sets",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650ae421e4b0e6df2f60cc52/u/6451e539e4b0e02eaea3faf1/t/2f085d78e7f24dea0c7f26b9dae2b145/p/assets/videos/60e975430cf20278db21ff30/2023/09/20/650ae421e4b0e6df2f60cc52/index.m3u8",
+    "key": "bea8b2704a60da778c21e0b4747e6f15",
+    "duration": 8806,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650ae421e4b0e6df2f60cc52/u/6451e539e4b0e02eaea3faf1/t/2f085d78e7f24dea0c7f26b9dae2b145/p/assets/videos/60e975430cf20278db21ff30/2023/09/20/650ae421e4b0e6df2f60cc52/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 4 - Three Definitions of Countable Sets' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key 'bea8b2704a60da778c21e0b4747e6f15'"
+  },
+  {
+    "type": "pdf",
+    "id": "650b0955e4b04a7f81029336",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "7. Annotated Notes - Lecture 4 - Three Definitions of Countable Sets",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/650b0955e4b04a7f81029336/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/20/650b0955e4b04a7f81029336/650b0955e4b04a7f81029336_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "650b0990e4b04a7f810293f0",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "8. Lecture 5 - Theorems for Countable Sets",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650b45f1e4b04a7f8102ab28/u/6451e539e4b0e02eaea3faf1/t/17b8359ccbf14af06ccd1c8703c751c1/p/assets/videos/60e975430cf20278db21ff30/2023/09/20/650b45f1e4b04a7f8102ab28/index.m3u8",
+    "key": "ceaf7d29a5ece2e807e8ed589a816ecb",
+    "duration": 7328,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650b45f1e4b04a7f8102ab28/u/6451e539e4b0e02eaea3faf1/t/17b8359ccbf14af06ccd1c8703c751c1/p/assets/videos/60e975430cf20278db21ff30/2023/09/20/650b45f1e4b04a7f8102ab28/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 5 - Theorems for Countable Sets' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key 'ceaf7d29a5ece2e807e8ed589a816ecb'"
+  },
+  {
+    "type": "pdf",
+    "id": "650bbb04e4b0fb627236d33d",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "9. Annotated Notes - Lecture 5 - Theorems for Countable Sets",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/650bbb04e4b0fb627236d33d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/21/650bbb04e4b0fb627236d33d/650bbb04e4b0fb627236d33d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "650d5374e4b0e30b222d3f23",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "10. Lecture 6 - Cantor's Theorem & Consequences",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650d7d17e4b0381604315cb0/u/6451e539e4b0e02eaea3faf1/t/e79d60b609c56fc6545906da8db95881/p/assets/videos/60e975430cf20278db21ff30/2023/09/22/650d7d17e4b0381604315cb0/index.m3u8",
+    "key": "c37ec589914ff0752b886acf96ca4760",
+    "duration": 6563,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650d7d17e4b0381604315cb0/u/6451e539e4b0e02eaea3faf1/t/e79d60b609c56fc6545906da8db95881/p/assets/videos/60e975430cf20278db21ff30/2023/09/22/650d7d17e4b0381604315cb0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 6 - Cantor's Theorem & Consequences' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key 'c37ec589914ff0752b886acf96ca4760'"
+  },
+  {
+    "type": "pdf",
+    "id": "650e13e1e4b090169718d0f8",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "11. Annotated Notes - Lecture 6 - Cantor's Theorem & Consequences",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/650e13e1e4b090169718d0f8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/22/650e13e1e4b090169718d0f8/650e13e1e4b090169718d0f8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "650dae41e4b0206e1cf42c16",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "12. Lecture 7 - Countability Results in Theory of Computation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650de22ce4b0616e27dc07df/u/6451e539e4b0e02eaea3faf1/t/02cbafc6726034e2a936eef4630af830/p/assets/videos/60e975430cf20278db21ff30/2023/09/22/650de22ce4b0616e27dc07df/index.m3u8",
+    "key": "f8b1d7317437a6412d0ebbf8e552f4a0",
+    "duration": 9309,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/650de22ce4b0616e27dc07df/u/6451e539e4b0e02eaea3faf1/t/02cbafc6726034e2a936eef4630af830/p/assets/videos/60e975430cf20278db21ff30/2023/09/22/650de22ce4b0616e27dc07df/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. Lecture 7 - Countability Results in Theory of Computation' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key 'f8b1d7317437a6412d0ebbf8e552f4a0'"
+  },
+  {
+    "type": "pdf",
+    "id": "650e1708e4b0218e84246c94",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "13. Annotated Notes - Lecture 7 - Countability Results in Theory of Computation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/650e1708e4b0218e84246c94/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/22/650e1708e4b0218e84246c94/650e1708e4b0218e84246c94_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "65102408e4b0b8d5b914564d",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "14. Countability - GATE, TIFR, NET - ALL Previous Exams Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65102408e4b0b8d5b914564d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/24/65102408e4b0b8d5b914564d/65102408e4b0b8d5b914564d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "651034f8e4b0acfc5d3b5418",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "15. Lecture 8 - Previous Exams Questions Discussion - GATE, TIFR, NET",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651066dae4b0a7f0e8f6e1ba/u/6451e539e4b0e02eaea3faf1/t/9868beefc1612e2945e75fef49d57f25/p/assets/videos/60e975430cf20278db21ff30/2023/09/24/651066dae4b0a7f0e8f6e1ba/index.m3u8",
+    "key": "1669cf9b39d7d43a37014da2c24c9cc2",
+    "duration": 9274,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651066dae4b0a7f0e8f6e1ba/u/6451e539e4b0e02eaea3faf1/t/9868beefc1612e2945e75fef49d57f25/p/assets/videos/60e975430cf20278db21ff30/2023/09/24/651066dae4b0a7f0e8f6e1ba/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. Lecture 8 - Previous Exams Questions Discussion - GATE, TIFR, NET' --save-dir './COURSES/6. Theory of Computation/6. Module 6 - Countability' --custom-hls-key '1669cf9b39d7d43a37014da2c24c9cc2'"
+  },
+  {
+    "type": "pdf",
+    "id": "65119619e4b038639de07eca",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "16. Annotated Notes - Lecture 8 - Previous Exams Questions Discussion - GATE, TIFR, NET",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65119619e4b038639de07eca/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/25/65119619e4b038639de07eca/65119619e4b038639de07eca_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6507557de4b028a2632c33b9",
+    "course": "Theory of Computation",
+    "module": "Module 6 - Countability",
+    "title": "17. Feedback & Review",
+    "url": "https://www.goclasses.in/s/courses/60fdd9810cf2279d7d966677/articles/6507557de4b028a2632c33b9/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

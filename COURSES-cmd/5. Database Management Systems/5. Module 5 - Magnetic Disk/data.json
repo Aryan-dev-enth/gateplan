@@ -1,0 +1,68 @@
+[
+  {
+    "type": "video",
+    "id": "636a7d11e4b0baaf7fa1bdeb",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "1. Lecture 1 - Disk Structure & Performance",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636a7d11e4b0baaf7fa1bdeb/u/6451e539e4b0e02eaea3faf1/t/a5ba91b9ec66e830eeef02bb77c79856/p/assets/videos/60e975430cf20278db21ff30/2022/11/08/636a7d11e4b0baaf7fa1bdeb/index.m3u8",
+    "key": "465ac5a6389cd452f55c1674bede3285",
+    "duration": 10156,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636a7d11e4b0baaf7fa1bdeb/u/6451e539e4b0e02eaea3faf1/t/a5ba91b9ec66e830eeef02bb77c79856/p/assets/videos/60e975430cf20278db21ff30/2022/11/08/636a7d11e4b0baaf7fa1bdeb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Disk Structure & Performance' --save-dir './COURSES/5. Database Management Systems/5. Module 5 - Magnetic Disk' --custom-hls-key '465ac5a6389cd452f55c1674bede3285'"
+  },
+  {
+    "type": "video",
+    "id": "6565cc0ae4b0b61494e7776e",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "2. Lecture 2 - Disk Addressing",
+    "url": "https://youtu.be/5XzFAOJGHFI",
+    "key": "this-is-yt-video",
+    "duration": 7110,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "636ae063e4b0b279bda822d1",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "3. Annotated Notes - Lecture 1,2 - Disk Structure, Performance, Addressing",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/636ae063e4b0b279bda822d1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/11/08/636ae063e4b0b279bda822d1/636ae063e4b0b279bda822d1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "636be00be4b0b79fbcc33265",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "4. Lecture 3 - Disk Scheduling Algorithms",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636be00be4b0b79fbcc33265/u/6451e539e4b0e02eaea3faf1/t/0332e14f3c9f2b6e5fc681573fdea87e/p/assets/videos/60e975430cf20278db21ff30/2022/11/09/636be00be4b0b79fbcc33265/index.m3u8",
+    "key": "a7dabf3c9534523e1125cc17be97799c",
+    "duration": 5559,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636be00be4b0b79fbcc33265/u/6451e539e4b0e02eaea3faf1/t/0332e14f3c9f2b6e5fc681573fdea87e/p/assets/videos/60e975430cf20278db21ff30/2022/11/09/636be00be4b0b79fbcc33265/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 3 - Disk Scheduling Algorithms' --save-dir './COURSES/5. Database Management Systems/5. Module 5 - Magnetic Disk' --custom-hls-key 'a7dabf3c9534523e1125cc17be97799c'"
+  },
+  {
+    "type": "video",
+    "id": "636bf90de4b05598c4f23919",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "5. Lecture 4 - Disk Scheduling Algorithms Part 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636bf90de4b05598c4f23919/u/6451e539e4b0e02eaea3faf1/t/3444f4dbc663c1b4ac32155df110ba66/p/assets/videos/60e975430cf20278db21ff30/2022/11/09/636bf90de4b05598c4f23919/index.m3u8",
+    "key": "784181d30ca54a48b9ed2cdc9b002923",
+    "duration": 5744,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/636bf90de4b05598c4f23919/u/6451e539e4b0e02eaea3faf1/t/3444f4dbc663c1b4ac32155df110ba66/p/assets/videos/60e975430cf20278db21ff30/2022/11/09/636bf90de4b05598c4f23919/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 4 - Disk Scheduling Algorithms Part 2' --save-dir './COURSES/5. Database Management Systems/5. Module 5 - Magnetic Disk' --custom-hls-key '784181d30ca54a48b9ed2cdc9b002923'"
+  },
+  {
+    "type": "pdf",
+    "id": "636e117de4b015c06afb0f34",
+    "course": "Database Management Systems",
+    "module": "Module 5 - Magnetic Disk",
+    "title": "6. Annotated Notes - Lecture 3,4 - Disk Scheduling Algorithms",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/636e117de4b015c06afb0f34/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/11/11/636e117de4b015c06afb0f34/636e117de4b015c06afb0f34_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

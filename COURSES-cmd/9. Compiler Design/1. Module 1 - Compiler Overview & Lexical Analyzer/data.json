@@ -1,0 +1,134 @@
+[
+  {
+    "type": "video",
+    "id": "68f1602144dca5797d7cabb9",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "1. Lecture 1 - Computer Languages - Machine Language Vs Assembly Language",
+    "url": "https://youtu.be/SrK941GHhFs",
+    "key": "this-is-yt-video",
+    "duration": 4634,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "659bcb69e4b00bf055cd22f9",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "2. Annotated Notes - Lecture 1 - Machine Vs Assembly Language",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/659bcb69e4b00bf055cd22f9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/08/659bcb69e4b00bf055cd22f9/659bcb69e4b00bf055cd22f9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "68fcf48bb6d5010e674dc993",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "3. Lecture 2A - Compiler Overview",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68fd2b69936cee01405541c8/u/6451e539e4b0e02eaea3faf1/t/57176d9fd14925e48d4382819e62a694/p/assets/videos/60e975430cf20278db21ff30/2025/10/25/68fd2b69936cee01405541c8/index.m3u8",
+    "key": "701a3bba0d0f30722b5bfe9eadc4b6d2",
+    "duration": 7799,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68fd2b69936cee01405541c8/u/6451e539e4b0e02eaea3faf1/t/57176d9fd14925e48d4382819e62a694/p/assets/videos/60e975430cf20278db21ff30/2025/10/25/68fd2b69936cee01405541c8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2A - Compiler Overview' --save-dir './COURSES/9. Compiler Design/1. Module 1 - Compiler Overview & Lexical Analyzer' --custom-hls-key '701a3bba0d0f30722b5bfe9eadc4b6d2'"
+  },
+  {
+    "type": "pdf",
+    "id": "68ff56b612e52d646a762d6e",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "4. Annotated Notes - Lecture 2 - Compiler Overview",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68ff56b612e52d646a762d6e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/10/27/68ff56b612e52d646a762d6e/68ff56b612e52d646a762d6e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "68ff6d60d6f1773919ad8f16",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "5. Lecture 2B - Broad Overview of Compiler Phases",
+    "url": "https://youtu.be/qMcf4837ihI",
+    "key": "this-is-yt-video",
+    "duration": 4404,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "68ff6db9d98177196a3407ee",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "6. Annotated Notes - Lecture 2B - Broad Overview of Compiler Phases",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68ff6db9d98177196a3407ee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/10/27/68ff6db9d98177196a3407ee/68ff6db9d98177196a3407ee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6902327f932ef8681b01b5b8",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "7. Lecture 3A - Lexical Analysis - Tokenization",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6902658d3eee63455786f971/u/6451e539e4b0e02eaea3faf1/t/cbcdc609efbe728cd935375358ab543c/p/assets/videos/60e975430cf20278db21ff30/2025/10/29/6902658d3eee63455786f971/index.m3u8",
+    "key": "c4444990aaa3d72ffde2ddd27627455e",
+    "duration": 7554,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6902658d3eee63455786f971/u/6451e539e4b0e02eaea3faf1/t/cbcdc609efbe728cd935375358ab543c/p/assets/videos/60e975430cf20278db21ff30/2025/10/29/6902658d3eee63455786f971/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 3A - Lexical Analysis - Tokenization' --save-dir './COURSES/9. Compiler Design/1. Module 1 - Compiler Overview & Lexical Analyzer' --custom-hls-key 'c4444990aaa3d72ffde2ddd27627455e'"
+  },
+  {
+    "type": "pdf",
+    "id": "6902882b1b6ad838fd2f720c",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "8. Annotated Notes - Lecture 3A - Lexical Analysis",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6902882b1b6ad838fd2f720c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/10/29/6902882b1b6ad838fd2f720c/6902882b1b6ad838fd2f720c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "690a7a1bed5aa94652554933",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "9. Lecture 3B - Lexical Analyzer Implementation & Practice Questions",
+    "url": "https://youtu.be/leeWfRzzPsE",
+    "key": "this-is-yt-video",
+    "duration": 11300,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6905f5b1adc54c1afbe1e959",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "10. Annotated Notes - Lecture 3B - Lexical Analyzer Implementation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6905f5b1adc54c1afbe1e959/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/11/01/6905f5b1adc54c1afbe1e959/6905f5b1adc54c1afbe1e959_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6908c88d2bb1046e94bd529e",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "11. Lecture 3C - Lexical Analyzer as DFA & More Practice Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/690912ddf8ef5e7d98da77f7/u/6451e539e4b0e02eaea3faf1/t/04e778fde06ec82b41cb38e4405a3302/p/assets/videos/60e975430cf20278db21ff30/2025/11/03/690912ddf8ef5e7d98da77f7/index.m3u8",
+    "key": "5ad4159a2748437038327a707da1c7f1",
+    "duration": 11121,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/690912ddf8ef5e7d98da77f7/u/6451e539e4b0e02eaea3faf1/t/04e778fde06ec82b41cb38e4405a3302/p/assets/videos/60e975430cf20278db21ff30/2025/11/03/690912ddf8ef5e7d98da77f7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 3C - Lexical Analyzer as DFA & More Practice Questions' --save-dir './COURSES/9. Compiler Design/1. Module 1 - Compiler Overview & Lexical Analyzer' --custom-hls-key '5ad4159a2748437038327a707da1c7f1'"
+  },
+  {
+    "type": "pdf",
+    "id": "690a79ad4a37970fa9e715e1",
+    "course": "Compiler Design",
+    "module": "Module 1 - Compiler Overview & Lexical Analyzer",
+    "title": "12. Annotated Notes - Lecture 3C - Lexical Analyzer as DFA",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/690a79ad4a37970fa9e715e1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/11/04/690a79ad4a37970fa9e715e1/690a79ad4a37970fa9e715e1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

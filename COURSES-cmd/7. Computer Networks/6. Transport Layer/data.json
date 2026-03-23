@@ -1,0 +1,233 @@
+[
+  {
+    "type": "liveclass",
+    "id": "654a3300e4b051caa7bad27a",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "1. Lecture 33 Introduction to Transport Layer and UDP",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/654a5410e4b0be597df84ffd/u/6451e539e4b0e02eaea3faf1/t/bc8ca525bbfeaa69885e436db746a47f/p/assets/videos/60e975430cf20278db21ff30/2023/11/07/654a5410e4b0be597df84ffd/index.m3u8",
+    "key": "83aa7885eac0fb0b8fa9d7bb9d988036",
+    "duration": 5716,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/654a5410e4b0be597df84ffd/u/6451e539e4b0e02eaea3faf1/t/bc8ca525bbfeaa69885e436db746a47f/p/assets/videos/60e975430cf20278db21ff30/2023/11/07/654a5410e4b0be597df84ffd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 33 Introduction to Transport Layer and UDP' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '83aa7885eac0fb0b8fa9d7bb9d988036'"
+  },
+  {
+    "type": "pdf",
+    "id": "654b2af2e4b0ade8397b945f",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "2. Annotated Notes Lecture 33 Transport Layer and UDP",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/654b2af2e4b0ade8397b945f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/08/654b2af2e4b0ade8397b945f/654b2af2e4b0ade8397b945f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6554706de4b0152a12f25180",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "3. Lecture 34 TCP Header and Connection Establishment",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6554706de4b0152a12f25180/u/6451e539e4b0e02eaea3faf1/t/3d687382b6294453dbfd6e453befab76/p/assets/videos/60e975430cf20278db21ff30/2023/11/15/6554706de4b0152a12f25180/index.m3u8",
+    "key": "2978127c5818416734b5f675e73f2d40",
+    "duration": 6450,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6554706de4b0152a12f25180/u/6451e539e4b0e02eaea3faf1/t/3d687382b6294453dbfd6e453befab76/p/assets/videos/60e975430cf20278db21ff30/2023/11/15/6554706de4b0152a12f25180/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 34 TCP Header and Connection Establishment' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '2978127c5818416734b5f675e73f2d40'"
+  },
+  {
+    "type": "pdf",
+    "id": "655079a4e4b04fd038afb1d0",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "4. Annotated Notes Lecture 34 TCP Header",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655079a4e4b04fd038afb1d0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/12/655079a4e4b04fd038afb1d0/655079a4e4b04fd038afb1d0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6553413be4b0165947bcd8b7",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "5. Lecture 35: TCP Flow Control",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65536c3fe4b068ee3be0c6eb/u/6451e539e4b0e02eaea3faf1/t/6b315f7bafa1abba51770c11d51bf3ed/p/assets/videos/60e975430cf20278db21ff30/2023/11/14/65536c3fe4b068ee3be0c6eb/index.m3u8",
+    "key": "4e65b52164fd86a5b58142116db8a2d7",
+    "duration": 7356,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65536c3fe4b068ee3be0c6eb/u/6451e539e4b0e02eaea3faf1/t/6b315f7bafa1abba51770c11d51bf3ed/p/assets/videos/60e975430cf20278db21ff30/2023/11/14/65536c3fe4b068ee3be0c6eb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 35: TCP Flow Control' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '4e65b52164fd86a5b58142116db8a2d7'"
+  },
+  {
+    "type": "pdf",
+    "id": "65562430e4b0a16e7bc14ae9",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "6. Annotated Notes Lecture 35 TCP Connection Establishment",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65562430e4b0a16e7bc14ae9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/16/65562430e4b0a16e7bc14ae9/65562430e4b0a16e7bc14ae9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "655cfa65e4b047b356ad2ad7",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "7. Lecture 36 TCP Congestion Control",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655cfa65e4b047b356ad2ad7/u/6451e539e4b0e02eaea3faf1/t/7bf7ab49a5862cd8a48e99427010858f/p/assets/videos/60e975430cf20278db21ff30/2023/11/21/655cfa65e4b047b356ad2ad7/index.m3u8",
+    "key": "443b391d26d69cb36ea5d315b135ff43",
+    "duration": 6259,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655cfa65e4b047b356ad2ad7/u/6451e539e4b0e02eaea3faf1/t/7bf7ab49a5862cd8a48e99427010858f/p/assets/videos/60e975430cf20278db21ff30/2023/11/21/655cfa65e4b047b356ad2ad7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 36 TCP Congestion Control' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '443b391d26d69cb36ea5d315b135ff43'"
+  },
+  {
+    "type": "pdf",
+    "id": "655da83be4b0eec863d94104",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "8. Annotated Notes Lecture 36 TCP Congestion Control",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655da83be4b0eec863d94104/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/22/655da83be4b0eec863d94104/655da83be4b0eec863d94104_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6559f05ee4b021a349bdfa97",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "9. Lecture 37a. More Questions on TCP Congestion From Kurose, Peterson Davie",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6559f05ee4b021a349bdfa97/u/6451e539e4b0e02eaea3faf1/t/7e0c13bfd19de8a912a41e7d91a08632/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/6559f05ee4b021a349bdfa97/index.m3u8",
+    "key": "7f228c35045942ecedf25ff284ad261e",
+    "duration": 4085,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6559f05ee4b021a349bdfa97/u/6451e539e4b0e02eaea3faf1/t/7e0c13bfd19de8a912a41e7d91a08632/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/6559f05ee4b021a349bdfa97/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 37a. More Questions on TCP Congestion From Kurose, Peterson Davie' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '7f228c35045942ecedf25ff284ad261e'"
+  },
+  {
+    "type": "video",
+    "id": "655a4888e4b0491e52dbaa26",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "10. Lecture 37b. [Optional But Please Watch] CWND Increment per ACK in CA Phase | Berkeley and Princeton Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655a4888e4b0491e52dbaa26/u/6451e539e4b0e02eaea3faf1/t/9db3fd2b3a568e6382352b844f1160ae/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/655a4888e4b0491e52dbaa26/index.m3u8",
+    "key": "45d8fc88c850ded9fea4a065564515bb",
+    "duration": 3385,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655a4888e4b0491e52dbaa26/u/6451e539e4b0e02eaea3faf1/t/9db3fd2b3a568e6382352b844f1160ae/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/655a4888e4b0491e52dbaa26/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 37b. [Optional But Please Watch] CWND Increment per ACK in CA Phase | Berkeley and Princeton Questions' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '45d8fc88c850ded9fea4a065564515bb'"
+  },
+  {
+    "type": "video",
+    "id": "6559de31e4b0cdb57c4b8981",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "11. Lecture 37c. GATE 2004 Nice and Easy Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6559de31e4b0cdb57c4b8981/u/6451e539e4b0e02eaea3faf1/t/d067bb098168acdfa061147766b31d26/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/6559de31e4b0cdb57c4b8981/index.m3u8",
+    "key": "f3615864199d1e48dea18cd6cccded8f",
+    "duration": 421,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6559de31e4b0cdb57c4b8981/u/6451e539e4b0e02eaea3faf1/t/d067bb098168acdfa061147766b31d26/p/assets/videos/60e975430cf20278db21ff30/2023/11/19/6559de31e4b0cdb57c4b8981/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 37c. GATE 2004 Nice and Easy Question' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key 'f3615864199d1e48dea18cd6cccded8f'"
+  },
+  {
+    "type": "pdf",
+    "id": "655b040fe4b022b7b07e7853",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "12. Annotated Notes Lecture 37 Questions on TCP Congestion Control",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655b040fe4b022b7b07e7853/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/20/655b040fe4b022b7b07e7853/655b040fe4b022b7b07e7853_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "655da69de4b0bd009c32f697",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "13. Lecture 38. More Questions on Congestion Control and TCP Connection Termination",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655da69de4b0bd009c32f697/u/6451e539e4b0e02eaea3faf1/t/0dcbd86237f7c0aa4ca6a922fb968185/p/assets/videos/60e975430cf20278db21ff30/2023/11/22/655da69de4b0bd009c32f697/index.m3u8",
+    "key": "6d2370da421d283814a174714d4ed646",
+    "duration": 5225,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655da69de4b0bd009c32f697/u/6451e539e4b0e02eaea3faf1/t/0dcbd86237f7c0aa4ca6a922fb968185/p/assets/videos/60e975430cf20278db21ff30/2023/11/22/655da69de4b0bd009c32f697/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Lecture 38. More Questions on Congestion Control and TCP Connection Termination' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '6d2370da421d283814a174714d4ed646'"
+  },
+  {
+    "type": "pdf",
+    "id": "655dab53e4b040ddca63150f",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "14. Annotated Notes Lecture 38 More Questions on Congestion Control and TCP Connection Termination",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655dab53e4b040ddca63150f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/22/655dab53e4b040ddca63150f/655dab53e4b040ddca63150f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "655ca54ee4b040ddca627b00",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "15. Lecture 39. TCP Options or Extensions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655ccfdfe4b011d89c090c74/u/6451e539e4b0e02eaea3faf1/t/3e63a1f26c0199cc85c1a1afc3bd23b9/p/assets/videos/60e975430cf20278db21ff30/2023/11/21/655ccfdfe4b011d89c090c74/index.m3u8",
+    "key": "2873d5bce9108a087941510e7dc9f84c",
+    "duration": 6542,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655ccfdfe4b011d89c090c74/u/6451e539e4b0e02eaea3faf1/t/3e63a1f26c0199cc85c1a1afc3bd23b9/p/assets/videos/60e975430cf20278db21ff30/2023/11/21/655ccfdfe4b011d89c090c74/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. Lecture 39. TCP Options or Extensions' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key '2873d5bce9108a087941510e7dc9f84c'"
+  },
+  {
+    "type": "pdf",
+    "id": "655dac86e4b0171e7980e9fc",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "16. Annotated Notes Lecture 39 TCP Options or Extensions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655dac86e4b0171e7980e9fc/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/22/655dac86e4b0171e7980e9fc/655dac86e4b0171e7980e9fc_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "655e00bce4b0544fe21db542",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "17. Lecture 40. TCP Timer and How all layer work together",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655e1d69e4b0616eb1990459/u/6451e539e4b0e02eaea3faf1/t/676f516545f69eee3a9653ca12d0e2b1/p/assets/videos/60e975430cf20278db21ff30/2023/11/22/655e1d69e4b0616eb1990459/index.m3u8",
+    "key": "cb5991cba0b138896b0ccf36aed010ee",
+    "duration": 4757,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655e1d69e4b0616eb1990459/u/6451e539e4b0e02eaea3faf1/t/676f516545f69eee3a9653ca12d0e2b1/p/assets/videos/60e975430cf20278db21ff30/2023/11/22/655e1d69e4b0616eb1990459/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '17. Lecture 40. TCP Timer and How all layer work together' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key 'cb5991cba0b138896b0ccf36aed010ee'"
+  },
+  {
+    "type": "pdf",
+    "id": "655e197de4b098efe38fb962",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "18. Annotated Notes Lecture 40 TCP Timers",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655e197de4b098efe38fb962/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/22/655e197de4b098efe38fb962/655e197de4b098efe38fb962_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "655e1f7ce4b0dc26856e4797",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "19. Please give us feedback on course page",
+    "url": "https://www.goclasses.in/s/courses/62e770ae0cf29f3db8f01636/articles/655e1f7ce4b0dc26856e4797/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "655f8264e4b01f023e267231",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "20. Leaky bucket and Token bucket with GATE PYQs. Clear Explanation",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655f8264e4b01f023e267231/u/6451e539e4b0e02eaea3faf1/t/23d6bb8e8b0ed6e4b63500305163cbee/p/assets/videos/60e975430cf20278db21ff30/2023/11/23/655f8264e4b01f023e267231/index.m3u8",
+    "key": "b3572955c60291e7d81b5baae4b82955",
+    "duration": 2136,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655f8264e4b01f023e267231/u/6451e539e4b0e02eaea3faf1/t/23d6bb8e8b0ed6e4b63500305163cbee/p/assets/videos/60e975430cf20278db21ff30/2023/11/23/655f8264e4b01f023e267231/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '20. Leaky bucket and Token bucket with GATE PYQs. Clear Explanation' --save-dir './COURSES/7. Computer Networks/6. Transport Layer' --custom-hls-key 'b3572955c60291e7d81b5baae4b82955'"
+  },
+  {
+    "type": "pdf",
+    "id": "672db2820e8e7c05883e1969",
+    "course": "Computer Networks",
+    "module": "Transport Layer",
+    "title": "21. Annotated Notes Leaky bucket and Token bucket with GATE PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/672db2820e8e7c05883e1969/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/08/672db2820e8e7c05883e1969/672db2820e8e7c05883e1969_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

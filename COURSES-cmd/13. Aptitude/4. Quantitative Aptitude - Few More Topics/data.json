@@ -1,0 +1,46 @@
+[
+  {
+    "type": "liveclass",
+    "id": "64e98e2ae4b0e14f16f52c5c",
+    "course": "Aptitude",
+    "module": "Quantitative Aptitude - Few More Topics",
+    "title": "1. Absolute Value",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64e9b7e3e4b03564208db613/u/6451e539e4b0e02eaea3faf1/t/da18422fd7274eb530385bad18873b12/p/assets/videos/60e975430cf20278db21ff30/2023/08/26/64e9b7e3e4b03564208db613/index.m3u8",
+    "key": "ac64fa713294bda22b854b328135524c",
+    "duration": 6673,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64e9b7e3e4b03564208db613/u/6451e539e4b0e02eaea3faf1/t/da18422fd7274eb530385bad18873b12/p/assets/videos/60e975430cf20278db21ff30/2023/08/26/64e9b7e3e4b03564208db613/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Absolute Value' --save-dir './COURSES/13. Aptitude/4. Quantitative Aptitude - Few More Topics' --custom-hls-key 'ac64fa713294bda22b854b328135524c'"
+  },
+  {
+    "type": "pdf",
+    "id": "64e9b9b0e4b0286bc050b256",
+    "course": "Aptitude",
+    "module": "Quantitative Aptitude - Few More Topics",
+    "title": "2. Annotated Notes - Absolute Value",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64e9b9b0e4b0286bc050b256/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/08/26/64e9b9b0e4b0286bc050b256/64e9b9b0e4b0286bc050b256_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "651a85fce4b0c9a3e3a4436f",
+    "course": "Aptitude",
+    "module": "Quantitative Aptitude - Few More Topics",
+    "title": "3. Floor & Ceiling Functions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651aaffce4b00e97da13c7a1/u/6451e539e4b0e02eaea3faf1/t/45153e177eb1b73d99965151813b34f3/p/assets/videos/60e975430cf20278db21ff30/2023/10/02/651aaffce4b00e97da13c7a1/index.m3u8",
+    "key": "83545698c76e0e2900524c3a4628f517",
+    "duration": 6630,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651aaffce4b00e97da13c7a1/u/6451e539e4b0e02eaea3faf1/t/45153e177eb1b73d99965151813b34f3/p/assets/videos/60e975430cf20278db21ff30/2023/10/02/651aaffce4b00e97da13c7a1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Floor & Ceiling Functions' --save-dir './COURSES/13. Aptitude/4. Quantitative Aptitude - Few More Topics' --custom-hls-key '83545698c76e0e2900524c3a4628f517'"
+  },
+  {
+    "type": "pdf",
+    "id": "651ac73be4b0797fd1e993cb",
+    "course": "Aptitude",
+    "module": "Quantitative Aptitude - Few More Topics",
+    "title": "4. Annotated Notes - Floor & Ceiling Functions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/651ac73be4b0797fd1e993cb/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/02/651ac73be4b0797fd1e993cb/651ac73be4b0797fd1e993cb_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

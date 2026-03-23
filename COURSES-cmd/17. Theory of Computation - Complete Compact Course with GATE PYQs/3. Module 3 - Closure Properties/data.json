@@ -1,0 +1,134 @@
+[
+  {
+    "type": "liveclass",
+    "id": "674354875f86fa10178f46e5",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "1. Lecture 1 - Context Sensitive Languages CSL",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67435ef68a248c1f2de5a45b/u/6451e539e4b0e02eaea3faf1/t/d4a3cecad496b973e4c8380e1b0ee8b8/p/assets/videos/60e975430cf20278db21ff30/2024/11/24/67435ef68a248c1f2de5a45b/index.m3u8",
+    "key": "2119a3441f6a41525f9db5ddb3b435ec",
+    "duration": 962,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67435ef68a248c1f2de5a45b/u/6451e539e4b0e02eaea3faf1/t/d4a3cecad496b973e4c8380e1b0ee8b8/p/assets/videos/60e975430cf20278db21ff30/2024/11/24/67435ef68a248c1f2de5a45b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Context Sensitive Languages CSL' --save-dir './COURSES/17. Theory of Computation - Complete Compact Course with GATE PYQs/3. Module 3 - Closure Properties' --custom-hls-key '2119a3441f6a41525f9db5ddb3b435ec'"
+  },
+  {
+    "type": "pdf",
+    "id": "674ba6df50210d35c6bd0597",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "2. Annotated Notes - Lecture 1 - Context Sensitive Languages CSL",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674ba6df50210d35c6bd0597/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/30/674ba6df50210d35c6bd0597/674ba6df50210d35c6bd0597_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "67435d88d56c035a64cd5801",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "3. Lecture 2 - Chomsky Hierarchy - Language Hierarchy",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67436cb96667fd147613310b/u/6451e539e4b0e02eaea3faf1/t/c364aa9019cc64674cc73a358ca9c367/p/assets/videos/60e975430cf20278db21ff30/2024/11/24/67436cb96667fd147613310b/index.m3u8",
+    "key": "97146e9d88e27558d27ef7c963245914",
+    "duration": 2408,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67436cb96667fd147613310b/u/6451e539e4b0e02eaea3faf1/t/c364aa9019cc64674cc73a358ca9c367/p/assets/videos/60e975430cf20278db21ff30/2024/11/24/67436cb96667fd147613310b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 - Chomsky Hierarchy - Language Hierarchy' --save-dir './COURSES/17. Theory of Computation - Complete Compact Course with GATE PYQs/3. Module 3 - Closure Properties' --custom-hls-key '97146e9d88e27558d27ef7c963245914'"
+  },
+  {
+    "type": "pdf",
+    "id": "674ba74650210d35c6bd05a4",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "4. Annotated Notes - Lecture 2 - Chomsky Hierarchy - Language Hierarchy",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674ba74650210d35c6bd05a4/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/01/674ba74650210d35c6bd05a4/674ba74650210d35c6bd05a4_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6743c3e17e5cb81a4cce3243",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "5. CFLs, DCFLs Identification - ALL GATE PYQs - Part 2",
+    "url": "https://www.goclasses.in/s/courses/67027196048f5936aa240e94/articles/6743c3e17e5cb81a4cce3243/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6747072991752301afd1c85b",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "6. Lecture 3A - Closure Properties of Regular, CFLs, DCFLs",
+    "url": "https://youtu.be/rBAiNPdVEMY",
+    "key": "this-is-yt-video",
+    "duration": 9882,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674721d20e467b0b0da30c87",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "7. Annotated Notes - Lecture 3A - Closure Properties of Regular, CFLs, DCFLs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674721d20e467b0b0da30c87/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/27/674721d20e467b0b0da30c87/674721d20e467b0b0da30c87_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674840ade5ab11688713e540",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "8. Lecture 3B - Closure Properties of RE, Recursive Languages",
+    "url": "https://youtu.be/9MkNx2DHjII",
+    "key": "this-is-yt-video",
+    "duration": 8014,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674b9e10bb55c378c9491812",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "9. Annotated Notes - Lecture 3B - Closure Properties of RE, Recursive Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674b9e10bb55c378c9491812/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/30/674b9e10bb55c378c9491812/674b9e10bb55c378c9491812_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "674894d7761f712b8d8fac22",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "10. Lecture 3C - Closure Properties of Nonregular, Undecidable Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6748ade5761f712b8d8fb323/u/6451e539e4b0e02eaea3faf1/t/9b2d0342fba3debee3bf1dcd52951235/p/assets/videos/60e975430cf20278db21ff30/2024/11/28/6748ade5761f712b8d8fb323/index.m3u8",
+    "key": "49a53a80de321d37b6a5b515826de896",
+    "duration": 4309,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6748ade5761f712b8d8fb323/u/6451e539e4b0e02eaea3faf1/t/9b2d0342fba3debee3bf1dcd52951235/p/assets/videos/60e975430cf20278db21ff30/2024/11/28/6748ade5761f712b8d8fb323/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 3C - Closure Properties of Nonregular, Undecidable Languages' --save-dir './COURSES/17. Theory of Computation - Complete Compact Course with GATE PYQs/3. Module 3 - Closure Properties' --custom-hls-key '49a53a80de321d37b6a5b515826de896'"
+  },
+  {
+    "type": "pdf",
+    "id": "674b99974a21f4591500b58e",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "11. Annotated Notes - Lecture 3C - Closure Properties of Nonregular, Undecidable Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674b99974a21f4591500b58e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/30/674b99974a21f4591500b58e/674b99974a21f4591500b58e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6748f4cf9fc01c31c36052fd",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 3 - Closure Properties",
+    "title": "12. Closure Properties - MANY Practice Questions",
+    "url": "https://www.goclasses.in/s/courses/67027196048f5936aa240e94/articles/6748f4cf9fc01c31c36052fd/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

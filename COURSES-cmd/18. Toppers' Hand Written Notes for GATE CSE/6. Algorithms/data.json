@@ -1,0 +1,101 @@
+[
+  {
+    "type": "pdf",
+    "id": "6632849de33bcd03b3123658",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "1. 1. Algo M1 - Asymptotic Analysis and Time Complexities (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6632849de33bcd03b3123658/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/6632849de33bcd03b3123658/6632849de33bcd03b3123658_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663284b2b71ce57b5d6a34b7",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "2. 2. Algo M2 - Divide and Conquer (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663284b2b71ce57b5d6a34b7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/663284b2b71ce57b5d6a34b7/663284b2b71ce57b5d6a34b7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663284b05910be1ea8419a4c",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "3. 3. Algo M3 - Other Sorting Algorithms (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663284b05910be1ea8419a4c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/663284b05910be1ea8419a4c/663284b05910be1ea8419a4c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663284ce99f70a37192ddd9e",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "4. 4. Algo M4 - Graphs in Algorithms and BFS, DFS (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663284ce99f70a37192ddd9e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/663284ce99f70a37192ddd9e/663284ce99f70a37192ddd9e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663284e499f70a37192dddc8",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "5. 5. Algo M5 - Greedy Algorithms (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663284e499f70a37192dddc8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/663284e499f70a37192dddc8/663284e499f70a37192dddc8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663284e65910be1ea8419a51",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "6. 6. Algo M6 - Dynamic Programming (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663284e65910be1ea8419a51/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/663284e65910be1ea8419a51/663284e65910be1ea8419a51_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66328ebba0c07567821651c9",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "7. Algorithms - All Modules (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66328ebba0c07567821651c9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/66328ebba0c07567821651c9/66328ebba0c07567821651c9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66328efc99f70a37192de026",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "8. Short Notes Algorithms (Karan Agrawal)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66328efc99f70a37192de026/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/01/66328efc99f70a37192de026/66328efc99f70a37192de026_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6633470a6bae235df7320451",
+    "course": "Toppers' Hand Written Notes for GATE CSE",
+    "module": "Algorithms",
+    "title": "9. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024)- Algorithms",
+    "url": "https://www.goclasses.in/s/courses/6632663551a990423c2836a6/articles/6633470a6bae235df7320451/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "type": "video",
+    "id": "639320cfe4b08e97240da3f0",
+    "course": "Aptitude",
+    "module": "Verbal Ability",
+    "title": "1. Verbal Aptitude (English Grammar) Part 1 - Many GATE PYQs",
+    "url": "https://youtu.be/40NjNyuCC20",
+    "key": "this-is-yt-video",
+    "duration": 1541,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64515d84e4b0f45842dc6a0d",
+    "course": "Aptitude",
+    "module": "Verbal Ability",
+    "title": "2. Verbal Aptitude Part 2",
+    "url": "https://youtu.be/zOPe3JHf0nY",
+    "key": "this-is-yt-video",
+    "duration": 2260,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64515dafe4b0f45842dc6a11",
+    "course": "Aptitude",
+    "module": "Verbal Ability",
+    "title": "3. Verbal Aptitude Part 3",
+    "url": "https://youtu.be/7nsdiZ6b_8M",
+    "key": "this-is-yt-video",
+    "duration": 3240,
+    "download_command": ""
+  }
+]

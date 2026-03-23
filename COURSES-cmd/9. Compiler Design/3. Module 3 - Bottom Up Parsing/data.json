@@ -1,0 +1,189 @@
+[
+  {
+    "type": "liveclass",
+    "id": "693bfd383ff9854f92df55e5",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "1. Lecture 1 - Handles in Bottom Up Parsing",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693c4d7e1a38a76fe7b22e59/u/6451e539e4b0e02eaea3faf1/t/32bd123f6e32dc7d482fd65ce9f3f6c3/p/assets/videos/60e975430cf20278db21ff30/2025/12/12/693c4d7e1a38a76fe7b22e59/index.m3u8",
+    "key": "c94913a6c3c03e46ec739d567613d221",
+    "duration": 12805,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693c4d7e1a38a76fe7b22e59/u/6451e539e4b0e02eaea3faf1/t/32bd123f6e32dc7d482fd65ce9f3f6c3/p/assets/videos/60e975430cf20278db21ff30/2025/12/12/693c4d7e1a38a76fe7b22e59/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Handles in Bottom Up Parsing' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'c94913a6c3c03e46ec739d567613d221'"
+  },
+  {
+    "type": "pdf",
+    "id": "693c89ef300f746e231cb583",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "2. Annotated Notes - Lecture 1 - Handles in Bottom Up Parsing",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693c89ef300f746e231cb583/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/12/693c89ef300f746e231cb583/693c89ef300f746e231cb583_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "693d5cd96581474c97c9c2fa",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "3. Lecture 1B - Bottom Up Parser Working Idea",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693d7638602cbd5824b6470f/u/6451e539e4b0e02eaea3faf1/t/a0fb5297c423aa50262e525b923f7dbe/p/assets/videos/60e975430cf20278db21ff30/2025/12/13/693d7638602cbd5824b6470f/index.m3u8",
+    "key": "b12cfabe824d474fe61ecd97a97bc3b3",
+    "duration": 3140,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693d7638602cbd5824b6470f/u/6451e539e4b0e02eaea3faf1/t/a0fb5297c423aa50262e525b923f7dbe/p/assets/videos/60e975430cf20278db21ff30/2025/12/13/693d7638602cbd5824b6470f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 1B - Bottom Up Parser Working Idea' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'b12cfabe824d474fe61ecd97a97bc3b3'"
+  },
+  {
+    "type": "pdf",
+    "id": "693e117a91c9b60d57642e7a",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "4. Annotated Notes - Lecture 1B - Bottom Up Parser Working Idea",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693e117a91c9b60d57642e7a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/14/693e117a91c9b60d57642e7a/693e117a91c9b60d57642e7a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "693d73c94b6e15474ce2907b",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "5. Lecture 1C - Bottom Up Parser Working with Handles",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693dc5e07f92d5508a38ceb0/u/6451e539e4b0e02eaea3faf1/t/77cb71c3b7ff1aeefc32c686af825fff/p/assets/videos/60e975430cf20278db21ff30/2025/12/13/693dc5e07f92d5508a38ceb0/index.m3u8",
+    "key": "602c3d660cb959025ceb6e80ef2a01d2",
+    "duration": 12776,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/693dc5e07f92d5508a38ceb0/u/6451e539e4b0e02eaea3faf1/t/77cb71c3b7ff1aeefc32c686af825fff/p/assets/videos/60e975430cf20278db21ff30/2025/12/13/693dc5e07f92d5508a38ceb0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 1C - Bottom Up Parser Working with Handles' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key '602c3d660cb959025ceb6e80ef2a01d2'"
+  },
+  {
+    "type": "pdf",
+    "id": "693e0cca50aac9124891177a",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "6. Annotated Notes - Lecture 1C - Bottom Up Parser Working with Handles",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693e0cca50aac9124891177a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/14/693e0cca50aac9124891177a/693e0cca50aac9124891177a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "694162ff61d7707ca087193e",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "7. Lecture 1D - Viable Prefixes",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6941b1b593a4f01742d49a56/u/6451e539e4b0e02eaea3faf1/t/67f779a9e3a215558faaa406cf483a17/p/assets/videos/60e975430cf20278db21ff30/2025/12/16/6941b1b593a4f01742d49a56/index.m3u8",
+    "key": "f95b23419cb872343475d7a489b0d151",
+    "duration": 6249,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6941b1b593a4f01742d49a56/u/6451e539e4b0e02eaea3faf1/t/67f779a9e3a215558faaa406cf483a17/p/assets/videos/60e975430cf20278db21ff30/2025/12/16/6941b1b593a4f01742d49a56/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 1D - Viable Prefixes' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'f95b23419cb872343475d7a489b0d151'"
+  },
+  {
+    "type": "article",
+    "id": "6941d6ea06eeb3491005fdd8",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "8. Annotated Notes of Lecture 1D - Viable Prefixes",
+    "url": "https://www.goclasses.in/s/courses/60fdd5880cf24b442d1c8f1e/articles/6941d6ea06eeb3491005fdd8/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6941d73093a4f01742d4a8a7",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "9. Slides - Lecture 1D - Viable Prefixes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6941d73093a4f01742d4a8a7/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/16/6941d73093a4f01742d4a8a7/6941d73093a4f01742d4a8a7_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "694575c5d8341215b4c7802c",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "10. Lecture 2A - LR(0), SLR(1) Parsers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6945ce4445597b5aecf85821/u/6451e539e4b0e02eaea3faf1/t/9137512bb4e212944270ae9695727479/p/assets/videos/60e975430cf20278db21ff30/2025/12/19/6945ce4445597b5aecf85821/index.m3u8",
+    "key": "cd37aeccaade8df30bb789aa31d40a37",
+    "duration": 14506,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6945ce4445597b5aecf85821/u/6451e539e4b0e02eaea3faf1/t/9137512bb4e212944270ae9695727479/p/assets/videos/60e975430cf20278db21ff30/2025/12/19/6945ce4445597b5aecf85821/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 2A - LR(0), SLR(1) Parsers' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'cd37aeccaade8df30bb789aa31d40a37'"
+  },
+  {
+    "type": "pdf",
+    "id": "694659185a87fd3ce81dda42",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "11. Annotated Notes - Lecture 2A - LR(0), SLR(1) Parsers",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/694659185a87fd3ce81dda42/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/20/694659185a87fd3ce81dda42/694659185a87fd3ce81dda42_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "694ab483a4a34f567f82b622",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "12. Lecture 2B - LR(0), SLR(1) Parsers Working",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/694b06cc5743c2606bcd9753/u/6451e539e4b0e02eaea3faf1/t/79ea7114d2cbfaa2a26468a43259225e/p/assets/videos/60e975430cf20278db21ff30/2025/12/23/694b06cc5743c2606bcd9753/index.m3u8",
+    "key": "76021f46fa7a66a4a62bebf1ff5213e3",
+    "duration": 12777,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/694b06cc5743c2606bcd9753/u/6451e539e4b0e02eaea3faf1/t/79ea7114d2cbfaa2a26468a43259225e/p/assets/videos/60e975430cf20278db21ff30/2025/12/23/694b06cc5743c2606bcd9753/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. Lecture 2B - LR(0), SLR(1) Parsers Working' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key '76021f46fa7a66a4a62bebf1ff5213e3'"
+  },
+  {
+    "type": "pdf",
+    "id": "694b0afe5ccbaf2521bd7a60",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "13. Annotated Notes - Lecture 2B - LR(0), SLR(1) Parsers Working",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/694b0afe5ccbaf2521bd7a60/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/23/694b0afe5ccbaf2521bd7a60/694b0afe5ccbaf2521bd7a60_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "69500ff4ba32ab7b98723f0b",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "14. Lecture 3A - LR(1) Parsers",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69503bcf8d1e95515cbdeeb4/u/6451e539e4b0e02eaea3faf1/t/9e48e1c89a56e81bed3395dc3a49f101/p/assets/videos/60e975430cf20278db21ff30/2025/12/27/69503bcf8d1e95515cbdeeb4/index.m3u8",
+    "key": "acfab05655690cfd299b1675df4bda5a",
+    "duration": 6538,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69503bcf8d1e95515cbdeeb4/u/6451e539e4b0e02eaea3faf1/t/9e48e1c89a56e81bed3395dc3a49f101/p/assets/videos/60e975430cf20278db21ff30/2025/12/27/69503bcf8d1e95515cbdeeb4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. Lecture 3A - LR(1) Parsers' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'acfab05655690cfd299b1675df4bda5a'"
+  },
+  {
+    "type": "pdf",
+    "id": "69504b4fba32ab7b987255fa",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "15. Annotated Notes - Lecture 3A - LR(1) Parsers",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69504b4fba32ab7b987255fa/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/27/69504b4fba32ab7b987255fa/69504b4fba32ab7b987255fa_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6953a3b1e45d9945afd39f0d",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "16. Lecture 3B - LALR(1) Parser",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69541e807b6fa6556ab6295f/u/6451e539e4b0e02eaea3faf1/t/c815ed5ff64fbd198bcf09c972bf565b/p/assets/videos/60e975430cf20278db21ff30/2025/12/30/69541e807b6fa6556ab6295f/index.m3u8",
+    "key": "eb8d10d9fa025e6862a7e64b93529385",
+    "duration": 14662,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69541e807b6fa6556ab6295f/u/6451e539e4b0e02eaea3faf1/t/c815ed5ff64fbd198bcf09c972bf565b/p/assets/videos/60e975430cf20278db21ff30/2025/12/30/69541e807b6fa6556ab6295f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. Lecture 3B - LALR(1) Parser' --save-dir './COURSES/9. Compiler Design/3. Module 3 - Bottom Up Parsing' --custom-hls-key 'eb8d10d9fa025e6862a7e64b93529385'"
+  },
+  {
+    "type": "pdf",
+    "id": "69545384b5e99b3a5dce9441",
+    "course": "Compiler Design",
+    "module": "Module 3 - Bottom Up Parsing",
+    "title": "17. Annotated Notes - Lecture 3B - LALR(1) Parser",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69545384b5e99b3a5dce9441/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/30/69545384b5e99b3a5dce9441/69545384b5e99b3a5dce9441_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

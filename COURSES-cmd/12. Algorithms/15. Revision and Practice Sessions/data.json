@@ -1,0 +1,134 @@
+[
+  {
+    "type": "article",
+    "id": "658671eae4b09b0c473e2a13",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "1. Asymptotic Notations in Algorithms with ALL GATE PYQs | Revision and Practice | O(), o(), \u03a9(), \u03c9()",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/658671eae4b09b0c473e2a13/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "657d727ee4b035bc7692ab47",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "2. Annotated Notes -1 Revision and Practice Asymptotic Notations",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/657d727ee4b035bc7692ab47/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/16/657d727ee4b035bc7692ab47/657d727ee4b035bc7692ab47_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "65867202e4b08a5bf3ee3a2b",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "3. Solving Recurrence Relations and Loop Time Complexities with ALL GATE PYQs | Revision and Practice",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/65867202e4b08a5bf3ee3a2b/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "65817e4de4b075a42457a9f9",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "4. Annotated Notes -2 Reccurrance Relations Practice",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65817e4de4b075a42457a9f9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/19/65817e4de4b075a42457a9f9/65817e4de4b075a42457a9f9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "658a7171e4b05b4969c0fdca",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "5. DFS and its Applications and ALL GATE PYQs | Revision and Practice Session | Algorithms | Graph",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/658a7171e4b05b4969c0fdca/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "658a70fae4b032b9ef21abd8",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "6. Annotated Notes -3 Revision and Practice DFS",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/658a70fae4b032b9ef21abd8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/26/658a70fae4b032b9ef21abd8/658a70fae4b032b9ef21abd8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6595b0d9e4b06c44febc620d",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "7. BFS and Dijkstra and GATE PYQs | Revision and Practice Session | Algorithms | Graph",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/6595b0d9e4b06c44febc620d/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6595b0fee4b0ff56b54fca98",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "8. Annotated Notes -4 Revision and Practice BFS Dijkstra",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6595b0fee4b0ff56b54fca98/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/03/6595b0fee4b0ff56b54fca98/6595b0fee4b0ff56b54fca98_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6599527ce4b0a90cdb668216",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "9. Prims and Kruskal's and GATE PYQs | Revision and Practice Session | Algorithms | Graph",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/6599527ce4b0a90cdb668216/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "65995298e4b00c67b6c8c83e",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "10. Annotated Notes -5 Revision and Practice Prims and Kruskals",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65995298e4b00c67b6c8c83e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/06/65995298e4b00c67b6c8c83e/65995298e4b00c67b6c8c83e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "659cc1f2e4b0221dbfe30cb7",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "11. Bellman-Ford Proof | Most Intuitive Proof WITHOUT Induction | GATE CSE and DA | Sachin Mittal",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/659cc1f2e4b0221dbfe30cb7/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "659cc207e4b0221dbfe30cb9",
+    "course": "Algorithms",
+    "module": "Revision and Practice Sessions",
+    "title": "12. Annotated Notes -6 Revision and Practice Bellman-Ford Proof and Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/659cc207e4b0221dbfe30cb9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/01/09/659cc207e4b0221dbfe30cb9/659cc207e4b0221dbfe30cb9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

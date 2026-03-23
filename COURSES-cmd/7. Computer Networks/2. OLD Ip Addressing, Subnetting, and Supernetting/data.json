@@ -1,0 +1,112 @@
+[
+  {
+    "type": "liveclass",
+    "id": "6511a5a1e4b028f947d175e1",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "1. Lecture 1 Introduction and Classfull addressing",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6511cd9ae4b051d7da7f89d7/u/6451e539e4b0e02eaea3faf1/t/8158dd999e7e3183fa1fe53b99f85f0a/p/assets/videos/60e975430cf20278db21ff30/2023/09/25/6511cd9ae4b051d7da7f89d7/index.m3u8",
+    "key": "c5f5c133c7e44273b3b4d58cf7d3d18d",
+    "duration": 6788,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6511cd9ae4b051d7da7f89d7/u/6451e539e4b0e02eaea3faf1/t/8158dd999e7e3183fa1fe53b99f85f0a/p/assets/videos/60e975430cf20278db21ff30/2023/09/25/6511cd9ae4b051d7da7f89d7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 Introduction and Classfull addressing' --save-dir './COURSES/7. Computer Networks/2. OLD Ip Addressing, Subnetting, and Supernetting' --custom-hls-key 'c5f5c133c7e44273b3b4d58cf7d3d18d'"
+  },
+  {
+    "type": "pdf",
+    "id": "6511cef5e4b011fd33098396",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "2. Annotated Notes Lecture 1 Introduction and Classfull addressing",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6511cef5e4b011fd33098396/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/25/6511cef5e4b011fd33098396/6511cef5e4b011fd33098396_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "651316bee4b0a2c17410f7ee",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "3. Lecture 2 Classless Addressing and Subnetting",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651316bee4b0a2c17410f7ee/u/6451e539e4b0e02eaea3faf1/t/391993513361e143cd3eb16bbd599e8b/p/assets/videos/60e975430cf20278db21ff30/2023/09/26/651316bee4b0a2c17410f7ee/index.m3u8",
+    "key": "c6190af09592037a51d217f02ea91295",
+    "duration": 8460,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651316bee4b0a2c17410f7ee/u/6451e539e4b0e02eaea3faf1/t/391993513361e143cd3eb16bbd599e8b/p/assets/videos/60e975430cf20278db21ff30/2023/09/26/651316bee4b0a2c17410f7ee/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 Classless Addressing and Subnetting' --save-dir './COURSES/7. Computer Networks/2. OLD Ip Addressing, Subnetting, and Supernetting' --custom-hls-key 'c6190af09592037a51d217f02ea91295'"
+  },
+  {
+    "type": "pdf",
+    "id": "65132d1de4b06960ea636e57",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "4. Annotated Notes Lecture 2 Class less Addressing and Subnetting",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65132d1de4b06960ea636e57/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/26/65132d1de4b06960ea636e57/65132d1de4b06960ea636e57_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6518067ee4b0b8ffda16d11a",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "5. Lecture 3 Misconceptions in SuperNetting | Longest prefix match and Route aggregation (SuperNetting)",
+    "url": "https://www.goclasses.in/s/courses/62e770ae0cf29f3db8f01636/articles/6518067ee4b0b8ffda16d11a/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "65145c52e4b02e8ff92edebc",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "6. Annotated Notes Lecture 3 Route Aggregation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65145c52e4b02e8ff92edebc/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/27/65145c52e4b02e8ff92edebc/65145c52e4b02e8ff92edebc_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6515c7d4e4b084d88d555162",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "7. Lecture 4 Practice Session on Subnetting and Supernetting [Recording]",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6515c7d4e4b084d88d555162/u/6451e539e4b0e02eaea3faf1/t/8725fc755988515d157dcf522d44b6d1/p/assets/videos/60e975430cf20278db21ff30/2023/09/28/6515c7d4e4b084d88d555162/index.m3u8",
+    "key": "228f8ce42294e51129b6fa572349feac",
+    "duration": 9895,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6515c7d4e4b084d88d555162/u/6451e539e4b0e02eaea3faf1/t/8725fc755988515d157dcf522d44b6d1/p/assets/videos/60e975430cf20278db21ff30/2023/09/28/6515c7d4e4b084d88d555162/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 4 Practice Session on Subnetting and Supernetting [Recording]' --save-dir './COURSES/7. Computer Networks/2. OLD Ip Addressing, Subnetting, and Supernetting' --custom-hls-key '228f8ce42294e51129b6fa572349feac'"
+  },
+  {
+    "type": "pdf",
+    "id": "6515bfd0e4b075ca47cb7601",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "8. Annotated Notes Lecture 4 Practice Questions on Subnetting and Supernetting",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6515bfd0e4b075ca47cb7601/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/28/6515bfd0e4b075ca47cb7601/6515bfd0e4b075ca47cb7601_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "651c429ee4b0f216e06fac3f",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "9. Quiz Discussion: Subnetting and Supernetting",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651c5d60e4b0db3622198499/u/6451e539e4b0e02eaea3faf1/t/dfda1dcfa641230dc4277caa7e04860f/p/assets/videos/60e975430cf20278db21ff30/2023/10/03/651c5d60e4b0db3622198499/index.m3u8",
+    "key": "05ea847e1ddcb4ec14025d7b840002b3",
+    "duration": 4260,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/651c5d60e4b0db3622198499/u/6451e539e4b0e02eaea3faf1/t/dfda1dcfa641230dc4277caa7e04860f/p/assets/videos/60e975430cf20278db21ff30/2023/10/03/651c5d60e4b0db3622198499/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Quiz Discussion: Subnetting and Supernetting' --save-dir './COURSES/7. Computer Networks/2. OLD Ip Addressing, Subnetting, and Supernetting' --custom-hls-key '05ea847e1ddcb4ec14025d7b840002b3'"
+  },
+  {
+    "type": "pdf",
+    "id": "651c6c33e4b0b78e1ccdcbc0",
+    "course": "Computer Networks",
+    "module": "OLD Ip Addressing, Subnetting, and Supernetting",
+    "title": "10. Annotated Notes Quiz Subnetting",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/651c6c33e4b0b78e1ccdcbc0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/10/03/651c6c33e4b0b78e1ccdcbc0/651c6c33e4b0b78e1ccdcbc0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

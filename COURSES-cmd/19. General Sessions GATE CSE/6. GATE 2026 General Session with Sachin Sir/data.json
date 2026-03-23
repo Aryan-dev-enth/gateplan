@@ -1,0 +1,24 @@
+[
+  {
+    "type": "liveclass",
+    "id": "68d2be8f6723a54110b2a441",
+    "course": "General Sessions GATE CSE",
+    "module": "GATE 2026 General Session with Sachin Sir",
+    "title": "1. GATE 2026 General Session with Sachin Sir",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68d2ee9b788bfa0f6f52ad86/u/6451e539e4b0e02eaea3faf1/t/e230a7432e55ff1e4ef3c717a185bb52/p/assets/videos/60e975430cf20278db21ff30/2025/09/23/68d2ee9b788bfa0f6f52ad86/index.m3u8",
+    "key": "b231171406da0fdcf3bb41ca59922470",
+    "duration": 6450,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68d2ee9b788bfa0f6f52ad86/u/6451e539e4b0e02eaea3faf1/t/e230a7432e55ff1e4ef3c717a185bb52/p/assets/videos/60e975430cf20278db21ff30/2025/09/23/68d2ee9b788bfa0f6f52ad86/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. GATE 2026 General Session with Sachin Sir' --save-dir './COURSES/19. General Sessions GATE CSE/6. GATE 2026 General Session with Sachin Sir' --custom-hls-key 'b231171406da0fdcf3bb41ca59922470'"
+  },
+  {
+    "type": "liveclass",
+    "id": "6982160da6457b398dedd4da",
+    "course": "General Sessions GATE CSE",
+    "module": "GATE 2026 General Session with Sachin Sir",
+    "title": "2. General Session before GATE 2026 with Sachin Sir",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69822a9930bc47341d7e774c/u/6451e539e4b0e02eaea3faf1/t/5f63da0b789a00cedcf7988cd65c8b75/p/assets/videos/60e975430cf20278db21ff30/2026/02/03/69822a9930bc47341d7e774c/index.m3u8",
+    "key": "6571ffd6e96a479f17bf417f6ae63d75",
+    "duration": 3435,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/69822a9930bc47341d7e774c/u/6451e539e4b0e02eaea3faf1/t/5f63da0b789a00cedcf7988cd65c8b75/p/assets/videos/60e975430cf20278db21ff30/2026/02/03/69822a9930bc47341d7e774c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. General Session before GATE 2026 with Sachin Sir' --save-dir './COURSES/19. General Sessions GATE CSE/6. GATE 2026 General Session with Sachin Sir' --custom-hls-key '6571ffd6e96a479f17bf417f6ae63d75'"
+  }
+]

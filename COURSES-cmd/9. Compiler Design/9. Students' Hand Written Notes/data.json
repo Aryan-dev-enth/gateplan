@@ -1,0 +1,35 @@
+[
+  {
+    "type": "pdf",
+    "id": "663ca79629774e77478035a1",
+    "course": "Compiler Design",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Compiler Design Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca79629774e77478035a1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca79629774e77478035a1/663ca79629774e77478035a1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe4fff87aaa5b7f70a9da",
+    "course": "Compiler Design",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Mod 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe4fff87aaa5b7f70a9da/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe4fff87aaa5b7f70a9da/693fe4fff87aaa5b7f70a9da_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "698829b774a29a7a00a67a69",
+    "course": "Compiler Design",
+    "module": "Students' Hand Written Notes",
+    "title": "3. Compiler Design(Himanshu Dutta -AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/698829b774a29a7a00a67a69/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/698829b774a29a7a00a67a69/698829b774a29a7a00a67a69_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

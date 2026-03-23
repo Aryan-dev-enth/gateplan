@@ -1,0 +1,134 @@
+[
+  {
+    "type": "video",
+    "id": "6297184e0cf2bff9305e708b",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "1. 20a. Motivation to hashing and Direct address table",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297184e0cf2bff9305e708b/u/6451e539e4b0e02eaea3faf1/t/0bf826928cd644ba608f662a36223052/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297184e0cf2bff9305e708b/index.m3u8",
+    "key": "63fad2e0cd0029756bb46e46ecf19abe",
+    "duration": 926,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297184e0cf2bff9305e708b/u/6451e539e4b0e02eaea3faf1/t/0bf826928cd644ba608f662a36223052/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297184e0cf2bff9305e708b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 20a. Motivation to hashing and Direct address table' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key '63fad2e0cd0029756bb46e46ecf19abe'"
+  },
+  {
+    "type": "video",
+    "id": "629743ec0cf2a81866aced76",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "2. 20b. Introduction to hashing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629743ec0cf2a81866aced76/u/6451e539e4b0e02eaea3faf1/t/3e7b787c5785a78cf489bb2ee29b2ad8/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/629743ec0cf2a81866aced76/index.m3u8",
+    "key": "2a949b4b499187c34330aebeec10d8ec",
+    "duration": 1295,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629743ec0cf2a81866aced76/u/6451e539e4b0e02eaea3faf1/t/3e7b787c5785a78cf489bb2ee29b2ad8/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/629743ec0cf2a81866aced76/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 20b. Introduction to hashing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key '2a949b4b499187c34330aebeec10d8ec'"
+  },
+  {
+    "type": "video",
+    "id": "6297445a0cf2a81866aced89",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "3. 20c. Collision resolution techniques",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297445a0cf2a81866aced89/u/6451e539e4b0e02eaea3faf1/t/083dfaa784ad665daf781c764a586464/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297445a0cf2a81866aced89/index.m3u8",
+    "key": "ee6df31356967ca1741d28d16b09135c",
+    "duration": 688,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297445a0cf2a81866aced89/u/6451e539e4b0e02eaea3faf1/t/083dfaa784ad665daf781c764a586464/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297445a0cf2a81866aced89/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 20c. Collision resolution techniques' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'ee6df31356967ca1741d28d16b09135c'"
+  },
+  {
+    "type": "video",
+    "id": "6297570a0cf2c6bac39d0264",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "4. 20d. Avg case performance chaining",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297570a0cf2c6bac39d0264/u/6451e539e4b0e02eaea3faf1/t/837c4f3c684b15789e162e869ca877f3/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297570a0cf2c6bac39d0264/index.m3u8",
+    "key": "ae31684df447261c798662ebd9bfaadf",
+    "duration": 1825,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6297570a0cf2c6bac39d0264/u/6451e539e4b0e02eaea3faf1/t/837c4f3c684b15789e162e869ca877f3/p/assets/videos/60e975430cf20278db21ff30/2022/06/01/6297570a0cf2c6bac39d0264/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 20d. Avg case performance chaining' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'ae31684df447261c798662ebd9bfaadf'"
+  },
+  {
+    "type": "video",
+    "id": "6298d8190cf2ae06cdc2f894",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "5. 21a. Linear Probing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6298d8190cf2ae06cdc2f894/u/6451e539e4b0e02eaea3faf1/t/5eb509e4ada411f9bc9ee2996533733f/p/assets/videos/60e975430cf20278db21ff30/2022/06/02/6298d8190cf2ae06cdc2f894/index.m3u8",
+    "key": "bdf0e201f546685c661099692e9c1784",
+    "duration": 1660,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6298d8190cf2ae06cdc2f894/u/6451e539e4b0e02eaea3faf1/t/5eb509e4ada411f9bc9ee2996533733f/p/assets/videos/60e975430cf20278db21ff30/2022/06/02/6298d8190cf2ae06cdc2f894/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 21a. Linear Probing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'bdf0e201f546685c661099692e9c1784'"
+  },
+  {
+    "type": "video",
+    "id": "6298d5c20cf208e4a5544c98",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "6. 21 b. Quadratic probing and Double hashing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6298d5c20cf208e4a5544c98/u/6451e539e4b0e02eaea3faf1/t/4440ff11c8b6044641858dfc36a8b636/p/assets/videos/60e975430cf20278db21ff30/2022/06/02/6298d5c20cf208e4a5544c98/index.m3u8",
+    "key": "a584ce64166cc2e4e82bed252ae9e29a",
+    "duration": 1251,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6298d5c20cf208e4a5544c98/u/6451e539e4b0e02eaea3faf1/t/4440ff11c8b6044641858dfc36a8b636/p/assets/videos/60e975430cf20278db21ff30/2022/06/02/6298d5c20cf208e4a5544c98/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 21 b. Quadratic probing and Double hashing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'a584ce64166cc2e4e82bed252ae9e29a'"
+  },
+  {
+    "type": "video",
+    "id": "6299dc6c0cf23ca4177417de",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "7. 21c. Possible Number of probes",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299dc6c0cf23ca4177417de/u/6451e539e4b0e02eaea3faf1/t/4004129506185ef7481d72d6b3d2d443/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299dc6c0cf23ca4177417de/index.m3u8",
+    "key": "daa5b51a0d9377e5dd23293eb71d1b47",
+    "duration": 785,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299dc6c0cf23ca4177417de/u/6451e539e4b0e02eaea3faf1/t/4004129506185ef7481d72d6b3d2d443/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299dc6c0cf23ca4177417de/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 21c. Possible Number of probes' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'daa5b51a0d9377e5dd23293eb71d1b47'"
+  },
+  {
+    "type": "video",
+    "id": "629b1ba10cf21e97f9c48f5d",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "8. 22a. [Optional but please watch ] UnSucessfull search time open addressing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629b1ba10cf21e97f9c48f5d/u/6451e539e4b0e02eaea3faf1/t/47a6eb01af385cefbeba66ac5a08ba72/p/assets/videos/60e975430cf20278db21ff30/2022/06/04/629b1ba10cf21e97f9c48f5d/index.m3u8",
+    "key": "8f24789f9238d3ec3f935a307dcbb010",
+    "duration": 2171,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/629b1ba10cf21e97f9c48f5d/u/6451e539e4b0e02eaea3faf1/t/47a6eb01af385cefbeba66ac5a08ba72/p/assets/videos/60e975430cf20278db21ff30/2022/06/04/629b1ba10cf21e97f9c48f5d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 22a. [Optional but please watch ] UnSucessfull search time open addressing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key '8f24789f9238d3ec3f935a307dcbb010'"
+  },
+  {
+    "type": "video",
+    "id": "6299da150cf2ab3b0d1031f8",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "9. 22b. [Optional but please watch ] Successful search time open addressing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299da150cf2ab3b0d1031f8/u/6451e539e4b0e02eaea3faf1/t/832094e25933bb7414850791a036e01f/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299da150cf2ab3b0d1031f8/index.m3u8",
+    "key": "5275f0405d84ca19e51e7e6e6bc2c051",
+    "duration": 391,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299da150cf2ab3b0d1031f8/u/6451e539e4b0e02eaea3faf1/t/832094e25933bb7414850791a036e01f/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299da150cf2ab3b0d1031f8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 22b. [Optional but please watch ] Successful search time open addressing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key '5275f0405d84ca19e51e7e6e6bc2c051'"
+  },
+  {
+    "type": "video",
+    "id": "6447ac20e4b0afcbdb02f0e0",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "10. 23 a. Probability Background (video from Probability course) Bernoulli and Binomial RVs",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6447ac20e4b0afcbdb02f0e0/u/6451e539e4b0e02eaea3faf1/t/e1c5658ebe33e48fb08b025e7e734338/p/assets/videos/60e975430cf20278db21ff30/2023/04/25/6447ac20e4b0afcbdb02f0e0/index.m3u8",
+    "key": "2cf1e1f0b49a5c2641c738550a8a25b4",
+    "duration": 4620,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6447ac20e4b0afcbdb02f0e0/u/6451e539e4b0e02eaea3faf1/t/e1c5658ebe33e48fb08b025e7e734338/p/assets/videos/60e975430cf20278db21ff30/2023/04/25/6447ac20e4b0afcbdb02f0e0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 23 a. Probability Background (video from Probability course) Bernoulli and Binomial RVs' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key '2cf1e1f0b49a5c2641c738550a8a25b4'"
+  },
+  {
+    "type": "video",
+    "id": "6299eaf20cf269ce624ab5c5",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "11. 23b. Three popular expectation questions in hashing",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299eaf20cf269ce624ab5c5/u/6451e539e4b0e02eaea3faf1/t/70b62f4abafb9bf79962070ba51ed4a3/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299eaf20cf269ce624ab5c5/index.m3u8",
+    "key": "b87e9ccbdbb0eef27fefe34849b46b3a",
+    "duration": 1087,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6299eaf20cf269ce624ab5c5/u/6451e539e4b0e02eaea3faf1/t/70b62f4abafb9bf79962070ba51ed4a3/p/assets/videos/60e975430cf20278db21ff30/2022/06/03/6299eaf20cf269ce624ab5c5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 23b. Three popular expectation questions in hashing' --save-dir './COURSES/11. Data Structures/8. Hashing' --custom-hls-key 'b87e9ccbdbb0eef27fefe34849b46b3a'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ad2223e4b0d947b5706a7f",
+    "course": "Data Structures",
+    "module": "Hashing",
+    "title": "12. Hashing Anottated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ad2223e4b0d947b5706a7f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/11/64ad2223e4b0d947b5706a7f/64ad2223e4b0d947b5706a7f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

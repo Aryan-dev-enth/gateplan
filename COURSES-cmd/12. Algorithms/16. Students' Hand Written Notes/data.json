@@ -1,0 +1,46 @@
+[
+  {
+    "type": "article",
+    "id": "6633470a6bae235df7320451",
+    "course": "Algorithms",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024)- Algorithms",
+    "url": "https://www.goclasses.in/s/courses/621a70950cf222b2feb6033e/articles/6633470a6bae235df7320451/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663ca843a0e9ad3fd10d8fd4",
+    "course": "Algorithms",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Algorithms Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca843a0e9ad3fd10d8fd4/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca843a0e9ad3fd10d8fd4/663ca843a0e9ad3fd10d8fd4_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe45492fa46167e53b84e",
+    "course": "Algorithms",
+    "module": "Students' Hand Written Notes",
+    "title": "3. Algorithms",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe45492fa46167e53b84e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe45492fa46167e53b84e/693fe45492fa46167e53b84e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882c4830d6fe73a9a80bec",
+    "course": "Algorithms",
+    "module": "Students' Hand Written Notes",
+    "title": "4. Algorithms(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882c4830d6fe73a9a80bec/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882c4830d6fe73a9a80bec/69882c4830d6fe73a9a80bec_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

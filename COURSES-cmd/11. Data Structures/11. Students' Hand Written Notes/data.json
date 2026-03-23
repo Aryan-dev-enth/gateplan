@@ -1,0 +1,57 @@
+[
+  {
+    "type": "article",
+    "id": "66334a7b51a990423c286b5f",
+    "course": "Data Structures",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024) - Data Structures",
+    "url": "https://www.goclasses.in/s/courses/62655aaa0cf21b4eea415dbb/articles/66334a7b51a990423c286b5f/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663ca3d94734940a5230a9f3",
+    "course": "Data Structures",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Data Structures Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca3d94734940a5230a9f3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca3d94734940a5230a9f3/663ca3d94734940a5230a9f3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe24226482d3ba529d171",
+    "course": "Data Structures",
+    "module": "Students' Hand Written Notes",
+    "title": "3. 2.0 Stacks, Queues, LL and asymptotic analysis",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe24226482d3ba529d171/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe24226482d3ba529d171/693fe24226482d3ba529d171_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe32292fa46167e53b771",
+    "course": "Data Structures",
+    "module": "Students' Hand Written Notes",
+    "title": "4. Trees",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe32292fa46167e53b771/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe32292fa46167e53b771/693fe32292fa46167e53b771_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882b2fe0aea973600a95c5",
+    "course": "Data Structures",
+    "module": "Students' Hand Written Notes",
+    "title": "5. Data Structures(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882b2fe0aea973600a95c5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882b2fe0aea973600a95c5/69882b2fe0aea973600a95c5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

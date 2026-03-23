@@ -1,0 +1,178 @@
+[
+  {
+    "type": "video",
+    "id": "6582963ce4b0a109b0d5a757",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "1. Lecture 1 Introduction to Cache Direct Mapped Cache",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0a109b0d5a757/u/6451e539e4b0e02eaea3faf1/t/e73f1de9075843e84f20767689b45709/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0a109b0d5a757/index.m3u8",
+    "key": "2e4195cc8f9b55d12a6bcd5d49ef2595",
+    "duration": 6405,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0a109b0d5a757/u/6451e539e4b0e02eaea3faf1/t/e73f1de9075843e84f20767689b45709/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0a109b0d5a757/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 Introduction to Cache Direct Mapped Cache' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key '2e4195cc8f9b55d12a6bcd5d49ef2595'"
+  },
+  {
+    "type": "pdf",
+    "id": "6560e747e4b02ae6f2a49cee",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "2. Annotated Notes -1 Cache Memory Introduction and Direct Mapped Cache",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6560e747e4b02ae6f2a49cee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/24/6560e747e4b02ae6f2a49cee/6560e747e4b02ae6f2a49cee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b0c6e9ee09d8eb",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "3. Lecture 2- Questions on Direct Mapped Cache Memory",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0c6e9ee09d8eb/u/6451e539e4b0e02eaea3faf1/t/5b51599dd689054a27aae058dcd430d1/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0c6e9ee09d8eb/index.m3u8",
+    "key": "9cb7da10dc9c2d683bd86f177cc4f99d",
+    "duration": 5737,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0c6e9ee09d8eb/u/6451e539e4b0e02eaea3faf1/t/5b51599dd689054a27aae058dcd430d1/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0c6e9ee09d8eb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2- Questions on Direct Mapped Cache Memory' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key '9cb7da10dc9c2d683bd86f177cc4f99d'"
+  },
+  {
+    "type": "pdf",
+    "id": "65631070e4b05b4a55c94f27",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "4. Annotated Notes -2 Questions on Direct Mapped Cache Memory",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65631070e4b05b4a55c94f27/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/26/65631070e4b05b4a55c94f27/65631070e4b05b4a55c94f27_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b0145e7709ce6a",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "5. Lecture 3- Introduction to Set Associative Cache",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0145e7709ce6a/u/6451e539e4b0e02eaea3faf1/t/a6a7f88972fb2473c13a2eaeaaadd82b/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0145e7709ce6a/index.m3u8",
+    "key": "e8b2444b5a2fa5cde8a5a4ccab744e75",
+    "duration": 4408,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0145e7709ce6a/u/6451e539e4b0e02eaea3faf1/t/a6a7f88972fb2473c13a2eaeaaadd82b/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0145e7709ce6a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3- Introduction to Set Associative Cache' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key 'e8b2444b5a2fa5cde8a5a4ccab744e75'"
+  },
+  {
+    "type": "pdf",
+    "id": "65631207e4b02a9a330b1e55",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "6. Annotated Notes - Set Associative Memory",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65631207e4b02a9a330b1e55/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/26/65631207e4b02a9a330b1e55/65631207e4b02a9a330b1e55_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b041165f7a7ba3",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "7. Lecture 4 Questions on Set Associative Cache Memory",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b041165f7a7ba3/u/6451e539e4b0e02eaea3faf1/t/33c4d354ec6b79f450f451eb49ae3822/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b041165f7a7ba3/index.m3u8",
+    "key": "783fdb0b3ba00857bb94d1c3715a3e2e",
+    "duration": 4253,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b041165f7a7ba3/u/6451e539e4b0e02eaea3faf1/t/33c4d354ec6b79f450f451eb49ae3822/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b041165f7a7ba3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 4 Questions on Set Associative Cache Memory' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key '783fdb0b3ba00857bb94d1c3715a3e2e'"
+  },
+  {
+    "type": "pdf",
+    "id": "6563449be4b039ba5ad6ff79",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "8. Annotated Notes - Questions on Set Associative Memory and Fully Associative Memory",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6563449be4b039ba5ad6ff79/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/26/6563449be4b039ba5ad6ff79/6563449be4b039ba5ad6ff79_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b0aefef94b05ea",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "9. Lecture 5. Loop Array, and Cache Questions from Standard Universties",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0aefef94b05ea/u/6451e539e4b0e02eaea3faf1/t/3dc853e4a27c98186ccc7f9e5cd6ef0b/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0aefef94b05ea/index.m3u8",
+    "key": "03beb477ee1c56aa56b51f2b73cec844",
+    "duration": 5527,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0aefef94b05ea/u/6451e539e4b0e02eaea3faf1/t/3dc853e4a27c98186ccc7f9e5cd6ef0b/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0aefef94b05ea/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 5. Loop Array, and Cache Questions from Standard Universties' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key '03beb477ee1c56aa56b51f2b73cec844'"
+  },
+  {
+    "type": "pdf",
+    "id": "6565a84fe4b0ef907bcf775c",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "10. Annotated Notes Lecture 5- Loop, Array, and Cache Questions from Standard Universities",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6565a84fe4b0ef907bcf775c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/28/6565a84fe4b0ef907bcf775c/6565a84fe4b0ef907bcf775c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b0cc8e8ae4c985",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "11. Lecture 6 GATE PYQs on Loop Array and Cache Questions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0cc8e8ae4c985/u/6451e539e4b0e02eaea3faf1/t/217282d45116308a5aeba083fcd6e96e/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0cc8e8ae4c985/index.m3u8",
+    "key": "043d9fb5ad6b9233cbf2ca8ea85d2435",
+    "duration": 6769,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0cc8e8ae4c985/u/6451e539e4b0e02eaea3faf1/t/217282d45116308a5aeba083fcd6e96e/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0cc8e8ae4c985/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 6 GATE PYQs on Loop Array and Cache Questions' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key '043d9fb5ad6b9233cbf2ca8ea85d2435'"
+  },
+  {
+    "type": "pdf",
+    "id": "656703d2e4b02740a265e52c",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "12. Annotated Notes Lecture 6- GATE PYQs on Loop Array, and Cache Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/656703d2e4b02740a265e52c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/29/656703d2e4b02740a265e52c/656703d2e4b02740a265e52c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b0598bd7c227fb",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "13. Lecture 7. GATE PYQs on Cache Memory Effective Access Time",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0598bd7c227fb/u/6451e539e4b0e02eaea3faf1/t/1efb3233874b12c0786b396e2e2a12a2/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0598bd7c227fb/index.m3u8",
+    "key": "d32be51642b2f84a6bc8b2df3a29cfca",
+    "duration": 5384,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b0598bd7c227fb/u/6451e539e4b0e02eaea3faf1/t/1efb3233874b12c0786b396e2e2a12a2/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b0598bd7c227fb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Lecture 7. GATE PYQs on Cache Memory Effective Access Time' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key 'd32be51642b2f84a6bc8b2df3a29cfca'"
+  },
+  {
+    "type": "pdf",
+    "id": "6569a485e4b05162101766bb",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "14. Annotated Notes Lecture 7- Questions on Cache Effective Access Time",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6569a485e4b05162101766bb/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/01/6569a485e4b05162101766bb/6569a485e4b05162101766bb_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6582963ce4b01a73e4115e8b",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "15. Lecture 8. Write Back and Write Through Policies",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b01a73e4115e8b/u/6451e539e4b0e02eaea3faf1/t/388ebd403278b14cd74d1deb00e8671c/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b01a73e4115e8b/index.m3u8",
+    "key": "d6abec5cd041bf8d45154f29e3ef1486",
+    "duration": 2956,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6582963ce4b01a73e4115e8b/u/6451e539e4b0e02eaea3faf1/t/388ebd403278b14cd74d1deb00e8671c/p/assets/videos/60e975430cf20278db21ff30/2023/12/20/6582963ce4b01a73e4115e8b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. Lecture 8. Write Back and Write Through Policies' --save-dir './COURSES/8. Computer Organization and Architecture/4. (OPTIONAL) (OLD) Module Cache Memory' --custom-hls-key 'd6abec5cd041bf8d45154f29e3ef1486'"
+  },
+  {
+    "type": "pdf",
+    "id": "65883239e4b0003d2cf30387",
+    "course": "Computer Organization and Architecture",
+    "module": "(OPTIONAL) (OLD) Module: Cache Memory",
+    "title": "16. Annotated Notes Lecture 8- Write Back and Write Through Policies",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65883239e4b0003d2cf30387/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/24/65883239e4b0003d2cf30387/65883239e4b0003d2cf30387_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

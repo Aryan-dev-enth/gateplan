@@ -1,0 +1,211 @@
+[
+  {
+    "type": "article",
+    "id": "65562f3fe4b0a16e7bc14e04",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "1. About Lecture 1",
+    "url": "https://www.goclasses.in/s/courses/65562af7e4b0a2a329e8d5e0/articles/65562f3fe4b0a16e7bc14e04/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65562d23e4b0a2a329e8d69a",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "2. Lecture 1A - Introduction to COA - Architecture Vs Organization",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65562d23e4b0a2a329e8d69a/u/6451e539e4b0e02eaea3faf1/t/6f31442c010b552c9c8b5c6ecdf7e503/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65562d23e4b0a2a329e8d69a/index.m3u8",
+    "key": "2ef67ced7ee9843f6ddeb4dd96495f52",
+    "duration": 1185,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65562d23e4b0a2a329e8d69a/u/6451e539e4b0e02eaea3faf1/t/6f31442c010b552c9c8b5c6ecdf7e503/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65562d23e4b0a2a329e8d69a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 1A - Introduction to COA - Architecture Vs Organization' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '2ef67ced7ee9843f6ddeb4dd96495f52'"
+  },
+  {
+    "type": "video",
+    "id": "655639f7e4b0ab75acbcbaf2",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "3. Lecture 1B - Stored Program Architecture",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655639f7e4b0ab75acbcbaf2/u/6451e539e4b0e02eaea3faf1/t/07be56da1f36e0693fec500a0c77be8f/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/655639f7e4b0ab75acbcbaf2/index.m3u8",
+    "key": "f76455ba90dc610d849740968e4fe4a1",
+    "duration": 671,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/655639f7e4b0ab75acbcbaf2/u/6451e539e4b0e02eaea3faf1/t/07be56da1f36e0693fec500a0c77be8f/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/655639f7e4b0ab75acbcbaf2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 1B - Stored Program Architecture' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key 'f76455ba90dc610d849740968e4fe4a1'"
+  },
+  {
+    "type": "video",
+    "id": "6556577ee4b05787ffaee27c",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "4. Lecture 1C - Structure of a Computer - Basic Components",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6556577ee4b05787ffaee27c/u/6451e539e4b0e02eaea3faf1/t/f18a9c588b1920a5ea1b70bead6e12b7/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/6556577ee4b05787ffaee27c/index.m3u8",
+    "key": "09f04d682e10ec379b5eedca99da40b6",
+    "duration": 1124,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6556577ee4b05787ffaee27c/u/6451e539e4b0e02eaea3faf1/t/f18a9c588b1920a5ea1b70bead6e12b7/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/6556577ee4b05787ffaee27c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 1C - Structure of a Computer - Basic Components' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '09f04d682e10ec379b5eedca99da40b6'"
+  },
+  {
+    "type": "video",
+    "id": "65565d0ee4b07fdd9d51935f",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "5. Lecture 1D - IO Devices - Input Devices, Output Devices",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65565d0ee4b07fdd9d51935f/u/6451e539e4b0e02eaea3faf1/t/fc72a2b22131f756c50fe4f04b062b50/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65565d0ee4b07fdd9d51935f/index.m3u8",
+    "key": "f9851d9d64eded68e18a57b20c7fcc8c",
+    "duration": 308,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65565d0ee4b07fdd9d51935f/u/6451e539e4b0e02eaea3faf1/t/fc72a2b22131f756c50fe4f04b062b50/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65565d0ee4b07fdd9d51935f/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 1D - IO Devices - Input Devices, Output Devices' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key 'f9851d9d64eded68e18a57b20c7fcc8c'"
+  },
+  {
+    "type": "video",
+    "id": "65566542e4b07fdd9d5195df",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "6. Lecture 1E - Memory - RAM Vs ROM",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65566542e4b07fdd9d5195df/u/6451e539e4b0e02eaea3faf1/t/32bf5aca5af5d8ef864b551703b9ed19/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65566542e4b07fdd9d5195df/index.m3u8",
+    "key": "76d467b26e11625ad9d0e18a7180c2b4",
+    "duration": 874,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65566542e4b07fdd9d5195df/u/6451e539e4b0e02eaea3faf1/t/32bf5aca5af5d8ef864b551703b9ed19/p/assets/videos/60e975430cf20278db21ff30/2023/11/16/65566542e4b07fdd9d5195df/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 1E - Memory - RAM Vs ROM' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '76d467b26e11625ad9d0e18a7180c2b4'"
+  },
+  {
+    "type": "pdf",
+    "id": "655678e2e4b092d1694e8de5",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "7. Annotated Notes - Lecture 1 - Overview of COA",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/655678e2e4b092d1694e8de5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/16/655678e2e4b092d1694e8de5/655678e2e4b092d1694e8de5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65577b75e4b0f2173c486333",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "8. Lecture 2A - Main Memory - Addressability",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6557a680e4b045bb07a5e006/u/6451e539e4b0e02eaea3faf1/t/4d7fc4a9d9f60ed06e8960ad135aa6f6/p/assets/videos/60e975430cf20278db21ff30/2023/11/17/6557a680e4b045bb07a5e006/index.m3u8",
+    "key": "da10c3e54443898ad7bfe4a0ace728bf",
+    "duration": 8026,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6557a680e4b045bb07a5e006/u/6451e539e4b0e02eaea3faf1/t/4d7fc4a9d9f60ed06e8960ad135aa6f6/p/assets/videos/60e975430cf20278db21ff30/2023/11/17/6557a680e4b045bb07a5e006/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 2A - Main Memory - Addressability' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key 'da10c3e54443898ad7bfe4a0ace728bf'"
+  },
+  {
+    "type": "pdf",
+    "id": "6558c741e4b0734fed05102e",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "9. Annotated Notes - Lecture 2A - Main Memory - Addressability",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6558c741e4b0734fed05102e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/11/18/6558c741e4b0734fed05102e/6558c741e4b0734fed05102e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "656deac7e4b0f8f66cdd12e8",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "10. Lecture 2B - Byte Ordering - Endianness - Little Endian & Big Endian",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/656e2224e4b0e90a7f0f3bb8/u/6451e539e4b0e02eaea3faf1/t/64d2241f746e3391577a15be87bb94c6/p/assets/videos/60e975430cf20278db21ff30/2023/12/04/656e2224e4b0e90a7f0f3bb8/index.m3u8",
+    "key": "22331c0dd9fc3547ae4bfd45ded3254b",
+    "duration": 10378,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/656e2224e4b0e90a7f0f3bb8/u/6451e539e4b0e02eaea3faf1/t/64d2241f746e3391577a15be87bb94c6/p/assets/videos/60e975430cf20278db21ff30/2023/12/04/656e2224e4b0e90a7f0f3bb8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 2B - Byte Ordering - Endianness - Little Endian & Big Endian' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '22331c0dd9fc3547ae4bfd45ded3254b'"
+  },
+  {
+    "type": "pdf",
+    "id": "656ef7cfe4b093b7d597b0a2",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "11. Annotated Notes - Lecture 2B - Byte Ordering - Endianness",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/656ef7cfe4b093b7d597b0a2/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/05/656ef7cfe4b093b7d597b0a2/656ef7cfe4b093b7d597b0a2_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "656f2e37e4b0dd4595490b04",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "12. Lecture 2C - Practice Questions - Endianness",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/656f682ae4b01aa19b11d688/u/6451e539e4b0e02eaea3faf1/t/e7a34b2204535c6a058057b436f3e1ad/p/assets/videos/60e975430cf20278db21ff30/2023/12/05/656f682ae4b01aa19b11d688/index.m3u8",
+    "key": "74aa18534377bd52962c5a1244ddc189",
+    "duration": 7737,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/656f682ae4b01aa19b11d688/u/6451e539e4b0e02eaea3faf1/t/e7a34b2204535c6a058057b436f3e1ad/p/assets/videos/60e975430cf20278db21ff30/2023/12/05/656f682ae4b01aa19b11d688/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. Lecture 2C - Practice Questions - Endianness' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '74aa18534377bd52962c5a1244ddc189'"
+  },
+  {
+    "type": "pdf",
+    "id": "6570449ee4b00880dda990d5",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "13. Annotated Notes - Lecture 2C - Practice Questions - Endianness",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6570449ee4b00880dda990d5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/06/6570449ee4b00880dda990d5/6570449ee4b00880dda990d5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6571e92de4b0399abf85f9f4",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "14. Lecture 3A - System Bus",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6571fce4e4b08c9ed0d42385/u/6451e539e4b0e02eaea3faf1/t/c0b0f7d568aef29379dc00a02c2e8858/p/assets/videos/60e975430cf20278db21ff30/2023/12/07/6571fce4e4b08c9ed0d42385/index.m3u8",
+    "key": "720df659e67e0a73795553cfa3cd56bb",
+    "duration": 3244,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6571fce4e4b08c9ed0d42385/u/6451e539e4b0e02eaea3faf1/t/c0b0f7d568aef29379dc00a02c2e8858/p/assets/videos/60e975430cf20278db21ff30/2023/12/07/6571fce4e4b08c9ed0d42385/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. Lecture 3A - System Bus' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '720df659e67e0a73795553cfa3cd56bb'"
+  },
+  {
+    "type": "pdf",
+    "id": "6572ea24e4b0be7e2aa053e1",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "15. Annotated Notes - Lecture 3A - System Bus",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6572ea24e4b0be7e2aa053e1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/08/6572ea24e4b0be7e2aa053e1/6572ea24e4b0be7e2aa053e1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6571f863e4b0d916d0d81e05",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "16. Lecture 3B - Memory Interfacing & Expansion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/657221c1e4b042bb8958b5a3/u/6451e539e4b0e02eaea3faf1/t/026b4ea43e6256bfa29a2861f2dce94b/p/assets/videos/60e975430cf20278db21ff30/2023/12/07/657221c1e4b042bb8958b5a3/index.m3u8",
+    "key": "e87dcc8c92cf4960b2e0ac688af93afb",
+    "duration": 7550,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/657221c1e4b042bb8958b5a3/u/6451e539e4b0e02eaea3faf1/t/026b4ea43e6256bfa29a2861f2dce94b/p/assets/videos/60e975430cf20278db21ff30/2023/12/07/657221c1e4b042bb8958b5a3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. Lecture 3B - Memory Interfacing & Expansion' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key 'e87dcc8c92cf4960b2e0ac688af93afb'"
+  },
+  {
+    "type": "pdf",
+    "id": "6572f17be4b091ab3a5cbe18",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "17. Annotated Notes - Lecture 3B - Memory Interfacing & Expansion",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6572f17be4b091ab3a5cbe18/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/08/6572f17be4b091ab3a5cbe18/6572f17be4b091ab3a5cbe18_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65732aafe4b069efb43110a2",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "18. Lecture 3C - GATE Questions - Memory Interleaving",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65736884e4b0fb8c20da1d1a/u/6451e539e4b0e02eaea3faf1/t/04b9b29a9b73b478e106275bafc62946/p/assets/videos/60e975430cf20278db21ff30/2023/12/08/65736884e4b0fb8c20da1d1a/index.m3u8",
+    "key": "1c4e3ea93fe9d0233b81bb352b4bd627",
+    "duration": 9703,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65736884e4b0fb8c20da1d1a/u/6451e539e4b0e02eaea3faf1/t/04b9b29a9b73b478e106275bafc62946/p/assets/videos/60e975430cf20278db21ff30/2023/12/08/65736884e4b0fb8c20da1d1a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '18. Lecture 3C - GATE Questions - Memory Interleaving' --save-dir './COURSES/8. Computer Organization and Architecture/1. Module 1 - Basic Components of Computer & Main Memory' --custom-hls-key '1c4e3ea93fe9d0233b81bb352b4bd627'"
+  },
+  {
+    "type": "pdf",
+    "id": "65744143e4b0355c8f18037c",
+    "course": "Computer Organization and Architecture",
+    "module": "Module 1 - Basic Components of Computer & Main Memory",
+    "title": "19. Annotated Notes - Lecture 3C - GATE Questions - Memory Interleaving",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65744143e4b0355c8f18037c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/12/09/65744143e4b0355c8f18037c/65744143e4b0355c8f18037c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

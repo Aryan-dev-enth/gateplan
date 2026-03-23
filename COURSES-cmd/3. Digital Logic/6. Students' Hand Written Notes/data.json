@@ -1,0 +1,79 @@
+[
+  {
+    "type": "article",
+    "id": "6632a56ece693171c7f8d099",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024) - Digital Logic",
+    "url": "https://www.goclasses.in/s/courses/62aa64860cf2d98f15f6229b/articles/6632a56ece693171c7f8d099/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663ca48bc7123031b24ca721",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Digital Logic Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca48bc7123031b24ca721/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca48bc7123031b24ca721/663ca48bc7123031b24ca721_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe5294e9beb2eb06d60e8",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "3. 1.0 Boolean algebra, minimization of boolean func",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe5294e9beb2eb06d60e8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe5294e9beb2eb06d60e8/693fe5294e9beb2eb06d60e8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe6fabcb3293f601246a5",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "4. 2.0 Number system",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe6fabcb3293f601246a5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe6fabcb3293f601246a5/693fe6fabcb3293f601246a5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe7a19c3abf26d33ae5cd",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "5. 3 and 4 Combinational circuits and functional completeness",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe7a19c3abf26d33ae5cd/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe7a19c3abf26d33ae5cd/693fe7a19c3abf26d33ae5cd_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe92597c5d0139c5731ee",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "6. 5.0 Sequential circuit",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe92597c5d0139c5731ee/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe92597c5d0139c5731ee/693fe92597c5d0139c5731ee_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882beaf71eb72bb7dd0a46",
+    "course": "Digital Logic",
+    "module": "Students' Hand Written Notes",
+    "title": "7. Digital Electronics(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882beaf71eb72bb7dd0a46/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882beaf71eb72bb7dd0a46/69882beaf71eb72bb7dd0a46_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

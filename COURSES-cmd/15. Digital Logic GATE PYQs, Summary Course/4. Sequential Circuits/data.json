@@ -1,0 +1,24 @@
+[
+  {
+    "type": "video",
+    "id": "6692c829387d6b689a6dedff",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Sequential Circuits",
+    "title": "1. SR Latch - Complete Summary & ALL GATE CS/EC PYQs",
+    "url": "https://youtu.be/hRUnJKDVQ4M?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 10269,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "667b5b5f036c375d805fa078",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Sequential Circuits",
+    "title": "2. Annotated Notes - SR Latches - Summary & ALL GATE CSEC PYQs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/667b5b5f036c375d805fa078/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/06/26/667b5b5f036c375d805fa078/667b5b5f036c375d805fa078_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

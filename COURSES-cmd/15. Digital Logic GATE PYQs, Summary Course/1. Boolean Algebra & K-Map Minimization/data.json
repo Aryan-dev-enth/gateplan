@@ -1,0 +1,189 @@
+[
+  {
+    "type": "liveclass",
+    "id": "684c42e3d417cc592a15d99d",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "1. Lecture 1A - Boolean Algebra - Part 1",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/684e20b1f7729f6b32666d8b/u/6451e539e4b0e02eaea3faf1/t/ff07934185561210e813c175e31581cd/p/assets/videos/60e975430cf20278db21ff30/2025/06/15/684e20b1f7729f6b32666d8b/index.m3u8",
+    "key": "33491d4f7152d413400b378b7d4f5421",
+    "duration": 7438,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/684e20b1f7729f6b32666d8b/u/6451e539e4b0e02eaea3faf1/t/ff07934185561210e813c175e31581cd/p/assets/videos/60e975430cf20278db21ff30/2025/06/15/684e20b1f7729f6b32666d8b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1A - Boolean Algebra - Part 1' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key '33491d4f7152d413400b378b7d4f5421'"
+  },
+  {
+    "type": "pdf",
+    "id": "684f3571b4b68a3fd22ed471",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "2. Annotated Notes - Lecture 1 - Boolean Algebra - Part 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/684f3571b4b68a3fd22ed471/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/06/15/684f3571b4b68a3fd22ed471/684f3571b4b68a3fd22ed471_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "68518db9ada6e473d6711a9b",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "3. Lecture 1B - Boolean Algebra - Part 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6851b5183381a00b1fa7e16a/u/6451e539e4b0e02eaea3faf1/t/b76dfb196fdff257adca3e728d4eb9f2/p/assets/videos/60e975430cf20278db21ff30/2025/06/17/6851b5183381a00b1fa7e16a/index.m3u8",
+    "key": "11299fe73945f437471cf64e7651673d",
+    "duration": 6250,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6851b5183381a00b1fa7e16a/u/6451e539e4b0e02eaea3faf1/t/b76dfb196fdff257adca3e728d4eb9f2/p/assets/videos/60e975430cf20278db21ff30/2025/06/17/6851b5183381a00b1fa7e16a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 1B - Boolean Algebra - Part 2' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key '11299fe73945f437471cf64e7651673d'"
+  },
+  {
+    "type": "pdf",
+    "id": "685805c76e1f6845ae2aa95c",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "4. Annotated Notes - Lecture 1B - Boolean Algebra - Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/685805c76e1f6845ae2aa95c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/06/22/685805c76e1f6845ae2aa95c/685805c76e1f6845ae2aa95c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6855e92622a3ed21c3df6d1e",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "5. Practice Questions - Boolean Algebra & Logic Circuits",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/6855e92622a3ed21c3df6d1e/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6855e9fc6cbc5b18462e7763",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "6. Boolean Algebra - GATE PYQs - Part 1",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/6855e9fc6cbc5b18462e7763/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "68588353b26b7952805548b8",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "7. Boolean Algebra - GATE PYQs - Part 2",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/68588353b26b7952805548b8/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "685eb42bdd662801baf5f7c1",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "8. Lecture 2 - Standard Forms of Boolean Expressions",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/685f05a06eeb105e691d4dc9/u/6451e539e4b0e02eaea3faf1/t/b53e1d97d19035e93b861fc30b63fe8d/p/assets/videos/60e975430cf20278db21ff30/2025/06/27/685f05a06eeb105e691d4dc9/index.m3u8",
+    "key": "a1ee46f0bccfea88149bdbc1637f4a1c",
+    "duration": 12055,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/685f05a06eeb105e691d4dc9/u/6451e539e4b0e02eaea3faf1/t/b53e1d97d19035e93b861fc30b63fe8d/p/assets/videos/60e975430cf20278db21ff30/2025/06/27/685f05a06eeb105e691d4dc9/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 2 - Standard Forms of Boolean Expressions' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key 'a1ee46f0bccfea88149bdbc1637f4a1c'"
+  },
+  {
+    "type": "pdf",
+    "id": "6861317488c019197af3f6df",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "9. Annotated Notes - Lecture 2 - Standard Forms of Boolean Expressions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6861317488c019197af3f6df/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/06/29/6861317488c019197af3f6df/6861317488c019197af3f6df_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "686e3bdfef400829e9cf55e3",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "10. Practice & GATE PYQs - Standard Forms of Boolean Expressions",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/686e3bdfef400829e9cf55e3/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "686c67faec00fc43babaaed4",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "11. Combining Boolean Functions - Practice & GATE PYQs",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/686c67faec00fc43babaaed4/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6867dc5fe6b03907c1b72b7f",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "12. Lecture 3A - K-Map Part 1 - Boolean Function Minimization",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68681b313a05e85e7c01aa38/u/6451e539e4b0e02eaea3faf1/t/09694ed39546989254be5732b0dee20c/p/assets/videos/60e975430cf20278db21ff30/2025/07/04/68681b313a05e85e7c01aa38/index.m3u8",
+    "key": "1194e9e3723855f57b8b1067d7e2fc79",
+    "duration": 10662,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/68681b313a05e85e7c01aa38/u/6451e539e4b0e02eaea3faf1/t/09694ed39546989254be5732b0dee20c/p/assets/videos/60e975430cf20278db21ff30/2025/07/04/68681b313a05e85e7c01aa38/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. Lecture 3A - K-Map Part 1 - Boolean Function Minimization' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key '1194e9e3723855f57b8b1067d7e2fc79'"
+  },
+  {
+    "type": "pdf",
+    "id": "6873a498f28f63652ca904c2",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "13. Annotated Notes - Lecture 3A - K-Map Part 1 - Boolean Function Minimization",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6873a498f28f63652ca904c2/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/13/6873a498f28f63652ca904c2/6873a498f28f63652ca904c2_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "686e8f843710be697b1e5d91",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "14. Lecture 3B - K-Map Part 2 - Minimal POS, Don't Care Combinations",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/686ec78471f8512392f36e56/u/6451e539e4b0e02eaea3faf1/t/cfdb488575255036b78ddbae7db62cf3/p/assets/videos/60e975430cf20278db21ff30/2025/07/09/686ec78471f8512392f36e56/index.m3u8",
+    "key": "a4293ca218803c6691ed8198cdf89fa3",
+    "duration": 8307,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/686ec78471f8512392f36e56/u/6451e539e4b0e02eaea3faf1/t/cfdb488575255036b78ddbae7db62cf3/p/assets/videos/60e975430cf20278db21ff30/2025/07/09/686ec78471f8512392f36e56/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. Lecture 3B - K-Map Part 2 - Minimal POS, Don't Care Combinations' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key 'a4293ca218803c6691ed8198cdf89fa3'"
+  },
+  {
+    "type": "pdf",
+    "id": "68739cce415c8050b86ed1d4",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "15. Annotated Notes - Lecture 3B - K-Map Part 2 - Minimal POS, Don't Care Combinations",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/68739cce415c8050b86ed1d4/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/07/13/68739cce415c8050b86ed1d4/68739cce415c8050b86ed1d4_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "6873a4f38f80d26514da15ba",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "16. Lecture 3C - K-Map Part 3 - Prime Implicants, EPI",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6873f89eee08dd2a56f0235d/u/6451e539e4b0e02eaea3faf1/t/6ed97ed444245f3a9126abecc9aaf5b0/p/assets/videos/60e975430cf20278db21ff30/2025/07/13/6873f89eee08dd2a56f0235d/index.m3u8",
+    "key": "c9c513ce32c7107ba2e2d08ba6b0cf81",
+    "duration": 5288,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6873f89eee08dd2a56f0235d/u/6451e539e4b0e02eaea3faf1/t/6ed97ed444245f3a9126abecc9aaf5b0/p/assets/videos/60e975430cf20278db21ff30/2025/07/13/6873f89eee08dd2a56f0235d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. Lecture 3C - K-Map Part 3 - Prime Implicants, EPI' --save-dir './COURSES/15. Digital Logic GATE PYQs, Summary Course/1. Boolean Algebra & K-Map Minimization' --custom-hls-key 'c9c513ce32c7107ba2e2d08ba6b0cf81'"
+  },
+  {
+    "type": "article",
+    "id": "665301debd161128d0ffcce2",
+    "course": "Digital Logic GATE PYQs, Summary Course",
+    "module": "Boolean Algebra & K-Map Minimization",
+    "title": "17. Boolean Algebra & K-Map Minimization GATE PYQs Playlist",
+    "url": "https://www.goclasses.in/s/courses/62d31be80cf2a792a5f4d1a1/articles/665301debd161128d0ffcce2/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

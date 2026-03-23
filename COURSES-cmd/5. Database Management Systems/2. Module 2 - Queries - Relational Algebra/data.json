@@ -1,0 +1,156 @@
+[
+  {
+    "type": "video",
+    "id": "634b9e8ce4b0d561bf39ef5a",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "1. Lecture 1 - Relational Algebra - Selection, Projection",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634b9e8ce4b0d561bf39ef5a/u/6451e539e4b0e02eaea3faf1/t/6ac220ee4225a684ec3cf86929f9d5ce/p/assets/videos/60e975430cf20278db21ff30/2022/10/16/634b9e8ce4b0d561bf39ef5a/index.m3u8",
+    "key": "7e9c413eaacaac9a549c9c032b98ff6f",
+    "duration": 8960,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634b9e8ce4b0d561bf39ef5a/u/6451e539e4b0e02eaea3faf1/t/6ac220ee4225a684ec3cf86929f9d5ce/p/assets/videos/60e975430cf20278db21ff30/2022/10/16/634b9e8ce4b0d561bf39ef5a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 - Relational Algebra - Selection, Projection' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key '7e9c413eaacaac9a549c9c032b98ff6f'"
+  },
+  {
+    "type": "video",
+    "id": "634bb68fe4b0351ab07d29cb",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "2. Lecture 2 - Relational Algebra - Set Operations",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634bb68fe4b0351ab07d29cb/u/6451e539e4b0e02eaea3faf1/t/b06685a688341824d313059632ca50ea/p/assets/videos/60e975430cf20278db21ff30/2022/10/16/634bb68fe4b0351ab07d29cb/index.m3u8",
+    "key": "03f21e85d990dd556356cbfa712a5ed2",
+    "duration": 6022,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634bb68fe4b0351ab07d29cb/u/6451e539e4b0e02eaea3faf1/t/b06685a688341824d313059632ca50ea/p/assets/videos/60e975430cf20278db21ff30/2022/10/16/634bb68fe4b0351ab07d29cb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 2 - Relational Algebra - Set Operations' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key '03f21e85d990dd556356cbfa712a5ed2'"
+  },
+  {
+    "type": "pdf",
+    "id": "634c1c9ee4b0b9e94833b673",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "3. Annotated Notes - Lecture 1,2 - Relational Algebra",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/634c1c9ee4b0b9e94833b673/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/16/634c1c9ee4b0b9e94833b673/634c1c9ee4b0b9e94833b673_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "634ce6ece4b0797b9acf5848",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "4. Lecture 3 - Relational Algebra - Inner Join Operations",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634ce6ece4b0797b9acf5848/u/6451e539e4b0e02eaea3faf1/t/c07e348dbbe8021b4f9acf52024b91e1/p/assets/videos/60e975430cf20278db21ff30/2022/10/17/634ce6ece4b0797b9acf5848/index.m3u8",
+    "key": "bd1c954e7c6acc79ef5b06373d21ac9a",
+    "duration": 8223,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634ce6ece4b0797b9acf5848/u/6451e539e4b0e02eaea3faf1/t/c07e348dbbe8021b4f9acf52024b91e1/p/assets/videos/60e975430cf20278db21ff30/2022/10/17/634ce6ece4b0797b9acf5848/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 3 - Relational Algebra - Inner Join Operations' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key 'bd1c954e7c6acc79ef5b06373d21ac9a'"
+  },
+  {
+    "type": "video",
+    "id": "654f23b7e4b096f179d52a48",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "5. Lecture 4 - Relational Algebra - Division Operation",
+    "url": "https://youtu.be/Zzjy-q667r0",
+    "key": "this-is-yt-video",
+    "duration": 6082,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "634d699be4b0bfbc8ddd0b17",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "6. Annotated Notes - Lecture 3,4 - Relational Algebra - Join, Division",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/634d699be4b0bfbc8ddd0b17/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/17/634d699be4b0bfbc8ddd0b17/634d699be4b0bfbc8ddd0b17_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "634d5ea5e4b0d1ab44537bfd",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "7. Lecture 5 - Division Operation, Outer Join in Relational Algebra",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634d5ea5e4b0d1ab44537bfd/u/6451e539e4b0e02eaea3faf1/t/4629d60594a617a0aabffabe74ea93a8/p/assets/videos/60e975430cf20278db21ff30/2022/10/17/634d5ea5e4b0d1ab44537bfd/index.m3u8",
+    "key": "1ec5ad36a17b0d0eae6ea311d1a85e06",
+    "duration": 7235,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/634d5ea5e4b0d1ab44537bfd/u/6451e539e4b0e02eaea3faf1/t/4629d60594a617a0aabffabe74ea93a8/p/assets/videos/60e975430cf20278db21ff30/2022/10/17/634d5ea5e4b0d1ab44537bfd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 5 - Division Operation, Outer Join in Relational Algebra' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key '1ec5ad36a17b0d0eae6ea311d1a85e06'"
+  },
+  {
+    "type": "pdf",
+    "id": "634fad54e4b0fa8faaf5a6fe",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "8. Annotated Notes - Lecture 5 - Division Operation, Outer Join in Relational Algebra",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/634fad54e4b0fa8faaf5a6fe/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/19/634fad54e4b0fa8faaf5a6fe/634fad54e4b0fa8faaf5a6fe_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "63513a3ae4b04f0f408a8ee8",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "9. Lecture 6 - Practice - Relational Algebra Operators",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63513a3ae4b04f0f408a8ee8/u/6451e539e4b0e02eaea3faf1/t/fea19c4e948a676e98b04f8ea8ae9421/p/assets/videos/60e975430cf20278db21ff30/2022/10/20/63513a3ae4b04f0f408a8ee8/index.m3u8",
+    "key": "73ca32be18b27c8f826c7d92ab357490",
+    "duration": 6097,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/63513a3ae4b04f0f408a8ee8/u/6451e539e4b0e02eaea3faf1/t/fea19c4e948a676e98b04f8ea8ae9421/p/assets/videos/60e975430cf20278db21ff30/2022/10/20/63513a3ae4b04f0f408a8ee8/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 6 - Practice - Relational Algebra Operators' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key '73ca32be18b27c8f826c7d92ab357490'"
+  },
+  {
+    "type": "video",
+    "id": "6351615fe4b08878c47db1de",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "10. Lecture 7 - Writing & Understanding Relational Algebra Queries",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6351615fe4b08878c47db1de/u/6451e539e4b0e02eaea3faf1/t/f87fe679721e355ac817aa20f559be3f/p/assets/videos/60e975430cf20278db21ff30/2022/10/20/6351615fe4b08878c47db1de/index.m3u8",
+    "key": "d3ff3aa32446680120655cc0096b4d3c",
+    "duration": 7720,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6351615fe4b08878c47db1de/u/6451e539e4b0e02eaea3faf1/t/f87fe679721e355ac817aa20f559be3f/p/assets/videos/60e975430cf20278db21ff30/2022/10/20/6351615fe4b08878c47db1de/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 7 - Writing & Understanding Relational Algebra Queries' --save-dir './COURSES/5. Database Management Systems/2. Module 2 - Queries - Relational Algebra' --custom-hls-key 'd3ff3aa32446680120655cc0096b4d3c'"
+  },
+  {
+    "type": "article",
+    "id": "66e5f39c95b08e7b1d16868f",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "11. Lecture 8 - GATE PYQs - Relational Algebra",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66e5f39c95b08e7b1d16868f/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "63523ab7e4b0c294dfbede82",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "12. Annotated Notes - Lecture 6,7,8 - Relational Algebra Queries",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/63523ab7e4b0c294dfbede82/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/10/21/63523ab7e4b0c294dfbede82/63523ab7e4b0c294dfbede82_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66cdc5ea3f9c6e3027843165",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "13. Weekly Quiz 1 - Relational Algebra",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66cdc5ea3f9c6e3027843165/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66cdc623a4a0f43a7070d049",
+    "course": "Database Management Systems",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "14. Weekly Quiz 2 - Relational Algebra",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66cdc623a4a0f43a7070d049/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

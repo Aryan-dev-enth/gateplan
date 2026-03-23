@@ -1,0 +1,222 @@
+[
+  {
+    "type": "video",
+    "id": "614c61950cf25bdcb60483eb",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "1. Lecture 1 Simple Interest and Compound Interest",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/614c61950cf25bdcb60483eb/u/6451e539e4b0e02eaea3faf1/t/555d25676c98bfa3bead679463af99aa/p/assets/videos/60e975430cf20278db21ff30/2021/09/23/614c61950cf25bdcb60483eb/index.m3u8",
+    "key": "a88dbf8c6f283939ddba774aa536c7ee",
+    "duration": 2938,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/614c61950cf25bdcb60483eb/u/6451e539e4b0e02eaea3faf1/t/555d25676c98bfa3bead679463af99aa/p/assets/videos/60e975430cf20278db21ff30/2021/09/23/614c61950cf25bdcb60483eb/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1 Simple Interest and Compound Interest' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key 'a88dbf8c6f283939ddba774aa536c7ee'"
+  },
+  {
+    "type": "pdf",
+    "id": "615671790cf21f5dd6aeb5ca",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "2. Annotated Notes SI & CI",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/615671790cf21f5dd6aeb5ca/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/10/01/615671790cf21f5dd6aeb5ca/615671790cf21f5dd6aeb5ca_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6151ee900cf2b488667331c1",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "3. Lecture 2 Percentage",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6151ee900cf2b488667331c1/u/6451e539e4b0e02eaea3faf1/t/0c0a398c4aab6754a54ed1ac87f40711/p/assets/videos/60e975430cf20278db21ff30/2021/09/27/6151ee900cf2b488667331c1/index.m3u8",
+    "key": "c56b036af23dda1095e2547f4c00a810",
+    "duration": 3506,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6151ee900cf2b488667331c1/u/6451e539e4b0e02eaea3faf1/t/0c0a398c4aab6754a54ed1ac87f40711/p/assets/videos/60e975430cf20278db21ff30/2021/09/27/6151ee900cf2b488667331c1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 2 Percentage' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key 'c56b036af23dda1095e2547f4c00a810'"
+  },
+  {
+    "type": "pdf",
+    "id": "6151ee7b0cf2b488667331b3",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "4. Annotated Notes Percentage",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6151ee7b0cf2b488667331b3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/09/27/6151ee7b0cf2b488667331b3/6151ee7b0cf2b488667331b3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6156f56d0cf2991bac66058a",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "5. Lecture 3 Ratio & Proportion",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6156f56d0cf2991bac66058a/u/6451e539e4b0e02eaea3faf1/t/67e7ecaee07638fd85e285dd8df31d85/p/assets/videos/60e975430cf20278db21ff30/2021/10/01/6156f56d0cf2991bac66058a/index.m3u8",
+    "key": "8f167e47a16def7472f693877d97a35d",
+    "duration": 4615,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6156f56d0cf2991bac66058a/u/6451e539e4b0e02eaea3faf1/t/67e7ecaee07638fd85e285dd8df31d85/p/assets/videos/60e975430cf20278db21ff30/2021/10/01/6156f56d0cf2991bac66058a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. Lecture 3 Ratio & Proportion' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key '8f167e47a16def7472f693877d97a35d'"
+  },
+  {
+    "type": "pdf",
+    "id": "615706c10cf29d2a871afb20",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "6. Annotated Notes Ratio & Proportion",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/615706c10cf29d2a871afb20/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/10/01/615706c10cf29d2a871afb20/615706c10cf29d2a871afb20_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "615ec7ca0cf22db3042b99c3",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "7. Lecture 4 Profit loss and Discount",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/615ec7ca0cf22db3042b99c3/u/6451e539e4b0e02eaea3faf1/t/0677c47a5218128fb060e365472917c4/p/assets/videos/60e975430cf20278db21ff30/2021/10/07/615ec7ca0cf22db3042b99c3/index.m3u8",
+    "key": "53295bb43a132e3b51c7da67504b00e4",
+    "duration": 2749,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/615ec7ca0cf22db3042b99c3/u/6451e539e4b0e02eaea3faf1/t/0677c47a5218128fb060e365472917c4/p/assets/videos/60e975430cf20278db21ff30/2021/10/07/615ec7ca0cf22db3042b99c3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 4 Profit loss and Discount' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key '53295bb43a132e3b51c7da67504b00e4'"
+  },
+  {
+    "type": "pdf",
+    "id": "617423560cf28bf5612427f5",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "8. Annotated Notes Profit Loss and Discount",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/617423560cf28bf5612427f5/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/10/23/617423560cf28bf5612427f5/617423560cf28bf5612427f5_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "616956430cf28b9c62071ac2",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "9. Lecture 5 Time and Work",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/616956430cf28b9c62071ac2/u/6451e539e4b0e02eaea3faf1/t/e1450e8ca214d5a8a706adf866008ff6/p/assets/videos/60e975430cf20278db21ff30/2021/10/15/616956430cf28b9c62071ac2/index.m3u8",
+    "key": "423334c9b5ac9c6d35c892873e863cc3",
+    "duration": 3306,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/616956430cf28b9c62071ac2/u/6451e539e4b0e02eaea3faf1/t/e1450e8ca214d5a8a706adf866008ff6/p/assets/videos/60e975430cf20278db21ff30/2021/10/15/616956430cf28b9c62071ac2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 5 Time and Work' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key '423334c9b5ac9c6d35c892873e863cc3'"
+  },
+  {
+    "type": "pdf",
+    "id": "61691c6e0cf216a8e633a949",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "10. Annotated Notes Time & Work",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/61691c6e0cf216a8e633a949/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/10/15/61691c6e0cf216a8e633a949/61691c6e0cf216a8e633a949_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674aa55e30245d355310d075",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "11. Lecture 6 Time Speed and Distance",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa55e30245d355310d075/u/6451e539e4b0e02eaea3faf1/t/5d46569da1cb33bc178c277965182cdf/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa55e30245d355310d075/index.m3u8",
+    "key": "dbfcd1253653e7ce7479df25554dd08e",
+    "duration": 2861,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa55e30245d355310d075/u/6451e539e4b0e02eaea3faf1/t/5d46569da1cb33bc178c277965182cdf/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa55e30245d355310d075/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 6 Time Speed and Distance' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key 'dbfcd1253653e7ce7479df25554dd08e'"
+  },
+  {
+    "type": "pdf",
+    "id": "617423440cf28bf5612427f0",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "12. Annotated Notes Time Speed and Distance",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/617423440cf28bf5612427f0/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/10/23/617423440cf28bf5612427f0/617423440cf28bf5612427f0_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "618e24e70cf21ba3051488cf",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "13. Lecture 7 Number System",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/618e24e70cf21ba3051488cf/u/6451e539e4b0e02eaea3faf1/t/32ea62bf989e27f1894cf39e6dc3324a/p/assets/videos/60e975430cf20278db21ff30/2021/11/12/618e24e70cf21ba3051488cf/index.m3u8",
+    "key": "a553575b995bd9449b517c4e4b339a4d",
+    "duration": 2895,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/618e24e70cf21ba3051488cf/u/6451e539e4b0e02eaea3faf1/t/32ea62bf989e27f1894cf39e6dc3324a/p/assets/videos/60e975430cf20278db21ff30/2021/11/12/618e24e70cf21ba3051488cf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Lecture 7 Number System' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key 'a553575b995bd9449b517c4e4b339a4d'"
+  },
+  {
+    "type": "pdf",
+    "id": "618e25970cf2eec4147febd8",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "14. Annotated Notes Number System",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/618e25970cf2eec4147febd8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/11/12/618e25970cf2eec4147febd8/618e25970cf2eec4147febd8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "61a466b70cf27758e99f531c",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "15. Lecture 8 Spatial Aptitude",
+    "url": "https://youtu.be/pxsVnSTMDrg",
+    "key": "this-is-yt-video",
+    "duration": 2945,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "61c293b60cf2417f03c9a5ea",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "16. Annotated Notes Spatial Aptitude",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/61c293b60cf2417f03c9a5ea/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/12/22/61c293b60cf2417f03c9a5ea/61c293b60cf2417f03c9a5ea_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674aa3b3015f1517ae1262a2",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "17. Lecture 9 Analytical AptitudePart 1",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa3b3015f1517ae1262a2/u/6451e539e4b0e02eaea3faf1/t/7bad2b2b8ebce24dcf06a7278ac48540/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa3b3015f1517ae1262a2/index.m3u8",
+    "key": "e984e7c269bc3ef98cadf8ca3a23e64a",
+    "duration": 3527,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa3b3015f1517ae1262a2/u/6451e539e4b0e02eaea3faf1/t/7bad2b2b8ebce24dcf06a7278ac48540/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa3b3015f1517ae1262a2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '17. Lecture 9 Analytical AptitudePart 1' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key 'e984e7c269bc3ef98cadf8ca3a23e64a'"
+  },
+  {
+    "type": "pdf",
+    "id": "61c293d20cf2417f03c9a606",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "18. Annotated Notes Analytical Aptitude(Part-1)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/61c293d20cf2417f03c9a606/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/12/22/61c293d20cf2417f03c9a606/61c293d20cf2417f03c9a606_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674aa3b330245d355310cf9d",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "19. Lecture 10 Analytical AptitudePart 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa3b330245d355310cf9d/u/6451e539e4b0e02eaea3faf1/t/e4efda58dfc5ca0aba3b85cd1820193f/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa3b330245d355310cf9d/index.m3u8",
+    "key": "6bea71589639fa3b418a007b5c9e20f6",
+    "duration": 1894,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/674aa3b330245d355310cf9d/u/6451e539e4b0e02eaea3faf1/t/e4efda58dfc5ca0aba3b85cd1820193f/p/assets/videos/60e975430cf20278db21ff30/2024/11/30/674aa3b330245d355310cf9d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '19. Lecture 10 Analytical AptitudePart 2' --save-dir './COURSES/13. Aptitude/5. Old Aptitude Lectures (Can Skip)' --custom-hls-key '6bea71589639fa3b418a007b5c9e20f6'"
+  },
+  {
+    "type": "pdf",
+    "id": "61c293e90cf2417f03c9a71f",
+    "course": "Aptitude",
+    "module": "Old Aptitude Lectures (Can Skip)",
+    "title": "20. Annotated Notes Analytical Aptitude(Part-2)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/61c293e90cf2417f03c9a71f/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2021/12/22/61c293e90cf2417f03c9a71f/61c293e90cf2417f03c9a71f_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

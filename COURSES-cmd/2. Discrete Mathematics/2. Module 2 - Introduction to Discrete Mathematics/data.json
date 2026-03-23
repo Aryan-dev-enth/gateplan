@@ -1,0 +1,24 @@
+[
+  {
+    "type": "video",
+    "id": "64064ac5e4b052050cf714d7",
+    "course": "Discrete Mathematics",
+    "module": "Module 2 - Introduction to Discrete Mathematics",
+    "title": "1. Lecture 1 - Introduction to Discrete Mathematics",
+    "url": "https://youtu.be/7TiltsPWfgU",
+    "key": "this-is-yt-video",
+    "duration": 1821,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64064c7ae4b0a846297f9149",
+    "course": "Discrete Mathematics",
+    "module": "Module 2 - Introduction to Discrete Mathematics",
+    "title": "2. Summary Lecture 1 - Introduction to Discrete Mathematics",
+    "url": "https://youtu.be/_2hC3zZI5hY",
+    "key": "this-is-yt-video",
+    "duration": 246,
+    "download_command": ""
+  }
+]

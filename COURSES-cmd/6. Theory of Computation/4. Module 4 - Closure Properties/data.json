@@ -1,0 +1,189 @@
+[
+  {
+    "type": "liveclass",
+    "id": "64f6b151e4b001bbeaff83fc",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "1. Lecture 1A - Closure Properties of Regular Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f6dc0ae4b009d9ef9ace27/u/6451e539e4b0e02eaea3faf1/t/05b28f4fd3808cb9c2acd8a870272995/p/assets/videos/60e975430cf20278db21ff30/2023/09/05/64f6dc0ae4b009d9ef9ace27/index.m3u8",
+    "key": "3516cc255a4a6364eeeea2a874db261f",
+    "duration": 7017,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f6dc0ae4b009d9ef9ace27/u/6451e539e4b0e02eaea3faf1/t/05b28f4fd3808cb9c2acd8a870272995/p/assets/videos/60e975430cf20278db21ff30/2023/09/05/64f6dc0ae4b009d9ef9ace27/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1A - Closure Properties of Regular Languages' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key '3516cc255a4a6364eeeea2a874db261f'"
+  },
+  {
+    "type": "liveclass",
+    "id": "64f6e699e4b0c5bebef3fab4",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "2. Lecture 1B - Closure Properties of Regular Languages - Part 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f70e47e4b05b91a276a408/u/6451e539e4b0e02eaea3faf1/t/04800687cdd116a92b57b06fc5a875a4/p/assets/videos/60e975430cf20278db21ff30/2023/09/05/64f70e47e4b05b91a276a408/index.m3u8",
+    "key": "6896e970b6851f03495cec5d8ec6ae6d",
+    "duration": 6417,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f70e47e4b05b91a276a408/u/6451e539e4b0e02eaea3faf1/t/04800687cdd116a92b57b06fc5a875a4/p/assets/videos/60e975430cf20278db21ff30/2023/09/05/64f70e47e4b05b91a276a408/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 1B - Closure Properties of Regular Languages - Part 2' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key '6896e970b6851f03495cec5d8ec6ae6d'"
+  },
+  {
+    "type": "pdf",
+    "id": "64f8bfd7e4b040b9d3886fb3",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "3. Annotated Notes - Lecture 1A-1B - Closure Properties of Regular Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64f8bfd7e4b040b9d3886fb3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/06/64f8bfd7e4b040b9d3886fb3/64f8bfd7e4b040b9d3886fb3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64f7fe3ee4b0e43cc1458d10",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "4. Lecture 2A - Closure Properties of CFLs",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f8aaa3e4b0bfa66a903a0b/u/6451e539e4b0e02eaea3faf1/t/7e4184598c80e1a9189d6cc1443c5a4c/p/assets/videos/60e975430cf20278db21ff30/2023/09/06/64f8aaa3e4b0bfa66a903a0b/index.m3u8",
+    "key": "94ece0b79d3e9e1605ec19787cf96d3f",
+    "duration": 9861,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f8aaa3e4b0bfa66a903a0b/u/6451e539e4b0e02eaea3faf1/t/7e4184598c80e1a9189d6cc1443c5a4c/p/assets/videos/60e975430cf20278db21ff30/2023/09/06/64f8aaa3e4b0bfa66a903a0b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. Lecture 2A - Closure Properties of CFLs' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key '94ece0b79d3e9e1605ec19787cf96d3f'"
+  },
+  {
+    "type": "pdf",
+    "id": "64f8c3fbe4b002bd5296bcb8",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "5. Annotated Notes - Lecture 2A - Closure Properties of CFLs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64f8c3fbe4b002bd5296bcb8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/06/64f8c3fbe4b002bd5296bcb8/64f8c3fbe4b002bd5296bcb8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64f8c45fe4b0bfa66a9041bd",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "6. Lecture 2B - Closure Properties of DCFLs",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f9a27be4b0b13d853aeee6/u/6451e539e4b0e02eaea3faf1/t/514410cee1ab7d812b4ee645d4aac1a0/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64f9a27be4b0b13d853aeee6/index.m3u8",
+    "key": "2d0e539f1655c5b80e9d6b17fb20dd38",
+    "duration": 4143,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64f9a27be4b0b13d853aeee6/u/6451e539e4b0e02eaea3faf1/t/514410cee1ab7d812b4ee645d4aac1a0/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64f9a27be4b0b13d853aeee6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 2B - Closure Properties of DCFLs' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key '2d0e539f1655c5b80e9d6b17fb20dd38'"
+  },
+  {
+    "type": "video",
+    "id": "66fec3b46982a501bf5fc508",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "7. Lecture 3 - Closure Properties of Nonregular Languages",
+    "url": "https://youtu.be/op2WF6IjmVc",
+    "key": "this-is-yt-video",
+    "duration": 5016,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64fca6cee4b0baf39d466fb1",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "8. Annotated Notes - Lecture 2B-3 - Closure Properties of DCFLs, Nonregular Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64fca6cee4b0baf39d466fb1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/09/64fca6cee4b0baf39d466fb1/64fca6cee4b0baf39d466fb1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64fa1751e4b075e376180b4c",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "9. Lecture 4 - Chomsky Hierarchy & Types of Grammars",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa1751e4b075e376180b4c/u/6451e539e4b0e02eaea3faf1/t/b253d73d0cf6f58dc63d0b2ac73bd5ff/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa1751e4b075e376180b4c/index.m3u8",
+    "key": "bcf7f221fb3f3627b3b1054649c6af99",
+    "duration": 3731,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa1751e4b075e376180b4c/u/6451e539e4b0e02eaea3faf1/t/b253d73d0cf6f58dc63d0b2ac73bd5ff/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa1751e4b075e376180b4c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 4 - Chomsky Hierarchy & Types of Grammars' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key 'bcf7f221fb3f3627b3b1054649c6af99'"
+  },
+  {
+    "type": "pdf",
+    "id": "64fcac3fe4b0eeaee390dc64",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "10. Annotated Notes - Lecture 4 - Chomsky Hierarchy & Types of Grammars",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64fcac3fe4b0eeaee390dc64/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/09/64fcac3fe4b0eeaee390dc64/64fcac3fe4b0eeaee390dc64_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64fa1ce1e4b0b8fc71333955",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "11. Lecture 5 - Non-Closure of Regular Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa1ce1e4b0b8fc71333955/u/6451e539e4b0e02eaea3faf1/t/e3d4db534224824513b9de0d1715705c/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa1ce1e4b0b8fc71333955/index.m3u8",
+    "key": "b3bfd92707ca563b343fb4ab47526abb",
+    "duration": 1486,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa1ce1e4b0b8fc71333955/u/6451e539e4b0e02eaea3faf1/t/e3d4db534224824513b9de0d1715705c/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa1ce1e4b0b8fc71333955/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 5 - Non-Closure of Regular Languages' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key 'b3bfd92707ca563b343fb4ab47526abb'"
+  },
+  {
+    "type": "pdf",
+    "id": "64fcac86e4b04cf1c17731a1",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "12. Annotated Notes - Lecture 5 - Non-Closure of Regular Languages",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64fcac86e4b04cf1c17731a1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/09/64fcac86e4b04cf1c17731a1/64fcac86e4b04cf1c17731a1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64fa23b7e4b0a0b95e8e460b",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "13. Lecture 6 - Closure Properties of Finite Languages",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa23b7e4b0a0b95e8e460b/u/6451e539e4b0e02eaea3faf1/t/e39459ca4c794e0d0d98835ea836d8f1/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa23b7e4b0a0b95e8e460b/index.m3u8",
+    "key": "92aab6e2ac26f71871de291b7f7f7e06",
+    "duration": 1014,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64fa23b7e4b0a0b95e8e460b/u/6451e539e4b0e02eaea3faf1/t/e39459ca4c794e0d0d98835ea836d8f1/p/assets/videos/60e975430cf20278db21ff30/2023/09/07/64fa23b7e4b0a0b95e8e460b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. Lecture 6 - Closure Properties of Finite Languages' --save-dir './COURSES/6. Theory of Computation/4. Module 4 - Closure Properties' --custom-hls-key '92aab6e2ac26f71871de291b7f7f7e06'"
+  },
+  {
+    "type": "video",
+    "id": "64fa24d3e4b0a0b95e8e4633",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "14. (OPTIONAL) DCFLs are Not Closed under Concatenation and Kleene Closure",
+    "url": "https://youtu.be/wA2dWwVuwJE",
+    "key": "this-is-yt-video",
+    "duration": 826,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64ff9d93e4b05407ea1c1fca",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "15. GATE CSE 2021 - Number of States in Minimal DFA for L and L-Complement",
+    "url": "https://www.youtube.com/watch?v=3szxKVVUo1A",
+    "key": "this-is-yt-video",
+    "duration": 1164,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6508a16de4b0a06154b0f383",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "16. Homework 4 - PDA, CFG, Closure Properties - University Midterm Questions",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6508a16de4b0a06154b0f383/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/09/18/6508a16de4b0a06154b0f383/6508a16de4b0a06154b0f383_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "6505c960e4b0a9440b03515c",
+    "course": "Theory of Computation",
+    "module": "Module 4 - Closure Properties",
+    "title": "17. Feedback & Review",
+    "url": "https://www.goclasses.in/s/courses/60fdd9810cf2279d7d966677/articles/6505c960e4b0a9440b03515c/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

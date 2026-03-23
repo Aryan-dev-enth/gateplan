@@ -1,0 +1,46 @@
+[
+  {
+    "type": "pdf",
+    "id": "663ca136012c994c185116ff",
+    "course": "Theory of Computation",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - Theory of Computation Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca136012c994c185116ff/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca136012c994c185116ff/663ca136012c994c185116ff_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe7f6a9167d12fea5fc0a",
+    "course": "Theory of Computation",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Regular languages and finite automata",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe7f6a9167d12fea5fc0a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe7f6a9167d12fea5fc0a/693fe7f6a9167d12fea5fc0a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693ff5392f99ce03a4b2d9a1",
+    "course": "Theory of Computation",
+    "module": "Students' Hand Written Notes",
+    "title": "3. Context Free Grammars",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693ff5392f99ce03a4b2d9a1/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693ff5392f99ce03a4b2d9a1/693ff5392f99ce03a4b2d9a1_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882b922704592f423663e3",
+    "course": "Theory of Computation",
+    "module": "Students' Hand Written Notes",
+    "title": "4. Theory of Automata(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882b922704592f423663e3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882b922704592f423663e3/69882b922704592f423663e3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

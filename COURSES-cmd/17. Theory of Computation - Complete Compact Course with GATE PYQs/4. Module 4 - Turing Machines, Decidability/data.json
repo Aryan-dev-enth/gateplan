@@ -1,0 +1,123 @@
+[
+  {
+    "type": "video",
+    "id": "674ae5e9fa2c5e136bfe7e3e",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "1. Lecture 1A - Turing Machine - Definition, Concept",
+    "url": "https://youtu.be/_QdYdBbhysk?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 4170,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674b90d18068240495ccef1a",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "2. Annotated Notes - Lecture 1A - Turing Machine - Definition, Concept",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674b90d18068240495ccef1a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/11/30/674b90d18068240495ccef1a/674b90d18068240495ccef1a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "674b04bcf23e7100d4b7dcbe",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "3. About Lecture 1B",
+    "url": "https://www.goclasses.in/s/courses/67027196048f5936aa240e94/articles/674b04bcf23e7100d4b7dcbe/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674b05ad530a0610e7768082",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "4. Lecture 1B - Turing Machines - Revision & Practice",
+    "url": "https://youtu.be/Q-fiaNjmXXg?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 9793,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "674b8a72639811053834847b",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "5. Annotated Notes of Lecture 1B",
+    "url": "https://www.goclasses.in/s/courses/67027196048f5936aa240e94/articles/674b8a72639811053834847b/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674c66bfc91ea82d4dde309f",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "6. Lecture 2 - Understanding Behavior of TM",
+    "url": "https://youtu.be/vnHSj-G4PLI?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 1527,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674c6a0b8bce151915fc383c",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "7. Lecture 3 - Decider, Decidable Languages",
+    "url": "https://youtu.be/w2N8ZHXFWZc",
+    "key": "this-is-yt-video",
+    "duration": 1184,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674c838f40f7f3164876a45f",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "8. Lecture 4A - Decidability of RE Languages - Rice Theorem",
+    "url": "https://www.youtube.com/live/CKfxH7tzq6U?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 13528,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674cc7a010d8673fb2ec67f9",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "9. Annotated Notes - Lecture 4A - Decidability of RE Languages - Rice Theorem",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674cc7a010d8673fb2ec67f9/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/01/674cc7a010d8673fb2ec67f9/674cc7a010d8673fb2ec67f9_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "674cb4ce6ac1617e8ebf46de",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "10. Lecture 4B - Decidability - ALL Step Based GATE PYQs of TM",
+    "url": "https://www.youtube.com/live/tOgk0g5Xv1Q?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 7872,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "674cc77ad161376c5dacccc8",
+    "course": "Theory of Computation - Complete Compact Course with GATE PYQs",
+    "module": "Module 4 - Turing Machines, Decidability",
+    "title": "11. Annotated Notes - Lecture 4B - Decidability - ALL Step Based GATE PYQs of TM",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/674cc77ad161376c5dacccc8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/01/674cc77ad161376c5dacccc8/674cc77ad161376c5dacccc8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,145 @@
+[
+  {
+    "type": "liveclass",
+    "id": "6401f631e4b0e03cb833b7b1",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "1. Lecture 1A - Proof Techniques Part 1 - Direct Proofs",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64021de7e4b06b49e4830472/u/6451e539e4b0e02eaea3faf1/t/7ae4a3eef66300a0e815ff8062865533/p/assets/videos/60e975430cf20278db21ff30/2023/03/03/64021de7e4b06b49e4830472/index.m3u8",
+    "key": "b977d7e38ade069c7cd73f236fdada2f",
+    "duration": 8155,
+    "download_command": "./N_m3u8DL-RE.exe -M format=mp4 https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64021de7e4b06b49e4830472/u/6451e539e4b0e02eaea3faf1/t/7ae4a3eef66300a0e815ff8062865533/p/assets/videos/60e975430cf20278db21ff30/2023/03/03/64021de7e4b06b49e4830472/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 1A - Proof Techniques Part 1 - Direct Proofs' --save-dir './COURSES/2. Discrete Mathematics/1. Module 1 - Basic Proof Techniques' --custom-hls-key 'b977d7e38ade069c7cd73f236fdada2f'"
+  },
+  {
+    "type": "pdf",
+    "id": "64022af6e4b0d78ad4e8a973",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "2. Annotated Notes - Lecture 1A - Proof Techniques Part 1 - Direct Proofs",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64022af6e4b0d78ad4e8a973/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/03/64022af6e4b0d78ad4e8a973/64022af6e4b0d78ad4e8a973_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64031ed9e4b0ff68dc27cfe0",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "3. Lecture 1B - Proof Techniques Part 2 - Proof by Contrapositive & Contradiction",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64036ee0e4b0896a260ece65/u/6451e539e4b0e02eaea3faf1/t/3752feba20039da7f4d2e1559daa4d53/p/assets/videos/60e975430cf20278db21ff30/2023/03/04/64036ee0e4b0896a260ece65/index.m3u8",
+    "key": "f837d6ff941ac7ee5bbc7b2e1e59c546",
+    "duration": 7944,
+    "download_command": "./N_m3u8DL-RE.exe -M format=mp4 https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64036ee0e4b0896a260ece65/u/6451e539e4b0e02eaea3faf1/t/3752feba20039da7f4d2e1559daa4d53/p/assets/videos/60e975430cf20278db21ff30/2023/03/04/64036ee0e4b0896a260ece65/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. Lecture 1B - Proof Techniques Part 2 - Proof by Contrapositive & Contradiction' --save-dir './COURSES/2. Discrete Mathematics/1. Module 1 - Basic Proof Techniques' --custom-hls-key 'f837d6ff941ac7ee5bbc7b2e1e59c546'"
+  },
+  {
+    "type": "pdf",
+    "id": "640392c7e4b0d78ad4e8fc55",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "4. Annotated Notes - Lecture 1B - Proof Techniques Part 2 - Proof by Contrapositive & Contradiction",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/640392c7e4b0d78ad4e8fc55/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/04/640392c7e4b0d78ad4e8fc55/640392c7e4b0d78ad4e8fc55_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64048d0ce4b07c4989de69ca",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "5. Lecture 1C - Proof by Mathematical Induction - Proof Technique",
+    "url": "https://youtu.be/phMAUD4vVEM",
+    "key": "this-is-yt-video",
+    "duration": 2221,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6404d4a4e4b0cc229547d844",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "6. Annotated Notes - Lecture 1C - Proof by Mathematical Induction",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6404d4a4e4b0cc229547d844/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/05/6404d4a4e4b0cc229547d844/6404d4a4e4b0cc229547d844_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "64022a46e4b06b49e4830743",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "7. Homework 1 - Proof Techniques - Direct Proof",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64022a46e4b06b49e4830743/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/03/64022a46e4b06b49e4830743/64022a46e4b06b49e4830743_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6403a13ce4b075696a347b2d",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "8. Homework 2 - Proof Techniques - Contraposition & Contradiction",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6403a13ce4b075696a347b2d/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/03/04/6403a13ce4b075696a347b2d/6403a13ce4b075696a347b2d_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "67b6f627196d164a18a804db",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "9. Homework 1,2 Video Solutions - Proof Techniques",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/67b6f627196d164a18a804db/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "65e7224d19061936481f4032",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "10. Lecture 2 - Practice Questions on Proof Techniques",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65e7468bc376db71d7e60be5/u/6451e539e4b0e02eaea3faf1/t/6401d5305f8a59838b637343eb969245/p/assets/videos/60e975430cf20278db21ff30/2024/03/05/65e7468bc376db71d7e60be5/index.m3u8",
+    "key": "4d08d5eea7bb6a92359f4e880107edc3",
+    "duration": 5300,
+    "download_command": "./N_m3u8DL-RE.exe -M format=mp4 https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/65e7468bc376db71d7e60be5/u/6451e539e4b0e02eaea3faf1/t/6401d5305f8a59838b637343eb969245/p/assets/videos/60e975430cf20278db21ff30/2024/03/05/65e7468bc376db71d7e60be5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 2 - Practice Questions on Proof Techniques' --save-dir './COURSES/2. Discrete Mathematics/1. Module 1 - Basic Proof Techniques' --custom-hls-key '4d08d5eea7bb6a92359f4e880107edc3'"
+  },
+  {
+    "type": "pdf",
+    "id": "65e8427303198040bd280e11",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "11. Annotated Notes - Lecture 2 - Practice Questions on Proof Techniques",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/65e8427303198040bd280e11/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/03/06/65e8427303198040bd280e11/65e8427303198040bd280e11_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "67bb6ddd7903fb40e97bd1c5",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "12. Weekly Quiz - Proof Techniques",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/67bb6ddd7903fb40e97bd1c5/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "667b6866d06c825c3eb4dd65",
+    "course": "Discrete Mathematics",
+    "module": "Module 1 - Basic Proof Techniques",
+    "title": "13. Rate & Review",
+    "url": "https://www.goclasses.in/s/courses/63f9aa9be4b0a8a370cfb0ad/articles/667b6866d06c825c3eb4dd65/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,211 @@
+[
+  {
+    "type": "video",
+    "id": "62ac04930cf2d98f15f690c5",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "1. 2a. Introduction to recurrence relations",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac04930cf2d98f15f690c5/u/6451e539e4b0e02eaea3faf1/t/1e34e562aba0cf569924e081bbb629aa/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac04930cf2d98f15f690c5/index.m3u8",
+    "key": "6fd4b2c2192053508237ea40a823009e",
+    "duration": 926,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac04930cf2d98f15f690c5/u/6451e539e4b0e02eaea3faf1/t/1e34e562aba0cf569924e081bbb629aa/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac04930cf2d98f15f690c5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 2a. Introduction to recurrence relations' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '6fd4b2c2192053508237ea40a823009e'"
+  },
+  {
+    "type": "video",
+    "id": "62ac070e0cf29ec26dfc3602",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "2. 2b. Solving recurrence using Iteration Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac070e0cf29ec26dfc3602/u/6451e539e4b0e02eaea3faf1/t/8ef06e358ce44aedca6fa2b692c86b8b/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac070e0cf29ec26dfc3602/index.m3u8",
+    "key": "944136ae24508c417aa45ebff7b3eb6b",
+    "duration": 598,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac070e0cf29ec26dfc3602/u/6451e539e4b0e02eaea3faf1/t/8ef06e358ce44aedca6fa2b692c86b8b/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac070e0cf29ec26dfc3602/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 2b. Solving recurrence using Iteration Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '944136ae24508c417aa45ebff7b3eb6b'"
+  },
+  {
+    "type": "video",
+    "id": "62ac0eb50cf26a52f9f34744",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "3. 2c. More Examples of Iteration Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac0eb50cf26a52f9f34744/u/6451e539e4b0e02eaea3faf1/t/c73feae3c2bf745235812e07de37c750/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac0eb50cf26a52f9f34744/index.m3u8",
+    "key": "9238ab6285b1919228ad5bc1e0c74c93",
+    "duration": 607,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac0eb50cf26a52f9f34744/u/6451e539e4b0e02eaea3faf1/t/c73feae3c2bf745235812e07de37c750/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac0eb50cf26a52f9f34744/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 2c. More Examples of Iteration Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '9238ab6285b1919228ad5bc1e0c74c93'"
+  },
+  {
+    "type": "video",
+    "id": "62ade2cf0cf2933884cae5dd",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "4. 3a. Solving recurrence using Tree Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade2cf0cf2933884cae5dd/u/6451e539e4b0e02eaea3faf1/t/ad4c17805f968526a4efa9480f26c6bf/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade2cf0cf2933884cae5dd/index.m3u8",
+    "key": "418e63aa0fc3367c8d66cb86ea793afb",
+    "duration": 1472,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade2cf0cf2933884cae5dd/u/6451e539e4b0e02eaea3faf1/t/ad4c17805f968526a4efa9480f26c6bf/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade2cf0cf2933884cae5dd/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 3a. Solving recurrence using Tree Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '418e63aa0fc3367c8d66cb86ea793afb'"
+  },
+  {
+    "type": "video",
+    "id": "62ade59f0cf2933884cae751",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "5. 3b. More Examples Tree Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade59f0cf2933884cae751/u/6451e539e4b0e02eaea3faf1/t/a1df1093ecc098b5ea7b7b8f38e8984e/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade59f0cf2933884cae751/index.m3u8",
+    "key": "89ae9761cd80ca8755691266c5e48940",
+    "duration": 976,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade59f0cf2933884cae751/u/6451e539e4b0e02eaea3faf1/t/a1df1093ecc098b5ea7b7b8f38e8984e/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade59f0cf2933884cae751/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 3b. More Examples Tree Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '89ae9761cd80ca8755691266c5e48940'"
+  },
+  {
+    "type": "video",
+    "id": "62ade9990cf2861219ca4fed",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "6. 3c. Even More Examples Tree Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade9990cf2861219ca4fed/u/6451e539e4b0e02eaea3faf1/t/4f03af71e4d686a51a35fafe6248f74c/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade9990cf2861219ca4fed/index.m3u8",
+    "key": "702913654cd9d852ae8a6c4506e033b3",
+    "duration": 344,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ade9990cf2861219ca4fed/u/6451e539e4b0e02eaea3faf1/t/4f03af71e4d686a51a35fafe6248f74c/p/assets/videos/60e975430cf20278db21ff30/2022/06/18/62ade9990cf2861219ca4fed/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 3c. Even More Examples Tree Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '702913654cd9d852ae8a6c4506e033b3'"
+  },
+  {
+    "type": "video",
+    "id": "62b081350cf287c06631ac9c",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "7. 3d. More Examples Tree Method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b081350cf287c06631ac9c/u/6451e539e4b0e02eaea3faf1/t/a518017fafb2bb307a8bf417eb0f5347/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b081350cf287c06631ac9c/index.m3u8",
+    "key": "b19db2e03510402f3b3138365cc2b6f9",
+    "duration": 735,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b081350cf287c06631ac9c/u/6451e539e4b0e02eaea3faf1/t/a518017fafb2bb307a8bf417eb0f5347/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b081350cf287c06631ac9c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 3d. More Examples Tree Method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'b19db2e03510402f3b3138365cc2b6f9'"
+  },
+  {
+    "type": "video",
+    "id": "62b086100cf2861219cad17e",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "8. 4a. Masters Theorem Idea and examples",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b086100cf2861219cad17e/u/6451e539e4b0e02eaea3faf1/t/3dc668b04a35da23d376c4188a4efe50/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b086100cf2861219cad17e/index.m3u8",
+    "key": "918879d3252be24bd3d0ef3774e21b99",
+    "duration": 1628,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b086100cf2861219cad17e/u/6451e539e4b0e02eaea3faf1/t/3dc668b04a35da23d376c4188a4efe50/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b086100cf2861219cad17e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 4a. Masters Theorem Idea and examples' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '918879d3252be24bd3d0ef3774e21b99'"
+  },
+  {
+    "type": "video",
+    "id": "62b087be0cf287c06631b11b",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "9. 4b. Examples On Master Theorem",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b087be0cf287c06631b11b/u/6451e539e4b0e02eaea3faf1/t/e7ba8cd68437043aca41f3292d28947f/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b087be0cf287c06631b11b/index.m3u8",
+    "key": "f94c25a1dbac239d11d8a86fb2d3723b",
+    "duration": 297,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b087be0cf287c06631b11b/u/6451e539e4b0e02eaea3faf1/t/e7ba8cd68437043aca41f3292d28947f/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b087be0cf287c06631b11b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 4b. Examples On Master Theorem' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'f94c25a1dbac239d11d8a86fb2d3723b'"
+  },
+  {
+    "type": "video",
+    "id": "62b090fc0cf2933884cb7444",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "10. 4c. Proof of Master Theorem",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b090fc0cf2933884cb7444/u/6451e539e4b0e02eaea3faf1/t/a06dc8e33589d4f95f5744d654c1ded8/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b090fc0cf2933884cb7444/index.m3u8",
+    "key": "4390f2883517e9f2391e846f33b58628",
+    "duration": 972,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b090fc0cf2933884cb7444/u/6451e539e4b0e02eaea3faf1/t/a06dc8e33589d4f95f5744d654c1ded8/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b090fc0cf2933884cb7444/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 4c. Proof of Master Theorem' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '4390f2883517e9f2391e846f33b58628'"
+  },
+  {
+    "type": "video",
+    "id": "62b092e90cf2f53c32d50b83",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "11. 5a. Generalised Master Theorem",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b092e90cf2f53c32d50b83/u/6451e539e4b0e02eaea3faf1/t/546744ad23002cc8dc04bdad7e83072b/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b092e90cf2f53c32d50b83/index.m3u8",
+    "key": "7051c0b717648dd694bb4f6aed2d7b81",
+    "duration": 404,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b092e90cf2f53c32d50b83/u/6451e539e4b0e02eaea3faf1/t/546744ad23002cc8dc04bdad7e83072b/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b092e90cf2f53c32d50b83/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 5a. Generalised Master Theorem' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '7051c0b717648dd694bb4f6aed2d7b81'"
+  },
+  {
+    "type": "video",
+    "id": "62b097160cf287c06631bf17",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "12. 5b. [Optional but watch] Extended Master Theorem",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b097160cf287c06631bf17/u/6451e539e4b0e02eaea3faf1/t/2cb8a74578aa5e4e26b83528f4d097c1/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b097160cf287c06631bf17/index.m3u8",
+    "key": "b37f71b3fbf7a5513c9b1841d125e8d6",
+    "duration": 919,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b097160cf287c06631bf17/u/6451e539e4b0e02eaea3faf1/t/2cb8a74578aa5e4e26b83528f4d097c1/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b097160cf287c06631bf17/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. 5b. [Optional but watch] Extended Master Theorem' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'b37f71b3fbf7a5513c9b1841d125e8d6'"
+  },
+  {
+    "type": "video",
+    "id": "62b099bb0cf2861219cae669",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "13. 5c. Various Examples of Master Theorem",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b099bb0cf2861219cae669/u/6451e539e4b0e02eaea3faf1/t/1120a929e211d716806103ae0d5f123f/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b099bb0cf2861219cae669/index.m3u8",
+    "key": "be1a786a581a1dc97be0970f5af3e384",
+    "duration": 471,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b099bb0cf2861219cae669/u/6451e539e4b0e02eaea3faf1/t/1120a929e211d716806103ae0d5f123f/p/assets/videos/60e975430cf20278db21ff30/2022/06/20/62b099bb0cf2861219cae669/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. 5c. Various Examples of Master Theorem' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'be1a786a581a1dc97be0970f5af3e384'"
+  },
+  {
+    "type": "video",
+    "id": "62b2f4bd0cf215095ac632a4",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "14. 5d. Problems that master theorem can not solve",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f4bd0cf215095ac632a4/u/6451e539e4b0e02eaea3faf1/t/64df907d30a25a821acff25cb5490cd0/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f4bd0cf215095ac632a4/index.m3u8",
+    "key": "7930897f7c64e445b38a9b47a9c5e44a",
+    "duration": 308,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f4bd0cf215095ac632a4/u/6451e539e4b0e02eaea3faf1/t/64df907d30a25a821acff25cb5490cd0/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f4bd0cf215095ac632a4/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. 5d. Problems that master theorem can not solve' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '7930897f7c64e445b38a9b47a9c5e44a'"
+  },
+  {
+    "type": "video",
+    "id": "62b2f4d70cf215095ac632a7",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "15. 6a. Introduction to change to variable method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f4d70cf215095ac632a7/u/6451e539e4b0e02eaea3faf1/t/20009f4eeba14472c35cfc2587435d04/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f4d70cf215095ac632a7/index.m3u8",
+    "key": "ea90d84ae945b04cb6502a69e29fc388",
+    "duration": 909,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f4d70cf215095ac632a7/u/6451e539e4b0e02eaea3faf1/t/20009f4eeba14472c35cfc2587435d04/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f4d70cf215095ac632a7/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. 6a. Introduction to change to variable method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'ea90d84ae945b04cb6502a69e29fc388'"
+  },
+  {
+    "type": "video",
+    "id": "62b2f5310cf2fd7cd806b26a",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "16. 6b. Examples on Change of Variable",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f5310cf2fd7cd806b26a/u/6451e539e4b0e02eaea3faf1/t/9bb9bc77e821e8e13cfb1ef72fae67bc/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f5310cf2fd7cd806b26a/index.m3u8",
+    "key": "31949182ad5568bd9ca6ccae45172192",
+    "duration": 723,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f5310cf2fd7cd806b26a/u/6451e539e4b0e02eaea3faf1/t/9bb9bc77e821e8e13cfb1ef72fae67bc/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f5310cf2fd7cd806b26a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. 6b. Examples on Change of Variable' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key '31949182ad5568bd9ca6ccae45172192'"
+  },
+  {
+    "type": "video",
+    "id": "62b2f59f0cf2fd7cd806b2c0",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "17. 6c. Few more examples on change of variable method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f59f0cf2fd7cd806b2c0/u/6451e539e4b0e02eaea3faf1/t/486d1601f986ad51c2e9895a2cc0b361/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f59f0cf2fd7cd806b2c0/index.m3u8",
+    "key": "d93224e3ae3d8b58aebcc910b56e9372",
+    "duration": 318,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b2f59f0cf2fd7cd806b2c0/u/6451e539e4b0e02eaea3faf1/t/486d1601f986ad51c2e9895a2cc0b361/p/assets/videos/60e975430cf20278db21ff30/2022/06/22/62b2f59f0cf2fd7cd806b2c0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '17. 6c. Few more examples on change of variable method' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'd93224e3ae3d8b58aebcc910b56e9372'"
+  },
+  {
+    "type": "video",
+    "id": "62b3e4f10cf2995efd8c1573",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "18. 6d. Some More variation",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b3e4f10cf2995efd8c1573/u/6451e539e4b0e02eaea3faf1/t/a1e1d790a33f3ff5b594bc8fb24add61/p/assets/videos/60e975430cf20278db21ff30/2022/06/23/62b3e4f10cf2995efd8c1573/index.m3u8",
+    "key": "b4af09afdfb92719a979d896ff4dd8e2",
+    "duration": 1053,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62b3e4f10cf2995efd8c1573/u/6451e539e4b0e02eaea3faf1/t/a1e1d790a33f3ff5b594bc8fb24add61/p/assets/videos/60e975430cf20278db21ff30/2022/06/23/62b3e4f10cf2995efd8c1573/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '18. 6d. Some More variation' --save-dir './COURSES/12. Algorithms/3. Time Complexity of Recursive Programs' --custom-hls-key 'b4af09afdfb92719a979d896ff4dd8e2'"
+  },
+  {
+    "type": "pdf",
+    "id": "64b1025be4b010cd7c3ee1f4",
+    "course": "Algorithms",
+    "module": "Time Complexity of Recursive Programs",
+    "title": "19. Annotated Notes Module 1 Solving Reccurance relation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64b1025be4b010cd7c3ee1f4/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/14/64b1025be4b010cd7c3ee1f4/64b1025be4b010cd7c3ee1f4_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

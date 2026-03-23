@@ -1,0 +1,24 @@
+[
+  {
+    "type": "liveclass",
+    "id": "6760ffa68ced8e18006e3d4c",
+    "course": "Algorithms",
+    "module": "LIVE Sessions",
+    "title": "1. Session 1: PYQs on DFS BFS and Sorting",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67611f4c681d6c72b761950a/u/6451e539e4b0e02eaea3faf1/t/3d30da860f4d05a6b60b4dd1e0ac8db5/p/assets/videos/60e975430cf20278db21ff30/2024/12/17/67611f4c681d6c72b761950a/index.m3u8",
+    "key": "8360b7538eda727ddab9c88d3f6c0cfb",
+    "duration": 4875,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/67611f4c681d6c72b761950a/u/6451e539e4b0e02eaea3faf1/t/3d30da860f4d05a6b60b4dd1e0ac8db5/p/assets/videos/60e975430cf20278db21ff30/2024/12/17/67611f4c681d6c72b761950a/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Session 1: PYQs on DFS BFS and Sorting' --save-dir './COURSES/12. Algorithms/17. LIVE Sessions' --custom-hls-key '8360b7538eda727ddab9c88d3f6c0cfb'"
+  },
+  {
+    "type": "pdf",
+    "id": "676295fda6d540688c4e61e8",
+    "course": "Algorithms",
+    "module": "LIVE Sessions",
+    "title": "2. Annotated Notes Session 1 PYQs on DFS BFS and Sorting",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/676295fda6d540688c4e61e8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/12/18/676295fda6d540688c4e61e8/676295fda6d540688c4e61e8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

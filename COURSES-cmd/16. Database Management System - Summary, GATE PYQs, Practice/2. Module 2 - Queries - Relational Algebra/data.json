@@ -1,0 +1,57 @@
+[
+  {
+    "type": "video",
+    "id": "66e5edb49cb60d1bf1e926a9",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "1. Relational Algebra - Complete Summary - Part 1",
+    "url": "https://youtu.be/HXHGCVjIUvA?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 8498,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66bbf3ffb28a961a6334ae5c",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "2. Annotated Notes - Relational Algebra - Complete Summary - Part 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66bbf3ffb28a961a6334ae5c/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/14/66bbf3ffb28a961a6334ae5c/66bbf3ffb28a961a6334ae5c_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66e5edd9c0c185283f04f672",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "3. Relational Algebra - Complete Summary - Part 2",
+    "url": "https://youtu.be/ItLbswLCmKc?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 12987,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66c4f24d09df2d7df2b29b84",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "4. Annotated Notes - Relational Algebra - Complete Summary - Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66c4f24d09df2d7df2b29b84/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/20/66c4f24d09df2d7df2b29b84/66c4f24d09df2d7df2b29b84_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66e5ee136899db3ec287f2c5",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 2 - Queries - Relational Algebra",
+    "title": "5. GATE PYQs - Relational Algebra",
+    "url": "https://www.goclasses.in/s/courses/63b1e110e4b09e5b50fc3164/articles/66e5ee136899db3ec287f2c5/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

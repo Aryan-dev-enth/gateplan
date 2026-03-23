@@ -1,0 +1,24 @@
+[
+  {
+    "type": "video",
+    "id": "62ab61a10cf2bdd1ffdb5bcf",
+    "course": "Algorithms",
+    "module": "Why Study Algorithms",
+    "title": "1. 1a. Why Study Algorithms",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ab61a10cf2bdd1ffdb5bcf/u/6451e539e4b0e02eaea3faf1/t/dc3a3a4e974a1652fc334eb6458ee1b7/p/assets/videos/60e975430cf20278db21ff30/2022/06/16/62ab61a10cf2bdd1ffdb5bcf/index.m3u8",
+    "key": "2400dbf609bda87e3df66eeb21334b89",
+    "duration": 804,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ab61a10cf2bdd1ffdb5bcf/u/6451e539e4b0e02eaea3faf1/t/dc3a3a4e974a1652fc334eb6458ee1b7/p/assets/videos/60e975430cf20278db21ff30/2022/06/16/62ab61a10cf2bdd1ffdb5bcf/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 1a. Why Study Algorithms' --save-dir './COURSES/12. Algorithms/1. Why Study Algorithms' --custom-hls-key '2400dbf609bda87e3df66eeb21334b89'"
+  },
+  {
+    "type": "video",
+    "id": "62ac00830cf2ae04515a70f5",
+    "course": "Algorithms",
+    "module": "Why Study Algorithms",
+    "title": "2. 1b.An algorithm that changed history And Child's algorithm",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac00830cf2ae04515a70f5/u/6451e539e4b0e02eaea3faf1/t/cca4cff0aeff4fde7ba1154ab150776d/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac00830cf2ae04515a70f5/index.m3u8",
+    "key": "f081478ec718db6c4e09da22d5e1e8d8",
+    "duration": 564,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62ac00830cf2ae04515a70f5/u/6451e539e4b0e02eaea3faf1/t/cca4cff0aeff4fde7ba1154ab150776d/p/assets/videos/60e975430cf20278db21ff30/2022/06/17/62ac00830cf2ae04515a70f5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 1b.An algorithm that changed history And Child's algorithm' --save-dir './COURSES/12. Algorithms/1. Why Study Algorithms' --custom-hls-key 'f081478ec718db6c4e09da22d5e1e8d8'"
+  }
+]

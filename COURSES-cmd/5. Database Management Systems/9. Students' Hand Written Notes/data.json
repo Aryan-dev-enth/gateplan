@@ -1,0 +1,79 @@
+[
+  {
+    "type": "article",
+    "id": "66334a8ec534d11ea21d9c0b",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "1. Handwritten Notes by Karan Agrawal (AIR 102 GATE CS 2024) - Databases",
+    "url": "https://www.goclasses.in/s/courses/60fdd8ab0cf2c7989e1f109f/articles/66334a8ec534d11ea21d9c0b/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "663ca4ef581a77256869c898",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "2. Notes by Quantum City (AIR 107, GATE CS 2024, Shreyas Rathod) - DBMS Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/663ca4ef581a77256869c898/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/05/09/663ca4ef581a77256869c898/663ca4ef581a77256869c898_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe78d4849ab3202405e6e",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "3. Relational model and normalisation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe78d4849ab3202405e6e/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe78d4849ab3202405e6e/693fe78d4849ab3202405e6e_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693fe95d5423bb0f5c7b2c74",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "4. Queries",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693fe95d5423bb0f5c7b2c74/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693fe95d5423bb0f5c7b2c74/693fe95d5423bb0f5c7b2c74_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693feb0b6082d94b75640035",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "5. Transaction management and concurrency control",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693feb0b6082d94b75640035/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693feb0b6082d94b75640035/693feb0b6082d94b75640035_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "693ff593f341347a4035f873",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "6. File organisation",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/693ff593f341347a4035f873/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2025/12/15/693ff593f341347a4035f873/693ff593f341347a4035f873_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "69882bdae0aea973600a95ff",
+    "course": "Database Management Systems",
+    "module": "Students' Hand Written Notes",
+    "title": "7. Database Systems(Himanshu Dutta - AIR 16 GATE 2024)",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/69882bdae0aea973600a95ff/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2026/02/08/69882bdae0aea973600a95ff/69882bdae0aea973600a95ff_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

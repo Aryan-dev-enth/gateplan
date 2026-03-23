@@ -1,0 +1,167 @@
+[
+  {
+    "type": "video",
+    "id": "646367b3e4b0abdb8c00a2e3",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "1. Lecture 5a. Functions in C programming",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646367b3e4b0abdb8c00a2e3/u/6451e539e4b0e02eaea3faf1/t/a03e5d5522303e1739240566f18eb964/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/646367b3e4b0abdb8c00a2e3/index.m3u8",
+    "key": "ca25a60847595c4716acc779af2bf235",
+    "duration": 1176,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646367b3e4b0abdb8c00a2e3/u/6451e539e4b0e02eaea3faf1/t/a03e5d5522303e1739240566f18eb964/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/646367b3e4b0abdb8c00a2e3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. Lecture 5a. Functions in C programming' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key 'ca25a60847595c4716acc779af2bf235'"
+  },
+  {
+    "type": "video",
+    "id": "646367b3e4b0abdb8c00a2e2",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "2. Lecture 5b. GATE 2019 Question",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646367b3e4b0abdb8c00a2e2/u/6451e539e4b0e02eaea3faf1/t/0a7ba41d93e0fd17d3d4ffa5da0f3262/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/646367b3e4b0abdb8c00a2e2/index.m3u8",
+    "key": "b6d1262c726455f341b48f4062d734b3",
+    "duration": 473,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646367b3e4b0abdb8c00a2e2/u/6451e539e4b0e02eaea3faf1/t/0a7ba41d93e0fd17d3d4ffa5da0f3262/p/assets/videos/60e975430cf20278db21ff30/2023/05/16/646367b3e4b0abdb8c00a2e2/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. Lecture 5b. GATE 2019 Question' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key 'b6d1262c726455f341b48f4062d734b3'"
+  },
+  {
+    "type": "video",
+    "id": "6464f395e4b0b6878c2236cf",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "3. Lecture 5c. A Journey of the Program | The Big Picture | Compiler, Linker, Assembler, and Loader.",
+    "url": "https://www.youtube.com/watch?v=zlOh1O8popg",
+    "key": "this-is-yt-video",
+    "duration": 3047,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "646775c3e4b0659a24a5c127",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "4. 5d. How Compiler Generates relocatable code ?",
+    "url": "https://youtu.be/ZyRN9lCD41o",
+    "key": "this-is-yt-video",
+    "duration": 2222,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "6468f3e5e4b0b14810c393a8",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "5. Lecture 5 Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/6468f3e5e4b0b14810c393a8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/20/6468f3e5e4b0b14810c393a8/6468f3e5e4b0b14810c393a8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6468dd2ee4b038d59d15d94d",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "6. Lecture 6a.Memory Layout",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6468dd2ee4b038d59d15d94d/u/6451e539e4b0e02eaea3faf1/t/c66c68a1771070b2907e153972c12da5/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/6468dd2ee4b038d59d15d94d/index.m3u8",
+    "key": "07e91c76f83274877bc1004fad6e3989",
+    "duration": 1423,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6468dd2ee4b038d59d15d94d/u/6451e539e4b0e02eaea3faf1/t/c66c68a1771070b2907e153972c12da5/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/6468dd2ee4b038d59d15d94d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. Lecture 6a.Memory Layout' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key '07e91c76f83274877bc1004fad6e3989'"
+  },
+  {
+    "type": "video",
+    "id": "6468f33ee4b0b14810c3938d",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "7. Lecture 6b. auto and register Storage classes",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6468f33ee4b0b14810c3938d/u/6451e539e4b0e02eaea3faf1/t/4b7ee98afd9cb49026c6eed7bc10fe8b/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/6468f33ee4b0b14810c3938d/index.m3u8",
+    "key": "5777f20527d00522bc95cc21226993b2",
+    "duration": 1599,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6468f33ee4b0b14810c3938d/u/6451e539e4b0e02eaea3faf1/t/4b7ee98afd9cb49026c6eed7bc10fe8b/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/6468f33ee4b0b14810c3938d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. Lecture 6b. auto and register Storage classes' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key '5777f20527d00522bc95cc21226993b2'"
+  },
+  {
+    "type": "video",
+    "id": "646913ece4b083f1654aa9d1",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "8. Lecture 6c. Static Storage Class",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646913ece4b083f1654aa9d1/u/6451e539e4b0e02eaea3faf1/t/d49ab3f0ce1edcb68753af054a53ab15/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/646913ece4b083f1654aa9d1/index.m3u8",
+    "key": "f7abfc688e371750d0b3df7aee0687db",
+    "duration": 1778,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646913ece4b083f1654aa9d1/u/6451e539e4b0e02eaea3faf1/t/d49ab3f0ce1edcb68753af054a53ab15/p/assets/videos/60e975430cf20278db21ff30/2023/05/20/646913ece4b083f1654aa9d1/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. Lecture 6c. Static Storage Class' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key 'f7abfc688e371750d0b3df7aee0687db'"
+  },
+  {
+    "type": "video",
+    "id": "6469f731e4b0d9dd31407cf6",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "9. Lecture 6d. Extern Storage Class",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6469f731e4b0d9dd31407cf6/u/6451e539e4b0e02eaea3faf1/t/421eb49ebbad9a1cc9af88566c49988f/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/6469f731e4b0d9dd31407cf6/index.m3u8",
+    "key": "6ac753117fd7b5b374cc8407811f5dcd",
+    "duration": 1476,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/6469f731e4b0d9dd31407cf6/u/6451e539e4b0e02eaea3faf1/t/421eb49ebbad9a1cc9af88566c49988f/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/6469f731e4b0d9dd31407cf6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. Lecture 6d. Extern Storage Class' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key '6ac753117fd7b5b374cc8407811f5dcd'"
+  },
+  {
+    "type": "video",
+    "id": "646a1988e4b0bcc926ece712",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "10. Lecture 6e. OPTIONAL Extern with 2 files",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646a1988e4b0bcc926ece712/u/6451e539e4b0e02eaea3faf1/t/e5670db74295803797b51a1b46dc3fd4/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/646a1988e4b0bcc926ece712/index.m3u8",
+    "key": "867498cce0a6a98d2f09052c563fc8d0",
+    "duration": 985,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646a1988e4b0bcc926ece712/u/6451e539e4b0e02eaea3faf1/t/e5670db74295803797b51a1b46dc3fd4/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/646a1988e4b0bcc926ece712/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. Lecture 6e. OPTIONAL Extern with 2 files' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key '867498cce0a6a98d2f09052c563fc8d0'"
+  },
+  {
+    "type": "video",
+    "id": "646a2d44e4b001b832ee17f3",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "11. Lecture 6f. Practice Examples with extern keyword",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646a2d44e4b001b832ee17f3/u/6451e539e4b0e02eaea3faf1/t/298bd11deb144d68e1387653ac806e71/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/646a2d44e4b001b832ee17f3/index.m3u8",
+    "key": "14eebc7d8145ab6bc4210bf656c39257",
+    "duration": 1015,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646a2d44e4b001b832ee17f3/u/6451e539e4b0e02eaea3faf1/t/298bd11deb144d68e1387653ac806e71/p/assets/videos/60e975430cf20278db21ff30/2023/05/21/646a2d44e4b001b832ee17f3/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. Lecture 6f. Practice Examples with extern keyword' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key '14eebc7d8145ab6bc4210bf656c39257'"
+  },
+  {
+    "type": "pdf",
+    "id": "646b59e3e4b0659a24a6a6c3",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "12. Lecture 6 Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/646b59e3e4b0659a24a6a6c3/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/22/646b59e3e4b0659a24a6a6c3/646b59e3e4b0659a24a6a6c3_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "646b2606e4b00078ed211f4a",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "13. Homework 4 Extern Variable",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/646b2606e4b00078ed211f4a/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/22/646b2606e4b00078ed211f4a/646b2606e4b00078ed211f4a_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "646b6ffde4b09d45b0139490",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "14. LIVE Session Lecture 6G : Extern Homework",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646b8a23e4b0c74ee13b58b5/u/6451e539e4b0e02eaea3faf1/t/36f0bd49040557a6094f3828700752c0/p/assets/videos/60e975430cf20278db21ff30/2023/05/22/646b8a23e4b0c74ee13b58b5/index.m3u8",
+    "key": "b0e032277591b7b753b2925e2bbe4728",
+    "duration": 5357,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/646b8a23e4b0c74ee13b58b5/u/6451e539e4b0e02eaea3faf1/t/36f0bd49040557a6094f3828700752c0/p/assets/videos/60e975430cf20278db21ff30/2023/05/22/646b8a23e4b0c74ee13b58b5/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. LIVE Session Lecture 6G : Extern Homework' --save-dir './COURSES/4. C Programming/2. Module 2' --custom-hls-key 'b0e032277591b7b753b2925e2bbe4728'"
+  },
+  {
+    "type": "pdf",
+    "id": "646b9872e4b04ce4b8f90e31",
+    "course": "C Programming",
+    "module": "Module 2",
+    "title": "15. LIVE Session 4 Lecture 6 G Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/646b9872e4b04ce4b8f90e31/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/05/22/646b9872e4b04ce4b8f90e31/646b9872e4b04ce4b8f90e31_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

@@ -1,0 +1,79 @@
+[
+  {
+    "type": "video",
+    "id": "66e600916274b17ae03c4936",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "1. SQL - Complete Summary - Part 1",
+    "url": "https://youtu.be/ZzLaZ7QOPS4?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 12533,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66af7930bb623c6f7455cc08",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "2. Annotated Notes - SQL - Complete Summary - Part 1",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66af7930bb623c6f7455cc08/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/04/66af7930bb623c6f7455cc08/66af7930bb623c6f7455cc08_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66e600b1d798d34625ff45ac",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "3. SQL - Complete Summary - Part 2",
+    "url": "https://youtu.be/92S1Mv3GhSc?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 10278,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66b01f484529076b6f1fc8c8",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "4. Annotated Notes - SQL - Complete Summary - Part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66b01f484529076b6f1fc8c8/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/05/66b01f484529076b6f1fc8c8/66b01f484529076b6f1fc8c8_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "66e600cf6899db3ec287f7e1",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "5. SQL - Complete Summary - Part 3",
+    "url": "https://youtu.be/H8fbv-kxDEA?feature=shared",
+    "key": "this-is-yt-video",
+    "duration": 9928,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "66b54ccff9d86046924f41bc",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "6. Annotated Notes - SQL - Complete Summary - Part 3",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/66b54ccff9d86046924f41bc/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2024/08/08/66b54ccff9d86046924f41bc/66b54ccff9d86046924f41bc_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "article",
+    "id": "66e6011163c48f16f5901f1c",
+    "course": "Database Management System - Summary, GATE PYQs, Practice",
+    "module": "Module 3 - Queries - SQL",
+    "title": "7. GATE PYQs - SQL",
+    "url": "https://www.goclasses.in/s/courses/63b1e110e4b09e5b50fc3164/articles/66e6011163c48f16f5901f1c/get",
+    "key": "this-is-article",
+    "duration": 0,
+    "download_command": ""
+  }
+]

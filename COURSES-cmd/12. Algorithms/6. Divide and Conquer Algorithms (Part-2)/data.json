@@ -1,0 +1,211 @@
+[
+  {
+    "type": "video",
+    "id": "62c928670cf2c6aea4a121e0",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "1. 15a. Counting inversion with Netflix and Amazon Example",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c928670cf2c6aea4a121e0/u/6451e539e4b0e02eaea3faf1/t/7b74b967739c58560a9b84e34750adb9/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c928670cf2c6aea4a121e0/index.m3u8",
+    "key": "47e4d764b11a085fb92134cc1ef2b20d",
+    "duration": 1043,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c928670cf2c6aea4a121e0/u/6451e539e4b0e02eaea3faf1/t/7b74b967739c58560a9b84e34750adb9/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c928670cf2c6aea4a121e0/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '1. 15a. Counting inversion with Netflix and Amazon Example' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '47e4d764b11a085fb92134cc1ef2b20d'"
+  },
+  {
+    "type": "video",
+    "id": "62c928700cf2c6aea4a121e6",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "2. 15b. Numerical questions on Counting Inversion",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c928700cf2c6aea4a121e6/u/6451e539e4b0e02eaea3faf1/t/d967d18874b1fac91b8af8d341afe09e/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c928700cf2c6aea4a121e6/index.m3u8",
+    "key": "aa3eac2b0cc31e44fecab542313a83bb",
+    "duration": 940,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c928700cf2c6aea4a121e6/u/6451e539e4b0e02eaea3faf1/t/d967d18874b1fac91b8af8d341afe09e/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c928700cf2c6aea4a121e6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '2. 15b. Numerical questions on Counting Inversion' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'aa3eac2b0cc31e44fecab542313a83bb'"
+  },
+  {
+    "type": "video",
+    "id": "62c95ca30cf2092637841056",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "3. 15c. Counting Inversions using BruteForce method",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c95ca30cf2092637841056/u/6451e539e4b0e02eaea3faf1/t/7eece9fe5027501c18ce6d27b987c0de/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c95ca30cf2092637841056/index.m3u8",
+    "key": "c5157a1fdfb73bdff571236592edc4bb",
+    "duration": 763,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c95ca30cf2092637841056/u/6451e539e4b0e02eaea3faf1/t/7eece9fe5027501c18ce6d27b987c0de/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c95ca30cf2092637841056/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 15c. Counting Inversions using BruteForce method' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'c5157a1fdfb73bdff571236592edc4bb'"
+  },
+  {
+    "type": "video",
+    "id": "62c95d650cf271c93e9fa4f6",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "4. 16a. Heart of counting Inversion",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c95d650cf271c93e9fa4f6/u/6451e539e4b0e02eaea3faf1/t/e2d9f29495631f1a33feb1249ecb3da2/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c95d650cf271c93e9fa4f6/index.m3u8",
+    "key": "8a79744a78144f716015c6c779ad6fdd",
+    "duration": 1468,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c95d650cf271c93e9fa4f6/u/6451e539e4b0e02eaea3faf1/t/e2d9f29495631f1a33feb1249ecb3da2/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c95d650cf271c93e9fa4f6/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '4. 16a. Heart of counting Inversion' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '8a79744a78144f716015c6c779ad6fdd'"
+  },
+  {
+    "type": "video",
+    "id": "62c969e50cf209263784142c",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "5. 16b. Working Example of Counting Inversion using D and C",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c969e50cf209263784142c/u/6451e539e4b0e02eaea3faf1/t/bdc73b322c552d0659ea1da3dccbc4d4/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c969e50cf209263784142c/index.m3u8",
+    "key": "05289a19ff24084a0cba87391328249d",
+    "duration": 801,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62c969e50cf209263784142c/u/6451e539e4b0e02eaea3faf1/t/bdc73b322c552d0659ea1da3dccbc4d4/p/assets/videos/60e975430cf20278db21ff30/2022/07/09/62c969e50cf209263784142c/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '5. 16b. Working Example of Counting Inversion using D and C' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '05289a19ff24084a0cba87391328249d'"
+  },
+  {
+    "type": "video",
+    "id": "62cab0510cf2e93ca296578b",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "6. 16c. Counting Inversion question",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cab0510cf2e93ca296578b/u/6451e539e4b0e02eaea3faf1/t/9bebfa10c01f7d97fab4d869d6d5e4fa/p/assets/videos/60e975430cf20278db21ff30/2022/07/10/62cab0510cf2e93ca296578b/index.m3u8",
+    "key": "b2a4a3f16db4afe5ad099375c35839ef",
+    "duration": 652,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cab0510cf2e93ca296578b/u/6451e539e4b0e02eaea3faf1/t/9bebfa10c01f7d97fab4d869d6d5e4fa/p/assets/videos/60e975430cf20278db21ff30/2022/07/10/62cab0510cf2e93ca296578b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '6. 16c. Counting Inversion question' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'b2a4a3f16db4afe5ad099375c35839ef'"
+  },
+  {
+    "type": "video",
+    "id": "62cb0b470cf2e93ca2966e23",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "7. 17a. Closest pair in 2 D",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cb0b470cf2e93ca2966e23/u/6451e539e4b0e02eaea3faf1/t/c9f56053ee32eb03d33c2f3166f50033/p/assets/videos/60e975430cf20278db21ff30/2022/07/10/62cb0b470cf2e93ca2966e23/index.m3u8",
+    "key": "2ec23d1193f7f96daab61f2aa7fdffa9",
+    "duration": 1981,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cb0b470cf2e93ca2966e23/u/6451e539e4b0e02eaea3faf1/t/c9f56053ee32eb03d33c2f3166f50033/p/assets/videos/60e975430cf20278db21ff30/2022/07/10/62cb0b470cf2e93ca2966e23/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '7. 17a. Closest pair in 2 D' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '2ec23d1193f7f96daab61f2aa7fdffa9'"
+  },
+  {
+    "type": "video",
+    "id": "62cbe17d0cf2092637848e74",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "8. 17b. Closest pair-2",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cbe17d0cf2092637848e74/u/6451e539e4b0e02eaea3faf1/t/8b5dc8655df8e7b13114c50658255fa0/p/assets/videos/60e975430cf20278db21ff30/2022/07/11/62cbe17d0cf2092637848e74/index.m3u8",
+    "key": "c722d2e4fb0c6eccacf04b590d052c0c",
+    "duration": 1090,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cbe17d0cf2092637848e74/u/6451e539e4b0e02eaea3faf1/t/8b5dc8655df8e7b13114c50658255fa0/p/assets/videos/60e975430cf20278db21ff30/2022/07/11/62cbe17d0cf2092637848e74/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '8. 17b. Closest pair-2' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'c722d2e4fb0c6eccacf04b590d052c0c'"
+  },
+  {
+    "type": "video",
+    "id": "62cc287f0cf2778da87c7c4e",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "9. 17c. Exponent of a number",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cc287f0cf2778da87c7c4e/u/6451e539e4b0e02eaea3faf1/t/5901f423d424530e004766e8f57123ea/p/assets/videos/60e975430cf20278db21ff30/2022/07/11/62cc287f0cf2778da87c7c4e/index.m3u8",
+    "key": "9a34f1bdeda26dd44802551001062157",
+    "duration": 438,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cc287f0cf2778da87c7c4e/u/6451e539e4b0e02eaea3faf1/t/5901f423d424530e004766e8f57123ea/p/assets/videos/60e975430cf20278db21ff30/2022/07/11/62cc287f0cf2778da87c7c4e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '9. 17c. Exponent of a number' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '9a34f1bdeda26dd44802551001062157'"
+  },
+  {
+    "type": "video",
+    "id": "62cced590cf2e6a169467931",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "10. 17d. Matrix Multiplication",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cced590cf2e6a169467931/u/6451e539e4b0e02eaea3faf1/t/27bbb4590e59d16f84d647a77bbf74be/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cced590cf2e6a169467931/index.m3u8",
+    "key": "e230263b08ac8191960a1e5c3131195d",
+    "duration": 1284,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cced590cf2e6a169467931/u/6451e539e4b0e02eaea3faf1/t/27bbb4590e59d16f84d647a77bbf74be/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cced590cf2e6a169467931/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '10. 17d. Matrix Multiplication' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'e230263b08ac8191960a1e5c3131195d'"
+  },
+  {
+    "type": "video",
+    "id": "62cd4f230cf2778da87ce11e",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "11. 18a. Introduction to Quick Sort",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cd4f230cf2778da87ce11e/u/6451e539e4b0e02eaea3faf1/t/8e1a3e76fe42c491b1e32d074a67d089/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cd4f230cf2778da87ce11e/index.m3u8",
+    "key": "94c37ca0cf69f0e9df4310412b188df6",
+    "duration": 1719,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cd4f230cf2778da87ce11e/u/6451e539e4b0e02eaea3faf1/t/8e1a3e76fe42c491b1e32d074a67d089/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cd4f230cf2778da87ce11e/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '11. 18a. Introduction to Quick Sort' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '94c37ca0cf69f0e9df4310412b188df6'"
+  },
+  {
+    "type": "video",
+    "id": "62cd4f600cf2b0fb47f71164",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "12. 18b. Working Example of Quick Sort",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cd4f600cf2b0fb47f71164/u/6451e539e4b0e02eaea3faf1/t/2eb6b4d2499e18c7db5e1dc3afbc67d1/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cd4f600cf2b0fb47f71164/index.m3u8",
+    "key": "b14e606773adafc5857bc7945fa708be",
+    "duration": 1817,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62cd4f600cf2b0fb47f71164/u/6451e539e4b0e02eaea3faf1/t/2eb6b4d2499e18c7db5e1dc3afbc67d1/p/assets/videos/60e975430cf20278db21ff30/2022/07/12/62cd4f600cf2b0fb47f71164/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '12. 18b. Working Example of Quick Sort' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'b14e606773adafc5857bc7945fa708be'"
+  },
+  {
+    "type": "video",
+    "id": "62d01fcf0cf2f2028f893c1b",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "13. 18c. Quick sort Analysis and Randomised quick sort",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d01fcf0cf2f2028f893c1b/u/6451e539e4b0e02eaea3faf1/t/de7a38c6b23de302d5dc35f9fac2e464/p/assets/videos/60e975430cf20278db21ff30/2022/07/14/62d01fcf0cf2f2028f893c1b/index.m3u8",
+    "key": "b30e07f9b6d4543cf1da4bd2186fbeed",
+    "duration": 2403,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d01fcf0cf2f2028f893c1b/u/6451e539e4b0e02eaea3faf1/t/de7a38c6b23de302d5dc35f9fac2e464/p/assets/videos/60e975430cf20278db21ff30/2022/07/14/62d01fcf0cf2f2028f893c1b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '13. 18c. Quick sort Analysis and Randomised quick sort' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'b30e07f9b6d4543cf1da4bd2186fbeed'"
+  },
+  {
+    "type": "video",
+    "id": "62d026a50cf2fb984924ea67",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "14. 18d. GATE 2014 question",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d026a50cf2fb984924ea67/u/6451e539e4b0e02eaea3faf1/t/dafbcc3626660367351a6c12a557c6d4/p/assets/videos/60e975430cf20278db21ff30/2022/07/14/62d026a50cf2fb984924ea67/index.m3u8",
+    "key": "dea8358c0422fdbd575e6733bd7e4d14",
+    "duration": 665,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d026a50cf2fb984924ea67/u/6451e539e4b0e02eaea3faf1/t/dafbcc3626660367351a6c12a557c6d4/p/assets/videos/60e975430cf20278db21ff30/2022/07/14/62d026a50cf2fb984924ea67/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. 18d. GATE 2014 question' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'dea8358c0422fdbd575e6733bd7e4d14'"
+  },
+  {
+    "type": "video",
+    "id": "62d11e150cf279d6762e9e7d",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "15. 18e. Questions on quick sort",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d11e150cf279d6762e9e7d/u/6451e539e4b0e02eaea3faf1/t/56bf958584876e4c6f01973998ebc042/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d11e150cf279d6762e9e7d/index.m3u8",
+    "key": "088909e759c0294d4fcf693911b88752",
+    "duration": 1419,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d11e150cf279d6762e9e7d/u/6451e539e4b0e02eaea3faf1/t/56bf958584876e4c6f01973998ebc042/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d11e150cf279d6762e9e7d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. 18e. Questions on quick sort' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '088909e759c0294d4fcf693911b88752'"
+  },
+  {
+    "type": "video",
+    "id": "62d12d120cf2438d51119153",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "16. 18f. [Optional and Skip] Average case analysis of quick sort",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d12d120cf2438d51119153/u/6451e539e4b0e02eaea3faf1/t/1b33ca3fd2b3331be8cc9727ab2e7d56/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d12d120cf2438d51119153/index.m3u8",
+    "key": "92b9a6445344a83e31e08f6e6de44628",
+    "duration": 312,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d12d120cf2438d51119153/u/6451e539e4b0e02eaea3faf1/t/1b33ca3fd2b3331be8cc9727ab2e7d56/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d12d120cf2438d51119153/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '16. 18f. [Optional and Skip] Average case analysis of quick sort' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '92b9a6445344a83e31e08f6e6de44628'"
+  },
+  {
+    "type": "video",
+    "id": "62d16c3b0cf2097ea8031c71",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "17. 19a. The Select algorithm",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d16c3b0cf2097ea8031c71/u/6451e539e4b0e02eaea3faf1/t/83a4860756ee3a8e020b01fee71d9792/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d16c3b0cf2097ea8031c71/index.m3u8",
+    "key": "dac9c3450c02622e8796af2b8d6e7ddf",
+    "duration": 1544,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d16c3b0cf2097ea8031c71/u/6451e539e4b0e02eaea3faf1/t/83a4860756ee3a8e020b01fee71d9792/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d16c3b0cf2097ea8031c71/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '17. 19a. The Select algorithm' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key 'dac9c3450c02622e8796af2b8d6e7ddf'"
+  },
+  {
+    "type": "video",
+    "id": "62d172260cf22ce896bd60e9",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "18. 19b. Binary Search",
+    "url": "https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d172260cf22ce896bd60e9/u/6451e539e4b0e02eaea3faf1/t/9dbce9d8ba794fdf65475924d8e0c227/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d172260cf22ce896bd60e9/index.m3u8",
+    "key": "6d6a7c0c19b7a5fdc499601e9a45db51",
+    "duration": 1739,
+    "download_command": "./N_m3u8DL-RE https://vcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/62d172260cf22ce896bd60e9/u/6451e539e4b0e02eaea3faf1/t/9dbce9d8ba794fdf65475924d8e0c227/p/assets/videos/60e975430cf20278db21ff30/2022/07/15/62d172260cf22ce896bd60e9/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '18. 19b. Binary Search' --save-dir './COURSES/12. Algorithms/6. Divide and Conquer Algorithms (Part-2)' --custom-hls-key '6d6a7c0c19b7a5fdc499601e9a45db51'"
+  },
+  {
+    "type": "pdf",
+    "id": "62d393690cf251dfdd8cd20b",
+    "course": "Algorithms",
+    "module": "Divide and Conquer Algorithms (Part-2)",
+    "title": "19. Annotated notes Divide and Conquer part 2",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/62d393690cf251dfdd8cd20b/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2022/07/17/62d393690cf251dfdd8cd20b/62d393690cf251dfdd8cd20b_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]

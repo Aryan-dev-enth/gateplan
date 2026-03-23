@@ -1,0 +1,178 @@
+[
+  {
+    "type": "video",
+    "id": "6271313b0cf2ea16b99597ae",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "1. 8a. Introduction to Stack and Stack Permutations",
+    "url": "https://youtu.be/UvmWyOX1htU",
+    "key": "this-is-yt-video",
+    "duration": 1851,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "627131540cf2ea16b99597b1",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "2. 8b. Implementation of Stack using Array and Linked list",
+    "url": "https://youtu.be/-wCAszThCCY",
+    "key": "this-is-yt-video",
+    "duration": 1569,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "64a806e5e4b0c4d0cf448d7b",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "3. 9a. Introduction to Queue",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a806e5e4b0c4d0cf448d7b/u/6451e539e4b0e02eaea3faf1/t/cdb0c079edfe5d7dcd2f0ac10eeea0c7/p/assets/videos/60e975430cf20278db21ff30/2023/07/07/64a806e5e4b0c4d0cf448d7b/index.m3u8",
+    "key": "4fdf16cc461a621b389b42923d92ff6b",
+    "duration": 2491,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a806e5e4b0c4d0cf448d7b/u/6451e539e4b0e02eaea3faf1/t/cdb0c079edfe5d7dcd2f0ac10eeea0c7/p/assets/videos/60e975430cf20278db21ff30/2023/07/07/64a806e5e4b0c4d0cf448d7b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '3. 9a. Introduction to Queue' --save-dir './COURSES/11. Data Structures/4. Stack and Queue' --custom-hls-key '4fdf16cc461a621b389b42923d92ff6b'"
+  },
+  {
+    "type": "video",
+    "id": "6274fa7f0cf29512317465ee",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "4. 9b. Implementation of Queue using Array",
+    "url": "https://youtu.be/JRSkwnbDngM",
+    "key": "this-is-yt-video",
+    "duration": 1480,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "627679a00cf27999e58a7e76",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "5. 9c. Queue another Implementation using Array with F=R=0 | GATE 2012",
+    "url": "https://youtu.be/z9wVk-DBheE",
+    "key": "this-is-yt-video",
+    "duration": 1492,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "627679e30cf2dd5ffa6a45a2",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "6. 9d. Implementing Queue using Linked List",
+    "url": "https://youtu.be/-X7XigTvthA",
+    "key": "this-is-yt-video",
+    "duration": 630,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6277c6ba0cf2b61de6a107e8",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "7. 9e. Queue using two stacks",
+    "url": "https://youtu.be/oP1ilhPHZ7A",
+    "key": "this-is-yt-video",
+    "duration": 932,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6277c6da0cf2b61de6a1081f",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "8. 10a. Stack using two queues",
+    "url": "https://youtu.be/7ZKMgjlP_0M",
+    "key": "this-is-yt-video",
+    "duration": 725,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6277c6fd0cf2b61de6a10829",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "9. 10b. Balancing parentheses and Two Stacks in one array",
+    "url": "https://youtu.be/SbvHSeeKvqY",
+    "key": "this-is-yt-video",
+    "duration": 779,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6277c7220cf2b61de6a1082d",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "10. 10c. Infix, Prefix & Postfix and Conversion to each other",
+    "url": "https://youtu.be/8DArr0gvySA",
+    "key": "this-is-yt-video",
+    "duration": 1837,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "6277c73f0cf2b61de6a10831",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "11. 10d. Infix to Postfix using Stack and Postfix evaluation using Stack",
+    "url": "https://youtu.be/a6_mwM6Nj10",
+    "key": "this-is-yt-video",
+    "duration": 863,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "649d6f70e4b0786be4352518",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "12. Stack and Queue Anottated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/649d6f70e4b0786be4352518/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/06/29/649d6f70e4b0786be4352518/649d6f70e4b0786be4352518_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "pdf",
+    "id": "649d69b2e4b0c3c76440cd2b",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "13. Practice Set Stack and Queue",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/649d69b2e4b0c3c76440cd2b/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/06/29/649d69b2e4b0c3c76440cd2b/649d69b2e4b0c3c76440cd2b_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  },
+  {
+    "type": "liveclass",
+    "id": "64a816d5e4b0d92d7039b5de",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "14. LIVE: Stack and Queue Practice Set Discussion",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a83d42e4b0a18334e35f2d/u/6451e539e4b0e02eaea3faf1/t/d8829413d75d3e1b27193ecdd8fbf109/p/assets/videos/60e975430cf20278db21ff30/2023/07/07/64a83d42e4b0a18334e35f2d/index.m3u8",
+    "key": "3c31f56d7107cd37cf9aaa233f81c3f4",
+    "duration": 6469,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a83d42e4b0a18334e35f2d/u/6451e539e4b0e02eaea3faf1/t/d8829413d75d3e1b27193ecdd8fbf109/p/assets/videos/60e975430cf20278db21ff30/2023/07/07/64a83d42e4b0a18334e35f2d/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '14. LIVE: Stack and Queue Practice Set Discussion' --save-dir './COURSES/11. Data Structures/4. Stack and Queue' --custom-hls-key '3c31f56d7107cd37cf9aaa233f81c3f4'"
+  },
+  {
+    "type": "video",
+    "id": "64a9c085e4b0be69322e946b",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "15. LIVE Stack and Queue Practice Set Discussion 2",
+    "url": "https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a9c085e4b0be69322e946b/u/6451e539e4b0e02eaea3faf1/t/b68608f70cd500a9307150d996c7edcd/p/assets/videos/60e975430cf20278db21ff30/2023/07/08/64a9c085e4b0be69322e946b/index.m3u8",
+    "key": "41c712550ff1335bd352600ec7b82a5e",
+    "duration": 6581,
+    "download_command": "./N_m3u8DL-RE https://qcdn.spayee.in/spees/w/o/60e975430cf20278db21ff30/v/64a9c085e4b0be69322e946b/u/6451e539e4b0e02eaea3faf1/t/b68608f70cd500a9307150d996c7edcd/p/assets/videos/60e975430cf20278db21ff30/2023/07/08/64a9c085e4b0be69322e946b/index.m3u8 --tmp-dir ./tmp --auto-select --save-name '15. LIVE Stack and Queue Practice Set Discussion 2' --save-dir './COURSES/11. Data Structures/4. Stack and Queue' --custom-hls-key '41c712550ff1335bd352600ec7b82a5e'"
+  },
+  {
+    "type": "pdf",
+    "id": "64ad2ba8e4b094a8f8166357",
+    "course": "Data Structures",
+    "module": "Stack and Queue",
+    "title": "16. LIVE Session Stack and Queue Annotated Notes",
+    "url": "https://d2a5xnk4s7n8a6.cloudfront.net/spees/w/o/60e975430cf20278db21ff30/v/64ad2ba8e4b094a8f8166357/u/6451e539e4b0e02eaea3faf1/p/assets/pdfs/2023/07/11/64ad2ba8e4b094a8f8166357/64ad2ba8e4b094a8f8166357_original.pdf",
+    "key": "this-is-pdf",
+    "duration": 0,
+    "download_command": ""
+  }
+]
