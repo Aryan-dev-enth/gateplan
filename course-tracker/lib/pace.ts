@@ -210,6 +210,60 @@ export function formatHours(hours: number): string {
   return `${h}h ${m}m`;
 }
 
+export interface SimpleEtaResult {
+  avgDailyHours: number;       // totalHoursStudied / daysSinceStart
+  totalHoursStudied: number;
+  daysSinceStart: number;
+  hoursRemaining: number;
+  daysToFinish: number | null;
+  etaDate: Date | null;
+  noData: boolean;
+}
+
+const PLAN_START_DATE = "2026-02-23";
+
+/**
+ * Simple ETA: average daily hours since Feb 23 2026, projected forward.
+ */
+export function calcSimpleEta(
+  completedMap: Record<string, number | false>,
+  durationMap: Record<string, number>,
+  hoursRemaining: number,
+  lectureIdSet?: Set<string>,
+): SimpleEtaResult {
+  const now = Date.now();
+  const startMs = new Date(PLAN_START_DATE).getTime();
+  const daysSinceStart = Math.max(1, Math.ceil((now - startMs) / 86400000));
+
+  const allEntries = Object.entries(completedMap).filter(
+    ([id, v]) =>
+      typeof v === "number" &&
+      v > 0 &&
+      (!lectureIdSet || lectureIdSet.has(id)),
+  ) as [string, number][];
+
+  const totalHoursStudied = allEntries.reduce(
+    (sum, [id]) => sum + (durationMap[id] ?? 0) / 3600,
+    0,
+  );
+
+  const noData = totalHoursStudied === 0;
+  const avgDailyHours = noData ? 0 : totalHoursStudied / daysSinceStart;
+
+  let daysToFinish: number | null = null;
+  let etaDate: Date | null = null;
+
+  if (hoursRemaining <= 0) {
+    daysToFinish = 0;
+    etaDate = new Date(now);
+  } else if (avgDailyHours > 0) {
+    daysToFinish = Math.ceil(hoursRemaining / avgDailyHours);
+    etaDate = new Date(now + daysToFinish * 86400000);
+  }
+
+  return { avgDailyHours, totalHoursStudied, daysSinceStart, hoursRemaining, daysToFinish, etaDate, noData };
+}
+
 export interface PracticalEtaResult {
   medianDailyHours: number;
   consistencyScore: number;
