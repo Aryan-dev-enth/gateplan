@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser, toggleLecture, toggleAllLectures } from "@/lib/store";
+import { useToast } from "@/components/Toast";
 import ProgressBar from "@/components/ProgressBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import EtaCard from "@/components/EtaCard";
@@ -29,6 +30,9 @@ export default function SubjectClient({
   const [username, setUsername] = useState("");
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [openModules, setOpenModules] = useState<Set<string>>(new Set());
+  const [togglingLectures, setTogglingLectures] = useState<Set<string>>(new Set());
+  const [isTogglingAll, setIsTogglingAll] = useState(false);
+  const { addToast } = useToast();
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -46,14 +50,106 @@ export default function SubjectClient({
   }
 
   async function handleToggle(lectureId: string) {
-    const next = await toggleLecture(username, lectureId);
-    setCompletedMap((prev) => ({ ...prev, [lectureId]: next }));
+    if (!username || togglingLectures.has(lectureId)) return;
+    
+    setTogglingLectures(prev => new Set(prev).add(lectureId));
+    try {
+      const next = await toggleLecture(username, lectureId);
+      setCompletedMap((prev) => ({ ...prev, [lectureId]: next }));
+      
+      // Show success toast
+      const wasCompleted = !!completedMap[lectureId];
+      if (next) {
+        addToast({
+          message: "✓ Lecture marked as complete",
+          type: "success"
+        });
+      } else {
+        addToast({
+          message: "✕ Lecture marked as incomplete", 
+          type: "info"
+        });
+      }
+    } catch (error) {
+      addToast({
+        message: "✕ Failed to update lecture status",
+        type: "error"
+      });
+    } finally {
+      setTogglingLectures(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(lectureId);
+        return newSet;
+      });
+    }
   }
 
   async function handleToggleAllInModule(moduleId: string, lectureIds: string[], e: React.MouseEvent) {
     e.stopPropagation();
-    const next = await toggleAllLectures(username, lectureIds);
-    setCompletedMap({ ...next });
+    if (!username || isTogglingAll) return;
+    
+    setIsTogglingAll(true);
+    try {
+      const next = await toggleAllLectures(username, lectureIds);
+      setCompletedMap({ ...next });
+      
+      // Show success toast
+      const completedCount = lectureIds.filter(id => !!next[id]).length;
+      const totalCount = lectureIds.length;
+      
+      if (completedCount === totalCount) {
+        addToast({
+          message: `✓ All ${totalCount} lectures in module marked as complete`,
+          type: "success"
+        });
+      } else {
+        addToast({
+          message: `✓ All ${totalCount} lectures in module marked as incomplete`,
+          type: "info"
+        });
+      }
+    } catch (error) {
+      addToast({
+        message: "✕ Failed to update module lectures",
+        type: "error"
+      });
+    } finally {
+      setIsTogglingAll(false);
+    }
+  }
+
+  async function handleToggleAll() {
+    if (!username || isTogglingAll) return;
+    
+    setIsTogglingAll(true);
+    try {
+      const ids = subject.modules.flatMap(m => m.lectures.filter(l => l.isLecture).map(l => l.id));
+      const next = await toggleAllLectures(username, ids);
+      setCompletedMap({ ...next });
+      
+      // Show success toast
+      const completedCount = Object.values(next).filter(Boolean).length;
+      const totalCount = ids.length;
+      
+      if (completedCount === totalCount) {
+        addToast({
+          message: `✓ All ${totalCount} lectures in subject marked as complete`,
+          type: "success"
+        });
+      } else {
+        addToast({
+          message: `✓ All ${totalCount} lectures in subject marked as incomplete`,
+          type: "info"
+        });
+      }
+    } catch (error) {
+      addToast({
+        message: "✕ Failed to update all lectures",
+        type: "error"
+      });
+    } finally {
+      setIsTogglingAll(false);
+    }
   }
 
   const totalDone = subject.modules.reduce(
@@ -158,14 +254,22 @@ export default function SubjectClient({
                   {/* Mark all button */}
                   <button
                     onClick={(e) => handleToggleAllInModule(mod.id, modLectureIds, e)}
+                    disabled={isTogglingAll}
                     className="flex-shrink-0 text-xs px-2.5 py-1 rounded-lg font-semibold hover:opacity-80 transition-all"
                     style={{
                       background: isComplete ? "rgba(239,68,68,0.1)" : "rgba(34,211,165,0.1)",
                       border: `1px solid ${isComplete ? "rgba(239,68,68,0.2)" : "rgba(34,211,165,0.2)"}`,
                       color: isComplete ? "#ef4444" : "var(--green)",
+                      opacity: isTogglingAll ? 0.7 : 1,
+                      cursor: isTogglingAll ? "not-allowed" : "pointer",
                     }}
                   >
-                    {isComplete ? "✕ unmark" : "✓ all"}
+                    {isTogglingAll 
+                      ? "⏳ Loading..." 
+                      : isComplete 
+                        ? "✕ unmark" 
+                        : "✓ all"
+                    }
                   </button>
 
                   {/* Chevron */}
@@ -185,6 +289,7 @@ export default function SubjectClient({
                     {mod.lectures.map((lecture, li) => {
                       const isDone = !!completedMap[lecture.id];
                       const ts = completedMap[lecture.id];
+                      const isToggling = togglingLectures.has(lecture.id);
                       const meta = TYPE_META[lecture.type] ?? { icon: "•", color: "var(--muted)" };
                       const isLast = li === mod.lectures.length - 1;
 
@@ -206,24 +311,26 @@ export default function SubjectClient({
                             className="flex-1 flex items-center gap-3 pr-4 py-2 rounded-xl mr-2 transition-all"
                             style={{
                               background: isDone ? "rgba(34,211,165,0.04)" : "transparent",
-                              cursor: lecture.isLecture ? "pointer" : "default",
+                              cursor: lecture.isLecture && !isToggling ? "pointer" : "default",
                               opacity: lecture.isLecture ? 1 : 0.6,
                             }}
-                            onClick={() => lecture.isLecture && handleToggle(lecture.id)}
+                            onClick={() => lecture.isLecture && !isToggling && handleToggle(lecture.id)}
                           >
                             {/* Checkbox — only for lectures */}
                             <div className="flex-shrink-0 w-4 h-4 rounded flex items-center justify-center transition-all duration-200"
                               style={{
-                                background: isDone ? "var(--green)" : "transparent",
-                                border: `1.5px solid ${!lecture.isLecture ? "transparent" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
+                                background: isToggling ? "rgba(99,120,255,0.1)" : isDone ? "var(--green)" : "transparent",
+                                border: `1.5px solid ${!lecture.isLecture ? "transparent" : isToggling ? "rgba(99,120,255,0.5)" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
                                 boxShadow: isDone ? "0 0 8px rgba(34,211,165,0.4)" : "none",
                                 visibility: lecture.isLecture ? "visible" : "hidden",
                               }}>
-                              {isDone && lecture.isLecture && (
+                              {isToggling && lecture.isLecture ? (
+                                <div className="w-2 h-2 rounded-full bg-white pulse-dot" />
+                              ) : isDone && lecture.isLecture ? (
                                 <svg className="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none">
                                   <path d="M2 6l3 3 5-5" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                                 </svg>
-                              )}
+                              ) : null}
                             </div>
 
                             {/* Type icon */}

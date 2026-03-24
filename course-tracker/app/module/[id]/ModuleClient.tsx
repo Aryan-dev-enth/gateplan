@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser, toggleLecture, toggleAllLectures } from "@/lib/store";
+import { useToast } from "@/components/Toast";
 import ProgressBar from "@/components/ProgressBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import EtaCard from "@/components/EtaCard";
@@ -16,20 +17,18 @@ const TYPE_META: Record<string, { icon: string; color: string }> = {
   file:      { icon: "📎", color: "#22d3a5" },
 };
 
-export default function ModuleClient({
-  module,
-  subjectId,
-  durationMap = {},
-  weeks = [],
-}: {
-  module: Module;
-  subjectId: string;
-  durationMap?: Record<string, number>;
-  weeks?: WeekData[];
+export default function ModuleClient({ module, subjectId, durationMap, weeks }: { 
+  module: Module; 
+  subjectId: string; 
+  durationMap: Record<string, number>;
+  weeks: WeekData[];
 }) {
   const router = useRouter();
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState<string | null>(null);
   const [completed, setCompleted] = useState<Record<string, number | false>>({});
+  const [togglingLectures, setTogglingLectures] = useState<Set<string>>(new Set());
+  const [isTogglingAll, setIsTogglingAll] = useState(false);
+  const { addToast } = useToast();
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -39,14 +38,72 @@ export default function ModuleClient({
   }, [router]);
 
   async function handleToggle(lectureId: string) {
-    const next = await toggleLecture(username, lectureId);
-    setCompleted((prev) => ({ ...prev, [lectureId]: next }));
+    if (!username || togglingLectures.has(lectureId)) return;
+    
+    setTogglingLectures(prev => new Set(prev).add(lectureId));
+    try {
+      const next = await toggleLecture(username, lectureId);
+      setCompleted((prev) => ({ ...prev, [lectureId]: next }));
+      
+      // Show success toast
+      const wasCompleted = !!completed[lectureId];
+      if (next) {
+        addToast({
+          message: "✓ Lecture marked as complete",
+          type: "success"
+        });
+      } else {
+        addToast({
+          message: "✕ Lecture marked as incomplete", 
+          type: "info"
+        });
+      }
+    } catch (error) {
+      addToast({
+        message: "✕ Failed to update lecture status",
+        type: "error"
+      });
+    } finally {
+      setTogglingLectures(prev => {
+        const newSet = new Set(prev);
+        newSet.delete(lectureId);
+        return newSet;
+      });
+    }
   }
 
   async function handleToggleAll() {
-    const ids = module.lectures.filter((l) => l.isLecture).map((l) => l.id);
-    const next = await toggleAllLectures(username, ids);
-    setCompleted({ ...next });
+    if (!username || isTogglingAll) return;
+    
+    setIsTogglingAll(true);
+    try {
+      const ids = module.lectures.filter((l) => l.isLecture).map((l) => l.id);
+      const next = await toggleAllLectures(username, ids);
+      setCompleted({ ...next });
+      
+      // Show success toast
+      const completedCount = Object.values(next).filter(Boolean).length;
+      const totalCount = ids.length;
+      
+      if (completedCount === totalCount) {
+        addToast({
+          message: `✓ All ${totalCount} lectures marked as complete`,
+          type: "success"
+        });
+      } else {
+        addToast({
+          message: `✓ All ${totalCount} lectures marked as incomplete`,
+          type: "info"
+        });
+      }
+    } catch (error) {
+      addToast({
+        message: "✕ Failed to update all lectures",
+        type: "error"
+      });
+    } finally {
+      setIsTogglingAll(false);
+    }
   }
 
   const done = module.lectures.filter((l) => l.isLecture && !!completed[l.id]).length;
@@ -87,14 +144,22 @@ export default function ModuleClient({
             <div className="flex-1"><ProgressBar value={done} total={total} /></div>
             <button
               onClick={handleToggleAll}
+              disabled={isTogglingAll}
               className="flex-shrink-0 text-xs px-3 py-1.5 rounded-xl font-semibold hover:opacity-80 transition-all"
               style={{
                 background: done === total && total > 0 ? "rgba(239,68,68,0.1)" : "rgba(34,211,165,0.12)",
                 border: `1px solid ${done === total && total > 0 ? "rgba(239,68,68,0.25)" : "rgba(34,211,165,0.25)"}`,
                 color: done === total && total > 0 ? "#ef4444" : "var(--green)",
+                opacity: isTogglingAll ? 0.7 : 1,
+                cursor: isTogglingAll ? "not-allowed" : "pointer",
               }}
             >
-              {done === total && total > 0 ? "✕ unmark all" : "✓ mark all"}
+              {isTogglingAll 
+                ? "⏳ Loading..." 
+                : done === total && total > 0 
+                  ? "✕ unmark all" 
+                  : "✓ mark all"
+              }
             </button>
           </div>
         </div>
@@ -116,6 +181,7 @@ export default function ModuleClient({
           {module.lectures.map((lecture, i) => {
             const isDone = !!completed[lecture.id];
             const ts = completed[lecture.id];
+            const isToggling = togglingLectures.has(lecture.id);
             const meta = TYPE_META[lecture.type] ?? { icon: "•", color: "var(--muted)" };
 
             return (
@@ -126,23 +192,25 @@ export default function ModuleClient({
                   animationDelay: `${i * 0.03}s`,
                   borderColor: isDone ? "rgba(34,211,165,0.2)" : undefined,
                   background: isDone ? "rgba(34,211,165,0.04)" : undefined,
-                  cursor: lecture.isLecture ? "pointer" : "default",
+                  cursor: lecture.isLecture && !isToggling ? "pointer" : "default",
                   opacity: lecture.isLecture ? 1 : 0.65,
                 }}
-                onClick={() => lecture.isLecture && handleToggle(lecture.id)}
+                onClick={() => lecture.isLecture && !isToggling && handleToggle(lecture.id)}
               >
                 <div className="flex-shrink-0 w-5 h-5 rounded-md flex items-center justify-center transition-all duration-200"
                   style={{
-                    background: isDone ? "var(--green)" : "transparent",
-                    border: `2px solid ${!lecture.isLecture ? "transparent" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
+                    background: isToggling ? "rgba(99,120,255,0.1)" : isDone ? "var(--green)" : "transparent",
+                    border: `2px solid ${!lecture.isLecture ? "transparent" : isToggling ? "rgba(99,120,255,0.5)" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
                     boxShadow: isDone ? "0 0 10px rgba(34,211,165,0.4)" : "none",
                     visibility: lecture.isLecture ? "visible" : "hidden",
                   }}>
-                  {isDone && lecture.isLecture && (
+                  {isToggling && lecture.isLecture ? (
+                    <div className="w-2 h-2 rounded-full bg-white pulse-dot" />
+                  ) : isDone && lecture.isLecture ? (
                     <svg className="w-3 h-3" viewBox="0 0 12 12" fill="none">
                       <path d="M2 6l3 3 5-5" stroke="#000" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                  )}
+                  ) : null}
                 </div>
 
                 <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs"
