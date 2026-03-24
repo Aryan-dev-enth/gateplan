@@ -68,6 +68,15 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   async function handleDeleteSession(sessionId: string) {
     const u = getCurrentUser();
     if (!u) return;
+    
+    const session = studySessions.find(s => s.id === sessionId);
+    const sessionInfo = session 
+      ? `${session.durationMinutes >= 60 ? `${Math.floor(session.durationMinutes / 60)}h ${session.durationMinutes % 60}m` : `${session.durationMinutes}m`} study session for ${session.subjectName}${session.moduleName ? ` › ${session.moduleName}` : ''}`
+      : 'this study session';
+    
+    const confirmed = window.confirm(`Are you sure you want to delete ${sessionInfo}? This action cannot be undone.`);
+    if (!confirmed) return;
+    
     await deleteStudySession(u, sessionId);
     setStudySessions((prev) => prev.filter((s) => s.id !== sessionId));
   }
