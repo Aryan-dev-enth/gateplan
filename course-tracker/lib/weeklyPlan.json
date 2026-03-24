@@ -8,7 +8,7 @@
         "label": "23 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1A", "1B"], "hours": 1, "lectureIds": ["640c251ee4b04eb4af8fe5ec", "640c3221e4b0d5f1fef8390b"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 1"], "hours": 1.5, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1A"], "hours": 1.5, "lectureIds": ["67caa33a37079b7c1a4f2e0b"] }
         ]
       },
       {
@@ -16,7 +16,7 @@
         "label": "24 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1C"], "hours": 1.15, "lectureIds": ["640cb553e4b0ff5627b9a0d9"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 2"], "hours": 2, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1B"], "hours": 2, "lectureIds": ["67caa3493d6dc76c2c94e69e"] }
         ]
       },
       {
@@ -24,7 +24,7 @@
         "label": "25 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2A", "2B", "2C"], "hours": 1.5, "lectureIds": ["640e19e5e4b01e271e54013a", "640e2b07e4b0a15939dc9ae5", "640e3782e4b0408a376d2a43"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 3"], "hours": 1.75, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1C"], "hours": 1.75, "lectureIds": ["67caa3529834f45180c96cf8"] }
         ]
       },
       {
@@ -32,7 +32,7 @@
         "label": "26 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2D", "3A"], "hours": 1.5, "lectureIds": ["640e36a0e4b0408a376d2a3a", "640f2501e4b05f1197a0dc42"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 4A"], "hours": 2, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2A"], "hours": 2, "lectureIds": ["67dc68fa36608924bfe6a18b"] }
         ]
       },
       {
@@ -40,7 +40,7 @@
         "label": "27 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["3B", "3C", "3D"], "hours": 1.5, "lectureIds": ["64102b37e4b0080be017dbfe", "641087bde4b039348f05e3ba", "64115bc7e4b09e3b08def19d"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 4B"], "hours": 2, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2B"], "hours": 2, "lectureIds": ["67dc1cfb8c35b6307040d413"] }
         ]
       },
       {
@@ -48,7 +48,7 @@
         "label": "28 Feb",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4A", "4B", "4C"], "hours": 1.15, "lectureIds": ["6412b60be4b0cbc552f29f83", "6412b9a5e4b0cbc552f2a17d", "64140d24e4b00bc0c7b18727"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 5A", "5B"], "hours": 1.5, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2C"], "hours": 1.5, "lectureIds": ["67dc1d04e021895f01364b35"] }
         ]
       },
       {
@@ -56,7 +56,7 @@
         "label": "1 Mar",
         "tasks": [
           { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4D", "4E", "4F"], "hours": 1, "lectureIds": ["641428f4e4b0742435c1dc31", "64143e10e4b0742435c1e255", "6414497de4b0d4cd076e6037"] },
-          { "subject": "Aptitude", "module": "Fundamentals of Computer Science", "lectureRefs": ["Lecture 5C", "6"], "hours": 3, "lectureIds": [] }
+          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 3A", "Lecture 3B"], "hours": 3, "lectureIds": ["67eb0c4045a6b019f827b69d", "67eb14424762e97cefab80ce"] }
         ]
       }
     ]

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react";
 import type { WeekData } from "@/app/weekly/page";
 import {
   calcSimpleEta,
@@ -7,6 +7,8 @@ import {
   formatEta,
   formatHours,
 } from "@/lib/pace";
+import { RealisticEtaCalculator, RealisticEtaResult } from "@/lib/realisticEta";
+import { EtaStorage } from "@/lib/etaStorage";
 
 interface EtaCardProps {
   completedMap: Record<string, number | false>;
@@ -18,6 +20,9 @@ interface EtaCardProps {
   compact?: boolean;
   targetDate?: string;           // "YYYY-MM-DD"
   onTargetDateChange?: (date: string) => void;
+  // Enhanced parameters
+  subjectData?: Record<string, { totalHours: number; plannedHours: number }>;
+  userId?: string;
 }
 
 export default function EtaCard({
@@ -30,15 +35,72 @@ export default function EtaCard({
   compact = false,
   targetDate,
   onTargetDateChange,
+  subjectData = {},
+  userId
 }: EtaCardProps) {
   const [editing, setEditing] = useState(false);
   const [inputVal, setInputVal] = useState(targetDate ?? "");
+  const [realisticResult, setRealisticResult] = useState<RealisticEtaResult | null>(null);
 
   const planEndDate = getPlanEndDate(weeks);
   const result = calcSimpleEta(completedMap, durationMap, hoursRemaining, lectureIdSet);
   const { avgDailyHours, totalHoursStudied, daysSinceStart, daysToFinish, etaDate, noData } = result;
 
   const pct = hoursTotal > 0 ? Math.round(((hoursTotal - hoursRemaining) / hoursTotal) * 100) : 0;
+
+  // Calculate realistic ETA when component mounts or data changes
+  React.useEffect(() => {
+    if (userId && weeks.length > 0) {
+      const realistic = RealisticEtaCalculator.calculateRealisticEta(
+        completedMap,
+        durationMap,
+        hoursTotal,
+        weeks
+      );
+
+      setRealisticResult(realistic);
+
+      // Save to storage if we have a userId
+      if (userId) {
+        EtaStorage.saveEtaMetrics(userId, {
+          etaDate: realistic.estimatedCompletion,
+          daysToFinish: realistic.daysToComplete,
+          confidence: realistic.confidence,
+          avgDailyHours: realistic.currentPace,
+          medianDailyHours: realistic.sustainablePace,
+          consistencyScore: realistic.studyPattern.consistencyScore,
+          productivityTrend: realistic.studyPattern.momentumScore > 0.6 ? "improving" : 
+                           realistic.studyPattern.momentumScore < 0.4 ? "declining" : "stable",
+          plannedDailyHours: realistic.planRequiredPace,
+          planEfficiency: realistic.currentPace / realistic.planRequiredPace,
+          isBehindPlan: realistic.backlogRate > 0,
+          daysBehindPlan: realistic.daysToComplete ? Math.floor(realistic.daysToComplete * 0.1) : null,
+          subjectPerformance: {},
+          predictedCompletionRange: {
+            optimistic: realistic.estimatedCompletion,
+            realistic: realistic.estimatedCompletion,
+            pessimistic: realistic.estimatedCompletion
+          },
+          totalHoursStudied,
+          activeDays: Math.floor(realistic.studyPattern.studyDayFrequency * 21),
+          streakDays: 0,
+          longestStreak: 0,
+          adaptiveStats: {
+            distributionApplied: realistic.studyPattern.bulkUploadDays > 0,
+            originalAverage: avgDailyHours,
+            adjustedAverage: realistic.sustainablePace,
+            totalExcessHours: realistic.studyPattern.bulkUploadDays * 2,
+            adjustedDays: realistic.studyPattern.bulkUploadDays
+          },
+          calculationMethod: realistic.calculationMethod,
+          lastUpdated: realistic.lastUpdated,
+          dataQuality: realistic.reliabilityScore > 0.8 ? "excellent" : 
+                      realistic.reliabilityScore > 0.6 ? "good" : 
+                      realistic.reliabilityScore > 0.4 ? "fair" : "poor"
+        }, totalHoursStudied).catch(console.error);
+      }
+    }
+  }, [completedMap, durationMap, hoursRemaining, hoursTotal, weeks, userId, lectureIdSet, totalHoursStudied, avgDailyHours]);
 
   // Target date calculations
   const today = new Date();
@@ -55,19 +117,49 @@ export default function EtaCard({
     setEditing(false);
   }
 
+  // Use realistic result if available, otherwise fall back to simple
+  const displayEta = realisticResult?.estimatedCompletion || etaDate;
+  const displayDaysToFinish = realisticResult?.daysToComplete || daysToFinish;
+  const displayAvgHours = realisticResult?.sustainablePace || avgDailyHours;
+  const displayConfidence = realisticResult?.confidence || "low";
+
   if (compact) {
     return (
-      <div className="flex items-center gap-2 px-3 py-2 rounded-xl"
-        style={{ background: "var(--tint-accent)", border: "1px solid var(--border)" }}>
-        <span className="text-sm">📊</span>
-        <div className="min-w-0">
-          <p className="text-xs font-semibold truncate" style={{ color: noData ? "var(--muted)" : "var(--green)" }}>
-            {noData ? "No activity yet" : formatEta(etaDate, daysToFinish)}
-          </p>
-          <p className="text-xs" style={{ color: "var(--muted)" }}>
-            {noData ? "mark lectures done to calculate" : `${formatHours(avgDailyHours)}/day avg · ${daysSinceStart} days tracked`}
-          </p>
+      <div className="text-center">
+        <div className="text-3xl font-semibold mb-2" style={{ color: noData ? "var(--muted)" : "var(--accent)" }}>
+          {noData ? "--" : formatEta(displayEta, displayDaysToFinish)}
         </div>
+        <p className="text-sm" style={{ color: "var(--muted)" }}>
+          {noData ? "No activity yet" : `${formatHours(displayAvgHours)}/day avg`}
+        </p>
+        {realisticResult && (
+          <div className="mt-1 space-y-1">
+            <span className="text-xs px-2 py-0.5 rounded-md font-medium block" 
+              style={{
+                background: displayConfidence === "high" || displayConfidence === "very-high" 
+                  ? "var(--tint-green)" 
+                  : displayConfidence === "medium" 
+                  ? "rgba(245,158,11,0.1)" 
+                  : "rgba(239,68,68,0.1)",
+                color: displayConfidence === "high" || displayConfidence === "very-high"
+                  ? "var(--green)"
+                  : displayConfidence === "medium"
+                  ? "#f59e0b"
+                  : "var(--red)"
+              }}>
+              {displayConfidence} confidence
+            </span>
+            {realisticResult.studyPattern.bulkUploadDays > 0 && (
+              <span className="text-xs px-2 py-0.5 rounded-md font-medium block"
+                style={{
+                  background: "rgba(245,158,11,0.1)",
+                  color: "#f59e0b"
+                }}>
+                Bulk patterns detected
+              </span>
+            )}
+          </div>
+        )}
       </div>
     );
   }

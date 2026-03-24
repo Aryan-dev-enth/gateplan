@@ -305,12 +305,12 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                       {/* Expand chevron */}
                       <div className="flex-shrink-0 text-sm transition-transform" style={{
                         color: "var(--muted)",
-                        transform: expanded ? "rotate(90deg)" : "rotate(0deg)",
+                        transform: expanded === user.username ? "rotate(90deg)" : "rotate(0deg)",
                       }}>›</div>
                     </div>
 
                     {/* Expanded detail */}
-                    {expanded && (
+                    {expanded === user.username && (
                       <div className="mt-1 mb-2 rounded-2xl p-4 flex flex-col gap-4"
                         style={{ background: "var(--tint-accent)", border: "1px solid var(--border)" }}>
 

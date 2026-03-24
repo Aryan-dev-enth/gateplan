@@ -1,46 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #080b14;
-  --surface: #0e1420;
-  --surface2: #141b2d;
-  --border: rgba(99, 120, 255, 0.12);
-  --border-hover: rgba(99, 120, 255, 0.35);
-  --accent: #6378ff;
-  --accent2: #a78bfa;
-  --green: #22d3a5;
-  --text: #e8eaf6;
-  --muted: #5a6380;
-  --glass-bg: rgba(14, 20, 32, 0.7);
-  --tint-accent: rgba(99, 120, 255, 0.08);
-  --tint-accent-hover: rgba(99, 120, 255, 0.15);
-  --tint-green: rgba(34, 211, 165, 0.08);
-  --tint-green-border: rgba(34, 211, 165, 0.25);
-  --card-bg: rgba(99, 120, 255, 0.04);
-  --day-tasks-bg: rgba(14, 20, 32, 0.3);
-  --today-header-bg: linear-gradient(135deg, rgba(99,120,255,0.15), rgba(167,139,250,0.1));
+  --bg: #1a1d21;
+  --surface: #212529;
+  --surface2: #2c3034;
+  --border: #495057;
+  --border-hover: #6c757d;
+  --accent: #339af0;
+  --accent2: #74c0fc;
+  --green: #51cf66;
+  --red: #ff6b6b;
+  --text: #f8f9fa;
+  --muted: #adb5bd;
+  --glass-bg: rgba(33, 37, 41, 0.95);
+  --tint-accent: rgba(51, 154, 240, 0.1);
+  --tint-accent-hover: rgba(51, 154, 240, 0.2);
+  --tint-green: rgba(81, 207, 102, 0.1);
+  --tint-green-border: rgba(81, 207, 102, 0.3);
+  --card-bg: #212529;
+  --day-tasks-bg: #2c3034;
+  --today-header-bg: linear-gradient(135deg, rgba(51,154,240,0.1), rgba(116,192,252,0.05));
 }
 
-/* Light mode overrides */
+/* Light mode corporate theme */
 .light {
-  --bg: #f0f2ff;
+  --bg: #ffffff;
   --surface: #ffffff;
-  --surface2: #eef0fb;
-  --border: rgba(99, 120, 255, 0.18);
-  --border-hover: rgba(99, 120, 255, 0.45);
-  --accent: #4f63e8;
-  --accent2: #7c5ce8;
-  --green: #0fa87a;
-  --text: #1a1d2e;
-  --muted: #7880a0;
-  --glass-bg: rgba(255, 255, 255, 0.8);
-  --tint-accent: rgba(99, 120, 255, 0.07);
-  --tint-accent-hover: rgba(99, 120, 255, 0.14);
-  --tint-green: rgba(15, 168, 122, 0.07);
-  --tint-green-border: rgba(15, 168, 122, 0.25);
-  --card-bg: rgba(99, 120, 255, 0.04);
-  --day-tasks-bg: rgba(240, 242, 255, 0.6);
-  --today-header-bg: linear-gradient(135deg, rgba(99,120,255,0.1), rgba(124,92,232,0.08));
+  --surface2: #f8f9fa;
+  --border: #e9ecef;
+  --border-hover: #dee2e6;
+  --accent: #0066cc;
+  --accent2: #0052a3;
+  --green: #28a745;
+  --red: #dc3545;
+  --text: #212529;
+  --muted: #6c757d;
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --tint-accent: rgba(0, 102, 204, 0.05);
+  --tint-accent-hover: rgba(0, 102, 204, 0.1);
+  --tint-green: rgba(40, 167, 69, 0.05);
+  --tint-green-border: rgba(40, 167, 69, 0.2);
+  --card-bg: #ffffff;
+  --day-tasks-bg: #f8f9fa;
+  --today-header-bg: linear-gradient(135deg, rgba(0,102,204,0.05), rgba(0,82,163,0.03));
 }
 
 .light .glow-orb {
@@ -76,37 +78,42 @@ body {
   z-index: 0;
 }
 
-/* Glass card */
+/* Corporate card */
 .glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: var(--card-bg);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .glass:hover {
   border-color: var(--border-hover);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* Gradient text */
+/* Remove glow orbs for corporate look */
+.glow-orb {
+  display: none;
+}
+
+/* Corporate gradient text */
 .grad-text {
-  background: linear-gradient(135deg, #6378ff 0%, #a78bfa 50%, #22d3a5 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent2) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Shimmer animation */
+/* Subtle shimmer animation */
 @keyframes shimmer {
   0% { background-position: -200% center; }
   100% { background-position: 200% center; }
 }
 
 .shimmer {
-  background: linear-gradient(90deg, transparent 0%, rgba(99,120,255,0.15) 50%, transparent 100%);
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 102, 204, 0.05) 50%, transparent 100%);
   background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+  animation: shimmer 3s infinite;
 }
 
 /* Progress bar glow */
