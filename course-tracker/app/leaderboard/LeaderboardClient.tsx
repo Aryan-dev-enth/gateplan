@@ -247,7 +247,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                         border: isMe ? `1px solid ${c1}60` : "1px solid var(--border)",
                         boxShadow: isMe ? `0 0 20px ${c1}20` : "none",
                       }}
-                      onClick={() => setExpanded(isExpanded ? null : user.username)}
+                      onClick={() => setExpanded(expanded === user.username ? null : user.username)}
                     >
                       {/* Rank */}
                       <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm"

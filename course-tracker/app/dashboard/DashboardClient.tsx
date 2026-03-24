@@ -105,7 +105,7 @@ export default function DashboardClient({
               style={{ background: "linear-gradient(135deg,rgba(99,120,255,0.2),rgba(34,211,165,0.15))", border: "1px solid rgba(99,120,255,0.3)", color: "var(--accent2)" }}>
               ⏱ Log Time
             </Link>
-            <Link href="/weekly" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent2)" }}>📅 Weekly</Link>
+            <Link href="/weekly" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent2)" }}>📅 GO Classes Weekly Planner</Link>
             <Link href="/activity" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent2)" }}>📊 Activity</Link>
             <Link href="/leaderboard" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "#f59e0b" }}>🏆</Link>
             <ThemeToggle />

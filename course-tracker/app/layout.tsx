@@ -5,7 +5,7 @@ import { ToastProvider } from "@/components/Toast";
 
 export const metadata: Metadata = {
   title: "Course Tracker",
-  description: "GATE Course Tracker & Weekly Planner",
+  description: "GATE Course Tracker & GO Classes Weekly Planner",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

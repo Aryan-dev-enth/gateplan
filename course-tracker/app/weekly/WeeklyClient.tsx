@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser } from "@/lib/store";
 import ThemeToggle from "@/components/ThemeToggle";
+import GOClassesScheduleDropdown from "@/components/GOClassesScheduleDropdown";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData, DayData, TaskData } from "./page";
 
@@ -260,7 +261,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
             </Link>
             <div className="w-px h-4" style={{ background: "var(--border)" }} />
             <h1 className="text-lg font-bold">
-              <span className="grad-text">Weekly</span> Plan
+              <span className="grad-text">GO Classes</span> Weekly Planner
             </h1>
           </div>
           <div className="flex items-center gap-2">
@@ -321,6 +322,11 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
               ))}
             </div>
           </div>
+        </div>
+
+        {/* GO Classes Schedule Dropdown */}
+        <div className="mb-8 fade-in-2">
+          <GOClassesScheduleDropdown />
         </div>
 
         {/* Day rows — vertical */}
