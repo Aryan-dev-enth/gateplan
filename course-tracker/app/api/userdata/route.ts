@@ -14,6 +14,7 @@ export async function GET(req: NextRequest) {
     completedLectures: Object.fromEntries(doc.completedLectures ?? new Map()),
     weeklyPlans: doc.weeklyPlans ?? [],
     targetDate: doc.targetDate ?? null,
+    studySessions: doc.studySessions ?? [],
   });
 }
 
@@ -28,6 +29,7 @@ export async function POST(req: NextRequest) {
       completedLectures: data.completedLectures,
       weeklyPlans: data.weeklyPlans ?? [],
       targetDate: data.targetDate ?? null,
+      studySessions: data.studySessions ?? [],
     },
     { upsert: true, new: true }
   );

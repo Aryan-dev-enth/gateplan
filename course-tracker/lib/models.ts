@@ -12,6 +12,7 @@ const UserDataSchema = new Schema({
   completedLectures: { type: Map, of: Schema.Types.Mixed, default: {} },
   weeklyPlans: { type: Array, default: [] },
   targetDate: { type: String, default: null },
+  studySessions: { type: Array, default: [] },
 });
 
 export const UserModel = models.User || model("User", UserSchema);

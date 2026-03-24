@@ -1,10 +1,20 @@
 // Client-side store — all persistence via API routes backed by MongoDB
 // Session (current user) still uses localStorage as it's UI-only state
 
+export interface StudySession {
+  id: string;
+  startedAt: number;       // unix ms
+  durationMinutes: number;
+  subjectName: string;
+  moduleName?: string;
+  note?: string;
+}
+
 export interface UserData {
   completedLectures: Record<string, number | false>;
   weeklyPlans: WeeklyPlan[];
   targetDate?: string;
+  studySessions: StudySession[];
 }
 
 export interface WeeklyPlan {
@@ -61,12 +71,13 @@ export async function userExists(username: string): Promise<boolean> {
 
 export async function getUser(username: string): Promise<UserData> {
   const res = await fetch(`/api/userdata?username=${encodeURIComponent(username)}`);
-  if (!res.ok) return { completedLectures: {}, weeklyPlans: [] };
+  if (!res.ok) return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
   const data = await res.json();
   return {
     completedLectures: data.completedLectures ?? {},
     weeklyPlans: data.weeklyPlans ?? [],
     targetDate: data.targetDate ?? undefined,
+    studySessions: data.studySessions ?? [],
   };
 }
 
@@ -126,4 +137,32 @@ export async function deleteWeeklyPlan(username: string, planId: string): Promis
   const data = await getUser(username);
   data.weeklyPlans = data.weeklyPlans.filter((p) => p.id !== planId);
   await saveUser(username, data);
+}
+
+// --- Study Sessions ---
+
+export async function logStudySession(username: string, session: Omit<StudySession, "id">): Promise<StudySession> {
+  console.log("logStudySession called with:", { username, session });
+  const res = await fetch("/api/userdata/sessions", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, session }),
+  });
+  console.log("API response status:", res.status);
+  if (!res.ok) {
+    const errorText = await res.text();
+    console.error("API error response:", errorText);
+    throw new Error(`Failed to log session: ${res.status}`);
+  }
+  const data = await res.json();
+  console.log("API response data:", data);
+  return data.session;
+}
+
+export async function deleteStudySession(username: string, sessionId: string): Promise<void> {
+  await fetch("/api/userdata/sessions", {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, sessionId }),
+  });
 }

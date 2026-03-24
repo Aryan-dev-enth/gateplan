@@ -1,8 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUser, toggleLecture } from "@/lib/store";
+import { getCurrentUser, getUser, toggleLecture, deleteStudySession } from "@/lib/store";
+import type { StudySession } from "@/lib/store";
 import ThemeToggle from "@/components/ThemeToggle";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
@@ -47,16 +48,28 @@ function groupByDate(entries: ActivityEntry[]): Record<string, ActivityEntry[]> 
 
 export default function ActivityClient({ subjects, weeks }: { subjects: Subject[]; weeks: WeekData[] }) {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [entries, setEntries] = useState<ActivityEntry[]>([]);
   const [filter, setFilter] = useState<string>("all");
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
+  const [studySessions, setStudySessions] = useState<StudySession[]>([]);
+  const [activeTab, setActiveTab] = useState<"lectures" | "sessions">(
+    searchParams.get("tab") === "sessions" ? "sessions" : "lectures"
+  );
 
   async function deleteEntry(lectureId: string) {
     const u = getCurrentUser();
     if (!u) return;
-    await toggleLecture(u, lectureId); // toggles to false if currently done
+    await toggleLecture(u, lectureId);
     setCompletedMap((prev) => ({ ...prev, [lectureId]: false }));
     setEntries((prev) => prev.filter((e) => e.lectureId !== lectureId));
+  }
+
+  async function handleDeleteSession(sessionId: string) {
+    const u = getCurrentUser();
+    if (!u) return;
+    await deleteStudySession(u, sessionId);
+    setStudySessions((prev) => prev.filter((s) => s.id !== sessionId));
   }
 
   // Build a lookup map: lectureId -> { title, type, moduleName, subjectName, subjectId, moduleId }
@@ -81,6 +94,7 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     if (!u) { router.replace("/"); return; }
     getUser(u).then((data) => {
       setCompletedMap(data.completedLectures);
+      setStudySessions((data.studySessions ?? []).slice().sort((a, b) => b.startedAt - a.startedAt));
       const result: ActivityEntry[] = [];
       for (const [id, val] of Object.entries(data.completedLectures)) {
         if (!val) continue;
@@ -146,6 +160,11 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
             </h1>
           </div>
           <div className="flex items-center gap-2">
+            <Link href="/log-time"
+              className="text-xs px-3 py-1.5 rounded-xl font-semibold transition-all hover:opacity-90"
+              style={{ background: "linear-gradient(135deg,rgba(99,120,255,0.2),rgba(34,211,165,0.15))", border: "1px solid rgba(99,120,255,0.3)", color: "var(--accent2)" }}>
+              ⏱ Log Time
+            </Link>
             <Link href="/leaderboard" className="text-xs px-3 py-1.5 rounded-xl transition-all"
               style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "#f59e0b" }}>
               🏆 Board
@@ -155,14 +174,22 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-3 gap-3 mb-4 fade-in-1">
+        <div className="grid grid-cols-4 gap-3 mb-4 fade-in-1">
           {[
             { label: "Total Done", val: entries.length, color: "var(--accent2)" },
             { label: "Day Streak 🔥", val: streak, color: "#f59e0b" },
             { label: "Today", val: heatmap[new Date().toDateString()] || 0, color: "var(--green)" },
+            {
+              label: "Study Time",
+              val: (() => {
+                const total = studySessions.reduce((s, x) => s + x.durationMinutes, 0);
+                return total >= 60 ? `${Math.floor(total / 60)}h ${total % 60}m` : `${total}m`;
+              })(),
+              color: "#8b5cf6",
+            },
           ].map((s) => (
             <div key={s.label} className="glass p-4 text-center">
-              <div className="text-2xl font-bold mb-1" style={{ color: s.color }}>{s.val}</div>
+              <div className="text-xl font-bold mb-1 truncate" style={{ color: s.color }}>{s.val}</div>
               <div className="text-xs" style={{ color: "var(--muted)" }}>{s.label}</div>
             </div>
           ))}
@@ -198,102 +225,172 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
           </div>
         </div>
 
-        {/* Subject filter pills */}
-        <div className="flex gap-2 flex-wrap mb-5 fade-in-2">
-          {subjectNames.map((name) => (
-            <button
-              key={name}
-              onClick={() => setFilter(name)}
-              className="text-xs px-3 py-1.5 rounded-full transition-all"
+        {/* Tabs */}
+        <div className="flex gap-2 mb-5 p-1 rounded-xl fade-in-2" style={{ background: "rgba(99,120,255,0.08)", border: "1px solid rgba(99,120,255,0.15)" }}>
+          {(["lectures", "sessions"] as const).map((tab) => (
+            <button key={tab} onClick={() => setActiveTab(tab)}
+              className="flex-1 text-sm py-1.5 rounded-lg font-semibold transition-all"
               style={{
-                background: filter === name ? "linear-gradient(135deg, #6378ff, #8b5cf6)" : "rgba(99,120,255,0.08)",
-                border: `1px solid ${filter === name ? "transparent" : "rgba(99,120,255,0.15)"}`,
-                color: filter === name ? "white" : "var(--muted)",
-                fontWeight: filter === name ? 600 : 400,
-              }}
-            >
-              {name === "all" ? "All subjects" : name}
+                background: activeTab === tab ? "linear-gradient(135deg,#6378ff,#8b5cf6)" : "transparent",
+                color: activeTab === tab ? "white" : "var(--muted)",
+              }}>
+              {tab === "lectures" ? "📚 Lectures" : "⏱ Study Sessions"}
             </button>
           ))}
         </div>
 
-        {/* Timeline */}
-        {dateKeys.length === 0 ? (
-          <div className="glass p-12 text-center fade-in-3">
-            <p className="text-3xl mb-3">📭</p>
-            <p className="font-semibold" style={{ color: "var(--text)" }}>No activity yet</p>
-            <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>Start completing lectures to see your log here</p>
+        {/* Subject filter pills — only for lectures tab */}
+        {activeTab === "lectures" && (
+          <div className="flex gap-2 flex-wrap mb-5 fade-in-2">
+            {subjectNames.map((name) => (
+              <button
+                key={name}
+                onClick={() => setFilter(name)}
+                className="text-xs px-3 py-1.5 rounded-full transition-all"
+                style={{
+                  background: filter === name ? "linear-gradient(135deg, #6378ff, #8b5cf6)" : "rgba(99,120,255,0.08)",
+                  border: `1px solid ${filter === name ? "transparent" : "rgba(99,120,255,0.15)"}`,
+                  color: filter === name ? "white" : "var(--muted)",
+                  fontWeight: filter === name ? 600 : 400,
+                }}
+              >
+                {name === "all" ? "All subjects" : name}
+              </button>
+            ))}
           </div>
-        ) : (
-          <div className="flex flex-col gap-6 fade-in-3">
-            {dateKeys.map((dateKey) => (
-              <div key={dateKey}>
-                {/* Date header */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
-                  <span className="text-xs font-semibold px-3 py-1 rounded-full"
-                    style={{ background: "rgba(99,120,255,0.1)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
-                    {dateKey} · {grouped[dateKey].length} done
-                  </span>
-                  <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
-                </div>
+        )}
 
-                {/* Entries */}
-                <div className="flex flex-col">
-                  {grouped[dateKey].map((entry, i) => {
-                    const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
-                    const isLast = i === grouped[dateKey].length - 1;
-
-                    return (
-                      <div key={entry.lectureId} className="flex items-stretch gap-3">
-                        {/* Timeline spine */}
-                        <div className="flex flex-col items-center" style={{ width: "24px", flexShrink: 0 }}>
-                          <div className="w-2 h-2 rounded-full flex-shrink-0 mt-4"
-                            style={{ background: meta.color, boxShadow: `0 0 6px ${meta.color}80` }} />
-                          {!isLast && <div className="flex-1 w-px mt-1" style={{ background: "rgba(99,120,255,0.12)" }} />}
+        {/* Lectures timeline */}
+        {activeTab === "lectures" && (
+          dateKeys.length === 0 ? (
+            <div className="glass p-12 text-center fade-in-3">
+              <p className="text-3xl mb-3">📭</p>
+              <p className="font-semibold" style={{ color: "var(--text)" }}>No activity yet</p>
+              <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>Start completing lectures to see your log here</p>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-6 fade-in-3">
+              {dateKeys.map((dateKey) => (
+                <div key={dateKey}>
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
+                    <span className="text-xs font-semibold px-3 py-1 rounded-full"
+                      style={{ background: "rgba(99,120,255,0.1)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
+                      {dateKey} · {grouped[dateKey].length} done
+                    </span>
+                    <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
+                  </div>
+                  <div className="flex flex-col">
+                    {grouped[dateKey].map((entry, i) => {
+                      const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
+                      const isLast = i === grouped[dateKey].length - 1;
+                      return (
+                        <div key={entry.lectureId} className="flex items-stretch gap-3">
+                          <div className="flex flex-col items-center" style={{ width: "24px", flexShrink: 0 }}>
+                            <div className="w-2 h-2 rounded-full flex-shrink-0 mt-4"
+                              style={{ background: meta.color, boxShadow: `0 0 6px ${meta.color}80` }} />
+                            {!isLast && <div className="flex-1 w-px mt-1" style={{ background: "rgba(99,120,255,0.12)" }} />}
+                          </div>
+                          <div className="flex-1 mb-2 relative group">
+                            <Link href={`/module/${entry.moduleId}`}
+                              className="glass px-4 py-3 flex items-center gap-3 hover:scale-[1.01] transition-all block">
+                              <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs"
+                                style={{ background: `${meta.color}18`, border: `1px solid ${meta.color}25` }}>
+                                {meta.icon}
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
+                                <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>
+                                  {entry.subjectName} › {entry.moduleName}
+                                </p>
+                              </div>
+                              <span className="flex-shrink-0 text-xs pr-6" style={{ color: "var(--muted)" }}>
+                                {formatTime(entry.timestamp)}
+                              </span>
+                            </Link>
+                            <button onClick={() => deleteEntry(entry.lectureId)} title="Remove from activity"
+                              className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
+                              style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.25)", color: "#ef4444", fontSize: "11px" }}>
+                              ✕
+                            </button>
+                          </div>
                         </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          )
+        )}
 
-                        {/* Card */}
-                        <div className="flex-1 mb-2 relative group">
-                          <Link
-                            href={`/module/${entry.moduleId}`}
-                            className="glass px-4 py-3 flex items-center gap-3 hover:scale-[1.01] transition-all block"
-                          >
-                            <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs"
-                              style={{ background: `${meta.color}18`, border: `1px solid ${meta.color}25` }}>
-                              {meta.icon}
+        {/* Study sessions tab */}
+        {activeTab === "sessions" && (
+          <div className="fade-in-3">
+            {studySessions.length === 0 ? (
+              <div className="glass p-12 text-center">
+                <p className="text-3xl mb-3">⏱</p>
+                <p className="font-semibold" style={{ color: "var(--text)" }}>No sessions logged yet</p>
+                <p className="text-sm mt-1 mb-4" style={{ color: "var(--muted)" }}>Use the Log Time page to record your study sessions</p>
+                <Link href="/log-time"
+                  className="px-5 py-2 rounded-xl font-semibold text-sm hover:opacity-90 transition-all inline-block"
+                  style={{ background: "linear-gradient(135deg,#6378ff,#22d3a5)", color: "white" }}>
+                  ⏱ Log Time
+                </Link>
+              </div>
+            ) : (
+              <div className="flex flex-col gap-3">
+                {(() => {
+                  // Group sessions by date
+                  const groups: Record<string, StudySession[]> = {};
+                  for (const s of studySessions) {
+                    const key = formatDate(s.startedAt);
+                    if (!groups[key]) groups[key] = [];
+                    groups[key].push(s);
+                  }
+                  return Object.entries(groups).map(([dateKey, sessions]) => {
+                    const totalMins = sessions.reduce((sum, s) => sum + s.durationMinutes, 0);
+                    return (
+                      <div key={dateKey}>
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
+                          <span className="text-xs font-semibold px-3 py-1 rounded-full"
+                            style={{ background: "rgba(99,120,255,0.1)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
+                            {dateKey} · {totalMins >= 60 ? `${Math.floor(totalMins / 60)}h ${totalMins % 60}m` : `${totalMins}m`}
+                          </span>
+                          <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
+                        </div>
+                        <div className="flex flex-col gap-2">
+                          {sessions.map((s) => (
+                            <div key={s.id} className="glass px-4 py-3 flex items-center gap-3 group relative">
+                              <div className="flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold"
+                                style={{ background: "rgba(99,120,255,0.12)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
+                                ⏱
+                              </div>
+                              <div className="flex-1 min-w-0">
+                                <p className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>{s.subjectName}</p>
+                                {s.moduleName && <p className="text-xs mt-0.5 truncate" style={{ color: "var(--accent2)" }}>{s.moduleName}</p>}
+                                {s.note && <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>{s.note}</p>}
+                                <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>{formatTime(s.startedAt)}</p>
+                              </div>
+                              <span className="flex-shrink-0 text-sm font-bold pr-6" style={{ color: "var(--green)" }}>
+                                {s.durationMinutes >= 60 ? `${Math.floor(s.durationMinutes / 60)}h ${s.durationMinutes % 60}m` : `${s.durationMinutes}m`}
+                              </span>
+                              <button onClick={() => handleDeleteSession(s.id)}
+                                title="Delete session"
+                                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.25)", color: "#ef4444", fontSize: "11px" }}>
+                                ✕
+                              </button>
                             </div>
-                            <div className="flex-1 min-w-0">
-                              <p className="text-sm truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
-                              <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>
-                                {entry.subjectName} › {entry.moduleName}
-                              </p>
-                            </div>
-                            <span className="flex-shrink-0 text-xs pr-6" style={{ color: "var(--muted)" }}>
-                              {formatTime(entry.timestamp)}
-                            </span>
-                          </Link>
-                          {/* Delete button */}
-                          <button
-                            onClick={() => deleteEntry(entry.lectureId)}
-                            title="Remove from activity"
-                            className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
-                            style={{
-                              background: "rgba(239,68,68,0.15)",
-                              border: "1px solid rgba(239,68,68,0.25)",
-                              color: "#ef4444",
-                              fontSize: "11px",
-                            }}
-                          >
-                            ✕
-                          </button>
+                          ))}
                         </div>
                       </div>
                     );
-                  })}
-                </div>
+                  });
+                })()}
               </div>
-            ))}
+            )}
           </div>
         )}
       </div>

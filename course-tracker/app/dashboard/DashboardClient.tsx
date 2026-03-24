@@ -2,7 +2,8 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUser, logout, saveUser } from "@/lib/store";
+import { getCurrentUser, getUser, logout, saveUser, deleteStudySession } from "@/lib/store";
+import type { StudySession } from "@/lib/store";
 import ProgressBar from "@/components/ProgressBar";
 import ThemeToggle from "@/components/ThemeToggle";
 import EtaCard from "@/components/EtaCard";
@@ -30,7 +31,7 @@ export default function DashboardClient({
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [extrasOpen, setExtrasOpen] = useState(false);
   const [targetDate, setTargetDate] = useState<string | undefined>(undefined);
-
+  const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
@@ -38,8 +39,16 @@ export default function DashboardClient({
     getUser(u).then((data) => {
       setCompletedMap(data.completedLectures);
       setTargetDate(data.targetDate);
+      setStudySessions(data.studySessions ?? []);
     });
   }, [router]);
+
+  async function handleDeleteSession(sessionId: string) {
+    const u = getCurrentUser();
+    if (!u) return;
+    await deleteStudySession(u, sessionId);
+    setStudySessions((prev) => prev.filter((s) => s.id !== sessionId));
+  }
 
   async function handleTargetDateChange(date: string) {
     const u = getCurrentUser();
@@ -91,6 +100,11 @@ export default function DashboardClient({
             <p className="text-sm mt-0.5" style={{ color: "var(--muted)" }}>Hey, {username} 👋</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap justify-end">
+            <Link href="/log-time"
+              className="text-xs px-3 py-1.5 rounded-xl font-semibold transition-all hover:opacity-90"
+              style={{ background: "linear-gradient(135deg,rgba(99,120,255,0.2),rgba(34,211,165,0.15))", border: "1px solid rgba(99,120,255,0.3)", color: "var(--accent2)" }}>
+              ⏱ Log Time
+            </Link>
             <Link href="/weekly" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent2)" }}>📅 Weekly</Link>
             <Link href="/activity" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent2)" }}>📊 Activity</Link>
             <Link href="/leaderboard" className="text-xs px-3 py-1.5 rounded-xl" style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "#f59e0b" }}>🏆</Link>
@@ -115,7 +129,7 @@ export default function DashboardClient({
         </div>
 
         {/* ETA + Today row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6 fade-in-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4 fade-in-2">
           <EtaCard
             completedMap={completedMap}
             durationMap={durationMap}
@@ -160,6 +174,41 @@ export default function DashboardClient({
             )}
           </Link>
         </div>
+
+        {/* Today's study sessions */}
+        {(() => {
+          const todaySessions = studySessions.filter(
+            (s) => new Date(s.startedAt).toDateString() === new Date().toDateString()
+          );
+          const todayMinutes = todaySessions.reduce((sum, s) => sum + s.durationMinutes, 0);
+          if (todaySessions.length === 0) return null;
+          return (
+            <div className="glass p-4 mb-4 fade-in-2 relative overflow-hidden">
+              <div className="shimmer absolute inset-0 rounded-2xl pointer-events-none" />
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-xs font-semibold" style={{ color: "var(--muted)" }}>⏱ TODAY&apos;S STUDY TIME</p>
+                <span className="text-sm font-bold" style={{ color: "var(--green)" }}>
+                  {todayMinutes >= 60 ? `${Math.floor(todayMinutes / 60)}h ${todayMinutes % 60}m` : `${todayMinutes}m`}
+                </span>
+              </div>
+              <div className="flex flex-col gap-1.5">
+                {todaySessions.map((s) => (
+                  <div key={s.id} className="flex items-center gap-2 group">
+                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: "var(--accent)" }} />
+                    <p className="text-xs flex-1 truncate" style={{ color: "var(--text)" }}>{s.subjectName}</p>
+                    {s.note && <p className="text-xs truncate max-w-[120px]" style={{ color: "var(--muted)" }}>{s.note}</p>}
+                    <span className="text-xs flex-shrink-0 font-semibold" style={{ color: "var(--accent2)" }}>
+                      {s.durationMinutes >= 60 ? `${Math.floor(s.durationMinutes / 60)}h ${s.durationMinutes % 60}m` : `${s.durationMinutes}m`}
+                    </span>
+                    <button onClick={() => handleDeleteSession(s.id)}
+                      className="opacity-0 group-hover:opacity-100 w-5 h-5 rounded flex items-center justify-center text-xs transition-all"
+                      style={{ background: "rgba(239,68,68,0.1)", color: "#ef4444" }}>✕</button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })()}
 
         {/* Complete Course subjects */}
         <div className="mb-4 fade-in-2">
