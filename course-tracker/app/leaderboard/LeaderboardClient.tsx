@@ -147,12 +147,12 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 py-8">
         {/* Header */}
-        <div className="flex items-center justify-between mb-8 fade-in">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 fade-in">
           <div className="flex items-center gap-4">
             <Link href="/dashboard" className="text-sm hover:opacity-80 transition-all" style={{ color: "var(--muted)" }}>
               ← Dashboard
             </Link>
-            <div className="w-px h-4" style={{ background: "var(--border)" }} />
+            <div className="w-px h-4 hidden sm:block" style={{ background: "var(--border)" }} />
             <h1 className="text-lg font-bold">
               <span className="grad-text">Leaderboard</span> 🏆
             </h1>
@@ -192,12 +192,12 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
           <>
             {/* Top 3 podium */}
             {sorted.length >= 2 && (
-              <div className="glass p-6 mb-6 fade-in-1 relative overflow-hidden">
+              <div className="glass p-4 sm:p-6 mb-6 fade-in-1 relative overflow-hidden">
                 <div className="shimmer absolute inset-0 rounded-2xl pointer-events-none" />
                 <p className="text-xs font-semibold mb-5 text-center" style={{ color: "var(--muted)" }}>
                   OVERALL STANDINGS
                 </p>
-                <div className="flex items-end justify-center gap-4">
+                <div className="flex items-end justify-center gap-2 sm:gap-4">
                   {/* 2nd place */}
                   {sorted[1] && (
                     <PodiumCard user={sorted[1]} rank={2} isMe={sorted[1].username === me} tab={tab} />
@@ -215,10 +215,10 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
             )}
 
             {/* Tab selector */}
-            <div className="flex gap-2 mb-5 fade-in-2">
+            <div className="flex flex-wrap justify-center gap-2 mb-5 fade-in-2">
               {(["overall", "today", "week"] as const).map((t) => (
                 <button key={t} onClick={() => setTab(t)}
-                  className="text-xs px-4 py-2 rounded-xl transition-all capitalize"
+                  className="text-xs px-3 sm:px-4 py-2 rounded-xl transition-all capitalize"
                   style={{
                     background: tab === t ? "linear-gradient(135deg, var(--accent), #8b5cf6)" : "var(--tint-accent)",
                     border: `1px solid ${tab === t ? "transparent" : "var(--border)"}`,
@@ -242,7 +242,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                 return (
                   <div key={user.username}>
                     <div
-                      className="glass p-4 flex items-center gap-4 cursor-pointer hover:scale-[1.005] transition-all"
+                      className="glass p-3 sm:p-4 flex items-center gap-3 sm:gap-4 cursor-pointer hover:scale-[1.005] transition-all"
                       style={{
                         border: isMe ? `1px solid ${c1}60` : "1px solid var(--border)",
                         boxShadow: isMe ? `0 0 20px ${c1}20` : "none",
@@ -250,7 +250,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                       onClick={() => setExpanded(expanded === user.username ? null : user.username)}
                     >
                       {/* Rank */}
-                      <div className="flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center font-bold text-sm"
+                      <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-xl flex items-center justify-center font-bold text-xs sm:text-sm"
                         style={{
                           background: rankStyle ? rankStyle.bg : "var(--tint-accent)",
                           boxShadow: rankStyle ? `0 0 12px ${rankStyle.glow}` : "none",
@@ -260,13 +260,13 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                       </div>
 
                       {/* Avatar + name */}
-                      <div className="flex items-center gap-3 flex-1 min-w-0">
-                        <div className="w-9 h-9 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0"
+                      <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+                        <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-sm font-bold text-white"
                           style={{ background: `linear-gradient(135deg, ${c1}, ${c2})` }}>
                           {user.username[0].toUpperCase()}
                         </div>
                         <div className="min-w-0">
-                          <div className="flex items-center gap-2">
+                          <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                             <p className="font-semibold text-sm truncate" style={{ color: "var(--text)" }}>
                               {user.username}
                             </p>
@@ -280,7 +280,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                               <span className="text-xs flex-shrink-0" style={{ color: "#f59e0b" }}> Leading</span>
                             )}
                           </div>
-                          <p className="text-xs" style={{ color: "var(--muted)" }}>
+                          <p className="text-xs hidden sm:block" style={{ color: "var(--muted)" }}>
                              {user.streak} day streak · {user.pct}% overall
                           </p>
                         </div>

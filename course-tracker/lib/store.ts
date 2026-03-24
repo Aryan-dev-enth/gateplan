@@ -70,15 +70,34 @@ export async function userExists(username: string): Promise<boolean> {
 // --- User data ---
 
 export async function getUser(username: string): Promise<UserData> {
-  const res = await fetch(`/api/userdata?username=${encodeURIComponent(username)}`);
-  if (!res.ok) return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
-  const data = await res.json();
-  return {
-    completedLectures: data.completedLectures ?? {},
-    weeklyPlans: data.weeklyPlans ?? [],
-    targetDate: data.targetDate ?? undefined,
-    studySessions: data.studySessions ?? [],
-  };
+  try {
+    // Add timeout to prevent hanging
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10 second timeout
+    
+    const res = await fetch(`/api/userdata?username=${encodeURIComponent(username)}`, {
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!res.ok) {
+      console.error('getUser failed:', res.status, res.statusText);
+      return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
+    }
+    
+    const data = await res.json();
+    return {
+      completedLectures: data.completedLectures ?? {},
+      weeklyPlans: data.weeklyPlans ?? [],
+      targetDate: data.targetDate ?? undefined,
+      studySessions: data.studySessions ?? [],
+    };
+  } catch (error) {
+    console.error('Error fetching user data:', error);
+    // Return fallback data on any error
+    return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
+  }
 }
 
 export async function saveUser(username: string, data: UserData): Promise<void> {

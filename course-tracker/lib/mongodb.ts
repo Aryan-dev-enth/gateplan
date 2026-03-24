@@ -14,9 +14,20 @@ let cached = globalWithMongoose._mongoosePromise;
 
 export async function connectDB() {
   if (mongoose.connection.readyState >= 1) return;
+  
   if (!cached) {
+    console.log('Connecting to MongoDB...');
     cached = mongoose.connect(MONGODB_URI);
     globalWithMongoose._mongoosePromise = cached;
+    
+    mongoose.connection.on('connected', () => {
+      console.log('MongoDB connected successfully');
+    });
+    
+    mongoose.connection.on('error', (err) => {
+      console.error('MongoDB connection error:', err);
+    });
   }
+  
   await cached;
 }
