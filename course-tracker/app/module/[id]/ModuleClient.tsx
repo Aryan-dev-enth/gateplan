@@ -28,6 +28,7 @@ export default function ModuleClient({ module, subjectId, durationMap, weeks }: 
   const [completed, setCompleted] = useState<Record<string, number | false>>({});
   const [togglingLectures, setTogglingLectures] = useState<Set<string>>(new Set());
   const [isTogglingAll, setIsTogglingAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { addToast } = useToast();
 
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function ModuleClient({ module, subjectId, durationMap, weeks }: 
   async function handleToggle(lectureId: string) {
     if (!username || togglingLectures.has(lectureId)) return;
     
+    setIsLoading(true);
     setTogglingLectures(prev => new Set(prev).add(lectureId));
     try {
       const next = await toggleLecture(username, lectureId);
@@ -69,12 +71,14 @@ export default function ModuleClient({ module, subjectId, durationMap, weeks }: 
         newSet.delete(lectureId);
         return newSet;
       });
+      setIsLoading(false);
     }
   }
 
   async function handleToggleAll() {
     if (!username || isTogglingAll) return;
     
+    setIsLoading(true);
     setIsTogglingAll(true);
     try {
       const ids = module.lectures.filter((l) => l.isLecture).map((l) => l.id);
@@ -103,6 +107,7 @@ export default function ModuleClient({ module, subjectId, durationMap, weeks }: 
       });
     } finally {
       setIsTogglingAll(false);
+      setIsLoading(false);
     }
   }
 
@@ -249,6 +254,16 @@ export default function ModuleClient({ module, subjectId, durationMap, weeks }: 
           </div>
         )}
       </div>
+
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="glass p-5 flex items-center gap-4 shadow-lg">
+            <div className="w-10 h-10 rounded-full border-3 border-blue-200 border-t-blue-500 animate-spin"></div>
+            <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>Updating...</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

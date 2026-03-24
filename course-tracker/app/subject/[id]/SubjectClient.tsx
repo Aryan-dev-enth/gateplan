@@ -32,6 +32,7 @@ export default function SubjectClient({
   const [openModules, setOpenModules] = useState<Set<string>>(new Set());
   const [togglingLectures, setTogglingLectures] = useState<Set<string>>(new Set());
   const [isTogglingAll, setIsTogglingAll] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const { addToast } = useToast();
 
   useEffect(() => {
@@ -52,6 +53,7 @@ export default function SubjectClient({
   async function handleToggle(lectureId: string) {
     if (!username || togglingLectures.has(lectureId)) return;
     
+    setIsLoading(true);
     setTogglingLectures(prev => new Set(prev).add(lectureId));
     try {
       const next = await toggleLecture(username, lectureId);
@@ -81,6 +83,7 @@ export default function SubjectClient({
         newSet.delete(lectureId);
         return newSet;
       });
+      setIsLoading(false);
     }
   }
 
@@ -88,6 +91,7 @@ export default function SubjectClient({
     e.stopPropagation();
     if (!username || isTogglingAll) return;
     
+    setIsLoading(true);
     setIsTogglingAll(true);
     try {
       const next = await toggleAllLectures(username, lectureIds);
@@ -115,12 +119,14 @@ export default function SubjectClient({
       });
     } finally {
       setIsTogglingAll(false);
+      setIsLoading(false);
     }
   }
 
   async function handleToggleAll() {
     if (!username || isTogglingAll) return;
     
+    setIsLoading(true);
     setIsTogglingAll(true);
     try {
       const ids = subject.modules.flatMap(m => m.lectures.filter(l => l.isLecture).map(l => l.id));
@@ -149,6 +155,7 @@ export default function SubjectClient({
       });
     } finally {
       setIsTogglingAll(false);
+      setIsLoading(false);
     }
   }
 
@@ -289,7 +296,7 @@ export default function SubjectClient({
                     {mod.lectures.map((lecture, li) => {
                       const isDone = !!completedMap[lecture.id];
                       const ts = completedMap[lecture.id];
-                      const isToggling = togglingLectures.has(lecture.id);
+                      const isLectureToggling = togglingLectures.has(lecture.id);
                       const meta = TYPE_META[lecture.type] ?? { icon: "•", color: "var(--muted)" };
                       const isLast = li === mod.lectures.length - 1;
 
@@ -311,20 +318,20 @@ export default function SubjectClient({
                             className="flex-1 flex items-center gap-3 pr-4 py-2 rounded-xl mr-2 transition-all"
                             style={{
                               background: isDone ? "rgba(34,211,165,0.04)" : "transparent",
-                              cursor: lecture.isLecture && !isToggling ? "pointer" : "default",
+                              cursor: lecture.isLecture && !isLectureToggling ? "pointer" : "default",
                               opacity: lecture.isLecture ? 1 : 0.6,
                             }}
-                            onClick={() => lecture.isLecture && !isToggling && handleToggle(lecture.id)}
+                            onClick={() => lecture.isLecture && !isLectureToggling && handleToggle(lecture.id)}
                           >
                             {/* Checkbox — only for lectures */}
                             <div className="flex-shrink-0 w-4 h-4 rounded flex items-center justify-center transition-all duration-200"
                               style={{
-                                background: isToggling ? "rgba(99,120,255,0.1)" : isDone ? "var(--green)" : "transparent",
-                                border: `1.5px solid ${!lecture.isLecture ? "transparent" : isToggling ? "rgba(99,120,255,0.5)" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
+                                background: isLectureToggling ? "rgba(99,120,255,0.1)" : isDone ? "var(--green)" : "transparent",
+                                border: `1.5px solid ${!lecture.isLecture ? "transparent" : isLectureToggling ? "rgba(99,120,255,0.5)" : isDone ? "var(--green)" : "rgba(99,120,255,0.3)"}`,
                                 boxShadow: isDone ? "0 0 8px rgba(34,211,165,0.4)" : "none",
                                 visibility: lecture.isLecture ? "visible" : "hidden",
                               }}>
-                              {isToggling && lecture.isLecture ? (
+                              {isLectureToggling && lecture.isLecture ? (
                                 <div className="w-2 h-2 rounded-full bg-white pulse-dot" />
                               ) : isDone && lecture.isLecture ? (
                                 <svg className="w-2.5 h-2.5" viewBox="0 0 12 12" fill="none">
@@ -372,6 +379,16 @@ export default function SubjectClient({
           })}
         </div>
       </div>
+
+      {/* Loading Overlay */}
+      {isLoading && (
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+          <div className="glass p-5 flex items-center gap-4 shadow-lg">
+            <div className="w-10 h-10 rounded-full border-3 border-blue-200 border-t-blue-500 animate-spin"></div>
+            <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>Updating...</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
