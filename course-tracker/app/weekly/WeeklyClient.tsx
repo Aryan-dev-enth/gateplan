@@ -5,6 +5,7 @@ import Link from "next/link";
 import { getCurrentUser, getUser } from "@/lib/store";
 import ThemeToggle from "@/components/ThemeToggle";
 import GOClassesScheduleDropdown from "@/components/GOClassesScheduleDropdown";
+import WeekSidebar from "./WeekSidebar";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData, DayData, TaskData } from "./page";
 
@@ -432,18 +433,44 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
           <GOClassesScheduleDropdown />
         </div>
 
-        {/* Day rows — vertical */}
-        <div className="flex flex-col gap-4 fade-in-3">
-          {week.days.map((day) => (
-            <DayRow 
-              key={day.date} 
-              day={day} 
-              completedMap={completedMap} 
-              moduleMap={moduleMap}
-              onManualTaskToggle={handleManualTaskToggle}
-              getTaskManualCompletion={isTaskManuallyCompleted}
-            />
-          ))}
+        {/* Main Content Area with Sidebar */}
+        <div className="flex gap-6">
+          {/* Week Sidebar */}
+          <WeekSidebar 
+            weeks={weeks}
+            subjects={subjects}
+            completedMap={completedMap}
+            manualCompletedTasks={manualCompletedTasks}
+            onWeekSelect={setActiveWeek}
+            activeWeek={activeWeek}
+          />
+
+          {/* Day rows for active week */}
+          <div className="flex-1">
+            {activeWeek && (
+              <div className="fade-in-3">
+                {(() => {
+                  const currentWeek = weeks.find(w => w.weekId === activeWeek);
+                  if (!currentWeek) return null;
+                  
+                  return (
+                    <div className="flex flex-col gap-4">
+                      {currentWeek.days.map((day) => (
+                        <DayRow 
+                          key={day.date} 
+                          day={day} 
+                          completedMap={completedMap} 
+                          moduleMap={moduleMap}
+                          onManualTaskToggle={handleManualTaskToggle}
+                          getTaskManualCompletion={isTaskManuallyCompleted}
+                        />
+                      ))}
+                    </div>
+                  );
+                })()}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>

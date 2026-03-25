@@ -7,6 +7,20 @@ import type { StudySession } from "@/lib/store";
 import ThemeToggle from "@/components/ThemeToggle";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
+import {
+  calculateSubjectAnalytics,
+  calculateTimeAnalytics,
+  calculateGoalProgress,
+  generateInsights,
+  type SubjectAnalytics,
+  type TimeAnalytics
+} from "@/lib/activityAnalytics";
+import {
+  ProgressChart,
+  PieChart,
+  TrendLine,
+  GoalRing
+} from "@/components/ActivityCharts";
 
 interface ActivityEntry {
   lectureId: string;
@@ -53,9 +67,11 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   const [filter, setFilter] = useState<string>("all");
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
-  const [activeTab, setActiveTab] = useState<"lectures" | "sessions">(
-    searchParams.get("tab") === "sessions" ? "sessions" : "lectures"
+  const [activeTab, setActiveTab] = useState<"lectures" | "sessions" | "analytics">(
+    searchParams.get("tab") === "sessions" ? "sessions" : 
+    searchParams.get("tab") === "analytics" ? "analytics" : "lectures"
   );
+  const [showInsights, setShowInsights] = useState(true);
 
   async function deleteEntry(lectureId: string) {
     const u = getCurrentUser();
@@ -139,6 +155,12 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
 
   const streak = calcStreak(entries);
 
+  // Calculate analytics
+  const subjectAnalytics = calculateSubjectAnalytics(studySessions, completedMap, subjects);
+  const timeAnalytics = calculateTimeAnalytics(studySessions);
+  const goalProgress = calculateGoalProgress(studySessions, completedMap);
+  const insights = generateInsights(subjectAnalytics, timeAnalytics, goalProgress);
+
   // Activity heatmap — last 30 days
   const heatmap: Record<string, number> = {};
   for (const e of entries) {
@@ -182,8 +204,8 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
           </div>
         </div>
 
-        {/* Stats row */}
-        <div className="grid grid-cols-4 gap-3 mb-4 fade-in-1">
+        {/* Enhanced Stats row */}
+        <div className="grid grid-cols-5 gap-3 mb-4 fade-in-1">
           {[
             { label: "Total Done", val: entries.length, color: "var(--accent2)" },
             { label: "Day Streak 🔥", val: streak, color: "#f59e0b" },
@@ -196,6 +218,11 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
               })(),
               color: "#8b5cf6",
             },
+            {
+              label: "Productivity",
+              val: `${Math.round(timeAnalytics.productivityScore)}%`,
+              color: timeAnalytics.productivityScore > 70 ? "#22d3a5" : timeAnalytics.productivityScore > 40 ? "#f59e0b" : "#ef4444",
+            },
           ].map((s) => (
             <div key={s.label} className="glass p-4 text-center">
               <div className="text-xl font-bold mb-1 truncate" style={{ color: s.color }}>{s.val}</div>
@@ -203,6 +230,29 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
             </div>
           ))}
         </div>
+
+        {/* AI Insights */}
+        {showInsights && insights.length > 0 && (
+          <div className="glass p-4 mb-6 fade-in-2">
+            <div className="flex items-center justify-between mb-3">
+              <p className="text-sm font-semibold" style={{ color: "var(--accent2)" }}>🤖 AI Insights</p>
+              <button 
+                onClick={() => setShowInsights(false)}
+                className="text-xs px-2 py-1 rounded-lg transition-all hover:opacity-80"
+                style={{ background: "rgba(99,120,255,0.1)", color: "var(--muted)" }}
+              >
+                Hide
+              </button>
+            </div>
+            <div className="space-y-2">
+              {insights.map((insight, index) => (
+                <div key={index} className="text-xs p-2 rounded-lg" style={{ background: "rgba(34,211,165,0.08)", color: "var(--text)" }}>
+                  {insight}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Heatmap */}
         <div className="glass p-4 mb-6 fade-in-2">
@@ -236,17 +286,27 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
 
         {/* Tabs */}
         <div className="flex gap-2 mb-5 p-1 rounded-xl fade-in-2" style={{ background: "rgba(99,120,255,0.08)", border: "1px solid rgba(99,120,255,0.15)" }}>
-          {(["lectures", "sessions"] as const).map((tab) => (
+          {(["lectures", "sessions", "analytics"] as const).map((tab) => (
             <button key={tab} onClick={() => setActiveTab(tab)}
               className="flex-1 text-sm py-1.5 rounded-lg font-semibold transition-all"
               style={{
                 background: activeTab === tab ? "linear-gradient(135deg,#6378ff,#8b5cf6)" : "transparent",
                 color: activeTab === tab ? "white" : "var(--muted)",
               }}>
-              {tab === "lectures" ? "📚 Lectures" : "⏱ Study Sessions"}
+              {tab === "lectures" ? "📚 Lectures" : tab === "sessions" ? "⏱ Study Sessions" : "📊 Analytics"}
             </button>
           ))}
         </div>
+
+        {!showInsights && insights.length > 0 && (
+          <button
+            onClick={() => setShowInsights(true)}
+            className="w-full mb-5 text-xs py-2 rounded-xl transition-all fade-in-2"
+            style={{ background: "rgba(34,211,165,0.1)", color: "var(--green)", border: "1px solid rgba(34,211,165,0.2)" }}
+          >
+            🤖 Show AI Insights ({insights.length} available)
+          </button>
+        )}
 
         {/* Subject filter pills — only for lectures tab */}
         {activeTab === "lectures" && (
@@ -331,6 +391,162 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
               ))}
             </div>
           )
+        )}
+
+        {/* Analytics Tab */}
+        {activeTab === "analytics" && (
+          <div className="fade-in-3 space-y-6">
+            {/* Goal Progress */}
+            <div className="glass p-4">
+              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>🎯 Goal Progress</p>
+              <div className="grid grid-cols-4 gap-4">
+                {goalProgress.slice(0, 4).map((goal, index) => (
+                  <GoalRing
+                    key={index}
+                    percentage={goal.percentage}
+                    label={`${goal.type === 'daily' ? 'Daily' : goal.type === 'weekly' ? 'Weekly' : 'Monthly'} ${goal.unit === 'minutes' ? 'Time' : 'Lectures'}`}
+                    value={goal.unit === 'minutes' 
+                      ? (goal.current >= 60 ? `${Math.floor(goal.current/60)}h` : `${goal.current}m`)
+                      : `${goal.current}`
+                    }
+                    color={goal.percentage >= 80 ? "#22d3a5" : goal.percentage >= 50 ? "#f59e0b" : "#ef4444"}
+                    size={100}
+                    animated={true}
+                    showBackground={true}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Subject Distribution */}
+            {subjectAnalytics.length > 0 && (
+              <div className="glass p-4">
+                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📚 Subject Distribution</p>
+                <PieChart
+                  data={subjectAnalytics.map(subject => ({
+                    label: subject.subjectName,
+                    value: subject.totalMinutes,
+                    color: `hsl(${subject.subjectName.length * 30}, 70%, 60%)`
+                  }))}
+                  size={160}
+                  showPercentages={true}
+                  animated={true}
+                  innerRadius={0.5}
+                />
+              </div>
+            )}
+
+            {/* Weekly Pattern */}
+            <div className="glass p-4">
+              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📅 Weekly Study Pattern</p>
+              <ProgressChart
+                data={timeAnalytics.weeklyPattern}
+                labels={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
+                color="#8b5cf6"
+                height={140}
+                showGrid={true}
+                animated={true}
+              />
+            </div>
+
+            {/* Subject Performance */}
+            {subjectAnalytics.length > 0 && (
+              <div className="glass p-4">
+                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📈 Subject Performance</p>
+                <div className="space-y-3">
+                  {subjectAnalytics.slice(0, 5).map((subject, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="flex-1">
+                        <div className="flex items-center justify-between mb-1">
+                          <span className="text-xs font-semibold" style={{ color: "var(--text)" }}>
+                            {subject.subjectName}
+                          </span>
+                          <span className="text-xs" style={{ color: "var(--muted)" }}>
+                            {Math.round(subject.totalMinutes / 60)}h total
+                          </span>
+                        </div>
+                        <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: "rgba(99,120,255,0.1)" }}>
+                          <div
+                            className="h-full transition-all"
+                            style={{
+                              width: `${subject.completionRate}%`,
+                              background: subject.completionRate >= 70 ? "#22d3a5" : 
+                                         subject.completionRate >= 40 ? "#f59e0b" : "#ef4444"
+                            }}
+                          />
+                        </div>
+                        <div className="flex items-center justify-between mt-1">
+                          <span className="text-xs" style={{ color: "var(--muted)" }}>
+                            {subject.totalSessions} sessions • {Math.round(subject.averageSessionLength)}m avg
+                          </span>
+                          <span className="text-xs font-semibold" style={{ color: "var(--accent2)" }}>
+                            {Math.round(subject.completionRate)}% complete
+                          </span>
+                        </div>
+                      </div>
+                      <div className="text-lg">
+                        {subject.trend === 'up' ? '📈' : subject.trend === 'down' ? '📉' : '➡️'}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Study Time Trend */}
+            {studySessions.length >= 7 && (
+              <div className="glass p-4">
+                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📊 Study Time Trend (Last 7 Days)</p>
+                <TrendLine
+                  data={Array.from({ length: 7 }, (_, i) => {
+                    const date = new Date();
+                    date.setDate(date.getDate() - (6 - i));
+                    const daySessions = studySessions.filter(s => 
+                      new Date(s.startedAt).toDateString() === date.toDateString()
+                    );
+                    return daySessions.reduce((sum, s) => sum + s.durationMinutes, 0);
+                  })}
+                  color="#22d3a5"
+                  height={100}
+                  showArea={true}
+                  showPoints={true}
+                  smooth={true}
+                  animated={true}
+                />
+              </div>
+            )}
+
+            {/* Time Analytics Summary */}
+            <div className="glass p-4">
+              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>⏰ Time Analytics</p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="text-center">
+                  <div className="text-2xl font-bold mb-1" style={{ color: "#6378ff" }}>
+                    {timeAnalytics.bestHour}:00
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--muted)" }}>Best Study Hour</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold mb-1" style={{ color: "#22d3a5" }}>
+                    {Math.round(timeAnalytics.averageDailyMinutes)}m
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--muted)" }}>Daily Average</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold mb-1" style={{ color: "#f59e0b" }}>
+                    {timeAnalytics.totalStudyDays}
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--muted)" }}>Study Days</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold mb-1" style={{ color: "#8b5cf6" }}>
+                    {Math.round(timeAnalytics.productivityScore)}%
+                  </div>
+                  <div className="text-xs" style={{ color: "var(--muted)" }}>Productivity Score</div>
+                </div>
+              </div>
+            </div>
+          </div>
         )}
 
         {/* Study sessions tab */}

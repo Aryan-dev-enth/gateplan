@@ -97,33 +97,38 @@ export default function DashboardClient({
   const totalAll = coreLectureIdSet.size;
   const overallPct = totalCoreHours > 0 ? Math.round((hoursDone / totalCoreHours) * 100) : 0;
 
-  // Calculate backlog based on current progress vs total weekly plan
+  // Calculate backlog based on current date and past weeks only
   const calculateBacklog = () => {
     const backlogData: Record<string, { plannedHours: number; completedHours: number; backlogHours: number; lectures: number }> = {};
     let totalBacklogHours = 0;
     let totalBacklogLectures = 0;
-
-    // Calculate planned hours from ALL weeks in the schedule
+    const today = new Date().toISOString().split("T")[0];
+    
+    // Calculate planned hours from weeks up to today only
     const plannedHoursBySubject: Record<string, number> = {};
     weeks.forEach(week => {
-      week.days.forEach(day => {
-        day.tasks.forEach(task => {
-          if (!plannedHoursBySubject[task.subject]) {
-            plannedHoursBySubject[task.subject] = 0;
-          }
-          plannedHoursBySubject[task.subject] += task.hours;
+      // Check if any day in this week is today or in the past
+      const weekHasCurrentOrPast = week.days.some(day => day.date <= today);
+      
+      if (weekHasCurrentOrPast) {
+        week.days.forEach(day => {
+          day.tasks.forEach(task => {
+            if (!plannedHoursBySubject[task.subject]) {
+              plannedHoursBySubject[task.subject] = 0;
+            }
+            plannedHoursBySubject[task.subject] += task.hours;
+          });
         });
-      });
+      }
     });
-
-    // Calculate backlog for each subject based on total weekly plan
+    
+    // Calculate backlog for each subject based on past weeks only
     coreSubjects.forEach(subject => {
       const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
       const doneHrs = lectures.filter((l) => !!completedMap[l.id]).reduce((s, l) => s + (durationMap[l.id] ?? 0) / 3600, 0);
       const plannedHrs = plannedHoursBySubject[subject.name] || 0;
-      const remainingLectures = lectures.filter((l) => !completedMap[l.id]).length;
       
-      // Backlog is what's planned but not yet completed
+      // Backlog is what's planned but not yet completed (from past weeks only)
       const backlogHrs = Math.max(0, plannedHrs - doneHrs);
       
       if (backlogHrs > 0) {
@@ -131,10 +136,10 @@ export default function DashboardClient({
           plannedHours: plannedHrs,
           completedHours: doneHrs,
           backlogHours: backlogHrs,
-          lectures: remainingLectures
+          lectures: lectures.filter((l) => !completedMap[l.id]).length
         };
         totalBacklogHours += backlogHrs;
-        totalBacklogLectures += remainingLectures;
+        totalBacklogLectures += lectures.filter((l) => !completedMap[l.id]).length;
       }
     });
 
