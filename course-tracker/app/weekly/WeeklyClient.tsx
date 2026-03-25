@@ -34,10 +34,16 @@ function TaskCard({
   task,
   completedMap,
   moduleId,
+  onManualToggle,
+  isManuallyCompleted,
+  date,
 }: {
   task: TaskData;
   completedMap: Record<string, number | false>;
   moduleId: string | undefined;
+  onManualToggle?: (task: TaskData, isCompleted: boolean, date?: string) => void;
+  isManuallyCompleted?: boolean;
+  date?: string;
 }) {
   const [c1, c2] = getSubjectColor(task.subject);
   const mappedCount = task.lectureIds.length;
@@ -45,12 +51,23 @@ function TaskCard({
   const hasMapped = mappedCount > 0;
   const allDone = hasMapped && doneCount === mappedCount;
   const pct = hasMapped ? Math.round((doneCount / mappedCount) * 100) : null;
+  
+  // Check if task should be considered completed (manual completion takes priority)
+  const isCompleted = isManuallyCompleted || (hasMapped && allDone);
+  
+  // Toggle manual completion
+  const handleManualToggle = () => {
+    console.log('Manual toggle clicked!', { task: task.subject, isCompleted, date });
+    if (onManualToggle) {
+      onManualToggle(task, !isCompleted, date);
+    }
+  };
 
   return (
     <div className="rounded-2xl p-4 flex flex-col gap-3 transition-all"
       style={{
-        background: allDone ? "var(--tint-green)" : "var(--card-bg)",
-        border: `1px solid ${allDone ? "var(--tint-green-border)" : "var(--border)"}`,
+        background: isCompleted ? "var(--tint-green)" : "var(--card-bg)",
+        border: `1px solid ${isCompleted ? "var(--tint-green-border)" : "var(--border)"}`,
       }}>
       {/* Header row */}
       <div className="flex items-start gap-3">
@@ -79,17 +96,36 @@ function TaskCard({
             <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>{task.module}</p>
           )}
         </div>
-        <span className="flex-shrink-0 text-xs font-semibold px-2.5 py-1 rounded-lg"
-          style={{ background: `${c1}22`, color: c1 }}>
-          {Number.isInteger(task.hours) ? task.hours : task.hours.toFixed(2).replace(/\.?0+$/, "")}h
-        </span>
+        <div className="flex items-center gap-2">
+          {/* Manual completion checkbox when ANY lecture is missing from tracking */}
+          {(!hasMapped || task.lectureIds.some(id => completedMap[id] === undefined)) && (
+            <button
+              onClick={handleManualToggle}
+              className="w-5 h-5 rounded border-2 flex items-center justify-center transition-all hover:scale-110"
+              style={{
+                borderColor: isCompleted ? "var(--green)" : "var(--border)",
+                background: isCompleted ? "var(--green)" : "transparent",
+              }}
+              title="Mark as complete">
+              {isCompleted && (
+                <svg className="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+              )}
+            </button>
+          )}
+          <span className="flex-shrink-0 text-xs font-semibold px-2.5 py-1 rounded-lg"
+            style={{ background: `${c1}22`, color: c1 }}>
+            {Number.isInteger(task.hours) ? task.hours : task.hours.toFixed(2).replace(/\.?0+$/, "")}h
+          </span>
+        </div>
       </div>
 
       {/* Lecture tags */}
       <div className="flex flex-wrap gap-1.5">
         {task.lectureRefs.map((ref, i) => {
           const id = task.lectureIds[i];
-          const done = id ? !!completedMap[id] : false;
+          const done = id ? !!completedMap[id] : (isManuallyCompleted || false);
           return (
             <span key={i} className="text-xs px-2.5 py-1 rounded-full transition-all"
               style={{
@@ -122,6 +158,13 @@ function TaskCard({
           </span>
         </div>
       )}
+      
+      {/* Manual completion indicator */}
+      {!hasMapped && isCompleted && (
+        <div className="text-xs text-center" style={{ color: "var(--green)" }}>
+          ✓ Manually marked as complete
+        </div>
+      )}
     </div>
   );
 }
@@ -130,79 +173,90 @@ function DayRow({
   day,
   completedMap,
   moduleMap,
+  onManualTaskToggle,
+  getTaskManualCompletion,
 }: {
   day: DayData;
   completedMap: Record<string, number | false>;
   moduleMap: Map<string, string>;
+  onManualTaskToggle?: (task: TaskData, isCompleted: boolean, date?: string) => void;
+  getTaskManualCompletion?: (task: TaskData, date?: string) => boolean;
 }) {
   const today = isToday(day.date);
   const past = isPast(day.date);
-  // A task is "done" only if it has mapped lectures AND all are completed.
-  // Tasks with no lectureIds are never auto-done (require manual completion).
-  const doneTasks = day.tasks.filter(
-    (t) => t.lectureIds.length > 0 && t.lectureIds.every((id) => !!completedMap[id])
-  ).length;
-  const totalTasks = day.tasks.length;
-  const dayPct = totalTasks > 0 ? Math.round((doneTasks / totalTasks) * 100) : null;
-  const totalHours = day.tasks.reduce((s, t) => s + t.hours, 0);
+  const mappedCount = day.tasks.reduce((s, t) => s + t.lectureIds.length, 0);
+  const doneCount = day.tasks.reduce(
+    (s, t) => s + t.lectureIds.filter((id) => !!completedMap[id]).length,
+    0
+  );
+  const dayPct = mappedCount > 0 ? Math.round((doneCount / mappedCount) * 100) : null;
 
   return (
-    <div className="rounded-2xl overflow-hidden transition-all"
+    <div className="glass mb-4 fade-in relative overflow-hidden"
       style={{
-        border: `1px solid ${today ? "var(--accent)" : "var(--border)"}`,
-        boxShadow: today ? "0 0 30px rgba(99,120,255,0.12)" : "none",
-        opacity: past && !today ? 0.75 : 1,
+        background: today ? "var(--day-today-bg)" : "var(--card-bg)",
+        border: `1px solid ${today ? "var(--day-today-border)" : "var(--border)"}`,
       }}>
-      {/* Day header */}
-      <div className="flex items-center gap-4 px-5 py-4"
-        style={{
-          background: today ? "var(--today-header-bg)" : "var(--tint-accent)",
-          borderBottom: "1px solid var(--border)",
-        }}>
-        <div className="flex-1">
-          <div className="flex items-center gap-2">
-            <p className="font-bold text-base" style={{ color: today ? "var(--accent2)" : "var(--text)" }}>
-              {day.label}
-            </p>
-            {today && (
-              <span className="text-xs px-2 py-0.5 rounded-full font-semibold"
-                style={{ background: "var(--tint-accent-hover)", color: "var(--accent)" }}>
-                Today
-              </span>
-            )}
-            {past && !today && (
-              <span className="text-xs" style={{ color: "var(--muted)" }}>Past</span>
-            )}
-          </div>
-          <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>
-            {day.tasks.length} tasks · {totalHours.toFixed(1)}h planned
-          </p>
-        </div>
-        {dayPct !== null && (
-          <div className="flex items-center gap-3">
-            <div className="w-24 h-1.5 rounded-full" style={{ background: "var(--tint-accent)" }}>
-              <div className="h-1.5 rounded-full transition-all duration-500"
-                style={{
-                  width: `${dayPct}%`,
-                  background: dayPct === 100 ? "linear-gradient(90deg, var(--green), var(--accent))" : "linear-gradient(90deg, var(--accent), var(--accent2))",
-                  boxShadow: dayPct > 0 ? "0 0 8px rgba(99,120,255,0.4)" : "none",
-                }} />
-            </div>
-            <span className="text-sm font-bold w-10 text-right"
-              style={{ color: dayPct === 100 ? "var(--green)" : "var(--accent2)" }}>
-              {dayPct}%
-            </span>
-          </div>
-        )}
-      </div>
+      {today && <div className="shimmer absolute inset-0 rounded-2xl pointer-events-none" />}
 
-      {/* Tasks grid */}
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
-        style={{ background: "var(--day-tasks-bg)" }}>
-        {day.tasks.map((task, i) => (
-          <TaskCard key={i} task={task} completedMap={completedMap}
-            moduleId={moduleMap.get(`${task.subject.toLowerCase()}||${task.module.toLowerCase()}`)} />
-        ))}
+      <div className="p-4">
+        {/* Date header */}
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full flex-shrink-0"
+              style={{
+                background: today ? "linear-gradient(135deg, var(--accent), var(--accent2))" : "var(--muted)",
+                boxShadow: today ? "0 0 12px rgba(99,120,255,0.4)" : "none",
+              }} />
+            <div>
+              <p className="text-sm font-bold" style={{ color: "var(--text)" }}>{day.label}</p>
+              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                {today ? "Today" : past ? "Past" : "Upcoming"}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-xs px-2 py-1 rounded-lg font-medium"
+              style={{
+                background: today ? "var(--tint-accent)" : "var(--day-tasks-bg)",
+                color: "var(--muted)",
+              }}>
+              {day.tasks.length} {day.tasks.length === 1 ? "task" : "tasks"}
+            </span>
+            {dayPct !== null && (
+              <div className="flex items-center gap-3">
+                <div className="w-24 h-1.5 rounded-full" style={{ background: "var(--tint-accent)" }}>
+                  <div className="h-1.5 rounded-full transition-all duration-500"
+                    style={{
+                      width: `${dayPct}%`,
+                      background: dayPct === 100 ? "linear-gradient(90deg, var(--green), var(--accent))" : "linear-gradient(90deg, var(--accent), var(--accent2))",
+                      boxShadow: dayPct > 0 ? "0 0 8px rgba(99,120,255,0.4)" : "none",
+                    }} />
+                </div>
+                <span className="text-sm font-bold w-10 text-right"
+                  style={{ color: dayPct === 100 ? "var(--green)" : "var(--accent2)" }}>
+                  {dayPct}%
+                </span>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Tasks grid */}
+        <div className="p-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3"
+          style={{ background: "var(--day-tasks-bg)" }}>
+          {day.tasks.map((task, i) => (
+            <TaskCard 
+              key={i} 
+              task={task} 
+              completedMap={completedMap}
+              moduleId={moduleMap.get(`${task.subject.toLowerCase()}||${task.module.toLowerCase()}`)}
+              onManualToggle={onManualTaskToggle}
+              isManuallyCompleted={getTaskManualCompletion?.(task, day.date)}
+              date={day.date}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -212,6 +266,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
   const router = useRouter();
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [activeWeek, setActiveWeek] = useState<string>("");
+  const [manualCompletedTasks, setManualCompletedTasks] = useState<Set<string>>(new Set());
 
   // Build "subjectName||moduleName" (lowercased) → moduleId map for direct linking
   const moduleMap = useMemo(() => {
@@ -227,11 +282,52 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
-    getUser(u).then((data) => setCompletedMap(data.completedLectures));
+    getUser(u).then((data) => {
+      setCompletedMap(data.completedLectures);
+      // Load manual completions from localStorage
+      const saved = localStorage.getItem(`manualCompleted_${u}`);
+      if (saved) {
+        setManualCompletedTasks(new Set(JSON.parse(saved)));
+      }
+    });
     const today = new Date().toISOString().split("T")[0];
     const current = weeks.find((w) => w.days.some((d) => d.date === today));
     setActiveWeek(current?.weekId ?? weeks[weeks.length - 1].weekId);
   }, [router, weeks]);
+
+  // Handle manual task completion toggle
+  const handleManualTaskToggle = (task: TaskData, isCompleted: boolean, date?: string) => {
+    console.log('handleManualTaskToggle called!', { task: task.subject, isCompleted, date });
+    // Create a more unique key using date as well to avoid conflicts
+    const taskKey = `${date || 'unknown'}|${task.subject}|${task.module}|${task.lectureRefs.join('|')}|${task.hours}`;
+    console.log('Task key:', taskKey);
+    const newManualCompleted = new Set(manualCompletedTasks);
+    
+    if (isCompleted) {
+      newManualCompleted.add(taskKey);
+      console.log('Adding to manual completed');
+    } else {
+      newManualCompleted.delete(taskKey);
+      console.log('Removing from manual completed');
+    }
+    
+    console.log('New manual completed set:', [...newManualCompleted]);
+    setManualCompletedTasks(newManualCompleted);
+    
+    // Save to localStorage
+    const u = getCurrentUser();
+    if (u) {
+      localStorage.setItem(`manualCompleted_${u}`, JSON.stringify([...newManualCompleted]));
+      console.log('Saved to localStorage');
+    }
+  };
+
+  // Check if a task is manually completed
+  const isTaskManuallyCompleted = (task: TaskData, date?: string): boolean => {
+    // Use the same key generation logic
+    const taskKey = `${date || 'unknown'}|${task.subject}|${task.module}|${task.lectureRefs.join('|')}|${task.hours}`;
+    return manualCompletedTasks.has(taskKey);
+  };
 
   const week = weeks.find((w) => w.weekId === activeWeek) ?? weeks[0];
 
@@ -240,7 +336,14 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     (s, d) =>
       s +
       d.tasks.filter(
-        (t) => t.lectureIds.length > 0 && t.lectureIds.every((id) => !!completedMap[id])
+        (t) => {
+          // Check if task has lecture IDs and all are completed
+          if (t.lectureIds.length > 0) {
+            return t.lectureIds.every((id) => !!completedMap[id]);
+          }
+          // Otherwise check if manually completed
+          return isTaskManuallyCompleted(t, d.date);
+        }
       ).length,
     0
   );
@@ -332,7 +435,14 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
         {/* Day rows — vertical */}
         <div className="flex flex-col gap-4 fade-in-3">
           {week.days.map((day) => (
-            <DayRow key={day.date} day={day} completedMap={completedMap} moduleMap={moduleMap} />
+            <DayRow 
+              key={day.date} 
+              day={day} 
+              completedMap={completedMap} 
+              moduleMap={moduleMap}
+              onManualTaskToggle={handleManualTaskToggle}
+              getTaskManualCompletion={isTaskManuallyCompleted}
+            />
           ))}
         </div>
       </div>
