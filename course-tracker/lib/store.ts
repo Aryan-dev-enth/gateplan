@@ -84,7 +84,7 @@ export async function getUser(username: string): Promise<UserData> {
     
     if (!res.ok) {
       console.error('getUser failed:', res.status, res.statusText);
-      return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
+      return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {} };
     }
     
     const data = await res.json();
@@ -98,7 +98,7 @@ export async function getUser(username: string): Promise<UserData> {
   } catch (error) {
     console.error('Error fetching user data:', error);
     // Return fallback data on any error
-    return { completedLectures: {}, weeklyPlans: [], studySessions: [] };
+    return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {} };
   }
 }
 
