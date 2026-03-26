@@ -15,6 +15,7 @@ export interface UserData {
   weeklyPlans: WeeklyPlan[];
   targetDate?: string;
   studySessions: StudySession[];
+  manualLectureRefs: Record<string, number | false>;
 }
 
 export interface WeeklyPlan {
@@ -92,6 +93,7 @@ export async function getUser(username: string): Promise<UserData> {
       weeklyPlans: data.weeklyPlans ?? [],
       targetDate: data.targetDate ?? undefined,
       studySessions: data.studySessions ?? [],
+      manualLectureRefs: data.manualLectureRefs ?? {},
     };
   } catch (error) {
     console.error('Error fetching user data:', error);
@@ -176,6 +178,21 @@ export async function logStudySession(username: string, session: Omit<StudySessi
   const data = await res.json();
   console.log("API response data:", data);
   return data.session;
+}
+
+/** Toggle a manual lecture ref (for weekly plan items not in completedLectures). */
+export async function toggleManualLectureRef(
+  username: string,
+  key: string,
+  value: boolean
+): Promise<number | false> {
+  const res = await fetch("/api/userdata/manual-toggle", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, key, value }),
+  });
+  const data = await res.json();
+  return data.value;
 }
 
 export async function deleteStudySession(username: string, sessionId: string): Promise<void> {

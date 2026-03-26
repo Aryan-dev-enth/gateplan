@@ -4,14 +4,68 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser, logout, saveUser, deleteStudySession } from "@/lib/store";
 import type { StudySession } from "@/lib/store";
-import { PageSkeleton, MetricSkeleton, SubjectCardSkeleton, BacklogSkeleton } from "@/components/LoadingSkeleton";
 import ProgressBar from "@/components/ProgressBar";
-import ThemeToggle from "@/components/ThemeToggle";
 import EtaCard from "@/components/EtaCard";
+import ScheduleSlider from "@/components/ScheduleSlider";
 import { formatHours } from "@/lib/pace";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
 
+// ── Skeleton ──────────────────────────────────────────────────────────────────
+function Skeleton({ w = "100%", h = "12px" }: { w?: string; h?: string }) {
+  return (
+    <div className="rounded-md animate-pulse"
+      style={{ width: w, height: h, background: "var(--surface2)" }} />
+  );
+}
+
+function MetricSkeleton() {
+  return (
+    <div className="glass p-5 flex flex-col gap-3">
+      <Skeleton w="60%" h="10px" />
+      <Skeleton w="40%" h="28px" />
+      <Skeleton w="80%" h="10px" />
+      <Skeleton h="6px" />
+    </div>
+  );
+}
+
+function SubjectSkeleton() {
+  return (
+    <div className="glass p-4 flex items-center gap-3">
+      <Skeleton w="40px" h="40px" />
+      <div className="flex-1 flex flex-col gap-2">
+        <Skeleton w="55%" h="14px" />
+        <Skeleton w="80%" h="8px" />
+        <Skeleton h="6px" />
+      </div>
+      <Skeleton w="36px" h="20px" />
+    </div>
+  );
+}
+
+// ── Subject color map ─────────────────────────────────────────────────────────
+const SUBJECT_COLORS: Record<string, string> = {
+  "Engineering Mathematics": "#6378ff",
+  "Discrete Mathematics":    "#22d3a5",
+  "Aptitude":                "#f59e0b",
+  "Operating Systems":       "#f97316",
+  "Computer Networks":       "#06b6d4",
+  "DBMS":                    "#a78bfa",
+  "Algorithms":              "#34d399",
+  "Theory of Computation":   "#fb7185",
+  "Digital Logic":           "#fbbf24",
+  "COA":                     "#60a5fa",
+};
+
+function subjectColor(name: string): string {
+  for (const [k, v] of Object.entries(SUBJECT_COLORS)) {
+    if (name.toLowerCase().includes(k.toLowerCase())) return v;
+  }
+  return "#8b5cf6";
+}
+
+// ── Main component ────────────────────────────────────────────────────────────
 export default function DashboardClient({
   subjects,
   durationMap,
@@ -36,6 +90,7 @@ export default function DashboardClient({
   const [isLoading, setIsLoading] = useState(true);
   const [targetDate, setTargetDate] = useState<string | undefined>(undefined);
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
+
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
@@ -45,25 +100,11 @@ export default function DashboardClient({
       setTargetDate(data.targetDate);
       setStudySessions(data.studySessions ?? []);
       setIsLoading(false);
-    }).catch((error) => {
-      console.error('Error loading user data:', error);
-      // Handle database errors gracefully
-      if (error.error?.includes('timeout') || error.error?.includes('Database')) {
-        // Use fallback data
-        setCompletedMap({});
-        setTargetDate(undefined);
-        setStudySessions([]);
-      }
+    }).catch(() => {
+      setCompletedMap({});
       setIsLoading(false);
     });
   }, [router]);
-
-  async function handleDeleteSession(sessionId: string) {
-    const u = getCurrentUser();
-    if (!u) return;
-    await deleteStudySession(u, sessionId);
-    setStudySessions((prev) => prev.filter((s) => s.id !== sessionId));
-  }
 
   async function handleTargetDateChange(date: string) {
     const u = getCurrentUser();
@@ -97,46 +138,35 @@ export default function DashboardClient({
   const totalAll = coreLectureIdSet.size;
   const overallPct = totalCoreHours > 0 ? Math.round((hoursDone / totalCoreHours) * 100) : 0;
 
-  // Calculate backlog based on current date and past weeks only
+  // Backlog calculation
   const calculateBacklog = () => {
     const backlogData: Record<string, { plannedHours: number; completedHours: number; backlogHours: number; lectures: number }> = {};
     let totalBacklogHours = 0;
     let totalBacklogLectures = 0;
     const today = new Date().toISOString().split("T")[0];
-    
-    // Calculate planned hours from weeks up to today only
     const plannedHoursBySubject: Record<string, number> = {};
+
     weeks.forEach(week => {
-      // Check if any day in this week is today or in the past
-      const weekHasCurrentOrPast = week.days.some(day => day.date <= today);
-      
-      if (weekHasCurrentOrPast) {
+      if (week.days.some(day => day.date <= today)) {
         week.days.forEach(day => {
           day.tasks.forEach(task => {
-            if (!plannedHoursBySubject[task.subject]) {
-              plannedHoursBySubject[task.subject] = 0;
-            }
-            plannedHoursBySubject[task.subject] += task.hours;
+            plannedHoursBySubject[task.subject] = (plannedHoursBySubject[task.subject] ?? 0) + task.hours;
           });
         });
       }
     });
-    
-    // Calculate backlog for each subject based on past weeks only
+
     coreSubjects.forEach(subject => {
       const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
       const doneHrs = lectures.filter((l) => !!completedMap[l.id]).reduce((s, l) => s + (durationMap[l.id] ?? 0) / 3600, 0);
       const plannedHrs = plannedHoursBySubject[subject.name] || 0;
-      
-      // Backlog is what's planned but not yet completed (from past weeks only)
       const backlogHrs = Math.max(0, plannedHrs - doneHrs);
-      
       if (backlogHrs > 0) {
         backlogData[subject.name] = {
           plannedHours: plannedHrs,
           completedHours: doneHrs,
           backlogHours: backlogHrs,
-          lectures: lectures.filter((l) => !completedMap[l.id]).length
+          lectures: lectures.filter((l) => !completedMap[l.id]).length,
         };
         totalBacklogHours += backlogHrs;
         totalBacklogLectures += lectures.filter((l) => !completedMap[l.id]).length;
@@ -148,250 +178,209 @@ export default function DashboardClient({
 
   const { backlogData, totalBacklogHours, totalBacklogLectures } = calculateBacklog();
 
-  // Calculate total planned lectures from ALL weeks in the schedule
-  const totalPlannedLectures = weeks.flatMap(week => 
-    week.days.flatMap(day => day.tasks.flatMap(task => task.lectureIds))
-  ).length;
-
+  const totalPlannedLectures = weeks.flatMap(w => w.days.flatMap(d => d.tasks.flatMap(t => t.lectureIds))).length;
   const totalDoneLectures = [...coreLectureIdSet].filter((id) => !!completedMap[id]).length;
 
-  // Today's variables for ETA card
-  const todayStr = new Date().toISOString().split("T")[0];
-  const todayTasks = weeks.flatMap((w) => w.days.filter((d) => d.date === todayStr).flatMap((d) => d.tasks));
-  const todayMappedIds = todayTasks.flatMap((t) => t.lectureIds);
-  const todayDone = todayMappedIds.filter((id) => !!completedMap[id]).length;
-
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      <div className="glow-orb w-96 h-96 -top-32 -right-32" style={{ background: "rgba(99,120,255,0.08)" }} />
-      <div className="glow-orb w-64 h-64 bottom-0 -left-32" style={{ background: "rgba(34,211,165,0.05)" }} />
-      <div className="relative z-10 max-w-6xl mx-auto px-4 py-8">
+    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
+      <div className="max-w-6xl mx-auto px-4 py-6">
 
-        {/* Show loading skeleton while loading */}
+        {/* ── Header ── */}
+        <div className="flex items-center gap-3 mb-6 fade-in">
+          <h1 className="text-base font-bold">
+            <span className="grad-text">GatePlan</span>
+            <span style={{ color: "var(--text)" }}> Dashboard</span>
+          </h1>
+          {!isLoading && (
+            <span className="text-xs" style={{ color: "var(--muted)" }}>· {username}</span>
+          )}
+        </div>
+
         {isLoading ? (
-          <PageSkeleton />
+          <>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+              <MetricSkeleton /><MetricSkeleton /><MetricSkeleton />
+            </div>
+            <div className="flex flex-col gap-3">
+              <SubjectSkeleton /><SubjectSkeleton /><SubjectSkeleton />
+            </div>
+          </>
         ) : (
           <>
-            {/* Nav */}
-            <div className="flex items-center justify-between mb-8 fade-in">
-              <div>
-                <h1 className="text-2xl font-semibold grad-text">GatePlan</h1>
-                <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>Welcome back, {username}</p>
-              </div>
-              
-              {/* Desktop Navigation */}
-              <div className="hidden md:flex items-center gap-3">
-                <Link href="/log-time"
-                  className="px-4 py-2 rounded-lg font-medium transition-all hover:scale-105 text-sm"
-                  style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>
-                  ⏱ Log Time
-                </Link>
-                <Link href="/weekly" className="px-4 py-2 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--text)" }}>📅 Weekly</Link>
-                <Link href="/activity" className="px-4 py-2 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--text)" }}>📊 Activity</Link>
-                <Link href="/leaderboard" className="px-3 py-2 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>🏆</Link>
-                <ThemeToggle />
-                <button onClick={handleSignOut} className="px-4 py-2 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--red)" }}>Sign out</button>
+            {/* ── Metrics row ── */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-5 fade-in-1">
+
+              {/* Overall progress */}
+              <div className="glass p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                  Overall Progress
+                </p>
+                <div className="flex items-end justify-between mb-3">
+                  <span className="text-3xl font-bold" style={{ color: "var(--accent)" }}>{overallPct}%</span>
+                  <span className="text-xs" style={{ color: "var(--muted)" }}>
+                    {formatHours(hoursDone)} / {formatHours(totalCoreHours)}
+                  </span>
+                </div>
+                <ProgressBar value={hoursDone} total={totalCoreHours} formatValue={formatHours} />
+                <p className="text-xs mt-2" style={{ color: "var(--muted)" }}>
+                  {totalDone} / {totalAll} lectures done
+                </p>
               </div>
 
-              {/* Mobile Menu Button */}
-              <div className="md:hidden flex items-center gap-2">
-                <ThemeToggle />
-                <button
-                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                  className="p-2 rounded-lg transition-all hover:scale-105"
-                  style={{ background: "var(--tint-accent)", border: "1px solid var(--border)" }}
-                >
-                  <div className="w-5 h-5 flex flex-col justify-center items-center gap-1">
-                    <div className={`w-4 h-0.5 rounded-full transition-all duration-300 ${mobileMenuOpen ? "rotate-45 translate-y-1.5" : ""}`} style={{ backgroundColor: "var(--text)" }}></div>
-                    <div className={`w-4 h-0.5 rounded-full transition-all duration-300 ${mobileMenuOpen ? "opacity-0" : ""}`} style={{ backgroundColor: "var(--text)" }}></div>
-                    <div className={`w-4 h-0.5 rounded-full transition-all duration-300 ${mobileMenuOpen ? "-rotate-45 -translate-y-1.5" : ""}`} style={{ backgroundColor: "var(--text)" }}></div>
-                  </div>
-                </button>
+              {/* Backlog */}
+              <div className="glass p-5">
+                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                  Weekly Backlog
+                </p>
+                <div className="flex items-end justify-between mb-3">
+                  <span className="text-3xl font-bold"
+                    style={{ color: totalBacklogHours > 0 ? "var(--red)" : "var(--green)" }}>
+                    {totalBacklogHours > 0 ? formatHours(totalBacklogHours) : "On track"}
+                  </span>
+                  {totalBacklogHours > 0 && (
+                    <span className="text-xs" style={{ color: "var(--muted)" }}>
+                      {totalBacklogLectures} lectures
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs" style={{ color: "var(--muted)" }}>
+                    {totalDoneLectures} / {totalPlannedLectures} planned done
+                  </span>
+                  {totalBacklogHours > 0 && (
+                    <button
+                      onClick={() => setBacklogOpen((v) => !v)}
+                      className="text-xs px-2.5 py-1 rounded-lg transition-all hover:opacity-80"
+                      style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
+                      {backlogOpen ? "Hide" : "Details"}
+                    </button>
+                  )}
+                </div>
               </div>
+
+              {/* Today's tasks */}
+              {(() => {
+                const todayStr = new Date().toISOString().split("T")[0];
+                const todayTasks = weeks.flatMap((w) => w.days.filter((d) => d.date === todayStr).flatMap((d) => d.tasks));
+                const todayIds = todayTasks.flatMap((t) => t.lectureIds);
+                const todayDone = todayIds.filter((id) => !!completedMap[id]).length;
+                const todayTotal = todayIds.length;
+                const todayHours = todayTasks.reduce((s, t) => s + t.hours, 0);
+                const todayPct = todayTotal > 0 ? Math.round((todayDone / todayTotal) * 100) : null;
+                return (
+                  <div className="glass p-5">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                      Today's Plan
+                    </p>
+                    {todayTasks.length === 0 ? (
+                      <p className="text-sm" style={{ color: "var(--muted)" }}>No tasks scheduled today</p>
+                    ) : (
+                      <>
+                        <div className="flex items-end justify-between mb-3">
+                          <span className="text-3xl font-bold"
+                            style={{ color: todayPct === 100 ? "var(--green)" : "var(--accent)" }}>
+                            {todayPct !== null ? `${todayPct}%` : "—"}
+                          </span>
+                          <span className="text-xs" style={{ color: "var(--muted)" }}>
+                            {formatHours(todayHours)} planned
+                          </span>
+                        </div>
+                        <div className="h-1.5 rounded-full mb-2" style={{ background: "var(--surface2)" }}>
+                          <div className="h-1.5 rounded-full transition-all duration-500"
+                            style={{
+                              width: `${todayPct ?? 0}%`,
+                              background: todayPct === 100
+                                ? "linear-gradient(90deg, var(--green), var(--accent))"
+                                : "linear-gradient(90deg, var(--accent), var(--accent2))",
+                            }} />
+                        </div>
+                        <p className="text-xs" style={{ color: "var(--muted)" }}>
+                          {todayDone} / {todayTotal} lectures · {todayTasks.length} task{todayTasks.length !== 1 ? "s" : ""}
+                        </p>
+                      </>
+                    )}
+                  </div>
+                );
+              })()}
             </div>
 
-            {/* Mobile Menu */}
-            {mobileMenuOpen && (
-              <div className="md:hidden mb-6 fade-in">
-                <div className="glass p-4 rounded-lg space-y-2">
-                  <Link href="/log-time"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full px-4 py-3 rounded-lg font-medium transition-all hover:scale-105 text-sm"
-                    style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>
-                    ⏱ Log Time
-                  </Link>
-                  <Link href="/weekly" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full px-4 py-3 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--text)" }}>
-                    📅 Weekly Plan
-                  </Link>
-                  <Link href="/activity" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full px-4 py-3 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--text)" }}>
-                    📊 Activity
-                  </Link>
-                  <Link href="/leaderboard" 
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block w-full px-4 py-3 rounded-lg text-sm font-medium hover:scale-105 transition-all" style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>
-                    🏆 Leaderboard
-                  </Link>
-                  <button 
-                    onClick={() => {
-                      handleSignOut();
-                      setMobileMenuOpen(false);
-                    }}
-                    className="block w-full px-4 py-3 rounded-lg text-sm font-medium hover:scale-105 transition-all text-left" 
-                    style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--red)" }}>
-                    Sign out
-                  </button>
-                </div>
-              </div>
-            )}
-
-            {/* Key Metrics Row */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 fade-in-1">
-              {/* Overall Progress */}
-              <div className="glass p-6 text-center relative overflow-hidden">
-                <div className="shimmer absolute inset-0 rounded-lg pointer-events-none" />
-                <p className="text-xs font-medium mb-2" style={{ color: "var(--muted)" }}>OVERALL PROGRESS</p>
-                <div className="text-3xl font-semibold mb-2" style={{ color: "var(--accent)" }}>{overallPct}%</div>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>{formatHours(hoursDone)} / {formatHours(totalCoreHours)} hours</p>
-                <div className="mt-3"><ProgressBar value={hoursDone} total={totalCoreHours} formatValue={formatHours} /></div>
-              </div>
-
-              {/* Weekly Plan Backlog */}
-              <div className="glass p-4 md:p-6 text-center relative overflow-hidden">
-                <div className="shimmer absolute inset-0 rounded-lg pointer-events-none" />
-                <p className="text-xs font-medium mb-2" style={{ color: "var(--muted)" }}>WEEKLY PLAN BACKLOG</p>
-                <div className="text-2xl md:text-3xl font-semibold mb-2" style={{ color: totalBacklogHours > 0 ? "var(--red)" : "var(--green)" }}>
-                  {totalBacklogHours > 0 ? formatHours(totalBacklogHours) : "0"}
-                </div>
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-1 sm:gap-2 mb-3">
-                  <span className="text-sm font-medium" style={{ color: "var(--text)" }}>
-                    {totalDoneLectures}/{totalPlannedLectures}
-                  </span>
-                  <span className="text-xs" style={{ color: "var(--muted)" }}>
-                    done/weekly planned
-                  </span>
-                </div>
-                {totalBacklogHours > 0 && (
-                  <div className="mt-2 md:mt-3">
-                    <button 
-                      onClick={() => {
-                        setBacklogOpen(true);
-                        // Scroll to backlog section
-                        setTimeout(() => {
-                          document.getElementById('backlog-section')?.scrollIntoView({ 
-                            behavior: 'smooth', 
-                            block: 'center' 
-                          });
-                        }, 100);
-                      }}
-                      className="text-xs font-medium px-3 py-1.5 md:py-1 rounded-md transition-all hover:scale-105 w-full sm:w-auto"
-                      style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}
-                    >
-                      View Details →
-                    </button>
+            {/* ── Backlog detail ── */}
+            {backlogOpen && (
+              <div className="mb-5 fade-in">
+                {totalBacklogHours > 0 ? (
+                  <div className="glass p-4 flex flex-col gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>
+                      Backlog breakdown
+                    </p>
+                    {Object.entries(backlogData).map(([name, data]) => {
+                      const c = subjectColor(name);
+                      const pct = data.plannedHours > 0 ? Math.round((data.completedHours / data.plannedHours) * 100) : 0;
+                      return (
+                        <div key={name} className="rounded-xl p-3"
+                          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <div className="flex items-center justify-between mb-2">
+                            <div className="flex items-center gap-2">
+                              <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: c }} />
+                              <span className="text-sm font-medium" style={{ color: "var(--text)" }}>{name}</span>
+                            </div>
+                            <span className="text-sm font-bold" style={{ color: "var(--red)" }}>
+                              -{formatHours(data.backlogHours)}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-3 text-xs mb-2" style={{ color: "var(--muted)" }}>
+                            <span>Planned {formatHours(data.plannedHours)}</span>
+                            <span style={{ color: "var(--green)" }}>Done {formatHours(data.completedHours)}</span>
+                            <span>{data.lectures} lectures left</span>
+                          </div>
+                          <div className="h-1 rounded-full" style={{ background: "var(--border)" }}>
+                            <div className="h-1 rounded-full transition-all duration-500"
+                              style={{ width: `${pct}%`, background: c }} />
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="glass p-4 text-center"
+                    style={{ background: "var(--tint-green)", border: "1px solid var(--tint-green-border)" }}>
+                    <p className="text-sm font-medium" style={{ color: "var(--green)" }}>🎉 You're on track with the weekly plan</p>
                   </div>
                 )}
               </div>
+            )}
 
-              {/* ETA */}
-              <div className="glass p-6 text-center relative overflow-hidden">
-                <div className="shimmer absolute inset-0 rounded-lg pointer-events-none" />
-                <p className="text-xs font-medium mb-2" style={{ color: "var(--muted)" }}>ESTIMATED COMPLETION</p>
-                <EtaCard
-                  completedMap={completedMap}
-                  durationMap={durationMap}
-                  hoursRemaining={hoursRemaining}
-                  hoursTotal={totalCoreHours}
-                  lectureIdSet={coreLectureIdSet}
-                  weeks={weeks}
-                  targetDate={targetDate}
-                  onTargetDateChange={handleTargetDateChange}
-                  compact={true}
-                  subjectData={Object.fromEntries(coreSubjects.map(s => [s.id, {
-                    totalHours: subjectTotalHours[s.id] ?? 0,
-                    plannedHours: subjectPlannedHours[s.id] ?? 0
-                  }]))}
-                  userId={username}
-                />
-              </div>
+            {/* ── Two-col: Schedule slider + ETA full ── */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5 fade-in-2">
+              <ScheduleSlider />
+              <EtaCard
+                completedMap={completedMap}
+                durationMap={durationMap}
+                hoursRemaining={hoursRemaining}
+                hoursTotal={totalCoreHours}
+                lectureIdSet={coreLectureIdSet}
+                weeks={weeks}
+                targetDate={targetDate}
+                onTargetDateChange={handleTargetDateChange}
+                compact={false}
+                subjectData={Object.fromEntries(coreSubjects.map(s => [s.id, {
+                  totalHours: subjectTotalHours[s.id] ?? 0,
+                  plannedHours: subjectPlannedHours[s.id] ?? 0,
+                }]))}
+                userId={username}
+              />
             </div>
 
-            {/* Backlog Section */}
-            <div id="backlog-section" className="mb-8 fade-in-2">
-              <div className="flex items-center justify-between mb-6">
-                <button onClick={() => setBacklogOpen((v) => !v)}
-                  className="flex items-center gap-2 text-base font-semibold hover:opacity-80 transition-all"
-                  style={{ color: "var(--text)" }}>
-                  <span style={{ display: "inline-block", transform: backlogOpen ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>›</span>
-                  📋 Total Weekly Plan Backlog
-                </button>
-                <div className="flex items-center gap-4">
-                  {totalBacklogHours > 0 && (
-                    <>
-                      <span className="text-sm font-medium" style={{ color: "var(--red)" }}>
-                        {formatHours(totalBacklogHours)} hours
-                      </span>
-                      <span className="text-sm" style={{ color: "var(--muted)" }}>
-                        {totalBacklogLectures} lectures
-                      </span>
-                    </>
-                  )}
-                  {totalBacklogHours === 0 && (
-                    <span className="text-sm" style={{ color: "var(--green)" }}>✓ On track</span>
-                  )}
-                </div>
+            {/* ── Core subjects ── */}
+            <div className="mb-5 fade-in-2">
+              <div className="flex items-center justify-between mb-3">
+                <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>
+                  Subjects
+                  <span className="ml-2 text-xs font-normal" style={{ color: "var(--muted)" }}>
+                    {coreSubjects.length} courses
+                  </span>
+                </p>
               </div>
-              {backlogOpen && totalBacklogHours > 0 && (
-                <div className="flex flex-col gap-2">
-                  {Object.entries(backlogData).map(([subjectName, data], index) => (
-                    <div key={index} className="glass p-3" style={{ background: "rgba(220, 53, 69, 0.05)", border: "1px solid rgba(220, 53, 69, 0.1)" }}>
-                      <div className="flex items-center justify-between">
-                        <div>
-                          <p className="font-semibold text-sm" style={{ color: "var(--text)" }}>{subjectName}</p>
-                          <div className="flex items-center gap-3 mt-1">
-                            <span className="text-xs" style={{ color: "var(--muted)" }}>
-                              Planned: {formatHours(data.plannedHours)}h
-                            </span>
-                            <span className="text-xs" style={{ color: "var(--green)" }}>
-                              Done: {formatHours(data.completedHours)}h
-                            </span>
-                            <span className="text-xs font-medium" style={{ color: "var(--red)" }}>
-                              Backlog: {formatHours(data.backlogHours)}h
-                            </span>
-                          </div>
-                        </div>
-                        <div className="text-right">
-                          <p className="text-lg font-semibold" style={{ color: "var(--red)" }}>
-                            {formatHours(data.backlogHours)}h
-                          </p>
-                          <p className="text-xs" style={{ color: "var(--muted)" }}>
-                            {data.lectures} lectures
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
-              {backlogOpen && totalBacklogHours === 0 && (
-                <div className="glass p-4 text-center" style={{ background: "var(--tint-green)", border: "1px solid var(--tint-green-border)" }}>
-                  <p className="text-sm font-medium" style={{ color: "var(--green)" }}>🎉</p>
-                  <p className="text-sm font-medium mt-2" style={{ color: "var(--green)" }}>You're on track!</p>
-                  <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>Current progress matches your weekly plan</p>
-                </div>
-              )}
-            </div>
-
-            {/* Subjects Section */}
-            <div className="mb-8 fade-in-2">
-              <div className="flex items-center justify-between mb-6">
-                <p className="text-base font-semibold" style={{ color: "var(--text)" }}>📁 Subjects</p>
-                <p className="text-sm" style={{ color: "var(--muted)" }}>{coreSubjects.length} courses</p>
-              </div>
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col gap-2">
                 {coreSubjects.map((subject, si) => {
                   const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
                   const done = lectures.filter((l) => !!completedMap[l.id]).length;
@@ -400,40 +389,60 @@ export default function DashboardClient({
                   const totalHrs = subjectTotalHours[subject.id] ?? 0;
                   const plannedHrs = subjectPlannedHours[subject.id] ?? 0;
                   const pct = totalHrs > 0 ? Math.round((doneHrs / totalHrs) * 100) : 0;
+                  const c = subjectColor(subject.name);
+
                   return (
                     <Link key={subject.id} href={`/subject/${subject.id}`}
-                      className="glass p-4 hover:scale-[1.01] transition-all duration-200 fade-in"
-                      style={{ animationDelay: `${si * 0.04}s` }}>
+                      className="glass p-4 transition-all hover:scale-[1.005] fade-in"
+                      style={{ animationDelay: `${si * 0.03}s` }}>
                       <div className="flex items-center gap-3">
-                        <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-sm font-semibold"
+                        {/* Index / done badge */}
+                        <div className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold"
                           style={{
-                            background: pct === 100 ? "var(--tint-green)" : "var(--tint-accent)",
-                            border: `1px solid ${pct === 100 ? "var(--tint-green-border)" : "var(--border)"}`,
-                            color: pct === 100 ? "var(--green)" : "var(--accent)",
+                            background: pct === 100 ? "var(--tint-green)" : `${c}18`,
+                            border: `1px solid ${pct === 100 ? "var(--tint-green-border)" : `${c}40`}`,
+                            color: pct === 100 ? "var(--green)" : c,
                           }}>
                           {pct === 100 ? "✓" : si + 1}
                         </div>
+
                         <div className="flex-1 min-w-0">
-                          <p className="font-semibold text-base truncate" style={{ color: "var(--text)" }}>{subject.name}</p>
-                          <div className="flex items-center gap-2 mt-1 flex-wrap">
-                            <span className="text-xs px-2 py-1 rounded font-medium" style={{ background: "var(--tint-green)", color: "var(--green)", border: "1px solid var(--tint-green-border)" }}>
-                              ✓ {formatHours(doneHrs)}h
+                          <div className="flex items-center justify-between mb-1">
+                            <p className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>
+                              {subject.name}
+                            </p>
+                            <span className="text-sm font-bold flex-shrink-0 ml-2"
+                              style={{ color: pct === 100 ? "var(--green)" : c }}>
+                              {pct}%
+                            </span>
+                          </div>
+
+                          {/* Progress bar */}
+                          <div className="h-1.5 rounded-full mb-1.5" style={{ background: "var(--surface2)" }}>
+                            <div className="h-1.5 rounded-full transition-all duration-500"
+                              style={{
+                                width: `${pct}%`,
+                                background: pct === 100
+                                  ? "linear-gradient(90deg, var(--green), var(--accent))"
+                                  : `linear-gradient(90deg, ${c}, ${c}99)`,
+                              }} />
+                          </div>
+
+                          {/* Stats row */}
+                          <div className="flex items-center gap-3 flex-wrap">
+                            <span className="text-xs" style={{ color: "var(--green)" }}>
+                              ✓ {formatHours(doneHrs)}
                             </span>
                             {plannedHrs > 0 && (
-                              <span className="text-xs px-2 py-1 rounded font-medium" style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
-                                📅 {formatHours(plannedHrs)}h
+                              <span className="text-xs" style={{ color: "var(--accent)" }}>
+                                📅 {formatHours(plannedHrs)}
                               </span>
                             )}
-                            {totalHrs > 0 && (
-                              <span className="text-xs px-2 py-1 rounded font-medium" style={{ background: "var(--tint-accent)", color: "var(--muted)", border: "1px solid var(--border)" }}>
-                                {formatHours(totalHrs)}h total
-                              </span>
-                            )}
-                            <span className="text-xs font-medium" style={{ color: "var(--muted)" }}>{done}/{total} lectures</span>
+                            <span className="text-xs" style={{ color: "var(--muted)" }}>
+                              {formatHours(totalHrs)} total · {done}/{total} lectures
+                            </span>
                           </div>
-                          <div className="mt-2"><ProgressBar value={doneHrs} total={totalHrs} formatValue={formatHours} /></div>
                         </div>
-                        <span className="flex-shrink-0 text-xl font-semibold" style={{ color: pct === 100 ? "var(--green)" : "var(--accent)" }}>{pct}%</span>
                       </div>
                     </Link>
                   );
@@ -441,20 +450,25 @@ export default function DashboardClient({
               </div>
             </div>
 
-            {/* Extras Section */}
+            {/* ── Extras ── */}
             {extraSubjects.length > 0 && (
               <div className="fade-in-3">
-                <div className="flex items-center justify-between mb-6">
-                  <button onClick={() => setExtrasOpen((v) => !v)}
-                    className="flex items-center gap-2 text-base font-semibold hover:opacity-80 transition-all"
-                    style={{ color: "var(--text)" }}>
-                    <span style={{ display: "inline-block", transform: extrasOpen ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s" }}>›</span>
-                    📦 Extra Resources
-                  </button>
-                  <p className="text-sm" style={{ color: "var(--muted)" }}>{extraSubjects.length} items</p>
-                </div>
+                <button
+                  onClick={() => setExtrasOpen((v) => !v)}
+                  className="flex items-center gap-2 text-sm font-semibold mb-3 hover:opacity-80 transition-all"
+                  style={{ color: "var(--text)" }}>
+                  <svg style={{ transform: extrasOpen ? "rotate(90deg)" : "rotate(0deg)", transition: "transform 0.2s", color: "var(--muted)" }}
+                    width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                    <path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  Extra Resources
+                  <span className="text-xs font-normal" style={{ color: "var(--muted)" }}>
+                    {extraSubjects.length} items
+                  </span>
+                </button>
+
                 {extrasOpen && (
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-2">
                     {extraSubjects.map((subject) => {
                       const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
                       const done = lectures.filter((l) => !!completedMap[l.id]).length;
@@ -462,16 +476,23 @@ export default function DashboardClient({
                       const pct = total === 0 ? 0 : Math.round((done / total) * 100);
                       return (
                         <Link key={subject.id} href={`/subject/${subject.id}`}
-                          className="glass p-4 hover:scale-[1.01] transition-all duration-200">
+                          className="glass p-4 transition-all hover:scale-[1.005]">
                           <div className="flex items-center gap-3">
-                            <div className="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center text-sm font-semibold"
-                              style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>★</div>
-                            <div className="flex-1 min-w-0">
-                              <p className="font-semibold text-base truncate" style={{ color: "var(--text)" }}>{subject.name}</p>
-                              <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>{done}/{total} lectures</p>
-                              <div className="mt-2"><ProgressBar value={done} total={total} /></div>
+                            <div className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center text-xs font-bold"
+                              style={{ background: "var(--tint-accent)", border: "1px solid var(--border)", color: "var(--accent)" }}>
+                              ★
                             </div>
-                            <span className="flex-shrink-0 text-xl font-semibold" style={{ color: "var(--accent)" }}>{pct}%</span>
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center justify-between mb-1">
+                                <p className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>{subject.name}</p>
+                                <span className="text-sm font-bold ml-2" style={{ color: "var(--accent)" }}>{pct}%</span>
+                              </div>
+                              <div className="h-1.5 rounded-full mb-1" style={{ background: "var(--surface2)" }}>
+                                <div className="h-1.5 rounded-full transition-all duration-500"
+                                  style={{ width: `${pct}%`, background: "linear-gradient(90deg, var(--accent), var(--accent2))" }} />
+                              </div>
+                              <p className="text-xs" style={{ color: "var(--muted)" }}>{done}/{total} lectures</p>
+                            </div>
                           </div>
                         </Link>
                       );

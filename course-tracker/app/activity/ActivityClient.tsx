@@ -4,23 +4,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser, toggleLecture, deleteStudySession } from "@/lib/store";
 import type { StudySession } from "@/lib/store";
-import ThemeToggle from "@/components/ThemeToggle";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
-import {
-  calculateSubjectAnalytics,
-  calculateTimeAnalytics,
-  calculateGoalProgress,
-  generateInsights,
-  type SubjectAnalytics,
-  type TimeAnalytics
-} from "@/lib/activityAnalytics";
-import {
-  ProgressChart,
-  PieChart,
-  TrendLine,
-  GoalRing
-} from "@/components/ActivityCharts";
 
 interface ActivityEntry {
   lectureId: string;
@@ -40,22 +25,34 @@ const TYPE_META: Record<string, { icon: string; color: string }> = {
   file:      { icon: "📎", color: "#22d3a5" },
 };
 
-function formatDate(ts: number) {
+function fmtDate(ts: number) {
   return new Date(ts).toLocaleDateString("en-IN", {
     weekday: "short", day: "numeric", month: "short", year: "numeric",
   });
 }
 
-function formatTime(ts: number) {
+function fmtTime(ts: number) {
   return new Date(ts).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" });
 }
 
-function groupByDate(entries: ActivityEntry[]): Record<string, ActivityEntry[]> {
-  const groups: Record<string, ActivityEntry[]> = {};
-  for (const e of entries) {
-    const key = formatDate(e.timestamp);
-    if (!groups[key]) groups[key] = [];
-    groups[key].push(e);
+function fmtMins(m: number) {
+  if (m <= 0) return "0m";
+  const h = Math.floor(m / 60);
+  const rem = m % 60;
+  if (h === 0) return `${rem}m`;
+  if (rem === 0) return `${h}h`;
+  return `${h}h ${rem}m`;
+}
+
+function groupByDate<T extends { timestamp?: number; startedAt?: number }>(
+  items: T[], key: "timestamp" | "startedAt"
+): Record<string, T[]> {
+  const groups: Record<string, T[]> = {};
+  for (const item of items) {
+    const ts = item[key] as number;
+    const k = fmtDate(ts);
+    if (!groups[k]) groups[k] = [];
+    groups[k].push(item);
   }
   return groups;
 }
@@ -68,36 +65,44 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   const [activeTab, setActiveTab] = useState<"lectures" | "sessions" | "analytics">(
-    searchParams.get("tab") === "sessions" ? "sessions" : 
+    searchParams.get("tab") === "sessions" ? "sessions" :
     searchParams.get("tab") === "analytics" ? "analytics" : "lectures"
   );
-  const [showInsights, setShowInsights] = useState(true);
+  const [expandedDays, setExpandedDays] = useState<Set<string>>(new Set());
 
-  async function deleteEntry(lectureId: string) {
-    const u = getCurrentUser();
-    if (!u) return;
-    await toggleLecture(u, lectureId);
-    setCompletedMap((prev) => ({ ...prev, [lectureId]: false }));
-    setEntries((prev) => prev.filter((e) => e.lectureId !== lectureId));
+  const todayKey = fmtDate(Date.now());
+
+  function toggleDay(key: string) {
+    setExpandedDays((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
   }
 
-  async function handleDeleteSession(sessionId: string) {
-    const u = getCurrentUser();
-    if (!u) return;
-    
-    const session = studySessions.find(s => s.id === sessionId);
-    const sessionInfo = session 
-      ? `${session.durationMinutes >= 60 ? `${Math.floor(session.durationMinutes / 60)}h ${session.durationMinutes % 60}m` : `${session.durationMinutes}m`} study session for ${session.subjectName}${session.moduleName ? ` › ${session.moduleName}` : ''}`
-      : 'this study session';
-    
-    const confirmed = window.confirm(`Are you sure you want to delete ${sessionInfo}? This action cannot be undone.`);
-    if (!confirmed) return;
-    
-    await deleteStudySession(u, sessionId);
-    setStudySessions((prev) => prev.filter((s) => s.id !== sessionId));
+  function isDayOpen(key: string) {
+    // today is open by default unless explicitly closed
+    if (key === todayKey) return !expandedDays.has("__closed__" + key);
+    return expandedDays.has(key);
   }
 
-  // Build a lookup map: lectureId -> { title, type, moduleName, subjectName, subjectId, moduleId }
+  function handleDayToggle(key: string) {
+    if (key === todayKey) {
+      // today: toggle a "closed" marker
+      setExpandedDays((prev) => {
+        const next = new Set(prev);
+        const closedKey = "__closed__" + key;
+        if (next.has(closedKey)) next.delete(closedKey);
+        else next.add(closedKey);
+        return next;
+      });
+    } else {
+      toggleDay(key);
+    }
+  }
+
+  // Build lectureId → meta map
   const lectureMap = new Map<string, Omit<ActivityEntry, "lectureId" | "timestamp">>();
   for (const subject of subjects) {
     for (const mod of subject.modules) {
@@ -133,15 +138,40 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
 
-  const subjectNames = ["all", ...Array.from(new Set(entries.map((e) => e.subjectName)))];
-  const filtered = filter === "all" ? entries : entries.filter((e) => e.subjectName === filter);
-  const grouped = groupByDate(filtered);
-  const dateKeys = Object.keys(grouped);
+  async function deleteEntry(lectureId: string) {
+    const u = getCurrentUser();
+    if (!u) return;
+    await toggleLecture(u, lectureId);
+    setCompletedMap((prev) => ({ ...prev, [lectureId]: false }));
+    setEntries((prev) => prev.filter((e) => e.lectureId !== lectureId));
+  }
 
-  // Streak calculation
-  function calcStreak(all: ActivityEntry[]): number {
-    if (all.length === 0) return 0;
-    const days = new Set(all.map((e) => new Date(e.timestamp).toDateString()));
+  async function handleDeleteSession(sessionId: string) {
+    const u = getCurrentUser();
+    if (!u) return;
+    const s = studySessions.find(x => x.id === sessionId);
+    const label = s ? `${fmtMins(s.durationMinutes)} session for ${s.subjectName}` : "this session";
+    if (!window.confirm(`Delete ${label}? This cannot be undone.`)) return;
+    await deleteStudySession(u, sessionId);
+    setStudySessions((prev) => prev.filter((x) => x.id !== sessionId));
+  }
+
+  // ── Derived stats ──────────────────────────────────────────────────────────
+  const heatmap: Record<string, number> = {};
+  for (const e of entries) {
+    const k = new Date(e.timestamp).toDateString();
+    heatmap[k] = (heatmap[k] || 0) + 1;
+  }
+
+  const last30 = Array.from({ length: 30 }, (_, i) => {
+    const d = new Date();
+    d.setDate(d.getDate() - (29 - i));
+    return { date: d, count: heatmap[d.toDateString()] || 0 };
+  });
+
+  function calcStreak(): number {
+    if (entries.length === 0) return 0;
+    const days = new Set(entries.map((e) => new Date(e.timestamp).toDateString()));
     let streak = 0;
     const today = new Date();
     for (let i = 0; i < 365; i++) {
@@ -153,471 +183,610 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     return streak;
   }
 
-  const streak = calcStreak(entries);
+  const streak = calcStreak();
+  const todayCount = heatmap[new Date().toDateString()] || 0;
+  const totalSessionMins = studySessions.reduce((s, x) => s + x.durationMinutes, 0);
 
-  // Calculate analytics
-  const subjectAnalytics = calculateSubjectAnalytics(studySessions, completedMap, subjects);
-  const timeAnalytics = calculateTimeAnalytics(studySessions);
-  const goalProgress = calculateGoalProgress(studySessions, completedMap);
-  const insights = generateInsights(subjectAnalytics, timeAnalytics, goalProgress);
+  // Subject breakdown for analytics
+  const subjectStats = (() => {
+    const map = new Map<string, { lectures: number; minutes: number }>();
+    for (const e of entries) {
+      const cur = map.get(e.subjectName) ?? { lectures: 0, minutes: 0 };
+      cur.lectures += 1;
+      map.set(e.subjectName, cur);
+    }
+    for (const s of studySessions) {
+      const cur = map.get(s.subjectName) ?? { lectures: 0, minutes: 0 };
+      cur.minutes += s.durationMinutes;
+      map.set(s.subjectName, cur);
+    }
+    return Array.from(map.entries())
+      .map(([name, data]) => ({ name, ...data }))
+      .sort((a, b) => b.lectures - a.lectures);
+  })();
 
-  // Activity heatmap — last 30 days
-  const heatmap: Record<string, number> = {};
-  for (const e of entries) {
-    const key = new Date(e.timestamp).toDateString();
-    heatmap[key] = (heatmap[key] || 0) + 1;
+  // Weekly pattern from sessions (Mon–Sun)
+  const weeklyMins = Array(7).fill(0);
+  for (const s of studySessions) {
+    weeklyMins[new Date(s.startedAt).getDay()] += s.durationMinutes;
   }
-  const last30 = Array.from({ length: 30 }, (_, i) => {
-    const d = new Date();
-    d.setDate(d.getDate() - (29 - i));
-    return { date: d, count: heatmap[d.toDateString()] || 0 };
-  });
+  const maxWeeklyMins = Math.max(...weeklyMins, 1);
+  const DAY_LABELS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  // Filtered lecture list
+  const subjectNames = ["all", ...Array.from(new Set(entries.map((e) => e.subjectName)))];
+  const filtered = filter === "all" ? entries : entries.filter((e) => e.subjectName === filter);
+  const grouped = groupByDate(filtered, "timestamp");
+  const dateKeys = Object.keys(grouped);
 
   return (
-    <div className="min-h-screen relative overflow-hidden">
-      <div className="glow-orb w-96 h-96 -top-32 -left-32" style={{ background: "rgba(34,211,165,0.07)" }} />
-      <div className="glow-orb w-64 h-64 bottom-0 -right-16" style={{ background: "rgba(99,120,255,0.06)" }} />
+    <div className="min-h-screen" style={{ background: "var(--bg)" }}>
+      <div className="max-w-3xl mx-auto px-4 py-6">
 
-      <div className="relative z-10 max-w-3xl mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="flex items-center justify-between mb-8 fade-in">
-          <div className="flex items-center gap-3">
-            <Link href="/dashboard" className="text-sm transition-all hover:opacity-80" style={{ color: "var(--muted)" }}>
-              ← Dashboard
-            </Link>
-            <span style={{ color: "var(--border)" }}>›</span>
-            <h1 className="text-lg font-bold">
-              <span className="grad-text">Activity</span> Log
-            </h1>
-          </div>
-          <div className="flex items-center gap-2">
-            <Link href="/log-time"
-              className="text-xs px-3 py-1.5 rounded-xl font-semibold transition-all hover:opacity-90"
-              style={{ background: "linear-gradient(135deg,rgba(99,120,255,0.2),rgba(34,211,165,0.15))", border: "1px solid rgba(99,120,255,0.3)", color: "var(--accent2)" }}>
-              ⏱ Log Time
-            </Link>
-            <Link href="/leaderboard" className="text-xs px-3 py-1.5 rounded-xl transition-all"
-              style={{ background: "rgba(245,158,11,0.08)", border: "1px solid rgba(245,158,11,0.2)", color: "#f59e0b" }}>
-              🏆 Board
-            </Link>
-            <ThemeToggle />
-          </div>
+        {/* ── Header ── */}
+        <div className="mb-6 fade-in">
+          <h1 className="text-base font-bold">
+            <span className="grad-text">Activity</span>
+            <span style={{ color: "var(--text)" }}> Log</span>
+          </h1>
         </div>
 
-        {/* Enhanced Stats row */}
-        <div className="grid grid-cols-5 gap-3 mb-4 fade-in-1">
+        {/* ── Stats row ── */}
+        <div className="grid grid-cols-4 gap-3 mb-5 fade-in-1">
           {[
-            { label: "Total Done", val: entries.length, color: "var(--accent2)" },
-            { label: "Day Streak 🔥", val: streak, color: "#f59e0b" },
-            { label: "Today", val: heatmap[new Date().toDateString()] || 0, color: "var(--green)" },
-            {
-              label: "Study Time",
-              val: (() => {
-                const total = studySessions.reduce((s, x) => s + x.durationMinutes, 0);
-                return total >= 60 ? `${Math.floor(total / 60)}h ${total % 60}m` : `${total}m`;
-              })(),
-              color: "#8b5cf6",
-            },
-            {
-              label: "Productivity",
-              val: `${Math.round(timeAnalytics.productivityScore)}%`,
-              color: timeAnalytics.productivityScore > 70 ? "#22d3a5" : timeAnalytics.productivityScore > 40 ? "#f59e0b" : "#ef4444",
-            },
+            { label: "Lectures done", val: entries.length, color: "var(--accent)" },
+            { label: "Day streak", val: `${streak} 🔥`, color: "#f59e0b" },
+            { label: "Today", val: todayCount, color: "var(--green)" },
+            { label: "Study time", val: fmtMins(totalSessionMins), color: "#8b5cf6" },
           ].map((s) => (
             <div key={s.label} className="glass p-4 text-center">
-              <div className="text-xl font-bold mb-1 truncate" style={{ color: s.color }}>{s.val}</div>
+              <div className="text-xl font-bold mb-1" style={{ color: s.color }}>{s.val}</div>
               <div className="text-xs" style={{ color: "var(--muted)" }}>{s.label}</div>
             </div>
           ))}
         </div>
 
-        {/* AI Insights */}
-        {showInsights && insights.length > 0 && (
-          <div className="glass p-4 mb-6 fade-in-2">
-            <div className="flex items-center justify-between mb-3">
-              <p className="text-sm font-semibold" style={{ color: "var(--accent2)" }}>🤖 AI Insights</p>
-              <button 
-                onClick={() => setShowInsights(false)}
-                className="text-xs px-2 py-1 rounded-lg transition-all hover:opacity-80"
-                style={{ background: "rgba(99,120,255,0.1)", color: "var(--muted)" }}
-              >
-                Hide
-              </button>
-            </div>
-            <div className="space-y-2">
-              {insights.map((insight, index) => (
-                <div key={index} className="text-xs p-2 rounded-lg" style={{ background: "rgba(34,211,165,0.08)", color: "var(--text)" }}>
-                  {insight}
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Heatmap */}
-        <div className="glass p-4 mb-6 fade-in-2">
-          <p className="text-xs font-semibold mb-3" style={{ color: "var(--muted)" }}>Last 30 days</p>
+        {/* ── Heatmap ── */}
+        <div className="glass p-4 mb-5 fade-in-2">
+          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+            Last 30 days
+          </p>
           <div className="flex gap-1 items-end">
             {last30.map(({ date, count }, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-1" title={`${date.toDateString()}: ${count}`}>
-                <div
-                  className="w-full rounded-sm transition-all"
+              <div key={i} className="flex-1 flex flex-col items-center gap-1"
+                title={`${date.toDateString()}: ${count} lecture${count !== 1 ? "s" : ""}`}>
+                <div className="w-full rounded-sm transition-all"
                   style={{
-                    height: `${Math.max(4, Math.min(32, 4 + count * 8))}px`,
+                    height: `${Math.max(4, Math.min(32, 4 + count * 7))}px`,
                     background: count === 0
-                      ? "rgba(99,120,255,0.08)"
+                      ? "var(--surface2)"
                       : count >= 5
-                      ? "linear-gradient(180deg, #22d3a5, #6378ff)"
+                      ? "linear-gradient(180deg, var(--green), var(--accent))"
                       : count >= 3
                       ? "rgba(34,211,165,0.6)"
-                      : "rgba(99,120,255,0.4)",
-                    boxShadow: count > 0 ? "0 0 6px rgba(99,120,255,0.3)" : "none",
-                  }}
-                />
+                      : "var(--tint-accent)",
+                    border: "1px solid var(--border)",
+                  }} />
                 {i % 7 === 0 && (
-                  <span className="text-xs" style={{ color: "var(--muted)", fontSize: "9px" }}>
-                    {date.getDate()}
-                  </span>
+                  <span style={{ color: "var(--muted)", fontSize: "9px" }}>{date.getDate()}</span>
                 )}
               </div>
             ))}
           </div>
         </div>
 
-        {/* Tabs */}
-        <div className="flex gap-2 mb-5 p-1 rounded-xl fade-in-2" style={{ background: "rgba(99,120,255,0.08)", border: "1px solid rgba(99,120,255,0.15)" }}>
+        {/* ── Tabs ── */}
+        <div className="flex gap-1 mb-5 p-1 rounded-xl fade-in-2"
+          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
           {(["lectures", "sessions", "analytics"] as const).map((tab) => (
             <button key={tab} onClick={() => setActiveTab(tab)}
-              className="flex-1 text-sm py-1.5 rounded-lg font-semibold transition-all"
+              className="flex-1 text-xs py-2 rounded-lg font-semibold transition-all"
               style={{
-                background: activeTab === tab ? "linear-gradient(135deg,#6378ff,#8b5cf6)" : "transparent",
+                background: activeTab === tab ? "var(--accent)" : "transparent",
                 color: activeTab === tab ? "white" : "var(--muted)",
               }}>
-              {tab === "lectures" ? "📚 Lectures" : tab === "sessions" ? "⏱ Study Sessions" : "📊 Analytics"}
+              {tab === "lectures" ? "Lectures" : tab === "sessions" ? "Sessions" : "Analytics"}
             </button>
           ))}
         </div>
 
-        {!showInsights && insights.length > 0 && (
-          <button
-            onClick={() => setShowInsights(true)}
-            className="w-full mb-5 text-xs py-2 rounded-xl transition-all fade-in-2"
-            style={{ background: "rgba(34,211,165,0.1)", color: "var(--green)", border: "1px solid rgba(34,211,165,0.2)" }}
-          >
-            🤖 Show AI Insights ({insights.length} available)
-          </button>
-        )}
-
-        {/* Subject filter pills — only for lectures tab */}
+        {/* ── Lectures tab ── */}
         {activeTab === "lectures" && (
-          <div className="flex gap-2 flex-wrap mb-5 fade-in-2">
-            {subjectNames.map((name) => (
-              <button
-                key={name}
-                onClick={() => setFilter(name)}
-                className="text-xs px-3 py-1.5 rounded-full transition-all"
-                style={{
-                  background: filter === name ? "linear-gradient(135deg, #6378ff, #8b5cf6)" : "rgba(99,120,255,0.08)",
-                  border: `1px solid ${filter === name ? "transparent" : "rgba(99,120,255,0.15)"}`,
-                  color: filter === name ? "white" : "var(--muted)",
-                  fontWeight: filter === name ? 600 : 400,
-                }}
-              >
-                {name === "all" ? "All subjects" : name}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Lectures timeline */}
-        {activeTab === "lectures" && (
-          dateKeys.length === 0 ? (
-            <div className="glass p-12 text-center fade-in-3">
-              <p className="text-3xl mb-3">📭</p>
-              <p className="font-semibold" style={{ color: "var(--text)" }}>No activity yet</p>
-              <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>Start completing lectures to see your log here</p>
-            </div>
-          ) : (
-            <div className="flex flex-col gap-6 fade-in-3">
-              {dateKeys.map((dateKey) => (
-                <div key={dateKey}>
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
-                    <span className="text-xs font-semibold px-3 py-1 rounded-full"
-                      style={{ background: "rgba(99,120,255,0.1)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
-                      {dateKey} · {grouped[dateKey].length} done
-                    </span>
-                    <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
-                  </div>
-                  <div className="flex flex-col">
-                    {grouped[dateKey].map((entry, i) => {
-                      const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
-                      const isLast = i === grouped[dateKey].length - 1;
-                      return (
-                        <div key={entry.lectureId} className="flex items-stretch gap-3">
-                          <div className="flex flex-col items-center" style={{ width: "24px", flexShrink: 0 }}>
-                            <div className="w-2 h-2 rounded-full flex-shrink-0 mt-4"
-                              style={{ background: meta.color, boxShadow: `0 0 6px ${meta.color}80` }} />
-                            {!isLast && <div className="flex-1 w-px mt-1" style={{ background: "rgba(99,120,255,0.12)" }} />}
-                          </div>
-                          <div className="flex-1 mb-2 relative group">
-                            <Link href={`/module/${entry.moduleId}`}
-                              className="glass px-4 py-3 flex items-center gap-3 hover:scale-[1.01] transition-all block">
-                              <div className="flex-shrink-0 w-7 h-7 rounded-lg flex items-center justify-center text-xs"
-                                style={{ background: `${meta.color}18`, border: `1px solid ${meta.color}25` }}>
-                                {meta.icon}
-                              </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-sm truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
-                                <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>
-                                  {entry.subjectName} › {entry.moduleName}
-                                </p>
-                              </div>
-                              <span className="flex-shrink-0 text-xs pr-6" style={{ color: "var(--muted)" }}>
-                                {formatTime(entry.timestamp)}
-                              </span>
-                            </Link>
-                            <button onClick={() => deleteEntry(entry.lectureId)} title="Remove from activity"
-                              className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all hover:scale-110"
-                              style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.25)", color: "#ef4444", fontSize: "11px" }}>
-                              ✕
-                            </button>
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
+          <>
+            {/* Subject filter */}
+            <div className="flex gap-2 flex-wrap mb-4 fade-in-2">
+              {subjectNames.map((name) => (
+                <button key={name} onClick={() => setFilter(name)}
+                  className="text-xs px-3 py-1.5 rounded-full transition-all"
+                  style={{
+                    background: filter === name ? "var(--accent)" : "var(--surface2)",
+                    border: `1px solid ${filter === name ? "transparent" : "var(--border)"}`,
+                    color: filter === name ? "white" : "var(--muted)",
+                    fontWeight: filter === name ? 600 : 400,
+                  }}>
+                  {name === "all" ? "All" : name}
+                </button>
               ))}
             </div>
-          )
-        )}
 
-        {/* Analytics Tab */}
-        {activeTab === "analytics" && (
-          <div className="fade-in-3 space-y-6">
-            {/* Goal Progress */}
-            <div className="glass p-4">
-              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>🎯 Goal Progress</p>
-              <div className="grid grid-cols-4 gap-4">
-                {goalProgress.slice(0, 4).map((goal, index) => (
-                  <GoalRing
-                    key={index}
-                    percentage={goal.percentage}
-                    label={`${goal.type === 'daily' ? 'Daily' : goal.type === 'weekly' ? 'Weekly' : 'Monthly'} ${goal.unit === 'minutes' ? 'Time' : 'Lectures'}`}
-                    value={goal.unit === 'minutes' 
-                      ? (goal.current >= 60 ? `${Math.floor(goal.current/60)}h` : `${goal.current}m`)
-                      : `${goal.current}`
-                    }
-                    color={goal.percentage >= 80 ? "#22d3a5" : goal.percentage >= 50 ? "#f59e0b" : "#ef4444"}
-                    size={100}
-                    animated={true}
-                    showBackground={true}
-                  />
-                ))}
+            {dateKeys.length === 0 ? (
+              <div className="glass p-12 text-center fade-in-3">
+                <p className="text-3xl mb-3">📭</p>
+                <p className="font-semibold" style={{ color: "var(--text)" }}>No activity yet</p>
+                <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+                  Start completing lectures to see your log here
+                </p>
               </div>
-            </div>
-
-            {/* Subject Distribution */}
-            {subjectAnalytics.length > 0 && (
-              <div className="glass p-4">
-                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📚 Subject Distribution</p>
-                <PieChart
-                  data={subjectAnalytics.map(subject => ({
-                    label: subject.subjectName,
-                    value: subject.totalMinutes,
-                    color: `hsl(${subject.subjectName.length * 30}, 70%, 60%)`
-                  }))}
-                  size={160}
-                  showPercentages={true}
-                  animated={true}
-                  innerRadius={0.5}
-                />
-              </div>
-            )}
-
-            {/* Weekly Pattern */}
-            <div className="glass p-4">
-              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📅 Weekly Study Pattern</p>
-              <ProgressChart
-                data={timeAnalytics.weeklyPattern}
-                labels={['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']}
-                color="#8b5cf6"
-                height={140}
-                showGrid={true}
-                animated={true}
-              />
-            </div>
-
-            {/* Subject Performance */}
-            {subjectAnalytics.length > 0 && (
-              <div className="glass p-4">
-                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📈 Subject Performance</p>
-                <div className="space-y-3">
-                  {subjectAnalytics.slice(0, 5).map((subject, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="flex-1">
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-xs font-semibold" style={{ color: "var(--text)" }}>
-                            {subject.subjectName}
+            ) : (
+              <div className="flex flex-col gap-2 fade-in-3">
+                {dateKeys.map((dateKey) => {
+                  const open = isDayOpen(dateKey);
+                  const isToday = dateKey === todayKey;
+                  const items = grouped[dateKey];
+                  return (
+                    <div key={dateKey} className="rounded-xl overflow-hidden"
+                      style={{ border: `1px solid ${isToday ? "var(--accent)" : "var(--border)"}` }}>
+                      {/* Day header — always visible, clickable */}
+                      <button
+                        onClick={() => handleDayToggle(dateKey)}
+                        className="w-full flex items-center justify-between px-4 py-3 transition-all hover:opacity-90"
+                        style={{
+                          background: isToday ? "var(--today-header-bg)" : "var(--surface2)",
+                        }}>
+                        <div className="flex items-center gap-2">
+                          {isToday && (
+                            <span className="w-1.5 h-1.5 rounded-full pulse-dot flex-shrink-0"
+                              style={{ background: "var(--accent)" }} />
+                          )}
+                          <span className="text-sm font-semibold" style={{ color: isToday ? "var(--accent)" : "var(--text)" }}>
+                            {isToday ? "Today" : dateKey}
                           </span>
-                          <span className="text-xs" style={{ color: "var(--muted)" }}>
-                            {Math.round(subject.totalMinutes / 60)}h total
-                          </span>
+                          {isToday && (
+                            <span className="text-xs" style={{ color: "var(--muted)" }}>{dateKey}</span>
+                          )}
                         </div>
-                        <div className="w-full h-2 rounded-full overflow-hidden" style={{ background: "rgba(99,120,255,0.1)" }}>
-                          <div
-                            className="h-full transition-all"
-                            style={{
-                              width: `${subject.completionRate}%`,
-                              background: subject.completionRate >= 70 ? "#22d3a5" : 
-                                         subject.completionRate >= 40 ? "#f59e0b" : "#ef4444"
-                            }}
-                          />
-                        </div>
-                        <div className="flex items-center justify-between mt-1">
-                          <span className="text-xs" style={{ color: "var(--muted)" }}>
-                            {subject.totalSessions} sessions • {Math.round(subject.averageSessionLength)}m avg
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs px-2 py-0.5 rounded-full"
+                            style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
+                            {items.length} lecture{items.length !== 1 ? "s" : ""}
                           </span>
-                          <span className="text-xs font-semibold" style={{ color: "var(--accent2)" }}>
-                            {Math.round(subject.completionRate)}% complete
-                          </span>
+                          <svg style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s", color: "var(--muted)" }}
+                            width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
                         </div>
-                      </div>
-                      <div className="text-lg">
-                        {subject.trend === 'up' ? '📈' : subject.trend === 'down' ? '📉' : '➡️'}
-                      </div>
+                      </button>
+
+                      {/* Items — only rendered when open */}
+                      {open && (
+                        <div className="flex flex-col gap-1 p-2"
+                          style={{ background: "var(--card-bg)", borderTop: "1px solid var(--border)" }}>
+                          {items.map((entry) => {
+                            const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
+                            return (
+                              <div key={entry.lectureId} className="group relative">
+                                <Link href={`/module/${entry.moduleId}`}
+                                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:opacity-90 transition-all"
+                                  style={{ background: "var(--surface2)" }}>
+                                  <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                                    style={{ background: `${meta.color}18`, color: meta.color }}>
+                                    {meta.icon}
+                                  </div>
+                                  <div className="flex-1 min-w-0">
+                                    <p className="text-xs truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
+                                    <p className="text-xs truncate" style={{ color: "var(--muted)" }}>
+                                      {entry.subjectName} · {entry.moduleName}
+                                    </p>
+                                  </div>
+                                  <span className="flex-shrink-0 text-xs pr-7" style={{ color: "var(--muted)" }}>
+                                    {fmtTime(entry.timestamp)}
+                                  </span>
+                                </Link>
+                                <button onClick={() => deleteEntry(entry.lectureId)}
+                                  title="Remove"
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                  style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
+                                  ✕
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+                  );
+                })}
               </div>
             )}
-
-            {/* Study Time Trend */}
-            {studySessions.length >= 7 && (
-              <div className="glass p-4">
-                <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>📊 Study Time Trend (Last 7 Days)</p>
-                <TrendLine
-                  data={Array.from({ length: 7 }, (_, i) => {
-                    const date = new Date();
-                    date.setDate(date.getDate() - (6 - i));
-                    const daySessions = studySessions.filter(s => 
-                      new Date(s.startedAt).toDateString() === date.toDateString()
-                    );
-                    return daySessions.reduce((sum, s) => sum + s.durationMinutes, 0);
-                  })}
-                  color="#22d3a5"
-                  height={100}
-                  showArea={true}
-                  showPoints={true}
-                  smooth={true}
-                  animated={true}
-                />
-              </div>
-            )}
-
-            {/* Time Analytics Summary */}
-            <div className="glass p-4">
-              <p className="text-sm font-semibold mb-4" style={{ color: "var(--accent2)" }}>⏰ Time Analytics</p>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-1" style={{ color: "#6378ff" }}>
-                    {timeAnalytics.bestHour}:00
-                  </div>
-                  <div className="text-xs" style={{ color: "var(--muted)" }}>Best Study Hour</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-1" style={{ color: "#22d3a5" }}>
-                    {Math.round(timeAnalytics.averageDailyMinutes)}m
-                  </div>
-                  <div className="text-xs" style={{ color: "var(--muted)" }}>Daily Average</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-1" style={{ color: "#f59e0b" }}>
-                    {timeAnalytics.totalStudyDays}
-                  </div>
-                  <div className="text-xs" style={{ color: "var(--muted)" }}>Study Days</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold mb-1" style={{ color: "#8b5cf6" }}>
-                    {Math.round(timeAnalytics.productivityScore)}%
-                  </div>
-                  <div className="text-xs" style={{ color: "var(--muted)" }}>Productivity Score</div>
-                </div>
-              </div>
-            </div>
-          </div>
+          </>
         )}
 
-        {/* Study sessions tab */}
+        {/* ── Sessions tab ── */}
         {activeTab === "sessions" && (
           <div className="fade-in-3">
             {studySessions.length === 0 ? (
               <div className="glass p-12 text-center">
                 <p className="text-3xl mb-3">⏱</p>
                 <p className="font-semibold" style={{ color: "var(--text)" }}>No sessions logged yet</p>
-                <p className="text-sm mt-1 mb-4" style={{ color: "var(--muted)" }}>Use the Log Time page to record your study sessions</p>
+                <p className="text-sm mt-1 mb-4" style={{ color: "var(--muted)" }}>
+                  Use Log Time to record your study sessions
+                </p>
                 <Link href="/log-time"
-                  className="px-5 py-2 rounded-xl font-semibold text-sm hover:opacity-90 transition-all inline-block"
-                  style={{ background: "linear-gradient(135deg,#6378ff,#22d3a5)", color: "white" }}>
-                  ⏱ Log Time
+                  className="btn-primary px-5 py-2 rounded-xl text-sm inline-block">
+                  Log Time
                 </Link>
               </div>
             ) : (
-              <div className="flex flex-col gap-3">
-                {(() => {
-                  // Group sessions by date
-                  const groups: Record<string, StudySession[]> = {};
-                  for (const s of studySessions) {
-                    const key = formatDate(s.startedAt);
-                    if (!groups[key]) groups[key] = [];
-                    groups[key].push(s);
-                  }
-                  return Object.entries(groups).map(([dateKey, sessions]) => {
-                    const totalMins = sessions.reduce((sum, s) => sum + s.durationMinutes, 0);
-                    return (
-                      <div key={dateKey}>
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
-                          <span className="text-xs font-semibold px-3 py-1 rounded-full"
-                            style={{ background: "rgba(99,120,255,0.1)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
-                            {dateKey} · {totalMins >= 60 ? `${Math.floor(totalMins / 60)}h ${totalMins % 60}m` : `${totalMins}m`}
+              <div className="flex flex-col gap-2">
+                {Object.entries(groupByDate(studySessions, "startedAt")).map(([dateKey, sessions]) => {
+                  const open = isDayOpen("s_" + dateKey);
+                  const isToday = dateKey === todayKey;
+                  const totalMins = sessions.reduce((s, x) => s + x.durationMinutes, 0);
+                  return (
+                    <div key={dateKey} className="rounded-xl overflow-hidden"
+                      style={{ border: `1px solid ${isToday ? "var(--accent)" : "var(--border)"}` }}>
+                      <button
+                        onClick={() => {
+                          const k = "s_" + dateKey;
+                          if (isToday) {
+                            setExpandedDays((prev) => {
+                              const next = new Set(prev);
+                              const ck = "__closed__" + k;
+                              if (next.has(ck)) next.delete(ck); else next.add(ck);
+                              return next;
+                            });
+                          } else {
+                            toggleDay(k);
+                          }
+                        }}
+                        className="w-full flex items-center justify-between px-4 py-3 transition-all hover:opacity-90"
+                        style={{ background: isToday ? "var(--today-header-bg)" : "var(--surface2)" }}>
+                        <div className="flex items-center gap-2">
+                          {isToday && <span className="w-1.5 h-1.5 rounded-full pulse-dot" style={{ background: "var(--accent)" }} />}
+                          <span className="text-sm font-semibold" style={{ color: isToday ? "var(--accent)" : "var(--text)" }}>
+                            {isToday ? "Today" : dateKey}
                           </span>
-                          <div className="h-px flex-1" style={{ background: "rgba(99,120,255,0.12)" }} />
+                          {isToday && <span className="text-xs" style={{ color: "var(--muted)" }}>{dateKey}</span>}
                         </div>
-                        <div className="flex flex-col gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs px-2 py-0.5 rounded-full"
+                            style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
+                            {fmtMins(totalMins)}
+                          </span>
+                          <svg style={{ transform: (isToday ? !expandedDays.has("__closed__s_" + dateKey) : expandedDays.has("s_" + dateKey)) ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s", color: "var(--muted)" }}
+                            width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                            <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+                          </svg>
+                        </div>
+                      </button>
+
+                      {(isToday ? !expandedDays.has("__closed__s_" + dateKey) : expandedDays.has("s_" + dateKey)) && (
+                        <div className="flex flex-col gap-1 p-2"
+                          style={{ background: "var(--card-bg)", borderTop: "1px solid var(--border)" }}>
                           {sessions.map((s) => (
-                            <div key={s.id} className="glass px-4 py-3 flex items-center gap-3 group relative">
-                              <div className="flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm font-bold"
-                                style={{ background: "rgba(99,120,255,0.12)", color: "var(--accent2)", border: "1px solid rgba(99,120,255,0.2)" }}>
+                            <div key={s.id} className="group relative flex items-center gap-3 px-3 py-2.5 rounded-lg"
+                              style={{ background: "var(--surface2)" }}>
+                              <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                                style={{ background: "var(--tint-accent)", color: "var(--accent)" }}>
                                 ⏱
                               </div>
                               <div className="flex-1 min-w-0">
-                                <p className="text-sm font-semibold truncate" style={{ color: "var(--text)" }}>{s.subjectName}</p>
-                                {s.moduleName && <p className="text-xs mt-0.5 truncate" style={{ color: "var(--accent2)" }}>{s.moduleName}</p>}
-                                {s.note && <p className="text-xs mt-0.5 truncate" style={{ color: "var(--muted)" }}>{s.note}</p>}
-                                <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>{formatTime(s.startedAt)}</p>
+                                <p className="text-xs font-semibold truncate" style={{ color: "var(--text)" }}>{s.subjectName}</p>
+                                {s.moduleName && <p className="text-xs truncate" style={{ color: "var(--accent)" }}>{s.moduleName}</p>}
+                                {s.note && <p className="text-xs truncate" style={{ color: "var(--muted)" }}>{s.note}</p>}
+                                <p className="text-xs" style={{ color: "var(--muted)" }}>{fmtTime(s.startedAt)}</p>
                               </div>
-                              <span className="flex-shrink-0 text-sm font-bold pr-6" style={{ color: "var(--green)" }}>
-                                {s.durationMinutes >= 60 ? `${Math.floor(s.durationMinutes / 60)}h ${s.durationMinutes % 60}m` : `${s.durationMinutes}m`}
+                              <span className="text-xs font-bold pr-7" style={{ color: "var(--green)" }}>
+                                {fmtMins(s.durationMinutes)}
                               </span>
                               <button onClick={() => handleDeleteSession(s.id)}
-                                title="Delete session"
-                                className="absolute right-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
-                                style={{ background: "rgba(239,68,68,0.15)", border: "1px solid rgba(239,68,68,0.25)", color: "#ef4444", fontSize: "11px" }}>
+                                className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
                                 ✕
                               </button>
                             </div>
                           ))}
                         </div>
-                      </div>
-                    );
-                  });
-                })()}
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
         )}
+
+        {/* ── Analytics tab ── */}
+        {activeTab === "analytics" && (
+          <div className="flex flex-col gap-4 fade-in-3">
+
+            {entries.length === 0 && studySessions.length === 0 ? (
+              <div className="glass p-10 text-center">
+                <p className="text-sm" style={{ color: "var(--muted)" }}>Complete lectures or log sessions to see analytics</p>
+              </div>
+            ) : (() => {
+              // ── Compute all analytics inline ──────────────────────────────
+
+              // Last 14 days — daily lecture counts
+              const last14 = Array.from({ length: 14 }, (_, i) => {
+                const d = new Date();
+                d.setDate(d.getDate() - (13 - i));
+                return { date: d, lectures: heatmap[d.toDateString()] || 0 };
+              });
+              const max14 = Math.max(...last14.map(x => x.lectures), 1);
+
+              // This week vs last week (lectures)
+              const now = new Date();
+              const thisWeekStart = new Date(now); thisWeekStart.setDate(now.getDate() - now.getDay()); thisWeekStart.setHours(0,0,0,0);
+              const lastWeekStart = new Date(thisWeekStart); lastWeekStart.setDate(thisWeekStart.getDate() - 7);
+              const thisWeekLectures = entries.filter(e => e.timestamp >= thisWeekStart.getTime()).length;
+              const lastWeekLectures = entries.filter(e => e.timestamp >= lastWeekStart.getTime() && e.timestamp < thisWeekStart.getTime()).length;
+              const weekDelta = lastWeekLectures > 0 ? Math.round(((thisWeekLectures - lastWeekLectures) / lastWeekLectures) * 100) : null;
+
+              // This week vs last week (session mins)
+              const thisWeekMins = studySessions.filter(s => s.startedAt >= thisWeekStart.getTime()).reduce((a, s) => a + s.durationMinutes, 0);
+              const lastWeekMins = studySessions.filter(s => s.startedAt >= lastWeekStart.getTime() && s.startedAt < thisWeekStart.getTime()).reduce((a, s) => a + s.durationMinutes, 0);
+              const minsDelta = lastWeekMins > 0 ? Math.round(((thisWeekMins - lastWeekMins) / lastWeekMins) * 100) : null;
+
+              // Daily avg (last 14 active days)
+              const activeDays14 = last14.filter(x => x.lectures > 0).length;
+              const avgLectures14 = activeDays14 > 0 ? (last14.reduce((a, x) => a + x.lectures, 0) / activeDays14).toFixed(1) : "—";
+
+              // Best single day ever
+              const bestDayCount = Math.max(...Object.values(heatmap), 0);
+              const bestDayKey = Object.entries(heatmap).find(([, v]) => v === bestDayCount)?.[0] ?? null;
+
+              // Lecture type breakdown
+              const typeMap: Record<string, number> = {};
+              for (const e of entries) typeMap[e.type] = (typeMap[e.type] || 0) + 1;
+              const typeEntries = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
+
+              // Study time by hour of day (from sessions)
+              const hourMap: Record<number, number> = {};
+              for (const s of studySessions) {
+                const h = new Date(s.startedAt).getHours();
+                hourMap[h] = (hourMap[h] || 0) + s.durationMinutes;
+              }
+              const peakHour = Object.entries(hourMap).sort((a, b) => b[1] - a[1])[0];
+              const peakHourLabel = peakHour
+                ? (() => { const h = parseInt(peakHour[0]); return h === 0 ? "12 AM" : h < 12 ? `${h} AM` : h === 12 ? "12 PM" : `${h - 12} PM`; })()
+                : null;
+
+              return (
+                <>
+                  {/* ── This week vs last week ── */}
+                  <div className="glass p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                      This week vs last week
+                    </p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        {
+                          label: "Lectures",
+                          thisVal: thisWeekLectures,
+                          lastVal: lastWeekLectures,
+                          delta: weekDelta,
+                          color: "var(--accent)",
+                        },
+                        {
+                          label: "Study time",
+                          thisVal: fmtMins(thisWeekMins),
+                          lastVal: fmtMins(lastWeekMins),
+                          delta: minsDelta,
+                          color: "#8b5cf6",
+                        },
+                      ].map(({ label, thisVal, lastVal, delta, color }) => (
+                        <div key={label} className="rounded-xl p-3"
+                          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <p className="text-xs mb-2" style={{ color: "var(--muted)" }}>{label}</p>
+                          <p className="text-xl font-bold" style={{ color }}>{thisVal}</p>
+                          <div className="flex items-center gap-2 mt-1">
+                            <span className="text-xs" style={{ color: "var(--muted)" }}>Last: {lastVal}</span>
+                            {delta !== null && (
+                              <span className="text-xs font-semibold"
+                                style={{ color: delta >= 0 ? "var(--green)" : "var(--red)" }}>
+                                {delta >= 0 ? "+" : ""}{delta}%
+                              </span>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── 14-day study time trend (from sessions) ── */}
+                  {(() => {
+                    const last14mins = Array.from({ length: 14 }, (_, i) => {
+                      const d = new Date();
+                      d.setDate(d.getDate() - (13 - i));
+                      const dayMins = studySessions
+                        .filter(s => new Date(s.startedAt).toDateString() === d.toDateString())
+                        .reduce((a, s) => a + s.durationMinutes, 0);
+                      return { date: d, mins: dayMins };
+                    });
+                    const maxMins = Math.max(...last14mins.map(x => x.mins), 1);
+                    const activeDaysTime = last14mins.filter(x => x.mins > 0).length;
+                    const avgMins = activeDaysTime > 0
+                      ? Math.round(last14mins.reduce((a, x) => a + x.mins, 0) / activeDaysTime)
+                      : 0;
+
+                    if (studySessions.length === 0) return null;
+
+                    return (
+                      <div className="glass p-4">
+                        <div className="flex items-center justify-between mb-4">
+                          <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+                            Daily study time — last 14 days
+                          </p>
+                          <span className="text-xs" style={{ color: "var(--muted)" }}>
+                            avg {fmtMins(avgMins)}/active day
+                          </span>
+                        </div>
+                        <div className="flex items-end gap-1.5" style={{ height: "100px" }}>
+                          {last14mins.map(({ date, mins }, i) => {
+                            const isToday = date.toDateString() === new Date().toDateString();
+                            const pct = mins > 0 ? Math.max(0.2, mins / maxMins) : 0;
+                            const barH = Math.round(pct * 80);
+                            return (
+                              <div key={i} className="flex-1 flex flex-col items-center justify-end gap-1.5"
+                                style={{ height: "100px" }}
+                                title={`${date.toLocaleDateString("en-IN", { day: "numeric", month: "short" })}: ${fmtMins(mins)}`}>
+                                <span style={{
+                                  fontSize: "9px", fontWeight: 600, lineHeight: 1,
+                                  color: mins > 0 ? (isToday ? "var(--accent)" : "var(--text)") : "transparent",
+                                }}>
+                                  {mins > 0 ? (mins >= 60 ? `${Math.floor(mins/60)}h` : `${mins}m`) : "·"}
+                                </span>
+                                <div className="w-full rounded-t-md transition-all duration-500"
+                                  style={{
+                                    height: mins > 0 ? `${barH}px` : "3px",
+                                    background: isToday
+                                      ? "linear-gradient(180deg, var(--accent), var(--accent2))"
+                                      : mins >= maxMins * 0.7
+                                      ? "linear-gradient(180deg, #8b5cf6, #6378ff)"
+                                      : mins > 0 ? "rgba(139,92,246,0.25)" : "var(--surface2)",
+                                    border: `1px solid ${isToday ? "var(--accent)" : mins > 0 ? "rgba(139,92,246,0.3)" : "var(--border)"}`,
+                                    opacity: mins === 0 ? 0.4 : 1,
+                                  }} />
+                                <span style={{
+                                  fontSize: "9px", lineHeight: 1,
+                                  color: isToday ? "var(--accent)" : "var(--muted)",
+                                  fontWeight: isToday ? 700 : 400,
+                                }}>
+                                  {isToday ? "now" : date.toLocaleDateString("en-IN", { day: "numeric", month: "short" }).replace(" ", "\u00A0")}
+                                </span>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* ── Subject breakdown — donut ── */}
+                  {subjectStats.length > 0 && (() => {
+                    const COLORS = ["#6378ff","#22d3a5","#f59e0b","#ef4444","#8b5cf6","#06b6d4"];
+                    const totalLectures = subjectStats.reduce((a, s) => a + s.lectures, 0);
+                    // Top 5 + others
+                    const top = subjectStats.slice(0, 5);
+                    const othersLec = subjectStats.slice(5).reduce((a, s) => a + s.lectures, 0);
+                    const slices = othersLec > 0
+                      ? [...top, { name: "Others", lectures: othersLec, minutes: 0 }]
+                      : top;
+
+                    // Build donut path segments
+                    const R = 44; const r = 26; const cx = 50; const cy = 50;
+                    let angle = -90;
+                    const segments = slices.map((s, i) => {
+                      const pct = s.lectures / totalLectures;
+                      const sweep = pct * 360;
+                      const a1 = (angle * Math.PI) / 180;
+                      const a2 = ((angle + sweep) * Math.PI) / 180;
+                      const x1o = cx + R * Math.cos(a1); const y1o = cy + R * Math.sin(a1);
+                      const x2o = cx + R * Math.cos(a2); const y2o = cy + R * Math.sin(a2);
+                      const x1i = cx + r * Math.cos(a1); const y1i = cy + r * Math.sin(a1);
+                      const x2i = cx + r * Math.cos(a2); const y2i = cy + r * Math.sin(a2);
+                      const large = sweep > 180 ? 1 : 0;
+                      const path = `M${x1o},${y1o} A${R},${R} 0 ${large} 1 ${x2o},${y2o} L${x2i},${y2i} A${r},${r} 0 ${large} 0 ${x1i},${y1i} Z`;
+                      angle += sweep;
+                      return { ...s, path, color: COLORS[i % COLORS.length], pct: Math.round(pct * 100) };
+                    });
+
+                    return (
+                      <div className="glass p-4">
+                        <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: "var(--muted)" }}>
+                          Subject breakdown
+                        </p>
+                        <div className="flex items-center gap-5">
+                          {/* Donut */}
+                          <div className="flex-shrink-0">
+                            <svg width="110" height="110" viewBox="0 0 100 100">
+                              {segments.map((seg, i) => (
+                                <path key={i} d={seg.path} fill={seg.color} opacity={0.9} />
+                              ))}
+                              {/* Center label */}
+                              <text x="50" y="47" textAnchor="middle" fontSize="11" fontWeight="700" fill="var(--text)">{totalLectures}</text>
+                              <text x="50" y="57" textAnchor="middle" fontSize="7" fill="var(--muted)">lectures</text>
+                            </svg>
+                          </div>
+                          {/* Legend */}
+                          <div className="flex-1 flex flex-col gap-2 min-w-0">
+                            {segments.map((seg) => (
+                              <div key={seg.name} className="flex items-center gap-2">
+                                <div className="w-2.5 h-2.5 rounded-sm flex-shrink-0" style={{ background: seg.color }} />
+                                <span className="text-xs truncate flex-1" style={{ color: "var(--text)" }}>{seg.name}</span>
+                                <span className="text-xs font-semibold flex-shrink-0" style={{ color: seg.color }}>{seg.pct}%</span>
+                                <span className="text-xs flex-shrink-0" style={{ color: "var(--muted)" }}>{seg.lectures}</span>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })()}
+
+                  {/* ── Quick facts row ── */}
+                  <div className="glass p-4">
+                    <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                      Quick facts
+                    </p>
+                    <div className="grid grid-cols-2 gap-2">
+                      {[
+                        { label: "Best day ever", val: bestDayCount > 0 ? `${bestDayCount} lectures` : "—", sub: bestDayKey ? new Date(bestDayKey).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "" },
+                        { label: "Peak study hour", val: peakHourLabel ?? "—", sub: peakHour ? fmtMins(peakHour[1]) + " total" : "" },
+                        ...(studySessions.length > 0 ? [
+                          { label: "Avg session", val: fmtMins(Math.round(totalSessionMins / studySessions.length)), sub: `${studySessions.length} sessions total` },
+                          { label: "Longest session", val: fmtMins(Math.max(...studySessions.map(s => s.durationMinutes))), sub: "" },
+                        ] : []),
+                      ].map(({ label, val, sub }) => (
+                        <div key={label} className="rounded-xl px-3 py-2.5"
+                          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <p className="text-xs" style={{ color: "var(--muted)" }}>{label}</p>
+                          <p className="text-sm font-bold mt-0.5" style={{ color: "var(--text)" }}>{val}</p>
+                          {sub && <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>{sub}</p>}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* ── Lecture type mix ── */}
+                  {typeEntries.length > 1 && (
+                    <div className="glass p-4">
+                      <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
+                        Content type mix
+                      </p>
+                      <div className="flex flex-col gap-2">
+                        {typeEntries.map(([type, count]) => {
+                          const meta = TYPE_META[type] ?? { icon: "•", color: "var(--muted)" };
+                          const pct = Math.round((count / entries.length) * 100);
+                          return (
+                            <div key={type} className="flex items-center gap-3">
+                              <div className="w-6 h-6 rounded-md flex items-center justify-center text-xs flex-shrink-0"
+                                style={{ background: `${meta.color}18`, color: meta.color }}>
+                                {meta.icon}
+                              </div>
+                              <div className="flex-1">
+                                <div className="flex items-center justify-between mb-1">
+                                  <span className="text-xs capitalize" style={{ color: "var(--text)" }}>{type}</span>
+                                  <span className="text-xs font-semibold" style={{ color: meta.color }}>{count} ({pct}%)</span>
+                                </div>
+                                <div className="h-1 rounded-full" style={{ background: "var(--surface2)" }}>
+                                  <div className="h-1 rounded-full transition-all duration-500"
+                                    style={{ width: `${pct}%`, background: meta.color }} />
+                                </div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+                </>
+              );
+            })()}
+          </div>
+        )}
+
       </div>
     </div>
   );

@@ -15,6 +15,7 @@ export async function GET(req: NextRequest) {
     weeklyPlans: doc.weeklyPlans ?? [],
     targetDate: doc.targetDate ?? null,
     studySessions: doc.studySessions ?? [],
+    manualLectureRefs: Object.fromEntries(doc.manualLectureRefs ?? new Map()),
   });
 }
 

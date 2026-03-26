@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
 import { ToastProvider } from "@/components/Toast";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
-  title: "Course Tracker",
+  title: "GatePlan",
   description: "GATE Course Tracker & GO Classes Weekly Planner",
 };
 
@@ -13,7 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body className="min-h-screen antialiased">
         <ToastProvider>
-          <ThemeProvider>{children}</ThemeProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
         </ToastProvider>
       </body>
     </html>

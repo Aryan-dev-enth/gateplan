@@ -1,9 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import { getCurrentUser, logStudySession } from "@/lib/store";
-import ThemeToggle from "@/components/ThemeToggle";
 import type { Subject } from "@/lib/courseLoader";
 
 // ── Dial ─────────────────────────────────────────────────────────────────────
@@ -222,15 +220,8 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
       <div className="relative z-10 max-w-lg mx-auto px-4 py-8">
 
         {/* Nav */}
-        <div className="flex items-center justify-between mb-8 fade-in">
-          <div className="flex items-center gap-3">
-            <Link href="/dashboard" className="text-sm hover:opacity-80 transition-all" style={{ color: "var(--muted)" }}>
-              ← Dashboard
-            </Link>
-            <span style={{ color: "var(--border)" }}>›</span>
-            <span className="text-sm font-semibold" style={{ color: "var(--text)" }}>Log Study Time</span>
-          </div>
-          <ThemeToggle />
+        <div className="mb-6 fade-in">
+          <h1 className="text-base font-bold" style={{ color: "var(--text)" }}>Log Study Time</h1>
         </div>
 
         <div className="glass p-6 fade-in-1 relative overflow-hidden flex flex-col gap-5">
