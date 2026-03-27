@@ -290,10 +290,17 @@ export default function AIPage() {
                 whiteSpace: msg.role === "user" ? "pre-wrap" : "normal"
               }}
             >
-              <div className="prose dark:prose-invert prose-p:leading-relaxed prose-pre:bg-black/10 text-[11px] md:text-[12px] prose-p:text-[11px] md:prose-p:text-[12px] prose-li:text-[11px] md:prose-li:text-[12px] prose-headings:text-[13px] prose-headings:font-bold prose-headings:mt-3 prose-headings:mb-1.5 prose-p:mb-2.5 prose-ul:mb-2.5 prose-ol:mb-2.5 max-w-none">
+              <div className="text-[11px] md:text-[12px] leading-relaxed max-w-none" style={{ color: "var(--text)" }}>
                 <ReactMarkdown 
                   remarkPlugins={[remarkGfm]}
                   components={{
+                    p: ({node, ...props}) => <p className="mb-2 last:mb-0" style={{ color: "var(--text)" }} {...props} />,
+                    li: ({node, ...props}) => <li className="mb-1" style={{ color: "var(--text)" }} {...props} />,
+                    ul: ({node, ...props}) => <ul className="list-disc pl-4 mb-2" {...props} />,
+                    ol: ({node, ...props}) => <ol className="list-decimal pl-4 mb-2" {...props} />,
+                    h1: ({node, ...props}) => <h1 className="text-sm font-bold mt-3 mb-1.5" style={{ color: "var(--text)" }} {...props} />,
+                    h2: ({node, ...props}) => <h2 className="text-[13px] font-bold mt-2.5 mb-1" style={{ color: "var(--text)" }} {...props} />,
+                    h3: ({node, ...props}) => <h3 className="text-xs font-bold mt-2 mb-1" style={{ color: "var(--text)" }} {...props} />,
                     table: ({node, ...props}) => (
                       <div className="overflow-x-auto my-3 rounded-lg border w-full text-left" style={{ borderColor: "var(--border)" }}>
                         <table className="w-full text-left border-collapse min-w-[300px]" {...props} />
