@@ -90,6 +90,7 @@ export default function DashboardClient({
   const [isLoading, setIsLoading] = useState(true);
   const [targetDate, setTargetDate] = useState<string | undefined>(undefined);
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
+  const [recentAiChat, setRecentAiChat] = useState<any[] | null>(null);
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -99,9 +100,11 @@ export default function DashboardClient({
       setCompletedMap(data.completedLectures);
       setTargetDate(data.targetDate);
       setStudySessions(data.studySessions ?? []);
+      setRecentAiChat(data.recentAiChat ?? null);
       setIsLoading(false);
     }).catch(() => {
       setCompletedMap({});
+      setRecentAiChat(null);
       setIsLoading(false);
     });
   }, [router]);
@@ -303,6 +306,39 @@ export default function DashboardClient({
                 );
               })()}
             </div>
+
+            {/* ── Recent AI Chat Snippet ── */}
+            {recentAiChat && recentAiChat.length > 0 && (
+              <div className="glass p-5 mb-5 fade-in-2 relative overflow-hidden group">
+                <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, var(--accent), var(--accent2))" }} />
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-xs font-semibold uppercase tracking-wider flex items-center gap-2" style={{ color: "var(--muted)" }}>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    Recent AI Assistant Insight
+                  </p>
+                  <Link href="/ai" className="text-xs font-medium hover:underline flex flex-row items-center gap-1" style={{ color: "var(--accent)" }}>
+                    Open Chat
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                  </Link>
+                </div>
+                <div className="space-y-3">
+                  {recentAiChat.map((msg: any, i: number) => (
+                    <div key={i} className={`flex flex-col gap-1 ${msg.role === "user" ? "items-start border-l-2 pl-3" : "items-start bg-black/5 dark:bg-white/5 p-3 rounded-lg"}`} style={{ borderColor: "var(--border)" }}>
+                      <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: msg.role === "user" ? "var(--muted)" : "var(--accent)" }}>
+                        {msg.role === "user" ? "You asked" : "AI Assistant"}
+                      </span>
+                      <p className="text-xs leading-relaxed max-h-[80px] overflow-hidden text-ellipsis opacity-90" style={{ color: "var(--text)", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>
+                        {msg.content.replace(/\*+/g, "").substring(0, 300)}...
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* ── Backlog detail ── */}
             {backlogOpen && (

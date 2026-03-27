@@ -16,6 +16,7 @@ export interface UserData {
   targetDate?: string;
   studySessions: StudySession[];
   manualLectureRefs: Record<string, number | false>;
+  recentAiChat?: { role: string; content: string; timestamp?: string }[];
 }
 
 export interface WeeklyPlan {
@@ -94,6 +95,7 @@ export async function getUser(username: string): Promise<UserData> {
       targetDate: data.targetDate ?? undefined,
       studySessions: data.studySessions ?? [],
       manualLectureRefs: data.manualLectureRefs ?? {},
+      recentAiChat: data.recentAiChat ?? undefined,
     };
   } catch (error) {
     console.error('Error fetching user data:', error);

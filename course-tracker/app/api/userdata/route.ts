@@ -7,15 +7,17 @@ export async function GET(req: NextRequest) {
   if (!username) return NextResponse.json({ error: "Missing username" }, { status: 400 });
 
   await connectDB();
-  const doc = await UserDataModel.findOne({ username: username.toLowerCase() });
+  const doc = await UserDataModel.findOne({ username: username.toLowerCase() }).lean();
+  console.log(`[API/USERDATA] GET username=${username} foundDoc=${!!doc} historyLen=${doc?.aiChatHistory?.length || 0}`);
   if (!doc) return NextResponse.json({ completedLectures: {}, weeklyPlans: [], targetDate: null, studySessions: [] });
 
   return NextResponse.json({
-    completedLectures: Object.fromEntries(doc.completedLectures ?? new Map()),
+    completedLectures: doc.completedLectures || {},
     weeklyPlans: doc.weeklyPlans ?? [],
     targetDate: doc.targetDate ?? null,
     studySessions: doc.studySessions ?? [],
-    manualLectureRefs: Object.fromEntries(doc.manualLectureRefs ?? new Map()),
+    manualLectureRefs: doc.manualLectureRefs || {},
+    recentAiChat: doc.aiChatHistory && doc.aiChatHistory.length > 0 ? doc.aiChatHistory.slice(-2) : null,
   });
 }
 
