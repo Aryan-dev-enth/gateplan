@@ -17,6 +17,33 @@ export interface UserData {
   studySessions: StudySession[];
   manualLectureRefs: Record<string, number | false>;
   recentAiChat?: { role: string; content: string; timestamp?: string }[];
+  dailySummaries?: DailySummary[];
+}
+
+export interface Activity {
+  name: string;
+  minutes: number;
+  type: 'gym' | 'running' | 'sports' | 'hangout' | 'other' | 'meditation' | 'yoga' | 'reading' | 'gaming' | 'walking' | 'work';
+}
+
+export interface SleepSlot {
+  start: string; // HH:mm
+  end: string;   // HH:mm
+}
+
+export interface DailySummary {
+  date: string; // YYYY-MM-DD
+  studyHours: number;
+  activities: Activity[];
+  sleepSlots: SleepSlot[];
+  scores: {
+    productivity: number;
+    focus: number;
+    laziness: number;
+  };
+  outcome: string;
+  type: 'study' | 'partial' | 'revision' | 'test' | 'none';
+  fatigue?: number;
 }
 
 export interface WeeklyPlan {
@@ -96,11 +123,12 @@ export async function getUser(username: string): Promise<UserData> {
       studySessions: data.studySessions ?? [],
       manualLectureRefs: data.manualLectureRefs ?? {},
       recentAiChat: data.recentAiChat ?? undefined,
+      dailySummaries: data.dailySummaries ?? [],
     };
   } catch (error) {
     console.error('Error fetching user data:', error);
     // Return fallback data on any error
-    return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {} };
+    return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {}, dailySummaries: [] };
   }
 }
 
@@ -203,4 +231,36 @@ export async function deleteStudySession(username: string, sessionId: string): P
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, sessionId }),
   });
+}
+
+// --- Daily Summary ---
+
+export async function saveDailySummary(username: string, summary: DailySummary): Promise<any> {
+  const res = await fetch("/api/userdata/daily-summary", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, summary }),
+  });
+  return res.json();
+}
+
+export function calculateFatigue(summary: DailySummary): number {
+  const physicalMinutes = summary.activities.reduce((sum, a) => sum + (a.type !== 'hangout' ? a.minutes : 0), 0);
+  const studyHours = summary.studyHours;
+  
+  // Calculate total sleep hours
+  let sleepHours = 0;
+  summary.sleepSlots.forEach(slot => {
+    const [h1, m1] = slot.start.split(':').map(Number);
+    const [h2, m2] = slot.end.split(':').map(Number);
+    let diff = (h2 * 60 + m2) - (h1 * 60 + m1);
+    if (diff < 0) diff += 24 * 60; // Crosses midnight
+    sleepHours += diff / 60;
+  });
+
+  // Base fatigue formula
+  // Fatigue increases with activity/study, decreases with sleep
+  // Normalized roughly to 0-100
+  let fatigue = (physicalMinutes / 60) * 15 + (studyHours) * 8 - (sleepHours * 10) + 50;
+  return Math.max(0, Math.min(100, Math.round(fatigue)));
 }

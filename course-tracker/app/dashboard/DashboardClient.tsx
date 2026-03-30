@@ -10,6 +10,7 @@ import ScheduleSlider from "@/components/ScheduleSlider";
 import { formatHours } from "@/lib/pace";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
+import { saveDailySummary } from "@/lib/store";
 
 // ── Skeleton ──────────────────────────────────────────────────────────────────
 function Skeleton({ w = "100%", h = "12px" }: { w?: string; h?: string }) {
@@ -91,6 +92,7 @@ export default function DashboardClient({
   const [targetDate, setTargetDate] = useState<string | undefined>(undefined);
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   const [recentAiChat, setRecentAiChat] = useState<any[] | null>(null);
+  const [summaryModalOpen, setSummaryModalOpen] = useState(false);
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -195,7 +197,17 @@ export default function DashboardClient({
             <span style={{ color: "var(--text)" }}> Dashboard</span>
           </h1>
           {!isLoading && (
-            <span className="text-xs" style={{ color: "var(--muted)" }}>· {username}</span>
+            <div className="flex items-center gap-3">
+              <span className="text-xs" style={{ color: "var(--muted)" }}>· {username}</span>
+              <Link href="/summary" className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5" style={{ color: "var(--accent)" }}>
+                <span className="text-xs">📅</span> Summary View
+              </Link>
+              <button 
+                onClick={() => router.push("/summary/log")}
+                className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5" style={{ background: "var(--tint-accent)", color: "var(--accent)" }}>
+                <span className="text-xs">⚡</span> Log EOD
+              </button>
+            </div>
           )}
         </div>
 

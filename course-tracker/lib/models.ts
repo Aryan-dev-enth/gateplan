@@ -17,6 +17,27 @@ const UserDataSchema = new Schema({
   // Key: "date|subject|module|refIndex|ref" → timestamp (number) or false
   manualLectureRefs: { type: Map, of: Schema.Types.Mixed, default: {} },
   aiChatHistory: { type: Array, default: [] },
+  dailySummaries: [{
+    date: { type: String, required: true },
+    studyHours: { type: Number, default: 0 },
+    activities: [{
+      name: String,
+      minutes: Number,
+      type: { type: String, enum: ['gym', 'running', 'sports', 'hangout', 'other', 'meditation', 'yoga', 'reading', 'gaming', 'walking', 'work'] }
+    }],
+    sleepSlots: [{
+      start: String,
+      end: String
+    }],
+    scores: {
+      productivity: { type: Number, default: 5 },
+      focus: { type: Number, default: 5 },
+      laziness: { type: Number, default: 5 }
+    },
+    outcome: String,
+    type: { type: String, enum: ['study', 'partial', 'revision', 'test', 'none'], default: 'study' },
+    fatigue: Number
+  }],
 });
 
 export const UserModel = models.User || model("User", UserSchema);

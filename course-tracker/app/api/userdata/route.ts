@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
   await connectDB();
   const doc = await UserDataModel.findOne({ username: username.toLowerCase() }).lean();
   console.log(`[API/USERDATA] GET username=${username} foundDoc=${!!doc} historyLen=${doc?.aiChatHistory?.length || 0}`);
-  if (!doc) return NextResponse.json({ completedLectures: {}, weeklyPlans: [], targetDate: null, studySessions: [] });
+  if (!doc) return NextResponse.json({ completedLectures: {}, weeklyPlans: [], targetDate: null, studySessions: [], dailySummaries: [], manualLectureRefs: {} });
 
   return NextResponse.json({
     completedLectures: doc.completedLectures || {},
@@ -18,6 +18,7 @@ export async function GET(req: NextRequest) {
     studySessions: doc.studySessions ?? [],
     manualLectureRefs: doc.manualLectureRefs || {},
     recentAiChat: doc.aiChatHistory && doc.aiChatHistory.length > 0 ? doc.aiChatHistory.slice(-2) : null,
+    dailySummaries: doc.dailySummaries || [],
   });
 }
 
@@ -33,6 +34,7 @@ export async function POST(req: NextRequest) {
       weeklyPlans: data.weeklyPlans ?? [],
       targetDate: data.targetDate ?? null,
       studySessions: data.studySessions ?? [],
+      dailySummaries: data.dailySummaries ?? [],
     },
     { upsert: true, new: true }
   );
