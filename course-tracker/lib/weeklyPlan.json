@@ -308,5 +308,67 @@
         ]
       }
     ]
+  },
+  {
+    "weekId": "week-6",
+    "label": "30 Mar – 5 Apr 2026",
+    "days": [
+      {
+        "date": "2026-03-30",
+        "label": "30 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["FOL Practice Questions", "FOL GATE PYQ - Part 1", "FOY GATE PYQ - Part 2"], "hours": 5, "lectureIds": ["643d3257e4b0dd83aef2d2c9", "644290fbe4b0ce046b756422", "675618675826030013359d6e"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10a"], "hours": 1, "lectureIds": ["6447ac20e4b0afcbdb02f0e0"] }
+        ]
+      },
+      {
+        "date": "2026-03-31",
+        "label": "31 Mar",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Optional Lecture 1", "Optional Lecture 2", "Optional Lecture 3", "Optional Lecture 4"], "hours": 2.5, "lectureIds": ["6445861ce4b069adcf2df06d", "64458656e4b069adcf2df074", "64458675e4b069adcf2df07a", "6458bf35e4b08b40492f5038"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10b", "10c", "10d"], "hours": 1, "lectureIds": ["64481c31e4b0e775f27c31c1", "64481c31e4b0e775f27c31c2", "644894ffe4b02a1386ba6b8a"] }
+        ]
+      },
+      {
+        "date": "2026-04-01",
+        "label": "1 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["Lecture 1 to 7", "Set Theory Weekly Quiz 1"], "hours": 3.5, "lectureIds": ["6441bfc0e4b02d955323743a", "6441bfe0e4b02d955323743c", "6441bfffe4b02d955323743f", "6441d271e4b0c3bf109bf781", "6441e0a2e4b0fee1f51e9460", "64459396e4b062f656cb9acd", "6445bae6e4b05e6fd4d381ef", "660d5ca848e0040a325e1faf"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10e", "11a"], "hours": 1.5, "lectureIds": ["644aa95ae4b0b8e1fee8efd3", "64469eb5e4b09cd5a67eb22d"] }
+        ]
+      },
+      {
+        "date": "2026-04-02",
+        "label": "2 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["Lecture 8 to 14", "Practice set 1"], "hours": 4.5, "lectureIds": ["6445cb39e4b0ce3b5c64035a", "6445cc40e4b0ce3b5c640366", "6445cceae4b0ce3b5c640378", "6445cd0fe4b0ce3b5c64037b", "6445cd2fe4b0ce3b5c640380", "644b8c1be4b06f6c374b8695", "644ba194e4b0c3d96d527f35", "644a2d17e4b06c27be14f941"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11b"], "hours": 0.5, "lectureIds": ["64469eb5e4b09cd5a67eb22e"] }
+        ]
+      },
+      {
+        "date": "2026-04-03",
+        "label": "3 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["Lecture 15 to 25", "Set Theory Weekly Quiz 2"], "hours": 5, "lectureIds": ["644b9eb8e4b022a13df70161", "644b9f1fe4b022a13df7016d", "644b9f51e4b022a13df7017d", "644ec1cee4b0621dbdb3b715", "644ecdd0e4b0ab53616cc03f", "644f0ec3e4b0160f43e9c0ce", "644f0e69e4b0160f43e9c0ba", "644fc4c6e4b072414a246022", "644fc71ce4b072414a2460bc", "6451a8d1e4b037f2060cf6d7", "6451a917e4b037f2060cf6e2", "6618358169fb3074ba6ae50c"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11c"], "hours": 0.75, "lectureIds": ["64469eb5e4b09cd5a67eb22c"] }
+        ]
+      },
+      {
+        "date": "2026-04-04",
+        "label": "4 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["Lecture 26", "Example 1", "Example 2", "Lecture 27 to 29"], "hours": 4, "lectureIds": ["6451b128e4b0bea7fcf5bc90", "6451aa2ae4b037f2060cf6ec", "6451ad94e4b037f2060cf74f", "64530f5ae4b013191e9d4cda", "6453271ce4b0868ce485ce5e", "64536e66e4b09d4e30bd86f4"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11d", "11e"], "hours": 0.5, "lectureIds": ["64469eb5e4b09cd5a67eb22a", "64469eb5e4b09cd5a67eb22b"] }
+        ]
+      },
+      {
+        "date": "2026-04-05",
+        "label": "5 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["Lecture 30 to 33", "Practice set 2"], "hours": 2.5, "lectureIds": ["6456e8bce4b00d66d2b5b7b6", "6456f541e4b07585714e7798", "6456fb5ae4b07676aa3b17a2", "645753a9e4b06ca6130507aa", "64533cf0e4b0a2ae6a209931"] },
+          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 12", "Practice Questions + Probability Distributions", "Weekly Quiz 2"], "hours": 2.5, "lectureIds": ["6447bce3e4b0ea5c418e7fe8", "643cc75fe4b0a10978382187"] }
+        ]
+      }
+    ]
   }
 ]
