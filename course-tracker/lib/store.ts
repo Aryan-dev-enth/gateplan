@@ -18,12 +18,24 @@ export interface UserData {
   manualLectureRefs: Record<string, number | false>;
   recentAiChat?: { role: string; content: string; timestamp?: string }[];
   dailySummaries?: DailySummary[];
+  lastAiWellnessRemark?: { content: string; timestamp: string } | null;
 }
 
 export interface Activity {
   name: string;
   minutes: number;
   type: 'gym' | 'running' | 'sports' | 'hangout' | 'other' | 'meditation' | 'yoga' | 'reading' | 'gaming' | 'walking' | 'work';
+  intensity?: number;
+  notes?: string;
+}
+
+export interface Meal {
+  name: string;
+  calories: number;
+  protein: number;
+  carbs: number;
+  fat: number;
+  time?: string;
 }
 
 export interface SleepSlot {
@@ -33,9 +45,13 @@ export interface SleepSlot {
 
 export interface DailySummary {
   date: string; // YYYY-MM-DD
-  studyHours: number;
+  studyHours: number; // Total
+  lectureHours?: number;
+  sessionHours?: number;
   activities: Activity[];
   sleepSlots: SleepSlot[];
+  meals?: Meal[];
+  sleepyTimes?: string[];
   scores: {
     productivity: number;
     focus: number;
@@ -44,6 +60,9 @@ export interface DailySummary {
   outcome: string;
   type: 'study' | 'partial' | 'revision' | 'test' | 'none';
   fatigue?: number;
+  habits?: string[];
+  screenTime?: number;
+  studyQuality?: number;
 }
 
 export interface WeeklyPlan {
@@ -124,6 +143,7 @@ export async function getUser(username: string): Promise<UserData> {
       manualLectureRefs: data.manualLectureRefs ?? {},
       recentAiChat: data.recentAiChat ?? undefined,
       dailySummaries: data.dailySummaries ?? [],
+      lastAiWellnessRemark: data.lastAiWellnessRemark || null,
     };
   } catch (error) {
     console.error('Error fetching user data:', error);
@@ -247,6 +267,9 @@ export async function saveDailySummary(username: string, summary: DailySummary):
 export function calculateFatigue(summary: DailySummary): number {
   const physicalMinutes = summary.activities.reduce((sum, a) => sum + (a.type !== 'hangout' ? a.minutes : 0), 0);
   const studyHours = summary.studyHours;
+  const screenHours = summary.screenTime || 0;
+  const habitCount = summary.habits?.length || 0;
+  const sleepyTimeCount = summary.sleepyTimes?.length || 0;
   
   // Calculate total sleep hours
   let sleepHours = 0;
@@ -258,9 +281,70 @@ export function calculateFatigue(summary: DailySummary): number {
     sleepHours += diff / 60;
   });
 
-  // Base fatigue formula
-  // Fatigue increases with activity/study, decreases with sleep
-  // Normalized roughly to 0-100
-  let fatigue = (physicalMinutes / 60) * 15 + (studyHours) * 8 - (sleepHours * 10) + 50;
+  // Base fatigue formula (v2)
+  // Physical/Study/Screen increase fatigue. Sleep/Habits decrease it.
+  // energy dips (sleepyTimes) slightly increase the 'felt' fatigue.
+  let fatigue = 50 
+    + (physicalMinutes / 60) * 12 
+    + (studyHours) * 7 
+    + (screenHours) * 4 
+    + (sleepyTimeCount * 5)
+    - (sleepHours * 10) 
+    - (habitCount * 3);
+    
   return Math.max(0, Math.min(100, Math.round(fatigue)));
+}
+
+export function getPerformancePrediction(summaries: DailySummary[]): { score: number; reason: string } {
+  if (summaries.length === 0) return { score: 50, reason: "Need more data to predict." };
+  
+  const last = summaries[summaries.length - 1];
+  
+  // Calculate sleep hours of the last night
+  let sleepHours = 0;
+  last.sleepSlots.forEach(slot => {
+    const [h1, m1] = slot.start.split(':').map(Number);
+    const [h2, m2] = slot.end.split(':').map(Number);
+    let diff = (h2 * 60 + m2) - (h1 * 60 + m1);
+    if (diff < 0) diff += 24 * 60;
+    sleepHours += diff / 60;
+  });
+  
+  let score = 50;
+  let reason = "Maintaining steady performance.";
+  
+  if (sleepHours < 6) {
+    score -= 20;
+    reason = "Low sleep last night will likely impact focus today.";
+  } else if (sleepHours >= 7.5) {
+    score += 20;
+    reason = "Optimal sleep recovery detected. High performance expected.";
+  }
+  
+  if ((last.screenTime || 0) > 6) {
+    score -= 15;
+    reason += " High screen time yesterday may cause eye strain.";
+  }
+  
+  if ((last.habits?.length || 0) >= 4) {
+    score += 15;
+    reason += " Routine consistency is high.";
+  }
+  
+  return { score: Math.max(10, Math.min(100, score)), reason };
+}
+
+export async function getAiWellnessInsight(username: string, forceRefresh: boolean = false): Promise<string> {
+  try {
+    const res = await fetch("/api/ai/wellness-insight", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ username, forceRefresh }),
+    });
+    const data = await res.json();
+    return data.remark || data.error || "Could not generate insight.";
+  } catch (e) {
+    console.error(e);
+    return "AI insight server is currently unavailable.";
+  }
 }

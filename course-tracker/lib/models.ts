@@ -16,29 +16,48 @@ const UserDataSchema = new Schema({
   // Manual completions for weekly plan lecture refs not tracked in completedLectures
   // Key: "date|subject|module|refIndex|ref" → timestamp (number) or false
   manualLectureRefs: { type: Map, of: Schema.Types.Mixed, default: {} },
-  aiChatHistory: { type: Array, default: [] },
-  dailySummaries: [{
-    date: { type: String, required: true },
-    studyHours: { type: Number, default: 0 },
-    activities: [{
-      name: String,
-      minutes: Number,
-      type: { type: String, enum: ['gym', 'running', 'sports', 'hangout', 'other', 'meditation', 'yoga', 'reading', 'gaming', 'walking', 'work'] }
+    dailySummaries: [{
+      date: { type: String, required: true },
+      studyHours: { type: Number, default: 0 },
+      activities: [{
+        name: String,
+        minutes: Number,
+        type: { type: String, enum: ['gym', 'running', 'sports', 'hangout', 'other', 'meditation', 'yoga', 'reading', 'gaming', 'walking', 'work'] },
+        intensity: { type: Number, default: 3 }, // 1-5 scale
+        notes: String
+      }],
+      sleepSlots: [{
+        start: String,
+        end: String
+      }],
+      meals: [{
+        name: String,
+        calories: Number,
+        protein: Number,
+        carbs: Number,
+        fat: Number,
+        time: String
+      }],
+      sleepyTimes: [String], // Array of times like "14:30"
+      scores: {
+        productivity: { type: Number, default: 5 },
+        focus: { type: Number, default: 5 },
+        laziness: { type: Number, default: 5 }
+      },
+      outcome: String,
+      type: { type: String, enum: ['study', 'partial', 'revision', 'test', 'none'], default: 'study' },
+      fatigue: Number,
+      habits: { type: Array, default: [] },
+      screenTime: { type: Number, default: 0 },
+      studyQuality: { type: Number, default: 5 },
     }],
-    sleepSlots: [{
-      start: String,
-      end: String
-    }],
-    scores: {
-      productivity: { type: Number, default: 5 },
-      focus: { type: Number, default: 5 },
-      laziness: { type: Number, default: 5 }
-    },
-    outcome: String,
-    type: { type: String, enum: ['study', 'partial', 'revision', 'test', 'none'], default: 'study' },
-    fatigue: Number
-  }],
-});
+    lastAiWellnessRemark: {
+      content: String,
+      timestamp: { type: Date, default: Date.now }
+    }
+  },
+  { minimize: false }
+);
 
 export const UserModel = models.User || model("User", UserSchema);
 export const UserDataModel = models.UserData || model("UserData", UserDataSchema);

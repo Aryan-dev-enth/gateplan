@@ -31,20 +31,23 @@ export default function WeekSidebar({
 }: WeekSidebarProps) {
   const [expandedWeek, setExpandedWeek] = useState<string | null>(null);
 
-  const getTaskCompletion = (task: TaskData, date?: string): boolean => {
-    const hasMapped = task.lectureIds.length > 0;
-    const allDone = hasMapped && task.lectureIds.every((id) => !!completedMap[id]);
-    const taskKey = `${date || "unknown"}|${task.subject}|${task.module}|${task.lectureRefs.join("|")}|${task.hours}`;
-    return manualCompletedTasks.has(taskKey) || (hasMapped && allDone);
-  };
 
   const getWeekCompletion = (week: WeekData): number => {
-    const total = week.days.reduce((s, d) => s + d.tasks.length, 0);
-    const done = week.days.reduce(
-      (s, d) => s + d.tasks.filter((t) => getTaskCompletion(t, d.date)).length,
-      0
-    );
-    return total > 0 ? Math.round((done / total) * 100) : 0;
+    let totalRefs = 0;
+    let doneRefs = 0;
+    week.days.forEach((day) => {
+      day.tasks.forEach((task, taskIdx) => {
+        task.lectureRefs.forEach((ref, i) => {
+          totalRefs++;
+          const lectureId = task.lectureIds[i];
+          if (lectureId && completedMap[lectureId]) { doneRefs++; return; }
+          
+          const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+          if (manualCompletedTasks.has(manualKey)) doneRefs++;
+        });
+      });
+    });
+    return totalRefs > 0 ? Math.round((doneRefs / totalRefs) * 100) : 0;
   };
 
   return (
@@ -62,10 +65,16 @@ export default function WeekSidebar({
         // Subject breakdown
         const subjectMap = new Map<string, { total: number; done: number }>();
         week.days.forEach((day) => {
-          day.tasks.forEach((task) => {
+          day.tasks.forEach((task, taskIdx) => {
             const existing = subjectMap.get(task.subject) ?? { total: 0, done: 0 };
-            existing.total += 1;
-            if (getTaskCompletion(task, day.date)) existing.done += 1;
+            task.lectureRefs.forEach((ref, i) => {
+              existing.total += 1;
+              const lectureId = task.lectureIds[i];
+              const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+              if ((lectureId && completedMap[lectureId]) || manualCompletedTasks.has(manualKey)) {
+                existing.done += 1;
+              }
+            });
             subjectMap.set(task.subject, existing);
           });
         });

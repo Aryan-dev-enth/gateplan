@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUser, toggleManualLectureRef } from "@/lib/store";
+import { getCurrentUser, getUser, toggleManualLectureRef, toggleLecture } from "@/lib/store";
 import GOClassesScheduleDropdown from "@/components/GOClassesScheduleDropdown";
 import WeekSidebar from "./WeekSidebar";
 import type { Subject } from "@/lib/courseLoader";
@@ -32,24 +32,30 @@ function isPast(dateStr: string) {
 }
 
 function TaskCard({
-  task, completedMap, moduleId, manualRefs, onRefToggle, date,
+  task, completedMap, moduleId, manualRefs, onRefToggle, date, taskIndex,
 }: {
   task: TaskData;
   completedMap: Record<string, number | false>;
   moduleId: string | undefined;
   manualRefs: Record<string, number | false>;
-  onRefToggle: (key: string, value: boolean) => void;
+  onRefToggle: (key: string, value: boolean, lectureId?: string) => void;
   date: string;
+  taskIndex: number;
 }) {
   const [c1, c2] = getSubjectColor(task.subject);
 
   // Per-ref completion: tracked lectureId takes priority, else manual ref key
   const refStatuses = task.lectureRefs.map((ref, i) => {
     const lectureId = task.lectureIds[i];
-    if (lectureId && completedMap[lectureId]) return { done: true, hasId: true, key: lectureId };
-    const manualKey = `${date}|${task.subject}|${task.module}|${i}|${ref}`;
+    const manualKey = `${date}|${task.subject}|${task.module}|${taskIndex}|${i}|${ref}`;
+    const lectureDone = !!(lectureId && completedMap[lectureId]);
     const manualDone = !!manualRefs[manualKey];
-    return { done: manualDone, hasId: !!lectureId, key: manualKey, manualKey };
+    return { 
+      done: lectureDone || manualDone, 
+      hasId: !!lectureId, 
+      lectureId, 
+      manualKey 
+    };
   });
 
   const totalRefs = refStatuses.length;
@@ -93,16 +99,12 @@ function TaskCard({
         </span>
       </div>
 
-      {/* Per-ref lecture tags with individual checkboxes */}
-      <div className="flex flex-wrap gap-1.5">
         {task.lectureRefs.map((ref, i) => {
-          const { done, hasId, manualKey } = refStatuses[i];
-          const canToggle = !hasId; // only show checkbox if no tracked lectureId
+          const { done, hasId, lectureId, manualKey } = refStatuses[i];
           return (
             <button
               key={i}
-              disabled={hasId} // tracked lectures toggle via the module page
-              onClick={() => canToggle && onRefToggle(manualKey!, !done)}
+              onClick={() => onRefToggle(manualKey, !done, hasId ? lectureId : undefined)}
               className="flex items-center gap-1 text-xs px-2 py-0.5 rounded-full transition-all"
               style={{
                 background: done ? "var(--tint-green)" : "var(--tint-accent)",
@@ -110,27 +112,24 @@ function TaskCard({
                 color: done ? "var(--green)" : "var(--text)",
                 textDecoration: done ? "line-through" : "none",
                 opacity: done ? 0.9 : 1,
-                cursor: canToggle ? "pointer" : "default",
+                cursor: "pointer",
               }}>
-              {/* Checkbox for untracked refs */}
-              {canToggle && (
-                <span className="w-3 h-3 rounded border flex items-center justify-center flex-shrink-0"
-                  style={{
-                    borderColor: done ? "var(--green)" : "var(--border)",
-                    background: done ? "var(--green)" : "transparent",
-                  }}>
-                  {done && (
-                    <svg width="8" height="8" viewBox="0 0 20 20" fill="white">
-                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                    </svg>
-                  )}
-                </span>
-              )}
-              {done && hasId ? "✓ " : ""}{ref}
+              {/* Checkbox for all refs */}
+              <span className="w-3 h-3 rounded border flex items-center justify-center flex-shrink-0"
+                style={{
+                  borderColor: done ? "var(--green)" : "var(--border)",
+                  background: done ? "var(--green)" : "transparent",
+                }}>
+                {done && (
+                  <svg width="8" height="8" viewBox="0 0 20 20" fill="white">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                )}
+              </span>
+              {ref}
             </button>
           );
         })}
-      </div>
 
       {/* Progress bar */}
       {totalRefs > 0 && (
@@ -161,18 +160,18 @@ function DayRow({
   completedMap: Record<string, number | false>;
   moduleMap: Map<string, string>;
   manualRefs: Record<string, number | false>;
-  onRefToggle: (key: string, value: boolean) => void;
+  onRefToggle: (key: string, value: boolean, lectureId?: string) => void;
 }) {
   const today = isToday(day.date);
   const past = isPast(day.date);
 
   // Count completion across all refs (tracked + manual)
-  const { totalRefs, doneRefs } = day.tasks.reduce((acc, task) => {
+  const { totalRefs, doneRefs } = day.tasks.reduce((acc, task, taskIdx) => {
     task.lectureRefs.forEach((ref, i) => {
       acc.totalRefs++;
       const lectureId = task.lectureIds[i];
       if (lectureId && completedMap[lectureId]) { acc.doneRefs++; return; }
-      const manualKey = `${day.date}|${task.subject}|${task.module}|${i}|${ref}`;
+      const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
       if (manualRefs[manualKey]) acc.doneRefs++;
     });
     return acc;
@@ -242,6 +241,7 @@ function DayRow({
             manualRefs={manualRefs}
             onRefToggle={onRefToggle}
             date={day.date}
+            taskIndex={i}
           />
         ))}
       </div>
@@ -277,24 +277,38 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     setActiveWeek(current?.weekId ?? weeks[weeks.length - 1].weekId);
   }, [router, weeks]);
 
-  async function handleRefToggle(key: string, value: boolean) {
+  async function handleRefToggle(key: string, value: boolean, lectureId?: string) {
     const u = getCurrentUser();
     if (!u) return;
-    // Optimistic update
+
+    // Always update manual ref for the weekly plan (it's the source of truth for this specific view's strike-out)
     setManualRefs((prev) => ({ ...prev, [key]: value ? Date.now() : false }));
     await toggleManualLectureRef(u, key, value);
+
+    if (lectureId) {
+      // Also try to sync with the tracked lecture progress
+      setCompletedMap((prev) => ({ ...prev, [lectureId]: value ? Date.now() : false }));
+      const currentStatus = !!completedMap[lectureId];
+      if (currentStatus !== value) {
+        try {
+          await toggleLecture(u, lectureId);
+        } catch (e) {
+          console.error("Failed to sync tracked lecture status:", e);
+        }
+      }
+    }
   }
 
   // Compute week stats using both completedMap and manualRefs
   const week = weeks.find((w) => w.weekId === activeWeek) ?? weeks[0];
 
   const { weekTotalRefs, weekDoneRefs } = week.days.reduce((acc, day) => {
-    day.tasks.forEach((task) => {
+    day.tasks.forEach((task, taskIdx) => {
       task.lectureRefs.forEach((ref, i) => {
         acc.weekTotalRefs++;
         const lectureId = task.lectureIds[i];
         if (lectureId && completedMap[lectureId]) { acc.weekDoneRefs++; return; }
-        const manualKey = `${day.date}|${task.subject}|${task.module}|${i}|${ref}`;
+        const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
         if (manualRefs[manualKey]) acc.weekDoneRefs++;
       });
     });
@@ -304,28 +318,13 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
   const weekPct = weekTotalRefs > 0 ? Math.round((weekDoneRefs / weekTotalRefs) * 100) : 0;
   const totalHours = week.days.reduce((s, d) => s + d.tasks.reduce((ts, t) => ts + t.hours, 0), 0);
 
-  // For sidebar compat — convert manualRefs to a Set of task keys (legacy format)
   const manualCompletedTasks = useMemo(() => {
     const set = new Set<string>();
-    // sidebar uses task-level keys; we approximate by checking if all refs of a task are done
-    weeks.forEach((w) => {
-      w.days.forEach((day) => {
-        day.tasks.forEach((task) => {
-          const allDone = task.lectureRefs.every((ref, i) => {
-            const lectureId = task.lectureIds[i];
-            if (lectureId && completedMap[lectureId]) return true;
-            const manualKey = `${day.date}|${task.subject}|${task.module}|${i}|${ref}`;
-            return !!manualRefs[manualKey];
-          });
-          if (allDone && task.lectureRefs.length > 0) {
-            const taskKey = `${day.date}|${task.subject}|${task.module}|${task.lectureRefs.join("|")}|${task.hours}`;
-            set.add(taskKey);
-          }
-        });
-      });
+    Object.entries(manualRefs).forEach(([key, val]) => {
+      if (val) set.add(key);
     });
     return set;
-  }, [manualRefs, completedMap, weeks]);
+  }, [manualRefs]);
 
   return (
     <div className="min-h-screen" style={{ background: "var(--bg)" }}>

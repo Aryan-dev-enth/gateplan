@@ -19,6 +19,7 @@ export async function GET(req: NextRequest) {
     manualLectureRefs: doc.manualLectureRefs || {},
     recentAiChat: doc.aiChatHistory && doc.aiChatHistory.length > 0 ? doc.aiChatHistory.slice(-2) : null,
     dailySummaries: doc.dailySummaries || [],
+    lastAiWellnessRemark: doc.lastAiWellnessRemark ?? null,
   });
 }
 
@@ -35,6 +36,7 @@ export async function POST(req: NextRequest) {
       targetDate: data.targetDate ?? null,
       studySessions: data.studySessions ?? [],
       dailySummaries: data.dailySummaries ?? [],
+      manualLectureRefs: data.manualLectureRefs || {},
     },
     { upsert: true, new: true }
   );
