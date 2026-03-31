@@ -201,40 +201,28 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
       </div>
 
       <div className="pt-6 border-t border-white/5">
-        <div className="glass p-5 rounded-2xl bg-white/2 border border-white/5">
-          <div className="flex items-center gap-2 mb-4">
-            <Sparkles size={14} className="text-accent" />
-            <p className="text-[10px] font-black uppercase tracking-widest opacity-50">Study Intensity Legend</p>
+        <p className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-4">Study Intensity Legend</p>
+        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <X size={14} className="text-red-500" /> 0h (Rest/Off)
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-6">
-            <div className="flex items-center gap-2 text-[11px] font-bold">
-              <X size={14} className="text-red-500" /> 
-              <span>0h <span className="opacity-40 text-[9px]">(OFF)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold">
-              <div className="w-2.5 h-2.5 rounded-full bg-white/20" />
-              <span>0-2h <span className="opacity-40 text-[9px]">(LOW)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold text-green-400">
-              <Battery size={14} className="opacity-60" />
-              <span>2-4h <span className="opacity-40 text-[9px] font-normal">(BASE)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold text-yellow-400">
-              <Zap size={14} />
-              <span>4-6h <span className="opacity-40 text-[9px] font-normal">(ACTIVE)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold text-orange-500">
-              <Flame size={14} />
-              <span>6-8h <span className="opacity-40 text-[9px] font-normal">(HIGH)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold text-accent">
-              <Rocket size={14} />
-              <span>8-10h <span className="opacity-40 text-[9px] font-normal">(ELITE)</span></span>
-            </div>
-            <div className="flex items-center gap-2 text-[11px] font-bold text-purple-400">
-              <Sparkles size={14} />
-              <span>10h+ <span className="opacity-40 text-[9px] font-normal">(GOD)</span></span>
-            </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <div className="w-2 h-2 rounded-full bg-white/40" /> 0-2h
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <Battery size={14} className="text-green-400 opacity-60" /> 2-4h
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <Zap size={14} className="text-yellow-400" /> 4-6h
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <Flame size={14} className="text-orange-500" /> 6-8h
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <Rocket size={14} className="text-accent" /> 8-10h
+          </div>
+          <div className="flex items-center gap-2 text-[11px] font-medium">
+            <Sparkles size={14} className="text-accent" /> 10h+
           </div>
         </div>
       </div>

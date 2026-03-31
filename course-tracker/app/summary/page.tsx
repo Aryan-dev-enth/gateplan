@@ -301,17 +301,17 @@ export default function SummaryPage() {
                        <div>
                           <h4 className="text-sm font-black uppercase tracking-widest">AI Status Remark</h4>
                           {aiTimestamp && (
-                             <p className="text-[9px] opacity-40 font-bold">LAST SYNCED: {aiTimestamp === 'Just now' ? 'Just now' : new Date(aiTimestamp).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                             <p className="text-[9px] opacity-40 font-bold">LAST SYNCED: {aiTimestamp}</p>
                           )}
                        </div>
                     </div>
                     <button 
-                      onClick={() => fetchRemark(username, true)}
-                      disabled={isAiLoading}
-                      className="p-2 glass rounded-xl hover:bg-white/10 transition-all text-accent disabled:opacity-50"
-                   >
-                      <RefreshCw size={14} className={isAiLoading ? "animate-spin" : ""} />
-                   </button>
+                       onClick={() => fetchRemark(username, true)} 
+                       disabled={isAiLoading}
+                       className="p-1.5 hover:bg-white/10 rounded-lg transition-all opacity-40 hover:opacity-100 disabled:animate-spin"
+                    >
+                       <RefreshCw size={14} />
+                    </button>
                  </div>
                  
                  {isAiLoading ? (
