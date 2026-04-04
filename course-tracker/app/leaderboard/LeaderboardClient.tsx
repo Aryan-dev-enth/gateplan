@@ -6,11 +6,14 @@ import type { Subject } from "@/lib/courseLoader";
 
 interface UserStats {
   username: string;
+  totalHours: number;
   totalDone: number;
   totalLectures: number;
   pct: number;
   streak: number;
+  todayHours: number;
   todayCount: number;
+  weekHours: number;
   weekCount: number;
   subjectProgress: { id: string; name: string; done: number; total: number; pct: number }[];
   recentActivity: { title: string; subjectName: string; timestamp: number }[];
@@ -47,6 +50,13 @@ function timeAgo(ts: number): string {
   return `${Math.floor(h / 24)}d ago`;
 }
 
+function formatHours(seconds: number): string {
+  const h = seconds / 3600;
+  if (h === 0) return "0h";
+  if (h < 0.1) return "<0.1h";
+  return h.toFixed(1) + "h";
+}
+
 function Avatar({ name, color, size = 36 }: { name: string; color: string; size?: number }) {
   return (
     <div className="rounded-full flex items-center justify-center font-bold text-white flex-shrink-0"
@@ -64,16 +74,19 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
   const [expanded, setExpanded] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
-  const lectureMap = new Map<string, { title: string; subjectName: string }>();
+  const lectureMap = new Map<string, { title: string; subjectName: string; duration: number; isLecture: boolean }>();
   for (const s of subjects) {
     for (const m of s.modules) {
       for (const l of m.lectures) {
-        lectureMap.set(l.id, { title: l.title, subjectName: s.name });
+        lectureMap.set(l.id, { title: l.title, subjectName: s.name, duration: l.duration, isLecture: l.isLecture });
       }
     }
   }
   const totalLectures = subjects.reduce(
     (s, sub) => s + sub.modules.reduce((ms, m) => ms + m.lectures.length, 0), 0
+  );
+  const totalDuration = subjects.reduce(
+    (s, sub) => s + sub.modules.reduce((ms, m) => ms + m.lectures.reduce((ls, l) => ls + (l.isLecture ? l.duration : 0), 0), 0), 0
   );
 
   useEffect(() => {
@@ -89,21 +102,57 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
         const stats: UserStats[] = all.map(({ username, completedLectures: cm }) => {
           const doneIds = Object.entries(cm).filter(([, v]) => !!v);
           const totalDone = doneIds.length;
+          
+          let totalSeconds = 0;
+          let todaySeconds = 0;
+          let weekSeconds = 0;
+          let todayCount = 0;
+          let weekCount = 0;
+
+          doneIds.forEach(([id, ts]) => {
+            const meta = lectureMap.get(id);
+            if (meta && meta.isLecture) {
+              totalSeconds += meta.duration;
+              if ((ts as number) >= todayStart) {
+                todaySeconds += meta.duration;
+                todayCount++;
+              }
+              if ((ts as number) >= weekStart) {
+                weekSeconds += meta.duration;
+                weekCount++;
+              }
+            }
+          });
+
           const pct = totalLectures === 0 ? 0 : Math.round((totalDone / totalLectures) * 100);
           const streak = calcStreak(cm);
-          const todayCount = doneIds.filter(([, v]) => (v as number) >= todayStart).length;
-          const weekCount = doneIds.filter(([, v]) => (v as number) >= weekStart).length;
+
           const subjectProgress = subjects.map((s) => {
             const total = s.modules.reduce((a, m) => a + m.lectures.length, 0);
             const done = s.modules.reduce((a, m) => a + m.lectures.filter((l) => !!cm[l.id]).length, 0);
             return { id: s.id, name: s.name, done, total, pct: total === 0 ? 0 : Math.round((done / total) * 100) };
           }).filter((s) => s.total > 0);
+
           const recentActivity = doneIds
             .map(([id, ts]) => { const meta = lectureMap.get(id); return meta ? { ...meta, timestamp: ts as number } : null; })
             .filter(Boolean).sort((a, b) => b!.timestamp - a!.timestamp).slice(0, 5) as { title: string; subjectName: string; timestamp: number }[];
-          return { username, totalDone, totalLectures, pct, streak, todayCount, weekCount, subjectProgress, recentActivity };
+
+          return { 
+            username, 
+            totalHours: totalSeconds / 3600, 
+            totalDone, 
+            totalLectures, 
+            pct, 
+            streak, 
+            todayHours: todaySeconds / 3600, 
+            todayCount,
+            weekHours: weekSeconds / 3600, 
+            weekCount,
+            subjectProgress, 
+            recentActivity 
+          };
         });
-        stats.sort((a, b) => b.totalDone - a.totalDone);
+        stats.sort((a, b) => b.totalHours - a.totalHours);
         setUsers(stats);
       })
       .catch(console.error)
@@ -112,13 +161,18 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
   }, [router]);
 
   const sorted = [...users].sort((a, b) => {
-    if (tab === "today") return b.todayCount - a.todayCount;
-    if (tab === "week") return b.weekCount - a.weekCount;
-    return b.totalDone - a.totalDone;
+    if (tab === "today") return b.todayHours - a.todayHours;
+    if (tab === "week") return b.weekHours - a.weekHours;
+    return b.totalHours - a.totalHours;
   });
 
   const getScore = (u: UserStats) =>
+    tab === "today" ? u.todayHours : tab === "week" ? u.weekHours : u.totalHours;
+
+  const getCount = (u: UserStats) =>
     tab === "today" ? u.todayCount : tab === "week" ? u.weekCount : u.totalDone;
+
+  const scoreLabel = tab === "overall" ? "total hours" : tab === "today" ? "hours today" : "hours this week";
 
   const myStats = users.find((u) => u.username === me);
   const myRank = sorted.findIndex((u) => u.username === me) + 1;
@@ -180,11 +234,11 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                 </p>
                 <div className="flex items-end justify-center gap-4">
                   {/* 2nd */}
-                  {sorted[1] && <PodiumCard user={sorted[1]} rank={2} isMe={sorted[1].username === me} score={getScore(sorted[1])} color={USER_COLORS[1]} />}
+                  {sorted[1] && <PodiumCard user={sorted[1]} rank={2} isMe={sorted[1].username === me} score={getScore(sorted[1])} count={getCount(sorted[1])} color={USER_COLORS[1]} />}
                   {/* 1st */}
-                  <PodiumCard user={sorted[0]} rank={1} isMe={sorted[0].username === me} score={getScore(sorted[0])} color={USER_COLORS[0]} tall />
+                  <PodiumCard user={sorted[0]} rank={1} isMe={sorted[0].username === me} score={getScore(sorted[0])} count={getCount(sorted[0])} color={USER_COLORS[0]} tall />
                   {/* 3rd */}
-                  {sorted[2] && <PodiumCard user={sorted[2]} rank={3} isMe={sorted[2].username === me} score={getScore(sorted[2])} color={USER_COLORS[2]} />}
+                  {sorted[2] && <PodiumCard user={sorted[2]} rank={3} isMe={sorted[2].username === me} score={getScore(sorted[2])} count={getCount(sorted[2])} color={USER_COLORS[2]} />}
                 </div>
               </div>
             )}
@@ -202,13 +256,13 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                     <div>
                       <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>Your position</p>
                       <p className="text-xs" style={{ color: "var(--muted)" }}>
-                        {getScore(leader) - getScore(myStats)} {tab === "overall" ? "lectures" : tab === "today" ? "lectures today" : "lectures this week"} behind {leader.username}
+                        {(getScore(leader) - getScore(myStats)).toFixed(1)} {scoreLabel} behind {leader.username}
                       </p>
                     </div>
                   </div>
                   <div className="text-right">
                     <p className="text-lg font-bold" style={{ color: USER_COLORS[(myRank - 1) % USER_COLORS.length] }}>
-                      {getScore(myStats)}
+                      {getScore(myStats).toFixed(1)}h <span className="text-xs font-normal" style={{ color: "var(--muted)" }}>({getCount(myStats)}L)</span>
                     </p>
                     <p className="text-xs" style={{ color: "var(--muted)" }}>{myStats.pct}% overall</p>
                   </div>
@@ -224,7 +278,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                         }} />
                     </div>
                     <p className="text-xs mt-1" style={{ color: "var(--muted)" }}>
-                      {Math.round((getScore(myStats) / getScore(leader)) * 100)}% of leader's count
+                      {Math.round((getScore(myStats) / (getScore(leader) || 1)) * 100)}% of leader's time
                     </p>
                   </div>
                 )}
@@ -278,7 +332,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                               <div className="h-1 rounded-full transition-all duration-500"
                                 style={{
                                   width: leaderScore > 0 ? `${Math.round((score / leaderScore) * 100)}%` : "0%",
-                                  background: color,
+                                  background: `linear-gradient(90deg, ${color}, ${color}cc)`,
                                 }} />
                             </div>
                             <span className="text-xs flex-shrink-0" style={{ color: "var(--muted)" }}>
@@ -287,10 +341,12 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                           </div>
                         </div>
 
-                        {/* Score */}
                         <div className="flex-shrink-0 text-right">
-                          <p className="text-base font-bold" style={{ color }}>{score}</p>
-                          <p className="text-xs" style={{ color: "var(--muted)" }}>{user.pct}%</p>
+                          <p className="text-sm font-bold" style={{ color }}>
+                            {score.toFixed(1)}h
+                            <span className="block text-[10px] opacity-70 font-normal">({getCount(user)} lectures)</span>
+                          </p>
+                          <p className="text-[10px]" style={{ color: "var(--muted)" }}>{user.pct}%</p>
                         </div>
 
                         {/* Chevron */}
@@ -310,14 +366,15 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                         {/* Quick stats */}
                         <div className="grid grid-cols-3 gap-2">
                           {[
-                            { label: "Today", val: user.todayCount, color: "var(--green)" },
-                            { label: "This week", val: user.weekCount, color: "var(--accent2)" },
-                            { label: "Streak", val: `${user.streak} 🔥`, color: "#f59e0b" },
+                            { label: "Today", val: `${user.todayHours.toFixed(1)}h`, sub: `${user.todayCount}L`, color: "var(--green)" },
+                            { label: "This week", val: `${user.weekHours.toFixed(1)}h`, sub: `${user.weekCount}L`, color: "var(--accent2)" },
+                            { label: "Streak", val: `${user.streak} 🔥`, sub: "days", color: "#f59e0b" },
                           ].map((s) => (
                             <div key={s.label} className="rounded-xl p-3 text-center"
                               style={{ background: "var(--card-bg)", border: "1px solid var(--border)" }}>
                               <p className="text-base font-bold" style={{ color: s.color }}>{s.val}</p>
-                              <p className="text-xs" style={{ color: "var(--muted)" }}>{s.label}</p>
+                              <p className="text-[10px]" style={{ color: "var(--muted)" }}>{s.sub}</p>
+                              <p className="text-[10px] mt-0.5 opacity-60" style={{ color: "var(--text)" }}>{s.label}</p>
                             </div>
                           ))}
                         </div>
@@ -391,7 +448,7 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
                 </p>
               ) : leader ? (
                 <p className="text-sm font-semibold" style={{ color: "#f59e0b" }}>
-                  {leader.username} is ahead by {getScore(leader) - (myStats ? getScore(myStats) : 0)} lectures — close the gap
+                  {leader.username} is ahead by {(getScore(leader) - (myStats ? getScore(myStats) : 0)).toFixed(1)} hours — close the gap
                 </p>
               ) : null}
             </div>
@@ -402,12 +459,12 @@ export default function LeaderboardClient({ subjects }: { subjects: Subject[] })
   );
 }
 
-function PodiumCard({ user, rank, isMe, score, color, tall = false }: {
-  user: UserStats; rank: number; isMe: boolean; score: number; color: string; tall?: boolean;
+function PodiumCard({ user, rank, isMe, score, count, color, tall = false }: {
+  user: UserStats; rank: number; isMe: boolean; score: number; count: number; color: string; tall?: boolean;
 }) {
   const size = tall ? 52 : 40;
   return (
-    <div className={`flex flex-col items-center gap-1.5 ${tall ? "" : "mt-5"}`} style={{ minWidth: "80px" }}>
+    <div className={`flex flex-col items-center gap-1.5 ${tall ? "" : "mt-5"}`} style={{ minWidth: "90px" }}>
       <span className="text-xl">{MEDALS[rank - 1]}</span>
       <div className="rounded-full flex items-center justify-center font-bold text-white"
         style={{
@@ -422,7 +479,10 @@ function PodiumCard({ user, rank, isMe, score, color, tall = false }: {
       <p className="text-xs font-semibold text-center truncate" style={{ color: "var(--text)", maxWidth: "80px" }}>
         {user.username}{isMe ? " 👈" : ""}
       </p>
-      <p className="text-sm font-bold" style={{ color }}>{score}</p>
+      <div className="text-center">
+        <p className="text-sm font-bold" style={{ color }}>{score.toFixed(1)}h</p>
+        <p className="text-[10px] opacity-60" style={{ color: "var(--text)" }}>{count}L</p>
+      </div>
       <p className="text-xs" style={{ color: "var(--muted)" }}>🔥 {user.streak}</p>
       {/* Podium base */}
       <div className="w-full rounded-t-md mt-1"

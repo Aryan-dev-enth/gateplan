@@ -202,17 +202,6 @@ export default function DashboardClient({
               <Link href="/summary" className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5" style={{ color: "var(--accent)" }}>
                 <span className="text-xs">📅</span> Summary View
               </Link>
-              <button 
-                onClick={() => router.push("/summary/log?mode=quick")}
-                className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:opacity-80 transition-all flex items-center gap-1.5" 
-                style={{ background: "rgba(234, 179, 8, 0.1)", color: "#eab308", border: "1px solid rgba(234, 179, 8, 0.2)" }}>
-                <span className="text-xs">⚡</span> Quick Log
-              </button>
-              <button 
-                onClick={() => router.push("/summary/log?mode=eod")}
-                className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5" style={{ background: "var(--tint-accent)", color: "var(--accent)" }}>
-                <span className="text-xs">🌙</span> Log EOD
-              </button>
             </div>
           )}
         </div>
@@ -238,14 +227,20 @@ export default function DashboardClient({
                 </p>
                 <div className="flex items-end justify-between mb-3">
                   <span className="text-3xl font-bold" style={{ color: "var(--accent)" }}>{overallPct}%</span>
+                  <div className="text-right">
+                    <p className="text-xl font-bold" style={{ color: "var(--accent2)" }}>{Math.round(hoursDone + overallPct)} pts</p>
+                    <p className="text-[10px] uppercase tracking-wider font-bold opacity-40" style={{ color: "var(--text)" }}>Points</p>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between mb-2">
                   <span className="text-xs" style={{ color: "var(--muted)" }}>
                     {formatHours(hoursDone)} / {formatHours(totalCoreHours)}
                   </span>
+                  <span className="text-xs" style={{ color: "var(--muted)" }}>
+                    {totalDone} / {totalAll} lectures
+                  </span>
                 </div>
                 <ProgressBar value={hoursDone} total={totalCoreHours} formatValue={formatHours} />
-                <p className="text-xs mt-2" style={{ color: "var(--muted)" }}>
-                  {totalDone} / {totalAll} lectures done
-                </p>
               </div>
 
               {/* Backlog */}

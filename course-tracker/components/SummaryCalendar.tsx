@@ -22,6 +22,16 @@ function getRangeLabel(h: number) {
   return "10h+";
 }
 
+function getIconForHours(h: number) {
+  if (h === 0) return <X size={16} className="text-red-500/50" />;
+  if (h < 2) return <div className="w-1.5 h-1.5 rounded-full bg-white/20" />;
+  if (h < 4) return <Battery size={16} className="text-green-400 opacity-60" />;
+  if (h < 6) return <Zap size={16} className="text-yellow-400" />;
+  if (h < 8) return <Flame size={16} className="text-orange-500" />;
+  if (h < 10) return <Rocket size={16} className="text-accent" />;
+  return <Sparkles size={18} className="text-accent animate-pulse" />;
+}
+
 export default function SummaryCalendar({ summaries, studySessions, manualLectureRefs }: SummaryCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
 
@@ -71,23 +81,9 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
     const daySessions = (studySessions || []).filter(s => new Date(s.startedAt).toDateString() === dateObj.toDateString());
     
     // Calculate lecture hours from manualLectureRefs and weeklyPlan
-    let dayLectureHours = 0;
     const dayPlan = (weeklyPlanData as any[]).flatMap(w => w.days).find(day => day.date === dateStr);
-    if (dayPlan && manualLectureRefs) {
-      dayPlan.tasks.forEach((task: any) => {
-        const refs = task.lectureRefs || [];
-        const taskHours = task.hours || 0;
-        const tickedCount = refs.filter((ref: string, idx: number) => {
-          const key = `${dateStr}|${task.subject}|${task.module}|${idx}|${ref}`;
-          return manualLectureRefs[key];
-        }).length;
-        if (refs.length > 0) {
-          dayLectureHours += (tickedCount / refs.length) * taskHours;
-        }
-      });
-    }
     const daySessionHours = daySessions.reduce((acc, s) => acc + (s.durationMinutes || 0), 0) / 60;
-    const dayTotalHours = dayLectureHours + daySessionHours;
+    const dayTotalHours = daySessionHours;
 
     // Collect lecture details for tooltip
     const completedLectures: { subject: string; module: string; ref: string }[] = [];
@@ -106,31 +102,25 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
     calendarDays.push(
       <div key={d} className="h-24 w-full glass bg-white/2 border border-white/5 rounded-xl p-2 flex flex-col items-center justify-between group hover:bg-white/5 transition-all relative">
         <span className="text-[10px] self-start opacity-40 font-bold">{d}</span>
-        <div className="flex-1 flex items-center justify-center">
-          {dayTotalHours > 0 ? (
+        <div className="flex-1 flex flex-col items-center justify-center gap-1">
+          {getIconForHours(dayTotalHours)}
+          {dayTotalHours > 0 && (
              <div className="flex flex-col items-center">
                 <div className="text-[10px] font-black text-accent">{dayTotalHours.toFixed(1)}h</div>
-                <div className="text-[8px] opacity-40 font-bold">{dayLectureHours.toFixed(1)}L | {daySessionHours.toFixed(1)}S</div>
+                <div className="text-[7px] opacity-30 font-bold uppercase tracking-tighter">{daySessions.length} sessions</div>
              </div>
-          ) : (
-             getSymbol(summary)
           )}
         </div>
         
-        <div className="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 glass bg-[#0f172a]/95 p-3 flex flex-col gap-2 transition-all duration-200 rounded-2xl min-w-[200px] shadow-2xl border border-white/10 pointer-events-none">
+        <div className="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 glass bg-[#0f172a]/98 p-3 flex flex-col gap-2 transition-all duration-200 rounded-2xl min-w-[200px] shadow-2xl border border-white/10 pointer-events-none">
              <div className="flex justify-between items-center font-black border-b border-white/10 pb-2 mb-1">
-                <span className="text-accent text-xs">🚀 {dayTotalHours.toFixed(1)}h Study</span>
-                {summary && (
-                  <span className={`text-[9px] px-2 py-0.5 rounded-full ${summary.fatigue && summary.fatigue > 70 ? "bg-red-500/20 text-red-400" : "bg-green-500/20 text-green-400"}`}>
-                    {summary.fatigue}% Fatigue
-                  </span>
-                )}
+                <span className="text-accent text-xs">🚀 {dayTotalHours.toFixed(1)}h Study Session</span>
              </div>
              
              {/* Lectures Breakdown */}
              {completedLectures.length > 0 && (
                <div className="space-y-1">
-                  <p className="text-[9px] font-black uppercase opacity-40 flex items-center gap-1">📖 Lectures ({dayLectureHours.toFixed(1)}h)</p>
+                  <p className="text-[9px] font-black uppercase opacity-40 flex items-center gap-1">📖 Completed Lectures</p>
                   <div className="space-y-1">
                     {completedLectures.slice(0, 3).map((l, i) => (
                       <div key={i} className="flex justify-between items-center opacity-80 text-[8px] bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/10">
@@ -142,7 +132,6 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
                </div>
              )}
 
-             {/* Study Sessions List */}
              {daySessions.length > 0 && (
                <div className="space-y-1 mt-1">
                   <p className="text-[9px] font-black uppercase opacity-40 flex items-center gap-1">✍️ Sessions ({daySessionHours.toFixed(1)}h)</p>
@@ -157,35 +146,40 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
                   </div>
                </div>
              )}
-
-             {summary && summary.activities.length > 0 && (
-               <div className="pt-1 mt-1 border-t border-white/5">
-                 <p className="text-[8px] font-black uppercase opacity-30 mb-1">Other Activities</p>
-                 {summary.activities.slice(0, 2).map((a, i) => (
-                   <div key={i} className="flex justify-between items-center opacity-50 text-[8px]">
-                     <span className="truncate max-w-[80px]">{a.name}</span>
-                     <span>{a.minutes}m</span>
-                   </div>
-                 ))}
-               </div>
-             )}
-             
-             {summary && (
-               <div className="mt-2 pt-2 border-t border-accent/20 flex gap-3 justify-center text-[10px] font-black">
-                  <div className="flex flex-col items-center"><span className="opacity-40 text-[7px] uppercase tracking-tighter">Prod</span>{summary.scores.productivity}</div>
-                  <div className="flex flex-col items-center"><span className="opacity-40 text-[7px] uppercase tracking-tighter">Focus</span>{summary.scores.focus}</div>
-                  <div className="flex flex-col items-center"><span className="opacity-40 text-[7px] uppercase tracking-tighter">Lazy</span>{summary.scores.laziness}</div>
-               </div>
-             )}
-          </div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between mb-4">
-        <h2 className="text-xl font-black grad-text">Performance Calendar</h2>
+      <div className="flex items-center justify-between">
+        <div className="flex flex-col gap-1">
+           <h2 className="text-xl font-black grad-text">Performance Calendar</h2>
+           <div className="flex items-center gap-3 overflow-x-auto no-scrollbar py-1">
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-40 whitespace-nowrap">
+                <X size={10} className="text-red-500" /> Rest
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-40 whitespace-nowrap">
+                <div className="w-1.5 h-1.5 rounded-full bg-white/40" /> 0-2h
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-50 whitespace-nowrap">
+                <Battery size={10} className="text-green-400" /> 2-4h
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-60 whitespace-nowrap">
+                <Zap size={10} className="text-yellow-400" /> 4-6h
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-70 whitespace-nowrap">
+                <Flame size={10} className="text-orange-500" /> 6-8h
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-80 whitespace-nowrap">
+                <Rocket size={10} className="text-accent" /> 8-10h
+              </div>
+              <div className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-tight opacity-100 whitespace-nowrap">
+                <Sparkles size={10} className="text-accent" /> 10h+
+              </div>
+           </div>
+        </div>
         <div className="flex items-center gap-2">
           <button onClick={prevMonth} className="p-2 glass rounded-xl hover:bg-white/10 transition-all"><ChevronLeft size={16} /></button>
           <span className="text-sm font-bold min-w-[120px] text-center">
@@ -198,33 +192,6 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
       <div className="grid grid-cols-7 gap-3">
         {DAYS.map(d => <div key={d} className="text-center text-[10px] font-black uppercase opacity-40 pb-2">{d}</div>)}
         {calendarDays}
-      </div>
-
-      <div className="pt-6 border-t border-white/5">
-        <p className="text-[10px] font-black uppercase tracking-widest opacity-40 mb-4">Study Intensity Legend</p>
-        <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-4">
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <X size={14} className="text-red-500" /> 0h (Rest/Off)
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <div className="w-2 h-2 rounded-full bg-white/40" /> 0-2h
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <Battery size={14} className="text-green-400 opacity-60" /> 2-4h
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <Zap size={14} className="text-yellow-400" /> 4-6h
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <Flame size={14} className="text-orange-500" /> 6-8h
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <Rocket size={14} className="text-accent" /> 8-10h
-          </div>
-          <div className="flex items-center gap-2 text-[11px] font-medium">
-            <Sparkles size={14} className="text-accent" /> 10h+
-          </div>
-        </div>
       </div>
     </div>
   );
