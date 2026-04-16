@@ -429,5 +429,137 @@
         ]
       }
     ]
+  },
+  {
+    "weekId": "week-8",
+    "label": "13 Apr – 19 Apr 2026",
+    "days": [
+      {
+        "date": "2026-04-13",
+        "label": "13 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 7 - Group Theory",
+            "lectureRefs": ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Summary Lecture 1", "Summary Lecture 2", "Summary Lecture 3", "Summary Lecture 4", "Summary Lecture 5", "Summary Lecture 6", "Practice Questions"],
+            "hours": 5.5,
+            "lectureIds": ["646d3d71e4b021f2d0686df4", "646d4cbde4b021f2d0686e7a", "646d676be4b0d2998ec694fd", "646d78d9e4b0c1912d5c38ab", "646d862ce4b021f2d068743f", "646d90bbe4b04ca9f8a92c0a", "646ef5e1e4b04e01d7d58274", "646efa20e4b04e01d7d5839a", "646f22bbe4b01073539c7b97", "646fe927e4b03a7e0502a40e", "646d9396e4b04ca9f8a92c7d", "646d93bce4b04ca9f8a92c87", "646d93dbe4b04ca9f8a92c92", "646d9401e4b04ca9f8a92c9b", "646d9450e4b04ca9f8a92ca8", "646d946ee4b04ca9f8a92cae", "64710dd4e4b0efa62b106c66"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-14",
+        "label": "14 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 7 - Group Theory",
+            "lectureRefs": ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23A", "23B"],
+            "hours": 4.15,
+            "lectureIds": ["6470b114e4b0044557701374", "64710198e4b0e63b3b4084a2", "647116e8e4b023faec9463d6", "64711c57e4b0198918a867ca", "64712491e4b079489dc330ce", "64713131e4b0e63b3b4089ed", "6473d09ae4b086659d7283eb", "6473da3ee4b0ac88350c31ae", "6473d80fe4b0ac88350c31a8", "6473dc62e4b0ac88350c31c0", "6473e180e4b09b1d9a2182a7", "6473e205e4b09b1d9a2182ab"]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": ["4"],
+            "hours": 1.5,
+            "lectureIds": ["665de57a1695162ae84d1cef"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-15",
+        "label": "15 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 7 - Group Theory",
+            "lectureRefs": ["24", "25A", "25B", "25C", "26", "27A", "27B", "28", "29", "30", "31", "32A", "32B", "33", "34"],
+            "hours": 6,
+            "lectureIds": ["6473e23ee4b09b1d9a2182af", "6473e25fe4b09b1d9a2182b2", "6473e2fde4b09b1d9a2182b4", "6473e560e4b0c6c10d49f8df", "6473f0ebe4b0ac88350c32d8", "6477c508e4b0ead1dc18b375", "6477c759e4b0ead1dc18b383", "6479b3b4e4b0e36b14bc1aad", "6479c6bbe4b0a6850f6e0652", "6479ca56e4b0592752fab452", "6479cb02e4b0592752fab47a", "647a2079e4b031b05d18351b", "647a2ae8e4b0b524ec3fc90e", "647a5441e4b0473252124f35", "647a54bce4b08fb4470c0ca1"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-16",
+        "label": "16 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 7 - Group Theory",
+            "lectureRefs": ["35A", "35B", "36", "37", "38", "39", "40"],
+            "hours": 2.75,
+            "lectureIds": ["647b7c29e4b03348b42ffe24", "647b8f19e4b039616c120b33", "647b9d45e4b0dbf4b265dd48", "647ba373e4b0b524ec4022e1", "647ba461e4b063b10b44dcde", "647bab52e4b0dfb9db233748", "647bb157e4b0de990c2f1939"]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": ["5"],
+            "hours": 2.15,
+            "lectureIds": ["665f3b177d90b1269313f5b8"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-17",
+        "label": "17 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 7 - Group Theory",
+            "lectureRefs": ["GATE PYQs", "Weekly Quiz - 16"],
+            "hours": 2.15,
+            "lectureIds": ["67ed106c432caf0616cc094d", "64876b7ce4b0ba9d936ca5f2"]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": ["6"],
+            "hours": 2,
+            "lectureIds": ["666160a94d931e02edcbeebf"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-18",
+        "label": "18 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["1", "2", "3A", "3B", "4", "5"],
+            "hours": 2.5,
+            "lectureIds": ["647df080e4b0cc8b664d5737", "647e03fce4b088959c1870df", "647e5352e4b0e1822ab5c3ed", "647e5c5ce4b0cf67ab6214df", "647e816be4b005dd24353846", "64819b95e4b0fd1f3bd3c70b"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["1a", "1b", "1c", "1d", "Homework-1"],
+            "hours": 3,
+            "lectureIds": ["644caf7ce4b0c1312e8cade3", "644e42f0e4b0c580be9d69ec", "644e755ce4b08f62c70f9641", "644e92d8e4b08f62c70f9ef0", "644fbd0ee4b04fd633c1b708"]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-19",
+        "label": "19 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["6", "7", "8A", "8B"],
+            "hours": 2.5,
+            "lectureIds": ["6481b0c9e4b00bb82bc1bdf3", "6481d4d3e4b076a057b4cde0", "6481e327e4b0d36763fa8405", "648202cce4b0028418fae730"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["2a", "2b", "2c", "2d", "2e", "Homework-2"],
+            "hours": 2.5,
+            "lectureIds": ["644fcedde4b0413f4ff7ee1d", "6450dfb2e4b037492b2a4e8e", "6450fabae4b037f2060ccc07", "64510953e4b0e65caa7017b6", "64513517e4b05cf4623d23f5", "64522c12e4b09d8c902c583a"]
+          }
+        ]
+      }
+    ]
   }
 ]
