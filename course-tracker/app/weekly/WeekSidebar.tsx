@@ -33,21 +33,26 @@ export default function WeekSidebar({
 
 
   const getWeekCompletion = (week: WeekData): number => {
-    let totalRefs = 0;
-    let doneRefs = 0;
+    let totalHours = 0;
+    let doneHours = 0;
     week.days.forEach((day) => {
       day.tasks.forEach((task, taskIdx) => {
-        task.lectureRefs.forEach((ref, i) => {
-          totalRefs++;
-          const lectureId = task.lectureIds[i];
-          if (lectureId && completedMap[lectureId]) { doneRefs++; return; }
-          
-          const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-          if (manualCompletedTasks.has(manualKey)) doneRefs++;
-        });
+        totalHours += task.hours;
+        const tRefs = task.lectureRefs.length;
+        if (tRefs > 0) {
+          let tDone = 0;
+          task.lectureRefs.forEach((ref, i) => {
+            const lectureId = task.lectureIds?.[i];
+            const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+            if ((lectureId && completedMap[lectureId]) || manualCompletedTasks.has(manualKey)) {
+              tDone++;
+            }
+          });
+          doneHours += (tDone / tRefs) * task.hours;
+        }
       });
     });
-    return totalRefs > 0 ? Math.round((doneRefs / totalRefs) * 100) : 0;
+    return totalHours > 0 ? Math.round((doneHours / totalHours) * 100) : 0;
   };
 
   return (
@@ -63,18 +68,23 @@ export default function WeekSidebar({
         const color = getCompletionColor(pct);
 
         // Subject breakdown
-        const subjectMap = new Map<string, { total: number; done: number }>();
+        const subjectMap = new Map<string, { totalHours: number; doneHours: number }>();
         week.days.forEach((day) => {
           day.tasks.forEach((task, taskIdx) => {
-            const existing = subjectMap.get(task.subject) ?? { total: 0, done: 0 };
-            task.lectureRefs.forEach((ref, i) => {
-              existing.total += 1;
-              const lectureId = task.lectureIds[i];
-              const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-              if ((lectureId && completedMap[lectureId]) || manualCompletedTasks.has(manualKey)) {
-                existing.done += 1;
-              }
-            });
+            const existing = subjectMap.get(task.subject) ?? { totalHours: 0, doneHours: 0 };
+            existing.totalHours += task.hours;
+            const tRefs = task.lectureRefs.length;
+            if (tRefs > 0) {
+              let tDone = 0;
+              task.lectureRefs.forEach((ref, i) => {
+                const lectureId = task.lectureIds?.[i];
+                const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+                if ((lectureId && completedMap[lectureId]) || manualCompletedTasks.has(manualKey)) {
+                  tDone++;
+                }
+              });
+              existing.doneHours += (tDone / tRefs) * task.hours;
+            }
             subjectMap.set(task.subject, existing);
           });
         });
@@ -124,8 +134,8 @@ export default function WeekSidebar({
               <div className="px-3 pb-3 flex flex-col gap-1.5"
                 style={{ borderTop: "1px solid var(--border)" }}>
                 <p className="text-xs pt-2 mb-0.5 font-medium" style={{ color: "var(--muted)" }}>By subject</p>
-                {Array.from(subjectMap.entries()).map(([subject, { total, done }]) => {
-                  const sPct = Math.round((done / total) * 100);
+                {Array.from(subjectMap.entries()).map(([subject, { totalHours, doneHours }]) => {
+                  const sPct = totalHours > 0 ? Math.round((doneHours / totalHours) * 100) : 0;
                   const [c1] = getSubjectColor(subject);
                   return (
                     <div key={subject}>
@@ -133,7 +143,9 @@ export default function WeekSidebar({
                         <span className="text-xs truncate" style={{ color: "var(--text)", maxWidth: "130px" }}>
                           {subject.split(" ")[0]}
                         </span>
-                        <span className="text-xs font-medium" style={{ color: c1 }}>{done}/{total}</span>
+                        <span className="text-xs font-medium" style={{ color: c1 }}>
+                          {doneHours.toFixed(1)}/{totalHours.toFixed(1)}h
+                        </span>
                       </div>
                       <div className="h-1 rounded-full" style={{ background: "var(--border)" }}>
                         <div className="h-1 rounded-full transition-all duration-500"

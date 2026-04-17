@@ -16,6 +16,7 @@ export interface UserData {
   targetDate?: string;
   studySessions: StudySession[];
   manualLectureRefs: Record<string, number | false>;
+  ignoredBacklogModules?: Record<string, boolean>;
   recentAiChat?: { role: string; content: string; timestamp?: string }[];
   dailySummaries?: DailySummary[];
   lastAiWellnessRemark?: { content: string; timestamp: string } | null;
@@ -141,6 +142,7 @@ export async function getUser(username: string): Promise<UserData> {
       targetDate: data.targetDate ?? undefined,
       studySessions: data.studySessions ?? [],
       manualLectureRefs: data.manualLectureRefs ?? {},
+      ignoredBacklogModules: data.ignoredBacklogModules ?? {},
       recentAiChat: data.recentAiChat ?? undefined,
       dailySummaries: data.dailySummaries ?? [],
       lastAiWellnessRemark: data.lastAiWellnessRemark || null,
@@ -243,6 +245,21 @@ export async function toggleManualLectureRef(
   });
   const data = await res.json();
   return data.value;
+}
+
+/** Toggle a module ignore in backlog. */
+export async function toggleBacklogModuleIgnore(
+  username: string,
+  moduleKey: string,
+  ignored: boolean
+): Promise<boolean> {
+  const res = await fetch("/api/userdata/backlog-ignore", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ username, moduleKey, ignored }),
+  });
+  const data = await res.json();
+  return data.ignored;
 }
 
 export async function deleteStudySession(username: string, sessionId: string): Promise<void> {

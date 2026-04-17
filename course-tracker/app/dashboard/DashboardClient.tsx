@@ -90,9 +90,10 @@ export default function DashboardClient({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [targetDate, setTargetDate] = useState<string | undefined>(undefined);
-  const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   const [recentAiChat, setRecentAiChat] = useState<any[] | null>(null);
   const [summaryModalOpen, setSummaryModalOpen] = useState(false);
+  const [manualLectureRefs, setManualLectureRefs] = useState<Record<string, number | false>>({});
+  const [ignoredBacklogModules, setIgnoredBacklogModules] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -100,6 +101,8 @@ export default function DashboardClient({
     setUsername(u);
     getUser(u).then((data) => {
       setCompletedMap(data.completedLectures);
+      setManualLectureRefs(data.manualLectureRefs ?? {});
+      setIgnoredBacklogModules(data.ignoredBacklogModules ?? {});
       setTargetDate(data.targetDate);
       setStudySessions(data.studySessions ?? []);
       setRecentAiChat(data.recentAiChat ?? null);
@@ -143,45 +146,46 @@ export default function DashboardClient({
   const totalAll = coreLectureIdSet.size;
   const overallPct = totalCoreHours > 0 ? Math.round((hoursDone / totalCoreHours) * 100) : 0;
 
-  // Backlog calculation
+  // Backlog calculation (Schedule-based)
   const calculateBacklog = () => {
-    const backlogData: Record<string, { plannedHours: number; completedHours: number; backlogHours: number; lectures: number }> = {};
     let totalBacklogHours = 0;
     let totalBacklogLectures = 0;
+    let focusedBacklogHours = 0;
     const today = new Date().toISOString().split("T")[0];
-    const plannedHoursBySubject: Record<string, number> = {};
 
     weeks.forEach(week => {
-      if (week.days.some(day => day.date <= today)) {
-        week.days.forEach(day => {
-          day.tasks.forEach(task => {
-            plannedHoursBySubject[task.subject] = (plannedHoursBySubject[task.subject] ?? 0) + task.hours;
+      week.days.forEach(day => {
+        if (day.date <= today) {
+          day.tasks.forEach((task, taskIdx) => {
+            const tRefs = task.lectureRefs.length;
+            if (tRefs > 0) {
+              let tDone = 0;
+              task.lectureRefs.forEach((ref, i) => {
+                const id = task.lectureIds?.[i];
+                const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+                if ((id && completedMap[id]) || manualLectureRefs[manualKey]) tDone++;
+              });
+              const tPending = tRefs - tDone;
+              if (tPending > 0) {
+                const contribution = (tPending / tRefs) * task.hours;
+                totalBacklogHours += contribution;
+                totalBacklogLectures += tPending;
+
+                const moduleKey = `${task.subject}|${task.module}`;
+                if (!ignoredBacklogModules[moduleKey]) {
+                  focusedBacklogHours += contribution;
+                }
+              }
+            }
           });
-        });
-      }
+        }
+      });
     });
 
-    coreSubjects.forEach(subject => {
-      const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
-      const doneHrs = lectures.filter((l) => !!completedMap[l.id]).reduce((s, l) => s + (durationMap[l.id] ?? 0) / 3600, 0);
-      const plannedHrs = plannedHoursBySubject[subject.name] || 0;
-      const backlogHrs = Math.max(0, plannedHrs - doneHrs);
-      if (backlogHrs > 0) {
-        backlogData[subject.name] = {
-          plannedHours: plannedHrs,
-          completedHours: doneHrs,
-          backlogHours: backlogHrs,
-          lectures: lectures.filter((l) => !completedMap[l.id]).length,
-        };
-        totalBacklogHours += backlogHrs;
-        totalBacklogLectures += lectures.filter((l) => !completedMap[l.id]).length;
-      }
-    });
-
-    return { backlogData, totalBacklogHours, totalBacklogLectures };
+    return { totalBacklogHours, totalBacklogLectures, focusedBacklogHours };
   };
 
-  const { backlogData, totalBacklogHours, totalBacklogLectures } = calculateBacklog();
+  const { totalBacklogHours, totalBacklogLectures, focusedBacklogHours } = calculateBacklog();
 
   const totalPlannedLectures = weeks.flatMap(w => w.days.flatMap(d => d.tasks.flatMap(t => t.lectureIds))).length;
   const totalDoneLectures = [...coreLectureIdSet].filter((id) => !!completedMap[id]).length;
@@ -248,29 +252,30 @@ export default function DashboardClient({
                 <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
                   Weekly Backlog
                 </p>
-                <div className="flex items-end justify-between mb-3">
-                  <span className="text-3xl font-bold"
-                    style={{ color: totalBacklogHours > 0 ? "var(--red)" : "var(--green)" }}>
-                    {totalBacklogHours > 0 ? formatHours(totalBacklogHours) : "On track"}
+                  <span className="text-3xl font-bold mb-0.5"
+                    style={{ color: focusedBacklogHours > 0 ? "var(--red)" : "var(--green)" }}>
+                    {focusedBacklogHours > 0 ? `-${formatHours(focusedBacklogHours)}` : "On track"}
                   </span>
+                  {focusedBacklogHours !== totalBacklogHours && (
+                    <p className="text-[10px] font-bold opacity-40 uppercase tracking-widest mt-1">
+                      Total: {formatHours(totalBacklogHours)}
+                    </p>
+                  )}
                   {totalBacklogHours > 0 && (
                     <span className="text-xs" style={{ color: "var(--muted)" }}>
                       {totalBacklogLectures} lectures
                     </span>
                   )}
-                </div>
                 <div className="flex items-center justify-between">
                   <span className="text-xs" style={{ color: "var(--muted)" }}>
                     {totalDoneLectures} / {totalPlannedLectures} planned done
                   </span>
-                  {totalBacklogHours > 0 && (
-                    <button
-                      onClick={() => setBacklogOpen((v) => !v)}
+                    <Link
+                      href="/backlog"
                       className="text-xs px-2.5 py-1 rounded-lg transition-all hover:opacity-80"
                       style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
-                      {backlogOpen ? "Hide" : "Details"}
-                    </button>
-                  )}
+                      Manage
+                    </Link>
                 </div>
               </div>
 
@@ -350,51 +355,6 @@ export default function DashboardClient({
                     </div>
                   ))}
                 </div>
-              </div>
-            )}
-
-            {/* ── Backlog detail ── */}
-            {backlogOpen && (
-              <div className="mb-5 fade-in">
-                {totalBacklogHours > 0 ? (
-                  <div className="glass p-4 flex flex-col gap-2">
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-1" style={{ color: "var(--muted)" }}>
-                      Backlog breakdown
-                    </p>
-                    {Object.entries(backlogData).map(([name, data]) => {
-                      const c = subjectColor(name);
-                      const pct = data.plannedHours > 0 ? Math.round((data.completedHours / data.plannedHours) * 100) : 0;
-                      return (
-                        <div key={name} className="rounded-xl p-3"
-                          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
-                          <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-2">
-                              <div className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: c }} />
-                              <span className="text-sm font-medium" style={{ color: "var(--text)" }}>{name}</span>
-                            </div>
-                            <span className="text-sm font-bold" style={{ color: "var(--red)" }}>
-                              -{formatHours(data.backlogHours)}
-                            </span>
-                          </div>
-                          <div className="flex items-center gap-3 text-xs mb-2" style={{ color: "var(--muted)" }}>
-                            <span>Planned {formatHours(data.plannedHours)}</span>
-                            <span style={{ color: "var(--green)" }}>Done {formatHours(data.completedHours)}</span>
-                            <span>{data.lectures} lectures left</span>
-                          </div>
-                          <div className="h-1 rounded-full" style={{ background: "var(--border)" }}>
-                            <div className="h-1 rounded-full transition-all duration-500"
-                              style={{ width: `${pct}%`, background: c }} />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                ) : (
-                  <div className="glass p-4 text-center"
-                    style={{ background: "var(--tint-green)", border: "1px solid var(--tint-green-border)" }}>
-                    <p className="text-sm font-medium" style={{ color: "var(--green)" }}>🎉 You're on track with the weekly plan</p>
-                  </div>
-                )}
               </div>
             )}
 

@@ -17,6 +17,7 @@ export async function GET(req: NextRequest) {
     targetDate: doc.targetDate ?? null,
     studySessions: doc.studySessions ?? [],
     manualLectureRefs: doc.manualLectureRefs || {},
+    ignoredBacklogModules: doc.ignoredBacklogModules || {},
     recentAiChat: doc.aiChatHistory && doc.aiChatHistory.length > 0 ? doc.aiChatHistory.slice(-2) : null,
     dailySummaries: doc.dailySummaries || [],
     lastAiWellnessRemark: doc.lastAiWellnessRemark ?? null,
@@ -28,17 +29,25 @@ export async function POST(req: NextRequest) {
   if (!username) return NextResponse.json({ error: "Missing username" }, { status: 400 });
 
   await connectDB();
+  const updateData: any = {
+    completedLectures: data.completedLectures,
+    weeklyPlans: data.weeklyPlans ?? [],
+    targetDate: data.targetDate ?? null,
+    studySessions: data.studySessions ?? [],
+    dailySummaries: data.dailySummaries ?? [],
+    manualLectureRefs: data.manualLectureRefs || {},
+  };
+
+  // Only update ignoredBacklogModules if it's explicitly provided in the payload
+  // This prevents components that aren't aware of this field from wiping it out.
+  if (data.ignoredBacklogModules !== undefined) {
+    updateData.ignoredBacklogModules = data.ignoredBacklogModules;
+  }
+
   await UserDataModel.findOneAndUpdate(
     { username: username.toLowerCase() },
-    {
-      completedLectures: data.completedLectures,
-      weeklyPlans: data.weeklyPlans ?? [],
-      targetDate: data.targetDate ?? null,
-      studySessions: data.studySessions ?? [],
-      dailySummaries: data.dailySummaries ?? [],
-      manualLectureRefs: data.manualLectureRefs || {},
-    },
-    { upsert: true, new: true }
+    { $set: updateData },
+    { upsert: true, new: true, strict: false }
   );
 
   return NextResponse.json({ ok: true });

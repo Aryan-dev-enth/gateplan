@@ -16,6 +16,8 @@ const UserDataSchema = new Schema({
   // Manual completions for weekly plan lecture refs not tracked in completedLectures
   // Key: "date|subject|module|refIndex|ref" → timestamp (number) or false
   manualLectureRefs: { type: Map, of: Schema.Types.Mixed, default: {} },
+  // Modules ignored from backlog. Key: "Subject|Module" → boolean
+  ignoredBacklogModules: { type: Map, of: Boolean, default: {} },
     dailySummaries: [{
       date: { type: String, required: true },
       studyHours: { type: Number, default: 0 },

@@ -165,19 +165,25 @@ function DayRow({
   const today = isToday(day.date);
   const past = isPast(day.date);
 
-  // Count completion across all refs (tracked + manual)
-  const { totalRefs, doneRefs } = day.tasks.reduce((acc, task, taskIdx) => {
-    task.lectureRefs.forEach((ref, i) => {
-      acc.totalRefs++;
-      const lectureId = task.lectureIds[i];
-      if (lectureId && completedMap[lectureId]) { acc.doneRefs++; return; }
-      const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-      if (manualRefs[manualKey]) acc.doneRefs++;
-    });
+  // Count completion hours
+  const { totalHours, doneHours } = day.tasks.reduce((acc, task, taskIdx) => {
+    acc.totalHours += task.hours;
+    const taskTotalRefs = task.lectureRefs.length;
+    if (taskTotalRefs > 0) {
+      let taskDoneRefs = 0;
+      task.lectureRefs.forEach((ref, i) => {
+        const lectureId = task.lectureIds[i];
+        const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+        if ((lectureId && completedMap[lectureId]) || manualRefs[manualKey]) {
+          taskDoneRefs++;
+        }
+      });
+      acc.doneHours += (taskDoneRefs / taskTotalRefs) * task.hours;
+    }
     return acc;
-  }, { totalRefs: 0, doneRefs: 0 });
+  }, { totalHours: 0, doneHours: 0 });
 
-  const dayPct = totalRefs > 0 ? Math.round((doneRefs / totalRefs) * 100) : null;
+  const dayPct = totalHours > 0 ? Math.round((doneHours / totalHours) * 100) : null;
 
   return (
     <div className="rounded-xl overflow-hidden transition-all"
@@ -302,21 +308,29 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
   // Compute week stats using both completedMap and manualRefs
   const week = weeks.find((w) => w.weekId === activeWeek) ?? weeks[0];
 
-  const { weekTotalRefs, weekDoneRefs } = week.days.reduce((acc, day) => {
+  const { weekTotalRefs, weekDoneRefs, weekDoneHours, weekTotalHours } = week.days.reduce((acc, day) => {
     day.tasks.forEach((task, taskIdx) => {
+      acc.weekTotalHours += task.hours;
+      const tRefs = task.lectureRefs.length;
+      let tDone = 0;
       task.lectureRefs.forEach((ref, i) => {
         acc.weekTotalRefs++;
         const lectureId = task.lectureIds[i];
-        if (lectureId && completedMap[lectureId]) { acc.weekDoneRefs++; return; }
         const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-        if (manualRefs[manualKey]) acc.weekDoneRefs++;
+        if ((lectureId && completedMap[lectureId]) || manualRefs[manualKey]) {
+          acc.weekDoneRefs++;
+          tDone++;
+        }
       });
+      if (tRefs > 0) {
+        acc.weekDoneHours += (tDone / tRefs) * task.hours;
+      }
     });
     return acc;
-  }, { weekTotalRefs: 0, weekDoneRefs: 0 });
+  }, { weekTotalRefs: 0, weekDoneRefs: 0, weekDoneHours: 0, weekTotalHours: 0 });
 
-  const weekPct = weekTotalRefs > 0 ? Math.round((weekDoneRefs / weekTotalRefs) * 100) : 0;
-  const totalHours = week.days.reduce((s, d) => s + d.tasks.reduce((ts, t) => ts + t.hours, 0), 0);
+  const weekPct = weekTotalHours > 0 ? Math.round((weekDoneHours / weekTotalHours) * 100) : 0;
+  const totalHours = weekTotalHours;
 
   const manualCompletedTasks = useMemo(() => {
     const set = new Set<string>();
