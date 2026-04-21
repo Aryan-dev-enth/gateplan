@@ -3,32 +3,39 @@ export default function ProgressBar({
   total,
   size = "md",
   formatValue,
+  color,
 }: {
   value: number;
   total: number;
   size?: "sm" | "md";
   formatValue?: (v: number) => string;
+  color?: string;
 }) {
   const pct = total === 0 ? 0 : Math.round((value / total) * 100);
   const h = size === "sm" ? "h-1" : "h-1.5";
   const fmt = formatValue ?? ((v: number) => Number.isInteger(v) ? String(v) : v.toFixed(1));
 
+  const bgStyle = color 
+    ? { background: color } 
+    : { 
+        background: pct === 100
+          ? "linear-gradient(90deg, #22d3a5, #6378ff)"
+          : "linear-gradient(90deg, #6378ff, #a78bfa)"
+      };
+
   return (
     <div className="w-full">
       <div className="flex justify-between text-xs mb-1.5" style={{ color: "var(--muted)" }}>
         <span>{fmt(value)}/{fmt(total)}</span>
-        <span style={{ color: pct === 100 ? "var(--green)" : "var(--accent2)" }}>{pct}%</span>
+        <span style={{ color: pct === 100 ? "var(--green)" : (color || "var(--accent2)") }}>{pct}%</span>
       </div>
       <div className={`w-full rounded-full ${h}`} style={{ background: "rgba(99,120,255,0.1)" }}>
         <div
           className={`${h} rounded-full transition-all duration-500`}
           style={{
             width: `${pct}%`,
-            background:
-              pct === 100
-                ? "linear-gradient(90deg, #22d3a5, #6378ff)"
-                : "linear-gradient(90deg, #6378ff, #a78bfa)",
-            boxShadow: pct > 0 ? "0 0 8px rgba(99,120,255,0.5)" : "none",
+            ...bgStyle,
+            boxShadow: pct > 0 ? `0 0 8px ${color || "rgba(99,120,255,0.5)"}` : "none",
           }}
         />
       </div>

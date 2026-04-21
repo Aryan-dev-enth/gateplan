@@ -57,7 +57,7 @@ export default function BacklogClient({ subjects, weeks }: { subjects: Subject[]
           map.set(l.id, { 
             subjectName: s.name, 
             moduleName: m.name, 
-            lectureName: l.name, 
+            lectureName: l.title, 
             duration: l.duration ?? 0 
           });
         });
