@@ -4,8 +4,9 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser, getUser, toggleLecture, toggleManualLectureRef, toggleBacklogModuleIgnore } from "@/lib/store";
 import { formatHours } from "@/lib/pace";
+import { calculateBacklog } from "@/lib/backlog";
+import type { WeekData } from "@/lib/backlog";
 import type { Subject } from "@/lib/courseLoader";
-import type { WeekData } from "@/app/weekly/page";
 
 const SUBJECT_COLORS: Record<string, string> = {
   "Engineering Mathematics": "#6378ff",
@@ -66,68 +67,13 @@ export default function BacklogClient({ subjects, weeks }: { subjects: Subject[]
   }, [subjects]);
 
   const backlog = useMemo(() => {
-    const today = new Date().toISOString().split("T")[0];
-    const structure: Record<string, Record<string, { id?: string; name: string; duration: number; manualKey: string }[]>> = {};
-    let totalHours = 0;
-    let totalLectures = 0;
-    let focusedHours = 0;
-    let focusedLectures = 0;
-
-    weeks.forEach(week => {
-      week.days.forEach(day => {
-        if (day.date <= today) {
-          day.tasks.forEach((task, taskIdx) => {
-            const tRefs = task.lectureRefs.length;
-            if (tRefs > 0) {
-              const pendingInThisTask: { id?: string; name: string; duration: number; manualKey: string }[] = [];
-              
-              task.lectureRefs.forEach((ref, i) => {
-                const id = task.lectureIds?.[i];
-                const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-                const isDone = (id && !!completedMap[id]) || !!manualLectureRefs[manualKey];
-
-                if (!isDone) {
-                  const info = id ? lectureLookup.get(id) : null;
-                  pendingInThisTask.push({ 
-                    id, 
-                    name: info ? info.lectureName : ref, 
-                    duration: info ? info.duration : 0,
-                    manualKey
-                  });
-                }
-              });
-
-              if (pendingInThisTask.length > 0) {
-                const moduleKey = `${task.subject}|${task.module}`.toLowerCase();
-                const isIgnored = !!ignoredBacklogModules[moduleKey];
-                const taskContribution = (pendingInThisTask.length / tRefs) * task.hours;
-                
-                totalHours += taskContribution;
-                totalLectures += pendingInThisTask.length;
-                
-                if (!isIgnored) {
-                  focusedHours += taskContribution;
-                  focusedLectures += pendingInThisTask.length;
-                }
-
-                const sName = task.subject;
-                const mName = task.module;
-                if (!structure[sName]) structure[sName] = {};
-                if (!structure[sName][mName]) structure[sName][mName] = [];
-                
-                pendingInThisTask.forEach(l => {
-                  if (!structure[sName][mName].some(existing => existing.manualKey === l.manualKey)) {
-                    structure[sName][mName].push(l);
-                  }
-                });
-              }
-            }
-          });
-        }
-      });
-    });
-
-    return { structure, totalHours, totalLectures, focusedHours, focusedLectures };
+    return calculateBacklog(
+      weeks,
+      completedMap,
+      manualLectureRefs,
+      ignoredBacklogModules,
+      lectureLookup
+    );
   }, [weeks, completedMap, manualLectureRefs, ignoredBacklogModules, lectureLookup]);
 
   async function handleToggleDone(manualKey: string, id?: string) {

@@ -9,7 +9,8 @@ import EtaCard from "@/components/EtaCard";
 import ScheduleSlider from "@/components/ScheduleSlider";
 import { formatHours } from "@/lib/pace";
 import type { Subject } from "@/lib/courseLoader";
-import type { WeekData } from "@/app/weekly/page";
+import { calculateBacklog } from "@/lib/backlog";
+import type { WeekData } from "@/lib/backlog";
 import { saveDailySummary } from "@/lib/store";
 
 // ── Skeleton ──────────────────────────────────────────────────────────────────
@@ -94,6 +95,7 @@ export default function DashboardClient({
   const [summaryModalOpen, setSummaryModalOpen] = useState(false);
   const [manualLectureRefs, setManualLectureRefs] = useState<Record<string, number | false>>({});
   const [ignoredBacklogModules, setIgnoredBacklogModules] = useState<Record<string, boolean>>({});
+  const [studySessions, setStudySessions] = useState<StudySession[]>([]);
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -138,57 +140,34 @@ export default function DashboardClient({
     )
   );
 
+  // Backlog calculation (Schedule-based)
+  const { 
+    totalHours: totalBacklogHours, 
+    totalLectures: totalBacklogLectures, 
+    focusedHours: focusedBacklogHours,
+    elapsedLectures,
+    doneLectures,
+    elapsedHours,
+    doneHours,
+    subjectBreakdown,
+    completedCatalogIds
+  } = calculateBacklog(
+    weeks,
+    completedMap,
+    manualLectureRefs,
+    ignoredBacklogModules
+  );
+
   const hoursDone = [...coreLectureIdSet]
-    .filter((id) => !!completedMap[id])
+    .filter((id) => completedCatalogIds.has(id))
     .reduce((s, id) => s + (durationMap[id] ?? 0) / 3600, 0);
   const hoursRemaining = Math.max(0, totalCoreHours - hoursDone);
-  const totalDone = [...coreLectureIdSet].filter((id) => !!completedMap[id]).length;
+  const totalDone = [...coreLectureIdSet].filter((id) => completedCatalogIds.has(id)).length;
   const totalAll = coreLectureIdSet.size;
   const overallPct = totalCoreHours > 0 ? Math.round((hoursDone / totalCoreHours) * 100) : 0;
 
-  // Backlog calculation (Schedule-based)
-  const calculateBacklog = () => {
-    let totalBacklogHours = 0;
-    let totalBacklogLectures = 0;
-    let focusedBacklogHours = 0;
-    const today = new Date().toISOString().split("T")[0];
-
-    weeks.forEach(week => {
-      week.days.forEach(day => {
-        if (day.date <= today) {
-          day.tasks.forEach((task, taskIdx) => {
-            const tRefs = task.lectureRefs.length;
-            if (tRefs > 0) {
-              let tDone = 0;
-              task.lectureRefs.forEach((ref, i) => {
-                const id = task.lectureIds?.[i];
-                const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
-                if ((id && completedMap[id]) || manualLectureRefs[manualKey]) tDone++;
-              });
-              const tPending = tRefs - tDone;
-              if (tPending > 0) {
-                const contribution = (tPending / tRefs) * task.hours;
-                totalBacklogHours += contribution;
-                totalBacklogLectures += tPending;
-
-                const moduleKey = `${task.subject}|${task.module}`;
-                if (!ignoredBacklogModules[moduleKey]) {
-                  focusedBacklogHours += contribution;
-                }
-              }
-            }
-          });
-        }
-      });
-    });
-
-    return { totalBacklogHours, totalBacklogLectures, focusedBacklogHours };
-  };
-
-  const { totalBacklogHours, totalBacklogLectures, focusedBacklogHours } = calculateBacklog();
-
   const totalPlannedLectures = weeks.flatMap(w => w.days.flatMap(d => d.tasks.flatMap(t => t.lectureIds))).length;
-  const totalDoneLectures = [...coreLectureIdSet].filter((id) => !!completedMap[id]).length;
+  const totalDoneLectures = totalDone;
 
   return (
     <div className="min-h-screen" style={{ background: "var(--bg)" }}>
@@ -244,37 +223,66 @@ export default function DashboardClient({
                     {totalDone} / {totalAll} lectures
                   </span>
                 </div>
-                <ProgressBar value={hoursDone} total={totalCoreHours} formatValue={formatHours} />
+                <div className="relative">
+                  <ProgressBar value={hoursDone} total={totalCoreHours} formatValue={formatHours} />
+                  {/* Overall Target Marker */}
+                  {totalCoreHours > 0 && (
+                    <div 
+                      className="absolute top-[21px] bottom-0 w-[2px] bg-white/30 z-10 pointer-events-none"
+                      style={{ left: `${(elapsedHours / totalCoreHours) * 100}%`, height: '6px' }}
+                      title="Schedule Target"
+                    />
+                  )}
+                </div>
               </div>
 
               {/* Backlog */}
               <div className="glass p-5">
-                <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
-                  Weekly Backlog
+                <p className="text-xs font-semibold uppercase tracking-wider mb-2" style={{ color: "var(--muted)" }}>
+                  Schedule Health
                 </p>
-                  <span className="text-3xl font-bold mb-0.5"
-                    style={{ color: focusedBacklogHours > 0 ? "var(--red)" : "var(--green)" }}>
-                    {focusedBacklogHours > 0 ? `-${formatHours(focusedBacklogHours)}` : "On track"}
-                  </span>
-                  {focusedBacklogHours !== totalBacklogHours && (
-                    <p className="text-[10px] font-bold opacity-40 uppercase tracking-widest mt-1">
-                      Total: {formatHours(totalBacklogHours)}
+                <div className="flex items-end justify-between mb-3">
+                  <div>
+                    <p className="text-2xl font-bold"
+                      style={{ color: focusedBacklogHours > 0 ? "var(--red)" : totalBacklogHours > 0 ? "var(--orange)" : "var(--green)" }}>
+                      {focusedBacklogHours > 0 
+                        ? `-${formatHours(focusedBacklogHours)}` 
+                        : totalBacklogHours > 0 
+                          ? "Deferred" 
+                          : "On track"}
                     </p>
-                  )}
-                  {totalBacklogHours > 0 && (
-                    <span className="text-xs" style={{ color: "var(--muted)" }}>
-                      {totalBacklogLectures} lectures
-                    </span>
-                  )}
-                <div className="flex items-center justify-between">
+                    <p className="text-[10px] font-bold opacity-40 uppercase tracking-widest">
+                      {focusedBacklogHours > 0 ? "Focused Backlog" : "Backlog Status"}
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-xl font-bold" style={{ color: "var(--text)" }}>{Math.round((doneHours / (elapsedHours || 1)) * 100)}%</p>
+                    <p className="text-[10px] uppercase tracking-wider font-bold opacity-40" style={{ color: "var(--text)" }}>Schedule Pct</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center justify-between mb-2">
                   <span className="text-xs" style={{ color: "var(--muted)" }}>
-                    {totalDoneLectures} / {totalPlannedLectures} planned done
+                    {formatHours(doneHours)} / {formatHours(elapsedHours)} done
                   </span>
+                  <span className="text-xs" style={{ color: "var(--muted)" }}>
+                    {doneLectures} / {elapsedLectures} L
+                  </span>
+                </div>
+                
+                <div className="flex items-center justify-between mt-3">
+                   <div className="flex-1 mr-4">
+                      <ProgressBar 
+                        value={doneHours} 
+                        total={elapsedHours} 
+                        color={focusedBacklogHours > 0 ? "var(--red)" : "var(--accent)"} 
+                      />
+                   </div>
                     <Link
                       href="/backlog"
-                      className="text-xs px-2.5 py-1 rounded-lg transition-all hover:opacity-80"
+                      className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5"
                       style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
-                      Manage
+                      Backlog
                     </Link>
                 </div>
               </div>
@@ -284,7 +292,7 @@ export default function DashboardClient({
                 const todayStr = new Date().toISOString().split("T")[0];
                 const todayTasks = weeks.flatMap((w) => w.days.filter((d) => d.date === todayStr).flatMap((d) => d.tasks));
                 const todayIds = todayTasks.flatMap((t) => t.lectureIds);
-                const todayDone = todayIds.filter((id) => !!completedMap[id]).length;
+                const todayDone = todayIds.filter((id) => completedCatalogIds.has(id)).length;
                 const todayTotal = todayIds.length;
                 const todayHours = todayTasks.reduce((s, t) => s + t.hours, 0);
                 const todayPct = todayTotal > 0 ? Math.round((todayDone / todayTotal) * 100) : null;
@@ -391,13 +399,15 @@ export default function DashboardClient({
               </div>
               <div className="flex flex-col gap-2">
                 {coreSubjects.map((subject, si) => {
+                  const sb = subjectBreakdown[subject.name];
                   const lectures = subject.modules.flatMap((m) => m.lectures.filter((l) => l.isLecture));
-                  const done = lectures.filter((l) => !!completedMap[l.id]).length;
+                  const done = lectures.filter((l) => completedCatalogIds.has(l.id)).length;
                   const total = lectures.length;
-                  const doneHrs = lectures.filter((l) => !!completedMap[l.id]).reduce((s, l) => s + (durationMap[l.id] ?? 0) / 3600, 0);
+                  const doneHrs = lectures.filter((l) => completedCatalogIds.has(l.id)).reduce((s, l) => s + (durationMap[l.id] ?? 0) / 3600, 0);
                   const totalHrs = subjectTotalHours[subject.id] ?? 0;
                   const plannedHrs = subjectPlannedHours[subject.id] ?? 0;
                   const pct = totalHrs > 0 ? Math.round((doneHrs / totalHrs) * 100) : 0;
+                  const targetPct = (sb && totalHrs > 0) ? Math.min(100, (sb.elapsedHours / totalHrs) * 100) : 0;
                   const c = subjectColor(subject.name);
 
                   return (
@@ -427,8 +437,14 @@ export default function DashboardClient({
                           </div>
 
                           {/* Progress bar */}
-                          <div className="h-1.5 rounded-full mb-1.5" style={{ background: "var(--surface2)" }}>
-                            <div className="h-1.5 rounded-full transition-all duration-500"
+                          <div className="h-1.5 rounded-full mb-1.5 relative overflow-hidden" style={{ background: "var(--surface2)" }}>
+                            {/* Target shaded area */}
+                            {targetPct > 0 && (
+                              <div className="absolute inset-y-0 left-0 bg-white/5 transition-all duration-500" 
+                                style={{ width: `${targetPct}%`, borderRight: '1px dashed rgba(255,255,255,0.2)' }} 
+                              />
+                            )}
+                            <div className="h-1.5 rounded-full transition-all duration-500 relative z-10"
                               style={{
                                 width: `${pct}%`,
                                 background: pct === 100
@@ -439,16 +455,34 @@ export default function DashboardClient({
 
                           {/* Stats row */}
                           <div className="flex items-center gap-3 flex-wrap">
-                            <span className="text-xs" style={{ color: "var(--green)" }}>
+                            <span className="text-xs font-bold" style={{ color: "var(--green)" }}>
                               ✓ {formatHours(doneHrs)}
                             </span>
                             {plannedHrs > 0 && (
                               <span className="text-xs" style={{ color: "var(--accent)" }}>
-                                📅 {formatHours(plannedHrs)}
+                                📅 {formatHours(plannedHrs)} total
                               </span>
                             )}
+                            {(() => {
+                              if (!sb) return null;
+                              
+                              return (
+                                <>
+                                  {sb.elapsedHours > 0 && (
+                                    <span className="text-xs opacity-60" style={{ color: "var(--text)" }}>
+                                      • {Math.round((sb.doneHours / sb.elapsedHours) * 100)}% week
+                                    </span>
+                                  )}
+                                  {sb.totalHours > 0 && (
+                                    <span className="text-xs font-bold" style={{ color: sb.focusedHours <= 0 ? "var(--orange)" : "var(--red)" }}>
+                                      {sb.focusedHours <= 0 ? "⟳ Defer" : `⚠ -${formatHours(sb.focusedHours)}`}
+                                    </span>
+                                  )}
+                                </>
+                              );
+                            })()}
                             <span className="text-xs" style={{ color: "var(--muted)" }}>
-                              {formatHours(totalHrs)} total · {done}/{total} lectures
+                              {formatHours(totalHrs)} hrs · {done}/{total} L
                             </span>
                           </div>
                         </div>

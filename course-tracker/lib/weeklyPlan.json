@@ -561,5 +561,204 @@
         ]
       }
     ]
+  },
+  {
+    "weekId": "week-9",
+    "label": "20 Apr – 26 Apr 2026",
+    "days": [
+      {
+        "date": "2026-04-20",
+        "label": "20 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["9", "10", "11", "12", "13", "14A", "14B", "14C", "14D", "15"],
+            "hours": 5.5,
+            "lectureIds": [
+              "64824b5be4b0d36763fa9821",
+              "64825900e4b09eb88c8b284f",
+              "6482695fe4b0f34025b235ee",
+              "6484015ce4b0e5b13d02cafa",
+              "648458bae4b0fc5a911779f4",
+              "64864de1e4b09751bbe8431b",
+              "64864ec8e4b00db950fe6ece",
+              "648663dfe4b08d71e5229bd1",
+              "6488ba68e4b09e13cbbc29bd",
+              "648786fbe4b0688147c7bdb0"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-21",
+        "label": "21 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["16", "17", "18A", "18B"],
+            "hours": 2.5,
+            "lectureIds": [
+              "64884d0be4b003601ecd3dcb",
+              "64885a47e4b0b4884dbdac96",
+              "6488df5be4b01925764b854b",
+              "680f3f2924c84114796b0496"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["3a", "3b", "3c", "3d", "4a", "4b"],
+            "hours": 2.5,
+            "lectureIds": [
+              "6453c312e4b0079cc7ebe52e",
+              "64544e97e4b06adcef42437e",
+              "64556dfbe4b0b20a445ee674",
+              "645578ade4b0fe9f63cc1657",
+              "645a03efe4b0fc0c24687e2d",
+              "645a18ece4b086eb84f1c081"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-22",
+        "label": "22 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["19A", "19B", "20A", "20B", "20C", "20D", "20E", "20F", "20G", "21", "22", "23"],
+            "hours": 1.45,
+            "lectureIds": [
+              "6488ef22e4b098381df1981f",
+              "6489b34ce4b022387b7c6552",
+              "6489a1b8e4b00733eccb994b",
+              "6489cc2de4b06dc5e4f4743d",
+              "648a1399e4b01ea7b1b8f276",
+              "648a2721e4b01ea7b1b8f674",
+              "648a30efe4b064d47f0a78a6",
+              "648a4c27e4b0b2a48b5c693e",
+              "648a65aae4b0edad4a83c5cc",
+              "648a7ed9e4b0edad4a83c8ca",
+              "648a8ec1e4b0a7d78f013dc6",
+              "648a9ff8e4b011f1de4b9d75"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-23",
+        "label": "23 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["24A", "24B", "24C", "24D"],
+            "hours": 3.15,
+            "lectureIds": [
+              "648c5970e4b09fd4879d0c13",
+              "648c84bbe4b07f861f8c22d1",
+              "648e2b66e4b0686d1e820a9d",
+              "648e4e7fe4b0614afeed509f"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["4c", "4d", "4e", "Homework-3"],
+            "hours": 2.15,
+            "lectureIds": [
+              "645f40fee4b07638bbec692f",
+              "645f40fee4b07638bbec6930",
+              "645f6a8ae4b018eb164eed3f",
+              "64623a7ee4b0e52cd555cf3a"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-24",
+        "label": "24 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["25A", "25B", "25C", "25D", "25E", "25F", "25G"],
+            "hours": 4.0,
+            "lectureIds": [
+              "648f21ece4b01092b24d1ffc",
+              "648f568ae4b0f92793de5133",
+              "648f5f58e4b0de8a86dca690",
+              "649030fde4b09d785ef267ed",
+              "649205afe4b0eedbba3833ca",
+              "64922c0ee4b0313e80ae1074",
+              "64925e69e4b0ff76d8457bf3"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-25",
+        "label": "25 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["26", "Recurrence Relations Playlist (YT)"],
+            "hours": 3.15,
+            "lectureIds": [
+              "6490b98de4b0dccf7d4853b1"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["Homework-3 Solution", "Weekly Quiz 12"],
+            "hours": 2.5,
+            "lectureIds": [
+              "64623bb3e4b055b9e011d93d",
+              "6465ab68e4b0e2a09d254863"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-04-26",
+        "label": "26 Apr",
+        "tasks": [
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": ["Practice Set-1 Solutions (YT)"],
+            "hours": 3.5,
+            "lectureIds": [
+              "649211a4e4b0313e80ae0d41"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 1",
+            "lectureRefs": ["HW2 Sol & WQ12 Discussion"],
+            "hours": 1.0,
+            "lectureIds": [
+              "64565dece4b0db491387e769"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 2",
+            "lectureRefs": ["5a", "5b", "5c"],
+            "hours": 1.15,
+            "lectureIds": [
+              "646367b3e4b0abdb8c00a2e3",
+              "646367b3e4b0abdb8c00a2e2",
+              "6464f395e4b0b6878c2236cf"
+            ]
+          }
+        ]
+      }
+    ]
   }
 ]
