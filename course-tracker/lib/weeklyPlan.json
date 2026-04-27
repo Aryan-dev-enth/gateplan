@@ -760,5 +760,65 @@
         ]
       }
     ]
+  },
+  {
+    "weekId": "week-10",
+    "label": "27 Apr – 3 May 2026",
+    "days": [
+      {
+        "date": "2026-04-27",
+        "label": "27 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 2 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["6495f4b4e4b092397186eb40", "6498a1c9e4b0631f90228224"] },
+          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["5d", "6a", "6b", "6c"], "hours": 2, "lectureIds": ["646775c3e4b0659a24a5c127", "6468dd2ee4b038d59d15d94d", "6468f33ee4b0b14810c3938d", "646913ece4b083f1654aa9d1"] }
+        ]
+      },
+      {
+        "date": "2026-04-28",
+        "label": "28 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["27A", "27B", "27C"], "hours": 5.45, "lectureIds": ["6499a205e4b0158c54c85314", "649ae5f2e4b02cbf1025f99d", "649daf61e4b09cdba41eaf6c"] }
+        ]
+      },
+      {
+        "date": "2026-04-29",
+        "label": "29 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 3 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["64a17bbfe4b00b845765673f", "64a1d93ae4b0005d8cc45378"] },
+          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["6D", "6E (OPTIONAL)", "6F to 6G", "Homework - 4", "6G LIVE"], "hours": 2.5, "lectureIds": ["6469f731e4b0d9dd31407cf6", "646a1988e4b0bcc926ece712", "646a2d44e4b001b832ee17f3", "646b2606e4b00078ed211f4a", "646b6ffde4b09d45b0139490"] }
+        ]
+      },
+      {
+        "date": "2026-04-30",
+        "label": "30 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Weekly Quiz 19"], "hours": 1, "lectureIds": ["64a86c2ee4b0580bbdf4b0f6"] },
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["1", "2", "2B", "2C", "3A", "3B", "4A", "4B", "4C"], "hours": 5, "lectureIds": ["6498e1d5e4b0109129ea1d87", "64ac27abe4b03c01b152965d", "64ac4cf0e4b07cb68241113d", "64ac5f88e4b09570ca864fab", "64ac6c52e4b0f14679851f06", "64ae83d5e4b0e3959ec996dd", "64aed77ae4b05cbfc2c521e2", "64b3a1bee4b001bd685c5632", "64b5716be4b0ebf3ebc682b9"] }
+        ]
+      },
+      {
+        "date": "2026-05-01",
+        "label": "1 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["6", "7", "8A", "8B", "8C", "8D", "8E", "9A"], "hours": 4.15, "lectureIds": ["64bd9879e4b0f4c23037fa8c", "64bda6b0e4b0312a467c8f74", "64cf88d2e4b01db87f1751f9", "64cfebfbe4b0a0b64754f032", "64d134e0e4b0805c3866bf8d", "64d14a05e4b05bac5c76dea9", "64d15490e4b03d2c3eff3b2a", "64d16588e4b0c709dfe47938"] },
+          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["7a", "7b", "7c", "Session-5"], "hours": 1.45, "lectureIds": ["646f2685e4b0b85b10a1187d", "646f7a68e4b03a7e05028fc2", "646f936be4b022c27910c03b", "6470bbdde4b05939ef1fc9e0"] }
+        ]
+      },
+      {
+        "date": "2026-05-02",
+        "label": "2 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["9B", "9C", "9D", "10A", "10B", "10C", "11A", "11B", "11C", "11D", "11E", "12A"], "hours": 6, "lectureIds": ["680c65837855a66799d65002", "64d407f1e4b025ccf885b539", "64d40e54e4b0c6fd0fcfe6a7", "64d420bfe4b0ac7f2f023567", "64d42991e4b01cdae5e424bb", "64d4d81ee4b09ab5960fb0e0", "64d4e32ee4b0b42ba2e98bdc", "64d4e99be4b0b07de218b801", "64d4fae2e4b0b07de218c029", "64d55aabe4b02431f5c83da8", "64d641a3e4b0db47eb6227b6", "64d56b28e4b02431f5c83ede"] }
+        ]
+      },
+      {
+        "date": "2026-05-03",
+        "label": "3 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["12B", "13A", "13B", "14A", "14B", "14C", "15A", "15B"], "hours": 4.15, "lectureIds": ["64d8c22fe4b05d7f6e2a8ee7", "64d8d1b0e4b03cefb136ee4d", "64da4c7de4b0582ff9b67c8f", "64da9eb1e4b06a3c3038b5f1", "64daaa80e4b018c62fabb501", "64dab4b1e4b0f19f97f18031", "64dbde73e4b0e27d6dae8e6f", "64de82fde4b0d32a4e449186"] },
+          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["8a", "8b", "8c"], "hours": 1.15, "lectureIds": ["6471e2d0e4b0e24c6097650e", "6471fa21e4b069f272e7c5d2", "647210ede4b0469e8277c40c"] }
+        ]
+      }
+    ]
   }
 ]
