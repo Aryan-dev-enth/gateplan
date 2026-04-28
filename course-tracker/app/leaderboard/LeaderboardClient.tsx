@@ -51,8 +51,10 @@ function timeAgo(ts: number): string {
 }
 
 function buildAir1(weeks: WeekData[], subjects: Subject[], totalLectures: number): UserStats {
-  const todayStr = new Date().toISOString().split("T")[0];
-  const todayStart = new Date().setHours(0, 0, 0, 0);
+  const now = new Date();
+  // Ensure local timezone is used for date string to update at midnight local time
+  const todayStr = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  const todayStart = new Date(now).setHours(0, 0, 0, 0);
   const weekAgo = Date.now() - 7 * 86400000;
 
   const lectureMap = new Map<string, { duration: number; isLecture: boolean; subjectName: string; title: string }>();
@@ -64,32 +66,70 @@ function buildAir1(weeks: WeekData[], subjects: Subject[], totalLectures: number
   let totalDone = 0, todayCount = 0, weekCount = 0;
   const activeDays = new Set<string>();
   const completedIds = new Set<string>();
+  const recentActivity: { title: string; subjectName: string; timestamp: number }[] = [];
 
   for (const week of weeks) {
     for (const day of week.days) {
       if (day.date > todayStr) continue;
-      const dayTs = new Date(day.date).setHours(9, 0, 0, 0);
-      let dayHasWork = false;
+      
+      const isToday = day.date === todayStr;
+      
+      // Collect all lectures for the day
+      const dayLectures: { id: string; subject: string; taskHours: number; count: number }[] = [];
       for (const task of day.tasks) {
-        const taskHours = task.hours;
-        const lectureCount = task.lectureIds.filter(id => id).length;
-        let added = 0;
-        for (const id of task.lectureIds) {
-          if (!id || completedIds.has(id)) continue;
-          completedIds.add(id); totalDone++; added++; dayHasWork = true;
-          if (dayTs >= todayStart) todayCount++;
-          if (dayTs >= weekAgo) weekCount++;
-        }
-        if (lectureCount > 0 && added > 0) {
-          const h = (added / lectureCount) * taskHours;
-          totalHoursAir += h;
-          if (dayTs >= todayStart) todayHoursAir += h;
-          if (dayTs >= weekAgo) weekHoursAir += h;
+        const validIds = task.lectureIds.filter(id => id);
+        if (validIds.length > 0) {
+          for (const id of validIds) {
+            dayLectures.push({ id, subject: task.subject, taskHours: task.hours, count: validIds.length });
+          }
         }
       }
+      
+      if (dayLectures.length === 0) continue;
+      
+      // Distribute lectures evenly between 8 AM and 8 PM
+      const startHour = 8;
+      const endHour = 20;
+      const totalLecs = dayLectures.length;
+      const intervalMs = ((endHour - startHour) * 3600000) / (totalLecs || 1);
+      
+      const [year, month, d] = day.date.split("-").map(Number);
+      const baseTs = new Date(year, month - 1, d, startHour, 0, 0, 0).getTime();
+      let dayHasWork = false;
+      
+      dayLectures.forEach((lec, idx) => {
+        const completionTs = baseTs + (idx * intervalMs);
+        
+        // If it's today, only complete if completionTs is in the past
+        if (isToday && completionTs > now.getTime()) {
+          return;
+        }
+        
+        if (completedIds.has(lec.id)) return;
+        completedIds.add(lec.id);
+        totalDone++;
+        dayHasWork = true;
+        
+        if (completionTs >= todayStart) todayCount++;
+        if (completionTs >= weekAgo) weekCount++;
+        
+        const h = lec.taskHours / lec.count;
+        totalHoursAir += h;
+        if (completionTs >= todayStart) todayHoursAir += h;
+        if (completionTs >= weekAgo) weekHoursAir += h;
+        
+        const meta = lectureMap.get(lec.id);
+        if (meta) {
+          recentActivity.push({ title: meta.title, subjectName: meta.subjectName, timestamp: completionTs });
+        }
+      });
+      
       if (dayHasWork) activeDays.add(day.date);
     }
   }
+
+  // Sort recent activity descending
+  recentActivity.sort((a, b) => b.timestamp - a.timestamp);
 
   const dayCount = activeDays.size || 1;
   const subjectDone = new Map<string, number>();
@@ -109,7 +149,7 @@ function buildAir1(weeks: WeekData[], subjects: Subject[], totalLectures: number
     pct: totalLectures > 0 ? Math.round((totalDone / totalLectures) * 100) : 0,
     streak: dayCount, todayHours: todayHoursAir, todayCount,
     weekHours: weekHoursAir, weekCount, avgDaily: totalHoursAir / dayCount,
-    isPhantom: true, subjectProgress, recentActivity: [],
+    isPhantom: true, subjectProgress, recentActivity: recentActivity.slice(0, 5),
   };
 }
 

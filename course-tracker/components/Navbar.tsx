@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { href: "/log-time",    label: "Log Time" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/ai",          label: "AI Assistant" },
+  { href: "/logs",        label: "Audit Logs" },
 ];
 
 const HIDDEN_ON = ["/"];

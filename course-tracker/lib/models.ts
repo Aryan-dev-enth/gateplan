@@ -63,3 +63,11 @@ const UserDataSchema = new Schema({
 
 export const UserModel = models.User || model("User", UserSchema);
 export const UserDataModel = models.UserData || model("UserData", UserDataSchema);
+
+const AccountLogSchema = new Schema({
+  username: { type: String, required: true, lowercase: true },
+  action: { type: String, required: true },
+  timestamp: { type: Date, default: Date.now },
+  details: { type: String }
+});
+export const AccountLogModel = models.AccountLog || model("AccountLog", AccountLogSchema);
