@@ -11,6 +11,7 @@ interface ScheduleImage {
 }
 
 const scheduleImages: ScheduleImage[] = [
+  { id: "week11", src: "/schedules/11.jpg", alt: "Week 11 Schedule", dateRange: "4th May – 10th May 2026", weekNumber: 11 },
   { id: "week10", src: "/schedules/10.jpg", alt: "Week 10 Schedule", dateRange: "27th April – 3rd May 2026", weekNumber: 10 },
   { id: "week9", src: "/schedules/9.jpg", alt: "Week 9 Schedule", dateRange: "20th April – 26th April 2026", weekNumber: 9 },
   { id: "week8", src: "/schedules/8.jpg", alt: "Week 8 Schedule", dateRange: "13th April – 19th April 2026", weekNumber: 8 },

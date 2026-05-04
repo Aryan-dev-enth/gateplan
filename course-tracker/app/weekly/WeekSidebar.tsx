@@ -106,6 +106,15 @@ export default function WeekSidebar({
               <div className="w-1 self-stretch rounded-full flex-shrink-0" style={{ background: color }} />
 
               <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-1.5 mb-0.5">
+                  <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded"
+                    style={{ 
+                      background: isActive ? "var(--accent)" : "var(--surface2)", 
+                      color: isActive ? "white" : "var(--muted)" 
+                    }}>
+                    Week {week.weekId.replace("week-", "")}
+                  </span>
+                </div>
                 <p className="text-xs font-semibold truncate" style={{ color: isActive ? "var(--accent)" : "var(--text)" }}>
                   {week.label}
                 </p>

@@ -356,8 +356,12 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
         <div className="glass p-4 mb-5 fade-in-1">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
             <div className="flex-1">
-              <div className="flex items-center justify-between mb-1.5">
-                <p className="text-sm font-semibold" style={{ color: "var(--text)" }}>{week.label}</p>
+              <div className="flex items-center gap-2 mb-1.5">
+                <span className="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded"
+                  style={{ background: "var(--tint-accent)", color: "var(--accent)", border: "1px solid var(--border)" }}>
+                  Week {week.weekId.replace("week-", "")}
+                </span>
+                <p className="text-sm font-semibold flex-1" style={{ color: "var(--text)" }}>{week.label}</p>
                 <span className="text-sm font-bold"
                   style={{ color: weekPct === 100 ? "var(--green)" : "var(--accent2)" }}>
                   {weekPct}%
