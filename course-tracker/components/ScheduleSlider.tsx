@@ -10,19 +10,45 @@ interface ScheduleImage {
   weekNumber?: number;
 }
 
-const scheduleImages: ScheduleImage[] = [
-  { id: "week11", src: "/schedules/11.jpg", alt: "Week 11 Schedule", dateRange: "4th May – 10th May 2026", weekNumber: 11 },
-  { id: "week10", src: "/schedules/10.jpg", alt: "Week 10 Schedule", dateRange: "27th April – 3rd May 2026", weekNumber: 10 },
-  { id: "week9", src: "/schedules/9.jpg", alt: "Week 9 Schedule", dateRange: "20th April – 26th April 2026", weekNumber: 9 },
-  { id: "week8", src: "/schedules/8.jpg", alt: "Week 8 Schedule", dateRange: "13th April – 19th April 2026", weekNumber: 8 },
-  { id: "week7", src: "/schedules/7.jpg", alt: "Week 7 Schedule", dateRange: "6th April – 12th April 2026", weekNumber: 7 },
-  { id: "week6", src: "/schedules/6.jpg", alt: "Week 6 Schedule", dateRange: "30th March – 5th April 2026", weekNumber: 6 },
-  { id: "week5", src: "/schedules/5.jpg", alt: "Week 5 Schedule", dateRange: "23rd March – 29th March 2026", weekNumber: 5 },
-  { id: "week4b", src: "/schedules/4.jpg", alt: "Week 4 Schedule", dateRange: "16th March – 22nd March 2026", weekNumber: 4 },
-  { id: "week4a", src: "/schedules/3.jpeg", alt: "Week 4 Schedule", dateRange: "9th March – 15th March 2026", weekNumber: 4 },
-  { id: "week3", src: "/schedules/2.jpg", alt: "Week 3 Schedule", dateRange: "2nd March – 8th March 2026", weekNumber: 3 },
-  { id: "week2", src: "/schedules/1.jpeg", alt: "Week 2 Schedule", dateRange: "23rd Feb – 1st March 2026", weekNumber: 2 },
-];
+// Dynamically build schedule images array by trying different extensions
+function buildScheduleImages(): ScheduleImage[] {
+  const images: ScheduleImage[] = [];
+  const extensions = ['jpg', 'jpeg', 'png'];
+  
+  // Week date ranges (can be extended as needed)
+  const weekRanges: Record<number, string> = {
+    1: "23rd Feb – 1st Mar 2026",
+    2: "2nd Mar – 8th Mar 2026",
+    3: "9th Mar – 15th Mar 2026",
+    4: "16th Mar – 22nd Mar 2026",
+    5: "23rd Mar – 29th Mar 2026",
+    6: "30th Mar – 5th Apr 2026",
+    7: "6th Apr – 12th Apr 2026",
+    8: "13th Apr – 19th Apr 2026",
+    9: "20th Apr – 26th Apr 2026",
+    10: "27th Apr – 3rd May 2026",
+    11: "4th May – 10th May 2026",
+  };
+  
+  // Try to find images for weeks 1-20 (or more if needed)
+  for (let week = 11; week >= 1; week--) {
+    for (const ext of extensions) {
+      const src = `/schedules/${week}.${ext}`;
+      images.push({
+        id: `week${week}`,
+        src,
+        alt: `Week ${week} Schedule`,
+        dateRange: weekRanges[week] || `Week ${week}`,
+        weekNumber: week,
+      });
+      break; // Only add one entry per week (will try all extensions via fallback)
+    }
+  }
+  
+  return images;
+}
+
+const scheduleImages: ScheduleImage[] = buildScheduleImages();
 
 function ImageFallback({ image }: { image: ScheduleImage }) {
   return (
@@ -41,6 +67,34 @@ function ImageFallback({ image }: { image: ScheduleImage }) {
 
 function SlideImage({ image, onClick }: { image: ScheduleImage; onClick: () => void }) {
   const [failed, setFailed] = useState(false);
+  const [currentSrc, setCurrentSrc] = useState(image.src);
+  const [triedExtensions, setTriedExtensions] = useState<string[]>([]);
+
+  const tryNextExtension = useCallback(() => {
+    const extensions = ['jpg', 'jpeg', 'png'];
+    const weekMatch = image.src.match(/\/schedules\/(\d+)\./);
+    if (!weekMatch) {
+      setFailed(true);
+      return;
+    }
+    
+    const weekNum = weekMatch[1];
+    const nextExtension = extensions.find(ext => !triedExtensions.includes(ext));
+    
+    if (nextExtension) {
+      setTriedExtensions(prev => [...prev, nextExtension]);
+      setCurrentSrc(`/schedules/${weekNum}.${nextExtension}`);
+    } else {
+      setFailed(true);
+    }
+  }, [image.src, triedExtensions]);
+
+  useEffect(() => {
+    // Reset when image changes
+    setFailed(false);
+    setCurrentSrc(image.src);
+    setTriedExtensions([]);
+  }, [image.src]);
 
   return (
     <div className="w-full h-full cursor-zoom-in" onClick={onClick}>
@@ -48,10 +102,10 @@ function SlideImage({ image, onClick }: { image: ScheduleImage; onClick: () => v
         <ImageFallback image={image} />
       ) : (
         <img
-          src={image.src}
+          src={currentSrc}
           alt={image.alt}
           className="w-full h-full object-contain rounded-lg"
-          onError={() => setFailed(true)}
+          onError={tryNextExtension}
         />
       )}
     </div>

@@ -96,6 +96,7 @@ export default function DashboardClient({
   const [manualLectureRefs, setManualLectureRefs] = useState<Record<string, number | false>>({});
   const [ignoredBacklogModules, setIgnoredBacklogModules] = useState<Record<string, boolean>>({});
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
+  const [todayActivityExpanded, setTodayActivityExpanded] = useState<Record<string, boolean>>({});
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -333,38 +334,335 @@ export default function DashboardClient({
               })()}
             </div>
 
-            {/* ── Recent AI Chat Snippet ── */}
-            {recentAiChat && recentAiChat.length > 0 && (
-              <div className="glass p-5 mb-5 fade-in-2 relative overflow-hidden group">
-                <div className="absolute top-0 left-0 w-1 h-full" style={{ background: "linear-gradient(to bottom, var(--accent), var(--accent2))" }} />
-                <div className="flex items-center justify-between mb-3">
-                  <p className="text-xs font-semibold uppercase tracking-wider flex items-center gap-2" style={{ color: "var(--muted)" }}>
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                    Recent AI Assistant Insight
-                  </p>
-                  <Link href="/ai" className="text-xs font-medium hover:underline flex flex-row items-center gap-1" style={{ color: "var(--accent)" }}>
-                    Open Chat
-                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                  </Link>
-                </div>
-                <div className="space-y-3">
-                  {recentAiChat.map((msg: any, i: number) => (
-                    <div key={i} className={`flex flex-col gap-1 ${msg.role === "user" ? "items-start border-l-2 pl-3" : "items-start bg-black/5 dark:bg-white/5 p-3 rounded-lg"}`} style={{ borderColor: "var(--border)" }}>
-                      <span className="text-[10px] font-bold uppercase tracking-widest" style={{ color: msg.role === "user" ? "var(--muted)" : "var(--accent)" }}>
-                        {msg.role === "user" ? "You asked" : "AI Assistant"}
-                      </span>
-                      <p className="text-xs leading-relaxed max-h-[80px] overflow-hidden text-ellipsis opacity-90" style={{ color: "var(--text)", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical" }}>
-                        {msg.content.replace(/\*+/g, "").substring(0, 300)}...
+            {/* ── Today's Activity vs Plan ── */}
+            {(() => {
+              const todayStr = new Date().toISOString().split("T")[0];
+              const todayTasks = weeks.flatMap((w) => w.days.filter((d) => d.date === todayStr).flatMap((d) => d.tasks));
+              
+              // Get today's completed lectures from completedMap (lectures marked as done today)
+              const todayCompleted = Object.entries(completedMap)
+                .filter(([id, timestamp]) => {
+                  if (!timestamp) return false;
+                  const completedDate = new Date(timestamp as number).toISOString().split("T")[0];
+                  return completedDate === todayStr;
+                })
+                .map(([id]) => id);
+              
+              const allTodayCompleted = new Set(todayCompleted);
+              
+              // Build lecture details map
+              const lectureDetailsMap = new Map<string, { title: string; subjectName: string; moduleName: string; duration: number }>();
+              for (const subject of subjects) {
+                for (const mod of subject.modules) {
+                  for (const lecture of mod.lectures) {
+                    lectureDetailsMap.set(lecture.id, {
+                      title: lecture.title,
+                      subjectName: subject.name,
+                      moduleName: mod.name,
+                      duration: lecture.duration || 0,
+                    });
+                  }
+                }
+              }
+              
+              // Group completed lectures by subject
+              const completedBySubject: Record<string, { lectures: Array<{ id: string; title: string; moduleName: string; duration: number }>; totalHours: number }> = {};
+              
+              for (const lectureId of allTodayCompleted) {
+                const details = lectureDetailsMap.get(lectureId);
+                if (!details) continue;
+                
+                if (!completedBySubject[details.subjectName]) {
+                  completedBySubject[details.subjectName] = { lectures: [], totalHours: 0 };
+                }
+                
+                completedBySubject[details.subjectName].lectures.push({
+                  id: lectureId,
+                  title: details.title,
+                  moduleName: details.moduleName,
+                  duration: details.duration,
+                });
+                completedBySubject[details.subjectName].totalHours += details.duration / 3600;
+              }
+              
+              // Group planned tasks by subject
+              const plannedBySubject: Record<string, { hours: number; modules: Set<string>; lectureIds: string[] }> = {};
+              for (const task of todayTasks) {
+                if (!plannedBySubject[task.subject]) {
+                  plannedBySubject[task.subject] = { hours: 0, modules: new Set(), lectureIds: [] };
+                }
+                plannedBySubject[task.subject].hours += task.hours;
+                plannedBySubject[task.subject].modules.add(task.module);
+                plannedBySubject[task.subject].lectureIds.push(...task.lectureIds);
+              }
+              
+              const hasActivity = allTodayCompleted.size > 0;
+              const hasPlan = todayTasks.length > 0;
+              
+              if (!hasActivity && !hasPlan) return null;
+              
+              // Calculate today's hours and backlog metrics
+              const todayCompletedHours = Object.values(completedBySubject).reduce((s, d) => s + d.totalHours, 0);
+              const todayPlannedHours = todayTasks.reduce((s, t) => s + t.hours, 0);
+              const todayBacklogReduction = todayCompletedHours - todayPlannedHours;
+              
+              // Calculate backlog coverage
+              const currentBacklogHours = focusedBacklogHours > 0 ? focusedBacklogHours : totalBacklogHours;
+              const backlogCoverageDays = todayCompletedHours > todayPlannedHours 
+                ? Math.ceil(currentBacklogHours / (todayCompletedHours - todayPlannedHours))
+                : null;
+              
+              const backlogCoverageWeeks = backlogCoverageDays ? Math.ceil(backlogCoverageDays / 7) : null;
+              
+              // Calculate estimated backlog clearance date
+              const backlogClearanceDate = backlogCoverageDays && todayCompletedHours > todayPlannedHours
+                ? (() => {
+                    const date = new Date();
+                    date.setDate(date.getDate() + backlogCoverageDays);
+                    return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });
+                  })()
+                : null;
+              
+              return (
+                <div className="glass p-5 mb-5 fade-in-2">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1 h-6 rounded-full" style={{ background: "linear-gradient(to bottom, var(--accent), var(--accent2))" }} />
+                      <p className="text-sm font-bold" style={{ color: "var(--text)" }}>
+                        Today's Activity
                       </p>
                     </div>
-                  ))}
+                    <Link href="/activity" className="text-xs font-medium hover:underline flex items-center gap-1" style={{ color: "var(--accent)" }}>
+                      View All Activity
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline>
+                      </svg>
+                    </Link>
+                  </div>
+                  
+                  {!hasActivity && hasPlan ? (
+                    <div className="text-center py-6">
+                      <p className="text-sm mb-2" style={{ color: "var(--muted)" }}>No lectures completed yet today</p>
+                      <p className="text-xs" style={{ color: "var(--muted)" }}>
+                        {todayTasks.length} task{todayTasks.length !== 1 ? "s" : ""} planned · {todayPlannedHours.toFixed(2)} hrs
+                      </p>
+                    </div>
+                  ) : (
+                    <div className="space-y-3">
+                      {/* Summary stats */}
+                      <div className="grid grid-cols-4 gap-3">
+                        <div className="rounded-lg p-3 text-center" style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <div className="text-xl font-bold mb-1" style={{ color: "var(--accent)" }}>
+                            {allTodayCompleted.size}
+                          </div>
+                          <div className="text-xs" style={{ color: "var(--muted)" }}>Lectures</div>
+                        </div>
+                        <div className="rounded-lg p-3 text-center" style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <div className="text-xl font-bold mb-1" style={{ color: "var(--green)" }}>
+                            {todayCompletedHours.toFixed(2)}
+                          </div>
+                          <div className="text-xs" style={{ color: "var(--muted)" }}>Hrs Done</div>
+                        </div>
+                        <div className="rounded-lg p-3 text-center" style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                          <div className="text-xl font-bold mb-1" style={{ color: hasPlan ? "var(--orange)" : "var(--muted)" }}>
+                            {hasPlan ? todayPlannedHours.toFixed(2) : "—"}
+                          </div>
+                          <div className="text-xs" style={{ color: "var(--muted)" }}>Planned</div>
+                        </div>
+                        <div className="rounded-lg p-3 text-center" style={{ 
+                          background: todayBacklogReduction > 0 ? "var(--tint-green)" : todayBacklogReduction < 0 ? "var(--tint-red)" : "var(--surface2)", 
+                          border: `1px solid ${todayBacklogReduction > 0 ? "var(--green)" : todayBacklogReduction < 0 ? "var(--red)" : "var(--border)"}` 
+                        }}>
+                          <div className="text-xl font-bold mb-1" style={{ 
+                            color: todayBacklogReduction > 0 ? "var(--green)" : todayBacklogReduction < 0 ? "var(--red)" : "var(--text)" 
+                          }}>
+                            {todayBacklogReduction > 0 ? "+" : ""}{todayBacklogReduction.toFixed(2)}
+                          </div>
+                          <div className="text-xs" style={{ color: "var(--muted)" }}>Backlog Δ</div>
+                        </div>
+                      </div>
+                      
+                      {/* Backlog Coverage Metrics */}
+                      {todayBacklogReduction > 0 && currentBacklogHours > 0 && (
+                        <div className="rounded-lg p-4" style={{ background: "var(--surface2)", border: "1px solid var(--green)" }}>
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--green)" }}>
+                              📊 Backlog Coverage Analysis
+                            </span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-3">
+                            <div className="text-center">
+                              <p className="text-2xl font-bold mb-1" style={{ color: "var(--green)" }}>
+                                {backlogCoverageDays}
+                              </p>
+                              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                                Days to clear
+                              </p>
+                            </div>
+                            <div className="text-center">
+                              <p className="text-2xl font-bold mb-1" style={{ color: "var(--green)" }}>
+                                {backlogCoverageWeeks}
+                              </p>
+                              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                                Weeks (~)
+                              </p>
+                            </div>
+                            <div className="text-center">
+                              <p className="text-xs font-bold mb-1" style={{ color: "var(--text)" }}>
+                                {backlogClearanceDate}
+                              </p>
+                              <p className="text-xs" style={{ color: "var(--muted)" }}>
+                                Est. clearance
+                              </p>
+                            </div>
+                          </div>
+                          <div className="mt-3 pt-3" style={{ borderTop: "1px solid var(--border)" }}>
+                            <div className="flex items-center justify-between text-xs">
+                              <span style={{ color: "var(--muted)" }}>Total backlog:</span>
+                              <span className="font-bold" style={{ color: "var(--text)" }}>{currentBacklogHours.toFixed(2)} hrs</span>
+                            </div>
+                            <div className="flex items-center justify-between text-xs mt-1">
+                              <span style={{ color: "var(--muted)" }}>Daily surplus:</span>
+                              <span className="font-bold" style={{ color: "var(--green)" }}>+{todayBacklogReduction.toFixed(2)} hrs/day</span>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                      
+                      {todayBacklogReduction < 0 && (
+                        <div className="rounded-lg p-3 text-center" style={{ background: "var(--tint-red)", border: "1px solid var(--red)" }}>
+                          <p className="text-xs font-semibold mb-1" style={{ color: "var(--red)" }}>
+                            ⚠ Adding to backlog
+                          </p>
+                          <p className="text-xs" style={{ color: "var(--muted)" }}>
+                            You're {Math.abs(todayBacklogReduction).toFixed(2)} hrs behind today's plan
+                          </p>
+                        </div>
+                      )}
+                      
+                      {/* Subject-wise breakdown */}
+                      <div className="space-y-2">
+                        <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--muted)" }}>
+                          Subject Breakdown
+                        </p>
+                        {Object.entries(completedBySubject).map(([subjectName, data]) => {
+                          const planned = plannedBySubject[subjectName];
+                          const plannedHours = planned?.hours || 0;
+                          const completedHours = data.totalHours;
+                          const progress = plannedHours > 0 ? Math.min(100, (completedHours / plannedHours) * 100) : 100;
+                          const c = subjectColor(subjectName);
+                          const isExpanded = todayActivityExpanded[subjectName] ?? false;
+                          
+                          return (
+                            <div key={subjectName} className="rounded-lg overflow-hidden" style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
+                              {/* Subject header - clickable */}
+                              <button
+                                onClick={() => setTodayActivityExpanded(prev => ({ ...prev, [subjectName]: !prev[subjectName] }))}
+                                className="w-full p-3 transition-all hover:opacity-90"
+                              >
+                                <div className="flex items-center justify-between mb-2">
+                                  <div className="flex items-center gap-2">
+                                    <div className="w-1 h-4 rounded-full" style={{ background: c }} />
+                                    <span className="text-sm font-semibold" style={{ color: c }}>
+                                      {subjectName}
+                                    </span>
+                                    <svg 
+                                      style={{ 
+                                        transform: isExpanded ? "rotate(180deg)" : "rotate(0deg)", 
+                                        transition: "transform 0.2s", 
+                                        color: "var(--muted)" 
+                                      }}
+                                      width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                      <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+                                    </svg>
+                                  </div>
+                                  <div className="flex items-center gap-2">
+                                    <span className="text-xs font-bold" style={{ color: "var(--green)" }}>
+                                      {completedHours.toFixed(2)} hrs
+                                    </span>
+                                    {plannedHours > 0 && (
+                                      <>
+                                        <span className="text-xs" style={{ color: "var(--muted)" }}>/</span>
+                                        <span className="text-xs" style={{ color: "var(--muted)" }}>
+                                          {plannedHours.toFixed(2)} planned
+                                        </span>
+                                      </>
+                                    )}
+                                  </div>
+                                </div>
+                                
+                                {/* Progress bar if planned */}
+                                {plannedHours > 0 && (
+                                  <div className="h-1.5 rounded-full" style={{ background: "var(--surface)" }}>
+                                    <div className="h-1.5 rounded-full transition-all duration-500"
+                                      style={{
+                                        width: `${progress}%`,
+                                        background: progress >= 100 ? "var(--green)" : c,
+                                      }} />
+                                  </div>
+                                )}
+                              </button>
+                              
+                              {/* Collapsible content */}
+                              {isExpanded && (
+                                <div className="px-3 pb-3 space-y-2" style={{ borderTop: "1px solid var(--border)" }}>
+                                  {/* Lectures list */}
+                                  <div className="space-y-1 mt-2">
+                                    {data.lectures.map((lecture) => (
+                                      <div key={lecture.id} className="flex items-center justify-between text-xs py-1 px-2 rounded"
+                                        style={{ background: "var(--surface)" }}>
+                                        <span className="truncate flex-1" style={{ color: "var(--text)" }}>
+                                          {lecture.title}
+                                        </span>
+                                        <span className="ml-2 flex-shrink-0" style={{ color: "var(--muted)" }}>
+                                          {(lecture.duration / 3600).toFixed(2)} hrs
+                                        </span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                  
+                                  {/* Module info */}
+                                  <div className="text-xs" style={{ color: "var(--muted)" }}>
+                                    {data.lectures.length} lecture{data.lectures.length !== 1 ? "s" : ""} · {new Set(data.lectures.map(l => l.moduleName)).size} module{new Set(data.lectures.map(l => l.moduleName)).size !== 1 ? "s" : ""}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          );
+                        })}
+                      </div>
+                      
+                      {/* Planned but not completed */}
+                      {hasPlan && (() => {
+                        const notCompleted = Object.entries(plannedBySubject).filter(
+                          ([subject]) => !completedBySubject[subject]
+                        );
+                        
+                        if (notCompleted.length === 0) return null;
+                        
+                        return (
+                          <div className="rounded-lg p-3" style={{ background: "var(--surface2)", border: "1px solid var(--orange)" }}>
+                            <p className="text-xs font-semibold mb-2" style={{ color: "var(--orange)" }}>
+                              ⚠ Planned but not started
+                            </p>
+                            <div className="space-y-1">
+                              {notCompleted.map(([subject, data]) => (
+                                <div key={subject} className="flex items-center justify-between text-xs py-1">
+                                  <span style={{ color: "var(--text)" }}>{subject}</span>
+                                  <span style={{ color: "var(--muted)" }}>
+                                    {data.hours.toFixed(2)} hrs · {Array.from(data.modules).length} module{Array.from(data.modules).length !== 1 ? "s" : ""}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        );
+                      })()}
+                    </div>
+                  )}
                 </div>
-              </div>
-            )}
+              );
+            })()}
 
             {/* ── Two-col: Schedule slider + ETA full ── */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5 fade-in-2">

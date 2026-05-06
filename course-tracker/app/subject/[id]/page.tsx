@@ -1,6 +1,7 @@
 import { loadCourses } from "@/lib/courseLoader";
 import { notFound } from "next/navigation";
 import weeklyPlanData from "@/lib/weeklyPlan.json";
+import { extendWeeklyPlan } from "@/lib/weeklyPlanExtender";
 import type { WeekData } from "@/app/weekly/page";
 import SubjectClient from "./SubjectClient";
 
@@ -17,7 +18,8 @@ export default async function SubjectPage({ params }: { params: Promise<{ id: st
     }
   }
 
-  return <SubjectClient subject={subject} durationMap={durationMap} weeks={weeklyPlanData as WeekData[]} />;
+  const extendedWeeks = extendWeeklyPlan(weeklyPlanData as WeekData[]);
+  return <SubjectClient subject={subject} durationMap={durationMap} weeks={extendedWeeks} />;
 }
 
 export async function generateStaticParams() {

@@ -1,11 +1,15 @@
 import { loadCourses } from "@/lib/courseLoader";
 import weeklyPlanData from "@/lib/weeklyPlan.json";
+import { extendWeeklyPlan } from "@/lib/weeklyPlanExtender";
 import DashboardClient from "./DashboardClient";
 import type { WeekData } from "@/app/weekly/page";
 
 export default function DashboardPage() {
   const subjects = loadCourses();
   const coreSubjects = subjects.filter((s) => s.tag !== "extra");
+  
+  // Extend weekly plan to include current week and future weeks
+  const extendedWeeks = extendWeeklyPlan(weeklyPlanData as WeekData[]);
 
   // durationMap: lectureId → duration in seconds (all subjects)
   const durationMap: Record<string, number> = {};
@@ -30,9 +34,9 @@ export default function DashboardPage() {
   // Total hours for core subjects only
   const totalCoreHours = coreSubjects.reduce((sum, s) => sum + (subjectTotalHours[s.id] ?? 0), 0);
 
-  // Planned hours per subject from weekly plan
+  // Planned hours per subject from weekly plan (use extended weeks)
   const hoursMap: Record<string, number> = {};
-  for (const week of weeklyPlanData) {
+  for (const week of extendedWeeks) {
     for (const day of week.days) {
       for (const task of day.tasks) {
         const key = task.subject.toLowerCase();
@@ -52,7 +56,7 @@ export default function DashboardPage() {
       subjectPlannedHours={subjectPlannedHours}
       subjectTotalHours={subjectTotalHours}
       totalCoreHours={totalCoreHours}
-      weeks={weeklyPlanData as WeekData[]}
+      weeks={extendedWeeks}
     />
   );
 }

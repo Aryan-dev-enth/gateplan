@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, Zap, Battery, Flame, Rocket, X, CheckSquare, BookOpen, ClipboardCheck, Info, Sparkles } from "lucide-react";
 import { DailySummary, StudySession } from "@/lib/store";
 import weeklyPlanData from "@/lib/weeklyPlan.json";
+import { useExtendedWeeklyPlan } from "@/lib/useExtendedWeeklyPlan";
+import type { WeekData } from "@/lib/backlog";
 
 interface SummaryCalendarProps {
   summaries: DailySummary[];
@@ -34,6 +36,7 @@ function getIconForHours(h: number) {
 
 export default function SummaryCalendar({ summaries, studySessions, manualLectureRefs }: SummaryCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const extendedWeeks = useExtendedWeeklyPlan(weeklyPlanData as WeekData[]);
 
   const getDaysInMonth = (year: number, month: number) => new Date(year, month + 1, 0).getDate();
   const getFirstDayOfMonth = (year: number, month: number) => new Date(year, month, 1).getDay();
@@ -81,7 +84,7 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
     const daySessions = (studySessions || []).filter(s => new Date(s.startedAt).toDateString() === dateObj.toDateString());
     
     // Calculate lecture hours from manualLectureRefs and weeklyPlan
-    const dayPlan = (weeklyPlanData as any[]).flatMap(w => w.days).find(day => day.date === dateStr);
+    const dayPlan = extendedWeeks.flatMap(w => w.days).find(day => day.date === dateStr);
     const daySessionHours = daySessions.reduce((acc, s) => acc + (s.durationMinutes || 0), 0) / 60;
     const dayTotalHours = daySessionHours;
 

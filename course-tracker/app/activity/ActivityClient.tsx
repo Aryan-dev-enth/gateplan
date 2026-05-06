@@ -359,38 +359,159 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
 
                       {/* Items — only rendered when open */}
                       {open && (
-                        <div className="flex flex-col gap-1 p-2"
+                        <div className="flex flex-col gap-2 p-2"
                           style={{ background: "var(--card-bg)", borderTop: "1px solid var(--border)" }}>
-                          {items.map((entry) => {
-                            const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
+                          
+                          {/* Daily Summary - Subject & Module wise hours */}
+                          {(() => {
+                            // Build duration map from subjects
+                            const durationMap = new Map<string, number>();
+                            for (const subject of subjects) {
+                              for (const mod of subject.modules) {
+                                for (const lecture of mod.lectures) {
+                                  durationMap.set(lecture.id, lecture.duration || 0);
+                                }
+                              }
+                            }
+
+                            // Calculate hours by subject and module for this day
+                            const subjectModuleHours: Record<string, Record<string, number>> = {};
+                            
+                            items.forEach((entry) => {
+                              const duration = durationMap.get(entry.lectureId) || 0;
+                              const hours = duration / 3600;
+                              
+                              if (!subjectModuleHours[entry.subjectName]) {
+                                subjectModuleHours[entry.subjectName] = {};
+                              }
+                              
+                              if (!subjectModuleHours[entry.subjectName][entry.moduleName]) {
+                                subjectModuleHours[entry.subjectName][entry.moduleName] = 0;
+                              }
+                              
+                              subjectModuleHours[entry.subjectName][entry.moduleName] += hours;
+                            });
+
+                            const totalDayHours = Object.values(subjectModuleHours).reduce(
+                              (sum, modules) => sum + Object.values(modules).reduce((s, h) => s + h, 0),
+                              0
+                            );
+
+                            const SUBJECT_COLORS: Record<string, string> = {
+                              "Engineering Mathematics": "#6378ff",
+                              "Discrete Mathematics": "#22d3a5",
+                              "Aptitude": "#f59e0b",
+                              "Operating Systems": "#f97316",
+                              "Computer Networks": "#06b6d4",
+                              "DBMS": "#a78bfa",
+                              "Algorithms": "#34d399",
+                              "Theory of Computation": "#fb7185",
+                              "Digital Logic": "#fbbf24",
+                              "COA": "#60a5fa",
+                            };
+
+                            const getSubjectColor = (name: string) => {
+                              for (const [key, color] of Object.entries(SUBJECT_COLORS)) {
+                                if (name.toLowerCase().includes(key.toLowerCase())) return color;
+                              }
+                              return "#8b5cf6";
+                            };
+
                             return (
-                              <div key={entry.lectureId} className="group relative">
-                                <Link href={`/module/${entry.moduleId}`}
-                                  className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:opacity-90 transition-all"
-                                  style={{ background: "var(--surface2)" }}>
-                                  <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
-                                    style={{ background: `${meta.color}18`, color: meta.color }}>
-                                    {meta.icon}
-                                  </div>
-                                  <div className="flex-1 min-w-0">
-                                    <p className="text-xs truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
-                                    <p className="text-xs truncate" style={{ color: "var(--muted)" }}>
-                                      {entry.subjectName} · {entry.moduleName}
-                                    </p>
-                                  </div>
-                                  <span className="flex-shrink-0 text-xs pr-7" style={{ color: "var(--muted)" }}>
-                                    {fmtTime(entry.timestamp)}
+                              <div className="mb-2 p-3 rounded-xl" 
+                                style={{ background: "var(--surface)", border: "1px solid var(--border)" }}>
+                                <div className="flex items-center justify-between mb-3">
+                                  <p className="text-xs font-bold uppercase tracking-wider" 
+                                    style={{ color: "var(--muted)" }}>
+                                    📊 Daily Summary
+                                  </p>
+                                  <span className="text-xs font-bold px-2 py-0.5 rounded-full"
+                                    style={{ background: "var(--tint-accent)", color: "var(--accent)" }}>
+                                    {totalDayHours.toFixed(1)}h total
                                   </span>
-                                </Link>
-                                <button onClick={() => deleteEntry(entry.lectureId)}
-                                  title="Remove"
-                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
-                                  style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
-                                  ✕
-                                </button>
+                                </div>
+
+                                <div className="space-y-2">
+                                  {Object.entries(subjectModuleHours).map(([subject, modules]) => {
+                                    const subjectTotal = Object.values(modules).reduce((s, h) => s + h, 0);
+                                    const subjectColor = getSubjectColor(subject);
+                                    
+                                    return (
+                                      <div key={subject} className="space-y-1">
+                                        {/* Subject header */}
+                                        <div className="flex items-center justify-between">
+                                          <div className="flex items-center gap-2">
+                                            <div className="w-1 h-4 rounded-full" 
+                                              style={{ background: subjectColor }} />
+                                            <span className="text-xs font-semibold" 
+                                              style={{ color: subjectColor }}>
+                                              {subject}
+                                            </span>
+                                          </div>
+                                          <span className="text-xs font-bold" 
+                                            style={{ color: subjectColor }}>
+                                            {subjectTotal.toFixed(1)}h
+                                          </span>
+                                        </div>
+
+                                        {/* Modules breakdown */}
+                                        <div className="pl-4 space-y-1">
+                                          {Object.entries(modules).map(([module, hours]) => (
+                                            <div key={module} 
+                                              className="flex items-center justify-between py-1 px-2 rounded"
+                                              style={{ background: "var(--surface2)" }}>
+                                              <span className="text-xs truncate flex-1" 
+                                                style={{ color: "var(--text)" }}>
+                                                {module}
+                                              </span>
+                                              <span className="text-xs font-semibold ml-2" 
+                                                style={{ color: "var(--muted)" }}>
+                                                {hours.toFixed(1)}h
+                                              </span>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </div>
+                                    );
+                                  })}
+                                </div>
                               </div>
                             );
-                          })}
+                          })()}
+
+                          {/* Lecture items */}
+                          <div className="space-y-1">
+                            {items.map((entry) => {
+                              const meta = TYPE_META[entry.type] ?? { icon: "•", color: "var(--muted)" };
+                              return (
+                                <div key={entry.lectureId} className="group relative">
+                                  <Link href={`/module/${entry.moduleId}`}
+                                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:opacity-90 transition-all"
+                                    style={{ background: "var(--surface2)" }}>
+                                    <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                                      style={{ background: `${meta.color}18`, color: meta.color }}>
+                                      {meta.icon}
+                                    </div>
+                                    <div className="flex-1 min-w-0">
+                                      <p className="text-xs truncate" style={{ color: "var(--text)" }}>{entry.title}</p>
+                                      <p className="text-xs truncate" style={{ color: "var(--muted)" }}>
+                                        {entry.subjectName} · {entry.moduleName}
+                                      </p>
+                                    </div>
+                                    <span className="flex-shrink-0 text-xs pr-7" style={{ color: "var(--muted)" }}>
+                                      {fmtTime(entry.timestamp)}
+                                    </span>
+                                  </Link>
+                                  <button onClick={() => deleteEntry(entry.lectureId)}
+                                    title="Remove"
+                                    className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                    style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
+                                    ✕
+                                  </button>
+                                </div>
+                              );
+                            })}
+                          </div>
                         </div>
                       )}
                     </div>

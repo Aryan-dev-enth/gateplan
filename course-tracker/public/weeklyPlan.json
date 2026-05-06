@@ -769,52 +769,52 @@
         "date": "2026-05-04",
         "label": "4 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 15C to 19B"], "hours": 5.5, "lectureIds": ["64de82fde4b0d32a4e449186"] }
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["15C", "16A", "16B", "17A", "17B", "17C", "17D", "17E", "18", "19A", "19B"], "hours": 5.5, "lectureIds": ["64de8ef8e4b09ed02289e5e7", "64df3755e4b025d8392e5e7a", "64dfbab7e4b0281c5f1e5e7b", "64dfde91e4b02cb7a7be5e7c", "64e083f6e4b0281c5f1e5e7d", "64e080ffe4b0bb5a8c4e5e7e", "64e09405e4b01c93487e5e7f", "64e0b57ee4b0de16a51e5e80", "64e3a4efe4b04e6fb19e5e81", "64e3e101e4b06d147f3e5e82", "64e61713e4b08438913e5e83"] }
         ]
       },
       {
         "date": "2026-05-05",
         "label": "5 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 20A to 21A"], "hours": 4.15, "lectureIds": ["64de82fde4b0d32a4e449187"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["Lecture 8D + Homework - 5 with Solution Session-6"], "hours": 1.5, "lectureIds": ["647210ede4b0469e8277c40c"] }
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["20A", "21A"], "hours": 4.15, "lectureIds": ["64e6460ee4b025e779ce5e84", "64ff9ccce4b056f655c2e5e85"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["8D", "Homework 5", "Session 6"], "hours": 1.5, "lectureIds": ["647254dfe4b0469e8277d56e", "6473613be4b01749c05f15f0", "64735747e4b0fc04f832bb2f"] }
         ]
       },
       {
         "date": "2026-05-06",
         "label": "6 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 21B to 22B"], "hours": 5.5, "lectureIds": ["64de82fde4b0d32a4e449188"] }
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["21B", "22A", "22B"], "hours": 5.5, "lectureIds": ["65003ffae4b06a6e7c60e5e86", "652ad913e4b0671f6fc3e5e87", "6527ea09e4b086ad5c6fe5e88"] }
         ]
       },
       {
         "date": "2026-05-07",
         "label": "7 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 22C to 23D"], "hours": 3, "lectureIds": ["64de82fde4b0d32a4e449189"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["Lecture 9A to 9B + Session: Solving Few Questions"], "hours": 1.75, "lectureIds": ["6471fa21e4b069f272e7c5d2"] }
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["22C", "22D", "23A", "23B", "23C", "23D"], "hours": 3, "lectureIds": ["6528cecde4b001bbef6de5e89", "652b025de4b025631072e5e8a", "65880419e4b09077d01e5e8b", "65880696e4b04bab5b1e5e8c", "65880978e4b0003d2cfe5e8d", "65880e80e4b09077d01e5e8e"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["9A", "9B", "Session: Solving Few Questions"], "hours": 1.75, "lectureIds": ["6473ad72e4b0c6c10d49f3c1", "6474a755e4b0307cedc5bb00", "6474a8aee4b004bcb542b6ef"] }
         ]
       },
       {
         "date": "2026-05-08",
         "label": "8 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 24A to 24C"], "hours": 5, "lectureIds": ["64de82fde4b0d32a4e44918a"] }
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["24A", "24B", "24C"], "hours": 5, "lectureIds": ["658812c0e4b0e1ca423e5e8f", "658812f0e4b03efabcde5e90", "65881368e4b0eeb4e90e5e91"] }
         ]
       },
       {
         "date": "2026-05-09",
         "label": "9 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["Lecture 1 to 4A"], "hours": 3.75, "lectureIds": ["64de82fde4b0d32a4e44918b"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["Lecture 9C to 9D + ( OPTIONAL ) Homework - 6 with Solution"], "hours": 2.15, "lectureIds": ["6471e2d0e4b0e24c6097650e"] }
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["1", "2", "3A", "3B", "4A"], "hours": 3.75, "lectureIds": ["650bacf3e4b065f5a9987509", "650bba87e4b0dc0ab6f7192b", "650f25c9e4b019ac262357b5", "650f3ecbe4b0616e27dc915a", "650f354ce4b082f87e5057b5"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["9C", "9D", "Homework 6 (OPTIONAL)"], "hours": 2.15, "lectureIds": ["6474ef18e4b017c4ae51f603", "6474f96ee4b0b72b2d5c4b5b", "647602b3e4b089176aad549f"] }
         ]
       },
       {
         "date": "2026-05-10",
         "label": "10 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["Lecture 4B to 4D + Weekly Quiz - 1 with Solution on ( YT )"], "hours": 6, "lectureIds": ["64de82fde4b0d32a4e44918c"] }
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["4B", "4C", "4D", "Weekly Quiz 1"], "hours": 6, "lectureIds": ["650f5ec0e4b097535282f7df", "650f7eafe4b082f87e506a06", "62b0a9570cf287c06631cbce", "665c4a6fb76f9a3d68f1391d"] }
         ]
       }
     ]

@@ -105,7 +105,7 @@ export default function BacklogClient({ subjects, weeks }: { subjects: Subject[]
         </div>
 
         {/* Metrics */}
-        <div className="grid grid-cols-2 gap-3 mb-8 fade-in-1">
+        <div className="grid grid-cols-2 gap-3 mb-6 fade-in-1">
           <div className="glass p-5 text-center rounded-2xl border border-white/10">
             <p className="text-2xl font-bold" style={{ color: "var(--accent)" }}>{formatHours(backlog.focusedHours)}</p>
             <p className="text-[9px] font-bold uppercase tracking-wider opacity-40 mt-1">Focused Backlog</p>
@@ -115,6 +115,58 @@ export default function BacklogClient({ subjects, weeks }: { subjects: Subject[]
             <p className="text-[9px] font-bold uppercase tracking-wider opacity-40 mt-1">Total Lapsed</p>
           </div>
         </div>
+
+        {/* Subject-wise Backlog Summary */}
+        {Object.keys(backlog.subjectBreakdown).length > 0 && (
+          <div className="glass p-5 rounded-2xl border border-white/10 mb-8 fade-in-1">
+            <p className="text-xs font-bold uppercase tracking-wider mb-4 opacity-40">Subject-wise Backlog</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              {Object.entries(backlog.subjectBreakdown)
+                .filter(([_, data]) => data.totalLectures > 0)
+                .sort((a, b) => b[1].focusedHours - a[1].focusedHours)
+                .map(([subject, data]) => {
+                  const c = getColor(subject);
+                  const isIgnored = data.focusedHours === 0 && data.totalHours > 0;
+                  return (
+                    <div key={subject} 
+                      className={`rounded-xl p-3 border transition-all ${isIgnored ? 'opacity-50 grayscale' : ''}`}
+                      style={{ background: "var(--surface2)", borderColor: "var(--border)" }}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-1 h-4 rounded-full" style={{ background: c }} />
+                        <span className="text-xs font-semibold truncate flex-1" style={{ color: c }}>
+                          {subject}
+                        </span>
+                        {isIgnored && (
+                          <span className="text-[9px] px-1.5 py-0.5 rounded-full" 
+                            style={{ background: "var(--surface)", color: "var(--muted)" }}>
+                            Deferred
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-end justify-between">
+                        <div>
+                          <p className="text-lg font-bold" style={{ color: isIgnored ? "var(--muted)" : c }}>
+                            {formatHours(data.focusedHours || data.totalHours)}
+                          </p>
+                          <p className="text-[9px] opacity-40">
+                            {data.focusedLectures || data.totalLectures} lecture{(data.focusedLectures || data.totalLectures) !== 1 ? 's' : ''}
+                          </p>
+                        </div>
+                        {data.elapsedHours > 0 && (
+                          <div className="text-right">
+                            <p className="text-xs font-semibold" style={{ color: "var(--muted)" }}>
+                              {Math.round((data.doneHours / data.elapsedHours) * 100)}%
+                            </p>
+                            <p className="text-[9px] opacity-40">done</p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        )}
 
         {/* Backlog List */}
         {backlog.totalLectures === 0 ? (

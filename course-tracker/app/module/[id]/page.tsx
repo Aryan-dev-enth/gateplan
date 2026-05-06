@@ -1,6 +1,7 @@
 import { loadCourses } from "@/lib/courseLoader";
 import { notFound } from "next/navigation";
 import weeklyPlanData from "@/lib/weeklyPlan.json";
+import { extendWeeklyPlan } from "@/lib/weeklyPlanExtender";
 import type { WeekData } from "@/app/weekly/page";
 import ModuleClient from "./ModuleClient";
 
@@ -22,7 +23,8 @@ export default async function ModulePage({ params }: { params: Promise<{ id: str
     if (l.isLecture) durationMap[l.id] = l.duration;
   }
 
-  return <ModuleClient module={foundModule} subjectId={subjectId} durationMap={durationMap} weeks={weeklyPlanData as WeekData[]} />;
+  const extendedWeeks = extendWeeklyPlan(weeklyPlanData as WeekData[]);
+  return <ModuleClient module={foundModule} subjectId={subjectId} durationMap={durationMap} weeks={extendedWeeks} />;
 }
 
 export async function generateStaticParams() {
