@@ -97,6 +97,7 @@ export default function DashboardClient({
   const [ignoredBacklogModules, setIgnoredBacklogModules] = useState<Record<string, boolean>>({});
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   const [todayActivityExpanded, setTodayActivityExpanded] = useState<Record<string, boolean>>({});
+  const [backlogDetailsExpanded, setBacklogDetailsExpanded] = useState(false);
 
   useEffect(() => {
     const u = getCurrentUser();
@@ -399,23 +400,61 @@ export default function DashboardClient({
               const hasActivity = allTodayCompleted.size > 0;
               const hasPlan = todayTasks.length > 0;
               
-              if (!hasActivity && !hasPlan) return null;
+              // Calculate average daily performance from all elapsed days
+              const currentBacklogHours = focusedBacklogHours > 0 ? focusedBacklogHours : totalBacklogHours;
+              
+              // Backlog tracking started on May 5, 2026
+              const backlogTrackingStartDate = "2026-05-05";
+              
+              // Get elapsed days count (days that have passed in the schedule)
+              const elapsedDaysCount = weeks.flatMap(w => w.days).filter(d => d.date <= todayStr).length;
+              
+              // Get days since backlog tracking started
+              const trackingDays = weeks.flatMap(w => w.days).filter(d => d.date >= backlogTrackingStartDate && d.date <= todayStr);
+              const trackingDaysCount = trackingDays.length;
+              
+              // Calculate total done and planned hours since tracking started
+              const trackingDoneHours = (() => {
+                let total = 0;
+                for (const [lectureId, timestamp] of Object.entries(completedMap)) {
+                  if (!timestamp) continue;
+                  const completedDate = new Date(timestamp as number).toISOString().split("T")[0];
+                  if (completedDate >= backlogTrackingStartDate && completedDate <= todayStr) {
+                    const duration = durationMap[lectureId] || 0;
+                    total += duration / 3600;
+                  }
+                }
+                return total;
+              })();
+              
+              const trackingPlannedHours = trackingDays.reduce((sum, day) => 
+                sum + day.tasks.reduce((s, t) => s + t.hours, 0), 0
+              );
               
               // Calculate today's hours and backlog metrics
               const todayCompletedHours = Object.values(completedBySubject).reduce((s, d) => s + d.totalHours, 0);
               const todayPlannedHours = todayTasks.reduce((s, t) => s + t.hours, 0);
               const todayBacklogReduction = todayCompletedHours - todayPlannedHours;
               
-              // Calculate backlog coverage
-              const currentBacklogHours = focusedBacklogHours > 0 ? focusedBacklogHours : totalBacklogHours;
-              const backlogCoverageDays = todayCompletedHours > todayPlannedHours 
-                ? Math.ceil(currentBacklogHours / (todayCompletedHours - todayPlannedHours))
+              // Calculate average daily surplus (done hours - planned hours per day) since tracking started
+              const avgDailySurplus = trackingDaysCount > 0 
+                ? (trackingDoneHours - trackingPlannedHours) / trackingDaysCount 
+                : todayBacklogReduction;
+              
+              // Show section if there's activity OR if there's backlog coverage data to show
+              const hasBacklogCoverage = avgDailySurplus > 0 && currentBacklogHours > 0;
+              
+              if (!hasActivity && !hasPlan && !hasBacklogCoverage) return null;
+              
+              // Calculate backlog coverage based on average performance since May 5th
+              const backlogCoverageDays = avgDailySurplus > 0
+                ? Math.ceil(currentBacklogHours / avgDailySurplus)
                 : null;
               
               const backlogCoverageWeeks = backlogCoverageDays ? Math.ceil(backlogCoverageDays / 7) : null;
               
               // Calculate estimated backlog clearance date
-              const backlogClearanceDate = backlogCoverageDays && todayCompletedHours > todayPlannedHours
+              const backlogClearanceDate = backlogCoverageDays && avgDailySurplus > 0
                 ? (() => {
                     const date = new Date();
                     date.setDate(date.getDate() + backlogCoverageDays);
@@ -447,7 +486,11 @@ export default function DashboardClient({
                         {todayTasks.length} task{todayTasks.length !== 1 ? "s" : ""} planned · {todayPlannedHours.toFixed(2)} hrs
                       </p>
                     </div>
-                  ) : (
+                  ) : !hasActivity && !hasPlan && hasBacklogCoverage ? (
+                    <div className="text-center py-4">
+                      <p className="text-sm mb-2" style={{ color: "var(--muted)" }}>No activity today yet</p>
+                    </div>
+                  ) : hasActivity ? (
                     <div className="space-y-3">
                       {/* Summary stats */}
                       <div className="grid grid-cols-4 gap-3">
@@ -483,7 +526,7 @@ export default function DashboardClient({
                       </div>
                       
                       {/* Backlog Coverage Metrics */}
-                      {todayBacklogReduction > 0 && currentBacklogHours > 0 && (
+                      {avgDailySurplus > 0 && currentBacklogHours > 0 && (
                         <div className="rounded-lg p-4" style={{ background: "var(--surface2)", border: "1px solid var(--green)" }}>
                           <div className="flex items-center gap-2 mb-3">
                             <span className="text-xs font-bold uppercase tracking-wider" style={{ color: "var(--green)" }}>
@@ -522,9 +565,120 @@ export default function DashboardClient({
                               <span className="font-bold" style={{ color: "var(--text)" }}>{currentBacklogHours.toFixed(2)} hrs</span>
                             </div>
                             <div className="flex items-center justify-between text-xs mt-1">
-                              <span style={{ color: "var(--muted)" }}>Daily surplus:</span>
-                              <span className="font-bold" style={{ color: "var(--green)" }}>+{todayBacklogReduction.toFixed(2)} hrs/day</span>
+                              <span style={{ color: "var(--muted)" }}>Today's pace:</span>
+                              <span className="font-bold" style={{ color: todayBacklogReduction >= 0 ? "var(--green)" : "var(--red)" }}>
+                                {todayBacklogReduction >= 0 ? "+" : ""}{todayBacklogReduction.toFixed(2)} hrs
+                              </span>
                             </div>
+                            <button
+                              onClick={() => setBacklogDetailsExpanded(!backlogDetailsExpanded)}
+                              className="w-full flex items-center justify-between text-xs mt-1 py-1 hover:opacity-80 transition-all"
+                            >
+                              <span style={{ color: "var(--muted)" }}>Overall progress (since May 5):</span>
+                              <div className="flex items-center gap-2">
+                                <span className="font-bold" style={{ color: avgDailySurplus >= 0 ? "var(--green)" : "var(--red)" }}>
+                                  {avgDailySurplus >= 0 ? "+" : ""}{avgDailySurplus.toFixed(2)} hrs/day avg
+                                </span>
+                                <svg 
+                                  style={{ 
+                                    transform: backlogDetailsExpanded ? "rotate(180deg)" : "rotate(0deg)", 
+                                    transition: "transform 0.2s", 
+                                    color: "var(--muted)" 
+                                  }}
+                                  width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                                  <path d="M19 9l-7 7-7-7" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                              </div>
+                            </button>
+                            
+                            {backlogDetailsExpanded && (() => {
+                              // Build daily breakdown (only since May 5)
+                              const backlogTrackingStartDate = "2026-05-05";
+                              const dailyBreakdown: Array<{
+                                date: string;
+                                label: string;
+                                planned: number;
+                                done: number;
+                                delta: number;
+                              }> = [];
+                              
+                              // Get days since tracking started
+                              const trackingDays = weeks.flatMap(w => w.days).filter(d => d.date >= backlogTrackingStartDate && d.date <= todayStr);
+                              
+                              // Build a map of date -> total hours done that day (any lectures)
+                              const dailyDoneHours: Record<string, number> = {};
+                              
+                              // Go through all completed lectures and group by completion date
+                              for (const [lectureId, timestamp] of Object.entries(completedMap)) {
+                                if (!timestamp) continue;
+                                const completedDate = new Date(timestamp as number).toISOString().split("T")[0];
+                                if (completedDate >= backlogTrackingStartDate) {
+                                  const duration = durationMap[lectureId] || 0;
+                                  const hours = duration / 3600;
+                                  
+                                  if (!dailyDoneHours[completedDate]) {
+                                    dailyDoneHours[completedDate] = 0;
+                                  }
+                                  dailyDoneHours[completedDate] += hours;
+                                }
+                              }
+                              
+                              for (const day of trackingDays) {
+                                const dayPlanned = day.tasks.reduce((s, t) => s + t.hours, 0);
+                                const dayDone = dailyDoneHours[day.date] || 0;
+                                
+                                dailyBreakdown.push({
+                                  date: day.date,
+                                  label: day.label,
+                                  planned: dayPlanned,
+                                  done: dayDone,
+                                  delta: dayDone - dayPlanned,
+                                });
+                              }
+                              
+                              // Reverse to show most recent first
+                              dailyBreakdown.reverse();
+                              
+                              return (
+                                <div className="mt-3 pt-3 space-y-2" style={{ borderTop: "1px solid var(--border)" }}>
+                                  <p className="text-xs font-semibold mb-2" style={{ color: "var(--muted)" }}>
+                                    Daily Breakdown (since May 5 - {trackingDaysCount} days)
+                                  </p>
+                                  <div className="max-h-64 overflow-y-auto space-y-1 pr-1" style={{ scrollbarWidth: "thin" }}>
+                                    {dailyBreakdown.map((day) => (
+                                      <div key={day.date} className="flex items-center justify-between text-xs py-2 px-2 rounded" 
+                                        style={{ 
+                                          background: day.date === todayStr ? "var(--surface)" : "var(--surface2)",
+                                          border: day.date === todayStr ? "1px solid var(--accent)" : "none"
+                                        }}>
+                                        <div className="flex-1 min-w-0">
+                                          <p className="font-semibold truncate" style={{ color: day.date === todayStr ? "var(--accent)" : "var(--text)" }}>
+                                            {day.date === todayStr ? "Today" : day.label}
+                                          </p>
+                                          <p className="text-[10px]" style={{ color: "var(--muted)" }}>
+                                            {day.done.toFixed(2)} done / {day.planned.toFixed(2)} planned
+                                          </p>
+                                        </div>
+                                        <div className="flex items-center gap-2 ml-2">
+                                          <span className="font-bold px-2 py-0.5 rounded" style={{ 
+                                            color: day.delta >= 0 ? "var(--green)" : "var(--red)",
+                                            background: day.delta >= 0 ? "var(--tint-green)" : "var(--tint-red)"
+                                          }}>
+                                            {day.delta >= 0 ? "+" : ""}{day.delta.toFixed(2)}
+                                          </span>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                  <div className="mt-2 pt-2 flex items-center justify-between text-xs" style={{ borderTop: "1px solid var(--border)" }}>
+                                    <span className="font-semibold" style={{ color: "var(--text)" }}>Total (since May 5):</span>
+                                    <span className="font-bold" style={{ color: (trackingDoneHours - trackingPlannedHours) >= 0 ? "var(--green)" : "var(--red)" }}>
+                                      {(trackingDoneHours - trackingPlannedHours) >= 0 ? "+" : ""}{(trackingDoneHours - trackingPlannedHours).toFixed(2)} hrs
+                                    </span>
+                                  </div>
+                                </div>
+                              );
+                            })()}
                           </div>
                         </div>
                       )}
@@ -659,7 +813,7 @@ export default function DashboardClient({
                         );
                       })()}
                     </div>
-                  )}
+                  ) : null}
                 </div>
               );
             })()}
