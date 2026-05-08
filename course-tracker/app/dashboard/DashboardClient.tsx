@@ -436,7 +436,7 @@ export default function DashboardClient({
               const todayPlannedHours = todayTasks.reduce((s, t) => s + t.hours, 0);
               const todayBacklogReduction = todayCompletedHours - todayPlannedHours;
               
-              // Calculate average daily surplus (done hours - planned hours per day) since tracking started
+              // Calculate average daily surplus (done hours - planned hours per day) since tracking started (May 5th)
               const avgDailySurplus = trackingDaysCount > 0 
                 ? (trackingDoneHours - trackingPlannedHours) / trackingDaysCount 
                 : todayBacklogReduction;
@@ -453,9 +453,10 @@ export default function DashboardClient({
               
               const backlogCoverageWeeks = backlogCoverageDays ? Math.ceil(backlogCoverageDays / 7) : null;
               
-              // Calculate estimated backlog clearance date
+              // Calculate estimated backlog clearance date based on average performance since May 5th
               const backlogClearanceDate = backlogCoverageDays && avgDailySurplus > 0
                 ? (() => {
+                    // Start from today and add the estimated days needed
                     const date = new Date();
                     date.setDate(date.getDate() + backlogCoverageDays);
                     return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' });

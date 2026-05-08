@@ -220,6 +220,15 @@ export default function SubjectClient({
           {subject.modules.map((mod, mi) => {
             const total = mod.lectures.filter(l => l.isLecture).length;
             const done = mod.lectures.filter((l) => l.isLecture && !!completedMap[l.id]).length;
+            
+            // Count quizzes (only lectures with "quiz" in title, case-insensitive)
+            const totalQuizzes = mod.lectures.filter(l => 
+              l.isLecture && /quiz/i.test(l.title)
+            ).length;
+            const doneQuizzes = mod.lectures.filter(l => 
+              l.isLecture && /quiz/i.test(l.title) && !!completedMap[l.id]
+            ).length;
+            
             const pct = total === 0 ? 0 : Math.round((done / total) * 100);
             const isComplete = pct === 100 && total > 0;
             const isOpen = openModules.has(mod.id);
@@ -246,7 +255,17 @@ export default function SubjectClient({
 
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold text-sm truncate" style={{ color: "var(--text)" }}>{mod.name}</p>
-                    <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>{done}/{total} done</p>
+                    <div className="flex items-center gap-2 mt-0.5">
+                      <p className="text-xs" style={{ color: "var(--muted)" }}>{done}/{total} done</p>
+                      {totalQuizzes > 0 && (
+                        <>
+                          <span style={{ color: "var(--border)" }}>•</span>
+                          <p className="text-xs" style={{ color: "var(--muted)" }}>
+                            📝 {doneQuizzes}/{totalQuizzes} quizzes
+                          </p>
+                        </>
+                      )}
+                    </div>
                   </div>
 
                   {/* Progress pill */}
@@ -317,7 +336,18 @@ export default function SubjectClient({
                           <div
                             className="flex-1 flex items-center gap-3 pr-4 py-2 rounded-xl mr-2 transition-all"
                             style={{
-                              background: isDone ? "rgba(34,211,165,0.04)" : "transparent",
+                              background: isDone 
+                                ? "rgba(34,211,165,0.04)" 
+                                : /quiz/i.test(lecture.title)
+                                  ? "rgba(255,193,7,0.05)"
+                                  : /question|solving|practice/i.test(lecture.title)
+                                    ? "rgba(99,120,255,0.05)"
+                                    : "transparent",
+                              border: /quiz/i.test(lecture.title) && lecture.isLecture
+                                ? "1px solid rgba(255,193,7,0.2)"
+                                : /question|solving|practice/i.test(lecture.title) && lecture.isLecture
+                                  ? "1px solid rgba(99,120,255,0.15)"
+                                  : "1px solid transparent",
                               cursor: lecture.isLecture && !isLectureToggling ? "pointer" : "default",
                               opacity: lecture.isLecture ? 1 : 0.6,
                             }}
@@ -348,13 +378,35 @@ export default function SubjectClient({
 
                             {/* Title + timestamp */}
                             <div className="flex-1 min-w-0">
-                              <p className="text-xs leading-snug truncate transition-all"
-                                style={{
-                                  color: isDone ? "var(--muted)" : "var(--text)",
-                                  textDecoration: isDone ? "line-through" : "none",
-                                }}>
-                                {lecture.title}
-                              </p>
+                              <div className="flex items-center gap-2">
+                                <p className="text-xs leading-snug truncate transition-all"
+                                  style={{
+                                    color: isDone ? "var(--muted)" : "var(--text)",
+                                    textDecoration: isDone ? "line-through" : "none",
+                                  }}>
+                                  {lecture.title}
+                                </p>
+                                {/quiz/i.test(lecture.title) && lecture.isLecture && (
+                                  <span className="flex-shrink-0 text-xs px-1.5 py-0.5 rounded font-bold" 
+                                    style={{ 
+                                      background: "rgba(255,193,7,0.15)", 
+                                      color: "#f59e0b",
+                                      fontSize: "9px"
+                                    }}>
+                                    QUIZ
+                                  </span>
+                                )}
+                                {/question|solving|practice/i.test(lecture.title) && lecture.isLecture && !/quiz/i.test(lecture.title) && (
+                                  <span className="flex-shrink-0 text-xs px-1.5 py-0.5 rounded font-bold" 
+                                    style={{ 
+                                      background: "rgba(99,120,255,0.12)", 
+                                      color: "var(--accent2)",
+                                      fontSize: "9px"
+                                    }}>
+                                    PRACTICE
+                                  </span>
+                                )}
+                              </div>
                               {isDone && ts && (
                                 <p className="text-xs mt-0.5" style={{ color: "rgba(34,211,165,0.6)", fontSize: "10px" }}>
                                   ✓ {new Date(ts as number).toLocaleDateString("en-IN", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}

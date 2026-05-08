@@ -55,6 +55,26 @@ export default function WeekSidebar({
     return totalHours > 0 ? Math.round((doneHours / totalHours) * 100) : 0;
   };
 
+  const getWeekQuizzes = (week: WeekData): { total: number; done: number } => {
+    let total = 0;
+    let done = 0;
+    week.days.forEach((day) => {
+      day.tasks.forEach((task, taskIdx) => {
+        task.lectureRefs.forEach((ref, i) => {
+          if (/quiz/i.test(ref)) {
+            total++;
+            const lectureId = task.lectureIds?.[i];
+            const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${i}|${ref}`;
+            if ((lectureId && completedMap[lectureId]) || manualCompletedTasks.has(manualKey)) {
+              done++;
+            }
+          }
+        });
+      });
+    });
+    return { total, done };
+  };
+
   return (
     <div className="flex flex-col gap-2" style={{ width: "220px", flexShrink: 0 }}>
       <p className="text-xs font-semibold uppercase tracking-wider px-1 mb-1" style={{ color: "var(--muted)" }}>
@@ -63,6 +83,7 @@ export default function WeekSidebar({
 
       {weeks.slice().reverse().map((week) => {
         const pct = getWeekCompletion(week);
+        const quizzes = getWeekQuizzes(week);
         const isActive = activeWeek === week.weekId;
         const isExpanded = expandedWeek === week.weekId;
         const color = getCompletionColor(pct);
@@ -118,6 +139,15 @@ export default function WeekSidebar({
                 <p className="text-xs font-semibold truncate" style={{ color: isActive ? "var(--accent)" : "var(--text)" }}>
                   {week.label}
                 </p>
+                {quizzes.total > 0 && (
+                  <div className="flex items-center gap-1 mt-0.5">
+                    <span className="text-[10px]">📝</span>
+                    <span className="text-[10px] font-medium" 
+                      style={{ color: quizzes.done === quizzes.total ? "var(--green)" : "#f59e0b" }}>
+                      {quizzes.done}/{quizzes.total} quizzes
+                    </span>
+                  </div>
+                )}
                 <div className="flex items-center gap-1.5 mt-1">
                   <div className="flex-1 h-1 rounded-full" style={{ background: "var(--border)" }}>
                     <div className="h-1 rounded-full transition-all duration-500"
