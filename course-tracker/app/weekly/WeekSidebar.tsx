@@ -15,11 +15,13 @@ interface WeekSidebarProps {
 }
 
 function getCompletionColor(pct: number): string {
-  if (pct === 100) return "var(--green)";
-  if (pct >= 75) return "#f59e0b";
-  if (pct >= 50) return "#f97316";
-  if (pct >= 25) return "var(--red)";
-  return "var(--muted)";
+  if (pct === 100) return "var(--green)";      // 100% - Green
+  if (pct >= 80) return "#10b981";              // 80-99% - Light green
+  if (pct >= 60) return "#84cc16";              // 60-79% - Lime green
+  if (pct >= 40) return "#eab308";              // 40-59% - Yellow
+  if (pct >= 20) return "#f59e0b";              // 20-39% - Amber/Orange
+  if (pct > 0) return "#ef4444";                // 1-19% - Red
+  return "var(--muted)";                        // 0% - Muted gray
 }
 
 export default function WeekSidebar({

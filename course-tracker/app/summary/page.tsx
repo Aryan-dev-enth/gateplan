@@ -5,6 +5,10 @@ import Link from "next/link";
 import { ArrowLeft, TrendingUp, Brain, Moon, Zap, Activity, Info, Sparkles, Flame, Clock, Target, RefreshCw, BookOpen } from "lucide-react";
 import { getCurrentUser, getUser, DailySummary, getPerformancePrediction, getAiWellnessInsight, StudySession } from "@/lib/store";
 import SummaryCalendar from "@/components/SummaryCalendar";
+import type { Subject } from "@/lib/courseLoader";
+import weeklyPlanData from "@/lib/weeklyPlan.json";
+import { useExtendedWeeklyPlan } from "@/lib/useExtendedWeeklyPlan";
+import type { WeekData } from "@/lib/backlog";
 
 export default function SummaryPage() {
   const router = useRouter();
@@ -12,6 +16,9 @@ export default function SummaryPage() {
   const [summaries, setSummaries] = useState<DailySummary[]>([]);
   const [studySessions, setStudySessions] = useState<StudySession[]>([]);
   const [manualLectureRefs, setManualLectureRefs] = useState<Record<string, number | false>>({});
+  const [completedLectures, setCompletedLectures] = useState<Record<string, number | false>>({});
+  const [subjects, setSubjects] = useState<Subject[]>([]);
+  const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [efficiency, setEfficiency] = useState(0);
   const [aiRemark, setAiRemark] = useState("");
@@ -20,17 +27,27 @@ export default function SummaryPage() {
 
   const EFFICIENCY_START_DATE = useMemo(() => new Date(2026, 3, 1), []);
   const DAILY_TARGET = 6;
+  
+  // Get extended weeks for lecture data
+  const extendedWeeks = useExtendedWeeklyPlan(weeklyPlanData as WeekData[]);
 
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
     setUsername(u);
 
+    // Load subjects from API
+    fetch('/api/subjects')
+      .then(res => res.json())
+      .then(data => setSubjects(data.subjects || []))
+      .catch(err => console.error('Failed to load subjects:', err));
+
     // Load user data to get summaries
     getUser(u).then((data) => {
       setSummaries(data.dailySummaries || []);
       setStudySessions(data.studySessions || []);
       setManualLectureRefs(data.manualLectureRefs || {});
+      setCompletedLectures(data.completedLectures || {});
       
       // Calculate current 20-day interval efficiency
       const now = new Date();
@@ -214,42 +231,289 @@ export default function SummaryPage() {
                 <SummaryCalendar 
                   summaries={summaries} 
                   studySessions={studySessions} 
-                  manualLectureRefs={manualLectureRefs} 
+                  manualLectureRefs={manualLectureRefs}
+                  completedLectures={completedLectures}
+                  subjects={subjects}
+                  onDateClick={setSelectedDate}
+                  selectedDate={selectedDate}
                 />
               </div>
 
-              {/* Today's Study Details Section */}
+              {/* Day Study Details Section - Dynamic based on selected date */}
               <div className="glass p-8 rounded-3xl space-y-6">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2 text-accent">
                     <BookOpen size={20} />
-                    <h3 className="text-sm font-black uppercase tracking-widest">Today&apos;s Study Detail</h3>
+                    <h3 className="text-sm font-black uppercase tracking-widest">
+                      {(() => {
+                        const todayStr = new Date().toISOString().split("T")[0];
+                        const selectedDateStr = selectedDate || todayStr;
+                        const selectedDateObj = new Date(selectedDateStr + "T00:00:00");
+                        const isToday = selectedDateStr === todayStr;
+                        
+                        if (isToday) return "Today's Study Detail";
+                        
+                        return selectedDateObj.toLocaleDateString("en-US", { 
+                          month: "short", 
+                          day: "numeric",
+                          year: selectedDateObj.getFullYear() !== new Date().getFullYear() ? "numeric" : undefined
+                        }) + " Study Detail";
+                      })()}
+                    </h3>
                   </div>
-                  <span className="text-[10px] opacity-40 font-bold uppercase tracking-widest">{new Date().toDateString()}</span>
+                  <div className="flex items-center gap-2">
+                    {selectedDate && selectedDate !== new Date().toISOString().split("T")[0] && (
+                      <button
+                        onClick={() => setSelectedDate(null)}
+                        className="text-xs px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all"
+                      >
+                        Back to Today
+                      </button>
+                    )}
+                    <span className="text-[10px] opacity-40 font-bold uppercase tracking-widest">
+                      {(() => {
+                        const dateStr = selectedDate || new Date().toISOString().split("T")[0];
+                        return new Date(dateStr + "T00:00:00").toDateString();
+                      })()}
+                    </span>
+                  </div>
                 </div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {(studySessions || []).filter(s => new Date(s.startedAt).toDateString() === new Date().toDateString()).length > 0 ? (
-                    (studySessions || [])
-                      .filter(s => new Date(s.startedAt).toDateString() === new Date().toDateString())
-                      .map((s, i) => (
-                        <div key={i} className="bg-white/5 p-4 rounded-2xl border border-white/5 flex justify-between items-center group hover:border-accent/30 transition-all">
-                          <div>
-                            <p className="text-[10px] font-black uppercase text-accent mb-1">{s.subjectName}</p>
-                            <p className="text-xs font-medium opacity-60 line-clamp-1">{s.moduleName || "General Session"}</p>
+                {(() => {
+                  const todayStr = new Date().toISOString().split("T")[0];
+                  const selectedDateStr = selectedDate || todayStr;
+                  const selectedDateObj = new Date(selectedDateStr + "T00:00:00");
+                  
+                  // Get sessions for selected date
+                  const daySessions = (studySessions || []).filter(s => 
+                    new Date(s.startedAt).toDateString() === selectedDateObj.toDateString()
+                  );
+                  
+                  // Get completed lectures for selected date
+                  const dayPlan = extendedWeeks.flatMap(w => w.days).find(day => day.date === selectedDateStr);
+                  const dayCompletedLectures: Array<{ subject: string; module: string; ref: string; lectureId?: string }> = [];
+                  
+                  // First, collect lectures from manualLectureRefs (weekly plan specific)
+                  if (dayPlan && manualLectureRefs) {
+                    dayPlan.tasks.forEach((task: any, taskIdx: number) => {
+                      const refs = task.lectureRefs || [];
+                      refs.forEach((ref: string, idx: number) => {
+                        const key = `${selectedDateStr}|${task.subject}|${task.module}|${taskIdx}|${idx}|${ref}`;
+                        if (manualLectureRefs[key]) {
+                          dayCompletedLectures.push({ 
+                            subject: task.subject, 
+                            module: task.module, 
+                            ref,
+                            lectureId: task.lectureIds?.[idx]
+                          });
+                        }
+                      });
+                    });
+                  }
+                  
+                  // Also check completedLectures map for lectures completed on this date
+                  // (lectures marked as done from module pages, not just weekly plan)
+                  Object.entries(completedLectures).forEach(([lectureId, timestamp]) => {
+                    if (timestamp) {
+                      const completedDate = new Date(timestamp).toISOString().split("T")[0];
+                      if (completedDate === selectedDateStr) {
+                        // Find lecture details from subjects
+                        for (const subject of subjects) {
+                          for (const mod of subject.modules) {
+                            const lecture = mod.lectures.find(l => l.id === lectureId);
+                            if (lecture) {
+                              // Check if not already added from manualLectureRefs
+                              const alreadyAdded = dayCompletedLectures.some(cl => cl.lectureId === lectureId);
+                              if (!alreadyAdded) {
+                                dayCompletedLectures.push({
+                                  subject: subject.name,
+                                  module: mod.name,
+                                  ref: lecture.title,
+                                  lectureId: lectureId
+                                });
+                              }
+                              break;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  });
+                  
+                  // Build lecture details map
+                  const lectureDetailsMap = new Map<string, { title: string; duration: number }>();
+                  for (const subject of subjects) {
+                    for (const mod of subject.modules) {
+                      for (const lecture of mod.lectures) {
+                        lectureDetailsMap.set(lecture.id, {
+                          title: lecture.title,
+                          duration: lecture.duration || 0,
+                        });
+                      }
+                    }
+                  }
+                  
+                  // Calculate totals
+                  const totalLectureHours = dayCompletedLectures.reduce((sum, lecture) => {
+                    if (lecture.lectureId) {
+                      const details = lectureDetailsMap.get(lecture.lectureId);
+                      if (details) {
+                        return sum + (details.duration / 3600);
+                      }
+                    }
+                    return sum;
+                  }, 0);
+                  
+                  const totalSessionHours = daySessions.reduce((sum, s) => sum + (s.durationMinutes / 60), 0);
+                  const totalHours = totalLectureHours + totalSessionHours;
+                  const DAILY_TARGET = 5;
+                  
+                  // Backlog coverage: Lecture hours - 5 hours target
+                  const backlogCoverage = totalLectureHours - DAILY_TARGET;
+                  
+                  return (
+                    <>
+                      {/* Summary Stats */}
+                      <div className="grid grid-cols-3 gap-4">
+                        <div className="bg-white/5 p-4 rounded-2xl border border-blue-400/20">
+                          <div className="flex items-center gap-2 mb-2">
+                            <BookOpen size={14} className="text-blue-400" />
+                            <p className="text-[10px] font-black uppercase tracking-wider opacity-60">Lectures</p>
                           </div>
-                          <div className="text-right">
-                             <p className="text-sm font-black">{s.durationMinutes}m</p>
-                             <p className="text-[9px] opacity-30 font-mono">{new Date(s.startedAt).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit' })}</p>
+                          <p className="text-2xl font-bold text-blue-400">{totalLectureHours.toFixed(2)}h</p>
+                          <p className="text-xs opacity-40 mt-1">{dayCompletedLectures.length} completed</p>
+                        </div>
+
+                        <div className="bg-white/5 p-4 rounded-2xl border border-green-400/20">
+                          <div className="flex items-center gap-2 mb-2">
+                            <Clock size={14} className="text-green-400" />
+                            <p className="text-[10px] font-black uppercase tracking-wider opacity-60">Sessions</p>
+                          </div>
+                          <p className="text-2xl font-bold text-green-400">{totalSessionHours.toFixed(2)}h</p>
+                          <p className="text-xs opacity-40 mt-1">{daySessions.length} logged</p>
+                        </div>
+
+                        <div className={`bg-white/5 p-4 rounded-2xl border ${backlogCoverage >= 0 ? 'border-accent/20' : 'border-red-400/20'}`}>
+                          <div className="flex items-center gap-2 mb-2">
+                            <Sparkles size={14} className={backlogCoverage >= 0 ? "text-accent" : "text-red-400"} />
+                            <p className="text-[10px] font-black uppercase tracking-wider opacity-60">Backlog Coverage</p>
+                          </div>
+                          <p className={`text-2xl font-bold ${backlogCoverage >= 0 ? "text-accent" : "text-red-400"}`}>
+                            {backlogCoverage >= 0 ? "+" : ""}{backlogCoverage.toFixed(2)}h
+                          </p>
+                          <p className="text-xs opacity-40 mt-1">Lectures - {DAILY_TARGET}h</p>
+                        </div>
+                      </div>
+
+                      {/* Total Hours Progress Bar */}
+                      <div className="bg-white/5 p-4 rounded-2xl border border-white/5">
+                        <div className="flex items-center justify-between mb-2">
+                          <p className="text-sm font-bold">Lecture Coverage</p>
+                          <p className="text-lg font-bold grad-text">{totalLectureHours.toFixed(2)}h</p>
+                        </div>
+                        <div className="flex items-center gap-2 text-xs opacity-60 mb-2">
+                          <span className="text-blue-400">{totalLectureHours.toFixed(2)}h lectures</span>
+                          <span>vs</span>
+                          <span className="text-accent">{DAILY_TARGET}h target</span>
+                          <span className="ml-auto text-green-400">({totalSessionHours.toFixed(2)}h sessions)</span>
+                        </div>
+                        <div className="h-2 rounded-full bg-white/5 overflow-hidden">
+                          <div 
+                            className="h-full transition-all duration-500"
+                            style={{
+                              width: `${Math.min(100, (totalLectureHours / DAILY_TARGET) * 100)}%`,
+                              background: totalLectureHours >= DAILY_TARGET 
+                                ? "linear-gradient(90deg, var(--green), var(--accent))" 
+                                : "linear-gradient(90deg, var(--accent), var(--accent2))"
+                            }}
+                          />
+                        </div>
+                        <p className="text-xs opacity-40 mt-2">
+                          {totalLectureHours >= DAILY_TARGET 
+                            ? `✓ Target met! +${(totalLectureHours - DAILY_TARGET).toFixed(2)}h backlog covered` 
+                            : `${(DAILY_TARGET - totalLectureHours).toFixed(2)}h remaining to meet ${DAILY_TARGET}h target`}
+                        </p>
+                      </div>
+
+                      {/* Completed Lectures */}
+                      {dayCompletedLectures.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 mb-3">
+                            <BookOpen size={16} className="text-blue-400" />
+                            <h4 className="text-xs font-bold uppercase tracking-wider opacity-60">Completed Lectures</h4>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {dayCompletedLectures.map((lecture, i) => {
+                              const details = lecture.lectureId ? lectureDetailsMap.get(lecture.lectureId) : null;
+                              const duration = details ? (details.duration / 3600).toFixed(2) : "—";
+                              
+                              return (
+                                <div 
+                                  key={i}
+                                  className="bg-blue-400/5 p-3 rounded-xl border border-blue-400/20 hover:border-blue-400/40 transition-all"
+                                >
+                                  <div className="flex items-start justify-between gap-3">
+                                    <div className="flex-1 min-w-0">
+                                      <p className="text-xs font-bold text-blue-400 mb-1">{lecture.subject}</p>
+                                      <p className="text-xs opacity-80 line-clamp-1">{lecture.ref}</p>
+                                      <p className="text-xs opacity-40 mt-0.5">{lecture.module}</p>
+                                    </div>
+                                    <div className="text-right flex-shrink-0">
+                                      <p className="text-sm font-bold text-blue-400">{duration}h</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
                         </div>
-                      ))
-                  ) : (
-                    <div className="col-span-full py-10 text-center opacity-30 italic text-sm">
-                      No manual sessions logged for today yet.
-                    </div>
-                  )}
-                </div>
+                      )}
+
+                      {/* Study Sessions */}
+                      {daySessions.length > 0 && (
+                        <div>
+                          <div className="flex items-center gap-2 mb-3">
+                            <Clock size={16} className="text-green-400" />
+                            <h4 className="text-xs font-bold uppercase tracking-wider opacity-60">Study Sessions</h4>
+                          </div>
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {daySessions.map((session, i) => (
+                              <div 
+                                key={i}
+                                className="bg-green-400/5 p-3 rounded-xl border border-green-400/20 hover:border-green-400/40 transition-all"
+                              >
+                                <div className="flex items-start justify-between gap-3">
+                                  <div className="flex-1 min-w-0">
+                                    <p className="text-xs font-bold text-green-400 mb-1">{session.subjectName}</p>
+                                    <p className="text-xs opacity-80 line-clamp-1">{session.moduleName || "General Session"}</p>
+                                    <p className="text-xs opacity-40 mt-0.5 font-mono">
+                                      {new Date(session.startedAt).toLocaleTimeString("en-GB", { 
+                                        hour: "2-digit", 
+                                        minute: "2-digit" 
+                                      })}
+                                    </p>
+                                  </div>
+                                  <div className="text-right flex-shrink-0">
+                                    <p className="text-sm font-bold text-green-400">{session.durationMinutes}m</p>
+                                    <p className="text-xs opacity-40">{(session.durationMinutes / 60).toFixed(2)}h</p>
+                                  </div>
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Empty State */}
+                      {dayCompletedLectures.length === 0 && daySessions.length === 0 && (
+                        <div className="text-center py-10">
+                          <div className="text-4xl mb-3 opacity-20">📚</div>
+                          <p className="text-sm opacity-60">No study activity recorded for this day</p>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
               </div>
             </div>
 

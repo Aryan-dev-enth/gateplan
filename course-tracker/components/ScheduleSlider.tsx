@@ -13,7 +13,6 @@ interface ScheduleImage {
 // Dynamically build schedule images array by trying different extensions
 function buildScheduleImages(): ScheduleImage[] {
   const images: ScheduleImage[] = [];
-  const extensions = ['jpg', 'jpeg', 'png'];
   
   // Week date ranges (can be extended as needed)
   const weekRanges: Record<number, string> = {
@@ -28,21 +27,36 @@ function buildScheduleImages(): ScheduleImage[] {
     9: "20th Apr – 26th Apr 2026",
     10: "27th Apr – 3rd May 2026",
     11: "4th May – 10th May 2026",
+    12: "11th May – 17th May 2026",
   };
   
-  // Try to find images for weeks 1-20 (or more if needed)
-  for (let week = 11; week >= 1; week--) {
-    for (const ext of extensions) {
-      const src = `/schedules/${week}.${ext}`;
-      images.push({
-        id: `week${week}`,
-        src,
-        alt: `Week ${week} Schedule`,
-        dateRange: weekRanges[week] || `Week ${week}`,
-        weekNumber: week,
-      });
-      break; // Only add one entry per week (will try all extensions via fallback)
-    }
+  // Map of known extensions for each week (to avoid unnecessary 404s)
+  const knownExtensions: Record<number, string> = {
+    1: 'jpeg',
+    2: 'jpg',
+    3: 'jpeg',
+    4: 'jpg',
+    5: 'jpg',
+    6: 'jpg',
+    7: 'jpeg',
+    8: 'jpeg',
+    9: 'jpg',
+    10: 'jpg',
+    11: 'jpg',
+    12: 'jpeg',
+  };
+  
+  // Build images array for weeks 1-12 (or more if needed)
+  for (let week = 12; week >= 1; week--) {
+    const ext = knownExtensions[week] || 'jpg'; // Default to jpg if not specified
+    const src = `/schedules/${week}.${ext}`;
+    images.push({
+      id: `week${week}`,
+      src,
+      alt: `Week ${week} Schedule`,
+      dateRange: weekRanges[week] || `Week ${week}`,
+      weekNumber: week,
+    });
   }
   
   return images;

@@ -532,6 +532,19 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                 const isActive = activeWeek === w.weekId;
                 const firstDate = w.days[0]?.date ? new Date(w.days[0].date).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "";
                 
+                // Get color based on completion percentage
+                const getWeekColor = (pct: number): string => {
+                  if (pct === 100) return "var(--green)";
+                  if (pct >= 80) return "#10b981";
+                  if (pct >= 60) return "#84cc16";
+                  if (pct >= 40) return "#eab308";
+                  if (pct >= 20) return "#f59e0b";
+                  if (pct > 0) return "#ef4444";
+                  return "var(--muted)";
+                };
+                
+                const weekColor = getWeekColor(wPct);
+                
                 return (
                   <button
                     key={w.weekId}
@@ -558,21 +571,11 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                         <div className="h-1.5 rounded-full transition-all duration-500"
                           style={{
                             width: `${wPct}%`,
-                            background: wPct === 100 
-                              ? "var(--green)" 
-                              : wPct >= 50 
-                                ? "#f59e0b" 
-                                : "var(--accent2)",
+                            background: weekColor,
                           }} />
                       </div>
                       <span className="text-[10px] font-bold" 
-                        style={{ 
-                          color: wPct === 100 
-                            ? "var(--green)" 
-                            : wPct >= 50 
-                              ? "#f59e0b" 
-                              : "var(--accent2)" 
-                        }}>
+                        style={{ color: weekColor }}>
                         {wPct}%
                       </span>
                     </div>

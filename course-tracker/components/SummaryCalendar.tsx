@@ -1,15 +1,20 @@
 "use client";
-import React, { useState } from "react";
-import { ChevronLeft, ChevronRight, Zap, Battery, Flame, Rocket, X, CheckSquare, BookOpen, ClipboardCheck, Info, Sparkles } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import { ChevronLeft, ChevronRight, Zap, Battery, Flame, Rocket, X, CheckSquare, BookOpen, ClipboardCheck, Info, Sparkles, Clock } from "lucide-react";
 import { DailySummary, StudySession } from "@/lib/store";
 import weeklyPlanData from "@/lib/weeklyPlan.json";
 import { useExtendedWeeklyPlan } from "@/lib/useExtendedWeeklyPlan";
 import type { WeekData } from "@/lib/backlog";
+import type { Subject } from "@/lib/courseLoader";
 
 interface SummaryCalendarProps {
   summaries: DailySummary[];
   studySessions: StudySession[];
   manualLectureRefs: Record<string, number | false>;
+  completedLectures: Record<string, number | false>;
+  subjects: Subject[];
+  onDateClick: (date: string) => void;
+  selectedDate: string | null;
 }
 
 const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -34,7 +39,7 @@ function getIconForHours(h: number) {
   return <Sparkles size={18} className="text-accent animate-pulse" />;
 }
 
-export default function SummaryCalendar({ summaries, studySessions, manualLectureRefs }: SummaryCalendarProps) {
+export default function SummaryCalendar({ summaries, studySessions, manualLectureRefs, completedLectures, subjects, onDateClick, selectedDate }: SummaryCalendarProps) {
   const [currentDate, setCurrentDate] = useState(new Date());
   const extendedWeeks = useExtendedWeeklyPlan(weeklyPlanData as WeekData[]);
 
@@ -86,51 +91,141 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
     // Calculate lecture hours from manualLectureRefs and weeklyPlan
     const dayPlan = extendedWeeks.flatMap(w => w.days).find(day => day.date === dateStr);
     const daySessionHours = daySessions.reduce((acc, s) => acc + (s.durationMinutes || 0), 0) / 60;
-    const dayTotalHours = daySessionHours;
 
-    // Collect lecture details for tooltip
-    const completedLectures: { subject: string; module: string; ref: string }[] = [];
+    // Collect lecture details and calculate lecture hours
+    const dayCompletedLectures: { subject: string; module: string; ref: string; lectureId?: string }[] = [];
+    
+    // First, collect from manualLectureRefs (weekly plan)
     if (dayPlan && manualLectureRefs) {
-      dayPlan.tasks.forEach((task: any) => {
+      dayPlan.tasks.forEach((task: any, taskIdx: number) => {
         const refs = task.lectureRefs || [];
         refs.forEach((ref: string, idx: number) => {
-          const key = `${dateStr}|${task.subject}|${task.module}|${idx}|${ref}`;
+          const key = `${dateStr}|${task.subject}|${task.module}|${taskIdx}|${idx}|${ref}`;
           if (manualLectureRefs[key]) {
-            completedLectures.push({ subject: task.subject, module: task.module, ref });
+            dayCompletedLectures.push({ 
+              subject: task.subject, 
+              module: task.module, 
+              ref,
+              lectureId: task.lectureIds?.[idx]
+            });
           }
         });
       });
     }
+    
+    // Also check completedLectures map for lectures completed on this date
+    Object.entries(completedLectures).forEach(([lectureId, timestamp]) => {
+      if (timestamp) {
+        const completedDate = new Date(timestamp).toISOString().split("T")[0];
+        if (completedDate === dateStr) {
+          // Find lecture details from subjects
+          for (const subject of subjects) {
+            for (const mod of subject.modules) {
+              const lecture = mod.lectures.find(l => l.id === lectureId);
+              if (lecture) {
+                // Check if not already added from manualLectureRefs
+                const alreadyAdded = dayCompletedLectures.some(cl => cl.lectureId === lectureId);
+                if (!alreadyAdded) {
+                  dayCompletedLectures.push({
+                    subject: subject.name,
+                    module: mod.name,
+                    ref: lecture.title,
+                    lectureId: lectureId
+                  });
+                }
+                break;
+              }
+            }
+          }
+        }
+      }
+    });
+    
+    // Calculate lecture hours from lecture durations
+    const lectureDetailsMap = new Map<string, number>();
+    for (const subject of subjects) {
+      for (const mod of subject.modules) {
+        for (const lecture of mod.lectures) {
+          lectureDetailsMap.set(lecture.id, lecture.duration || 0);
+        }
+      }
+    }
+    
+    const dayLectureHours = dayCompletedLectures.reduce((sum, lecture) => {
+      if (lecture.lectureId) {
+        const duration = lectureDetailsMap.get(lecture.lectureId);
+        if (duration) {
+          return sum + (duration / 3600);
+        }
+      }
+      return sum;
+    }, 0);
+    
+    const dayTotalHours = dayLectureHours + daySessionHours;
 
     calendarDays.push(
-      <div key={d} className="h-24 w-full glass bg-white/2 border border-white/5 rounded-xl p-2 flex flex-col items-center justify-between group hover:bg-white/5 transition-all relative">
+      <button 
+        key={d} 
+        onClick={() => onDateClick(dateStr)}
+        className={`h-24 w-full glass bg-white/2 border rounded-xl p-2 flex flex-col items-center justify-between group hover:bg-white/5 transition-all relative cursor-pointer hover:scale-105 active:scale-95 ${
+          selectedDate === dateStr ? 'border-accent bg-accent/10' : 'border-white/5'
+        }`}
+      >
         <span className="text-[10px] self-start opacity-40 font-bold">{d}</span>
-        <div className="flex-1 flex flex-col items-center justify-center gap-1">
+        <div className="flex-1 flex flex-col items-center justify-center gap-0.5">
           {getIconForHours(dayTotalHours)}
-          {dayTotalHours > 0 && (
-             <div className="flex flex-col items-center">
-                <div className="text-[10px] font-black text-accent">{dayTotalHours.toFixed(1)}h</div>
-                <div className="text-[7px] opacity-30 font-bold uppercase tracking-tighter">{daySessions.length} sessions</div>
+          {(dayLectureHours > 0 || daySessionHours > 0) && (
+             <div className="flex flex-col items-center gap-0.5">
+                {dayLectureHours > 0 && (
+                  <div className="text-[9px] font-black text-blue-400 flex items-center gap-0.5">
+                    <BookOpen size={8} />
+                    {dayLectureHours.toFixed(1)}h
+                  </div>
+                )}
+                {daySessionHours > 0 && (
+                  <div className="text-[9px] font-black text-green-400 flex items-center gap-0.5">
+                    <Clock size={8} />
+                    {daySessionHours.toFixed(1)}h
+                  </div>
+                )}
              </div>
           )}
         </div>
         
         <div className="opacity-0 group-hover:opacity-100 absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 glass bg-[#0f172a]/98 p-3 flex flex-col gap-2 transition-all duration-200 rounded-2xl min-w-[200px] shadow-2xl border border-white/10 pointer-events-none">
              <div className="flex justify-between items-center font-black border-b border-white/10 pb-2 mb-1">
-                <span className="text-accent text-xs">🚀 {dayTotalHours.toFixed(1)}h Study Session</span>
+                <span className="text-accent text-xs">📊 Study Summary</span>
+             </div>
+             
+             {/* Hours Breakdown */}
+             <div className="flex items-center justify-between text-xs mb-1">
+               <span className="text-blue-400 font-bold flex items-center gap-1">
+                 <BookOpen size={10} /> Lectures
+               </span>
+               <span className="text-blue-400 font-black">{dayLectureHours.toFixed(2)}h</span>
+             </div>
+             <div className="flex items-center justify-between text-xs mb-1">
+               <span className="text-green-400 font-bold flex items-center gap-1">
+                 <Clock size={10} /> Sessions
+               </span>
+               <span className="text-green-400 font-black">{daySessionHours.toFixed(2)}h</span>
+             </div>
+             <div className="flex items-center justify-between text-xs pt-1 border-t border-white/10">
+               <span className="text-accent font-bold">Total</span>
+               <span className="text-accent font-black">{dayTotalHours.toFixed(2)}h</span>
              </div>
              
              {/* Lectures Breakdown */}
-             {completedLectures.length > 0 && (
-               <div className="space-y-1">
-                  <p className="text-[9px] font-black uppercase opacity-40 flex items-center gap-1">📖 Completed Lectures</p>
+             {dayCompletedLectures.length > 0 && (
+               <div className="space-y-1 mt-2 pt-2 border-t border-white/10">
+                  <p className="text-[9px] font-black uppercase opacity-40 flex items-center gap-1">📖 Completed Lectures ({dayCompletedLectures.length})</p>
                   <div className="space-y-1">
-                    {completedLectures.slice(0, 3).map((l, i) => (
+                    {dayCompletedLectures.slice(0, 3).map((l, i) => (
                       <div key={i} className="flex justify-between items-center opacity-80 text-[8px] bg-blue-500/10 px-2 py-1 rounded-lg border border-blue-500/10">
                         <span className="truncate max-w-[120px] font-bold">🎓 {l.subject} - {l.ref}</span>
                       </div>
                     ))}
-                    {completedLectures.length > 3 && <p className="text-[8px] opacity-40 text-center">+{completedLectures.length - 3} more</p>}
+                    {dayCompletedLectures.length > 3 && <p className="text-[8px] opacity-40 text-center">+{dayCompletedLectures.length - 3} more</p>}
                   </div>
                </div>
              )}
@@ -149,8 +244,12 @@ export default function SummaryCalendar({ summaries, studySessions, manualLectur
                   </div>
                </div>
              )}
+             
+             <div className="text-[8px] opacity-40 text-center mt-2 pt-2 border-t border-white/10">
+               Click to view details below
+             </div>
         </div>
-      </div>
+      </button>
     );
   }
 

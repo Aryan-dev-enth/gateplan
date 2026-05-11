@@ -878,5 +878,63 @@
         ]
       }
     ]
+  },
+  {
+    "weekId": "week-12",
+    "label": "11 May - 17 May 2026",
+    "days": [
+      {
+        "date": "2026-05-11",
+        "label": "11 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["5A", "5B", "5C"], "hours": 3, "lectureIds": ["65118fe5e4b0b61477a6296f", "65120677e4b005ee176a553a", "651397abe4b04f05ef0d9f07"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["10A (OPTIONAL)", "10B", "10C", "10D"], "hours": 1.5, "lectureIds": ["647757fee4b09ba84481fae1", "647789b7e4b0db34fec15b27", "647a347de4b0996045752237", "647b02d8e4b0d491601b3ee0"] }
+        ]
+      },
+      {
+        "date": "2026-05-12",
+        "label": "12 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["5D", "6A"], "hours": 5.25, "lectureIds": ["6513b390e4b0d23b704dfcaa", "65148401e4b0edcdd72b48e0"] }
+        ]
+      },
+      {
+        "date": "2026-05-13",
+        "label": "13 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["6B", "6C"], "hours": 2, "lectureIds": ["6515a3e5e4b063a02ee99508", "6515b503e4b07502cbc139c8"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["11A", "Practice Questions on char pointers, Double Pointers, and 2D arrays"], "hours": 1.75, "lectureIds": ["647bafc3e4b0de990c2f1923", "647c9e60e4b01807702c81a7"] }
+        ]
+      },
+      {
+        "date": "2026-05-14",
+        "label": "14 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["6D", "6E"], "hours": 5.25, "lectureIds": ["62b74d180cf29870a24530bf", "62b896630cf2d762ec8d1369"] }
+        ]
+      },
+      {
+        "date": "2026-05-15",
+        "label": "15 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["7", "8", "Weekly Quiz 2", "Positive Level Logic System (OPTIONAL)", "Negative Level Logic System (OPTIONAL)"], "hours": 5, "lectureIds": ["6516fee0e4b02db764372028", "65178be6e4b0ca95c921cb45", "665c4bd605b42975dad8d81d", "65216c5de4b042ba320870f1", "65216f28e4b004b8d43ee4ff"] }
+        ]
+      },
+      {
+        "date": "2026-05-16",
+        "label": "16 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["Practice Session 1 - Standard Questions Session 1"], "hours": 2.5, "lectureIds": ["65216f28e4b004b8d43ee4ff"] },
+          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["11B", "11C", "11D", "12 (OPTIONAL)"], "hours": 2.25, "lectureIds": ["647d8964e4b096dd2e37a561", "647db9f9e4b0788e3d7317bc", "647dd41de4b0e153bb513a71", "647df886e4b053d26888a746"] }
+        ]
+      },
+      {
+        "date": "2026-05-17",
+        "label": "17 May",
+        "tasks": [
+          { "subject": "Digital Logic", "module": "Module 2 - Number System", "lectureRefs": ["1A", "1B", "2", "3A", "4A"], "hours": 5.75, "lectureIds": ["651982bee4b05be61a8c6ec6", "65198de6e4b07f256960f64f", "651996bde4b00c0add72441f", "651ae7cde4b0e1b37ffec2bc", "651c6978e4b077209f101793"] }
+        ]
+      }
+    ]
   }
 ]
