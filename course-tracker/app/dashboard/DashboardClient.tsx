@@ -111,10 +111,6 @@ export default function DashboardClient({
       setStudySessions(data.studySessions ?? []);
       setRecentAiChat(data.recentAiChat ?? null);
       setIsLoading(false);
-    }).catch(() => {
-      setCompletedMap({});
-      setRecentAiChat(null);
-      setIsLoading(false);
     });
   }, [router]);
 

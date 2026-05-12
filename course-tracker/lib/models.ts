@@ -70,4 +70,13 @@ const AccountLogSchema = new Schema({
   timestamp: { type: Date, default: Date.now },
   details: { type: String }
 });
+
+const ChatMessageSchema = new Schema({
+  username: { type: String, required: true, lowercase: true },
+  message: { type: String, required: true },
+  timestamp: { type: Date, default: Date.now },
+  isDeleted: { type: Boolean, default: false },
+});
+
 export const AccountLogModel = models.AccountLog || model("AccountLog", AccountLogSchema);
+export const ChatMessageModel = models.ChatMessage || model("ChatMessage", ChatMessageSchema);
