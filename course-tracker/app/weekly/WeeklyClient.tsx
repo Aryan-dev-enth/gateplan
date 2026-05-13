@@ -321,6 +321,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     rank: "",
     rankOutOf: ""
   });
+  const [isSavingTest, setIsSavingTest] = useState(false);
 
   const moduleMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -403,31 +404,36 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
        if (!confirm("Marks secured is greater than max marks. Are you sure?")) return;
     }
 
-    // Save to testResults
-    const savedTest = await addTestAttempt(u, {
-      testName: activeTest.ref,
-      subject: activeTest.subject,
-      timestamp: Date.now(),
-      maxMarks: max,
-      marksSecured: secured,
-      rank: testForm.rank ? parseInt(testForm.rank) : undefined,
-      rankOutOf: testForm.rankOutOf ? parseInt(testForm.rankOutOf) : undefined,
-    });
+    setIsSavingTest(true);
+    try {
+      // Save to testResults
+      const savedTest = await addTestAttempt(u, {
+        testName: activeTest.ref,
+        subject: activeTest.subject,
+        timestamp: Date.now(),
+        maxMarks: max,
+        marksSecured: secured,
+        rank: testForm.rank ? parseInt(testForm.rank) : undefined,
+        rankOutOf: testForm.rankOutOf ? parseInt(testForm.rankOutOf) : undefined,
+      });
 
-    setTestResults((prev) => [savedTest, ...prev]);
+      setTestResults((prev) => [savedTest, ...prev]);
 
-    // Mark as done in plan
-    setManualRefs((prev) => ({ ...prev, [activeTest.key]: Date.now() }));
-    await toggleManualLectureRef(u, activeTest.key, true);
+      // Mark as done in plan
+      setManualRefs((prev) => ({ ...prev, [activeTest.key]: Date.now() }));
+      await toggleManualLectureRef(u, activeTest.key, true);
 
-    if (activeTest.lectureId) {
-      setCompletedMap((prev) => ({ ...prev, [activeTest.lectureId!]: Date.now() }));
-      await toggleLecture(u, activeTest.lectureId!);
+      if (activeTest.lectureId) {
+        setCompletedMap((prev) => ({ ...prev, [activeTest.lectureId!]: Date.now() }));
+        await toggleLecture(u, activeTest.lectureId!);
+      }
+
+      // Reset
+      setActiveTest(null);
+      setTestForm({ maxMarks: "", marksSecured: "", rank: "", rankOutOf: "" });
+    } finally {
+      setIsSavingTest(false);
     }
-
-    // Reset
-    setActiveTest(null);
-    setTestForm({ maxMarks: "", marksSecured: "", rank: "", rankOutOf: "" });
   }
 
   // Compute week stats using both completedMap and manualRefs
@@ -977,16 +983,6 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
             <div className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-1.5">
-                  <label className="text-[10px] font-black uppercase opacity-40">Max Marks</label>
-                  <input
-                    type="number"
-                    value={testForm.maxMarks}
-                    onChange={(e) => setTestForm({ ...testForm, maxMarks: e.target.value })}
-                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
-                    placeholder="e.g. 100"
-                  />
-                </div>
-                <div className="space-y-1.5">
                   <label className="text-[10px] font-black uppercase opacity-40">Marks Secured</label>
                   <input
                     type="number"
@@ -994,6 +990,18 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                     onChange={(e) => setTestForm({ ...testForm, marksSecured: e.target.value })}
                     className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
                     placeholder="e.g. 85"
+                    disabled={isSavingTest}
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Max Marks</label>
+                  <input
+                    type="number"
+                    value={testForm.maxMarks}
+                    onChange={(e) => setTestForm({ ...testForm, maxMarks: e.target.value })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                    placeholder="e.g. 100"
+                    disabled={isSavingTest}
                   />
                 </div>
               </div>
@@ -1007,6 +1015,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                     onChange={(e) => setTestForm({ ...testForm, rank: e.target.value })}
                     className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
                     placeholder="1"
+                    disabled={isSavingTest}
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -1017,6 +1026,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                     onChange={(e) => setTestForm({ ...testForm, rankOutOf: e.target.value })}
                     className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
                     placeholder="1000"
+                    disabled={isSavingTest}
                   />
                 </div>
               </div>
@@ -1030,14 +1040,21 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                 </button>
                 <button
                   onClick={handleSaveTest}
-                  className="flex-[2] px-4 py-3 rounded-xl bg-accent text-white text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-accent/20"
+                  disabled={isSavingTest}
+                  className="flex-[2] px-4 py-3 rounded-xl bg-accent text-white text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-accent/20 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
-                  Save Result
+                  {isSavingTest ? (
+                    <>
+                      <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      Saving...
+                    </>
+                  ) : "Save Result"}
                 </button>
               </div>
               
               <button 
                 onClick={async () => {
+                   if (isSavingTest) return;
                    // Just mark as done without saving results
                    const u = getCurrentUser();
                    if (!u || !activeTest) return;
