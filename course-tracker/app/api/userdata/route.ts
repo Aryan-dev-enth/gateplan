@@ -25,6 +25,7 @@ export async function GET(req: NextRequest) {
     recentAiChat: doc.aiChatHistory && doc.aiChatHistory.length > 0 ? doc.aiChatHistory.slice(-2) : null,
     dailySummaries: doc.dailySummaries || [],
     lastAiWellnessRemark: doc.lastAiWellnessRemark ?? null,
+    testResults: doc.testResults || [],
   });
 }
 
@@ -40,6 +41,7 @@ export async function POST(req: NextRequest) {
     studySessions: data.studySessions ?? [],
     dailySummaries: data.dailySummaries ?? [],
     manualLectureRefs: data.manualLectureRefs || {},
+    testResults: data.testResults || [],
   };
 
   // Only update ignoredBacklogModules if it's explicitly provided in the payload

@@ -56,7 +56,8 @@ const UserDataSchema = new Schema({
     lastAiWellnessRemark: {
       content: String,
       timestamp: { type: Date, default: Date.now }
-    }
+    },
+    testResults: { type: Array, default: [] }
   },
   { minimize: false }
 );

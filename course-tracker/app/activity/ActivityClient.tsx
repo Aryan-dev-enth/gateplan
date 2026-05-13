@@ -1,11 +1,26 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUser, toggleLecture, deleteStudySession } from "@/lib/store";
-import type { StudySession } from "@/lib/store";
+import { getCurrentUser, getUser, toggleLecture, deleteStudySession, deleteTestAttempt, updateTestAttempt } from "@/lib/store";
+import type { StudySession, TestResult } from "@/lib/store";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData } from "@/app/weekly/page";
+import { 
+  Flame, 
+  Target, 
+  Clock, 
+  BookOpen, 
+  TrendingUp, 
+  Zap, 
+  ChevronDown, 
+  Activity,
+  Award,
+  Calendar,
+  BarChart3,
+  Timer,
+  Hourglass
+} from "lucide-react";
 
 interface ActivityEntry {
   lectureId: string;
@@ -36,9 +51,10 @@ function fmtTime(ts: number) {
 }
 
 function fmtMins(m: number) {
-  if (m <= 0) return "0m";
-  const h = Math.floor(m / 60);
-  const rem = m % 60;
+  const roundedMins = Math.round(m);
+  if (roundedMins <= 0) return "0m";
+  const h = Math.floor(roundedMins / 60);
+  const rem = roundedMins % 60;
   if (h === 0) return `${rem}m`;
   if (rem === 0) return `${h}h`;
   return `${h}h ${rem}m`;
@@ -68,6 +84,8 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     searchParams.get("tab") === "sessions" ? "sessions" :
     searchParams.get("tab") === "analytics" ? "analytics" : "lectures"
   );
+  const [testResults, setTestResults] = useState<TestResult[]>([]);
+  const [editingTest, setEditingTest] = useState<TestResult | null>(null);
   const [expandedDays, setExpandedDays] = useState<Set<string>>(new Set());
 
   const todayKey = fmtDate(Date.now());
@@ -125,6 +143,7 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     getUser(u).then((data) => {
       setCompletedMap(data.completedLectures);
       setStudySessions((data.studySessions ?? []).slice().sort((a, b) => b.startedAt - a.startedAt));
+      setTestResults(data.testResults ? [...data.testResults].sort((a, b) => b.timestamp - a.timestamp) : []);
       const result: ActivityEntry[] = [];
       for (const [id, val] of Object.entries(data.completedLectures)) {
         if (!val) continue;
@@ -169,23 +188,100 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     return { date: d, count: heatmap[d.toDateString()] || 0 };
   });
 
+  // Pre-calculate lecture durations for stats
+  const lectureDurationMap = useMemo(() => {
+    const map = new Map<string, number>();
+    for (const subject of subjects) {
+      for (const mod of subject.modules) {
+        for (const lecture of mod.lectures) {
+          map.set(lecture.id, lecture.duration || 0);
+        }
+      }
+    }
+    return map;
+  }, [subjects]);
+
+  const totalSessionMins = studySessions.reduce((s, x) => s + x.durationMinutes, 0);
+  const totalLectureMins = entries.reduce((s, e) => s + (lectureDurationMap.get(e.lectureId) || 0) / 60, 0);
+  const totalStudyMins = totalLectureMins + totalSessionMins;
+
   function calcStreak(): number {
-    if (entries.length === 0) return 0;
-    const days = new Set(entries.map((e) => new Date(e.timestamp).toDateString()));
+    if (entries.length === 0 && studySessions.length === 0) return 0;
+    const lectureDays = entries.map((e) => new Date(e.timestamp).toDateString());
+    const sessionDays = studySessions.map((s) => new Date(s.startedAt).toDateString());
+    const days = new Set([...lectureDays, ...sessionDays]);
+    
     let streak = 0;
     const today = new Date();
     for (let i = 0; i < 365; i++) {
       const d = new Date(today);
       d.setDate(today.getDate() - i);
-      if (days.has(d.toDateString())) streak++;
-      else if (i > 0) break;
+      const ds = d.toDateString();
+      if (days.has(ds)) {
+        streak++;
+      } else if (i === 0) {
+        // Allow skip of today if yesterday has activity
+        continue;
+      } else {
+        break;
+      }
     }
     return streak;
   }
 
   const streak = calcStreak();
-  const todayCount = heatmap[new Date().toDateString()] || 0;
-  const totalSessionMins = studySessions.reduce((s, x) => s + x.durationMinutes, 0);
+  
+  // Today's stats (Lectures + Sessions)
+  const todayStr = new Date().toDateString();
+  const lecturesToday = entries.filter(e => new Date(e.timestamp).toDateString() === todayStr);
+  const sessionsToday = studySessions.filter(s => new Date(s.startedAt).toDateString() === todayStr);
+  const todayLectureMins = lecturesToday.reduce((s, e) => s + (lectureDurationMap.get(e.lectureId) || 0) / 60, 0);
+  const todaySessionMins = sessionsToday.reduce((s, x) => s + x.durationMinutes, 0);
+  const totalMinsToday = todayLectureMins + todaySessionMins;
+
+  // ── High-impact analytics ───────────────────────────────────────────────
+  const bestDayCount = Math.max(...Object.values(heatmap), 0);
+  const bestDayKey = Object.entries(heatmap).find(([, v]) => v === bestDayCount)?.[0] ?? null;
+
+  const hourMap: Record<number, number> = {};
+  for (const s of studySessions) {
+    const h = new Date(s.startedAt).getHours();
+    hourMap[h] = (hourMap[h] || 0) + s.durationMinutes;
+  }
+  const peakHour = Object.entries(hourMap).sort((a, b) => b[1] - a[1])[0];
+  const peakHourLabel = peakHour
+    ? (() => { const h = parseInt(peakHour[0]); return h === 0 ? "12 AM" : h < 12 ? `${h} AM` : h === 12 ? "12 PM" : `${h - 12} PM`; })()
+    : null;
+
+  // 14-day split history for the unified chart
+  const last14Profile = useMemo(() => {
+    return Array.from({ length: 14 }, (_, i) => {
+      const d = new Date();
+      d.setDate(d.getDate() - (13 - i));
+      const ds = d.toDateString();
+      const dayLectures = entries.filter(e => new Date(e.timestamp).toDateString() === ds);
+      const daySessions = studySessions.filter(s => new Date(s.startedAt).toDateString() === ds);
+      
+      // Lecture duration is in seconds in store, convert to minutes
+      const lectureMins = dayLectures.reduce((s, e) => s + (lectureDurationMap.get(e.lectureId) || 0) / 60, 0);
+      const sessionMins = daySessions.reduce((s, x) => s + x.durationMinutes, 0);
+      
+      return {
+        date: d,
+        sessionHours: sessionMins / 60,
+        lectureHours: lectureMins / 60,
+        lectureCount: dayLectures.length,
+        label: d.toLocaleDateString("en-IN", { day: "numeric", month: "short" })
+      };
+    });
+  }, [entries, studySessions, lectureDurationMap]);
+
+  const maxProfileHours = Math.max(...last14Profile.map(x => Math.max(x.sessionHours, x.lectureHours)), 1);
+
+  // Lecture type breakdown
+  const typeMap: Record<string, number> = {};
+  for (const e of entries) typeMap[e.type] = (typeMap[e.type] || 0) + 1;
+  const typeEntries = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
 
   // Subject breakdown for analytics
   const subjectStats = (() => {
@@ -213,6 +309,63 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   const maxWeeklyMins = Math.max(...weeklyMins, 1);
   const DAY_LABELS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  // Range of days and active days for averages
+  const { totalRangeDays, activeDaysCount, activeSessionDaysCount, activeLectureDaysCount } = useMemo(() => {
+    const lTs = entries.length > 0 ? Math.min(...entries.map(e => e.timestamp)) : Infinity;
+    const sTs = studySessions.length > 0 ? Math.min(...studySessions.map(s => s.startedAt)) : Infinity;
+    const firstTs = Math.min(lTs, sTs);
+    
+    if (firstTs === Infinity) return { totalRangeDays: 0, activeDaysCount: 0, activeSessionDaysCount: 0, activeLectureDaysCount: 0 };
+    
+    const range = Math.max(1, Math.ceil((Date.now() - firstTs) / (86400000)));
+    
+    const lDays = new Set(entries.map(e => new Date(e.timestamp).toDateString()));
+    const sDays = new Set(studySessions.map(s => new Date(s.startedAt).toDateString()));
+    const allDays = new Set([...lDays, ...sDays]);
+    
+    return { 
+      totalRangeDays: range, 
+      activeDaysCount: allDays.size,
+      activeSessionDaysCount: sDays.size,
+      activeLectureDaysCount: lDays.size
+    };
+  }, [entries, studySessions]);
+
+  // 24-hour distribution for all lectures
+  const hourlyLectureMap = useMemo(() => {
+    const map = Array(24).fill(0);
+    for (const e of entries) {
+      const h = new Date(e.timestamp).getHours();
+      map[h]++;
+    }
+    return map;
+  }, [entries]);
+  const maxHourlyLectures = Math.max(...hourlyLectureMap, 1);
+
+  // Test Analytics & Rank Prediction
+  const testStats = useMemo(() => {
+    if (!testResults || testResults.length === 0) return null;
+    const percentiles = testResults.map(t => t.marksSecured / t.maxMarks);
+    const avgPct = percentiles.reduce((a, b) => a + b, 0) / percentiles.length;
+    const maxPct = Math.max(...percentiles);
+    
+    // Competitive curve: 1 + 299999 * (1 - pct)^3.5
+    // This models exams where top ranks are very sensitive to small mark changes.
+    const predictRank = (pct: number) => {
+      const clampedPct = Math.min(1, Math.max(0, pct));
+      return Math.max(1, Math.round(1 + (300000 - 1) * Math.pow(1 - clampedPct, 3.5)));
+    };
+    
+    return {
+      avgPct,
+      maxPct,
+      predictedRank: predictRank(avgPct),
+      bestPredictedRank: predictRank(maxPct),
+      percentile: (1 - (predictRank(avgPct) / 300000)) * 100,
+      totalTests: testResults.length
+    };
+  }, [testResults]);
+
   // Filtered lecture list
   const subjectNames = ["all", ...Array.from(new Set(entries.map((e) => e.subjectName)))];
   const filtered = filter === "all" ? entries : entries.filter((e) => e.subjectName === filter);
@@ -231,47 +384,121 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
           </h1>
         </div>
 
-        {/* ── Stats row ── */}
-        <div className="grid grid-cols-4 gap-3 mb-5 fade-in-1">
+        {/* ── Stats Row ── */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-6 fade-in-1">
           {[
-            { label: "Lectures done", val: entries.length, color: "var(--accent)" },
-            { label: "Day streak", val: `${streak} 🔥`, color: "#f59e0b" },
-            { label: "Today", val: todayCount, color: "var(--green)" },
-            { label: "Study time", val: fmtMins(totalSessionMins), color: "#8b5cf6" },
+            { label: "Day Streak", val: `${streak}d`, icon: Flame, color: "#f59e0b", sub: "Keep it up!" },
+            { label: "Today's Effort", val: fmtMins(todaySessionMins), icon: Timer, color: "var(--accent)", sub: "Active sessions" },
+            { label: "Content Done", val: fmtMins(todayLectureMins), icon: BookOpen, color: "var(--green)", sub: `${lecturesToday.length} lectures today` },
+            { label: "Total Content", val: fmtMins(totalLectureMins), icon: Award, color: "#8b5cf6", sub: `${entries.length} lectures total` },
           ].map((s) => (
-            <div key={s.label} className="glass p-4 text-center">
-              <div className="text-xl font-bold mb-1" style={{ color: s.color }}>{s.val}</div>
-              <div className="text-xs" style={{ color: "var(--muted)" }}>{s.label}</div>
+            <div key={s.label} className="glass p-4 relative overflow-hidden group">
+              <div className="absolute -right-2 -bottom-2 opacity-5 group-hover:opacity-10 transition-all">
+                <s.icon size={56} />
+              </div>
+              <div className="flex items-center gap-2 mb-1.5">
+                <s.icon size={14} style={{ color: s.color }} />
+                <span className="text-[10px] font-bold uppercase tracking-wider" style={{ color: "var(--muted)" }}>{s.label}</span>
+              </div>
+              <div className="text-xl font-black" style={{ color: "var(--text)" }}>{s.val}</div>
+              <div className="text-[9px] opacity-40 font-semibold">{s.sub}</div>
             </div>
           ))}
         </div>
 
-        {/* ── Heatmap ── */}
-        <div className="glass p-4 mb-5 fade-in-2">
-          <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
-            Last 30 days
-          </p>
-          <div className="flex gap-1 items-end">
-            {last30.map(({ date, count }, i) => (
-              <div key={i} className="flex-1 flex flex-col items-center gap-1"
-                title={`${date.toDateString()}: ${count} lecture${count !== 1 ? "s" : ""}`}>
-                <div className="w-full rounded-sm transition-all"
-                  style={{
-                    height: `${Math.max(4, Math.min(32, 4 + count * 7))}px`,
-                    background: count === 0
-                      ? "var(--surface2)"
-                      : count >= 5
-                      ? "linear-gradient(180deg, var(--green), var(--accent))"
-                      : count >= 3
-                      ? "rgba(34,211,165,0.6)"
-                      : "var(--tint-accent)",
-                    border: "1px solid var(--border)",
-                  }} />
-                {i % 7 === 0 && (
-                  <span style={{ color: "var(--muted)", fontSize: "9px" }}>{date.getDate()}</span>
-                )}
+        {/* ── Unified Activity Profile (Consolidated Chart) ── */}
+        <div className="glass p-5 mb-6 fade-in-2 border border-white/5 shadow-xl">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>
+                Activity Profile
+              </p>
+              <p className="text-[10px] opacity-40">Sessions (Effort) vs Content (Lectures)</p>
+            </div>
+            <div className="flex gap-4">
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-sm shadow-[0_0_8px_#6366f144]" style={{ background: "#6366f1" }} />
+                <span className="text-[10px] font-bold opacity-60">Study Sessions</span>
               </div>
-            ))}
+              <div className="flex items-center gap-1.5">
+                <div className="w-2.5 h-2.5 rounded-sm shadow-[0_0_8px_#f59e0b44]" style={{ background: "#f59e0b" }} />
+                <span className="text-[10px] font-bold opacity-60">Lecture Content</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-end gap-2 h-32 relative">
+            {last14Profile.map((d, i) => {
+              const isToday = d.date.toDateString() === todayStr;
+              const sPct = (d.sessionHours / maxProfileHours) * 100;
+              const lPct = (d.lectureHours / maxProfileHours) * 100;
+              
+              return (
+                <div key={i} className="flex-1 flex flex-col items-center justify-end h-full group/bar relative">
+                  {/* Tooltip on hover */}
+                  <div className="absolute -top-12 bg-surface3 border border-border px-2.5 py-1.5 rounded-lg opacity-0 group-hover/bar:opacity-100 transition-all z-20 pointer-events-none shadow-2xl min-w-[90px] border-t-2"
+                    style={{ borderTopColor: isToday ? "var(--accent)" : "transparent" }}>
+                    <p className="text-[9px] font-black" style={{ color: "#818cf8" }}>SESSIONS: {d.sessionHours.toFixed(1)}h</p>
+                    <p className="text-[9px] font-black" style={{ color: "#fbbf24" }}>LECTURES: {d.lectureHours.toFixed(1)}h</p>
+                    <p className="text-[8px] opacity-40 mt-0.5">{d.lectureCount} videos done</p>
+                  </div>
+
+                  <div className="w-full flex items-end justify-center gap-[2px] h-[80%]">
+                    {/* Session Bar (Left) */}
+                    <div className="flex-1 rounded-t-[3px] transition-all duration-700 relative overflow-hidden"
+                      style={{
+                        height: `${Math.max(4, sPct)}%`,
+                        background: isToday ? "#6366f1" : "rgba(99,102,241,0.25)",
+                        border: isToday ? "1px solid #818cf8" : "1px solid rgba(99,102,241,0.1)",
+                      }}>
+                      {isToday && d.sessionHours > 0 && <div className="absolute inset-0 bg-white/20 animate-pulse" />}
+                    </div>
+
+                    {/* Lecture Bar (Right) */}
+                    <div className="flex-1 rounded-t-[3px] transition-all duration-700 relative overflow-hidden"
+                      style={{
+                        height: `${Math.max(4, lPct)}%`,
+                        background: isToday ? "#f59e0b" : "rgba(245,158,11,0.25)",
+                        border: isToday ? "1px solid #fbbf24" : "1px solid rgba(245,158,11,0.1)",
+                      }}>
+                      {isToday && d.lectureHours > 0 && <div className="absolute inset-0 bg-white/20 animate-pulse" />}
+                    </div>
+                  </div>
+
+                  {/* Label */}
+                  <div className="mt-2 flex flex-col items-center">
+                    <span className={`text-[8px] font-black uppercase transition-all ${isToday ? "text-accent" : "opacity-20"}`}>
+                      {isToday ? "Today" : d.label.split(" ")[0]}
+                    </span>
+                    {isToday && <div className="w-1 h-1 rounded-full bg-accent mt-0.5" />}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* ── Deep Insights Row (Moved from Analytics) ── */}
+        <div className="grid grid-cols-2 gap-3 mb-6 fade-in-2">
+          <div className="glass p-4 flex items-center gap-4">
+             <div className="w-10 h-10 rounded-2xl bg-orange-400/10 flex items-center justify-center text-orange-400">
+                <Zap size={20} />
+             </div>
+             <div>
+                <p className="text-[9px] font-bold uppercase opacity-40">Best Day Ever</p>
+                <p className="text-sm font-black">{bestDayCount} Lectures</p>
+                <p className="text-[9px] opacity-40">{bestDayKey ? new Date(bestDayKey).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "—"}</p>
+             </div>
+          </div>
+          <div className="glass p-4 flex items-center gap-4">
+             <div className="w-10 h-10 rounded-2xl bg-purple-400/10 flex items-center justify-center text-purple-400">
+                <Activity size={20} />
+             </div>
+             <div>
+                <p className="text-[9px] font-bold uppercase opacity-40">Peak Study Hour</p>
+                <p className="text-sm font-black">{peakHourLabel ?? "—"}</p>
+                <p className="text-[9px] opacity-40">{peakHour ? fmtMins(peakHour[1]) + " total" : "No sessions"}</p>
+             </div>
           </div>
         </div>
 
@@ -628,14 +855,9 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
             ) : (() => {
               // ── Compute all analytics inline ──────────────────────────────
 
-              // Last 14 days — daily lecture counts
-              const last14 = Array.from({ length: 14 }, (_, i) => {
-                const d = new Date();
-                d.setDate(d.getDate() - (13 - i));
-                return { date: d, lectures: heatmap[d.toDateString()] || 0 };
-              });
-              const max14 = Math.max(...last14.map(x => x.lectures), 1);
-
+              // Last 14 days — daily lecture counts for stats
+              const last14 = last14Profile;
+              
               // This week vs last week (lectures)
               const now = new Date();
               const thisWeekStart = new Date(now); thisWeekStart.setDate(now.getDate() - now.getDay()); thisWeekStart.setHours(0,0,0,0);
@@ -649,32 +871,222 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
               const lastWeekMins = studySessions.filter(s => s.startedAt >= lastWeekStart.getTime() && s.startedAt < thisWeekStart.getTime()).reduce((a, s) => a + s.durationMinutes, 0);
               const minsDelta = lastWeekMins > 0 ? Math.round(((thisWeekMins - lastWeekMins) / lastWeekMins) * 100) : null;
 
-              // Daily avg (last 14 active days)
-              const activeDays14 = last14.filter(x => x.lectures > 0).length;
-              const avgLectures14 = activeDays14 > 0 ? (last14.reduce((a, x) => a + x.lectures, 0) / activeDays14).toFixed(1) : "—";
-
-              // Best single day ever
-              const bestDayCount = Math.max(...Object.values(heatmap), 0);
-              const bestDayKey = Object.entries(heatmap).find(([, v]) => v === bestDayCount)?.[0] ?? null;
-
-              // Lecture type breakdown
-              const typeMap: Record<string, number> = {};
-              for (const e of entries) typeMap[e.type] = (typeMap[e.type] || 0) + 1;
-              const typeEntries = Object.entries(typeMap).sort((a, b) => b[1] - a[1]);
-
-              // Study time by hour of day (from sessions)
-              const hourMap: Record<number, number> = {};
-              for (const s of studySessions) {
-                const h = new Date(s.startedAt).getHours();
-                hourMap[h] = (hourMap[h] || 0) + s.durationMinutes;
-              }
-              const peakHour = Object.entries(hourMap).sort((a, b) => b[1] - a[1])[0];
-              const peakHourLabel = peakHour
-                ? (() => { const h = parseInt(peakHour[0]); return h === 0 ? "12 AM" : h < 12 ? `${h} AM` : h === 12 ? "12 PM" : `${h - 12} PM`; })()
-                : null;
-
               return (
                 <>
+                   {/* ── Performance Tracker (Test Analytics) ── */}
+                   <div className="glass p-5">
+                      <div className="flex items-center justify-between mb-6">
+                        <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>
+                          Performance Tracker
+                        </p>
+                        {testStats && (
+                          <span className="text-[10px] font-black px-2 py-0.5 rounded-full bg-orange-400/10 text-orange-400 border border-orange-400/20">
+                            {testStats.totalTests} TESTS
+                          </span>
+                        )}
+                      </div>
+
+                      {testStats ? (
+                        <div className="space-y-6">
+                          {/* Predicted Rank */}
+                          <div className="relative p-5 rounded-2xl bg-gradient-to-br from-orange-500/10 to-purple-500/10 border border-white/5 overflow-hidden">
+                             <div className="absolute top-0 right-0 p-4 opacity-10">
+                               <Award size={64} />
+                             </div>
+                             <p className="text-[10px] font-bold uppercase opacity-50 mb-1">Estimated AIR Prediction</p>
+                             <div className="flex items-baseline gap-2">
+                               <h3 className="text-3xl font-black grad-text">#{testStats.predictedRank.toLocaleString()}</h3>
+                               <p className="text-xs opacity-40">among 3,00,000</p>
+                             </div>
+                             <div className="mt-3 flex items-center gap-3">
+                                <div className="px-2 py-1 rounded-md bg-white/5 border border-white/10">
+                                   <p className="text-[8px] font-bold opacity-40 uppercase">Percentile</p>
+                                   <p className="text-xs font-black text-accent">{testStats.percentile.toFixed(2)}%</p>
+                                </div>
+                                <p className="text-[9px] opacity-60 font-medium leading-tight">
+                                  Based on your performance trend. <br/>
+                                  Top potential: <span className="text-white">#{testStats.bestPredictedRank.toLocaleString()}</span>
+                                </p>
+                             </div>
+                          </div>
+
+                          {/* Marks Stats */}
+                          <div className="grid grid-cols-2 gap-3">
+                             <div className="p-4 rounded-xl bg-surface2 border border-border">
+                               <p className="text-[10px] opacity-40 uppercase font-bold mb-1">Average Marks</p>
+                               <p className="text-xl font-black text-accent">{Math.round(testStats.avgPct * 100)}%</p>
+                             </div>
+                             <div className="p-4 rounded-xl bg-surface2 border border-border">
+                               <p className="text-[10px] opacity-40 uppercase font-bold mb-1">Highest Score</p>
+                               <p className="text-xl font-black text-green-400">{Math.round(testStats.maxPct * 100)}%</p>
+                             </div>
+                          </div>
+
+                          {/* Recent Attempts */}
+                          <div className="space-y-2">
+                             <p className="text-[10px] font-black uppercase opacity-30 px-1">Recent Attempts</p>
+                             <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
+                               {testResults.map((t) => (
+                                 <div key={t.id} className="group flex items-center justify-between p-3 rounded-lg bg-surface2 border border-border text-[11px] hover:border-accent/30 transition-all">
+                                   <div className="min-w-0 flex-1">
+                                      <p className="font-bold truncate text-white/90">{t.testName}</p>
+                                      <p className="opacity-40 text-[9px] font-medium">{new Date(t.timestamp).toLocaleDateString("en-IN")}</p>
+                                   </div>
+                                   <div className="text-right ml-4">
+                                      <p className="font-black text-accent">{t.marksSecured}/{t.maxMarks}</p>
+                                      <p className="text-[9px] opacity-40">Rank: {t.rank ?? "—"}/{t.rankOutOf ?? "—"}</p>
+                                   </div>
+                                   <div className="flex items-center gap-1 ml-4 border-l border-white/5 pl-3">
+                                     <button 
+                                       onClick={() => setEditingTest(t)}
+                                       className="p-1.5 rounded-md hover:bg-white/5 text-muted hover:text-accent transition-all"
+                                       title="Edit Attempt"
+                                     >
+                                       <Activity size={14} />
+                                     </button>
+                                     <button 
+                                       onClick={async () => {
+                                         if (confirm("Delete this test attempt?")) {
+                                            const u = getCurrentUser();
+                                            if (u) {
+                                              await deleteTestAttempt(u, t.id);
+                                              setTestResults(prev => prev.filter(x => x.id !== t.id));
+                                            }
+                                         }
+                                       }}
+                                       className="p-1.5 rounded-md hover:bg-white/5 text-muted hover:text-red-400 transition-all"
+                                       title="Delete Attempt"
+                                     >
+                                       ✕
+                                     </button>
+                                   </div>
+                                 </div>
+                               ))}
+                             </div>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="text-center py-10 opacity-30">
+                          <p className="text-xs font-bold uppercase tracking-widest">No Test Data Available</p>
+                          <p className="text-[10px] mt-1">Mark a quiz in your weekly plan to see analytics.</p>
+                        </div>
+                      )}
+                   </div>
+
+                   {/* ── Consistency Metrics (Averages & Means) ── */}
+                   <div className="glass p-5">
+                     <div className="flex items-center justify-between mb-6">
+                        <p className="text-xs font-black uppercase tracking-[0.2em]" style={{ color: "var(--muted)" }}>
+                          Consistency Metrics
+                        </p>
+                        <div className="flex gap-3">
+                          <div className="text-right">
+                            <p className="text-[10px] font-bold opacity-30 uppercase">Total Days</p>
+                            <p className="text-xs font-black">{totalRangeDays}</p>
+                          </div>
+                          <div className="text-right border-l border-white/5 pl-3">
+                            <p className="text-[10px] font-bold text-green-400/50 uppercase">Active</p>
+                            <p className="text-xs font-black text-green-400">{activeDaysCount}</p>
+                          </div>
+                          <div className="text-right border-l border-white/5 pl-3">
+                            <p className="text-[10px] font-bold text-red-400/50 uppercase">Zero Days</p>
+                            <p className="text-xs font-black text-red-400">{totalRangeDays - activeDaysCount}</p>
+                          </div>
+                        </div>
+                     </div>
+
+                     <div className="grid grid-cols-2 gap-4">
+                       {/* Sessions Stats */}
+                       <div className="space-y-3">
+                         <div className="flex items-center gap-2">
+                           <div className="w-1 h-3 rounded-full" style={{ background: "var(--accent)" }} />
+                           <span className="text-[10px] font-bold uppercase opacity-60">Sessions</span>
+                         </div>
+                         <div className="p-3 rounded-xl bg-surface2 border border-border">
+                           <p className="text-[10px] opacity-40 mb-1">Daily Avg (incl. Zero Days)</p>
+                           <p className="text-sm font-black">{fmtMins(totalSessionMins / (totalRangeDays || 1))}</p>
+                         </div>
+                         <div className="p-3 rounded-xl bg-surface2 border border-border">
+                           <p className="text-[10px] opacity-40 mb-1">Mean (Active Days only)</p>
+                           <p className="text-sm font-black text-accent">{fmtMins(totalSessionMins / (activeSessionDaysCount || 1))}</p>
+                         </div>
+                       </div>
+
+                       {/* Lectures Stats */}
+                       <div className="space-y-3">
+                         <div className="flex items-center gap-2">
+                           <div className="w-1 h-3 rounded-full" style={{ background: "#22d3ee" }} />
+                           <span className="text-[10px] font-bold uppercase opacity-60">Lectures</span>
+                         </div>
+                         <div className="p-3 rounded-xl bg-surface2 border border-border">
+                           <p className="text-[10px] opacity-40 mb-1">Daily Avg (incl. Zero Days)</p>
+                           <p className="text-sm font-black">{fmtMins(totalLectureMins / (totalRangeDays || 1))}</p>
+                         </div>
+                         <div className="p-3 rounded-xl bg-surface2 border border-border">
+                           <p className="text-[10px] opacity-40 mb-1">Mean (Active Days only)</p>
+                           <p className="text-sm font-black" style={{ color: "#22d3ee" }}>{fmtMins(totalLectureMins / (activeLectureDaysCount || 1))}</p>
+                         </div>
+                       </div>
+                     </div>
+                     <p className="text-[9px] opacity-40 text-center mt-6 uppercase tracking-wider">
+                       Data analyzed from first log to today
+                     </p>
+                   </div>
+
+                   {/* ── 24-Hour Activity Distribution (Hourly Heatmap) ── */}
+                   <div className="glass p-5">
+                     <p className="text-xs font-black uppercase tracking-[0.2em] mb-6" style={{ color: "var(--muted)" }}>
+                       Activity Distribution
+                     </p>
+                     <div className="flex flex-col gap-4">
+                       <div className="flex items-end gap-[2px] h-24">
+                         {hourlyLectureMap.map((count, h) => {
+                           const pct = (count / maxHourlyLectures) * 100;
+                           const label = h === 0 ? "12 AM" : h < 12 ? `${h} AM` : h === 12 ? "12 PM" : `${h-12} PM`;
+                           
+                           // Color based on time of day
+                           let barColor = "var(--accent)";
+                           if (h >= 0 && h < 6) barColor = "#6366f1"; // Night - Indigo
+                           else if (h >= 6 && h < 12) barColor = "#f59e0b"; // Morning - Amber
+                           else if (h >= 12 && h < 18) barColor = "#ef4444"; // Afternoon - Red/Orange
+                           else barColor = "#a855f7"; // Evening - Purple
+
+                           return (
+                             <div key={h} className="flex-1 flex flex-col items-center justify-end h-full group/h relative">
+                               <div className="absolute -top-10 bg-surface3 border border-border px-2 py-1 rounded text-[9px] font-black opacity-0 group-hover/h:opacity-100 transition-all z-10 pointer-events-none whitespace-nowrap shadow-xl">
+                                 <span style={{ color: barColor }}>{label}</span>: {count} lec
+                               </div>
+                               <div className="w-full rounded-t-[2px] transition-all duration-700"
+                                 style={{ 
+                                   height: `${Math.max(8, pct)}%`, 
+                                   background: count > 0 ? barColor : "var(--surface2)",
+                                   opacity: count > 0 ? 0.4 + (pct/100)*0.6 : 0.15,
+                                   boxShadow: count > 0 ? `0 0 10px ${barColor}22` : "none"
+                                 }} />
+                             </div>
+                           );
+                         })}
+                       </div>
+                       <div className="flex justify-between text-[7px] font-black uppercase opacity-40 px-0.5 mt-1">
+                         {["12A", "3A", "6A", "9A", "12P", "3P", "6P", "9P", "11P"].map(t => <span key={t}>{t}</span>)}
+                       </div>
+                       
+                       <div className="flex items-center justify-center gap-4 mt-2">
+                         {[
+                           { l: "Night", c: "#6366f1" },
+                           { l: "Morning", c: "#f59e0b" },
+                           { l: "Afternoon", c: "#ef4444" },
+                           { l: "Evening", c: "#a855f7" }
+                         ].map(k => (
+                           <div key={k.l} className="flex items-center gap-1.5">
+                             <div className="w-1.5 h-1.5 rounded-full" style={{ background: k.c }} />
+                             <span className="text-[8px] font-bold uppercase opacity-40">{k.l}</span>
+                           </div>
+                         ))}
+                       </div>
+                     </div>
+                   </div>
+
                   {/* ── This week vs last week ── */}
                   <div className="glass p-4">
                     <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
@@ -715,74 +1127,7 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
                     </div>
                   </div>
 
-                  {/* ── 14-day study time trend (from sessions) ── */}
-                  {(() => {
-                    const last14mins = Array.from({ length: 14 }, (_, i) => {
-                      const d = new Date();
-                      d.setDate(d.getDate() - (13 - i));
-                      const dayMins = studySessions
-                        .filter(s => new Date(s.startedAt).toDateString() === d.toDateString())
-                        .reduce((a, s) => a + s.durationMinutes, 0);
-                      return { date: d, mins: dayMins };
-                    });
-                    const maxMins = Math.max(...last14mins.map(x => x.mins), 1);
-                    const activeDaysTime = last14mins.filter(x => x.mins > 0).length;
-                    const avgMins = activeDaysTime > 0
-                      ? Math.round(last14mins.reduce((a, x) => a + x.mins, 0) / activeDaysTime)
-                      : 0;
-
-                    if (studySessions.length === 0) return null;
-
-                    return (
-                      <div className="glass p-4">
-                        <div className="flex items-center justify-between mb-4">
-                          <p className="text-xs font-semibold uppercase tracking-wider" style={{ color: "var(--muted)" }}>
-                            Daily study time — last 14 days
-                          </p>
-                          <span className="text-xs" style={{ color: "var(--muted)" }}>
-                            avg {fmtMins(avgMins)}/active day
-                          </span>
-                        </div>
-                        <div className="flex items-end gap-1.5" style={{ height: "100px" }}>
-                          {last14mins.map(({ date, mins }, i) => {
-                            const isToday = date.toDateString() === new Date().toDateString();
-                            const pct = mins > 0 ? Math.max(0.2, mins / maxMins) : 0;
-                            const barH = Math.round(pct * 80);
-                            return (
-                              <div key={i} className="flex-1 flex flex-col items-center justify-end gap-1.5"
-                                style={{ height: "100px" }}
-                                title={`${date.toLocaleDateString("en-IN", { day: "numeric", month: "short" })}: ${fmtMins(mins)}`}>
-                                <span style={{
-                                  fontSize: "9px", fontWeight: 600, lineHeight: 1,
-                                  color: mins > 0 ? (isToday ? "var(--accent)" : "var(--text)") : "transparent",
-                                }}>
-                                  {mins > 0 ? (mins >= 60 ? `${Math.floor(mins/60)}h` : `${mins}m`) : "·"}
-                                </span>
-                                <div className="w-full rounded-t-md transition-all duration-500"
-                                  style={{
-                                    height: mins > 0 ? `${barH}px` : "3px",
-                                    background: isToday
-                                      ? "linear-gradient(180deg, var(--accent), var(--accent2))"
-                                      : mins >= maxMins * 0.7
-                                      ? "linear-gradient(180deg, #8b5cf6, #6378ff)"
-                                      : mins > 0 ? "rgba(139,92,246,0.25)" : "var(--surface2)",
-                                    border: `1px solid ${isToday ? "var(--accent)" : mins > 0 ? "rgba(139,92,246,0.3)" : "var(--border)"}`,
-                                    opacity: mins === 0 ? 0.4 : 1,
-                                  }} />
-                                <span style={{
-                                  fontSize: "9px", lineHeight: 1,
-                                  color: isToday ? "var(--accent)" : "var(--muted)",
-                                  fontWeight: isToday ? 700 : 400,
-                                }}>
-                                  {isToday ? "now" : date.toLocaleDateString("en-IN", { day: "numeric", month: "short" }).replace(" ", "\u00A0")}
-                                </span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    );
-                  })()}
+                  {/* Trend charts are now on the main Activity tab for better visibility */}
 
                   {/* ── Subject breakdown — donut ── */}
                   {subjectStats.length > 0 && (() => {
@@ -846,29 +1191,7 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
                     );
                   })()}
 
-                  {/* ── Quick facts row ── */}
-                  <div className="glass p-4">
-                    <p className="text-xs font-semibold uppercase tracking-wider mb-3" style={{ color: "var(--muted)" }}>
-                      Quick facts
-                    </p>
-                    <div className="grid grid-cols-2 gap-2">
-                      {[
-                        { label: "Best day ever", val: bestDayCount > 0 ? `${bestDayCount} lectures` : "—", sub: bestDayKey ? new Date(bestDayKey).toLocaleDateString("en-IN", { day: "numeric", month: "short" }) : "" },
-                        { label: "Peak study hour", val: peakHourLabel ?? "—", sub: peakHour ? fmtMins(peakHour[1]) + " total" : "" },
-                        ...(studySessions.length > 0 ? [
-                          { label: "Avg session", val: fmtMins(Math.round(totalSessionMins / studySessions.length)), sub: `${studySessions.length} sessions total` },
-                          { label: "Longest session", val: fmtMins(Math.max(...studySessions.map(s => s.durationMinutes))), sub: "" },
-                        ] : []),
-                      ].map(({ label, val, sub }) => (
-                        <div key={label} className="rounded-xl px-3 py-2.5"
-                          style={{ background: "var(--surface2)", border: "1px solid var(--border)" }}>
-                          <p className="text-xs" style={{ color: "var(--muted)" }}>{label}</p>
-                          <p className="text-sm font-bold mt-0.5" style={{ color: "var(--text)" }}>{val}</p>
-                          {sub && <p className="text-xs mt-0.5" style={{ color: "var(--muted)" }}>{sub}</p>}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+                  {/* Subjects and Types mix remain here for deep analysis */}
 
                   {/* ── Lecture type mix ── */}
                   {typeEntries.length > 1 && (
@@ -909,6 +1232,87 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
         )}
 
       </div>
+      {/* ── Edit Test Modal ── */}
+      {editingTest && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setEditingTest(null)} />
+          <div className="relative w-full max-w-md glass p-6 rounded-2xl shadow-2xl border border-white/10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl">📝</div>
+              <div>
+                <h3 className="text-lg font-black">Edit Test Result</h3>
+                <p className="text-xs opacity-50 uppercase font-bold tracking-wider truncate max-w-[250px]">{editingTest.testName}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Max Marks</label>
+                  <input
+                    type="number"
+                    value={editingTest.maxMarks}
+                    onChange={(e) => setEditingTest({ ...editingTest, maxMarks: parseFloat(e.target.value) })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Marks Secured</label>
+                  <input
+                    type="number"
+                    value={editingTest.marksSecured}
+                    onChange={(e) => setEditingTest({ ...editingTest, marksSecured: parseFloat(e.target.value) })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Rank</label>
+                  <input
+                    type="number"
+                    value={editingTest.rank || ""}
+                    onChange={(e) => setEditingTest({ ...editingTest, rank: e.target.value ? parseInt(e.target.value) : undefined })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Rank Out Of</label>
+                  <input
+                    type="number"
+                    value={editingTest.rankOutOf || ""}
+                    onChange={(e) => setEditingTest({ ...editingTest, rankOutOf: e.target.value ? parseInt(e.target.value) : undefined })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-4 flex gap-3">
+                <button
+                  onClick={() => setEditingTest(null)}
+                  className="flex-1 px-4 py-3 rounded-xl bg-surface2 border border-border text-sm font-bold hover:bg-surface3 transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={async () => {
+                    const u = getCurrentUser();
+                    if (u && editingTest) {
+                      await updateTestAttempt(u, editingTest);
+                      setTestResults(prev => prev.map(t => t.id === editingTest.id ? editingTest : t));
+                      setEditingTest(null);
+                    }
+                  }}
+                  className="flex-[2] px-4 py-3 rounded-xl bg-accent text-white text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-accent/20"
+                >
+                  Save Changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

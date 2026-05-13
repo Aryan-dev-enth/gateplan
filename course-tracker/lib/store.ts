@@ -20,6 +20,18 @@ export interface UserData {
   recentAiChat?: { role: string; content: string; timestamp?: string }[];
   dailySummaries?: DailySummary[];
   lastAiWellnessRemark?: { content: string; timestamp: string } | null;
+  testResults?: TestResult[];
+}
+
+export interface TestResult {
+  id: string;
+  testName: string;
+  subject: string;
+  timestamp: number;
+  maxMarks: number;
+  marksSecured: number;
+  rank?: number;
+  rankOutOf?: number;
 }
 
 export interface Activity {
@@ -146,11 +158,12 @@ export async function getUser(username: string): Promise<UserData> {
       recentAiChat: data.recentAiChat ?? undefined,
       dailySummaries: data.dailySummaries ?? [],
       lastAiWellnessRemark: data.lastAiWellnessRemark || null,
+      testResults: data.testResults ?? [],
     };
   } catch (error) {
     console.error('Error fetching user data:', error);
     // Return fallback data on any error
-    return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {}, dailySummaries: [] };
+    return { completedLectures: {}, weeklyPlans: [], studySessions: [], manualLectureRefs: {}, dailySummaries: [], testResults: [] };
   }
 }
 
@@ -364,4 +377,27 @@ export async function getAiWellnessInsight(username: string, forceRefresh: boole
     console.error(e);
     return "AI insight server is currently unavailable.";
   }
+}
+export async function addTestAttempt(username: string, test: Omit<TestResult, "id">): Promise<TestResult> {
+  const data = await getUser(username);
+  const newTest: TestResult = { ...test, id: Date.now().toString() };
+  if (!data.testResults) data.testResults = [];
+  data.testResults.push(newTest);
+  await saveUser(username, data);
+  return newTest;
+}
+
+export async function deleteTestAttempt(username: string, testId: string): Promise<void> {
+  const data = await getUser(username);
+  if (!data.testResults) return;
+  data.testResults = data.testResults.filter((t) => t.id !== testId);
+  await saveUser(username, data);
+}
+
+export async function updateTestAttempt(username: string, test: TestResult): Promise<void> {
+  const data = await getUser(username);
+  if (!data.testResults) return;
+  const idx = data.testResults.findIndex((t) => t.id === test.id);
+  if (idx >= 0) data.testResults[idx] = test;
+  await saveUser(username, data);
 }

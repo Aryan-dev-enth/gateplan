@@ -2,7 +2,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { getCurrentUser, getUser, toggleManualLectureRef, toggleLecture } from "@/lib/store";
+import { getCurrentUser, getUser, toggleManualLectureRef, toggleLecture, addTestAttempt, type TestResult } from "@/lib/store";
 import GOClassesScheduleDropdown from "@/components/GOClassesScheduleDropdown";
 import WeekSidebar from "./WeekSidebar";
 import type { Subject } from "@/lib/courseLoader";
@@ -38,7 +38,7 @@ function TaskCard({
   completedMap: Record<string, number | false>;
   moduleId: string | undefined;
   manualRefs: Record<string, number | false>;
-  onRefToggle: (key: string, value: boolean, lectureId?: string) => void;
+  onRefToggle: (key: string, value: boolean, lectureId?: string, refStr?: string, subject?: string) => void;
   date: string;
   taskIndex: number;
 }) {
@@ -108,7 +108,7 @@ function TaskCard({
           return (
             <button
               key={i}
-              onClick={() => onRefToggle(manualKey, !done, hasId ? lectureId : undefined)}
+              onClick={() => onRefToggle(manualKey, !done, hasId ? lectureId : undefined, ref, task.subject)}
               className="flex items-center gap-1.5 px-2.5 rounded-full transition-all"
               style={{
                 background: done 
@@ -207,7 +207,7 @@ function DayRow({
   completedMap: Record<string, number | false>;
   moduleMap: Map<string, string>;
   manualRefs: Record<string, number | false>;
-  onRefToggle: (key: string, value: boolean, lectureId?: string) => void;
+  onRefToggle: (key: string, value: boolean, lectureId?: string, refStr?: string, subject?: string) => void;
 }) {
   const today = isToday(day.date);
   const past = isPast(day.date);
@@ -306,8 +306,21 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
   const router = useRouter();
   const [completedMap, setCompletedMap] = useState<Record<string, number | false>>({});
   const [manualRefs, setManualRefs] = useState<Record<string, number | false>>({});
+  const [testResults, setTestResults] = useState<TestResult[]>([]);
   const [activeWeek, setActiveWeek] = useState<string>("");
   const [showAllQuizzes, setShowAllQuizzes] = useState(false);
+  const [activeTest, setActiveTest] = useState<{
+    key: string;
+    ref: string;
+    subject: string;
+    lectureId?: string;
+  } | null>(null);
+  const [testForm, setTestForm] = useState({
+    maxMarks: "",
+    marksSecured: "",
+    rank: "",
+    rankOutOf: ""
+  });
 
   const moduleMap = useMemo(() => {
     const map = new Map<string, string>();
@@ -325,6 +338,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     getUser(u).then((data) => {
       setCompletedMap(data.completedLectures);
       setManualRefs(data.manualLectureRefs ?? {});
+      setTestResults(data.testResults || []);
     });
     
     // Restore active week from localStorage or default to current week
@@ -347,9 +361,15 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     }
   }, [activeWeek]);
 
-  async function handleRefToggle(key: string, value: boolean, lectureId?: string) {
+  async function handleRefToggle(key: string, value: boolean, lectureId?: string, refStr?: string, subject?: string) {
     const u = getCurrentUser();
     if (!u) return;
+
+    // If it's a quiz, open the modal to add an attempt
+    if (refStr && /quiz/i.test(refStr)) {
+      setActiveTest({ key, ref: refStr, subject: subject ?? "Unknown", lectureId });
+      return;
+    }
 
     // Always update manual ref for the weekly plan (it's the source of truth for this specific view's strike-out)
     setManualRefs((prev) => ({ ...prev, [key]: value ? Date.now() : false }));
@@ -369,6 +389,47 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     }
   }
 
+  async function handleSaveTest() {
+    const u = getCurrentUser();
+    if (!u || !activeTest) return;
+
+    const max = parseFloat(testForm.maxMarks);
+    const secured = parseFloat(testForm.marksSecured);
+    if (isNaN(max) || isNaN(secured)) {
+       alert("Please enter valid marks.");
+       return;
+    }
+    if (secured > max) {
+       if (!confirm("Marks secured is greater than max marks. Are you sure?")) return;
+    }
+
+    // Save to testResults
+    const savedTest = await addTestAttempt(u, {
+      testName: activeTest.ref,
+      subject: activeTest.subject,
+      timestamp: Date.now(),
+      maxMarks: max,
+      marksSecured: secured,
+      rank: testForm.rank ? parseInt(testForm.rank) : undefined,
+      rankOutOf: testForm.rankOutOf ? parseInt(testForm.rankOutOf) : undefined,
+    });
+
+    setTestResults((prev) => [savedTest, ...prev]);
+
+    // Mark as done in plan
+    setManualRefs((prev) => ({ ...prev, [activeTest.key]: Date.now() }));
+    await toggleManualLectureRef(u, activeTest.key, true);
+
+    if (activeTest.lectureId) {
+      setCompletedMap((prev) => ({ ...prev, [activeTest.lectureId!]: Date.now() }));
+      await toggleLecture(u, activeTest.lectureId!);
+    }
+
+    // Reset
+    setActiveTest(null);
+    setTestForm({ maxMarks: "", marksSecured: "", rank: "", rankOutOf: "" });
+  }
+
   // Compute week stats using both completedMap and manualRefs
   const week = weeks.find((w) => w.weekId === activeWeek) ?? weeks[0];
 
@@ -385,6 +446,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
       lectureId?: string;
       taskIndex: number;
       refIndex: number;
+      results: TestResult[];
     }> = [];
     
     week.days.forEach((day) => {
@@ -394,6 +456,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
             const lectureId = task.lectureIds[refIdx];
             const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${refIdx}|${ref}`;
             const done = !!(lectureId && completedMap[lectureId]) || !!manualRefs[manualKey];
+            const results = testResults.filter(tr => tr.testName === ref);
             
             quizzes.push({
               ref,
@@ -406,6 +469,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
               lectureId,
               taskIndex: taskIdx,
               refIndex: refIdx,
+              results,
             });
           }
         });
@@ -413,7 +477,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     });
     
     return quizzes;
-  }, [week, completedMap, manualRefs]);
+  }, [week, completedMap, manualRefs, testResults]);
 
   // Extract ALL quizzes from ALL weeks
   const allQuizzes = useMemo(() => {
@@ -428,6 +492,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
       done: boolean;
       manualKey: string;
       lectureId?: string;
+      results: TestResult[];
     }> = [];
     
     weeks.forEach((w) => {
@@ -438,6 +503,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
               const lectureId = task.lectureIds[refIdx];
               const manualKey = `${day.date}|${task.subject}|${task.module}|${taskIdx}|${refIdx}|${ref}`;
               const done = !!(lectureId && completedMap[lectureId]) || !!manualRefs[manualKey];
+              const results = testResults.filter(tr => tr.testName === ref);
               
               quizzes.push({
                 ref,
@@ -450,6 +516,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                 done,
                 manualKey,
                 lectureId,
+                results,
               });
             }
           });
@@ -458,7 +525,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     });
     
     return quizzes;
-  }, [weeks, completedMap, manualRefs]);
+  }, [weeks, completedMap, manualRefs, testResults]);
 
   const { weekTotalRefs, weekDoneRefs, weekDoneHours, weekTotalHours } = week.days.reduce((acc, day) => {
     day.tasks.forEach((task, taskIdx) => {
@@ -648,7 +715,7 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                 return (
                   <button
                     key={idx}
-                    onClick={() => handleRefToggle(quiz.manualKey, !quiz.done, quiz.lectureId)}
+                    onClick={() => handleRefToggle(quiz.manualKey, !quiz.done, quiz.lectureId, quiz.ref, quiz.subject)}
                     className="flex items-start gap-2.5 p-3 rounded-lg text-left transition-all hover:opacity-90"
                     style={{
                       background: quiz.done 
@@ -693,6 +760,17 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                       <p className="text-xs truncate" style={{ color: "var(--muted)" }}>
                         {quiz.subject} • {quiz.module}
                       </p>
+                      
+                      {quiz.results && quiz.results.length > 0 && (
+                        <div className="mt-2 flex flex-wrap gap-2">
+                           {quiz.results.map((r, i) => (
+                             <div key={i} className="px-2 py-0.5 rounded bg-white/5 border border-white/5 text-[9px] font-black">
+                               <span className="text-accent">{r.marksSecured}/{r.maxMarks}</span>
+                               {r.rank && <span className="opacity-40 ml-1.5">Rank: {r.rank}</span>}
+                             </div>
+                           ))}
+                        </div>
+                      )}
                     </div>
                   </button>
                 );
@@ -848,6 +926,16 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
                           <p className="text-xs truncate" style={{ color: "var(--muted)" }}>
                             {quiz.subject} • {quiz.module}
                           </p>
+                          {quiz.results && quiz.results.length > 0 && (
+                            <div className="mt-2 flex flex-wrap gap-2">
+                               {quiz.results.map((r, i) => (
+                                 <div key={i} className="px-2 py-0.5 rounded bg-white/5 border border-white/5 text-[9px] font-black">
+                                   <span className="text-accent">{r.marksSecured}/{r.maxMarks}</span>
+                                   {r.rank && <span className="opacity-40 ml-1.5">Rank: {r.rank}</span>}
+                                 </div>
+                               ))}
+                            </div>
+                          )}
                         </div>
 
                         {/* Arrow indicator */}
@@ -872,6 +960,102 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
             </div>
           </div>
         </>
+      )}
+      {/* ── Test Result Modal ── */}
+      {activeTest && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={() => setActiveTest(null)} />
+          <div className="relative w-full max-w-md glass p-6 rounded-2xl shadow-2xl border border-white/10 animate-scale-up">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-orange-400/10 flex items-center justify-center text-orange-400 text-2xl">📝</div>
+              <div>
+                <h3 className="text-lg font-black">{activeTest.ref}</h3>
+                <p className="text-xs opacity-50 uppercase font-bold tracking-wider">{activeTest.subject}</p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Max Marks</label>
+                  <input
+                    type="number"
+                    value={testForm.maxMarks}
+                    onChange={(e) => setTestForm({ ...testForm, maxMarks: e.target.value })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                    placeholder="e.g. 100"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Marks Secured</label>
+                  <input
+                    type="number"
+                    value={testForm.marksSecured}
+                    onChange={(e) => setTestForm({ ...testForm, marksSecured: e.target.value })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                    placeholder="e.g. 85"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Rank (Optional)</label>
+                  <input
+                    type="number"
+                    value={testForm.rank}
+                    onChange={(e) => setTestForm({ ...testForm, rank: e.target.value })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                    placeholder="1"
+                  />
+                </div>
+                <div className="space-y-1.5">
+                  <label className="text-[10px] font-black uppercase opacity-40">Rank Out Of</label>
+                  <input
+                    type="number"
+                    value={testForm.rankOutOf}
+                    onChange={(e) => setTestForm({ ...testForm, rankOutOf: e.target.value })}
+                    className="w-full bg-surface2 border border-border rounded-xl px-4 py-2.5 text-sm font-bold focus:border-accent outline-none transition-all"
+                    placeholder="1000"
+                  />
+                </div>
+              </div>
+
+              <div className="pt-4 flex gap-3">
+                <button
+                  onClick={() => setActiveTest(null)}
+                  className="flex-1 px-4 py-3 rounded-xl bg-surface2 border border-border text-sm font-bold hover:bg-surface3 transition-all"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={handleSaveTest}
+                  className="flex-[2] px-4 py-3 rounded-xl bg-accent text-white text-sm font-bold hover:opacity-90 transition-all shadow-lg shadow-accent/20"
+                >
+                  Save Result
+                </button>
+              </div>
+              
+              <button 
+                onClick={async () => {
+                   // Just mark as done without saving results
+                   const u = getCurrentUser();
+                   if (!u || !activeTest) return;
+                   setManualRefs((prev) => ({ ...prev, [activeTest.key]: Date.now() }));
+                   await toggleManualLectureRef(u, activeTest.key, true);
+                   if (activeTest.lectureId) {
+                     setCompletedMap((prev) => ({ ...prev, [activeTest.lectureId!]: Date.now() }));
+                     await toggleLecture(u, activeTest.lectureId!);
+                   }
+                   setActiveTest(null);
+                }}
+                className="w-full text-[10px] font-bold uppercase opacity-30 hover:opacity-100 transition-all text-center pt-2"
+              >
+                Skip & Mark as Done
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );
