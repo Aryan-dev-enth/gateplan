@@ -28,6 +28,7 @@ function buildScheduleImages(): ScheduleImage[] {
     10: "27th Apr – 3rd May 2026",
     11: "4th May – 10th May 2026",
     12: "11th May – 17th May 2026",
+    13: "18th May – 24th May 2026",
   };
   
   // Map of known extensions for each week (to avoid unnecessary 404s)
@@ -44,10 +45,11 @@ function buildScheduleImages(): ScheduleImage[] {
     10: 'jpg',
     11: 'jpg',
     12: 'jpeg',
+    13: 'jpeg',
   };
   
-  // Build images array for weeks 1-12 (or more if needed)
-  for (let week = 12; week >= 1; week--) {
+  // Build images array for weeks 1-13 (or more if needed)
+  for (let week = 13; week >= 1; week--) {
     const ext = knownExtensions[week] || 'jpg'; // Default to jpg if not specified
     const src = `/schedules/${week}.${ext}`;
     images.push({

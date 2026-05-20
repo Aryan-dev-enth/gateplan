@@ -762,6 +762,66 @@
     ]
   },
   {
+    "weekId": "week-10",
+    "label": "27 Apr – 3 May 2026",
+    "days": [
+      {
+        "date": "2026-04-27",
+        "label": "27 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 2 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["6495f4b4e4b092397186eb40", "6498a1c9e4b0631f90228224"] },
+          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["5d", "6a", "6b", "6c"], "hours": 2, "lectureIds": ["646775c3e4b0659a24a5c127", "6468dd2ee4b038d59d15d94d", "6468f33ee4b0b14810c3938d", "646913ece4b083f1654aa9d1"] }
+        ]
+      },
+      {
+        "date": "2026-04-28",
+        "label": "28 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["27A", "27B", "27C"], "hours": 5.45, "lectureIds": ["6499a205e4b0158c54c85314", "649ae5f2e4b02cbf1025f99d", "649daf61e4b09cdba41eaf6c"] }
+        ]
+      },
+      {
+        "date": "2026-04-29",
+        "label": "29 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 3 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["64a17bbfe4b00b845765673f", "64a1d93ae4b0005d8cc45378"] },
+          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["6D", "6E (OPTIONAL)", "6F to 6G", "Homework - 4", "6G LIVE"], "hours": 2.5, "lectureIds": ["6469f731e4b0d9dd31407cf6", "646a1988e4b0bcc926ece712", "646a2d44e4b001b832ee17f3", "646b2606e4b00078ed211f4a", "646b6ffde4b09d45b0139490"] }
+        ]
+      },
+      {
+        "date": "2026-04-30",
+        "label": "30 Apr",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Weekly Quiz 19"], "hours": 1, "lectureIds": ["64a86c2ee4b0580bbdf4b0f6"] },
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["1", "2", "2B", "2C", "3A", "3B", "4A", "4B", "4C"], "hours": 5, "lectureIds": ["6498e1d5e4b0109129ea1d87", "64ac27abe4b03c01b152965d", "64ac4cf0e4b07cb68241113d", "64ac5f88e4b09570ca864fab", "64ac6c52e4b0f14679851f06", "64ae83d5e4b0e3959ec996dd", "64aed77ae4b05cbfc2c521e2", "64b3a1bee4b001bd685c5632", "64b5716be4b0ebf3ebc682b9"] }
+        ]
+      },
+      {
+        "date": "2026-05-01",
+        "label": "1 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["6", "7", "8A", "8B", "8C", "8D", "8E", "9A"], "hours": 4.15, "lectureIds": ["64bd9879e4b0f4c23037fa8c", "64bda6b0e4b0312a467c8f74", "64cf88d2e4b01db87f1751f9", "64cfebfbe4b0a0b64754f032", "64d134e0e4b0805c3866bf8d", "64d14a05e4b05bac5c76dea9", "64d15490e4b03d2c3eff3b2a", "64d16588e4b0c709dfe47938"] },
+          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["7a", "7b", "7c", "Session-5"], "hours": 1.45, "lectureIds": ["646f2685e4b0b85b10a1187d", "646f7a68e4b03a7e05028fc2", "646f936be4b022c27910c03b", "6470bbdde4b05939ef1fc9e0"] }
+        ]
+      },
+      {
+        "date": "2026-05-02",
+        "label": "2 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["9B", "9C", "9D", "10A", "10B", "10C", "11A", "11B", "11C", "11D", "11E", "12A"], "hours": 6, "lectureIds": ["680c65837855a66799d65002", "64d407f1e4b025ccf885b539", "64d40e54e4b0c6fd0fcfe6a7", "64d420bfe4b0ac7f2f023567", "64d42991e4b01cdae5e424bb", "64d4d81ee4b09ab5960fb0e0", "64d4e32ee4b0b42ba2e98bdc", "64d4e99be4b0b07de218b801", "64d4fae2e4b0b07de218c029", "64d55aabe4b02431f5c83da8", "64d641a3e4b0db47eb6227b6", "64d56b28e4b02431f5c83ede"] }
+        ]
+      },
+      {
+        "date": "2026-05-03",
+        "label": "3 May",
+        "tasks": [
+          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["12B", "13A", "13B", "14A", "14B", "14C", "15A", "15B"], "hours": 4.15, "lectureIds": ["64d8c22fe4b05d7f6e2a8ee7", "64d8d1b0e4b03cefb136ee4d", "64da4c7de4b0582ff9b67c8f", "64da9eb1e4b06a3c3038b5f1", "64daaa80e4b018c62fabb501", "64dab4b1e4b0f19f97f18031", "64dbde73e4b0e27d6dae8e6f", "64de82fde4b0d32a4e449186"] },
+          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["8a", "8b", "8c"], "hours": 1.15, "lectureIds": ["6471e2d0e4b0e24c6097650e", "6471fa21e4b069f272e7c5d2", "647210ede4b0469e8277c40c"] }
+        ]
+      }
+    ]
+  },
+  {
     "weekId": "week-11",
     "label": "4 May – 10 May 2026",
     "days": [
@@ -873,6 +933,156 @@
         "label": "17 May",
         "tasks": [
           { "subject": "Digital Logic", "module": "Module 2 - Number System", "lectureRefs": ["1A", "1B", "2", "3A", "4A"], "hours": 5.75, "lectureIds": ["651982bee4b05be61a8c6ec6", "65198de6e4b07f256960f64f", "651996bde4b00c0add72441f", "651ae7cde4b0e1b37ffec2bc", "651c6978e4b077209f101793"] }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-13",
+    "label": "18 May – 24 May 2026",
+    "days": [
+      {
+        "date": "2026-05-18",
+        "label": "18 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 2 - Number System",
+            "lectureRefs": ["4B", "5A"],
+            "hours": 2,
+            "lectureIds": ["651cab74e4b03c6e04853b37", "651cc1f7e4b0e687e47f9626"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": ["13a", "13b", "13c", "30 Practice Questions"],
+            "hours": 2.25,
+            "lectureIds": ["647e50ebe4b09e94de565723", "6481a82ee4b00bb82bc1bc4b", "6481a82ee4b00bb82bc1bc4a", "647f3fa6e4b01253397b7699"]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-19",
+        "label": "19 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 2 - Number System",
+            "lectureRefs": ["5B", "6", "7A", "7B", "7C", "7D"],
+            "hours": 4.5,
+            "lectureIds": [
+              "651cce83e4b0e0172534a131",
+              "651ec749e4b081abf9b40b65",
+              "651ed4d9e4b0cbff2cd11997",
+              "65208ffce4b02d86e29bb1fc",
+              "6520a39ce4b0c84d259dd6f2",
+              "6520ae68e4b0548ecf919147"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-20",
+        "label": "20 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 2 - Number System",
+            "lectureRefs": ["Weekly Quiz - 3"],
+            "hours": 2,
+            "lectureIds": ["6525c7d9e4b015d1b7341a1a"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": ["13d", "13e", "Pointer Summary"],
+            "hours": 3.5,
+            "lectureIds": ["6481a82ee4b00bb82bc1bc48", "6481a82ee4b00bb82bc1bc49", "6251bb180cf28d6559efc28d"]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-21",
+        "label": "21 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 3 - Combinational Circuits",
+            "lectureRefs": ["1", "2A", "2B", "2C", "2D", "2E", "2F"],
+            "hours": 5.25,
+            "lectureIds": [
+              "62cd0f9f0cf2778da87cbabc",
+              "65230863e4b0abe7d6cc2e5b",
+              "65233a8ae4b01b9e015bfccd",
+              "6526b607e4b03b1612f271f7",
+              "6526cb48e4b0b60dd07ea855",
+              "6526e536e4b0586d2309a183",
+              "6526feafe4b0e7b075eb4b21"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-22",
+        "label": "22 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 3 - Combinational Circuits",
+            "lectureRefs": ["Weekly Quiz - 19 | Multiplexer"],
+            "hours": 3,
+            "lectureIds": ["6539a638e4b0e4adb6dcf452"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": ["Structures Summary"],
+            "hours": 2.5,
+            "lectureIds": ["625d25850cf2a10e5223b295"]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-23",
+        "label": "23 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 3 - Combinational Circuits",
+            "lectureRefs": ["3", "4A", "4B", "5A", "5B", "5C", "6", "7A", "7B"],
+            "hours": 5.5,
+            "lectureIds": [
+              "65270fd4e4b02c26486357cf",
+              "65284f79e4b0d983a5b1e713",
+              "652859f7e4b0d7d2d6db3b42",
+              "62d18c480cf2a8e409c12634",
+              "652bcf7de4b01cdb1e65a411",
+              "652be410e4b0ede0db7539eb",
+              "652c79a3e4b04e5b526a1925",
+              "652c9377e4b0cbbb4424995b",
+              "652d16b6e4b013e1b6b43c0f"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-24",
+        "label": "24 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 3 - Combinational Circuits",
+            "lectureRefs": ["7C", "7D", "7E"],
+            "hours": 2.5,
+            "lectureIds": ["652e422ae4b027a999223350", "653046e1e4b02ea1f4b23fb1", "65307224e4b09c1020f1741d"]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": ["25 Questions Practice Set", "14", "GATE 2004 Question"],
+            "hours": 3.25,
+            "lectureIds": ["64832a33e4b0b57b8cd60f47", "64885da7e4b06bc709a50bbc", "635d1fbee4b09e1251a25775"]
+          }
         ]
       }
     ]
