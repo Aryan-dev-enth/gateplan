@@ -7,56 +7,218 @@
         "date": "2026-02-23",
         "label": "23 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1A", "1B"], "hours": 1, "lectureIds": ["640c251ee4b04eb4af8fe5ec", "640c3221e4b0d5f1fef8390b"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1A"], "hours": 1.5, "lectureIds": ["67caa33a37079b7c1a4f2e0b"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "1A",
+              "1B"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "640c251ee4b04eb4af8fe5ec",
+              "640c3221e4b0d5f1fef8390b"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 1A"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "67caa33a37079b7c1a4f2e0b"
+            ]
+          }
         ]
       },
       {
         "date": "2026-02-24",
         "label": "24 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["1C"], "hours": 1.15, "lectureIds": ["640cb553e4b0ff5627b9a0d9"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1B"], "hours": 2, "lectureIds": ["67caa3493d6dc76c2c94e69e"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "1C"
+            ],
+            "hours": 1.15,
+            "lectureIds": [
+              "640cb553e4b0ff5627b9a0d9"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 1B"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "67caa3493d6dc76c2c94e69e"
+            ]
+          }
         ]
       },
       {
         "date": "2026-02-25",
         "label": "25 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2A", "2B", "2C"], "hours": 1.5, "lectureIds": ["640e19e5e4b01e271e54013a", "640e2b07e4b0a15939dc9ae5", "640e3782e4b0408a376d2a43"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 1C"], "hours": 1.75, "lectureIds": ["67caa3529834f45180c96cf8"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "2A",
+              "2B",
+              "2C"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "640e19e5e4b01e271e54013a",
+              "640e2b07e4b0a15939dc9ae5",
+              "640e3782e4b0408a376d2a43"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 1C"
+            ],
+            "hours": 1.75,
+            "lectureIds": [
+              "67caa3529834f45180c96cf8"
+            ]
+          }
         ]
       },
       {
         "date": "2026-02-26",
         "label": "26 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["2D", "3A"], "hours": 1.5, "lectureIds": ["640e36a0e4b0408a376d2a3a", "640f2501e4b05f1197a0dc42"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2A"], "hours": 2, "lectureIds": ["67dc68fa36608924bfe6a18b"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "2D",
+              "3A"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "640e36a0e4b0408a376d2a3a",
+              "640f2501e4b05f1197a0dc42"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 2A"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "67dc68fa36608924bfe6a18b"
+            ]
+          }
         ]
       },
       {
         "date": "2026-02-27",
         "label": "27 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["3B", "3C", "3D"], "hours": 1.5, "lectureIds": ["64102b37e4b0080be017dbfe", "641087bde4b039348f05e3ba", "64115bc7e4b09e3b08def19d"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2B"], "hours": 2, "lectureIds": ["67dc1cfb8c35b6307040d413"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "3B",
+              "3C",
+              "3D"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "64102b37e4b0080be017dbfe",
+              "641087bde4b039348f05e3ba",
+              "64115bc7e4b09e3b08def19d"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 2B"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "67dc1cfb8c35b6307040d413"
+            ]
+          }
         ]
       },
       {
         "date": "2026-02-28",
         "label": "28 Feb",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4A", "4B", "4C"], "hours": 1.15, "lectureIds": ["6412b60be4b0cbc552f29f83", "6412b9a5e4b0cbc552f2a17d", "64140d24e4b00bc0c7b18727"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 2C"], "hours": 1.5, "lectureIds": ["67dc1d04e021895f01364b35"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "4A",
+              "4B",
+              "4C"
+            ],
+            "hours": 1.15,
+            "lectureIds": [
+              "6412b60be4b0cbc552f29f83",
+              "6412b9a5e4b0cbc552f2a17d",
+              "64140d24e4b00bc0c7b18727"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 2C"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "67dc1d04e021895f01364b35"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-01",
         "label": "1 Mar",
         "tasks": [
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["4D", "4E", "4F"], "hours": 1, "lectureIds": ["641428f4e4b0742435c1dc31", "64143e10e4b0742435c1e255", "6414497de4b0d4cd076e6037"] },
-          { "subject": "Aptitude", "module": "Aptitude Lectures by Anjali Chauhan", "lectureRefs": ["Lecture 3A", "Lecture 3B"], "hours": 3, "lectureIds": ["67eb0c4045a6b019f827b69d", "67eb14424762e97cefab80ce"] }
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "4D",
+              "4E",
+              "4F"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "641428f4e4b0742435c1dc31",
+              "64143e10e4b0742435c1e255",
+              "6414497de4b0d4cd076e6037"
+            ]
+          },
+          {
+            "subject": "Aptitude",
+            "module": "Aptitude Lectures by Anjali Chauhan",
+            "lectureRefs": [
+              "Lecture 3A",
+              "Lecture 3B"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "67eb0c4045a6b019f827b69d",
+              "67eb14424762e97cefab80ce"
+            ]
+          }
         ]
       }
     ]
@@ -69,56 +231,226 @@
         "date": "2026-03-02",
         "label": "2 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1A"], "hours": 2.15, "lectureIds": ["6401f631e4b0e03cb833b7b1"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["5A", "5B", "5C"], "hours": 1, "lectureIds": ["6416e76de4b0e283c785d2cf", "6416f42ae4b019b3d913711b", "64190b1ae4b090d8eb1089a4"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 1 - Basic Proof Techniques",
+            "lectureRefs": [
+              "1A"
+            ],
+            "hours": 2.15,
+            "lectureIds": [
+              "6401f631e4b0e03cb833b7b1"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "5A",
+              "5B",
+              "5C"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "6416e76de4b0e283c785d2cf",
+              "6416f42ae4b019b3d913711b",
+              "64190b1ae4b090d8eb1089a4"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-03",
         "label": "3 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1B"], "hours": 2.15, "lectureIds": ["64031ed9e4b0ff68dc27cfe0"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["5D", "5E"], "hours": 1, "lectureIds": ["64192d25e4b019b3d913e5dc", "64196794e4b0ea09ca2b39d8"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 1 - Basic Proof Techniques",
+            "lectureRefs": [
+              "1B"
+            ],
+            "hours": 2.15,
+            "lectureIds": [
+              "64031ed9e4b0ff68dc27cfe0"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "5D",
+              "5E"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64192d25e4b019b3d913e5dc",
+              "64196794e4b0ea09ca2b39d8"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-04",
         "label": "4 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["1C", "HW 1"], "hours": 1.5, "lectureIds": ["64048d0ce4b07c4989de69ca", "64022a46e4b06b49e4830743"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["6A", "6B", "6C", "6D"], "hours": 1.5, "lectureIds": ["641afc4ce4b0386805572f50", "641c40bbe4b06c8a8e5bfff9", "641ddb99e4b0105fc4be8afc", "641c7effe4b0608e1b4b6692"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 1 - Basic Proof Techniques",
+            "lectureRefs": [
+              "1C",
+              "HW 1"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "64048d0ce4b07c4989de69ca",
+              "64022a46e4b06b49e4830743"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "6A",
+              "6B",
+              "6C",
+              "6D"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "641afc4ce4b0386805572f50",
+              "641c40bbe4b06c8a8e5bfff9",
+              "641ddb99e4b0105fc4be8afc",
+              "641c7effe4b0608e1b4b6692"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-05",
         "label": "5 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 1 - Basic Proof Techniques", "lectureRefs": ["HW 2", "Lecture 2"], "hours": 2, "lectureIds": ["6403a13ce4b075696a347b2d", "65e7224d19061936481f4032"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["6E", "7A"], "hours": 2, "lectureIds": ["64196794e4b0ea09ca2b39d8", "641afc4ce4b0386805572f50"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 1 - Basic Proof Techniques",
+            "lectureRefs": [
+              "HW 2",
+              "Lecture 2"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6403a13ce4b075696a347b2d",
+              "65e7224d19061936481f4032"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "6E",
+              "7A"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "64196794e4b0ea09ca2b39d8",
+              "641afc4ce4b0386805572f50"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-06",
         "label": "6 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 2 - Introduction to Discrete Mathematics", "lectureRefs": ["Lecture 1", "Summary Lecture 1"], "hours": 1, "lectureIds": ["64064ac5e4b052050cf714d7", "64064c7ae4b0a846297f9149"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["7B"], "hours": 1.5, "lectureIds": ["641c40bbe4b06c8a8e5bfff9"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 2 - Introduction to Discrete Mathematics",
+            "lectureRefs": [
+              "Lecture 1",
+              "Summary Lecture 1"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64064ac5e4b052050cf714d7",
+              "64064c7ae4b0a846297f9149"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "7B"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "641c40bbe4b06c8a8e5bfff9"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-07",
         "label": "7 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 1", "Summary Lecture 1"], "hours": 1, "lectureIds": ["64071d8be4b018f97347c22c", "6408ea8de4b04cdf84e566b0"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["7C", "8A"], "hours": 1, "lectureIds": ["641c7effe4b0608e1b4b6692", "641ddb99e4b0105fc4be8afc"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 1",
+              "Summary Lecture 1"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64071d8be4b018f97347c22c",
+              "6408ea8de4b04cdf84e566b0"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "7C",
+              "8A"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "641c7effe4b0608e1b4b6692",
+              "641ddb99e4b0105fc4be8afc"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-08",
         "label": "8 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 2", "Summary Lecture 2"], "hours": 1, "lectureIds": ["6408cc90e4b0142a8d905511", "6408eb45e4b052de72767cef"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["8B", "8C", "9A"], "hours": 1, "lectureIds": ["641e36a0e4b0408a376d2a3a", "640f2501e4b05f1197a0dc42", "642bfe7de4b02de41d08449f"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 2",
+              "Summary Lecture 2"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "6408cc90e4b0142a8d905511",
+              "6408eb45e4b052de72767cef"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "8B",
+              "8C",
+              "9A"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "641e36a0e4b0408a376d2a3a",
+              "640f2501e4b05f1197a0dc42",
+              "642bfe7de4b02de41d08449f"
+            ]
+          }
         ]
       }
     ]
@@ -131,56 +463,258 @@
         "date": "2026-03-09",
         "label": "9 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Is it a Proposition?", "Lecture 3", "3A", "3B", "4", "5", "6"], "hours": 2, "lectureIds": ["64071d8be4b018f97347c22c", "6409099be4b0b5e82c2ec8b9", "6409080de4b053eb971e5597", "64090833e4b053eb971e5599", "6409d327e4b08c37460d5d07", "6409d7d8e4b0ccef882c4ea3", "6409da12e4b07bd07b85e90a"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["9B", "9C", "9D", "10A", "10B", "10C", "10D"], "hours": 2, "lectureIds": ["6412b60be4b0cbc552f29f83", "6412b9a5e4b0cbc552f2a17d", "64140d24e4b00bc0c7b18727", "641428f4e4b0742435c1dc31", "64143e10e4b0742435c1e255", "6414497de4b0d4cd076e6037", "6416e76de4b0e283c785d2cf"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Is it a Proposition?",
+              "Lecture 3",
+              "3A",
+              "3B",
+              "4",
+              "5",
+              "6"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "64071d8be4b018f97347c22c",
+              "6409099be4b0b5e82c2ec8b9",
+              "6409080de4b053eb971e5597",
+              "64090833e4b053eb971e5599",
+              "6409d327e4b08c37460d5d07",
+              "6409d7d8e4b0ccef882c4ea3",
+              "6409da12e4b07bd07b85e90a"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "9B",
+              "9C",
+              "9D",
+              "10A",
+              "10B",
+              "10C",
+              "10D"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6412b60be4b0cbc552f29f83",
+              "6412b9a5e4b0cbc552f2a17d",
+              "64140d24e4b00bc0c7b18727",
+              "641428f4e4b0742435c1dc31",
+              "64143e10e4b0742435c1e255",
+              "6414497de4b0d4cd076e6037",
+              "6416e76de4b0e283c785d2cf"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-10",
         "label": "10 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 7", "8", "9", "10"], "hours": 2, "lectureIds": ["640ac022e4b08c37460d8ab6", "640ad41ae4b0fb95e26b050a", "640c796ae4b01c296c159ad5", "640c860ce4b05f1197a04c71"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["10E", "10F", "11A"], "hours": 2, "lectureIds": ["6416f42ae4b019b3d913711b", "64190b1ae4b090d8eb1089a4", "64192d25e4b019b3d913e5dc"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 7",
+              "8",
+              "9",
+              "10"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "640ac022e4b08c37460d8ab6",
+              "640ad41ae4b0fb95e26b050a",
+              "640c796ae4b01c296c159ad5",
+              "640c860ce4b05f1197a04c71"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "10E",
+              "10F",
+              "11A"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6416f42ae4b019b3d913711b",
+              "64190b1ae4b090d8eb1089a4",
+              "64192d25e4b019b3d913e5dc"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-11",
         "label": "11 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 11", "12", "13", "14"], "hours": 2, "lectureIds": ["640d8aa8e4b08154c347725b", "640da5f5e4b03ad31f0389c1", "640db5cfe4b05f1197a08a4d", "640f88eae4b0099a86eddae5"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["11B"], "hours": 1.5, "lectureIds": ["64196794e4b0ea09ca2b39d8"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 11",
+              "12",
+              "13",
+              "14"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "640d8aa8e4b08154c347725b",
+              "640da5f5e4b03ad31f0389c1",
+              "640db5cfe4b05f1197a08a4d",
+              "640f88eae4b0099a86eddae5"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "11B"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "64196794e4b0ea09ca2b39d8"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-12",
         "label": "12 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 15", "16", "Homework 1", "Homework 2"], "hours": 3, "lectureIds": ["640f9148e4b03ad31f03fae7", "640f89d9e4b0099a86eddaf4", "6403a13ce4b075696a347b2d", "64048d0ce4b07c4989de69ca"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Live Practice Questions on Linear Dependent Vectors"], "hours": 1.5, "lectureIds": ["641afc4ce4b0386805572f50"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 15",
+              "16",
+              "Homework 1",
+              "Homework 2"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "640f9148e4b03ad31f03fae7",
+              "640f89d9e4b0099a86eddaf4",
+              "6403a13ce4b075696a347b2d",
+              "64048d0ce4b07c4989de69ca"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "Live Practice Questions on Linear Dependent Vectors"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "641afc4ce4b0386805572f50"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-13",
         "label": "13 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 17", "18", "Homework 3"], "hours": 2, "lectureIds": ["6416ec7de4b020c10807abc6", "6416fd6ee4b0c93499f627b9", "64022a46e4b06b49e4830743"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["Live Practice Questions on Solutions of Ax = b", "GO Classes GATE CS | Weekly Quiz 1 | Linear Algebra"], "hours": 2, "lectureIds": ["641c40bbe4b06c8a8e5bfff9", "641c7effe4b0608e1b4b6692"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 17",
+              "18",
+              "Homework 3"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6416ec7de4b020c10807abc6",
+              "6416fd6ee4b0c93499f627b9",
+              "64022a46e4b06b49e4830743"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "Live Practice Questions on Solutions of Ax = b",
+              "GO Classes GATE CS | Weekly Quiz 1 | Linear Algebra"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "641c40bbe4b06c8a8e5bfff9",
+              "641c7effe4b0608e1b4b6692"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-14",
         "label": "14 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 19", "20", "21"], "hours": 2, "lectureIds": ["64199e72e4b0fac85e128d97", "6419a174e4b03dc1fd637fd0", "641a028ce4b06125509acd1d"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["GO Classes CS/DA | Weekly Quiz 2 | Linear Algebra"], "hours": 1.5, "lectureIds": ["641ddb99e4b0105fc4be8afc"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 19",
+              "20",
+              "21"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "64199e72e4b0fac85e128d97",
+              "6419a174e4b03dc1fd637fd0",
+              "641a028ce4b06125509acd1d"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "GO Classes CS/DA | Weekly Quiz 2 | Linear Algebra"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "641ddb99e4b0105fc4be8afc"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-15",
         "label": "15 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Lecture 22", "23", "GO Classes GATE CS | Weekly Quiz 1 | Propositional Logic"], "hours": 2, "lectureIds": ["641a0feee4b0c09eb19a3845", "641d73c8e4b060095eaa630b", "64125g4ee4b0l3m4e7h2m5n6"] },
-          { "subject": "Engineering Mathematics", "module": "Linear Algebra", "lectureRefs": ["GO Classes CS/DA | Weekly Quiz 3 | Linear Algebra", "GO Classes GATE CS/DA | Weekly Quiz 4 | Linear Algebra"], "hours": 3, "lectureIds": ["641e36a0e4b0408a376d2a3a", "640f2501e4b05f1197a0dc42"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Lecture 22",
+              "23",
+              "GO Classes GATE CS | Weekly Quiz 1 | Propositional Logic"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "641a0feee4b0c09eb19a3845",
+              "641d73c8e4b060095eaa630b",
+              "64125g4ee4b0l3m4e7h2m5n6"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Linear Algebra",
+            "lectureRefs": [
+              "GO Classes CS/DA | Weekly Quiz 3 | Linear Algebra",
+              "GO Classes GATE CS/DA | Weekly Quiz 4 | Linear Algebra"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "641e36a0e4b0408a376d2a3a",
+              "640f2501e4b05f1197a0dc42"
+            ]
+          }
         ]
       }
     ]
@@ -193,56 +727,247 @@
         "date": "2026-03-16",
         "label": "16 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["24", "25", "26"], "hours": 1.5, "lectureIds": ["641d73c8e4b060095eaa630b", "641d82e2e4b051c220714b06", "641d8587e4b08b95e330a551"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["1A", "1B", "2A"], "hours": 2, "lectureIds": ["642bfe7de4b02de41d08449f", "642c0f96e4b03dd18ff2a244", "642e7fe7e4b0348ba14856b9"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "24",
+              "25",
+              "26"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "641d73c8e4b060095eaa630b",
+              "641d82e2e4b051c220714b06",
+              "641d8587e4b08b95e330a551"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "1A",
+              "1B",
+              "2A"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "642bfe7de4b02de41d08449f",
+              "642c0f96e4b03dd18ff2a244",
+              "642e7fe7e4b0348ba14856b9"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-17",
         "label": "17 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["27", "28", "29"], "hours": 1.15, "lectureIds": ["641df274e4b0bc5231a30a31", "641df2dfe4b0bc5231a30a6b", "641dfc81e4b0bc5231a30c44"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["2B", "2C", "3A", "3B"], "hours": 2, "lectureIds": ["642ea675e4b0c82b898614ac", "642fff90e4b0544a2d7c30f5", "643165cde4b0376423a77e6e", "6433c0a4e4b02a4c1a772ba9"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "27",
+              "28",
+              "29"
+            ],
+            "hours": 1.15,
+            "lectureIds": [
+              "641df274e4b0bc5231a30a31",
+              "641df2dfe4b0bc5231a30a6b",
+              "641dfc81e4b0bc5231a30c44"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "2B",
+              "2C",
+              "3A",
+              "3B"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "642ea675e4b0c82b898614ac",
+              "642fff90e4b0544a2d7c30f5",
+              "643165cde4b0376423a77e6e",
+              "6433c0a4e4b02a4c1a772ba9"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-18",
         "label": "18 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["30", "31", "32", "33"], "hours": 2, "lectureIds": ["641f074ee4b030bee14a4ac2", "641f07c1e4b030bee14a4ad2", "641f0815e4b030bee14a4b9a", "641f439ae4b079867760d6b5"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["3C", "3D"], "hours": 3, "lectureIds": ["64316c3be4b065e6d436228c", "6434101ce4b0987fa0cd0ae8"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "30",
+              "31",
+              "32",
+              "33"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "641f074ee4b030bee14a4ac2",
+              "641f07c1e4b030bee14a4ad2",
+              "641f0815e4b030bee14a4b9a",
+              "641f439ae4b079867760d6b5"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "3C",
+              "3D"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "64316c3be4b065e6d436228c",
+              "6434101ce4b0987fa0cd0ae8"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-19",
         "label": "19 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["34", "35", "36"], "hours": 2, "lectureIds": ["641f475ee4b079867760d806", "642019efe4b0bc5231a38b41", "64201f1ce4b0bc5231a38bd8"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["4A", "4B", "4C", "4D"], "hours": 3.5, "lectureIds": ["6434101ce4b0987fa0cd0ae8", "643424cfe4b0a373b9ccca3e", "6434380de4b0b8e0e1d719688", "64344b24e4b0c5d5a8e6f3a4"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "34",
+              "35",
+              "36"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "641f475ee4b079867760d806",
+              "642019efe4b0bc5231a38b41",
+              "64201f1ce4b0bc5231a38bd8"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "4A",
+              "4B",
+              "4C",
+              "4D"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6434101ce4b0987fa0cd0ae8",
+              "643424cfe4b0a373b9ccca3e",
+              "6434380de4b0b8e0e1d719688",
+              "64344b24e4b0c5d5a8e6f3a4"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-20",
         "label": "20 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["37", "38", "39"], "hours": 1, "lectureIds": ["642d8160e4b0837ce6d338f8", "642d8160e4b0837ce6d338f8", "642d8160e4b0837ce6d338f8"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["5A", "5B"], "hours": 1.5, "lectureIds": ["64344b24e4b0c5d5a8e6f3a4", "64345e5fe4b0d6e7b9f4c5d6"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "37",
+              "38",
+              "39"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "642d8160e4b0837ce6d338f8",
+              "642d8160e4b0837ce6d338f8",
+              "642d8160e4b0837ce6d338f8"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "5A",
+              "5B"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "64344b24e4b0c5d5a8e6f3a4",
+              "64345e5fe4b0d6e7b9f4c5d6"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-21",
         "label": "21 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Complete Summary Part 1"], "hours": 2.5, "lectureIds": ["64126h5fe4b0m4n5f8h3n6o7"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Weekly Quiz 8 - Conditional Probability with Soln"], "hours": 1.5, "lectureIds": ["643cc75fe4b0a10978382187", "643bfbd2e4b014997e847c07"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Complete Summary Part 1"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "64126h5fe4b0m4n5f8h3n6o7"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Weekly Quiz 8 - Conditional Probability with Soln"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "643cc75fe4b0a10978382187",
+              "643bfbd2e4b014997e847c07"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-22",
         "label": "22 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 3 - Propositional Logic", "lectureRefs": ["Complete Summary Part 2"], "hours": 3, "lectureIds": ["64126h5fe4b0m4n5f8h3n6o7"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["6A", "6B", "6C", "7A", "7B"], "hours": 2, "lectureIds": ["643d0dd4e4b0a373b9ccca3e", "643cfbdee4b0ac60591f52de", "643d1718e4b0226e866cd232", "643eae2de4b0f2ed13b9f946", "643f8a3ee4b0171aefb1351e"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 3 - Propositional Logic",
+            "lectureRefs": [
+              "Complete Summary Part 2"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "64126h5fe4b0m4n5f8h3n6o7"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "6A",
+              "6B",
+              "6C",
+              "7A",
+              "7B"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "643d0dd4e4b0a373b9ccca3e",
+              "643cfbdee4b0ac60591f52de",
+              "643d1718e4b0226e866cd232",
+              "643eae2de4b0f2ed13b9f946",
+              "643f8a3ee4b0171aefb1351e"
+            ]
+          }
         ]
       }
     ]
@@ -255,56 +980,271 @@
         "date": "2026-03-23",
         "label": "23 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 1", "2", "3", "4"], "hours": 3.5, "lectureIds": ["6423e170e4b03631f086efe2", "642e5ac5e4b0bffe7ba71c74", "642e7631e4b0157addc90ada", "642e8e5de4b025a6a5d7b4a5"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["7c", "7d", "7e"], "hours": 0.67, "lectureIds": ["643fc52ee4b008a12f624242", "643fcd7fe4b0d08a7c48fc10", "643fe468e4b07ae67c4449e2"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 1",
+              "2",
+              "3",
+              "4"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6423e170e4b03631f086efe2",
+              "642e5ac5e4b0bffe7ba71c74",
+              "642e7631e4b0157addc90ada",
+              "642e8e5de4b025a6a5d7b4a5"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "7c",
+              "7d",
+              "7e"
+            ],
+            "hours": 0.67,
+            "lectureIds": [
+              "643fc52ee4b008a12f624242",
+              "643fcd7fe4b0d08a7c48fc10",
+              "643fe468e4b07ae67c4449e2"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-24",
         "label": "24 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 5", "6", "7", "8", "9", "10"], "hours": 3.15, "lectureIds": ["642ea675e4b0c82b898614ac", "642eb1a6e4b0e8a5f8d6a1de", "642ebd88e4b0f1f6c7951e8d8", "642ec045e4b0f5f7d8d6a2f2", "642ecf1fe4b0fa898e6d6a3f3", "64343069e4b0341410a45e02"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["8a", "8b"], "hours": 0.67, "lectureIds": ["644253a7e4b03ed7defaee8b", "644253c8e4b03ed7defaee8f"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10"
+            ],
+            "hours": 3.15,
+            "lectureIds": [
+              "642ea675e4b0c82b898614ac",
+              "642eb1a6e4b0e8a5f8d6a1de",
+              "642ebd88e4b0f1f6c7951e8d8",
+              "642ec045e4b0f5f7d8d6a2f2",
+              "642ecf1fe4b0fa898e6d6a3f3",
+              "64343069e4b0341410a45e02"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "8a",
+              "8b"
+            ],
+            "hours": 0.67,
+            "lectureIds": [
+              "644253a7e4b03ed7defaee8b",
+              "644253c8e4b03ed7defaee8f"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-25",
         "label": "25 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 11", "12", "13", "14", "15", "16", "17", "18"], "hours": 3.5, "lectureIds": ["64342cf5e4b01fa4b80fac83", "64347acfe4b010ee02983155", "6434a9e5e4b0d7ed8dd6472a", "6434adbfe4b0361740fbcac3", "6434aedae4b0361740fbcaca", "6434b17ae4b0361740fbcb0b", "6434b327e4b0361740fbcb28"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["8c"], "hours": 0.5, "lectureIds": ["64426777e4b06b1dda815f8a"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "64342cf5e4b01fa4b80fac83",
+              "64347acfe4b010ee02983155",
+              "6434a9e5e4b0d7ed8dd6472a",
+              "6434adbfe4b0361740fbcac3",
+              "6434aedae4b0361740fbcaca",
+              "6434b17ae4b0361740fbcb0b",
+              "6434b327e4b0361740fbcb28"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "8c"
+            ],
+            "hours": 0.5,
+            "lectureIds": [
+              "64426777e4b06b1dda815f8a"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-26",
         "label": "26 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 19", "20", "21", "22", "23", "24", "25"], "hours": 4, "lectureIds": ["6434b6c0e4b0361740fbcb37", "6434ba5fe4b0361740fbcb46", "6434be4fe4b0361740fbcb55", "6434c345e4b0361740fbcb64", "6434c1f8e4b0361740fbcb73", "6434c04be4b0361740fbcb82", "6434c560e4b0361740fbcb91"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["9a"], "hours": 0.5, "lectureIds": ["644278d0e4b0e2b2307e6854"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "6434b6c0e4b0361740fbcb37",
+              "6434ba5fe4b0361740fbcb46",
+              "6434be4fe4b0361740fbcb55",
+              "6434c345e4b0361740fbcb64",
+              "6434c1f8e4b0361740fbcb73",
+              "6434c04be4b0361740fbcb82",
+              "6434c560e4b0361740fbcb91"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "9a"
+            ],
+            "hours": 0.5,
+            "lectureIds": [
+              "644278d0e4b0e2b2307e6854"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-27",
         "label": "27 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 26", "27", "28", "29", "30", "Homework 1"], "hours": 3.5, "lectureIds": ["6434c671e4b0361740fcbc0", "6434c782e4b0361740fcbccf", "6434c893e4b0361740fcbd9e", "6434c9a4e4b0361740fcbead", "6434cab5e4b0361740fcbcec", "6434cc66e4b0361740fcbcfb"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["9b"], "hours": 1, "lectureIds": ["644800e0e4b05f1b2b636bce"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "Homework 1"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6434c671e4b0361740fcbc0",
+              "6434c782e4b0361740fcbccf",
+              "6434c893e4b0361740fcbd9e",
+              "6434c9a4e4b0361740fcbead",
+              "6434cab5e4b0361740fcbcec",
+              "6434cc66e4b0361740fcbcfb"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "9b"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "644800e0e4b05f1b2b636bce"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-28",
         "label": "28 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 31", "32", "33", "34", "35", "Weekly Quiz FOL"], "hours": 3.5, "lectureIds": ["6434cd77e4b0361740fcbd0a", "6434ce88e4b0361740fcbd19", "6434cf99e4b0361740fcbd28", "6434d0aae4b0361740fcbd37", "6434d1bbe4b0361740fcbd46", "6434d2cce4b0361740fcbd55"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["9c"], "hours": 0.67, "lectureIds": ["644800e0e4b05f1b2b636bcf"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "Weekly Quiz FOL"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6434cd77e4b0361740fcbd0a",
+              "6434ce88e4b0361740fcbd19",
+              "6434cf99e4b0361740fcbd28",
+              "6434d0aae4b0361740fcbd37",
+              "6434d1bbe4b0361740fcbd46",
+              "6434d2cce4b0361740fcbd55"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "9c"
+            ],
+            "hours": 0.67,
+            "lectureIds": [
+              "644800e0e4b05f1b2b636bcf"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-29",
         "label": "29 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Lecture 36", "37", "38", "39", "Weekly Quiz FOL"], "hours": 4.5, "lectureIds": ["6434d3dde4b0361740fcbd64", "6434d4eee4b0361740fcbd73", "6434d5ffe4b0361740fcbd82", "6434d700e4b0361740fcbd91", "6434d811e4b0361740fcba0"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["9d"], "hours": 0.75, "lectureIds": ["644800e0e4b05f1b2b636bd0"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Lecture 36",
+              "37",
+              "38",
+              "39",
+              "Weekly Quiz FOL"
+            ],
+            "hours": 4.5,
+            "lectureIds": [
+              "6434d3dde4b0361740fcbd64",
+              "6434d4eee4b0361740fcbd73",
+              "6434d5ffe4b0361740fcbd82",
+              "6434d700e4b0361740fcbd91",
+              "6434d811e4b0361740fcba0"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "9d"
+            ],
+            "hours": 0.75,
+            "lectureIds": [
+              "644800e0e4b05f1b2b636bd0"
+            ]
+          }
         ]
       }
     ]
@@ -317,56 +1257,285 @@
         "date": "2026-03-30",
         "label": "30 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["FOL Practice Questions", "FOL GATE PYQ - Part 1", "FOY GATE PYQ - Part 2"], "hours": 5, "lectureIds": ["643d3257e4b0dd83aef2d2c9", "644290fbe4b0ce046b756422", "675618675826030013359d6e"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10a"], "hours": 1, "lectureIds": ["6447ac20e4b0afcbdb02f0e0"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "FOL Practice Questions",
+              "FOL GATE PYQ - Part 1",
+              "FOY GATE PYQ - Part 2"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "643d3257e4b0dd83aef2d2c9",
+              "644290fbe4b0ce046b756422",
+              "675618675826030013359d6e"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 10a"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "6447ac20e4b0afcbdb02f0e0"
+            ]
+          }
         ]
       },
       {
         "date": "2026-03-31",
         "label": "31 Mar",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 4 - First Order Logic", "lectureRefs": ["Optional Lecture 1", "Optional Lecture 2", "Optional Lecture 3", "Optional Lecture 4"], "hours": 2.5, "lectureIds": ["6445861ce4b069adcf2df06d", "64458656e4b069adcf2df074", "64458675e4b069adcf2df07a", "6458bf35e4b08b40492f5038"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10b", "10c", "10d"], "hours": 1, "lectureIds": ["64481c31e4b0e775f27c31c1", "64481c31e4b0e775f27c31c2", "644894ffe4b02a1386ba6b8a"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 4 - First Order Logic",
+            "lectureRefs": [
+              "Optional Lecture 1",
+              "Optional Lecture 2",
+              "Optional Lecture 3",
+              "Optional Lecture 4"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "6445861ce4b069adcf2df06d",
+              "64458656e4b069adcf2df074",
+              "64458675e4b069adcf2df07a",
+              "6458bf35e4b08b40492f5038"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 10b",
+              "10c",
+              "10d"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64481c31e4b0e775f27c31c1",
+              "64481c31e4b0e775f27c31c2",
+              "644894ffe4b02a1386ba6b8a"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-01",
         "label": "1 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["1", "2", "3", "4", "5", "6", "7", "Set Theory Weekly Quiz 1"], "hours": 3.5, "lectureIds": ["6441bfc0e4b02d955323743a", "6441bfe0e4b02d955323743c", "6441bfffe4b02d955323743f", "6441d271e4b0c3bf109bf781", "6441e0a2e4b0fee1f51e9460", "64459396e4b062f656cb9acd", "6445bae6e4b05e6fd4d381ef", "660d5ca848e0040a325e1faf"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 10e", "11a"], "hours": 1.5, "lectureIds": ["644aa95ae4b0b8e1fee8efd3", "64469eb5e4b09cd5a67eb22d"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "Set Theory Weekly Quiz 1"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6441bfc0e4b02d955323743a",
+              "6441bfe0e4b02d955323743c",
+              "6441bfffe4b02d955323743f",
+              "6441d271e4b0c3bf109bf781",
+              "6441e0a2e4b0fee1f51e9460",
+              "64459396e4b062f656cb9acd",
+              "6445bae6e4b05e6fd4d381ef",
+              "660d5ca848e0040a325e1faf"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 10e",
+              "11a"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "644aa95ae4b0b8e1fee8efd3",
+              "64469eb5e4b09cd5a67eb22d"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-02",
         "label": "2 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["8", "9", "10", "11", "12", "13", "14", "Practice set 1"], "hours": 4.5, "lectureIds": ["6445cb39e4b0ce3b5c64035a", "6445cc40e4b0ce3b5c640366", "6445cceae4b0ce3b5c640378", "6445cd0fe4b0ce3b5c64037b", "6445cd2fe4b0ce3b5c640380", "644b8c1be4b06f6c374b8695", "644ba194e4b0c3d96d527f35", "644a2d17e4b06c27be14f941"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11b"], "hours": 0.5, "lectureIds": ["64469eb5e4b09cd5a67eb22e"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "Practice set 1"
+            ],
+            "hours": 4.5,
+            "lectureIds": [
+              "6445cb39e4b0ce3b5c64035a",
+              "6445cc40e4b0ce3b5c640366",
+              "6445cceae4b0ce3b5c640378",
+              "6445cd0fe4b0ce3b5c64037b",
+              "6445cd2fe4b0ce3b5c640380",
+              "644b8c1be4b06f6c374b8695",
+              "644ba194e4b0c3d96d527f35",
+              "644a2d17e4b06c27be14f941"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 11b"
+            ],
+            "hours": 0.5,
+            "lectureIds": [
+              "64469eb5e4b09cd5a67eb22e"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-03",
         "label": "3 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "Set Theory Weekly Quiz 2"], "hours": 5, "lectureIds": ["644b9eb8e4b022a13df70161", "644b9f1fe4b022a13df7016d", "644b9f51e4b022a13df7017d", "644ec1cee4b0621dbdb3b715", "644ecdd0e4b0ab53616cc03f", "644f0ec3e4b0160f43e9c0ce", "644f0e69e4b0160f43e9c0ba", "644fc4c6e4b072414a246022", "644fc71ce4b072414a2460bc", "6451a8d1e4b037f2060cf6d7", "6451a917e4b037f2060cf6e2", "6618358169fb3074ba6ae50c"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11c"], "hours": 0.75, "lectureIds": ["64469eb5e4b09cd5a67eb22c"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "Set Theory Weekly Quiz 2"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "644b9eb8e4b022a13df70161",
+              "644b9f1fe4b022a13df7016d",
+              "644b9f51e4b022a13df7017d",
+              "644ec1cee4b0621dbdb3b715",
+              "644ecdd0e4b0ab53616cc03f",
+              "644f0ec3e4b0160f43e9c0ce",
+              "644f0e69e4b0160f43e9c0ba",
+              "644fc4c6e4b072414a246022",
+              "644fc71ce4b072414a2460bc",
+              "6451a8d1e4b037f2060cf6d7",
+              "6451a917e4b037f2060cf6e2",
+              "6618358169fb3074ba6ae50c"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 11c"
+            ],
+            "hours": 0.75,
+            "lectureIds": [
+              "64469eb5e4b09cd5a67eb22c"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-04",
         "label": "4 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["26", "Example 1", "Example 2", "27", "28", "29"], "hours": 4, "lectureIds": ["6451b128e4b0bea7fcf5bc90", "6451aa2ae4b037f2060cf6ec", "6451ad94e4b037f2060cf74f", "64530f5ae4b013191e9d4cda", "6453271ce4b0868ce485ce5e", "64536e66e4b09d4e30bd86f4"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 11d", "11e"], "hours": 0.5, "lectureIds": ["64469eb5e4b09cd5a67eb22a", "64469eb5e4b09cd5a67eb22b"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "26",
+              "Example 1",
+              "Example 2",
+              "27",
+              "28",
+              "29"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "6451b128e4b0bea7fcf5bc90",
+              "6451aa2ae4b037f2060cf6ec",
+              "6451ad94e4b037f2060cf74f",
+              "64530f5ae4b013191e9d4cda",
+              "6453271ce4b0868ce485ce5e",
+              "64536e66e4b09d4e30bd86f4"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 11d",
+              "11e"
+            ],
+            "hours": 0.5,
+            "lectureIds": [
+              "64469eb5e4b09cd5a67eb22a",
+              "64469eb5e4b09cd5a67eb22b"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-05",
         "label": "5 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["30", "31", "32", "33", "Practice set 2"], "hours": 2.5, "lectureIds": ["6456e8bce4b00d66d2b5b7b6", "6456f541e4b07585714e7798", "6456fb5ae4b07676aa3b17a2", "645753a9e4b06ca6130507aa", "64533cf0e4b0a2ae6a209931"] },
-          { "subject": "Engineering Mathematics", "module": "Probability", "lectureRefs": ["Lecture 12", "Practice Questions + Probability Distributions", "Weekly Quiz 2"], "hours": 2.5, "lectureIds": ["6447bce3e4b0ea5c418e7fe8", "643cc75fe4b0a10978382187"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "30",
+              "31",
+              "32",
+              "33",
+              "Practice set 2"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "6456e8bce4b00d66d2b5b7b6",
+              "6456f541e4b07585714e7798",
+              "6456fb5ae4b07676aa3b17a2",
+              "645753a9e4b06ca6130507aa",
+              "64533cf0e4b0a2ae6a209931"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Probability",
+            "lectureRefs": [
+              "Lecture 12",
+              "Practice Questions + Probability Distributions",
+              "Weekly Quiz 2"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "6447bce3e4b0ea5c418e7fe8",
+              "643cc75fe4b0a10978382187"
+            ]
+          }
         ]
       }
     ]
@@ -379,53 +1548,234 @@
         "date": "2026-04-06",
         "label": "6 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["34", "35", "36", "37", "38", "39"], "hours": 4, "lectureIds": ["645b3c5be4b00fe0fb0e75cb", "645b554de4b0bae26d4f547f", "645b87b0e4b0e1471ed85a76", "645dcef8e4b0afa29a0c0417", "645de2dbe4b0e704bfc7b3c2", "645f9e04e4b02fe09c13cd70"] },
-          { "subject": "Engineering Mathematics", "module": "Calculus (GATE 2025)", "lectureRefs": ["Lecture 1"], "hours": 2, "lectureIds": ["6658280dd902587179c4fa0c"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "645b3c5be4b00fe0fb0e75cb",
+              "645b554de4b0bae26d4f547f",
+              "645b87b0e4b0e1471ed85a76",
+              "645dcef8e4b0afa29a0c0417",
+              "645de2dbe4b0e704bfc7b3c2",
+              "645f9e04e4b02fe09c13cd70"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": [
+              "Lecture 1"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6658280dd902587179c4fa0c"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-07",
         "label": "7 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["40", "41", "42", "43", "44", "45", "46", "47", "Practice Set 4", "48"], "hours": 5.5, "lectureIds": ["645fdbcee4b067c3f3b06d0c", "6460506ce4b082c5240beb29", "646058f9e4b02a7f65e05b6a", "6460681be4b0210db1de7566", "64607f23e4b0d5b69d5a51fd", "6460a0d6e4b00bcc348d3d55", "646148fee4b0d5b69d5a8aae", "64614a15e4b0d5b69d5a8abc", "66454d5346c5851a7634255a", "6466b116e4b0023a566e6b14"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "Practice Set 4",
+              "48"
+            ],
+            "hours": 5.5,
+            "lectureIds": [
+              "645fdbcee4b067c3f3b06d0c",
+              "6460506ce4b082c5240beb29",
+              "646058f9e4b02a7f65e05b6a",
+              "6460681be4b0210db1de7566",
+              "64607f23e4b0d5b69d5a51fd",
+              "6460a0d6e4b00bcc348d3d55",
+              "646148fee4b0d5b69d5a8aae",
+              "64614a15e4b0d5b69d5a8abc",
+              "66454d5346c5851a7634255a",
+              "6466b116e4b0023a566e6b14"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-08",
         "label": "8 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["49", "50", "51", "52", "53", "54", "Weekly Quiz - 13"], "hours": 3.75, "lectureIds": ["64669a0be4b0f60a3c048532", "6466c9e2e4b02559dc1d35c0", "64669cbae4b025ff1f300c74", "6466b51ce4b08020d9825890", "6466e008e4b073ccf859b7b0", "6466eb10e4b09a5c557c28f9", "64e26480e4b068ebbbb497c6"] },
-          { "subject": "Engineering Mathematics", "module": "Calculus (GATE 2025)", "lectureRefs": ["Lecture 2"], "hours": 2, "lectureIds": ["6659d28640a3e0537cec353d"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "Weekly Quiz - 13"
+            ],
+            "hours": 3.75,
+            "lectureIds": [
+              "64669a0be4b0f60a3c048532",
+              "6466c9e2e4b02559dc1d35c0",
+              "64669cbae4b025ff1f300c74",
+              "6466b51ce4b08020d9825890",
+              "6466e008e4b073ccf859b7b0",
+              "6466eb10e4b09a5c557c28f9",
+              "64e26480e4b068ebbbb497c6"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": [
+              "Lecture 2"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6659d28640a3e0537cec353d"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-09",
         "label": "9 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["55", "56", "57", "58", "59", "60", "61", "62"], "hours": 4, "lectureIds": ["6469bb49e4b0657ebd20c71a", "6469ce8ce4b0e1d9e772f349", "6469df61e4b091d621e48f6d", "646a7073e4b00078ed2104e9", "646a7776e4b00078ed2105b8", "646a7f5ee4b0dcf3f40d8245", "646a82f6e4b0dcf3f40d829f", "646a8319e4b0dcf3f40d82a2"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "6469bb49e4b0657ebd20c71a",
+              "6469ce8ce4b0e1d9e772f349",
+              "6469df61e4b091d621e48f6d",
+              "646a7073e4b00078ed2104e9",
+              "646a7776e4b00078ed2105b8",
+              "646a7f5ee4b0dcf3f40d8245",
+              "646a82f6e4b0dcf3f40d829f",
+              "646a8319e4b0dcf3f40d82a2"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-10",
         "label": "10 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Set Theory", "lectureRefs": ["63", "64"], "hours": 4, "lectureIds": ["66557005e6ba693251bd6c0d", "6656463bd0f67643d396016a"] },
-          { "subject": "Engineering Mathematics", "module": "Calculus (GATE 2025)", "lectureRefs": ["Lecture 3"], "hours": 1.15, "lectureIds": ["665a9cc3e55a7f34dc20a5ec"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Set Theory",
+            "lectureRefs": [
+              "63",
+              "64"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "66557005e6ba693251bd6c0d",
+              "6656463bd0f67643d396016a"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": [
+              "Lecture 3"
+            ],
+            "hours": 1.15,
+            "lectureIds": [
+              "665a9cc3e55a7f34dc20a5ec"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-11",
         "label": "11 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Functions", "lectureRefs": ["1", "2", "3", "4", "5", "6", "7", "8"], "hours": 5, "lectureIds": ["646262f8e4b0504171c16acf", "64626c77e4b09c516334bcb8", "64627fbae4b0230da7138351", "6462aa63e4b0230da7138ad6", "6463fe56e4b0df7c65de0602", "64640415e4b0df7c65de0647", "64643505e4b048274279ea3c", "662124a16274c1746bfc377d"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Functions",
+            "lectureRefs": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "646262f8e4b0504171c16acf",
+              "64626c77e4b09c516334bcb8",
+              "64627fbae4b0230da7138351",
+              "6462aa63e4b0230da7138ad6",
+              "6463fe56e4b0df7c65de0602",
+              "64640415e4b0df7c65de0647",
+              "64643505e4b048274279ea3c",
+              "662124a16274c1746bfc377d"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-12",
         "label": "12 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 5 - Functions", "lectureRefs": ["Weekly Quiz - 1 + Functions - Summary, Practice & GATE PYQs (YT)"], "hours": 4.5, "lectureIds": ["662a1acfb7713d175e23e3b9", "662786b3c68e5b70ba5904dc"] },
-          { "subject": "Engineering Mathematics", "module": "Calculus (GATE 2025)", "lectureRefs": ["Homework Questions"], "hours": 1, "lectureIds": ["665ace33d7d5e25022616fe1"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 5 - Functions",
+            "lectureRefs": [
+              "Weekly Quiz - 1 + Functions - Summary, Practice & GATE PYQs (YT)"
+            ],
+            "hours": 4.5,
+            "lectureIds": [
+              "662a1acfb7713d175e23e3b9",
+              "662786b3c68e5b70ba5904dc"
+            ]
+          },
+          {
+            "subject": "Engineering Mathematics",
+            "module": "Calculus (GATE 2025)",
+            "lectureRefs": [
+              "Homework Questions"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "665ace33d7d5e25022616fe1"
+            ]
+          }
         ]
       }
     ]
@@ -441,9 +1791,45 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 7 - Group Theory",
-            "lectureRefs": ["3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "Summary Lecture 1", "Summary Lecture 2", "Summary Lecture 3", "Summary Lecture 4", "Summary Lecture 5", "Summary Lecture 6", "Practice Questions"],
+            "lectureRefs": [
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "Summary Lecture 1",
+              "Summary Lecture 2",
+              "Summary Lecture 3",
+              "Summary Lecture 4",
+              "Summary Lecture 5",
+              "Summary Lecture 6",
+              "Practice Questions"
+            ],
             "hours": 5.5,
-            "lectureIds": ["646d3d71e4b021f2d0686df4", "646d4cbde4b021f2d0686e7a", "646d676be4b0d2998ec694fd", "646d78d9e4b0c1912d5c38ab", "646d862ce4b021f2d068743f", "646d90bbe4b04ca9f8a92c0a", "646ef5e1e4b04e01d7d58274", "646efa20e4b04e01d7d5839a", "646f22bbe4b01073539c7b97", "646fe927e4b03a7e0502a40e", "646d9396e4b04ca9f8a92c7d", "646d93bce4b04ca9f8a92c87", "646d93dbe4b04ca9f8a92c92", "646d9401e4b04ca9f8a92c9b", "646d9450e4b04ca9f8a92ca8", "646d946ee4b04ca9f8a92cae", "64710dd4e4b0efa62b106c66"]
+            "lectureIds": [
+              "646d3d71e4b021f2d0686df4",
+              "646d4cbde4b021f2d0686e7a",
+              "646d676be4b0d2998ec694fd",
+              "646d78d9e4b0c1912d5c38ab",
+              "646d862ce4b021f2d068743f",
+              "646d90bbe4b04ca9f8a92c0a",
+              "646ef5e1e4b04e01d7d58274",
+              "646efa20e4b04e01d7d5839a",
+              "646f22bbe4b01073539c7b97",
+              "646fe927e4b03a7e0502a40e",
+              "646d9396e4b04ca9f8a92c7d",
+              "646d93bce4b04ca9f8a92c87",
+              "646d93dbe4b04ca9f8a92c92",
+              "646d9401e4b04ca9f8a92c9b",
+              "646d9450e4b04ca9f8a92ca8",
+              "646d946ee4b04ca9f8a92cae",
+              "64710dd4e4b0efa62b106c66"
+            ]
           }
         ]
       },
@@ -454,16 +1840,46 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 7 - Group Theory",
-            "lectureRefs": ["13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23A", "23B"],
+            "lectureRefs": [
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23A",
+              "23B"
+            ],
             "hours": 4.15,
-            "lectureIds": ["6470b114e4b0044557701374", "64710198e4b0e63b3b4084a2", "647116e8e4b023faec9463d6", "64711c57e4b0198918a867ca", "64712491e4b079489dc330ce", "64713131e4b0e63b3b4089ed", "6473d09ae4b086659d7283eb", "6473da3ee4b0ac88350c31ae", "6473d80fe4b0ac88350c31a8", "6473dc62e4b0ac88350c31c0", "6473e180e4b09b1d9a2182a7", "6473e205e4b09b1d9a2182ab"]
+            "lectureIds": [
+              "6470b114e4b0044557701374",
+              "64710198e4b0e63b3b4084a2",
+              "647116e8e4b023faec9463d6",
+              "64711c57e4b0198918a867ca",
+              "64712491e4b079489dc330ce",
+              "64713131e4b0e63b3b4089ed",
+              "6473d09ae4b086659d7283eb",
+              "6473da3ee4b0ac88350c31ae",
+              "6473d80fe4b0ac88350c31a8",
+              "6473dc62e4b0ac88350c31c0",
+              "6473e180e4b09b1d9a2182a7",
+              "6473e205e4b09b1d9a2182ab"
+            ]
           },
           {
             "subject": "Engineering Mathematics",
             "module": "Calculus (GATE 2025)",
-            "lectureRefs": ["4"],
+            "lectureRefs": [
+              "4"
+            ],
             "hours": 1.5,
-            "lectureIds": ["665de57a1695162ae84d1cef"]
+            "lectureIds": [
+              "665de57a1695162ae84d1cef"
+            ]
           }
         ]
       },
@@ -474,9 +1890,41 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 7 - Group Theory",
-            "lectureRefs": ["24", "25A", "25B", "25C", "26", "27A", "27B", "28", "29", "30", "31", "32A", "32B", "33", "34"],
+            "lectureRefs": [
+              "24",
+              "25A",
+              "25B",
+              "25C",
+              "26",
+              "27A",
+              "27B",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32A",
+              "32B",
+              "33",
+              "34"
+            ],
             "hours": 6,
-            "lectureIds": ["6473e23ee4b09b1d9a2182af", "6473e25fe4b09b1d9a2182b2", "6473e2fde4b09b1d9a2182b4", "6473e560e4b0c6c10d49f8df", "6473f0ebe4b0ac88350c32d8", "6477c508e4b0ead1dc18b375", "6477c759e4b0ead1dc18b383", "6479b3b4e4b0e36b14bc1aad", "6479c6bbe4b0a6850f6e0652", "6479ca56e4b0592752fab452", "6479cb02e4b0592752fab47a", "647a2079e4b031b05d18351b", "647a2ae8e4b0b524ec3fc90e", "647a5441e4b0473252124f35", "647a54bce4b08fb4470c0ca1"]
+            "lectureIds": [
+              "6473e23ee4b09b1d9a2182af",
+              "6473e25fe4b09b1d9a2182b2",
+              "6473e2fde4b09b1d9a2182b4",
+              "6473e560e4b0c6c10d49f8df",
+              "6473f0ebe4b0ac88350c32d8",
+              "6477c508e4b0ead1dc18b375",
+              "6477c759e4b0ead1dc18b383",
+              "6479b3b4e4b0e36b14bc1aad",
+              "6479c6bbe4b0a6850f6e0652",
+              "6479ca56e4b0592752fab452",
+              "6479cb02e4b0592752fab47a",
+              "647a2079e4b031b05d18351b",
+              "647a2ae8e4b0b524ec3fc90e",
+              "647a5441e4b0473252124f35",
+              "647a54bce4b08fb4470c0ca1"
+            ]
           }
         ]
       },
@@ -487,16 +1935,36 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 7 - Group Theory",
-            "lectureRefs": ["35A", "35B", "36", "37", "38", "39", "40"],
+            "lectureRefs": [
+              "35A",
+              "35B",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40"
+            ],
             "hours": 2.75,
-            "lectureIds": ["647b7c29e4b03348b42ffe24", "647b8f19e4b039616c120b33", "647b9d45e4b0dbf4b265dd48", "647ba373e4b0b524ec4022e1", "647ba461e4b063b10b44dcde", "647bab52e4b0dfb9db233748", "647bb157e4b0de990c2f1939"]
+            "lectureIds": [
+              "647b7c29e4b03348b42ffe24",
+              "647b8f19e4b039616c120b33",
+              "647b9d45e4b0dbf4b265dd48",
+              "647ba373e4b0b524ec4022e1",
+              "647ba461e4b063b10b44dcde",
+              "647bab52e4b0dfb9db233748",
+              "647bb157e4b0de990c2f1939"
+            ]
           },
           {
             "subject": "Engineering Mathematics",
             "module": "Calculus (GATE 2025)",
-            "lectureRefs": ["5"],
+            "lectureRefs": [
+              "5"
+            ],
             "hours": 2.15,
-            "lectureIds": ["665f3b177d90b1269313f5b8"]
+            "lectureIds": [
+              "665f3b177d90b1269313f5b8"
+            ]
           }
         ]
       },
@@ -507,16 +1975,26 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 7 - Group Theory",
-            "lectureRefs": ["GATE PYQs", "Weekly Quiz - 16"],
+            "lectureRefs": [
+              "GATE PYQs",
+              "Weekly Quiz - 16"
+            ],
             "hours": 2.15,
-            "lectureIds": ["67ed106c432caf0616cc094d", "64876b7ce4b0ba9d936ca5f2"]
+            "lectureIds": [
+              "67ed106c432caf0616cc094d",
+              "64876b7ce4b0ba9d936ca5f2"
+            ]
           },
           {
             "subject": "Engineering Mathematics",
             "module": "Calculus (GATE 2025)",
-            "lectureRefs": ["6"],
+            "lectureRefs": [
+              "6"
+            ],
             "hours": 2,
-            "lectureIds": ["666160a94d931e02edcbeebf"]
+            "lectureIds": [
+              "666160a94d931e02edcbeebf"
+            ]
           }
         ]
       },
@@ -527,16 +2005,42 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["1", "2", "3A", "3B", "4", "5"],
+            "lectureRefs": [
+              "1",
+              "2",
+              "3A",
+              "3B",
+              "4",
+              "5"
+            ],
             "hours": 2.5,
-            "lectureIds": ["647df080e4b0cc8b664d5737", "647e03fce4b088959c1870df", "647e5352e4b0e1822ab5c3ed", "647e5c5ce4b0cf67ab6214df", "647e816be4b005dd24353846", "64819b95e4b0fd1f3bd3c70b"]
+            "lectureIds": [
+              "647df080e4b0cc8b664d5737",
+              "647e03fce4b088959c1870df",
+              "647e5352e4b0e1822ab5c3ed",
+              "647e5c5ce4b0cf67ab6214df",
+              "647e816be4b005dd24353846",
+              "64819b95e4b0fd1f3bd3c70b"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["1a", "1b", "1c", "1d", "Homework-1"],
+            "lectureRefs": [
+              "1a",
+              "1b",
+              "1c",
+              "1d",
+              "Homework-1"
+            ],
             "hours": 3,
-            "lectureIds": ["644caf7ce4b0c1312e8cade3", "644e42f0e4b0c580be9d69ec", "644e755ce4b08f62c70f9641", "644e92d8e4b08f62c70f9ef0", "644fbd0ee4b04fd633c1b708"]
+            "lectureIds": [
+              "644caf7ce4b0c1312e8cade3",
+              "644e42f0e4b0c580be9d69ec",
+              "644e755ce4b08f62c70f9641",
+              "644e92d8e4b08f62c70f9ef0",
+              "644fbd0ee4b04fd633c1b708"
+            ]
           }
         ]
       },
@@ -547,16 +2051,40 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["6", "7", "8A", "8B"],
+            "lectureRefs": [
+              "6",
+              "7",
+              "8A",
+              "8B"
+            ],
             "hours": 2.5,
-            "lectureIds": ["6481b0c9e4b00bb82bc1bdf3", "6481d4d3e4b076a057b4cde0", "6481e327e4b0d36763fa8405", "648202cce4b0028418fae730"]
+            "lectureIds": [
+              "6481b0c9e4b00bb82bc1bdf3",
+              "6481d4d3e4b076a057b4cde0",
+              "6481e327e4b0d36763fa8405",
+              "648202cce4b0028418fae730"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["2a", "2b", "2c", "2d", "2e", "Homework-2"],
+            "lectureRefs": [
+              "2a",
+              "2b",
+              "2c",
+              "2d",
+              "2e",
+              "Homework-2"
+            ],
             "hours": 2.5,
-            "lectureIds": ["644fcedde4b0413f4ff7ee1d", "6450dfb2e4b037492b2a4e8e", "6450fabae4b037f2060ccc07", "64510953e4b0e65caa7017b6", "64513517e4b05cf4623d23f5", "64522c12e4b09d8c902c583a"]
+            "lectureIds": [
+              "644fcedde4b0413f4ff7ee1d",
+              "6450dfb2e4b037492b2a4e8e",
+              "6450fabae4b037f2060ccc07",
+              "64510953e4b0e65caa7017b6",
+              "64513517e4b05cf4623d23f5",
+              "64522c12e4b09d8c902c583a"
+            ]
           }
         ]
       }
@@ -573,7 +2101,18 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["9", "10", "11", "12", "13", "14A", "14B", "14C", "14D", "15"],
+            "lectureRefs": [
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14A",
+              "14B",
+              "14C",
+              "14D",
+              "15"
+            ],
             "hours": 5.5,
             "lectureIds": [
               "64824b5be4b0d36763fa9821",
@@ -597,7 +2136,12 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["16", "17", "18A", "18B"],
+            "lectureRefs": [
+              "16",
+              "17",
+              "18A",
+              "18B"
+            ],
             "hours": 2.5,
             "lectureIds": [
               "64884d0be4b003601ecd3dcb",
@@ -609,7 +2153,14 @@
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["3a", "3b", "3c", "3d", "4a", "4b"],
+            "lectureRefs": [
+              "3a",
+              "3b",
+              "3c",
+              "3d",
+              "4a",
+              "4b"
+            ],
             "hours": 2.5,
             "lectureIds": [
               "6453c312e4b0079cc7ebe52e",
@@ -629,7 +2180,20 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["19A", "19B", "20A", "20B", "20C", "20D", "20E", "20F", "20G", "21", "22", "23"],
+            "lectureRefs": [
+              "19A",
+              "19B",
+              "20A",
+              "20B",
+              "20C",
+              "20D",
+              "20E",
+              "20F",
+              "20G",
+              "21",
+              "22",
+              "23"
+            ],
             "hours": 1.45,
             "lectureIds": [
               "6488ef22e4b098381df1981f",
@@ -655,7 +2219,12 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["24A", "24B", "24C", "24D"],
+            "lectureRefs": [
+              "24A",
+              "24B",
+              "24C",
+              "24D"
+            ],
             "hours": 3.15,
             "lectureIds": [
               "648c5970e4b09fd4879d0c13",
@@ -667,7 +2236,12 @@
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["4c", "4d", "4e", "Homework-3"],
+            "lectureRefs": [
+              "4c",
+              "4d",
+              "4e",
+              "Homework-3"
+            ],
             "hours": 2.15,
             "lectureIds": [
               "645f40fee4b07638bbec692f",
@@ -685,8 +2259,16 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["25A", "25B", "25C", "25D", "25E", "25F", "25G"],
-            "hours": 4.0,
+            "lectureRefs": [
+              "25A",
+              "25B",
+              "25C",
+              "25D",
+              "25E",
+              "25F",
+              "25G"
+            ],
+            "hours": 4,
             "lectureIds": [
               "648f21ece4b01092b24d1ffc",
               "648f568ae4b0f92793de5133",
@@ -706,7 +2288,10 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["26", "Recurrence Relations Playlist (YT)"],
+            "lectureRefs": [
+              "26",
+              "Recurrence Relations Playlist (YT)"
+            ],
             "hours": 3.15,
             "lectureIds": [
               "6490b98de4b0dccf7d4853b1"
@@ -715,7 +2300,10 @@
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["Homework-3 Solution", "Weekly Quiz 12"],
+            "lectureRefs": [
+              "Homework-3 Solution",
+              "Weekly Quiz 12"
+            ],
             "hours": 2.5,
             "lectureIds": [
               "64623bb3e4b055b9e011d93d",
@@ -731,7 +2319,9 @@
           {
             "subject": "Discrete Mathematics",
             "module": "Module 8 - Combinatorics",
-            "lectureRefs": ["Practice Set-1 Solutions (YT)"],
+            "lectureRefs": [
+              "Practice Set-1 Solutions (YT)"
+            ],
             "hours": 3.5,
             "lectureIds": [
               "649211a4e4b0313e80ae0d41"
@@ -740,8 +2330,10 @@
           {
             "subject": "C Programming",
             "module": "Module 1",
-            "lectureRefs": ["HW2 Sol & WQ12 Discussion"],
-            "hours": 1.0,
+            "lectureRefs": [
+              "HW2 Sol & WQ12 Discussion"
+            ],
+            "hours": 1,
             "lectureIds": [
               "64565dece4b0db491387e769"
             ]
@@ -749,7 +2341,11 @@
           {
             "subject": "C Programming",
             "module": "Module 2",
-            "lectureRefs": ["5a", "5b", "5c"],
+            "lectureRefs": [
+              "5a",
+              "5b",
+              "5c"
+            ],
             "hours": 1.15,
             "lectureIds": [
               "646367b3e4b0abdb8c00a2e3",
@@ -769,54 +2365,270 @@
         "date": "2026-04-27",
         "label": "27 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 2 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["6495f4b4e4b092397186eb40", "6498a1c9e4b0631f90228224"] },
-          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["5d", "6a", "6b", "6c"], "hours": 2, "lectureIds": ["646775c3e4b0659a24a5c127", "6468dd2ee4b038d59d15d94d", "6468f33ee4b0b14810c3938d", "646913ece4b083f1654aa9d1"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": [
+              "Practice Set 2 with Solutions (YT)"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "6495f4b4e4b092397186eb40",
+              "6498a1c9e4b0631f90228224"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 2",
+            "lectureRefs": [
+              "5d",
+              "6a",
+              "6b",
+              "6c"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "646775c3e4b0659a24a5c127",
+              "6468dd2ee4b038d59d15d94d",
+              "6468f33ee4b0b14810c3938d",
+              "646913ece4b083f1654aa9d1"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-28",
         "label": "28 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["27A", "27B", "27C"], "hours": 5.45, "lectureIds": ["6499a205e4b0158c54c85314", "649ae5f2e4b02cbf1025f99d", "649daf61e4b09cdba41eaf6c"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": [
+              "27A",
+              "27B",
+              "27C"
+            ],
+            "hours": 5.45,
+            "lectureIds": [
+              "6499a205e4b0158c54c85314",
+              "649ae5f2e4b02cbf1025f99d",
+              "649daf61e4b09cdba41eaf6c"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-29",
         "label": "29 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Practice Set 3 with Solutions (YT)"], "hours": 3.5, "lectureIds": ["64a17bbfe4b00b845765673f", "64a1d93ae4b0005d8cc45378"] },
-          { "subject": "C Programming", "module": "Module 2", "lectureRefs": ["6D", "6E (OPTIONAL)", "6F to 6G", "Homework - 4", "6G LIVE"], "hours": 2.5, "lectureIds": ["6469f731e4b0d9dd31407cf6", "646a1988e4b0bcc926ece712", "646a2d44e4b001b832ee17f3", "646b2606e4b00078ed211f4a", "646b6ffde4b09d45b0139490"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": [
+              "Practice Set 3 with Solutions (YT)"
+            ],
+            "hours": 3.5,
+            "lectureIds": [
+              "64a17bbfe4b00b845765673f",
+              "64a1d93ae4b0005d8cc45378"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 2",
+            "lectureRefs": [
+              "6D",
+              "6E (OPTIONAL)",
+              "6F to 6G",
+              "Homework - 4",
+              "6G LIVE"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "6469f731e4b0d9dd31407cf6",
+              "646a1988e4b0bcc926ece712",
+              "646a2d44e4b001b832ee17f3",
+              "646b2606e4b00078ed211f4a",
+              "646b6ffde4b09d45b0139490"
+            ]
+          }
         ]
       },
       {
         "date": "2026-04-30",
         "label": "30 Apr",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 8 - Combinatorics", "lectureRefs": ["Weekly Quiz 19"], "hours": 1, "lectureIds": ["64a86c2ee4b0580bbdf4b0f6"] },
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["1", "2", "2B", "2C", "3A", "3B", "4A", "4B", "4C"], "hours": 5, "lectureIds": ["6498e1d5e4b0109129ea1d87", "64ac27abe4b03c01b152965d", "64ac4cf0e4b07cb68241113d", "64ac5f88e4b09570ca864fab", "64ac6c52e4b0f14679851f06", "64ae83d5e4b0e3959ec996dd", "64aed77ae4b05cbfc2c521e2", "64b3a1bee4b001bd685c5632", "64b5716be4b0ebf3ebc682b9"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 8 - Combinatorics",
+            "lectureRefs": [
+              "Weekly Quiz 19"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64a86c2ee4b0580bbdf4b0f6"
+            ]
+          },
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "1",
+              "2",
+              "2B",
+              "2C",
+              "3A",
+              "3B",
+              "4A",
+              "4B",
+              "4C"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "6498e1d5e4b0109129ea1d87",
+              "64ac27abe4b03c01b152965d",
+              "64ac4cf0e4b07cb68241113d",
+              "64ac5f88e4b09570ca864fab",
+              "64ac6c52e4b0f14679851f06",
+              "64ae83d5e4b0e3959ec996dd",
+              "64aed77ae4b05cbfc2c521e2",
+              "64b3a1bee4b001bd685c5632",
+              "64b5716be4b0ebf3ebc682b9"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-01",
         "label": "1 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["6", "7", "8A", "8B", "8C", "8D", "8E", "9A"], "hours": 4.15, "lectureIds": ["64bd9879e4b0f4c23037fa8c", "64bda6b0e4b0312a467c8f74", "64cf88d2e4b01db87f1751f9", "64cfebfbe4b0a0b64754f032", "64d134e0e4b0805c3866bf8d", "64d14a05e4b05bac5c76dea9", "64d15490e4b03d2c3eff3b2a", "64d16588e4b0c709dfe47938"] },
-          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["7a", "7b", "7c", "Session-5"], "hours": 1.45, "lectureIds": ["646f2685e4b0b85b10a1187d", "646f7a68e4b03a7e05028fc2", "646f936be4b022c27910c03b", "6470bbdde4b05939ef1fc9e0"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "6",
+              "7",
+              "8A",
+              "8B",
+              "8C",
+              "8D",
+              "8E",
+              "9A"
+            ],
+            "hours": 4.15,
+            "lectureIds": [
+              "64bd9879e4b0f4c23037fa8c",
+              "64bda6b0e4b0312a467c8f74",
+              "64cf88d2e4b01db87f1751f9",
+              "64cfebfbe4b0a0b64754f032",
+              "64d134e0e4b0805c3866bf8d",
+              "64d14a05e4b05bac5c76dea9",
+              "64d15490e4b03d2c3eff3b2a",
+              "64d16588e4b0c709dfe47938"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 3",
+            "lectureRefs": [
+              "7a",
+              "7b",
+              "7c",
+              "Session-5"
+            ],
+            "hours": 1.45,
+            "lectureIds": [
+              "646f2685e4b0b85b10a1187d",
+              "646f7a68e4b03a7e05028fc2",
+              "646f936be4b022c27910c03b",
+              "6470bbdde4b05939ef1fc9e0"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-02",
         "label": "2 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["9B", "9C", "9D", "10A", "10B", "10C", "11A", "11B", "11C", "11D", "11E", "12A"], "hours": 6, "lectureIds": ["680c65837855a66799d65002", "64d407f1e4b025ccf885b539", "64d40e54e4b0c6fd0fcfe6a7", "64d420bfe4b0ac7f2f023567", "64d42991e4b01cdae5e424bb", "64d4d81ee4b09ab5960fb0e0", "64d4e32ee4b0b42ba2e98bdc", "64d4e99be4b0b07de218b801", "64d4fae2e4b0b07de218c029", "64d55aabe4b02431f5c83da8", "64d641a3e4b0db47eb6227b6", "64d56b28e4b02431f5c83ede"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "9B",
+              "9C",
+              "9D",
+              "10A",
+              "10B",
+              "10C",
+              "11A",
+              "11B",
+              "11C",
+              "11D",
+              "11E",
+              "12A"
+            ],
+            "hours": 6,
+            "lectureIds": [
+              "680c65837855a66799d65002",
+              "64d407f1e4b025ccf885b539",
+              "64d40e54e4b0c6fd0fcfe6a7",
+              "64d420bfe4b0ac7f2f023567",
+              "64d42991e4b01cdae5e424bb",
+              "64d4d81ee4b09ab5960fb0e0",
+              "64d4e32ee4b0b42ba2e98bdc",
+              "64d4e99be4b0b07de218b801",
+              "64d4fae2e4b0b07de218c029",
+              "64d55aabe4b02431f5c83da8",
+              "64d641a3e4b0db47eb6227b6",
+              "64d56b28e4b02431f5c83ede"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-03",
         "label": "3 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["12B", "13A", "13B", "14A", "14B", "14C", "15A", "15B"], "hours": 4.15, "lectureIds": ["64d8c22fe4b05d7f6e2a8ee7", "64d8d1b0e4b03cefb136ee4d", "64da4c7de4b0582ff9b67c8f", "64da9eb1e4b06a3c3038b5f1", "64daaa80e4b018c62fabb501", "64dab4b1e4b0f19f97f18031", "64dbde73e4b0e27d6dae8e6f", "64de82fde4b0d32a4e449186"] },
-          { "subject": "C Programming", "module": "Module 3", "lectureRefs": ["8a", "8b", "8c"], "hours": 1.15, "lectureIds": ["6471e2d0e4b0e24c6097650e", "6471fa21e4b069f272e7c5d2", "647210ede4b0469e8277c40c"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "12B",
+              "13A",
+              "13B",
+              "14A",
+              "14B",
+              "14C",
+              "15A",
+              "15B"
+            ],
+            "hours": 4.15,
+            "lectureIds": [
+              "64d8c22fe4b05d7f6e2a8ee7",
+              "64d8d1b0e4b03cefb136ee4d",
+              "64da4c7de4b0582ff9b67c8f",
+              "64da9eb1e4b06a3c3038b5f1",
+              "64daaa80e4b018c62fabb501",
+              "64dab4b1e4b0f19f97f18031",
+              "64dbde73e4b0e27d6dae8e6f",
+              "64de82fde4b0d32a4e449186"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module 3",
+            "lectureRefs": [
+              "8a",
+              "8b",
+              "8c"
+            ],
+            "hours": 1.15,
+            "lectureIds": [
+              "6471e2d0e4b0e24c6097650e",
+              "6471fa21e4b069f272e7c5d2",
+              "647210ede4b0469e8277c40c"
+            ]
+          }
         ]
       }
     ]
@@ -829,52 +2641,218 @@
         "date": "2026-05-04",
         "label": "4 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["15C", "16A", "16B", "17A", "17B", "17C", "17D", "17E", "18", "19A", "19B"], "hours": 5.5, "lectureIds": ["64de8ef8e4b09ed02289e5e7", "64df3755e4b025d8392e5e7a", "64dfbab7e4b0281c5f1e5e7b", "64dfde91e4b02cb7a7be5e7c", "64e083f6e4b0281c5f1e5e7d", "64e080ffe4b0bb5a8c4e5e7e", "64e09405e4b01c93487e5e7f", "64e0b57ee4b0de16a51e5e80", "64e3a4efe4b04e6fb19e5e81", "64e3e101e4b06d147f3e5e82", "64e61713e4b08438913e5e83"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "15C",
+              "16A",
+              "16B",
+              "17A",
+              "17B",
+              "17C",
+              "17D",
+              "17E",
+              "18",
+              "19A",
+              "19B"
+            ],
+            "hours": 5.5,
+            "lectureIds": [
+              "64de8ef8e4b09ed02289e5e7",
+              "64df3755e4b025d8392e5e7a",
+              "64dfbab7e4b0281c5f1e5e7b",
+              "64dfde91e4b02cb7a7be5e7c",
+              "64e083f6e4b0281c5f1e5e7d",
+              "64e080ffe4b0bb5a8c4e5e7e",
+              "64e09405e4b01c93487e5e7f",
+              "64e0b57ee4b0de16a51e5e80",
+              "64e3a4efe4b04e6fb19e5e81",
+              "64e3e101e4b06d147f3e5e82",
+              "64e61713e4b08438913e5e83"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-05",
         "label": "5 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["20A", "21A"], "hours": 4.15, "lectureIds": ["64e6460ee4b025e779ce5e84", "64ff9ccce4b056f655c2e5e85"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["8D", "Homework 5", "Session 6"], "hours": 1.5, "lectureIds": ["647254dfe4b0469e8277d56e", "6473613be4b01749c05f15f0", "64735747e4b0fc04f832bb2f"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "20A",
+              "21A"
+            ],
+            "hours": 4.15,
+            "lectureIds": [
+              "64e6460ee4b025e779ce5e84",
+              "64ff9ccce4b056f655c2e5e85"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "8D",
+              "Homework 5",
+              "Session 6"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "647254dfe4b0469e8277d56e",
+              "6473613be4b01749c05f15f0",
+              "64735747e4b0fc04f832bb2f"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-06",
         "label": "6 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["21B", "22A", "22B"], "hours": 5.5, "lectureIds": ["65003ffae4b06a6e7c60e5e86", "652ad913e4b0671f6fc3e5e87", "6527ea09e4b086ad5c6fe5e88"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "21B",
+              "22A",
+              "22B"
+            ],
+            "hours": 5.5,
+            "lectureIds": [
+              "65003ffae4b06a6e7c60e5e86",
+              "652ad913e4b0671f6fc3e5e87",
+              "6527ea09e4b086ad5c6fe5e88"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-07",
         "label": "7 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["22C", "22D", "23A", "23B", "23C", "23D"], "hours": 3, "lectureIds": ["6528cecde4b001bbef6de5e89", "652b025de4b025631072e5e8a", "65880419e4b09077d01e5e8b", "65880696e4b04bab5b1e5e8c", "65880978e4b0003d2cfe5e8d", "65880e80e4b09077d01e5e8e"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["9A", "9B", "Session: Solving Few Questions"], "hours": 1.75, "lectureIds": ["6473ad72e4b0c6c10d49f3c1", "6474a755e4b0307cedc5bb00", "6474a8aee4b004bcb542b6ef"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "22C",
+              "22D",
+              "23A",
+              "23B",
+              "23C",
+              "23D"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "6528cecde4b001bbef6de5e89",
+              "652b025de4b025631072e5e8a",
+              "65880419e4b09077d01e5e8b",
+              "65880696e4b04bab5b1e5e8c",
+              "65880978e4b0003d2cfe5e8d",
+              "65880e80e4b09077d01e5e8e"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "9A",
+              "9B",
+              "Session: Solving Few Questions"
+            ],
+            "hours": 1.75,
+            "lectureIds": [
+              "6473ad72e4b0c6c10d49f3c1",
+              "6474a755e4b0307cedc5bb00",
+              "6474a8aee4b004bcb542b6ef"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-08",
         "label": "8 May",
         "tasks": [
-          { "subject": "Discrete Mathematics", "module": "Module 9 - Graph Theory", "lectureRefs": ["24A", "24B", "24C"], "hours": 5, "lectureIds": ["658812c0e4b0e1ca423e5e8f", "658812f0e4b03efabcde5e90", "65881368e4b0eeb4e90e5e91"] }
+          {
+            "subject": "Discrete Mathematics",
+            "module": "Module 9 - Graph Theory",
+            "lectureRefs": [
+              "24A",
+              "24B",
+              "24C"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "658812c0e4b0e1ca423e5e8f",
+              "658812f0e4b03efabcde5e90",
+              "65881368e4b0eeb4e90e5e91"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-09",
         "label": "9 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["1", "2", "3A", "3B", "4A"], "hours": 3.75, "lectureIds": ["650bacf3e4b065f5a9987509", "650bba87e4b0dc0ab6f7192b", "650f25c9e4b019ac262357b5", "650f3ecbe4b0616e27dc915a", "650f354ce4b082f87e5057b5"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["9C", "9D", "Homework 6 (OPTIONAL)"], "hours": 2.15, "lectureIds": ["6474ef18e4b017c4ae51f603", "6474f96ee4b0b72b2d5c4b5b", "647602b3e4b089176aad549f"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "1",
+              "2",
+              "3A",
+              "3B",
+              "4A"
+            ],
+            "hours": 3.75,
+            "lectureIds": [
+              "650bacf3e4b065f5a9987509",
+              "650bba87e4b0dc0ab6f7192b",
+              "650f25c9e4b019ac262357b5",
+              "650f3ecbe4b0616e27dc915a",
+              "650f354ce4b082f87e5057b5"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "9C",
+              "9D",
+              "Homework 6 (OPTIONAL)"
+            ],
+            "hours": 2.15,
+            "lectureIds": [
+              "6474ef18e4b017c4ae51f603",
+              "6474f96ee4b0b72b2d5c4b5b",
+              "647602b3e4b089176aad549f"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-10",
         "label": "10 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["4B", "4C", "4D", "Weekly Quiz 1"], "hours": 6, "lectureIds": ["650f5ec0e4b097535282f7df", "650f7eafe4b082f87e506a06", "62b0a9570cf287c06631cbce", "665c4a6fb76f9a3d68f1391d"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "4B",
+              "4C",
+              "4D",
+              "Weekly Quiz 1"
+            ],
+            "hours": 6,
+            "lectureIds": [
+              "650f5ec0e4b097535282f7df",
+              "650f7eafe4b082f87e506a06",
+              "62b0a9570cf287c06631cbce",
+              "665c4a6fb76f9a3d68f1391d"
+            ]
+          }
         ]
       }
     ]
@@ -887,52 +2865,192 @@
         "date": "2026-05-11",
         "label": "11 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["5A", "5B", "5C"], "hours": 3, "lectureIds": ["65118fe5e4b0b61477a6296f", "65120677e4b005ee176a553a", "651397abe4b04f05ef0d9f07"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["10A (OPTIONAL)", "10B", "10C", "10D"], "hours": 1.5, "lectureIds": ["647757fee4b09ba84481fae1", "647789b7e4b0db34fec15b27", "647a347de4b0996045752237", "647b02d8e4b0d491601b3ee0"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "5A",
+              "5B",
+              "5C"
+            ],
+            "hours": 3,
+            "lectureIds": [
+              "65118fe5e4b0b61477a6296f",
+              "65120677e4b005ee176a553a",
+              "651397abe4b04f05ef0d9f07"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "10A (OPTIONAL)",
+              "10B",
+              "10C",
+              "10D"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "647757fee4b09ba84481fae1",
+              "647789b7e4b0db34fec15b27",
+              "647a347de4b0996045752237",
+              "647b02d8e4b0d491601b3ee0"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-12",
         "label": "12 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["5D", "6A"], "hours": 5.25, "lectureIds": ["6513b390e4b0d23b704dfcaa", "65148401e4b0edcdd72b48e0"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "5D",
+              "6A"
+            ],
+            "hours": 5.25,
+            "lectureIds": [
+              "6513b390e4b0d23b704dfcaa",
+              "65148401e4b0edcdd72b48e0"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-13",
         "label": "13 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["6B", "6C"], "hours": 2, "lectureIds": ["6515a3e5e4b063a02ee99508", "6515b503e4b07502cbc139c8"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["11A", "Practice Questions on char pointers, Double Pointers, and 2D arrays"], "hours": 1.75, "lectureIds": ["647bafc3e4b0de990c2f1923", "647c9e60e4b01807702c81a7"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "6B",
+              "6C"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "6515a3e5e4b063a02ee99508",
+              "6515b503e4b07502cbc139c8"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "11A",
+              "Practice Questions on char pointers, Double Pointers, and 2D arrays"
+            ],
+            "hours": 1.75,
+            "lectureIds": [
+              "647bafc3e4b0de990c2f1923",
+              "647c9e60e4b01807702c81a7"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-14",
         "label": "14 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["6D", "6E"], "hours": 5.25, "lectureIds": ["62b74d180cf29870a24530bf", "62b896630cf2d762ec8d1369"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "6D",
+              "6E"
+            ],
+            "hours": 5.25,
+            "lectureIds": [
+              "62b74d180cf29870a24530bf",
+              "62b896630cf2d762ec8d1369"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-15",
         "label": "15 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["7", "8", "Weekly Quiz 2", "Positive Level Logic System (OPTIONAL)", "Negative Level Logic System (OPTIONAL)"], "hours": 5, "lectureIds": ["6516fee0e4b02db764372028", "65178be6e4b0ca95c921cb45", "665c4bd605b42975dad8d81d", "65216c5de4b042ba320870f1", "65216f28e4b004b8d43ee4ff"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "7",
+              "8",
+              "Weekly Quiz 2",
+              "Positive Level Logic System (OPTIONAL)",
+              "Negative Level Logic System (OPTIONAL)"
+            ],
+            "hours": 5,
+            "lectureIds": [
+              "6516fee0e4b02db764372028",
+              "65178be6e4b0ca95c921cb45",
+              "665c4bd605b42975dad8d81d",
+              "65216c5de4b042ba320870f1",
+              "65216f28e4b004b8d43ee4ff"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-16",
         "label": "16 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions", "lectureRefs": ["Practice Session 1 - Standard Questions Session 1"], "hours": 2.5, "lectureIds": ["65216f28e4b004b8d43ee4ff"] },
-          { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["11B", "11C", "11D", "12 (OPTIONAL)"], "hours": 2.25, "lectureIds": ["647d8964e4b096dd2e37a561", "647db9f9e4b0788e3d7317bc", "647dd41de4b0e153bb513a71", "647df886e4b053d26888a746"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 1 - Boolean Algebra, Minimization of Boolean Functions",
+            "lectureRefs": [
+              "Practice Session 1 - Standard Questions Session 1"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "65216f28e4b004b8d43ee4ff"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "11B",
+              "11C",
+              "11D",
+              "12 (OPTIONAL)"
+            ],
+            "hours": 2.25,
+            "lectureIds": [
+              "647d8964e4b096dd2e37a561",
+              "647db9f9e4b0788e3d7317bc",
+              "647dd41de4b0e153bb513a71",
+              "647df886e4b053d26888a746"
+            ]
+          }
         ]
       },
       {
         "date": "2026-05-17",
         "label": "17 May",
         "tasks": [
-          { "subject": "Digital Logic", "module": "Module 2 - Number System", "lectureRefs": ["1A", "1B", "2", "3A", "4A"], "hours": 5.75, "lectureIds": ["651982bee4b05be61a8c6ec6", "65198de6e4b07f256960f64f", "651996bde4b00c0add72441f", "651ae7cde4b0e1b37ffec2bc", "651c6978e4b077209f101793"] }
+          {
+            "subject": "Digital Logic",
+            "module": "Module 2 - Number System",
+            "lectureRefs": [
+              "1A",
+              "1B",
+              "2",
+              "3A",
+              "4A"
+            ],
+            "hours": 5.75,
+            "lectureIds": [
+              "651982bee4b05be61a8c6ec6",
+              "65198de6e4b07f256960f64f",
+              "651996bde4b00c0add72441f",
+              "651ae7cde4b0e1b37ffec2bc",
+              "651c6978e4b077209f101793"
+            ]
+          }
         ]
       }
     ]
@@ -948,16 +3066,32 @@
           {
             "subject": "Digital Logic",
             "module": "Module 2 - Number System",
-            "lectureRefs": ["4B", "5A"],
+            "lectureRefs": [
+              "4B",
+              "5A"
+            ],
             "hours": 2,
-            "lectureIds": ["651cab74e4b03c6e04853b37", "651cc1f7e4b0e687e47f9626"]
+            "lectureIds": [
+              "651cab74e4b03c6e04853b37",
+              "651cc1f7e4b0e687e47f9626"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module - 3",
-            "lectureRefs": ["13a", "13b", "13c", "30 Practice Questions"],
+            "lectureRefs": [
+              "13a",
+              "13b",
+              "13c",
+              "30 Practice Questions"
+            ],
             "hours": 2.25,
-            "lectureIds": ["647e50ebe4b09e94de565723", "6481a82ee4b00bb82bc1bc4b", "6481a82ee4b00bb82bc1bc4a", "647f3fa6e4b01253397b7699"]
+            "lectureIds": [
+              "647e50ebe4b09e94de565723",
+              "6481a82ee4b00bb82bc1bc4b",
+              "6481a82ee4b00bb82bc1bc4a",
+              "647f3fa6e4b01253397b7699"
+            ]
           }
         ]
       },
@@ -968,7 +3102,14 @@
           {
             "subject": "Digital Logic",
             "module": "Module 2 - Number System",
-            "lectureRefs": ["5B", "6", "7A", "7B", "7C", "7D"],
+            "lectureRefs": [
+              "5B",
+              "6",
+              "7A",
+              "7B",
+              "7C",
+              "7D"
+            ],
             "hours": 4.5,
             "lectureIds": [
               "651cce83e4b0e0172534a131",
@@ -988,16 +3129,28 @@
           {
             "subject": "Digital Logic",
             "module": "Module 2 - Number System",
-            "lectureRefs": ["Weekly Quiz - 3"],
+            "lectureRefs": [
+              "Weekly Quiz - 3"
+            ],
             "hours": 2,
-            "lectureIds": ["6525c7d9e4b015d1b7341a1a"]
+            "lectureIds": [
+              "6525c7d9e4b015d1b7341a1a"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module - 3",
-            "lectureRefs": ["13d", "13e", "Pointer Summary"],
+            "lectureRefs": [
+              "13d",
+              "13e",
+              "Pointer Summary"
+            ],
             "hours": 3.5,
-            "lectureIds": ["6481a82ee4b00bb82bc1bc48", "6481a82ee4b00bb82bc1bc49", "6251bb180cf28d6559efc28d"]
+            "lectureIds": [
+              "6481a82ee4b00bb82bc1bc48",
+              "6481a82ee4b00bb82bc1bc49",
+              "6251bb180cf28d6559efc28d"
+            ]
           }
         ]
       },
@@ -1008,7 +3161,15 @@
           {
             "subject": "Digital Logic",
             "module": "Module 3 - Combinational Circuits",
-            "lectureRefs": ["1", "2A", "2B", "2C", "2D", "2E", "2F"],
+            "lectureRefs": [
+              "1",
+              "2A",
+              "2B",
+              "2C",
+              "2D",
+              "2E",
+              "2F"
+            ],
             "hours": 5.25,
             "lectureIds": [
               "62cd0f9f0cf2778da87cbabc",
@@ -1029,16 +3190,24 @@
           {
             "subject": "Digital Logic",
             "module": "Module 3 - Combinational Circuits",
-            "lectureRefs": ["Weekly Quiz - 19 | Multiplexer"],
+            "lectureRefs": [
+              "Weekly Quiz - 19 | Multiplexer"
+            ],
             "hours": 3,
-            "lectureIds": ["6539a638e4b0e4adb6dcf452"]
+            "lectureIds": [
+              "6539a638e4b0e4adb6dcf452"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module - 3",
-            "lectureRefs": ["Structures Summary"],
+            "lectureRefs": [
+              "Structures Summary"
+            ],
             "hours": 2.5,
-            "lectureIds": ["625d25850cf2a10e5223b295"]
+            "lectureIds": [
+              "625d25850cf2a10e5223b295"
+            ]
           }
         ]
       },
@@ -1049,7 +3218,17 @@
           {
             "subject": "Digital Logic",
             "module": "Module 3 - Combinational Circuits",
-            "lectureRefs": ["3", "4A", "4B", "5A", "5B", "5C", "6", "7A", "7B"],
+            "lectureRefs": [
+              "3",
+              "4A",
+              "4B",
+              "5A",
+              "5B",
+              "5C",
+              "6",
+              "7A",
+              "7B"
+            ],
             "hours": 5.5,
             "lectureIds": [
               "65270fd4e4b02c26486357cf",
@@ -1072,16 +3251,275 @@
           {
             "subject": "Digital Logic",
             "module": "Module 3 - Combinational Circuits",
-            "lectureRefs": ["7C", "7D", "7E"],
+            "lectureRefs": [
+              "7C",
+              "7D",
+              "7E"
+            ],
             "hours": 2.5,
-            "lectureIds": ["652e422ae4b027a999223350", "653046e1e4b02ea1f4b23fb1", "65307224e4b09c1020f1741d"]
+            "lectureIds": [
+              "652e422ae4b027a999223350",
+              "653046e1e4b02ea1f4b23fb1",
+              "65307224e4b09c1020f1741d"
+            ]
           },
           {
             "subject": "C Programming",
             "module": "Module - 3",
-            "lectureRefs": ["25 Questions Practice Set", "14", "GATE 2004 Question"],
+            "lectureRefs": [
+              "25 Questions Practice Set",
+              "14",
+              "GATE 2004 Question"
+            ],
             "hours": 3.25,
-            "lectureIds": ["64832a33e4b0b57b8cd60f47", "64885da7e4b06bc709a50bbc", "635d1fbee4b09e1251a25775"]
+            "lectureIds": [
+              "64832a33e4b0b57b8cd60f47",
+              "64885da7e4b06bc709a50bbc",
+              "635d1fbee4b09e1251a25775"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "weekId": "week-14",
+    "label": "25 May – 31 May 2026",
+    "days": [
+      {
+        "date": "2026-05-25",
+        "label": "25 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 3 - Combinational Circuits",
+            "lectureRefs": [
+              "Lecture 7F",
+              "GATE 2007 Q35",
+              "GATE 2016 Q33",
+              "GRE RCA Delay",
+              "Lecture 8"
+            ],
+            "hours": 1.25,
+            "lectureIds": [
+              "65307e61e4b0723b99fc261b",
+              "65308714e4b025d70c95fd13",
+              "65308cb8e4b04e5016b8780e",
+              "653092abe4b0b2d9842c612f",
+              "6530a532e4b0a91163161683"
+            ]
+          },
+          {
+            "subject": "Digital Logic",
+            "module": "Module 4 - Functional Completeness",
+            "lectureRefs": [
+              "Lecture 1",
+              "Lecture 2",
+              "Lecture 3",
+              "Lecture 4",
+              "Lecture 5",
+              "Lecture 6",
+              "Lecture 7",
+              "Lecture 8",
+              "Lecture 9",
+              "Lecture 10",
+              "Lecture 11",
+              "Lecture 12",
+              "Lecture 13",
+              "Lecture 14"
+            ],
+            "hours": 4.75,
+            "lectureIds": [
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-26",
+        "label": "26 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 4 - Functional Completeness",
+            "lectureRefs": [
+              "Lecture 15",
+              "Lecture 16"
+            ],
+            "hours": 2,
+            "lectureIds": [
+              "65302e35e4b02be26e250a6a",
+              "65302e35e4b02be26e250a6a"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "Weekly Quiz 15",
+              "Weekly Quiz 15 Discussion"
+            ],
+            "hours": 2.25,
+            "lectureIds": [
+              "64926aa3e4b0777295e5937d",
+              "6488774ce4b057ed1849fe53"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-27",
+        "label": "27 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 5 - Sequential Circuits",
+            "lectureRefs": [
+              "Lecture 1",
+              "Lecture 2A"
+            ],
+            "hours": 1.5,
+            "lectureIds": [
+              "6533bad6e4b0fd8a668a0fff",
+              "6533cda7e4b0a1e6c351be1e"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-28",
+        "label": "28 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 5 - Sequential Circuits",
+            "lectureRefs": [
+              "Lecture 2B",
+              "Lecture 2C",
+              "Lecture 3"
+            ],
+            "hours": 2.5,
+            "lectureIds": [
+              "6533e900e4b0611a764cc65d",
+              "6533f7a6e4b0ef8549ed7d05",
+              "62dd64890cf292c3366343ed"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "Weekly Quiz 17",
+              "Weekly Quiz 17 Discussion"
+            ],
+            "hours": 2.25,
+            "lectureIds": [
+              "64926b30e4b0cca6f2032459",
+              "648f15cde4b0272c05179d6d"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-29",
+        "label": "29 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 5 - Sequential Circuits",
+            "lectureRefs": [
+              "Lecture 4",
+              "Lecture 5",
+              "Lecture 6",
+              "Lecture 7",
+              "Lecture 8A",
+              "Lecture 8B"
+            ],
+            "hours": 4,
+            "lectureIds": [
+              "62dd7ed30cf292c3366347b1",
+              "6535bd3de4b074938645543a",
+              "6535c784e4b098772257ed55",
+              "653738d0e4b0f1d1dc0d5dc7",
+              "65374346e4b042f7488d3041",
+              "65374ca6e4b020ea2b14da4a"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-30",
+        "label": "30 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 5 - Sequential Circuits",
+            "lectureRefs": [
+              "Lecture 9A",
+              "Lecture 9B",
+              "GATE 2008 Q",
+              "Lecture 9D",
+              "Lecture 10A",
+              "Lecture 10B",
+              "Lecture 11A"
+            ],
+            "hours": 4.75,
+            "lectureIds": [
+              "6538e345e4b0d7a00742d700",
+              "6538eb0de4b02f8c4e5b65a4",
+              "6538f76ce4b0acca45897b59",
+              "65391c2de4b0618dde909c78",
+              "65395681e4b0f3e3722ac833",
+              "65397847e4b055543c5ad0f5",
+              "6539a8e9e4b04fb4516eba08"
+            ]
+          },
+          {
+            "subject": "C Programming",
+            "module": "Module - 3",
+            "lectureRefs": [
+              "Weekly Quiz - 18"
+            ],
+            "hours": 1,
+            "lectureIds": [
+              "64a86d13e4b02cfc372fab55"
+            ]
+          }
+        ]
+      },
+      {
+        "date": "2026-05-31",
+        "label": "31 May",
+        "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 5 - Sequential Circuits",
+            "lectureRefs": [
+              "Lecture 11B",
+              "Opt Lecture 12",
+              "Lecture 13",
+              "Lecture 14"
+            ],
+            "hours": 5.75,
+            "lectureIds": [
+              "6539bd60e4b03a85ed098d92",
+              "6539cfc4e4b09e65f48ac94b",
+              "6539d131e4b09e65f48ac976",
+              "653abcaee4b007c0dfd518a5"
+            ]
           }
         ]
       }
