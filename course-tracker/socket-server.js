@@ -129,3 +129,32 @@ const PORT = 3001;
 server.listen(PORT, () => {
   console.log(`Socket server running on port ${PORT}`);
 });
+
+// Background job scraper - triggers the Next.js API hourly
+const SCRAPE_INTERVAL = 3600000; // 1 hour in milliseconds
+function triggerBackgroundScrape() {
+  console.log('[Background Scraper] Triggering automated hourly job scrape...');
+  const nextPort = process.env.PORT || 3000;
+  fetch(`http://localhost:${nextPort}/api/jobs`, { 
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-background-trigger': 'true'
+    }
+  })
+  .then(res => {
+    if (res.ok) return res.json();
+    throw new Error(`Status ${res.status}`);
+  })
+  .then(data => {
+    console.log(`[Background Scraper] Automated hourly scrape finished. Upserted ${data.upsertedCount || 0} jobs.`);
+  })
+  .catch(err => {
+    console.error('[Background Scraper] Error triggering automated scrape:', err.message);
+  });
+}
+
+// Trigger initial scrape after 10 seconds to allow the Next.js dev server to start up, then every hour
+setTimeout(triggerBackgroundScrape, 10000);
+setInterval(triggerBackgroundScrape, SCRAPE_INTERVAL);
+

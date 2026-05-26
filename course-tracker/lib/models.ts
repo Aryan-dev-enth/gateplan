@@ -81,3 +81,22 @@ const ChatMessageSchema = new Schema({
 
 export const AccountLogModel = models.AccountLog || model("AccountLog", AccountLogSchema);
 export const ChatMessageModel = models.ChatMessage || model("ChatMessage", ChatMessageSchema);
+
+// Government Job Notifications Cache
+const JobNotificationSchema = new Schema({
+  title: { type: String, required: true },
+  url: { type: String, required: true, unique: true },
+  lastDate: { type: String, default: "" },
+  payScale: { type: String, default: "" },
+  vacancies: { type: String, default: "" },
+  eligibility: { type: String, default: "" },
+  overview: { type: String, default: "" },
+  applicationLink: { type: String, default: "" },
+  isCsItSpecific: { type: Boolean, default: false },
+  isGeneralOfficer: { type: Boolean, default: false },
+  scrapedAt: { type: Date, default: Date.now },
+  source: { type: String, default: "Bankersadda" }
+});
+
+export const JobNotificationModel = models.JobNotification || model("JobNotification", JobNotificationSchema);
+
