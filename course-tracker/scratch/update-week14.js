@@ -19,14 +19,36 @@ const newWeek = {
       "label": "25 May",
       "tasks": [
         { "subject": "Digital Logic", "module": "Module 3 - Combinational Circuits", "lectureRefs": ["Lecture 7F to 8"], "hours": 1.25, "lectureIds": ["65307e61e4b0723b99fc261b", "65308714e4b025d70c95fd13", "65308cb8e4b04e5016b8780e", "653092abe4b0b2d9842c612f", "6530a532e4b0a91163161683"] },
-        { "subject": "Digital Logic", "module": "Module 4 - Functional Completeness", "lectureRefs": ["Lecture 1 to 14 (YT)"], "hours": 4.75, "lectureIds": ["65302e35e4b02be26e250a6a"] }
+        {
+          "subject": "Digital Logic",
+          "module": "Module 4 - Functional Completeness",
+          "lectureRefs": [
+            "Lecture 1", "Lecture 2", "Lecture 3", "Lecture 4", "Lecture 5",
+            "Lecture 6", "Lecture 7", "Lecture 8", "Lecture 9", "Lecture 10",
+            "Lecture 11", "Lecture 12", "Lecture 13", "Lecture 14"
+          ],
+          "hours": 4.75,
+          "lectureIds": [
+            "65302e35e4b02be26e250a01", "65302e35e4b02be26e250a02", "65302e35e4b02be26e250a03",
+            "65302e35e4b02be26e250a04", "65302e35e4b02be26e250a05", "65302e35e4b02be26e250a06",
+            "65302e35e4b02be26e250a07", "65302e35e4b02be26e250a08", "65302e35e4b02be26e250a09",
+            "65302e35e4b02be26e250a0a", "65302e35e4b02be26e250a0b", "65302e35e4b02be26e250a0c",
+            "65302e35e4b02be26e250a0d", "65302e35e4b02be26e250a0e"
+          ]
+        }
       ]
     },
     {
       "date": "2026-05-26",
       "label": "26 May",
       "tasks": [
-        { "subject": "Digital Logic", "module": "Module 4 - Functional Completeness", "lectureRefs": ["Lecture 15 to 16"], "hours": 2.0, "lectureIds": ["65302e35e4b02be26e250a6a"] },
+        {
+          "subject": "Digital Logic",
+          "module": "Module 4 - Functional Completeness",
+          "lectureRefs": ["Lecture 15", "Lecture 16"],
+          "hours": 2.0,
+          "lectureIds": ["65302e35e4b02be26e250a0f", "65302e35e4b02be26e250a10"]
+        },
         { "subject": "C Programming", "module": "Module - 3", "lectureRefs": ["Weekly Quiz - 15 with Solutions"], "hours": 2.25, "lectureIds": ["64926aa3e4b0777295e5937d", "6488774ce4b057ed1849fe53"] }
       ]
     },
@@ -34,6 +56,13 @@ const newWeek = {
       "date": "2026-05-27",
       "label": "27 May",
       "tasks": [
+        {
+          "subject": "Digital Logic",
+          "module": "Module 4 - Functional Completeness",
+          "lectureRefs": ["Lecture 17", "Lecture 18"],
+          "hours": 4.5,
+          "lectureIds": ["65302e35e4b02be26e250a11", "65302e35e4b02be26e250a12"]
+        },
         { "subject": "Digital Logic", "module": "Module 5 - Sequential Circuits", "lectureRefs": ["Lecture 1 to 2A"], "hours": 1.5, "lectureIds": ["6533bad6e4b0fd8a668a0fff", "6533cda7e4b0a1e6c351be1e"] }
       ]
     },

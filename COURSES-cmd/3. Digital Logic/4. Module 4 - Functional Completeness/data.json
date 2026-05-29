@@ -31,5 +31,203 @@
     "key": "this-is-pdf",
     "duration": 0,
     "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a01",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "4. Lecture 1 - Functional Completeness",
+    "url": "https://youtu.be/sVklJ7fICt4",
+    "key": "this-is-yt-video",
+    "duration": 654,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a02",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "5. Lecture 2 - Set of AND, OR, NOT Operations is Functionally Complete",
+    "url": "https://youtu.be/shb77TMTGcM",
+    "key": "this-is-yt-video",
+    "duration": 899,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a03",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "6. Lecture 3 - Sets { NOT, OR }, { NOT, AND } are Functionally Complete",
+    "url": "https://youtu.be/ah3mbFXvG74",
+    "key": "this-is-yt-video",
+    "duration": 1062,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a04",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "7. Lecture 4 - NAND is a Universal Gate",
+    "url": "https://youtu.be/a4X6gqiCgfI",
+    "key": "this-is-yt-video",
+    "duration": 820,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a05",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "8. Lecture 5 - NOR is a Universal Gate",
+    "url": "https://youtu.be/NYQqjcSjGuQ",
+    "key": "this-is-yt-video",
+    "duration": 744,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a06",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "9. Lecture 6 - Easy Ways to check Functional Completeness",
+    "url": "https://youtu.be/ZzBuHG3mNxE",
+    "key": "this-is-yt-video",
+    "duration": 1483,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a07",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "10. Lecture 7 - { Implication, NOT } is Functionally Complete",
+    "url": "https://youtu.be/TLIRoMIVGbs",
+    "key": "this-is-yt-video",
+    "duration": 835,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a08",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "11. Lecture 8 - Set { Implication, 0 } is Functional Complete",
+    "url": "https://youtu.be/x40RL_7OGUU",
+    "key": "this-is-yt-video",
+    "duration": 414,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a09",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "12. Lecture 9 - Linear Boolean Function",
+    "url": "https://youtu.be/f_bSByC89iw",
+    "key": "this-is-yt-video",
+    "duration": 1539,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0a",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "13. Lecture 10 - Set { Exor, NOT } is Not Functional Complete",
+    "url": "https://youtu.be/HXxoEmoou60",
+    "key": "this-is-yt-video",
+    "duration": 541,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0b",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "14. Lecture 11 - Post's Functional Completeness Theorem",
+    "url": "https://youtu.be/z7jbkLQ8qRk",
+    "key": "this-is-yt-video",
+    "duration": 4650,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0c",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "15. Lecture 12 - GATE CSE 2008 | Functional Completeness",
+    "url": "https://youtu.be/2n__Db0vsZU",
+    "key": "this-is-yt-video",
+    "duration": 139,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0d",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "16. Lecture 13 - Linear Boolean Function - Revisited",
+    "url": "https://youtu.be/FurGgQdKETs",
+    "key": "this-is-yt-video",
+    "duration": 1330,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0e",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "17. Lecture 14 - Monotonic Boolean Function",
+    "url": "https://youtu.be/8OKVUYr150s",
+    "key": "this-is-yt-video",
+    "duration": 2145,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a0f",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "18. Lecture 15 - Practice Questions - Functionally Complete",
+    "url": "https://youtu.be/XmmkE4yRk5c",
+    "key": "this-is-yt-video",
+    "duration": 4823,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a10",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "19. Lecture 16 - Misconception - Partially Functionally Complete",
+    "url": "https://youtu.be/Zd4xFKj6w_s",
+    "key": "this-is-yt-video",
+    "duration": 1868,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a11",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "20. Lecture 17 - Functional Completeness - ALL GATE PYQs",
+    "url": "https://youtu.be/MJgwNj8y3tw",
+    "key": "this-is-yt-video",
+    "duration": 8303,
+    "download_command": ""
+  },
+  {
+    "type": "video",
+    "id": "65302e35e4b02be26e250a12",
+    "course": "Digital Logic",
+    "module": "Module 4 - Functional Completeness",
+    "title": "21. Lecture 18 - Functional Completeness - Complete Summary",
+    "url": "https://youtu.be/HpYSRiC-NTg",
+    "key": "this-is-yt-video",
+    "duration": 7386,
+    "download_command": ""
   }
 ]

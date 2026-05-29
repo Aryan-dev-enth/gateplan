@@ -7,6 +7,8 @@ import GOClassesScheduleDropdown from "@/components/GOClassesScheduleDropdown";
 import WeekSidebar from "./WeekSidebar";
 import type { Subject } from "@/lib/courseLoader";
 import type { WeekData, DayData, TaskData } from "./page";
+import { RefreshCw } from "lucide-react";
+
 
 const SUBJECT_COLORS: Record<string, [string, string]> = {
   "Engineering Mathematics": ["#6378ff", "#a78bfa"],
@@ -333,6 +335,8 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
     return map;
   }, [subjects]);
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
@@ -354,6 +358,23 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
       localStorage.setItem("activeWeek", defaultWeek);
     }
   }, [router, weeks]);
+
+  async function refreshData() {
+    const u = getCurrentUser();
+    if (!u) return;
+    setIsRefreshing(true);
+    try {
+      const data = await getUser(u);
+      setCompletedMap(data.completedLectures);
+      setManualRefs(data.manualLectureRefs ?? {});
+      setTestResults(data.testResults || []);
+    } catch (e) {
+      console.error("Refresh failed:", e);
+    } finally {
+      setIsRefreshing(false);
+    }
+  }
+
 
   // Save active week to localStorage whenever it changes
   useEffect(() => {
@@ -570,11 +591,20 @@ export default function WeeklyClient({ weeks, subjects }: { weeks: WeekData[]; s
       <div className="max-w-6xl mx-auto px-4 py-6">
 
         {/* ── Header ── */}
-        <div className="mb-6 fade-in">
+        <div className="mb-6 fade-in flex items-center justify-between">
           <h1 className="text-base font-bold">
             <span className="grad-text">GO Classes</span>
             <span style={{ color: "var(--text)" }}> Weekly Planner</span>
           </h1>
+          <button
+            onClick={refreshData}
+            disabled={isRefreshing}
+            className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
+            style={{ color: "var(--accent)" }}
+          >
+            <RefreshCw size={12} className={isRefreshing ? "animate-spin" : ""} />
+            {isRefreshing ? "Refreshing..." : "Refresh"}
+          </button>
         </div>
 
         {/* ── Quick Week Navigation Bar ── */}

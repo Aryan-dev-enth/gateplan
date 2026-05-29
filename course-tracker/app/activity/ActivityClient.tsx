@@ -19,8 +19,10 @@ import {
   Calendar,
   BarChart3,
   Timer,
-  Hourglass
+  Hourglass,
+  RefreshCw
 } from "lucide-react";
+
 
 interface ActivityEntry {
   lectureId: string;
@@ -137,6 +139,8 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     }
   }
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
@@ -156,6 +160,32 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
     });
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [router]);
+
+  async function refreshData() {
+    const u = getCurrentUser();
+    if (!u) return;
+    setIsRefreshing(true);
+    try {
+      const data = await getUser(u);
+      setCompletedMap(data.completedLectures);
+      setStudySessions((data.studySessions ?? []).slice().sort((a, b) => b.startedAt - a.startedAt));
+      setTestResults(data.testResults ? [...data.testResults].sort((a, b) => b.timestamp - a.timestamp) : []);
+      const result: ActivityEntry[] = [];
+      for (const [id, val] of Object.entries(data.completedLectures)) {
+        if (!val) continue;
+        const meta = lectureMap.get(id);
+        if (!meta) continue;
+        result.push({ lectureId: id, timestamp: val as number, ...meta });
+      }
+      result.sort((a, b) => b.timestamp - a.timestamp);
+      setEntries(result);
+    } catch (e) {
+      console.error("Refresh failed:", e);
+    } finally {
+      setIsRefreshing(false);
+    }
+  }
+
 
   async function deleteEntry(lectureId: string) {
     const u = getCurrentUser();
@@ -377,11 +407,20 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
       <div className="max-w-3xl mx-auto px-4 py-6">
 
         {/* ── Header ── */}
-        <div className="mb-6 fade-in">
+        <div className="mb-6 fade-in flex items-center justify-between">
           <h1 className="text-base font-bold">
             <span className="grad-text">Activity</span>
             <span style={{ color: "var(--text)" }}> Log</span>
           </h1>
+          <button
+            onClick={refreshData}
+            disabled={isRefreshing}
+            className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
+            style={{ color: "var(--accent)" }}
+          >
+            <RefreshCw size={12} className={isRefreshing ? "animate-spin" : ""} />
+            {isRefreshing ? "Refreshing..." : "Refresh"}
+          </button>
         </div>
 
         {/* ── Stats Row ── */}

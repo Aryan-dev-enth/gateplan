@@ -12,6 +12,8 @@ import type { Subject } from "@/lib/courseLoader";
 import { calculateBacklog } from "@/lib/backlog";
 import type { WeekData } from "@/lib/backlog";
 import { saveDailySummary } from "@/lib/store";
+import { RefreshCw } from "lucide-react";
+
 
 // ── Skeleton ──────────────────────────────────────────────────────────────────
 function Skeleton({ w = "100%", h = "12px" }: { w?: string; h?: string }) {
@@ -99,6 +101,8 @@ export default function DashboardClient({
   const [todayActivityExpanded, setTodayActivityExpanded] = useState<Record<string, boolean>>({});
   const [backlogDetailsExpanded, setBacklogDetailsExpanded] = useState(false);
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   useEffect(() => {
     const u = getCurrentUser();
     if (!u) { router.replace("/"); return; }
@@ -113,6 +117,25 @@ export default function DashboardClient({
       setIsLoading(false);
     });
   }, [router]);
+
+  async function refreshData() {
+    if (!username) return;
+    setIsRefreshing(true);
+    try {
+      const data = await getUser(username);
+      setCompletedMap(data.completedLectures);
+      setManualLectureRefs(data.manualLectureRefs ?? {});
+      setIgnoredBacklogModules(data.ignoredBacklogModules ?? {});
+      setTargetDate(data.targetDate);
+      setStudySessions(data.studySessions ?? []);
+      setRecentAiChat(data.recentAiChat ?? null);
+    } catch (e) {
+      console.error("Refresh failed:", e);
+    } finally {
+      setIsRefreshing(false);
+    }
+  }
+
 
   async function handleTargetDateChange(date: string) {
     const u = getCurrentUser();
@@ -183,6 +206,15 @@ export default function DashboardClient({
               <Link href="/summary" className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5" style={{ color: "var(--accent)" }}>
                 <span className="text-xs">📅</span> Summary View
               </Link>
+              <button
+                onClick={refreshData}
+                disabled={isRefreshing}
+                className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
+                style={{ color: "var(--accent)" }}
+              >
+                <RefreshCw size={12} className={isRefreshing ? "animate-spin" : ""} />
+                {isRefreshing ? "Refreshing..." : "Refresh"}
+              </button>
             </div>
           )}
         </div>

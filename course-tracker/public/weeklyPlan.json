@@ -3330,20 +3330,20 @@
             ],
             "hours": 4.75,
             "lectureIds": [
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a"
+              "65302e35e4b02be26e250a01",
+              "65302e35e4b02be26e250a02",
+              "65302e35e4b02be26e250a03",
+              "65302e35e4b02be26e250a04",
+              "65302e35e4b02be26e250a05",
+              "65302e35e4b02be26e250a06",
+              "65302e35e4b02be26e250a07",
+              "65302e35e4b02be26e250a08",
+              "65302e35e4b02be26e250a09",
+              "65302e35e4b02be26e250a0a",
+              "65302e35e4b02be26e250a0b",
+              "65302e35e4b02be26e250a0c",
+              "65302e35e4b02be26e250a0d",
+              "65302e35e4b02be26e250a0e"
             ]
           }
         ]
@@ -3361,8 +3361,8 @@
             ],
             "hours": 2,
             "lectureIds": [
-              "65302e35e4b02be26e250a6a",
-              "65302e35e4b02be26e250a6a"
+              "65302e35e4b02be26e250a0f",
+              "65302e35e4b02be26e250a10"
             ]
           },
           {
@@ -3384,6 +3384,19 @@
         "date": "2026-05-27",
         "label": "27 May",
         "tasks": [
+          {
+            "subject": "Digital Logic",
+            "module": "Module 4 - Functional Completeness",
+            "lectureRefs": [
+              "Lecture 17",
+              "Lecture 18"
+            ],
+            "hours": 4.5,
+            "lectureIds": [
+              "65302e35e4b02be26e250a11",
+              "65302e35e4b02be26e250a12"
+            ]
+          },
           {
             "subject": "Digital Logic",
             "module": "Module 5 - Sequential Circuits",

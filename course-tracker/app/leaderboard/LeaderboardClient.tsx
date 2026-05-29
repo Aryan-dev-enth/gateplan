@@ -4,7 +4,8 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { getCurrentUser } from "@/lib/store";
 import type { Subject } from "@/lib/courseLoader";
-import { Trophy, Flame, Target, ChevronLeft, Award, Zap, Clock, Star, BarChart3 } from "lucide-react";
+import { Trophy, Flame, Target, ChevronLeft, Award, Zap, Clock, Star, BarChart3, RefreshCw } from "lucide-react";
+
 
 interface WeekData {
   weekId: string; label: string;
@@ -261,6 +262,8 @@ export default function LeaderboardClient({ subjects, weeks }: { subjects: Subje
 
   const totalLectures = useMemo(() => subjects.reduce((s, sub) => s + sub.modules.reduce((ms, m) => ms + m.lectures.length, 0), 0), [subjects]);
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   useEffect(() => {
     const current = getCurrentUser();
     if (!current) { router.replace("/"); return; }
@@ -310,6 +313,59 @@ export default function LeaderboardClient({ subjects, weeks }: { subjects: Subje
       .finally(() => setIsLoading(false));
   }, [router, lectureMap, subjects, weeks, totalLectures]);
 
+  async function refreshData() {
+    const current = getCurrentUser();
+    if (!current) return;
+    setIsRefreshing(true);
+    const todayStart = new Date().setHours(0, 0, 0, 0);
+    const weekStart = Date.now() - 7 * 86400000;
+
+    try {
+      const res = await fetch("/api/leaderboard");
+      const all: { username: string; completedLectures: Record<string, number | false> }[] = await res.json();
+      
+      const stats: UserStats[] = all.map(({ username, completedLectures: cm }) => {
+        const doneIds = Object.entries(cm).filter(([, v]) => !!v);
+        const totalDone = doneIds.length;
+        let totalSeconds = 0, todaySeconds = 0, weekSeconds = 0, todayCount = 0, weekCount = 0;
+        const activeDaySet = new Set<string>();
+        doneIds.forEach(([id, ts]) => {
+          const meta = lectureMap.get(id);
+          if (meta?.isLecture) {
+            totalSeconds += meta.duration;
+            activeDaySet.add(new Date(ts as number).toDateString());
+            if ((ts as number) >= todayStart) { todaySeconds += meta.duration; todayCount++; }
+            if ((ts as number) >= weekStart) { weekSeconds += meta.duration; weekCount++; }
+          }
+        });
+        const pct = totalLectures === 0 ? 0 : Math.round((totalDone / totalLectures) * 100);
+        const activeDays = activeDaySet.size || 1;
+        const subjectProgress = subjects.map(s => {
+          const total = s.modules.reduce((a, m) => a + m.lectures.length, 0);
+          const done = s.modules.reduce((a, m) => a + m.lectures.filter(l => !!cm[l.id]).length, 0);
+          return { id: s.id, name: s.name, done, total, pct: total === 0 ? 0 : Math.round((done / total) * 100) };
+        }).filter(s => s.done > 0);
+        const recentActivity = doneIds
+          .map(([id, ts]) => { const meta = lectureMap.get(id); return meta ? { ...meta, timestamp: ts as number } : null; })
+          .filter(Boolean).sort((a, b) => b!.timestamp - a!.timestamp).slice(0, 5) as { title: string; subjectName: string; timestamp: number }[];
+        return {
+          username, totalHours: totalSeconds / 3600, totalDone, totalLectures, pct,
+          streak: calcStreak(cm), todayHours: todaySeconds / 3600, todayCount,
+          weekHours: weekSeconds / 3600, weekCount, avgDaily: totalSeconds / 3600 / activeDays,
+          subjectProgress, recentActivity,
+        };
+      });
+      stats.push(buildAir1(weeks, subjects, totalLectures));
+      stats.sort((a, b) => b.totalHours - a.totalHours);
+      setUsers(stats);
+    } catch (e) {
+      console.error("Refresh failed:", e);
+    } finally {
+      setIsRefreshing(false);
+    }
+  }
+
+
   const sorted = useMemo(() => [...users].sort((a, b) => {
     if (tab === "today") return b.todayHours - a.todayHours;
     if (tab === "week") return b.weekHours - a.weekHours;
@@ -338,7 +394,15 @@ export default function LeaderboardClient({ subjects, weeks }: { subjects: Subje
             <h1 className="text-2xl font-bold tracking-tight text-[var(--text)]">Leaderboard</h1>
             <p className="text-[10px] text-[var(--muted)] font-medium uppercase tracking-widest mt-1">Study Performance Ranking</p>
           </div>
-          <div className="w-[80px]" />
+          <button
+            onClick={refreshData}
+            disabled={isRefreshing}
+            className="text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 glass rounded-lg hover:bg-white/10 transition-all flex items-center gap-1.5 disabled:opacity-50 cursor-pointer"
+            style={{ color: "var(--accent)" }}
+          >
+            <RefreshCw size={12} className={isRefreshing ? "animate-spin" : ""} />
+            {isRefreshing ? "Refreshing..." : "Refresh"}
+          </button>
         </header>
 
         {/* Tab Selection */}
