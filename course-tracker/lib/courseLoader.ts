@@ -136,14 +136,21 @@ export function loadCourses(): Subject[] {
         if (fs.existsSync(dataFile)) {
           try {
             const raw = JSON.parse(fs.readFileSync(dataFile, "utf-8"));
-            lectures = raw.map((item: Record<string, unknown>) => ({
-              id: item.id as string,
-              title: item.title as string,
-              type: item.type as string,
-              url: item.url as string,
-              duration: (item.duration as number) || 0,
-              isLecture: LECTURE_TYPES.has(item.type as string),
-            }));
+            lectures = raw.map((item: Record<string, unknown>) => {
+              const type = item.type as string;
+              const title = item.title as string;
+              const isLecture = LECTURE_TYPES.has(type) || 
+                (type === "article" && title.toLowerCase().includes("lecture"));
+              
+              return {
+                id: item.id as string,
+                title,
+                type,
+                url: item.url as string,
+                duration: (item.duration as number) || 0,
+                isLecture,
+              };
+            });
           } catch {
             lectures = [];
           }
