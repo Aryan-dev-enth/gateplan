@@ -8,6 +8,8 @@ export interface StudySession {
   subjectName: string;
   moduleName?: string;
   note?: string;
+  sessionType?: 'study' | 'revision';  // defaults to 'study' if absent
+  revisionSubject?: string;             // friendly label for revision target
 }
 
 export interface UserData {

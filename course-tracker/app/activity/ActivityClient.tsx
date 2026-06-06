@@ -269,6 +269,10 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
   const todaySessionMins = sessionsToday.reduce((s, x) => s + x.durationMinutes, 0);
   const totalMinsToday = todayLectureMins + todaySessionMins;
 
+  // Revision stats
+  const revisionSessions = studySessions.filter(s => s.sessionType === 'revision');
+  const totalRevisionMins = revisionSessions.reduce((s, x) => s + x.durationMinutes, 0);
+
   // ── High-impact analytics ───────────────────────────────────────────────
   const bestDayCount = Math.max(...Object.values(heatmap), 0);
   const bestDayKey = Object.entries(heatmap).find(([, v]) => v === bestDayCount)?.[0] ?? null;
@@ -429,7 +433,7 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
             { label: "Day Streak", val: `${streak}d`, icon: Flame, color: "#f59e0b", sub: "Keep it up!" },
             { label: "Today's Effort", val: fmtMins(todaySessionMins), icon: Timer, color: "var(--accent)", sub: "Active sessions" },
             { label: "Content Done", val: fmtMins(todayLectureMins), icon: BookOpen, color: "var(--green)", sub: `${lecturesToday.length} lectures today` },
-            { label: "Total Content", val: fmtMins(totalLectureMins), icon: Award, color: "#8b5cf6", sub: `${entries.length} lectures total` },
+            { label: "Revisions Done", val: String(revisionSessions.length), icon: RefreshCw, color: "#a855f7", sub: `${fmtMins(totalRevisionMins)} total` },
           ].map((s) => (
             <div key={s.label} className="glass p-4 relative overflow-hidden group">
               <div className="absolute -right-2 -bottom-2 opacity-5 group-hover:opacity-10 transition-all">
@@ -850,29 +854,42 @@ export default function ActivityClient({ subjects, weeks }: { subjects: Subject[
                       {(isToday ? !expandedDays.has("__closed__s_" + dateKey) : expandedDays.has("s_" + dateKey)) && (
                         <div className="flex flex-col gap-1 p-2"
                           style={{ background: "var(--card-bg)", borderTop: "1px solid var(--border)" }}>
-                          {sessions.map((s) => (
-                            <div key={s.id} className="group relative flex items-center gap-3 px-3 py-2.5 rounded-lg"
-                              style={{ background: "var(--surface2)" }}>
-                              <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
-                                style={{ background: "var(--tint-accent)", color: "var(--accent)" }}>
-                                ⏱
+                          {sessions.map((s) => {
+                            const isRevision = s.sessionType === 'revision';
+                            return (
+                              <div key={s.id} className="group relative flex items-center gap-3 px-3 py-2.5 rounded-lg"
+                                style={{ background: "var(--surface2)" }}>
+                                <div className="flex-shrink-0 w-6 h-6 rounded-md flex items-center justify-center text-xs"
+                                  style={{ 
+                                    background: isRevision ? "rgba(168, 85, 247, 0.12)" : "var(--tint-accent)", 
+                                    color: isRevision ? "#a855f7" : "var(--accent)" 
+                                  }}>
+                                  {isRevision ? "🔄" : "⏱"}
+                                </div>
+                                <div className="flex-1 min-w-0">
+                                  <p className="text-xs font-semibold truncate flex items-center gap-1.5" style={{ color: "var(--text)" }}>
+                                    {s.subjectName}
+                                    {isRevision && (
+                                      <span className="px-1.5 py-0.5 rounded text-[8px] font-bold uppercase tracking-wider bg-purple-500/15 text-purple-400 border border-purple-500/20">
+                                        Revision
+                                      </span>
+                                    )}
+                                  </p>
+                                  {!isRevision && s.moduleName && <p className="text-xs truncate" style={{ color: "var(--accent)" }}>{s.moduleName}</p>}
+                                  {s.note && <p className="text-xs truncate" style={{ color: "var(--muted)" }}>{s.note}</p>}
+                                  <p className="text-xs" style={{ color: "var(--muted)" }}>{fmtTime(s.startedAt)}</p>
+                                </div>
+                                <span className="text-xs font-bold pr-7" style={{ color: "var(--green)" }}>
+                                  {fmtMins(s.durationMinutes)}
+                                </span>
+                                <button onClick={() => handleDeleteSession(s.id)}
+                                  className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
+                                  style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
+                                  ✕
+                                </button>
                               </div>
-                              <div className="flex-1 min-w-0">
-                                <p className="text-xs font-semibold truncate" style={{ color: "var(--text)" }}>{s.subjectName}</p>
-                                {s.moduleName && <p className="text-xs truncate" style={{ color: "var(--accent)" }}>{s.moduleName}</p>}
-                                {s.note && <p className="text-xs truncate" style={{ color: "var(--muted)" }}>{s.note}</p>}
-                                <p className="text-xs" style={{ color: "var(--muted)" }}>{fmtTime(s.startedAt)}</p>
-                              </div>
-                              <span className="text-xs font-bold pr-7" style={{ color: "var(--green)" }}>
-                                {fmtMins(s.durationMinutes)}
-                              </span>
-                              <button onClick={() => handleDeleteSession(s.id)}
-                                className="absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all"
-                                style={{ background: "rgba(239,68,68,0.12)", color: "var(--red)", fontSize: "11px" }}>
-                                ✕
-                              </button>
-                            </div>
-                          ))}
+                            );
+                          })}
                         </div>
                       )}
                     </div>

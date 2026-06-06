@@ -18,13 +18,14 @@ import {
   ChevronLeft,
   Settings,
   Sparkles,
-  BookOpen
+  BookOpen,
+  RefreshCw
 } from "lucide-react";
 
 // ── Dial ─────────────────────────────────────────────────────────────────────
-function TimeDial({ minutes, onChange }: { minutes: number; onChange: (m: number) => void }) {
+function TimeDial({ minutes, onChange, maxMinutes = 300 }: { minutes: number; onChange: (m: number) => void; maxMinutes?: number }) {
   const svgRef = useRef<SVGSVGElement>(null);
-  const MAX = 300;
+  const MAX = maxMinutes;
 
   function getMinutes(e: React.MouseEvent | React.TouchEvent) {
     const svg = svgRef.current;
@@ -225,7 +226,7 @@ interface SessionGoal {
   done: boolean;
 }
 
-type TimeMode = "stopwatch" | "pomodoro" | "manual";
+type TimeMode = "stopwatch" | "pomodoro" | "manual" | "countdown";
 type TimerMode = "idle" | "running" | "paused";
 
 export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
@@ -249,6 +250,12 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
   const [pomoDuration, setPomoDuration] = useState(25); // minutes
   const [pomoState, setPomoState] = useState<"focus" | "break">("focus");
 
+  // Countdown settings
+  const [countdownMinutes, setCountdownMinutes] = useState(480); // 8h default
+  const [previouslyLoggedSeconds, setPreviouslyLoggedSeconds] = useState(0);
+  const [showPauseLogModal, setShowPauseLogModal] = useState(false);
+  const [sessionClassification, setSessionClassification] = useState<'module' | 'revision'>('module');
+
   // Manual Dial setting
   const [manualMinutes, setManualMinutes] = useState(45);
   const [saving, setSaving] = useState(false);
@@ -266,6 +273,8 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
   const LS_PAUSE = "gateplan_timer_pause";
   const LS_POMO_DUR = "gateplan_pomo_dur";
   const LS_POMO_STATE = "gateplan_pomo_state";
+  const LS_COUNTDOWN_DUR = "gateplan_countdown_dur";
+  const LS_LOGGED = "gateplan_timer_logged";
 
   // Synthesizer setup
   useEffect(() => {
@@ -290,10 +299,14 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
     const storedPause = localStorage.getItem(LS_PAUSE);
     const storedPomoDur = localStorage.getItem(LS_POMO_DUR);
     const storedPomoState = localStorage.getItem(LS_POMO_STATE) as "focus" | "break";
+    const storedCountdownDur = localStorage.getItem(LS_COUNTDOWN_DUR);
+    const storedLogged = localStorage.getItem(LS_LOGGED);
 
     if (storedMode) setTimeMode(storedMode);
     if (storedPomoDur) setPomoDuration(parseInt(storedPomoDur, 10));
     if (storedPomoState) setPomoState(storedPomoState);
+    if (storedCountdownDur) setCountdownMinutes(parseInt(storedCountdownDur, 10));
+    if (storedLogged) setPreviouslyLoggedSeconds(parseInt(storedLogged, 10));
 
     if (storedStart) {
       const startMs = parseInt(storedStart, 10);
@@ -315,6 +328,20 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
             localStorage.setItem(LS_PAUSE, String(limit));
             if (intervalRef.current) clearInterval(intervalRef.current);
             alert(storedPomoState === "break" ? "Break finished! Time to Focus!" : "Great Focus Session! Take a break.");
+            return;
+          }
+        }
+        // Handle Countdown expiry
+        if (storedMode === "countdown" && storedCountdownDur) {
+          const limit = parseInt(storedCountdownDur, 10) * 60;
+          if (nextElapsed >= limit) {
+            playChime();
+            setElapsed(limit);
+            setTimerMode("paused");
+            localStorage.removeItem(LS_START);
+            localStorage.setItem(LS_PAUSE, String(limit));
+            if (intervalRef.current) clearInterval(intervalRef.current);
+            setShowPauseLogModal(true);
             return;
           }
         }
@@ -365,6 +392,8 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
     localStorage.setItem(LS_MODE, timeMode);
     localStorage.setItem(LS_POMO_DUR, String(pomoDuration));
     localStorage.setItem(LS_POMO_STATE, pomoState);
+    localStorage.setItem(LS_COUNTDOWN_DUR, String(countdownMinutes));
+    localStorage.setItem(LS_LOGGED, String(previouslyLoggedSeconds));
     localStorage.removeItem(LS_PAUSE);
 
     intervalRef.current = setInterval(() => {
@@ -384,6 +413,20 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
           return;
         }
       }
+      // Countdown limit check
+      if (timeMode === "countdown") {
+        const limit = countdownMinutes * 60;
+        if (nextElapsed >= limit) {
+          playChime();
+          setElapsed(limit);
+          setTimerMode("paused");
+          localStorage.removeItem(LS_START);
+          localStorage.setItem(LS_PAUSE, String(limit));
+          if (intervalRef.current) clearInterval(intervalRef.current);
+          setShowPauseLogModal(true);
+          return;
+        }
+      }
       setElapsed(nextElapsed);
     }, 500);
 
@@ -395,13 +438,18 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
     localStorage.removeItem(LS_START);
     localStorage.setItem(LS_PAUSE, String(elapsed));
     setTimerMode("paused");
+    if (elapsed - previouslyLoggedSeconds >= 10 && (timeMode === "countdown" || timeMode === "stopwatch")) {
+      setShowPauseLogModal(true);
+    }
   }
 
   function resetTimer() {
     if (intervalRef.current) clearInterval(intervalRef.current);
     localStorage.removeItem(LS_START);
     localStorage.removeItem(LS_PAUSE);
+    localStorage.removeItem(LS_LOGGED);
     setElapsed(0);
+    setPreviouslyLoggedSeconds(0);
     setTimerMode("idle");
   }
 
@@ -453,12 +501,23 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
     return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
   }
 
+  function fmtCountdown(s: number) {
+    const limit = countdownMinutes * 60;
+    const remaining = Math.max(0, limit - s);
+    const h = Math.floor(remaining / 3600);
+    const m = Math.floor((remaining % 3600) / 60);
+    const sec = remaining % 60;
+    if (h > 0) return `${h}:${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+    return `${String(m).padStart(2, "0")}:${String(sec).padStart(2, "0")}`;
+  }
+
+  const currentSessionSeconds = elapsed - previouslyLoggedSeconds;
   const durationMinutes =
     timeMode === "manual"
       ? manualMinutes
-      : Math.max(1, Math.round(elapsed / 60));
+      : Math.max(1, Math.round(currentSessionSeconds / 60));
 
-  const canLog = !!selectedSubject && (timeMode === "manual" ? manualMinutes >= 1 : elapsed > 0);
+  const canLog = !!selectedSubject && (timeMode === "manual" ? manualMinutes >= 1 : currentSessionSeconds > 0);
 
   // Save session Study Log
   async function handleLog() {
@@ -484,12 +543,16 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
         finalNote = finalNote ? `${finalNote} | Goals: ${goalsSummary}` : `Goals: ${goalsSummary}`;
       }
 
+      const isRev = sessionClassification === "revision";
+
       const sessionData = {
-        startedAt: Date.now(),
+        startedAt: Date.now() - (timeMode === "manual" ? manualMinutes * 60 * 1000 : currentSessionSeconds * 1000),
         durationMinutes: Math.max(1, durationMinutes),
         subjectName: selectedSubject.name,
-        moduleName: selectedModule?.name || undefined,
+        moduleName: isRev ? undefined : (selectedModule?.name || undefined),
         note: finalNote || undefined,
+        sessionType: isRev ? ("revision" as const) : ("study" as const),
+        revisionSubject: isRev ? selectedSubject.name : undefined,
       };
 
       await logStudySession(u, sessionData);
@@ -500,6 +563,8 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
       localStorage.removeItem(LS_MODE);
       localStorage.removeItem(LS_POMO_DUR);
       localStorage.removeItem(LS_POMO_STATE);
+      localStorage.removeItem(LS_COUNTDOWN_DUR);
+      localStorage.removeItem(LS_LOGGED);
 
       // Stop sounds
       if (rainSynthRef.current) {
@@ -509,6 +574,63 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
     } catch (err) {
       console.error("Failed to log session:", err);
       alert("Failed to save session. Please try again.");
+    } finally {
+      setSaving(false);
+    }
+  }
+
+  async function handleLogPartial() {
+    const u = getCurrentUser();
+    if (!u || !selectedSubject) return;
+
+    setSaving(true);
+    try {
+      const finishedGoals = goals.filter((g) => g.done).map((g) => g.text);
+      const pendingGoals = goals.filter((g) => !g.done).map((g) => g.text);
+      
+      let finalNote = note.trim();
+      let goalsSummary = "";
+      if (finishedGoals.length > 0) {
+        goalsSummary += ` Accomplished: ${finishedGoals.join(", ")}`;
+      }
+      if (pendingGoals.length > 0) {
+        goalsSummary += ` (Pending: ${pendingGoals.join(", ")})`;
+      }
+      
+      if (goalsSummary) {
+        finalNote = finalNote ? `${finalNote} | Goals: ${goalsSummary}` : `Goals: ${goalsSummary}`;
+      }
+
+      const isRev = sessionClassification === "revision";
+      const currentSessionSeconds = elapsed - previouslyLoggedSeconds;
+      const currentSessionMinutes = Math.max(1, Math.round(currentSessionSeconds / 60));
+
+      const sessionData = {
+        startedAt: Date.now() - currentSessionSeconds * 1000,
+        durationMinutes: currentSessionMinutes,
+        subjectName: selectedSubject.name,
+        moduleName: isRev ? undefined : (selectedModule?.name || undefined),
+        note: finalNote || undefined,
+        sessionType: isRev ? ("revision" as const) : ("study" as const),
+        revisionSubject: isRev ? selectedSubject.name : undefined,
+      };
+
+      await logStudySession(u, sessionData);
+
+      // Keep timer paused but update previouslyLoggedSeconds
+      const newLoggedSeconds = elapsed;
+      setPreviouslyLoggedSeconds(newLoggedSeconds);
+      localStorage.setItem(LS_LOGGED, String(newLoggedSeconds));
+
+      // Reset goals that were completed to keep checklist clean for next part
+      setGoals((prev) => prev.filter((g) => !g.done));
+      setNote(""); // clear notes for next segment
+      setShowPauseLogModal(false);
+      
+      alert(`Successfully logged a ${currentSessionMinutes}m session segment!`);
+    } catch (err) {
+      console.error("Failed to log partial session:", err);
+      alert("Failed to save session segment.");
     } finally {
       setSaving(false);
     }
@@ -524,6 +646,17 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
   const pomoX = pomoCX + pomoR * Math.cos(pomoEndRad);
   const pomoY = pomoCY + pomoR * Math.sin(pomoEndRad);
   const pomoArc = `M ${pomoCX} ${pomoCY - pomoR} A ${pomoR} ${pomoR} 0 ${pomoAngle > 180 ? 1 : 0} 1 ${pomoX} ${pomoY}`;
+
+  // Countdown Progress Path
+  const countdownTotal = countdownMinutes * 60;
+  const countdownAngle = countdownTotal > 0 ? (elapsed / countdownTotal) * 360 : 0;
+  const countdownR = 90;
+  const countdownCX = 110;
+  const countdownCY = 110;
+  const countdownEndRad = ((countdownAngle - 90) * Math.PI) / 180;
+  const countdownX = countdownCX + countdownR * Math.cos(countdownEndRad);
+  const countdownY = countdownCY + countdownR * Math.sin(countdownEndRad);
+  const countdownArc = `M ${countdownCX} ${countdownCY - countdownR} A ${countdownR} ${countdownR} 0 ${countdownAngle > 180 ? 1 : 0} 1 ${countdownX} ${countdownY}`;
 
   const themeColor =
     timeMode === "pomodoro"
@@ -586,7 +719,7 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
             {/* Timer mode selector card */}
             <div className="glass p-1">
               <div className="flex gap-1 bg-white/5 rounded-xl border border-white/5 p-0.5">
-                {(["stopwatch", "pomodoro", "manual"] as const).map((m) => (
+                {(["stopwatch", "pomodoro", "countdown", "manual"] as const).map((m) => (
                   <button
                     key={m}
                     onClick={() => {
@@ -594,13 +727,19 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
                       setTimeMode(m);
                     }}
                     disabled={timerMode !== "idle"}
-                    className="flex-1 text-xs py-2 rounded-lg font-bold transition-all disabled:opacity-50"
+                    className="flex-1 text-[11px] py-2 rounded-lg font-bold transition-all disabled:opacity-50"
                     style={{
                       background: timeMode === m ? `linear-gradient(135deg, ${themeColor}, var(--accent2))` : "transparent",
                       color: timeMode === m ? "white" : "var(--muted)",
                     }}
                   >
-                    {m === "stopwatch" ? "⏱ Stopwatch" : m === "pomodoro" ? "⏳ Pomodoro" : "✏️ Manual Dial"}
+                    {m === "stopwatch"
+                      ? "⏱ Stopwatch"
+                      : m === "pomodoro"
+                      ? "⏳ Pomodoro"
+                      : m === "countdown"
+                      ? "⏰ Countdown"
+                      : "✏️ Manual Dial"}
                   </button>
                 ))}
               </div>
@@ -623,7 +762,7 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
 
               {/* LIVE STOPWATCH */}
               {timeMode === "stopwatch" && (
-                <div className="flex flex-col items-center gap-6 select-none">
+                <div className="flex flex-col items-center gap-6 select-none w-full animate-in fade-in duration-300">
                   {/* Outer circle visual mockup */}
                   <div className="w-[180px] h-[180px] rounded-full border-4 border-dashed border-white/5 flex items-center justify-center relative">
                     <div className="absolute inset-2 rounded-full border border-white/5 flex flex-col items-center justify-center">
@@ -663,7 +802,7 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
                         Resume Focus
                       </button>
                     )}
-                    {timerMode !== "idle" && (
+                    {timerMode !== "idle" && (elapsed - previouslyLoggedSeconds) > 0 && (
                       <button
                         onClick={handleLog}
                         className="px-5 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider bg-green-500/15 border border-green-500/30 text-green-500"
@@ -687,7 +826,7 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
 
               {/* LIVE POMODORO COUNTDOWN */}
               {timeMode === "pomodoro" && (
-                <div className="flex flex-col items-center gap-6 select-none">
+                <div className="flex flex-col items-center gap-6 select-none w-full animate-in fade-in duration-300">
                   
                   {/* SVG Pomodoro Circular Progress */}
                   <div className="relative">
@@ -768,6 +907,117 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
                       <button
                         onClick={() => {
                           if (confirm("Reset the Pomodoro countdown?")) resetTimer();
+                        }}
+                        className="px-4 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider bg-red-500/10 border border-red-500/20 text-red-500"
+                      >
+                        Reset
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {/* LIVE COUNTDOWN */}
+              {timeMode === "countdown" && (
+                <div className="flex flex-col items-center gap-6 select-none w-full animate-in fade-in duration-300">
+                  
+                  {/* SVG Countdown Circular Progress */}
+                  <div className="relative">
+                    <svg width="180" height="180" viewBox="0 0 220 220" className="transform -rotate-90">
+                      <circle cx="110" cy="110" r="90" fill="none" stroke="rgba(255,255,255,0.03)" strokeWidth="12" />
+                      {elapsed > 0 && <path d={countdownArc} fill="none" stroke={themeColor} strokeWidth="12" strokeLinecap="round" />}
+                    </svg>
+                    <div className="absolute inset-0 flex flex-col items-center justify-center">
+                      <span className="text-[8px] uppercase tracking-widest font-black opacity-45 px-2 py-0.5 rounded" 
+                        style={{ background: "rgba(99,120,255,0.12)", color: themeColor }}>
+                        Countdown
+                      </span>
+                      <span className="text-3xl font-mono font-black tracking-tighter text-[var(--text)] tabular-nums mt-1">
+                        {fmtCountdown(elapsed)}
+                      </span>
+                      <span className="text-[9px] font-bold opacity-30 mt-0.5">{countdownMinutes}m target</span>
+                    </div>
+                  </div>
+
+                  {/* Preset quick actions or TimeDial if idle */}
+                  {timerMode === "idle" ? (
+                    <div className="fade-in w-full flex flex-col items-center">
+                      <TimeDial minutes={countdownMinutes} onChange={(m) => {
+                        setCountdownMinutes(m);
+                        localStorage.setItem(LS_COUNTDOWN_DUR, String(m));
+                      }} maxMinutes={720} />
+                      
+                      <div className="flex gap-1.5 flex-wrap justify-center max-w-[340px] mt-4">
+                        {[60, 120, 180, 240, 360, 480, 600].map((m) => (
+                          <button
+                            key={m}
+                            type="button"
+                            onClick={() => {
+                              setCountdownMinutes(m);
+                              localStorage.setItem(LS_COUNTDOWN_DUR, String(m));
+                            }}
+                            className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1.5 glass rounded-xl transition-all"
+                            style={{
+                              background: countdownMinutes === m ? "linear-gradient(135deg, var(--accent), var(--accent2))" : "rgba(255,255,255,0.02)",
+                              color: countdownMinutes === m ? "white" : "var(--muted)",
+                              border: `1px solid ${countdownMinutes === m ? "transparent" : "var(--border)"}`,
+                            }}
+                          >
+                            {m >= 60 ? `${m / 60}h` : `${m}m`}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ) : (
+                    <div className="text-center opacity-60 text-xs font-semibold uppercase tracking-wider text-[var(--muted)] py-4">
+                      Timer is active
+                      <p className="text-[10px] font-medium lowercase tracking-normal mt-1 opacity-80">
+                        {Math.max(0, Math.round((countdownMinutes * 60 - elapsed) / 60))} mins remaining
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Countdown Action Buttons */}
+                  <div className="flex gap-2">
+                    {timerMode === "idle" && (
+                      <button
+                        onClick={startTimer}
+                        disabled={!selectedSubject}
+                        className="px-6 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 disabled:opacity-30 disabled:cursor-not-allowed uppercase tracking-wider"
+                        style={{ background: `linear-gradient(135deg, ${themeColor}, var(--accent2))`, color: "white" }}
+                      >
+                        Start Focus
+                      </button>
+                    )}
+                    {timerMode === "running" && (
+                      <button
+                        onClick={pauseTimer}
+                        className="px-6 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider bg-orange-500/10 border border-orange-500/20 text-orange-500"
+                      >
+                        Pause Session
+                      </button>
+                    )}
+                    {timerMode === "paused" && (
+                      <button
+                        onClick={startTimer}
+                        className="px-6 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider"
+                        style={{ background: `linear-gradient(135deg, ${themeColor}, var(--accent2))`, color: "white" }}
+                      >
+                        Resume Focus
+                      </button>
+                    )}
+                    {timerMode !== "idle" && (elapsed - previouslyLoggedSeconds) > 0 && (
+                      <button
+                        onClick={handleLog}
+                        className="px-5 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider bg-green-500/15 border border-green-500/30 text-green-500"
+                      >
+                        Stop & Log
+                      </button>
+                    )}
+                    {timerMode !== "idle" && (
+                      <button
+                        onClick={() => {
+                          if (confirm("Reset the countdown timer?")) resetTimer();
                         }}
                         className="px-4 py-2.5 rounded-xl font-bold text-xs transition-all hover:opacity-90 uppercase tracking-wider bg-red-500/10 border border-red-500/20 text-red-500"
                       >
@@ -874,8 +1124,34 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
                 </div>
               </div>
 
-              {/* Module dropdown */}
+              {/* Revision toggle */}
               {selectedSubject && (
+                <div className="fade-in-1">
+                  <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">CLASSIFICATION TYPE</label>
+                  <div className="flex gap-1 bg-white/5 rounded-xl border border-white/5 p-0.5">
+                    {(["module", "revision"] as const).map((t) => (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => {
+                          setSessionClassification(t);
+                          if (t === "revision") setModuleId("");
+                        }}
+                        className="flex-1 text-[10px] py-1.5 rounded-lg font-bold uppercase tracking-wider transition-all"
+                        style={{
+                          background: sessionClassification === t ? "linear-gradient(135deg, var(--accent), var(--accent2))" : "transparent",
+                          color: sessionClassification === t ? "white" : "var(--muted)",
+                        }}
+                      >
+                        {t === "module" ? "📂 Module Study" : "🔄 Revision"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Module dropdown */}
+              {selectedSubject && sessionClassification === "module" && (
                 <div className="fade-in-1">
                   <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">SELECT MODULE (optional)</label>
                   <div className="relative">
@@ -889,6 +1165,14 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
                     </select>
                     <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-xs opacity-30">▾</span>
                   </div>
+                </div>
+              )}
+
+              {/* Revision placeholder info */}
+              {selectedSubject && sessionClassification === "revision" && (
+                <div className="fade-in-1 p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-purple-300 text-xs flex items-center gap-2">
+                  <RefreshCw size={14} className="text-purple-400" />
+                  <span>Marking session as revision for <strong>{selectedSubject.name}</strong></span>
                 </div>
               )}
             </div>
@@ -1004,7 +1288,7 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
               </div>
 
               {/* Compile Log & Save Session Button */}
-              {(timeMode === "manual" || elapsed > 0) && (
+              {(timeMode === "manual" || (elapsed - previouslyLoggedSeconds) > 0) && (
                 <button
                   onClick={handleLog}
                   disabled={!canLog || saving}
@@ -1029,6 +1313,134 @@ export default function LogTimeClient({ subjects }: { subjects: Subject[] }) {
         </div>
 
       </div>
+
+      {/* ── Pause Log Modal ── */}
+      {showPauseLogModal && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" onClick={() => setShowPauseLogModal(false)} />
+          <div className="relative w-full max-w-md glass p-6 rounded-2xl shadow-2xl border border-white/10 animate-in fade-in zoom-in duration-200">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 rounded-2xl bg-accent/10 flex items-center justify-center text-accent text-2xl">⏱</div>
+              <div>
+                <h3 className="text-lg font-black">Log Study Session</h3>
+                <p className="text-xs opacity-50 uppercase font-bold tracking-wider">
+                  Segment Duration: {
+                    (() => {
+                      const currentSessionSeconds = elapsed - previouslyLoggedSeconds;
+                      const mins = Math.max(1, Math.round(currentSessionSeconds / 60));
+                      return mins >= 60 ? `${Math.floor(mins / 60)}h ${mins % 60}m` : `${mins}m`;
+                    })()
+                  }
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-4">
+              {/* Subject dropdown */}
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">SELECT SUBJECT</label>
+                <div className="relative">
+                  <select
+                    value={subjectId}
+                    onChange={(e) => {
+                      setSubjectId(e.target.value);
+                      setModuleId("");
+                    }}
+                    style={selectStyle}
+                  >
+                    <option value="">— Choose a Subject —</option>
+                    {subjects.map((s) => (
+                      <option key={s.id} value={s.id}>
+                        {s.name}
+                      </option>
+                    ))}
+                  </select>
+                  <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-xs opacity-30">▾</span>
+                </div>
+              </div>
+
+              {/* Revision toggle */}
+              {selectedSubject && (
+                <div>
+                  <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">STUDY TYPE</label>
+                  <div className="flex gap-1 bg-white/5 rounded-xl border border-white/5 p-0.5">
+                    {(["module", "revision"] as const).map((t) => (
+                      <button
+                        key={t}
+                        type="button"
+                        onClick={() => {
+                          setSessionClassification(t);
+                          if (t === "revision") setModuleId("");
+                        }}
+                        className="flex-1 text-[10px] py-1.5 rounded-lg font-bold uppercase tracking-wider transition-all"
+                        style={{
+                          background: sessionClassification === t ? "linear-gradient(135deg, var(--accent), var(--accent2))" : "transparent",
+                          color: sessionClassification === t ? "white" : "var(--muted)",
+                        }}
+                      >
+                        {t === "module" ? "📂 Module Study" : "🔄 Revision"}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Module dropdown */}
+              {selectedSubject && sessionClassification === "module" && (
+                <div className="fade-in-1">
+                  <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">SELECT MODULE</label>
+                  <div className="relative">
+                    <select value={moduleId} onChange={(e) => setModuleId(e.target.value)} style={selectStyle}>
+                      <option value="">— Choose a Module —</option>
+                      {modules.map((m) => (
+                        <option key={m.id} value={m.id}>
+                          {m.name}
+                        </option>
+                      ))}
+                    </select>
+                    <span className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-xs opacity-30">▾</span>
+                  </div>
+                </div>
+              )}
+
+              {/* Notes */}
+              <div>
+                <label className="text-[10px] font-black uppercase tracking-widest block mb-1.5 opacity-40">NOTES (optional)</label>
+                <textarea
+                  value={note}
+                  onChange={(e) => setNote(e.target.value)}
+                  placeholder="What did you work on during this segment?"
+                  rows={2}
+                  className="w-full text-sm px-3.5 py-2.5 rounded-xl outline-none resize-none bg-surface border border-border"
+                  style={{ background: "var(--bg)", border: "1px solid var(--border)", color: "var(--text)" }}
+                />
+              </div>
+
+              {/* Actions */}
+              <div className="flex gap-3 pt-2">
+                <button
+                  onClick={() => setShowPauseLogModal(false)}
+                  className="flex-1 py-3 rounded-xl font-bold text-xs uppercase tracking-wider border border-border hover:bg-white/5 transition-all"
+                >
+                  Dismiss
+                </button>
+                <button
+                  onClick={handleLogPartial}
+                  disabled={!selectedSubject || saving}
+                  className="flex-1 py-3 rounded-xl font-bold text-xs uppercase tracking-wider transition-all"
+                  style={{
+                    background: selectedSubject ? "linear-gradient(135deg, var(--accent), var(--accent2))" : "rgba(255,255,255,0.02)",
+                    color: selectedSubject ? "white" : "var(--muted)",
+                    opacity: saving ? 0.7 : 1,
+                  }}
+                >
+                  {saving ? "Saving..." : "Log Segment"}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
